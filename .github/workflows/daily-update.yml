@@ -1,0 +1,104 @@
+name: Daily ArXiv Digest
+
+on:
+  schedule:
+    # 每天北京时间早上 6:00 运行 (UTC 22:00 前一天)
+    - cron: '0 22 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+        
+      - name: Fetch papers from arXiv
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/fetch_papers.py
+
+      - name: Fetch Hacker News stories
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/fetch_hn.py
+
+      - name: Fetch GitHub Trending
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/fetch_github_trending.py
+
+      - name: Summarize papers with AI
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/summarize.py
+        
+      - name: Generate HTML pages
+        run: python scripts/generate_pages.py
+      
+      - name: Send WeChat notification via Server酱
+        if: success()
+        env:
+          SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+        run: |
+          python scripts/notify_wechat.py
+
+      - name: Send email notification
+        if: success()
+        env:
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
+        run: |
+          python scripts/notify_email.py
+        
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --staged --quiet || git commit -m "📚 Update papers for $(date +'%Y-%m-%d')"
+          git push origin HEAD:main
+          
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public'
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

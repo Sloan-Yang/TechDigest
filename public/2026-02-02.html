@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-02-02</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2601.22904</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.22904" target="_blank">DINO-SAE: DINO Spherical Autoencoder for High-Fidelity Image Reconstruction and Generation</a>
+      </h3>
+      <p class="paper-title-zh">DINO-SAE：用于高保真图像重建与生成的DINO球形自编码器</p>
+      <p class="paper-authors">Hun Chang, Byunghee Cha, Jong Chul Ye</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了DINO球形自编码器（DINO-SAE），通过解耦特征向量的方向与幅度，有效桥接了语义表示与像素级重建，显著提升了重建保真度；并首次在球形流形上训练扩散Transformer，实现了高效的生成建模。</div>
+        <div class="summary-section"><strong>方法:</strong> 1. 设计了分层卷积块嵌入模块，增强对局部结构和纹理的保留；2. 提出余弦相似度对齐目标，在保持语义一致性的同时允许特征幅度灵活变化以保留细节；3. 基于对比学习基础模型的表示本质位于超球面的观察，采用黎曼流匹配直接在球形潜在流形上训练扩散Transformer。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在ImageNet-1K上的实验表明，该方法实现了最先进的重建质量（rFID为0.37，PSNR为26.2 dB），同时保持了与预训练视觉基础模型的强语义对齐；基于黎曼流匹配的扩散Transformer收敛高效，在80轮训练后gFID达到3.47。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent studies have explored using pretrained Vision Foundation Models (VFMs) such as DINO for generative autoencoders, showing strong generative performance. Unfortunately, existing approaches often suffer from limited reconstruction fidelity due to the loss of high-frequency details. In this work, we present the DINO Spherical Autoencoder (DINO-SAE), a framework that bridges semantic representation and pixel-level reconstruction. Our key insight is that semantic information in contrastive representations is primarily encoded in the direction of feature vectors, while forcing strict magnitude matching can hinder the encoder from preserving fine-grained details. To address this, we introduce Hierarchical Convolutional Patch Embedding module that enhances local structure and texture preservation, and Cosine Similarity Alignment objective that enforces semantic consistency while allowing flexible feature magnitudes for detail retention. Furthermore, leveraging the observation that SSL-based foundation model representations intrinsically lie on a hypersphere, we employ Riemannian Flow Matching to train a Diffusion Transformer (DiT) directly on this spherical latent manifold. Experiments on ImageNet-1K demonstrate that our approach achieves state-of-the-art reconstruction quality, reaching 0.37 rFID and 26.2 dB PSNR, while maintaining strong semantic alignment to the pretrained VFM. Notably, our Riemannian Flow Matching-based DiT exhibits efficient convergence, achieving a gFID of 3.47 at 80 epochs.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.22904" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.22904.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2601.22837</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.22837" target="_blank">NativeTok: Native Visual Tokenization for Improved Image Generation</a>
+      </h3>
+      <p class="paper-title-zh">NativeTok：用于改进图像生成的原生视觉分词方法</p>
+      <p class="paper-authors">Bin Wu, Mengqi Huang, Weinan Jia, Zhendong Mao</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了原生视觉分词（native visual tokenization）的概念，通过强制在分词阶段引入因果依赖关系，解决了传统VQ方法中分词与生成阶段不匹配的问题，从而提升了生成图像的一致性和质量。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法基于原生视觉分词思想，设计了NativeTok框架，包含两个核心组件：1）用于潜在图像建模的元图像变换器（MIT）；2）混合因果专家变换器（MoCET），其中每个轻量级专家块基于先前令牌和潜在特征生成单个令牌。此外，还设计了分层原生训练策略，仅更新新的专家块以保证训练效率。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量实验表明，NativeTok在图像重建和生成任务中表现优异，能够有效嵌入关系约束到令牌序列中，生成具有更强一致性和更少偏差的图像，同时保持了较高的训练效率。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>VQ-based image generation typically follows a two-stage pipeline: a tokenizer encodes images into discrete tokens, and a generative model learns their dependencies for reconstruction. However, improved tokenization in the first stage does not necessarily enhance the second-stage generation, as existing methods fail to constrain token dependencies. This mismatch forces the generative model to learn from unordered distributions, leading to bias and weak coherence. To address this, we propose native visual tokenization, which enforces causal dependencies during tokenization. Building on this idea, we introduce NativeTok, a framework that achieves efficient reconstruction while embedding relational constraints within token sequences. NativeTok consists of: (1) a Meta Image Transformer (MIT) for latent image modeling, and (2) a Mixture of Causal Expert Transformer (MoCET), where each lightweight expert block generates a single token conditioned on prior tokens and latent features. We further design a Hierarchical Native Training strategy that updates only new expert blocks, ensuring training efficiency. Extensive experiments demonstrate the effectiveness of NativeTok.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.22837" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.22837.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2601.22680</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.22680" target="_blank">Visual Personalization Turing Test</a>
+      </h3>
+      <p class="paper-title-zh">视觉个性化图灵测试</p>
+      <p class="paper-authors">Rameen Abdal, James Burgess, Sergey Tulyakov, Kuan-Chieh Jackson Wang</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了基于感知不可区分性（而非身份复制）的视觉个性化评估新范式——视觉个性化图灵测试（VPTT），并开发了一个包含基准、生成器和自动化评估指标的完整框架。</div>
+        <div class="summary-section"><strong>方法:</strong> 研究团队构建了包含1万个人物角色的基准数据集（VPTT-Bench），开发了视觉检索增强生成器（VPRAG）来生成个性化内容，并设计了纯文本评估指标VPTT Score，该指标通过人类和视觉语言模型的判断进行校准。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 人类评估者、视觉语言模型和VPTT Score三者之间表现出高度相关性，验证了VPTT Score可作为可靠的感知代理指标；实验表明VPRAG在内容对齐性和原创性之间取得了最佳平衡，为可扩展且隐私安全的个性化生成AI提供了基础。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>We introduce the Visual Personalization Turing Test (VPTT), a new paradigm for evaluating contextual visual personalization based on perceptual indistinguishability, rather than identity replication. A model passes the VPTT if its output (image, video, 3D asset, etc.) is indistinguishable to a human or calibrated VLM judge from content a given person might plausibly create or share. To operationalize VPTT, we present the VPTT Framework, integrating a 10k-persona benchmark (VPTT-Bench), a visual retrieval-augmented generator (VPRAG), and the VPTT Score, a text-only metric calibrated against human and VLM judgments. We show high correlation across human, VLM, and VPTT evaluations, validating the VPTT Score as a reliable perceptual proxy. Experiments demonstrate that VPRAG achieves the best alignment-originality balance, offering a scalable and privacy-safe foundation for personalized generative AI.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.22680" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.22680.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2601.22630</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.22630" target="_blank">LINA: Linear Autoregressive Image Generative Models with Continuous Tokens</a>
+      </h3>
+      <p class="paper-title-zh">LINA：基于连续令牌的线性自回归图像生成模型</p>
+      <p class="paper-authors">Jiahao Wang, Ting Pan, Haoge Deng, Dongchen Han, Taiqiang Wu 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了LINA，一个完全基于线性注意力的高效文本到图像生成模型，通过系统性的设计选择（如归一化方式和局部性增强）显著降低了计算成本，同时保持了高质量的图像生成能力。</div>
+        <div class="summary-section"><strong>方法:</strong> 研究首先系统分析了线性注意力中不同设计选择（包括基于除法与基于减法的归一化范式，以及用于局部性增强的深度卷积）对模型缩放行为的影响。在此基础上，将因果线性注意力中常用的门控机制扩展到双向设置，提出了KV门控，通过为键和值状态引入可学习的参数来实现灵活的令牌级记忆管理。最终基于这些发现构建了LINA模型。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 关键发现包括：1) 对于线性生成式Transformer，基于除法的归一化比基于减法的归一化具有更好的缩放性；2) 引入卷积进行局部性建模对自回归生成至关重要；3) 提出的KV门控能有效管理记忆。LINA在ImageNet上取得了2.18的FID分数，在GenEval上达到0.74，同时单个线性注意力模块比Softmax注意力减少了约61%的FLOPs。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Autoregressive models with continuous tokens form a promising paradigm for visual generation, especially for text-to-image (T2I) synthesis, but they suffer from high computational cost. We study how to design compute-efficient linear attention within this framework. Specifically, we conduct a systematic empirical analysis of scaling behavior with respect to parameter counts under different design choices, focusing on (1) normalization paradigms in linear attention (division-based vs. subtraction-based) and (2) depthwise convolution for locality augmentation. Our results show that although subtraction-based normalization is effective for image classification, division-based normalization scales better for linear generative transformers. In addition, incorporating convolution for locality modeling plays a crucial role in autoregressive generation, consistent with findings in diffusion models. We further extend gating mechanisms, commonly used in causal linear attention, to the bidirectional setting and propose a KV gate. By introducing data-independent learnable parameters to the key and value states, the KV gate assigns token-wise memory weights, enabling flexible memory management similar to forget gates in language models. Based on these findings, we present LINA, a simple and compute-efficient T2I model built entirely on linear attention, capable of generating high-fidelity 1024x1024 images from user instructions. LINA achieves competitive performance on both class-conditional and T2I benchmarks, obtaining 2.18 FID on ImageNet (about 1.4B parameters) and 0.74 on GenEval (about 1.5B parameters). A single linear attention module reduces FLOPs by about 61 percent compared to softmax attention. Code and models are available at: https://github.com/techmonsterwang/LINA.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.22630" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.22630.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2601.22507</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.22507" target="_blank">DreamVAR: Taming Reinforced Visual Autoregressive Model for High-Fidelity Subject-Driven Image Generation</a>
+      </h3>
+      <p class="paper-title-zh">DreamVAR：驯服强化视觉自回归模型以实现高保真主体驱动的图像生成</p>
+      <p class="paper-authors">Xin Jiang, Jingwen Chen, Yehao Li, Yingwei Pan, Kezhou Chen 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了DreamVAR框架，首次将视觉自回归模型成功应用于主体驱动的图像生成任务，并通过预填充条件特征与强化学习的结合，显著提升了生成图像的语义对齐与主体一致性。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先使用视觉分词器提取参考主体的多尺度特征；然后，在预测目标图像序列之前，将完整的条件特征序列预填充到自回归过程中，简化了跨尺度的依赖关系并缓解了训练-测试差异；最后，引入强化学习来联合优化语义对齐和主体保真度。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量实验表明，DreamVAR在主体外观保真度方面优于当前领先的基于扩散模型的方法，实现了更高质量的主体驱动图像生成。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent advances in subject-driven image generation using diffusion models have attracted considerable attention for their remarkable capabilities in producing high-quality images. Nevertheless, the potential of Visual Autoregressive (VAR) models, despite their unified architecture and efficient inference, remains underexplored. In this work, we present DreamVAR, a novel framework for subject-driven image synthesis built upon a VAR model that employs next-scale prediction. Technically, multi-scale features of the reference subject are first extracted by a visual tokenizer. Instead of interleaving these conditional features with target image tokens across scales, our DreamVAR pre-fills the full subject feature sequence prior to predicting target image tokens. This design simplifies autoregressive dependencies and mitigates the train-test discrepancy in multi-scale conditioning scenario within the VAR paradigm. DreamVAR further incorporates reinforcement learning to jointly enhance semantic alignment and subject consistency. Extensive experiments demonstrate that DreamVAR achieves superior appearance preservation compared to leading diffusion-based methods.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.22507" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.22507.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

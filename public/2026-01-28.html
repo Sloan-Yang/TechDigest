@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-01-28</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <span class="category-badge">计算机视觉</span>
+        <span class="paper-id">2601.19180</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.19180" target="_blank">SNR-Edit: Structure-Aware Noise Rectification for Inversion-Free Flow-Based Editing</a>
+      </h3>
+      <p class="paper-title-zh">SNR-Edit：面向免反演基于流的图像编辑的结构感知噪声校正</p>
+      <p class="paper-authors">Lifan Jiang, Boxi Wu, Yuhang Pei, Tianrun Wu, Yongyuan Chen 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了SNR-Edit，一个无需训练、免反演的框架，通过自适应噪声控制实现精确的潜在轨迹校正，解决了现有基于流的免反演编辑方法因固定高斯噪声导致的轨迹偏差和结构退化问题。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法采用结构感知噪声校正机制，将分割约束注入初始噪声中，从而将源轨迹的随机成分锚定到真实图像的隐式反演位置。这一轻量级修改减少了源-目标传输过程中的轨迹漂移，无需模型调优或反演操作即可生成更平滑的潜在轨迹。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在SD3和FLUX模型上的评估表明，SNR-Edit在PIE-Bench和SNR-Bench上取得了优异的像素级指标和基于视觉语言模型的评分性能，同时每张图像仅增加约1秒的计算开销，实现了高保真的结构保持。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Inversion-free image editing using flow-based generative models challenges the prevailing inversion-based pipelines. However, existing approaches rely on fixed Gaussian noise to construct the source trajectory, leading to biased trajectory dynamics and causing structural degradation or quality loss. To address this, we introduce SNR-Edit, a training-free framework achieving faithful Latent Trajectory Correction via adaptive noise control. Mechanistically, SNR-Edit uses structure-aware noise rectification to inject segmentation constraints into the initial noise, anchoring the stochastic component of the source trajectory to the real image's implicit inversion position and reducing trajectory drift during source--target transport. This lightweight modification yields smoother latent trajectories and ensures high-fidelity structural preservation without requiring model tuning or inversion. Across SD3 and FLUX, evaluations on PIE-Bench and SNR-Bench show that SNR-Edit delivers performance on pixel-level metrics and VLM-based scoring, while adding only about 1s overhead per image.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.19180" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.19180.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <span class="category-badge">计算机视觉</span>
+        <span class="paper-id">2601.19115</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.19115" target="_blank">FBSDiff++: Improved Frequency Band Substitution of Diffusion Features for Efficient and Highly Controllable Text-Driven Image-to-Image Translation</a>
+      </h3>
+      <p class="paper-title-zh">FBSDiff++：改进的扩散特征频带替换，用于高效且高度可控的文本驱动图像到图像翻译</p>
+      <p class="paper-authors">Xiang Gao, Yunpeng Jia</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种无需训练、即插即用的文本驱动图像翻译框架FBSDiff++，通过改进的频带替换机制，在显著提升推理速度的同时，实现了对翻译强度、局部编辑和风格创建的灵活控制。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法从频域视角出发，通过动态替换潜在扩散特征的不同频带（低频、中频、高频）来分别实现外观、布局和轮廓引导的图像翻译。FBSDiff++在原始FBSDiff基础上进行了三方面改进：优化模型架构以大幅加速推理；改进频带替换模块以支持任意分辨率和宽高比的输入；通过微调核心方法扩展了局部编辑和风格化内容创建的功能。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量定性和定量实验表明，FBSDiff++在视觉质量、效率、多功能性和可控性方面均优于现有先进方法，其中推理速度提升了8.9倍，并能灵活实现连续的相关强度控制及局部图像操作。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>With large-scale text-to-image (T2I) diffusion models achieving significant advancements in open-domain image creation, increasing attention has been focused on their natural extension to the realm of text-driven image-to-image (I2I) translation, where a source image acts as visual guidance to the generated image in addition to the textual guidance provided by the text prompt. We propose FBSDiff, a novel framework adapting off-the-shelf T2I diffusion model into the I2I paradigm from a fresh frequency-domain perspective. Through dynamic frequency band substitution of diffusion features, FBSDiff realizes versatile and highly controllable text-driven I2I in a plug-and-play manner (without need for model training, fine-tuning, or online optimization), allowing appearance-guided, layout-guided, and contour-guided I2I translation by progressively substituting low-frequency band, mid-frequency band, and high-frequency band of latent diffusion features, respectively. In addition, FBSDiff flexibly enables continuous control over I2I correlation intensity simply by tuning the bandwidth of the substituted frequency band. To further promote image translation efficiency, flexibility, and functionality, we propose FBSDiff++ which improves upon FBSDiff mainly in three aspects: (1) accelerate inference speed by a large margin (8.9$\times$ speedup in inference) with refined model architecture; (2) improve the Frequency Band Substitution module to allow for input source images of arbitrary resolution and aspect ratio; (3) extend model functionality to enable localized image manipulation and style-specific content creation with only subtle adjustments to the core method. Extensive qualitative and quantitative experiments verify superiority of FBSDiff++ in I2I translation visual quality, efficiency, versatility, and controllability compared to related advanced approaches.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.19115" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.19115.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <span class="category-badge">计算机视觉</span>
+        <span class="paper-id">2601.18585</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.18585" target="_blank">GimmBO: Interactive Generative Image Model Merging via Bayesian Optimization</a>
+      </h3>
+      <p class="paper-title-zh">GimmBO：基于贝叶斯优化的交互式生成图像模型融合</p>
+      <p class="paper-authors">Chenxi Liu, Selena Ling, Alec Jacobson</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个名为GimmBO的交互式系统，通过偏好贝叶斯优化（PBO）帮助用户高效探索扩散模型适配器的权重融合空间，解决了手动调整权重时维度灾难和效率低下的问题。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法基于真实使用场景中观察到的稀疏性和权重范围受限的特点，设计了一个两阶段的贝叶斯优化后端。首先通过全局探索确定有希望的权重区域，然后在该区域内进行精细调整，从而在高维空间中提高采样效率和收敛速度。系统支持用户通过偏好反馈（如选择更喜欢的生成图像）来引导优化过程。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 通过模拟用户和真实用户研究评估表明，GimmBO相比基础的贝叶斯优化和线性搜索基线，在收敛速度、成功率方面均有显著提升，并能稳定获得更优的融合结果。框架还展示了良好的扩展性，可支持多种扩展应用。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Fine-tuning-based adaptation is widely used to customize diffusion-based image generation, leading to large collections of community-created adapters that capture diverse subjects and styles. Adapters derived from the same base model can be merged with weights, enabling the synthesis of new visual results within a vast and continuous design space. To explore this space, current workflows rely on manual slider-based tuning, an approach that scales poorly and makes weight selection difficult, even when the candidate set is limited to 20-30 adapters. We propose GimmBO to support interactive exploration of adapter merging for image generation through Preferential Bayesian Optimization (PBO). Motivated by observations from real-world usage, including sparsity and constrained weight ranges, we introduce a two-stage BO backend that improves sampling efficiency and convergence in high-dimensional spaces. We evaluate our approach with simulated users and a user study, demonstrating improved convergence, high success rates, and consistent gains over BO and line-search baselines, and further show the flexibility of the framework through several extensions.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.18585" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.18585.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <span class="category-badge">计算机视觉</span>
+        <span class="paper-id">2601.18543</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.18543" target="_blank">GenAgent: Scaling Text-to-Image Generation via Agentic Multimodal Reasoning</a>
+      </h3>
+      <p class="paper-title-zh">GenAgent：通过智能体多模态推理扩展文本到图像生成</p>
+      <p class="paper-authors">Kaixun Jiang, Yuzheng Wang, Junjie Zhou, Pandeng Li, Zhihang Liu 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了GenAgent，一个通过智能体框架将视觉理解与生成解耦的统一多模态模型，它利用多轮自主交互和链式思维来迭代优化图像生成，避免了传统统一模型的高训练成本和能力权衡问题。</div>
+        <div class="summary-section"><strong>方法:</strong> 采用智能体框架，由多模态模型负责视觉理解，将图像生成模型作为可调用工具。通过两阶段训练策略：首先使用高质量工具调用和反思数据进行监督微调以启动智能体行为；然后进行端到端的智能体强化学习，结合针对最终图像质量的点奖励和针对反思准确性的对奖励，并利用轨迹重采样增强多轮探索。</div>
+        <div class="summary-section"><strong>关键发现:</strong> GenAgent显著提升了基础生成器（FLUX.1-dev）在GenEval++（+23.6%）和WISE（+14%）基准上的性能。框架展现出三个关键特性：1）能泛化到不同能力的生成器；2）测试时性能随交互轮次增加而持续提升；3）能自动适应不同任务的自适应推理能力。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>We introduce GenAgent, unifying visual understanding and generation through an agentic multimodal model. Unlike unified models that face expensive training costs and understanding-generation trade-offs, GenAgent decouples these capabilities through an agentic framework: understanding is handled by the multimodal model itself, while generation is achieved by treating image generation models as invokable tools. Crucially, unlike existing modular systems constrained by static pipelines, this design enables autonomous multi-turn interactions where the agent generates multimodal chains-of-thought encompassing reasoning, tool invocation, judgment, and reflection to iteratively refine outputs. We employ a two-stage training strategy: first, cold-start with supervised fine-tuning on high-quality tool invocation and reflection data to bootstrap agent behaviors; second, end-to-end agentic reinforcement learning combining pointwise rewards (final image quality) and pairwise rewards (reflection accuracy), with trajectory resampling for enhanced multi-turn exploration. GenAgent significantly boosts base generator(FLUX.1-dev) performance on GenEval++ (+23.6\%) and WISE (+14\%). Beyond performance gains, our framework demonstrates three key properties: 1) cross-tool generalization to generators with varying capabilities, 2) test-time scaling with consistent improvements across interaction rounds, and 3) task-adaptive reasoning that automatically adjusts to different tasks. Our code will be available at \href{https://github.com/deep-kaixun/GenAgent}{this url}.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.18543" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.18543.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <span class="category-badge">计算机视觉</span>
+        <span class="paper-id">2601.17927</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2601.17927" target="_blank">RemEdit: Efficient Diffusion Editing with Riemannian Geometry</a>
+      </h3>
+      <p class="paper-title-zh">RemEdit：基于黎曼几何的高效扩散编辑</p>
+      <p class="paper-authors">Eashan Adhikarla, Brian D. Davison</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> RemEdit框架通过将潜在空间建模为黎曼流形并引入任务特定的注意力剪枝机制，在保持高语义保真度的同时显著提升了扩散模型图像编辑的推理速度，解决了语义保真度与推理速度之间的关键权衡。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法首先将扩散模型的潜在空间视为黎曼流形，利用一个基于Mamba的模块高效学习流形结构，从而能够直接计算精确的测地线路径以实现平滑的语义编辑。其次，通过双SLERP混合技术和视觉语言模型的目标感知提示增强来进一步优化编辑控制。此外，还引入了一个轻量级的任务特定注意力剪枝头，学习保留对编辑至关重要的标记，实现有效加速而不损失语义质量。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，RemEdit在性能上超越了先前的先进编辑框架，并在高达50%的剪枝率下仍能保持实时性能，为实用且强大的图像编辑设立了新的基准。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Controllable image generation is fundamental to the success of modern generative AI, yet it faces a critical trade-off between semantic fidelity and inference speed. The RemEdit diffusion-based framework addresses this trade-off with two synergistic innovations. First, for editing fidelity, we navigate the latent space as a Riemannian manifold. A mamba-based module efficiently learns the manifold's structure, enabling direct and accurate geodesic path computation for smooth semantic edits. This control is further refined by a dual-SLERP blending technique and a goal-aware prompt enrichment pass from a Vision-Language Model. Second, for additional acceleration, we introduce a novel task-specific attention pruning mechanism. A lightweight pruning head learns to retain tokens essential to the edit, enabling effective optimization without the semantic degradation common in content-agnostic approaches. RemEdit surpasses prior state-of-the-art editing frameworks while maintaining real-time performance under 50% pruning. Consequently, RemEdit establishes a new benchmark for practical and powerful image editing. Source code: https://www.github.com/eashanadhikarla/RemEdit.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2601.17927" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2601.17927.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

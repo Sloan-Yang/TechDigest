@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-03-22</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.18599</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.18599" target="_blank">SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation</a>
+      </h3>
+      <p class="paper-title-zh">SJD-PAC：通过主动草拟与自适应延续加速推测性雅可比解码</p>
+      <p class="paper-authors">Jialiang Kang, Han Shu, Wenshuo Li, Yingjie Zhai, Xinghao Chen</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了SJD-PAC框架，通过主动草拟策略和自适应延续机制，显著提升了推测性雅可比解码在文本到图像生成中的令牌接受率，从而在保证无损图像质量的前提下大幅加速推理过程。</div>
+        <div class="summary-section"><strong>方法:</strong> SJD-PAC在推测性雅可比解码基础上进行了两项关键优化：首先，采用主动草拟策略，针对高熵的复杂视觉生成区域提高局部令牌接受率；其次，引入自适应延续机制，在首次拒绝后仍能维持序列验证，避免完全重新采样。两者协同工作，有效增加了每步的平均接受长度。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在标准文本到图像基准测试上的实验表明，SJD-PAC在保持无损图像质量的同时，实现了3.8倍的推理加速。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Speculative Jacobi Decoding (SJD) offers a draft-model-free approach to accelerate autoregressive text-to-image synthesis. However, the high-entropy nature of visual generation yields low draft-token acceptance rates in complex regions, creating a bottleneck that severely limits overall throughput. To overcome this, we introduce SJD-PAC, an enhanced SJD framework. First, SJD-PAC employs a proactive drafting strategy to improve local acceptance rates in these challenging high-entropy regions. Second, we introduce an adaptive continuation mechanism that sustains sequence validation after an initial rejection, bypassing the need for full resampling. Working in tandem, these optimizations significantly increase the average acceptance length per step, boosting inference speed while strictly preserving the target distribution. Experiments on standard text-to-image benchmarks demonstrate that SJD-PAC achieves a $3.8\times$ speedup with lossless image quality.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.18599" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.18599.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.18524</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.18524" target="_blank">3DreamBooth: High-Fidelity 3D Subject-Driven Video Generation Model</a>
+      </h3>
+      <p class="paper-title-zh">3DreamBooth：高保真三维主体驱动视频生成模型</p>
+      <p class="paper-authors">Hyun-kyu Ko, Jihyeon Park, Younghyun Kim, Dongheok Park, Eunbyung Park</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了首个三维感知的视频定制框架，通过解耦空间几何与时间运动，解决了现有二维方法在生成新视角时无法保持真实三维身份一致性的根本问题。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法包含两个核心组件：1) 3DreamBooth采用单帧优化范式，仅更新空间表征以注入鲁棒的三维先验，避免基于视频训练导致的时序过拟合；2) 引入视觉条件模块3Dapter，通过非对称条件策略与主生成分支进行多视角联合优化，该模块作为动态选择性路由器，从少量参考集中查询视角特定的几何线索，以增强纹理细节并加速收敛。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，该框架能够从单视角或稀疏多视角图像中生成高质量、视角一致且时间连贯的定制主体视频，在保真度、三维一致性和运动质量上显著优于现有二维定制方法，同时大幅减少了训练所需的数据量和计算成本。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Creating dynamic, view-consistent videos of customized subjects is highly sought after for a wide range of emerging applications, including immersive VR/AR, virtual production, and next-generation e-commerce. However, despite rapid progress in subject-driven video generation, existing methods predominantly treat subjects as 2D entities, focusing on transferring identity through single-view visual features or textual prompts. Because real-world subjects are inherently 3D, applying these 2D-centric approaches to 3D object customization reveals a fundamental limitation: they lack the comprehensive spatial priors necessary to reconstruct the 3D geometry. Consequently, when synthesizing novel views, they must rely on generating plausible but arbitrary details for unseen regions, rather than preserving the true 3D identity. Achieving genuine 3D-aware customization remains challenging due to the scarcity of multi-view video datasets. While one might attempt to fine-tune models on limited video sequences, this often leads to temporal overfitting. To resolve these issues, we introduce a novel framework for 3D-aware video customization, comprising 3DreamBooth and 3Dapter. 3DreamBooth decouples spatial geometry from temporal motion through a 1-frame optimization paradigm. By restricting updates to spatial representations, it effectively bakes a robust 3D prior into the model without the need for exhaustive video-based training. To enhance fine-grained textures and accelerate convergence, we incorporate 3Dapter, a visual conditioning module. Following single-view pre-training, 3Dapter undergoes multi-view joint optimization with the main generation branch via an asymmetrical conditioning strategy. This design allows the module to act as a dynamic selective router, querying view-specific geometric hints from a minimal reference set. Project page: https://ko-lani.github.io/3DreamBooth/</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.18524" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.18524.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.18488</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.18488" target="_blank">TexEditor: Structure-Preserving Text-Driven Texture Editing</a>
+      </h3>
+      <p class="paper-title-zh">TexEditor：保持结构的文本驱动纹理编辑</p>
+      <p class="paper-authors">Bo Zhao, Yihang Liu, Chenfeng Zhang, Huan Yang, Kun Gai 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了TexEditor，一个专门用于文本引导纹理编辑的模型，通过从数据和训练两个角度联合增强结构保持能力，并构建了一个通用的真实世界基准测试集TexBench。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先，使用Blender构建了高质量的有监督微调数据集TexBlender，为模型提供了强大的结构先验。其次，提出了StructureNFT方法，这是一种基于强化学习的方法，通过整合结构保持损失，将在SFT阶段学习到的结构先验迁移到真实场景中。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在现有的基于Blender的纹理基准测试集和作者提出的TexBench上进行的大量实验表明，TexEditor consistently outperforms strong baselines such as Nano Banana Pro。此外，在通用基准测试集ImgEdit上的评估验证了模型的泛化能力。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Text-guided texture editing aims to modify object appearance while preserving the underlying geometric structure. However, our empirical analysis reveals that even SOTA editing models frequently struggle to maintain structural consistency during texture editing, despite the intended changes being purely appearance-related. Motivated by this observation, we jointly enhance structure preservation from both data and training perspectives, and build TexEditor, a dedicated texture editing model based on Qwen-Image-Edit-2509. Firstly, we construct TexBlender, a high-quality SFT dataset generated with Blender, which provides strong structural priors for a cold start. Sec- ondly, we introduce StructureNFT, a RL-based approach that integrates structure-preserving losses to transfer the structural priors learned during SFT to real-world scenes. Moreover, due to the limited realism and evaluation coverage of existing benchmarks, we introduce TexBench, a general-purpose real-world benchmark for text-guided texture editing. Extensive experiments on existing Blender-based texture benchmarks and our TexBench show that TexEditor consistently outperforms strong baselines such as Nano Banana Pro. In addition, we assess TexEditor on the general purpose benchmark ImgEdit to validate its generalization. Our code and data are available at https://github.com/KlingAIResearch/TexEditor.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.18488" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.18488.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.18466</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.18466" target="_blank">Recolour What Matters: Region-Aware Colour Editing via Token-Level Diffusion</a>
+      </h3>
+      <p class="paper-title-zh">重绘关键区域：基于Token级扩散的区域感知色彩编辑</p>
+      <p class="paper-authors">Yuqi Yang, Dongliang Chang, Yijia Ling, Ruoyi Du, Zhanyu Ma</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了ColourCrafter框架，将色彩编辑从全局色调迁移转变为结构化、区域感知的生成过程，并构建了包含连续多样色彩变化的大规模高质量图像对数据集ColourfulSet。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法在潜在空间中对RGB色彩Token和图像Token进行Token级融合，选择性地将色彩信息传播到语义相关区域以保持结构保真度；同时引入感知Lab空间损失，通过解耦亮度和色度并约束在掩码区域内编辑，增强像素级精度。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，ColourCrafter在细粒度色彩编辑任务中实现了最先进的色彩准确性、可控性和感知保真度，显著改善了传统方法在局部编辑时色彩偏离目标色调的问题。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Colour is one of the most perceptually salient yet least controllable attributes in image generation. Although recent diffusion models can modify object colours from user instructions, their results often deviate from the intended hue, especially for fine-grained and local edits. Early text-driven methods rely on discrete language descriptions that cannot accurately represent continuous chromatic variations. To overcome this limitation, we propose ColourCrafter, a unified diffusion framework that transforms colour editing from global tone transfer into a structured, region-aware generation process. Unlike traditional colour driven methods, ColourCrafter performs token-level fusion of RGB colour tokens and image tokens in latent space, selectively propagating colour information to semantically relevant regions while preserving structural fidelity. A perceptual Lab-space Loss further enhances pixel-level precision by decoupling luminance and chrominance and constraining edits within masked areas. Additionally, we build ColourfulSet, a largescale dataset of high-quality image pairs with continuous and diverse colour variations. Extensive experiments demonstrate that ColourCrafter achieves state-of-the-art colour accuracy, controllability and perceptual fidelity in fine-grained colour editing. Our project is available at https://yangyuqi317.github.io/ColourCrafter.github.io/.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.18466" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.18466.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.17944</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.17944" target="_blank">TransText: Alpha-as-RGB Representation for Transparent Text Animation</a>
+      </h3>
+      <p class="paper-title-zh">TransText：用于透明文字动画的 Alpha-as-RGB 表示方法</p>
+      <p class="paper-authors">Fei Zhang, Zijian Zhou, Bohao Tang, Sen He, Hang Li 等 (12 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了首个将图像到视频模型适配于图层感知文字（字形）动画的方法，并创新性地设计了 Alpha-as-RGB 范式，在不修改预训练生成模型的前提下联合建模外观与透明度。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法提出了一种新颖的 Alpha-as-RGB 范式，通过潜在空间拼接将透明度通道（Alpha）嵌入为与 RGB 兼容的视觉信号。该框架避免了将 Alpha 通道作为额外潜在维度附加到 RGB 空间，从而无需重建底层的以 RGB 为中心的变分自编码器（VAE）。它明确确保了跨模态（RGB 与 Alpha）的严格一致性，同时防止了特征纠缠。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，TransText 显著优于基线方法，能够生成连贯、高保真度的透明文字动画，并实现多样且精细的视觉效果，同时避免了因重新训练 VAE 而可能导致的潜在模式混合和语义先验知识损失。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>We introduce the first method, to the best of our knowledge, for adapting image-to-video models to layer-aware text (glyph) animation, a capability critical for practical dynamic visual design. Existing approaches predominantly handle the transparency-encoding (alpha channel) as an extra latent dimension appended to the RGB space, necessitating the reconstruction of the underlying RGB-centric variational autoencoder (VAE). However, given the scarcity of high-quality transparent glyph data, retraining the VAE is computationally expensive and may erode the robust semantic priors learned from massive RGB corpora, potentially leading to latent pattern mixing. To mitigate these limitations, we propose TransText, a framework based on a novel Alpha-as-RGB paradigm to jointly model appearance and transparency without modifying the pre-trained generative manifold. TransText embeds the alpha channel as an RGB-compatible visual signal through latent spatial concatenation, explicitly ensuring strict cross-modal (RGB-and-Alpha) consistency while preventing feature entanglement. Our experiments demonstrate that TransText significantly outperforms baselines, generating coherent, high-fidelity transparent animations with diverse, fine-grained effects.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.17944" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.17944.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

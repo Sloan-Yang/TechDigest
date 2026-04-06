@@ -1,0 +1,113 @@
+# TechDigest 配置文件
+# 修改此文件来自定义你的内容追踪偏好
+
+# arXiv 分类 (完整列表: https://arxiv.org/category_taxonomy)
+# 这里聚焦与图像/版式/视觉设计强相关的方向
+categories:
+  - cs.CV    # 计算机视觉
+  - cs.GR    # 图形学
+  - cs.MM    # 多媒体
+
+# 关键词过滤 (匹配标题或摘要，不区分大小写)
+# 论文需要匹配至少一个关键词才会被收录
+keywords:
+  # 平面设计 / 版式 / 视觉设计
+  - graphic design
+  - layout
+  - page layout
+  - document layout
+  - ui design
+  - poster
+  - typography
+  - font
+  - visual design
+  - aesthetic
+  - composition
+
+  # 图像 / 版式生成相关
+  - image generation
+  - font generation
+  - text-to-image
+  - flow-matching
+  - image-to-text
+  - diffusion
+  - gan
+  - controllable generation
+  - layout generation
+
+# 排除关键词 (包含这些词的论文会被过滤掉)
+exclude_keywords:
+  - medical
+  - clinical
+  - surgery
+  - cancer
+  - tumor
+
+# 每日最大论文数量
+max_papers_per_day: 5
+
+# 相关性评分权重 (用于排序)
+relevance_weights:
+  keyword_in_title: 3.0    # 关键词出现在标题中
+  keyword_in_abstract: 1.0 # 关键词出现在摘要中
+  primary_category: 2.0    # 论文主分类匹配
+  
+# LLM API 配置 (兼容所有 OpenAI 格式接口)
+# 示例:
+#   DeepSeek 官方:  base_url: "https://api.deepseek.com/v1",  model: deepseek-chat
+#   OpenAI:         base_url: "https://api.openai.com/v1",    model: gpt-4o-mini
+#   第三方转发:     base_url: "https://xh.v1api.cc/v1",       model: deepseek-chat
+llm:
+  model: deepseek-chat
+  max_tokens: 500
+  temperature: 0.3
+  base_url: "https://xh.v1api.cc/v1"
+
+# 偏好配置: 用于 LLM 打分时描述你的兴趣
+preference:
+  profile: >
+    我是一名研究design intelligence的研究生，重点关注：
+    1）图像、海报、网页、UI、文档等视觉内容的生成与布局；
+    2）text-to-image、image generation、layout generation 等生成模型；
+    3）像 "Scaling Text-to-Image Diffusion Transformers with Representation Autoencoders" 这种
+       提升生成质量、效率或可控性的 diffusion / transformer 方法。
+    对医学影像、临床应用等 medical / clinical / MRI / CT / cancer / tumor 方向不感兴趣，应当打低分。
+
+# Hacker News 配置
+hackernews:
+  fetch_top_n: 100          # 每次抓取的 top N 条目
+  max_stories_per_day: 8    # 每日推荐数量
+
+  preference:
+    profile: >
+      我对technical的东西都很感兴趣，包括：
+      1）AI / ML 工具、图像生成、设计工具、创意编程；
+      2）游戏引擎，Rust语言，游戏开发相关的技术和项目；
+      3）有趣的开源项目、前端/UI 技术、排版与字体工具；
+      4）大模型、diffusion model、多模态方向的技术进展和工程实践；
+      5）值得关注的技术产品、创业项目或设计相关的 Show HN。
+      对纯商业财经、政治新闻、体育、与技术/设计完全无关的内容不感兴趣，应打低分。
+
+# GitHub Trending 配置
+github_trending:
+  max_repos_per_day: 8     # 每日推荐数量
+
+  preference:
+    profile: >
+      我对技术类项目都很感兴趣，包括：
+      1）AI / ML 工具、图像生成、设计工具、创意编程；
+      2）游戏引擎、Rust 语言、游戏开发相关的技术和项目；
+      3）有趣的开源项目、前端/UI 技术、排版与字体工具；
+      4）大模型、diffusion model、多模态方向的工程实践；
+      5）值得关注的开发者工具、CLI 工具、生产力工具。
+      对纯商业项目、非技术内容不感兴趣，应打低分。
+
+# 站点配置
+site:
+  title: "TechDigest"
+  description: "每日精选 · arXiv · Hacker News · GitHub Trending"
+  author: "Sloan"
+  base_url: "https://sloan-yang.github.io/TechDigest/"
+  
+# 时区设置 (用于显示日期)
+timezone: Asia/Shanghai

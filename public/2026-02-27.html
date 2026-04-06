@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-02-27</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 4 | 图形学: 1</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.23235</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.23235" target="_blank">Spatio-Temporal Token Pruning for Efficient High-Resolution GUI Agents</a>
+      </h3>
+      <p class="paper-title-zh">面向高效高分辨率图形用户界面智能体的时空令牌剪枝</p>
+      <p class="paper-authors">Zhou Xu, Bowen Zhou, Qi Wang, Shuwen Feng, Jingyu Xiao</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了GUIPruner框架，通过解决现有压缩方法中的时间错位和空间拓扑冲突问题，首次实现了对高分辨率GUI导航智能体视觉输入的高效、无训练压缩，在保持性能的同时大幅提升效率。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法包含两个核心组件：1) 时间自适应分辨率(TAR)，基于衰减机制动态调整历史轨迹的编码分辨率，以匹配智能体的“记忆衰减”注意力模式；2) 分层结构感知剪枝(SSP)，在保护全局布局完整性的前提下，优先保留交互前景和语义锚点等关键空间信息，避免坐标定位错误。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在多个基准测试上的实验表明，GUIPruner能持续取得最优性能，有效防止高压缩下的大模型性能崩溃。以Qwen2-VL-2B模型为例，该方法在保持94%以上原始性能的同时，实现了3.4倍的浮点运算量减少和3.3倍的视觉编码延迟加速，使高精度实时GUI导航得以在极低资源消耗下运行。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Pure-vision GUI agents provide universal interaction capabilities but suffer from severe efficiency bottlenecks due to the massive spatiotemporal redundancy inherent in high-resolution screenshots and historical trajectories. We identify two critical misalignments in existing compression paradigms: the temporal mismatch, where uniform history encoding diverges from the agent's "fading memory" attention pattern, and the spatial topology conflict, where unstructured pruning compromises the grid integrity required for precise coordinate grounding, inducing spatial hallucinations. To address these challenges, we introduce GUIPruner, a training-free framework tailored for high-resolution GUI navigation. It synergizes Temporal-Adaptive Resolution (TAR), which eliminates historical redundancy via decay-based resizing, and Stratified Structure-aware Pruning (SSP), which prioritizes interactive foregrounds and semantic anchors while safeguarding global layout. Extensive evaluations across diverse benchmarks demonstrate that GUIPruner consistently achieves state-of-the-art performance, effectively preventing the collapse observed in large-scale models under high compression. Notably, on Qwen2-VL-2B, our method delivers a 3.4x reduction in FLOPs and a 3.3x speedup in vision encoding latency while retaining over 94% of the original performance, enabling real-time, high-precision navigation with minimal resource consumption.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.23235" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.23235.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.23191</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.23191" target="_blank">Uni-Animator: Towards Unified Visual Colorization</a>
+      </h3>
+      <p class="paper-title-zh">Uni-Animator：迈向统一的视觉着色</p>
+      <p class="paper-authors">Xinyuan Chen, Yao Xu, Shaowen Wang, Pengjie Song, Bowen Deng</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个基于扩散Transformer的统一图像与视频草图着色框架，解决了现有方法在跨任务统一、颜色迁移精度、细节保持和时间一致性方面的不足。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法采用扩散Transformer架构，通过实例块嵌入增强视觉参考以实现精确颜色对齐与融合；利用物理特征强化机制捕捉并保留高频纹理细节；设计了基于草图的动态RoPE编码，自适应建模运动感知的时空依赖关系以提升时序一致性。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，Uni-Animator在图像和视频草图着色任务上均达到与任务专用方法相当的性能，同时实现了跨域统一能力，具有高细节保真度和鲁棒的时间一致性，尤其在大运动场景中有效减少了运动伪影。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>We propose Uni-Animator, a novel Diffusion Transformer (DiT)-based framework for unified image and video sketch colorization. Existing sketch colorization methods struggle to unify image and video tasks, suffering from imprecise color transfer with single or multiple references, inadequate preservation of high-frequency physical details, and compromised temporal coherence with motion artifacts in large-motion scenes. To tackle imprecise color transfer, we introduce visual reference enhancement via instance patch embedding, enabling precise alignment and fusion of reference color information. To resolve insufficient physical detail preservation, we design physical detail reinforcement using physical features that effectively capture and retain high-frequency textures. To mitigate motion-induced temporal inconsistency, we propose sketch-based dynamic RoPE encoding that adaptively models motion-aware spatial-temporal dependencies. Extensive experimental results demonstrate that Uni-Animator achieves competitive performance on both image and video sketch colorization, matching that of task-specific methods while unlocking unified cross-domain capabilities with high detail fidelity and robust temporal consistency.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.23191" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.23191.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">图形学</span>
+          <span class="paper-id">2602.23010</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.23010" target="_blank">HELMLAB: An Analytical, Data-Driven Color Space for Perceptual Distance in UI Design Systems</a>
+      </h3>
+      <p class="paper-title-zh">HELMLAB：一种用于UI设计系统中感知距离的分析型数据驱动色彩空间</p>
+      <p class="paper-authors">Gorkem Yildiz</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了HELMLAB，一个包含72个参数的分析型色彩空间，旨在为UI设计系统提供更准确的色彩感知距离度量，其性能显著优于CIEDE2000标准。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法通过一系列可学习的矩阵、逐通道幂压缩、傅里叶色调校正以及内嵌的亥姆霍兹-科勒劳施明度调整，将CIE XYZ色彩空间映射到感知组织的Lab表示。流程后包含中性色校正以确保消色差色彩映射准确，并通过刚性旋转优化色调角度对齐而不影响距离度量。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在COMBVD数据集（3,813个色彩对）上，HELMLAB的STRESS指标为23.22，较CIEDE2000（29.18）降低了20.4%。跨数据集验证显示其具有竞争力的泛化性能，且变换可逆，往返误差低于10^-14。该空间还集成了色域映射、设计令牌导出及明暗模式适配等实用工具。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>We present HELMLAB, a 72-parameter analytical color space for UI design systems. The forward transform maps CIE XYZ to a perceptually-organized Lab representation through learned matrices, per-channel power compression, Fourier hue correction, and embedded Helmholtz-Kohlrausch lightness adjustment. A post-pipeline neutral correction guarantees that achromatic colors map to a=b=0 (chroma < 10^-6), and a rigid rotation of the chromatic plane improves hue-angle alignment without affecting the distance metric, which is invariant under isometries. On the COMBVD dataset (3,813 color pairs), HELMLAB achieves a STRESS of 23.22, a 20.4% reduction from CIEDE2000 (29.18). Cross-validation on He et al. 2022 and MacAdam 1974 shows competitive cross-dataset performance. The transform is invertible with round-trip errors below 10^-14. Gamut mapping, design-token export, and dark/light mode adaptation utilities are included for use in web and mobile design systems.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.23010" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.23010.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.22948</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.22948" target="_blank">ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization</a>
+      </h3>
+      <p class="paper-title-zh">ToProVAR：通过三维熵感知语义分析与稀疏性优化的高效视觉自回归建模</p>
+      <p class="paper-authors">Jiayu Chen, Ruoyu Lin, Zihao Zheng, Jingxin Li, Maoliang Li 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种基于三维（词元、层、尺度）熵感知语义分析与稀疏性优化的视觉自回归模型加速框架，从根本上改进了传统启发式跳过策略，在保持生成质量的同时显著提升效率。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先利用注意力熵分析模型在不同词元粒度、语义范围和生成尺度下的参数动态特性；进而识别出词元、层和尺度三个维度的稀疏性模式；最后针对这些模式设计细粒度的优化策略，实现精准的计算加速。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在Infinity-2B和Infinity-8B模型上的实验表明，ToProVAR最高可实现3.4倍的生成加速，且质量损失极小，在效率和质量上均优于传统方法（如FastVAR和SkipVAR），有效解决了视觉自回归模型后期阶段的效率瓶颈问题。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Visual Autoregressive(VAR) models enhance generation quality but face a critical efficiency bottleneck in later stages. In this paper, we present a novel optimization framework for VAR models that fundamentally differs from prior approaches such as FastVAR and SkipVAR. Instead of relying on heuristic skipping strategies, our method leverages attention entropy to characterize the semantic projections across different dimensions of the model architecture. This enables precise identification of parameter dynamics under varying token granularity levels, semantic scopes, and generation scales. Building on this analysis, we further uncover sparsity patterns along three critical dimensions-token, layer, and scale-and propose a set of fine-grained optimization strategies tailored to these patterns. Extensive evaluation demonstrates that our approach achieves aggressive acceleration of the generation process while significantly preserving semantic fidelity and fine details, outperforming traditional methods in both efficiency and quality. Experiments on Infinity-2B and Infinity-8B models demonstrate that ToProVAR achieves up to 3.4x acceleration with minimal quality loss, effectively mitigating the issues found in prior work. Our code will be made publicly available.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.22948" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.22948.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.22809</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.22809" target="_blank">PhotoAgent: Agentic Photo Editing with Exploratory Visual Aesthetic Planning</a>
+      </h3>
+      <p class="paper-title-zh">PhotoAgent：基于探索性视觉美学规划的智能照片编辑</p>
+      <p class="paper-authors">Mingde Yao, Zhiyuan You, Tam-King Man, Menglu Wang, Tianfan Xue</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个能够自主进行照片编辑的智能体系统，通过显式的美学规划将编辑任务转化为长程决策问题，并引入了一个用于真实场景评估的美学评价基准。</div>
+        <div class="summary-section"><strong>方法:</strong> 该系统将自主图像编辑建模为一个长程决策问题。它首先推理用户的美学意图，然后通过树搜索规划多步编辑动作，最后利用记忆和视觉反馈进行闭环迭代执行，整个过程无需用户逐步提供指令。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 广泛的实验表明，与基线方法相比，PhotoAgent在指令遵循度和视觉质量方面均有持续提升。为支持评估而构建的测试集（包含1,017张照片）也系统性地验证了其自主照片编辑性能。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>With the recent fast development of generative models, instruction-based image editing has shown great potential in generating high-quality images. However, the quality of editing highly depends on carefully designed instructions, placing the burden of task decomposition and sequencing entirely on the user. To achieve autonomous image editing, we present PhotoAgent, a system that advances image editing through explicit aesthetic planning. Specifically, PhotoAgent formulates autonomous image editing as a long-horizon decision-making problem. It reasons over user aesthetic intent, plans multi-step editing actions via tree search, and iteratively refines results through closed-loop execution with memory and visual feedback, without requiring step-by-step user prompts. To support reliable evaluation in real-world scenarios, we introduce UGC-Edit, an aesthetic evaluation benchmark consisting of 7,000 photos and a learned aesthetic reward model. We also construct a test set containing 1,017 photos to systematically assess autonomous photo editing performance. Extensive experiments demonstrate that PhotoAgent consistently improves both instruction adherence and visual quality compared with baseline methods. The project page is https://github.com/mdyao/PhotoAgent.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.22809" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.22809.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

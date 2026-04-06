@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-02-25</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.20672</span>
+        </div>
+        <span class="score-badge">相关性 95/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.20672" target="_blank">BBQ-to-Image: Numeric Bounding Box and Qolor Control in Large-Scale Text-to-Image Models</a>
+      </h3>
+      <p class="paper-title-zh">BBQ-to-Image：大规模文本到图像模型中的数值边界框与颜色控制</p>
+      <p class="paper-authors">Eliran Kachlon, Alexander Visheratin, Nimrod Sarid, Tal Hacham, Eyal Gutflaish 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种能够直接基于数值边界框和RGB三元组进行图像生成的大规模文本到图像模型，实现了对物体位置、尺寸和颜色的精确数值控制，弥合了描述性语言与专业工作流程之间的参数鸿沟。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法在统一的结构化文本框架下，通过使用包含参数化标注（如边界框坐标和RGB值）的增强描述进行训练，使模型能够直接理解并响应数值参数。整个过程无需修改模型架构或进行推理时优化，同时支持通过直观的用户界面（如对象拖拽和颜色选择器）进行交互。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在全面评估中，BBQ模型在边界框对齐方面表现优异，并且在RGB颜色保真度上超越了现有先进基线模型。研究结果支持了一种新范式：将用户意图转化为中间结构化语言，再由一个基于流的Transformer作为渲染器进行消费，从而自然地容纳数值参数。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Text-to-image models have rapidly advanced in realism and controllability, with recent approaches leveraging long, detailed captions to support fine-grained generation. However, a fundamental parametric gap remains: existing models rely on descriptive language, whereas professional workflows require precise numeric control over object location, size, and color. In this work, we introduce BBQ, a large-scale text-to-image model that directly conditions on numeric bounding boxes and RGB triplets within a unified structured-text framework. We obtain precise spatial and chromatic control by training on captions enriched with parametric annotations, without architectural modifications or inference-time optimization. This also enables intuitive user interfaces such as object dragging and color pickers, replacing ambiguous iterative prompting with precise, familiar controls. Across comprehensive evaluations, BBQ achieves strong box alignment and improves RGB color fidelity over state-of-the-art baselines. More broadly, our results support a new paradigm in which user intent is translated into an intermediate structured language, consumed by a flow-based transformer acting as a renderer and naturally accommodating numeric parameters.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.20672" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.20672.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.20989</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.20989" target="_blank">Cycle-Consistent Tuning for Layered Image Decomposition</a>
+      </h3>
+      <p class="paper-title-zh">用于分层图像分解的循环一致性调优</p>
+      <p class="paper-authors">Zheng Gu, Min Lu, Zhida Sun, Dani Lischinski, Daniel Cohen-O 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个基于上下文的分层图像分解框架，利用大型扩散基础模型实现视觉层的分离，并通过循环一致性调优策略和渐进式自我改进过程，显著提升了复杂交互场景下的分解鲁棒性与准确性。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法基于预训练的扩散模型，通过轻量级的LoRA适配进行微调。核心是引入循环一致性调优策略，联合训练分解模型和合成模型，强制要求分解后重新合成的图像与原始图像保持一致。此外，采用渐进式自我改进过程，迭代地使用模型生成的高质量样本扩充训练集以优化性能。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量实验表明，该方法在标志-物体分解等具有复杂非线性交互的任务中，能够实现准确且连贯的分解，并有效保留各层的完整性。同时，该方法能有效泛化至其他类型的图像分解任务，显示出其作为统一分层图像分解框架的潜力。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Disentangling visual layers in real-world images is a persistent challenge in vision and graphics, as such layers often involve non-linear and globally coupled interactions, including shading, reflection, and perspective distortion. In this work, we present an in-context image decomposition framework that leverages large diffusion foundation models for layered separation. We focus on the challenging case of logo-object decomposition, where the goal is to disentangle a logo from the surface on which it appears while faithfully preserving both layers. Our method fine-tunes a pretrained diffusion model via lightweight LoRA adaptation and introduces a cycle-consistent tuning strategy that jointly trains decomposition and composition models, enforcing reconstruction consistency between decomposed and recomposed images. This bidirectional supervision substantially enhances robustness in cases where the layers exhibit complex interactions. Furthermore, we introduce a progressive self-improving process, which iteratively augments the training set with high-quality model-generated examples to refine performance. Extensive experiments demonstrate that our approach achieves accurate and coherent decompositions and also generalizes effectively across other decomposition types, suggesting its potential as a unified framework for layered image decomposition.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.20989" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.20989.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.20951</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.20951" target="_blank">See and Fix the Flaws: Enabling VLMs and Diffusion Models to Comprehend Visual Artifacts via Agentic Data Synthesis</a>
+      </h3>
+      <p class="paper-title-zh">观察与修复缺陷：通过智能体数据合成使视觉语言模型和扩散模型能够理解视觉伪影</p>
+      <p class="paper-authors">Jaehyun Park, Minyoung Ahn, Minkyu Kim, Jonghyun Lee, Jae-Gil Lee 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了ArtiAgent框架，能够自动合成包含丰富伪影标注的大规模图像数据集，解决了人工标注成本高、难以扩展的问题，为视觉伪影的识别与缓解研究提供了高效的数据基础。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法构建了一个包含三个智能体的系统：1）感知智能体从真实图像中识别并定位实体和子实体；2）合成智能体通过在扩散变换器中进行新颖的块级嵌入操作，利用伪影注入工具向图像中引入伪影；3）策展智能体对合成的伪影进行筛选，并为每个实例生成局部和全局的解释说明。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 利用ArtiAgent合成了10万张带有丰富伪影标注的图像，并在多种下游应用中验证了其有效性和通用性，表明该框架能够高效、自动地生成高质量的伪影-图像对数据。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Despite recent advances in diffusion models, AI generated images still often contain visual artifacts that compromise realism. Although more thorough pre-training and bigger models might reduce artifacts, there is no assurance that they can be completely eliminated, which makes artifact mitigation a highly crucial area of study. Previous artifact-aware methodologies depend on human-labeled artifact datasets, which are costly and difficult to scale, underscoring the need for an automated approach to reliably acquire artifact-annotated datasets. In this paper, we propose ArtiAgent, which efficiently creates pairs of real and artifact-injected images. It comprises three agents: a perception agent that recognizes and grounds entities and subentities from real images, a synthesis agent that introduces artifacts via artifact injection tools through novel patch-wise embedding manipulation within a diffusion transformer, and a curation agent that filters the synthesized artifacts and generates both local and global explanations for each instance. Using ArtiAgent, we synthesize 100K images with rich artifact annotations and demonstrate both efficacy and versatility across diverse applications. Code is available at link.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.20951" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.20951.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.20903</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.20903" target="_blank">TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering</a>
+      </h3>
+      <p class="paper-title-zh">TextPecker：通过奖励结构异常量化来增强视觉文本渲染</p>
+      <p class="paper-authors">Hanshen Zhu, Yuliang Liu, Xuecheng Wu, An-Lan Wang, Hao Feng 等 (10 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了TextPecker，一种即插即用的结构异常感知强化学习策略，解决了现有模型难以感知文本结构异常（如扭曲、模糊、错位）的关键瓶颈，从而显著提升了文本到图像生成中视觉文本渲染的结构保真度。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法主要包括：1）构建了一个带有字符级结构异常标注的识别数据集；2）开发了一个笔画编辑合成引擎，以扩展对结构错误的覆盖范围；3）基于此，设计了一种能够感知结构异常的强化学习奖励策略，该策略可减轻噪声奖励信号，并能与任何文本到图像生成器配合使用。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，TextPecker能持续提升多种文本到图像模型的性能。即使在已充分优化的Qwen-Image模型上，它也能在中文文本渲染中，将结构保真度平均提升4%，语义对齐度平均提升8.7%，从而在高保真视觉文本渲染领域确立了新的最优性能。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Visual Text Rendering (VTR) remains a critical challenge in text-to-image generation, where even advanced models frequently produce text with structural anomalies such as distortion, blurriness, and misalignment. However, we find that leading MLLMs and specialist OCR models largely fail to perceive these structural anomalies, creating a critical bottleneck for both VTR evaluation and RL-based optimization. As a result, even state-of-the-art generators (e.g., SeedDream4.0, Qwen-Image) still struggle to render structurally faithful text. To address this, we propose TextPecker, a plug-and-play structural anomaly perceptive RL strategy that mitigates noisy reward signals and works with any textto-image generator. To enable this capability, we construct a recognition dataset with character-level structural-anomaly annotations and develop a stroke-editing synthesis engine to expand structural-error coverage. Experiments show that TextPecker consistently improves diverse text-to-image models; even on the well-optimized Qwen-Image, it significantly yields average gains of 4% in structural fidelity and 8.7% in semantic alignment for Chinese text rendering, establishing a new state-of-the-art in high-fidelity VTR. Our work fills a gap in VTR optimization, providing a foundational step towards reliable and structural faithful visual text generation.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.20903" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.20903.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.20880</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.20880" target="_blank">When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance</a>
+      </h3>
+      <p class="paper-title-zh">当安全发生碰撞：通过自适应安全引导解决文生图扩散模型中的多类别有害冲突</p>
+      <p class="paper-authors">Yongli Xiang, Ziming Hong, Zhaoqing Wang, Xiangyu Zhao, Bo Han 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了冲突感知自适应安全引导（CASG）框架，首次系统性地识别并解决了文生图扩散模型中不同有害类别之间的“有害冲突”问题，即在抑制一类有害内容时可能无意间加剧另一类有害内容的生成。</div>
+        <div class="summary-section"><strong>方法:</strong> CASG是一个无需训练的两阶段框架：1）冲突感知类别识别（CaCI），根据模型在生成过程中的动态状态，识别出与之最相关的单一有害类别；2）冲突解决引导应用（CrGA），仅沿着识别出的单一有害类别方向施加安全引导，避免多类别引导间的相互干扰。该方法可同时应用于潜在空间和文本空间的安全防护机制。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在文生图安全基准测试上的实验表明，CASG取得了最先进的性能，与现有方法相比，能将有害内容生成率降低高达15.4%，有效解决了多类别有害冲突问题，显著提升了整体安全性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Text-to-Image (T2I) diffusion models have demonstrated significant advancements in generating high-quality images, while raising potential safety concerns regarding harmful content generation. Safety-guidance-based methods have been proposed to mitigate harmful outputs by steering generation away from harmful zones, where the zones are averaged across multiple harmful categories based on predefined keywords. However, these approaches fail to capture the complex interplay among different harm categories, leading to "harmful conflicts" where mitigating one type of harm may inadvertently amplify another, thus increasing overall harmful rate. To address this issue, we propose Conflict-aware Adaptive Safety Guidance (CASG), a training-free framework that dynamically identifies and applies the category-aligned safety direction during generation. CASG is composed of two components: (i) Conflict-aware Category Identification (CaCI), which identifies the harmful category most aligned with the model's evolving generative state, and (ii) Conflict-resolving Guidance Application (CrGA), which applies safety steering solely along the identified category to avoid multi-category interference. CASG can be applied to both latent-space and text-space safeguards. Experiments on T2I safety benchmarks demonstrate CASG's state-of-the-art performance, reducing the harmful rate by up to 15.4% compared to existing methods.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.20880" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.20880.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

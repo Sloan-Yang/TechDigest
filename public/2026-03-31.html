@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-03-31</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.28493</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.28493" target="_blank">ConceptWeaver: Weaving Disentangled Concepts with Flow</a>
+      </h3>
+      <p class="paper-title-zh">ConceptWeaver：利用流模型编织解耦的概念</p>
+      <p class="paper-authors">Jintao Chen, Aiming Hao, Xiaoqing Chen, Chengyu Bai, Chubin Chen 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文揭示了基于流的生成模型具有三阶段生成过程，并据此提出了ConceptWeaver框架，实现了从单张参考图像中进行概念解耦与组合编辑。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先，作者提出了一种新颖的差分探测技术，分析单个概念令牌对速度场的影响，从而发现生成过程包含蓝图、实例化和细化三个阶段。基于此发现，ConceptWeaver采用阶段感知优化策略，从单张参考图像中学习特定概念的语义偏移量，并在推理时通过提出的ConceptWeaver Guidance机制，在合适的生成阶段注入这些偏移量。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 关键实验表明，生成过程确实存在三个不同阶段：蓝图阶段建立低频结构，实例化阶段是内容概念出现、强度达到峰值并自然解耦的关键窗口，最后是概念不敏感的细化阶段。ConceptWeaver框架能够实现高保真度的组合合成与编辑，验证了理解和利用流模型内在的阶段特性是实现精确、多粒度内容操控的关键。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Pre-trained flow-based models excel at synthesizing complex scenes yet lack a direct mechanism for disentangling and customizing their underlying concepts from one-shot real-world sources. To demystify this process, we first introduce a novel differential probing technique to isolate and analyze the influence of individual concept tokens on the velocity field over time. This investigation yields a critical insight: the generative process is not monolithic but unfolds in three distinct stages. An initial \textbf{Blueprint Stage} establishes low-frequency structure, followed by a pivotal \textbf{Instantiation Stage} where content concepts emerge with peak intensity and become naturally disentangled, creating an optimal window for manipulation. A final concept-insensitive refinement stage then synthesizes fine-grained details. Guided by this discovery, we propose \textbf{ConceptWeaver}, a framework for one-shot concept disentanglement. ConceptWeaver learns concept-specific semantic offsets from a single reference image using a stage-aware optimization strategy that aligns with the three-stage framework. These learned offsets are then deployed during inference via our novel ConceptWeaver Guidance (CWG) mechanism, which strategically injects them at the appropriate generative stage. Extensive experiments validate that ConceptWeaver enables high-fidelity, compositional synthesis and editing, demonstrating that understanding and leveraging the intrinsic, staged nature of flow models is key to unlocking precise, multi-granularity content manipulation.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.28493" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.28493.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.28460</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.28460" target="_blank">$R_{dm}$: Re-conceptualizing Distribution Matching as a Reward for Diffusion Distillation</a>
+      </h3>
+      <p class="paper-title-zh">R_dm：将分布匹配重新概念化为扩散蒸馏的奖励</p>
+      <p class="paper-authors">Linqian Fan, Peiqin Sun, Tiancheng Wen, Shun Lu, Chengru Song</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了一种新范式，将分布匹配重新概念化为一种奖励信号（R_dm），从而统一了扩散匹配蒸馏（DMD）与强化学习（RL）的算法框架，实现了更稳定、灵活且高效的扩散模型蒸馏。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法的核心是提出了组归一化分布匹配（GNDM），通过利用组均值统计量来稳定R_dm奖励的估计，从而确立更鲁棒的优化方向。该奖励中心的框架天然支持自适应权重机制，可灵活地将DMD与外部奖励模型结合。同时，该框架基于RL原理，能够方便地引入重要性采样（IS）以显著提升采样效率。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，GNDM优于原始DMD，将FID降低了1.87。其多奖励变体GNDMR在美学质量和保真度之间取得了最佳平衡，达到了30.37的峰值HPS和12.21的低FID-SD，超越了现有基线方法。总体而言，R_dm为实时高保真合成提供了一个灵活、稳定且高效的框架。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion models achieve state-of-the-art generative performance but are fundamentally bottlenecked by their slow iterative sampling process. While diffusion distillation techniques enable high-fidelity few-step generation, traditional objectives often restrict the student's performance by anchoring it solely to the teacher. Recent approaches have attempted to break this ceiling by integrating Reinforcement Learning (RL), typically through a simple summation of distillation and RL objectives. In this work, we propose a novel paradigm by reconceptualizing distribution matching as a reward, denoted as $R_{dm}$. This unified perspective bridges the algorithmic gap between Diffusion Matching Distillation (DMD) and RL, providing several key benefits. (1) Enhanced optimization stability: we introduce Group Normalized Distribution Matching (GNDM), which adapts standard RL group normalization to stabilize $R_{dm}$ estimation. By leveraging group-mean statistics, GNDM establishes a more robust and effective optimization direction. (2) Seamless reward integration: our reward-centric formulation inherently supports adaptive weighting mechanisms, allowing flexible combination of DMD with external reward models. (3) Improved sampling efficiency: by aligning with RL principles, the framework readily incorporates importance sampling (IS), leading to a significant boost in sampling efficiency. Extensive experiments demonstrate that GNDM outperforms vanilla DMD, reducing the FID by 1.87. Furthermore, our multi-reward variant, GNDMR, surpasses existing baselines by achieving a strong balance between aesthetic quality and fidelity, reaching a peak HPS of 30.37 and a low FID-SD of 12.21. Overall, $R_{dm}$ provides a flexible, stable, and efficient framework for real-time high-fidelity synthesis. Code will be released upon publication.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.28460" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.28460.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.28405</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.28405" target="_blank">EdgeDiT: Hardware-Aware Diffusion Transformers for Efficient On-Device Image Generation</a>
+      </h3>
+      <p class="paper-title-zh">EdgeDiT：面向高效设备端图像生成的硬件感知扩散变换器</p>
+      <p class="paper-authors">Sravanth Kodavanti, Manjunath Arveti, Sowmya Vajrala, Srinivas Miriyala, Vikram N R</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了EdgeDiT，一个专为移动神经处理单元（NPU）优化的高效生成变换器家族，通过硬件感知的优化框架，在保持原始变换器架构扩展优势和表达能力的同时，显著降低了计算、存储和延迟开销。</div>
+        <div class="summary-section"><strong>方法:</strong> EdgeDiT采用硬件感知优化框架，系统性地识别并剪裁了DiT主干网络中对于移动端数据流特别耗时的结构冗余。该方法通过分析移动NPU（如高通Hexagon和苹果神经引擎）的数据流特性，针对性地设计轻量化模型结构，从而在保持性能的前提下实现效率提升。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，EdgeDiT系列模型在参数上减少了20-30%，计算量（FLOPs）降低了36-46%，设备端延迟降低了1.65倍，且未牺牲图像生成质量。在FID与推理延迟的帕累托权衡曲线上，EdgeDiT优于优化的移动U-Net和原始DiT变体，为将大规模基础模型从高端GPU部署到资源受限的边缘设备提供了可扩展的蓝图。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion Transformers (DiT) have established a new state-of-the-art in high-fidelity image synthesis; however, their massive computational complexity and memory requirements hinder local deployment on resource-constrained edge devices. In this paper, we introduce EdgeDiT, a family of hardware-efficient generative transformers specifically engineered for mobile Neural Processing Units (NPUs), such as the Qualcomm Hexagon and Apple Neural Engine (ANE). By leveraging a hardware-aware optimization framework, we systematically identify and prune structural redundancies within the DiT backbone that are particularly taxing for mobile data-flows. Our approach yields a series of lightweight models that achieve a 20-30% reduction in parameters, a 36-46% decrease in FLOPs, and a 1.65-fold reduction in on-device latency without sacrificing the scaling advantages or the expressive capacity of the original transformer architecture. Extensive benchmarking demonstrates that EdgeDiT offers a superior Pareto-optimal trade-off between Frechet Inception Distance (FID) and inference latency compared to both optimized mobile U-Nets and vanilla DiT variants. By enabling responsive, private, and offline generative AI directly on-device, EdgeDiT provides a scalable blueprint for transitioning large-scale foundation models from high-end GPUs to the palm of the user.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.28405" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.28405.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.28367</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.28367" target="_blank">Rethinking Structure Preservation in Text-Guided Image Editing with Visual Autoregressive Models</a>
+      </h3>
+      <p class="paper-title-zh">基于视觉自回归模型的文本引导图像编辑中结构保存的再思考</p>
+      <p class="paper-authors">Tao Xia, Jiawei Liu, Yukun Zhang, Ting Liu, Wei Wang 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种基于视觉自回归模型中间特征分析的新型文本引导图像编辑框架，通过粗到细的令牌定位策略和自适应特征注入机制，显著提升了编辑结果的结构一致性与背景保持能力。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先，设计了一种从粗到细的令牌定位策略，逐步细化可编辑区域以平衡编辑效果与背景保留。其次，通过分析视觉自回归模型的中间表示，识别出与结构相关的特征，并设计了一种简单有效的特征注入机制来增强编辑图像与源图像之间的结构一致性。最后，提出了一种基于强化学习的自适应特征注入方案，自动学习不同尺度与层级的注入比例，以联合优化编辑保真度与结构保存。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量实验表明，该方法在局部和全局编辑场景中均优于现有先进方法，在保持结构一致性和编辑质量方面表现优异，同时实现了更准确的区域定位和更自然的编辑效果。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Visual autoregressive (VAR) models have recently emerged as a promising family of generative models, enabling a wide range of downstream vision tasks such as text-guided image editing. By shifting the editing paradigm from noise manipulation in diffusion-based methods to token-level operations, VAR-based approaches achieve better background preservation and significantly faster inference. However, existing VAR-based editing methods still face two key challenges: accurately localizing editable tokens and maintaining structural consistency in the edited results. In this work, we propose a novel text-guided image editing framework rooted in an analysis of intermediate feature distributions within VAR models. First, we introduce a coarse-to-fine token localization strategy that can refine editable regions, balancing editing fidelity and background preservation. Second, we analyze the intermediate representations of VAR models and identify structure-related features, by which we design a simple yet effective feature injection mechanism to enhance structural consistency between the edited and source images. Third, we develop a reinforcement learning-based adaptive feature injection scheme that automatically learns scale- and layer-specific injection ratios to jointly optimize editing fidelity and structure preservation. Extensive experiments demonstrate that our method achieves superior structural consistency and editing quality compared with state-of-the-art approaches, across both local and global editing scenarios.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.28367" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.28367.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.28152</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.28152" target="_blank">ObjectMorpher: 3D-Aware Image Editing via Deformable 3DGS Models</a>
+      </h3>
+      <p class="paper-title-zh">ObjectMorpher：通过可变形3D高斯溅射模型实现3D感知的图像编辑</p>
+      <p class="paper-authors">Yuhuan Xie, Aoxuan Pan, Yi-Hua Huang, Chirui Chang, Peng Dai 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了ObjectMorpher框架，将模糊的2D编辑转化为基于几何的3D操作，实现了高效、保身份的对象级图像编辑。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先使用图像到3D生成器将目标实例提升为可编辑的3D高斯溅射模型；然后通过基于图结构的非刚性变形算法（采用尽可能刚性的约束）响应用户拖拽控制点；最后通过复合扩散模块协调光照、颜色和边界，实现无缝的图像合成。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在多种对象类别上，ObjectMorpher能够实现细粒度、逼真的编辑，在KID、LPIPS、SIFID指标和用户偏好评估中均优于现有的2D拖拽编辑和3D感知基线方法。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Achieving precise, object-level control in image editing remains challenging: 2D methods lack 3D awareness and often yield ambiguous or implausible results, while existing 3D-aware approaches rely on heavy optimization or incomplete monocular reconstructions. We present ObjectMorpher, a unified, interactive framework that converts ambiguous 2D edits into geometry-grounded operations. ObjectMorpher lifts target instances with an image-to-3D generator into editable 3D Gaussian Splatting (3DGS), enabling fast, identity-preserving manipulation. Users drag control points; a graph-based non-rigid deformation with as-rigid-as-possible (ARAP) constraints ensures physically sensible shape and pose changes. A composite diffusion module harmonizes lighting, color, and boundaries for seamless reintegration. Across diverse categories, ObjectMorpher delivers fine-grained, photorealistic edits with superior controllability and efficiency, outperforming 2D drag and 3D-aware baselines on KID, LPIPS, SIFID, and user preference.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.28152" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.28152.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

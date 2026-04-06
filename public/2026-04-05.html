@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-04-05</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2604.01972</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2604.01972" target="_blank">SDesc3D: Towards Layout-Aware 3D Indoor Scene Generation from Short Descriptions</a>
+      </h3>
+      <p class="paper-title-zh">SDesc3D：面向基于简短描述的布局感知三维室内场景生成</p>
+      <p class="paper-authors">Jie Feng, Jiawei Shen, Junjia Huang, Junpeng Zhang, Mingtao Feng 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个基于简短文本描述生成三维室内场景的框架，通过引入多视角结构先验和区域功能感知，显著提升了在稀疏文本指导下的三维布局推理能力与场景物理合理性。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法主要包括：1）多视角场景先验增强，通过聚合多视角结构知识来丰富文本输入；2）功能感知的布局定位，利用区域功能进行隐式空间锚定，并执行分层布局推理以优化场景组织；3）采用迭代反射-校正方案，通过自校正逐步提升结构合理性。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，该方法在基于简短文本的三维室内场景生成任务上优于现有方法，能够生成更具物理合理性和语义丰富性的场景布局。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>3D indoor scene generation conditioned on short textual descriptions provides a promising avenue for interactive 3D environment construction without the need for labor-intensive layout specification. Despite recent progress in text-conditioned 3D scene generation, existing works suffer from poor physical plausibility and insufficient detail richness in such semantic condensation cases, largely due to their reliance on explicit semantic cues about compositional objects and their spatial relationships. This limitation highlights the need for enhanced 3D reasoning capabilities, particularly in terms of prior integration and spatial anchoring.Motivated by this, we propose SDesc3D, a short-text conditioned 3D indoor scene generation framework, that leverages multi-view structural priors and regional functionality implications to enable 3D layout reasoning under sparse textual guidance.Specifically, we introduce a Multi-view scene prior augmentation that enriches underspecified textual inputs with aggregated multi-view structural knowledge, shifting from inaccessible semantic relation cues to multi-view relational prior aggregation. Building on this, we design a Functionality-aware layout grounding, employing regional functionality grounding for implicit spatial anchors and conducting hierarchical layout reasoning to enhance scene organization and semantic plausibility.Furthermore, an Iterative reflection-rectification scheme is employed for progressive structural plausibility refinement via self-rectification.Extensive experiments show that our method outperforms existing approaches on short-text conditioned 3D indoor scene generation.Code will be publicly available.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.01972" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.01972.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2604.01864</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2604.01864" target="_blank">MAR-MAER: Metric-Aware and Ambiguity-Adaptive Autoregressive Image Generation</a>
+      </h3>
+      <p class="paper-title-zh">MAR-MAER：度量感知与模糊性自适应的自回归图像生成</p>
+      <p class="paper-authors">Kai Dong, Tingting Bai</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个创新的层次化自回归框架，通过度量感知嵌入正则化和概率潜变量模型，同时提升了生成图像的人类偏好对齐度与对模糊提示的语义适应能力。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法包含两个核心组件：一是使用轻量级投影头与自适应核回归损失函数，将模型内部表示与人类偏好的质量度量（如CLIPScore、HPSv2）对齐；二是引入条件变分模块，在层次化token生成过程中注入可控随机性，以处理模糊语义。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在COCO和新构建的模糊提示基准上的实验表明，MAR-MAER在度量一致性和语义灵活性上均表现优异，相比基线Hi-MAR模型，CLIPScore提升+1.6，HPSv2提升+5.3，并能针对模糊输入生成更广泛多样的连贯图像，结果通过了人工评估与自动指标的双重验证。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Autoregressive (AR) models have demonstrated significant success in the realm of text-to-image generation. However, they usually face two major challenges. Firstly, the generated images may not always meet the quality standards expected by humans. Furthermore, these models face difficulty when dealing with ambiguous prompts that could be interpreted in several valid ways. To address these issues, we introduce MAR-MAER, an innovative hierarchical autoregressive framework. It combines two main components. It is a metric-aware embedding regularization method. The other one is a probabilistic latent model used for handling ambiguous semantics. Our method utilizes a lightweight projection head, which is trained with an adaptive kernel regression loss function. This aligns the model's internal representations with human-preferred quality metrics, such as CLIPScore and HPSv2. As a result, the embedding space that is learned more accurately reflects human judgment. We are also introducing a conditional variational module. This approach incorporates an aspect of controlled randomness within the hierarchical token generation process. This capability allows the model to produce a diverse array of coherent images based on ambiguous or open-ended prompts. We conducted extensive experiments using COCO and a newly developed Ambiguous-Prompt Benchmark. The results show that MAR-MAER achieves excellent performance in both metric consistency and semantic flexibility. It exceeds the baseline Hi-MAR model's performance, showing an improvement of +1.6 in CLIPScore and +5.3 in HPSv2. For unclear inputs, it produces a notably wider range of outputs. These findings have been confirmed through both human evaluation and automated metrics.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.01864" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.01864.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2604.01826</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2604.01826" target="_blank">SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers</a>
+      </h3>
+      <p class="paper-title-zh">SafeRoPE：用于整流流变换器中安全生成的风险特定、头级别的嵌入旋转方法</p>
+      <p class="paper-authors">Xiang Yang, Feifei Li, Mi Zhang, Geng Hong, Xiaoyu You 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了一种轻量级、细粒度的安全生成框架SafeRoPE，它通过识别并扰动关键注意力头中的不安全语义子空间，在基于变换器的扩散模型（如MMDiT）中有效抑制有害内容，同时保持生成质量和良性内容。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法首先分析MMDiT的注意力机制，发现不安全语义集中在特定注意力头的低维可解释子空间中。接着，通过分解不安全嵌入构建头级别的不安全子空间，并计算每个输入向量的潜在风险分数。然后，引入头级别的RoPE旋转扰动，结合风险分数对查询和键向量嵌入进行风险特定的旋转操作，以精确抑制不安全输出。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，SafeRoPE在平衡有害内容抑制与生成效用保护方面达到了最先进的性能，能够有效应对多令牌交互触发的安全风险，且无需昂贵的微调或针对U-Net架构的设计，可直接适用于基于变换器的扩散模型。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent Text-to-Image (T2I) models based on rectified-flow transformers (e.g., SD3, FLUX) achieve high generative fidelity but remain vulnerable to unsafe semantics, especially when triggered by multi-token interactions. Existing mitigation methods largely rely on fine-tuning or attention modulation for concept unlearning; however, their expensive computational overhead and design tailored to U-Net-based denoisers hinder direct adaptation to transformer-based diffusion models (e.g., MMDiT). In this paper, we conduct an in-depth analysis of the attention mechanism in MMDiT and find that unsafe semantics concentrate within interpretable, low-dimensional subspaces at head level, where a finite set of safety-critical heads is responsible for unsafe feature extraction. We further observe that perturbing the Rotary Positional Embedding (RoPE) applied to the query and key vectors can effectively modify some specific concepts in the generated images. Motivated by these insights, we propose SafeRoPE, a lightweight and fine-grained safe generation framework for MMDiT. Specifically, SafeRoPE first constructs head-wise unsafe subspaces by decomposing unsafe embeddings within safety-critical heads, and computes a Latent Risk Score (LRS) for each input vector via projection onto these subspaces. We then introduce head-wise RoPE perturbations that can suppress unsafe semantics without degrading benign content or image quality. SafeRoPE combines both head-wise LRS and RoPE perturbations to perform risk-specific head-wise rotation on query and key vector embeddings, enabling precise suppression of unsafe outputs while maintaining generation fidelity. Extensive experiments demonstrate that SafeRoPE achieves SOTA performance in balancing effective harmful content mitigation and utility preservation for safe generation of MMDiT. Codes are available at https://github.com/deng12yx/SafeRoPE.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.01826" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.01826.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2604.01777</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2604.01777" target="_blank">GardenDesigner: Encoding Aesthetic Principles into Jiangnan Garden Construction via a Chain of Agents</a>
+      </h3>
+      <p class="paper-title-zh">GardenDesigner：通过智能体链将美学原则编码到江南园林构建中</p>
+      <p class="paper-authors">Mengtian Li, Fan Yang, Ruixue Xiong, Yiyan Fan, Zhifeng Xie 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个名为GardenDesigner的创新框架，该框架将江南园林的美学原则编码为可计算的规则，并基于智能体链实现自动化生成，使非专业用户能够通过文本输入快速构建多样且美观的江南园林数字场景。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法基于程序化建模，通过一系列分工协作的智能体链来构建园林：首先由地形分布和道路生成智能体应用以水为中心的地形和探索性路径规则；随后，资产选择和布局优化智能体根据美学与文化约束，为园林的每个区域选择和布置物体。此外，还引入了包含专家标注园林知识的GardenVerse数据库来增强资产布置过程。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验和人工评估表明，GardenDesigner能够在一分钟内生成多样且具有美学吸引力的江南园林。所开发的Unity交互界面和工具支持非专业用户通过文本输入进行交互和编辑，有效解决了传统手动建模依赖专家经验、耗时耗力的问题。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Jiangnan gardens, a prominent style of Chinese classical gardens, hold great potential as digital assets for film and game production and digital tourism. However, manual modeling of Jiangnan gardens heavily relies on expert experience for layout design and asset creation, making the process time-consuming. To address this gap, we propose GardenDesigner, a novel framework that encodes aesthetic principles for Jiangnan garden construction and integrates a chain of agents based on procedural modeling. The water-centric terrain and explorative pathway rules are applied by terrain distribution and road generation agents. Selection and spatial layout of garden assets follow the aesthetic and cultural constraints. Consequently, we propose asset selection and layout optimization agents to select and arrange objects for each area in the garden. Additionally, we introduce GardenVerse for Jiangnan garden construction, including expert-annotated garden knowledge to enhance the asset arrangement process. To enable interaction and editing, we develop an interactive interface and tools in Unity, in which non-expert users can construct Jiangnan gardens via text input within one minute. Experiments and human evaluations demonstrate that GardenDesigner can generate diverse and aesthetically pleasing Jiangnan gardens. Project page is available at https://monad-cube.github.io/GardenDesigner.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.01777" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.01777.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2604.01761</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2604.01761" target="_blank">Control-DINO: Feature Space Conditioning for Controllable Image-to-Video Diffusion</a>
+      </h3>
+      <p class="paper-title-zh">Control-DINO：面向可控图像到视频扩散的特征空间条件化</p>
+      <p class="paper-authors">Edoardo A. Dominici, Thomas Deixelberger, Konstantinos Vardis, Markus Steinberger</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种利用自监督学习特征（如DINO）作为预训练视频扩散模型通用条件信号的方法，并设计了一个轻量级架构来解耦外观特征，实现了对视频风格化、重光照等外观变化的鲁棒控制。</div>
+        <div class="summary-section"><strong>方法:</strong> 论文引入了一个轻量级的架构和训练策略，将外观特征（如风格、光照）与希望保留的其他场景特征（如语义、几何）进行解耦。该方法利用自监督学习获得的高维特征作为条件信号，并通过补偿低空间分辨率来提高从显式空间表示中进行生成渲染的可控性。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，该方法能有效用于视频域迁移和从3D生成视频等任务。通过特征解耦，模型能够在不改变场景结构和语义的前提下，灵活控制外观变化；同时，更高的特征维度可以补偿低空间分辨率的不足，提升生成质量与可控性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Video models have recently been applied with success to problems in content generation, novel view synthesis, and, more broadly, world simulation. Many applications in generation and transfer rely on conditioning these models, typically through perceptual, geometric, or simple semantic signals, fundamentally using them as generative renderers. At the same time, high-dimensional features obtained from large-scale self-supervised learning on images or point clouds are increasingly used as a general-purpose interface for vision models. The connection between the two has been explored for subject specific editing, aligning and training video diffusion models, but not in the role of a more general conditioning signal for pretrained video diffusion models. Features obtained through self-supervised learning like DINO, contain a lot of entangled information about style, lighting and semantics of the scene. This makes them great at reconstruction tasks but limits their generative capabilities. In this paper, we show how we can use the features for tasks such as video domain transfer and video-from-3D generation. We introduce a lightweight architecture and training strategy that decouples appearance from other features that we wish to preserve, enabling robust control for appearance changes such as stylization and relighting. Furthermore, we show that low spatial resolution can be compensated by higher feature dimensionality, improving controllability in generative rendering from explicit spatial representations.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.01761" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.01761.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

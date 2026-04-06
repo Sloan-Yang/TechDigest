@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-03-03</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.00763</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.00763" target="_blank">Analyzing and Improving Fast Sampling of Text-to-Image Diffusion Models</a>
+      </h3>
+      <p class="paper-title-zh">分析与改进文生图扩散模型的快速采样方法</p>
+      <p class="paper-authors">Zhenyu Zhou, Defang Chen, Siwei Lyu, Chun Chen, Can Wang</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文系统性地阐明了训练无关的采样加速方法的设计空间，并提出了一种基于几何特性的新型采样时间调度策略——恒定总旋转调度（TORS），显著提升了有限采样步数下的图像生成质量。</div>
+        <div class="summary-section"><strong>方法:</strong> 研究首先通过全面实验分析，发现采样时间调度是影响性能的关键因素。随后，基于弗勒内-塞雷公式揭示的扩散模型轨迹几何特性，提出TORS调度策略。该方法通过确保采样轨迹上的几何变化均匀，优化采样过程，无需额外训练即可实现加速。</div>
+        <div class="summary-section"><strong>关键发现:</strong> TORS在Flux.1-Dev和Stable Diffusion 3.5等模型上仅用10步采样即可生成高质量图像，性能优于以往训练无关的加速方法。大量实验证明该方法对未见过的模型、超参数及下游任务具有良好的适应性和泛化能力。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Text-to-image diffusion models have achieved unprecedented success but still struggle to produce high-quality results under limited sampling budgets. Existing training-free sampling acceleration methods are typically developed independently, leaving the overall performance and compatibility among these methods unexplored. In this paper, we bridge this gap by systematically elucidating the design space, and our comprehensive experiments identify the sampling time schedule as the most pivotal factor. Inspired by the geometric properties of diffusion models revealed through the Frenet-Serret formulas, we propose constant total rotation schedule (TORS), a scheduling strategy that ensures uniform geometric variation along the sampling trajectory. TORS outperforms previous training-free acceleration methods and produces high-quality images with 10 sampling steps on Flux.1-Dev and Stable Diffusion 3.5. Extensive experiments underscore the adaptability of our method to unseen models, hyperparameters, and downstream applications.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.00763" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.00763.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.00607</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.00607" target="_blank">IdGlow: Dynamic Identity Modulation for Multi-Subject Generation</a>
+      </h3>
+      <p class="paper-title-zh">IdGlow：面向多主体生成的动态身份调制方法</p>
+      <p class="paper-authors">Honghao Cai, Xiangyuan Wang, Yunhao Bai, Tianze Zhou, Sijie Xu 等 (13 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了IdGlow框架，通过动态身份调制策略从根本上缓解了多主体图像生成中的“稳定性-可塑性困境”，在保持身份保真度与实现自然场景融合之间取得了优越的帕累托平衡。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法基于流匹配扩散模型构建了一个无掩码、渐进式的两阶段框架：1）在监督微调阶段，设计了与扩散生成动力学对齐的任务自适应时间步调度策略，包括逐步放松约束的线性衰减调度和集中于关键语义窗口的时间门控机制；2）引入基于坏例驱动的视觉语言模型进行精准的上下文感知提示合成；3）在第二阶段设计了细粒度组级直接偏好优化，采用加权边际公式来消除多主体伪影并提升纹理和谐度。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在直接多人融合和年龄变换群体生成两个挑战性基准测试上的实验表明，IdGlow能够有效解决属性泄漏和语义模糊问题，在保持成人面部语义的同时不覆盖儿童解剖结构，实现了最先进的面部保真度与商业级美学质量的统一。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Multi-subject image generation requires seamlessly harmonizing multiple reference identities within a coherent scene. However, existing methods relying on rigid spatial masks or localized attention often struggle with the "stability-plasticity dilemma," particularly failing in tasks that require complex structural deformations, such as identity-preserving age transformation. To address this, we present IdGlow, a mask-free, progressive two-stage framework built upon Flow Matching diffusion models. In the supervised fine-tuning (SFT) stage, we introduce task-adaptive timestep scheduling aligned with diffusion generative dynamics: a linear decay schedule that progressively relaxes constraints for natural group composition, and a temporal gating mechanism that concentrates identity injection within a critical semantic window, successfully preserving adult facial semantics without overriding child-like anatomical structures. To resolve attribute leakage and semantic ambiguity without explicit layout inputs, we further integrate a badcase-driven Vision-Language Model (VLM) for precise, context-aware prompt synthesis. In the second stage, we design a Fine-Grained Group-Level Direct Preference Optimization (DPO) with a weighted margin formulation to simultaneously eliminate multi-subject artifacts, elevate texture harmony, and recalibrate identity fidelity towards real-world distributions. Extensive experiments on two challenging benchmarks -- direct multi-person fusion and age-transformed group generation -- demonstrate that IdGlow fundamentally mitigates the stability-plasticity conflict, achieving a superior Pareto balance between state-of-the-art facial fidelity and commercial-grade aesthetic quality.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.00607" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.00607.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.00519</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.00519" target="_blank">Jano: Adaptive Diffusion Generation with Early-stage Convergence Awareness</a>
+      </h3>
+      <p class="paper-title-zh">Jano：具有早期收敛感知的自适应扩散生成</p>
+      <p class="paper-authors">Yuyang Chen, Linqian Zeng, Yijin ZHou, Hengjie Li, Jidong Zhai</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了Jano，一个无需训练的高效区域感知生成框架，通过观察去噪过程中不同区域具有异质收敛模式的特点，挑战了传统均匀处理假设，实现了在保持生成质量的同时显著加速扩散模型。</div>
+        <div class="summary-section"><strong>方法:</strong> Jano首先设计了一个早期复杂度识别算法，能够在初始去噪步骤中准确识别不同区域的收敛需求；然后结合一个自适应令牌调度运行时系统，根据区域收敛的难易程度动态优化计算资源的分配，避免对已收敛区域进行不必要的计算。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在多个先进模型上的综合评估表明，Jano实现了显著的加速效果（平均加速2.0倍，最高可达2.4倍），同时保持了与原始模型相当的生成质量。这为大规模内容生成提供了一个实用的高效解决方案。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion models have achieved remarkable success in generative AI, yet their computational efficiency remains a significant challenge, particularly for Diffusion Transformers (DiTs) requiring intensive full-attention computation. While existing acceleration approaches focus on content-agnostic uniform optimization strategies, we observe that different regions in generated content exhibit heterogeneous convergence patterns during the denoising process. We present Jano, a training-free framework that leverages this insight for efficient region-aware generation. Jano introduces an early-stage complexity recognition algorithm that accurately identifies regional convergence requirements within initial denoising steps, coupled with an adaptive token scheduling runtime that optimizes computational resource allocation. Through comprehensive evaluation on state-of-the-art models, Jano achieves substantial acceleration (average 2.0 times speedup, up to 2.4 times) while preserving generation quality. Our work challenges conventional uniform processing assumptions and provides a practical solution for accelerating large-scale content generation. The source code of our implementation is available at https://github.com/chen-yy20/Jano.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.00519" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.00519.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.00483</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.00483" target="_blank">RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment</a>
+      </h3>
+      <p class="paper-title-zh">RAISE：面向免训练文图对齐的需求自适应进化优化方法</p>
+      <p class="paper-authors">Liyao Jiang, Ruichen Chen, Chao Gao, Di Niu</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了RAISE，一个免训练、需求驱动的进化框架，通过自适应推理时优化实现高效的文本-图像对齐，显著减少了生成样本和视觉语言模型调用次数。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法将图像生成建模为需求驱动的自适应优化过程，在推理时通过提示词重写、噪声重采样和指令编辑等多种优化操作进化候选图像种群，并利用结构化需求清单进行验证，动态识别未满足的需求项并仅针对性地分配计算资源。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在GenEval和DrawBench基准测试中，RAISE取得了最先进的对齐效果（GenEval综合得分0.94），同时比先前的优化方法和反射调优基线减少了30-40%的生成样本和80%的视觉语言模型调用，实现了高效、可泛化且模型无关的多轮自我优化。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent text-to-image (T2I) diffusion models achieve remarkable realism, yet faithful prompt-image alignment remains challenging, particularly for complex prompts with multiple objects, relations, and fine-grained attributes. Existing training-free inference-time scaling methods rely on fixed iteration budgets that cannot adapt to prompt difficulty, while reflection-tuned models require carefully curated reflection datasets and extensive joint fine-tuning of diffusion and vision-language models, often overfitting to reflection paths data and lacking transferability across models. We introduce RAISE (Requirement-Adaptive Self-Improving Evolution), a training-free, requirement-driven evolutionary framework for adaptive T2I generation. RAISE formulates image generation as a requirement-driven adaptive scaling process, evolving a population of candidates at inference time through a diverse set of refinement actions-including prompt rewriting, noise resampling, and instructional editing. Each generation is verified against a structured checklist of requirements, enabling the system to dynamically identify unsatisfied items and allocate further computation only where needed. This achieves adaptive test-time scaling that aligns computational effort with semantic query complexity. On GenEval and DrawBench, RAISE attains state-of-the-art alignment (0.94 overall GenEval) while incurring fewer generated samples (reduced by 30-40%) and VLM calls (reduced by 80%) than prior scaling and reflection-tuned baselines, demonstrating efficient, generalizable, and model-agnostic multi-round self-improvement. Code is available at https://github.com/LiyaoJiang1998/RAISE.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.00483" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.00483.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.23697</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.23697" target="_blank">Towards Source-Aware Object Swapping with Initial Noise Perturbation</a>
+      </h3>
+      <p class="paper-title-zh">迈向基于初始噪声扰动的源感知物体替换</p>
+      <p class="paper-authors">Jiahui Zhan, Xianbing Sun, Xiangnan Zhu, Yikun Ji, Ruitong Liu 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了SourceSwap，一个自监督、源感知的框架，能够学习跨物体对齐，无需逐物体微调即可实现零样本推理；并构建了高质量基准数据集SourceBench。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法的核心是通过在初始噪声空间进行频率分离扰动，从单张图像合成高质量的伪配对数据，从而改变物体外观但保留姿态、粗粒度形状和场景布局。训练时采用具备完整源条件机制的双U-Net架构，并配备无噪声的参考编码器，以实现直接的物体间对齐和轻量级迭代优化。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，SourceSwap在物体保真度、场景保持度和物体-场景和谐度方面均优于现有方法，能够实现更自然的替换效果。该方法还具有良好的泛化能力，可迁移至主体驱动优化和人脸替换等编辑任务。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Object swapping aims to replace a source object in a scene with a reference object while preserving object fidelity, scene fidelity, and object-scene harmony. Existing methods either require per-object finetuning and slow inference or rely on extra paired data that mostly depict the same object across contexts, forcing models to rely on background cues rather than learning cross-object alignment. We propose SourceSwap, a self-supervised and source-aware framework that learns cross-object alignment. Our key insight is to synthesize high-quality pseudo pairs from any image via a frequency-separated perturbation in the initial-noise space, which alters appearance while preserving pose, coarse shape, and scene layout, requiring no videos, multi-view data, or additional images. We then train a dual U-Net with full-source conditioning and a noise-free reference encoder, enabling direct inter-object alignment, zero-shot inference without per-object finetuning, and lightweight iterative refinement. We further introduce SourceBench, a high-quality benchmark with higher resolution, more categories, and richer interactions. Experiments demonstrate that SourceSwap achieves superior fidelity, stronger scene preservation, and more natural harmony, and it transfers well to edits such as subject-driven refinement and face swapping.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.23697" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.23697.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

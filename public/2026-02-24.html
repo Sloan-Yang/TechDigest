@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-02-24</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 4 | 机器学习: 1</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.19254</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.19254" target="_blank">RegionRoute: Regional Style Transfer with Diffusion Model</a>
+      </h3>
+      <p class="paper-title-zh">RegionRoute：基于扩散模型的区域风格迁移</p>
+      <p class="paper-authors">Bowen Chen, Jake Zuena, Alan C. Bovik, Divya Kothandaraman</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种基于注意力监督的扩散模型框架，首次实现了无需手工掩码的、真正意义上的局部风格迁移，并引入了区域风格编辑评分标准进行量化评估。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法通过训练时对齐风格标记的注意力分数与目标物体掩码，显式地教导模型在何处应用给定风格。设计了基于KL散度的Focus损失和基于二元交叉熵的Cover损失，共同确保精准定位和密集覆盖。此外，采用模块化的LoRA-MoE设计，实现了高效、可扩展的多风格适配。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，该方法在推理时无需掩码即可实现单物体风格迁移，生成的结果在区域准确性、视觉连贯性上均优于现有的基于扩散模型的编辑方法。所提出的区域风格编辑评分能有效衡量目标区域的风格匹配度与未编辑区域的身份保持度。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Precise spatial control in diffusion-based style transfer remains challenging. This challenge arises because diffusion models treat style as a global feature and lack explicit spatial grounding of style representations, making it difficult to restrict style application to specific objects or regions. To our knowledge, existing diffusion models are unable to perform true localized style transfer, typically relying on handcrafted masks or multi-stage post-processing that introduce boundary artifacts and limit generalization. To address this, we propose an attention-supervised diffusion framework that explicitly teaches the model where to apply a given style by aligning the attention scores of style tokens with object masks during training. Two complementary objectives, a Focus loss based on KL divergence and a Cover loss using binary cross-entropy, jointly encourage accurate localization and dense coverage. A modular LoRA-MoE design further enables efficient and scalable multi-style adaptation. To evaluate localized stylization, we introduce the Regional Style Editing Score, which measures Regional Style Matching through CLIP-based similarity within the target region and Identity Preservation via masked LPIPS and pixel-level consistency on unedited areas. Experiments show that our method achieves mask-free, single-object style transfer at inference, producing regionally accurate and visually coherent results that outperform existing diffusion-based editing approaches.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.19254" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.19254.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.19083</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.19083" target="_blank">ChordEdit: One-Step Low-Energy Transport for Image Editing</a>
+      </h3>
+      <p class="paper-title-zh">ChordEdit：用于图像编辑的一步式低能量传输方法</p>
+      <p class="paper-authors">Liangsi Lu, Xuhang Chen, Minzhe Guo, Shichu Li, Jingchao Wang 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种无需训练、无需模型反演且与模型无关的ChordEdit方法，首次在一步式文本到图像模型上实现了高保真度的实时图像编辑，解决了现有方法因高能量轨迹导致的物体扭曲和未编辑区域失真的问题。</div>
+        <div class="summary-section"><strong>方法:</strong> 将图像编辑重新定义为源提示词与目标提示词所定义分布之间的传输问题；基于动态最优传输理论，推导出一种原理性的低能量控制策略；该策略生成平滑、方差降低的编辑场，使其在单次大步长积分中保持稳定，从而实现一步式编辑。</div>
+        <div class="summary-section"><strong>关键发现:</strong> ChordEdit能够生成稳定、低方差的编辑轨迹，在一步推理中实现高保真度的图像编辑，有效避免了物体扭曲和背景信息丢失；实验验证了该方法在保持编辑精度的同时，首次在一步式文本到图像模型上实现了真正的实时编辑。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>The advent of one-step text-to-image (T2I) models offers unprecedented synthesis speed. However, their application to text-guided image editing remains severely hampered, as forcing existing training-free editors into a single inference step fails. This failure manifests as severe object distortion and a critical loss of consistency in non-edited regions, resulting from the high-energy, erratic trajectories produced by naive vector arithmetic on the models' structured fields. To address this problem, we introduce ChordEdit, a model agnostic, training-free, and inversion-free method that facilitates high-fidelity one-step editing. We recast editing as a transport problem between the source and target distributions defined by the source and target text prompts. Leveraging dynamic optimal transport theory, we derive a principled, low-energy control strategy. This strategy yields a smoothed, variance-reduced editing field that is inherently stable, facilitating the field to be traversed in a single, large integration step. A theoretically grounded and experimentally validated approach allows ChordEdit to deliver fast, lightweight and precise edits, finally achieving true real-time editing on these challenging models.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.19083" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.19083.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器学习</span>
+          <span class="paper-id">2602.19033</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.19033" target="_blank">A Markovian View of Iterative-Feedback Loops in Image Generative Models: Neural Resonance and Model Collapse</a>
+      </h3>
+      <p class="paper-title-zh">图像生成模型中迭代反馈循环的马尔可夫视角：神经共振与模型崩溃</p>
+      <p class="paper-authors">Vibhas Kumar Vats, David J. Crandall, Samuel Goree</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了“神经共振”的概念，用以解释生成模型在迭代反馈训练中出现的长期退化行为，并建立了一个包含八种模式的模型崩溃分类体系，为理解和诊断模型崩溃提供了统一的理论框架。</div>
+        <div class="summary-section"><strong>方法:</strong> 研究将迭代反馈过程建模为马尔可夫链，并分析了其收敛条件。通过研究MNIST和ImageNet上的扩散模型、CycleGAN以及一个音频反馈实验，追踪了潜在空间中局部和全局流形几何结构的演化过程。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 研究发现，当反馈过程满足遍历性且潜在表示具有方向性收缩时，系统会收敛到一个低维不变结构，即发生“神经共振”，这最终导致模型崩溃。基于此，研究总结并分类了八种不同的模型崩溃行为模式。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>AI training datasets will inevitably contain AI-generated examples, leading to ``feedback'' in which the output of one model impacts the training of another. It is known that such iterative feedback can lead to model collapse, yet the mechanisms underlying this degeneration remain poorly understood. Here we show that a broad class of feedback processes converges to a low-dimensional invariant structure in latent space, a phenomenon we call neural resonance. By modeling iterative feedback as a Markov Chain, we show that two conditions are needed for this resonance to occur: ergodicity of the feedback process and directional contraction of the latent representation. By studying diffusion models on MNIST and ImageNet, as well as CycleGAN and an audio feedback experiment, we map how local and global manifold geometry evolve, and we introduce an eight-pattern taxonomy of collapse behaviors. Neural resonance provides a unified explanation for long-term degenerate behavior in generative models and provides practical diagnostics for identifying, characterizing, and eventually mitigating collapse.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.19033" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.19033.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.19019</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.19019" target="_blank">TokenTrace: Multi-Concept Attribution through Watermarked Token Recovery</a>
+      </h3>
+      <p class="paper-title-zh">TokenTrace：通过水印令牌恢复实现多概念溯源</p>
+      <p class="paper-authors">Li Zhang, Shruti Agarwal, John Collomosse, Pengtao Xie, Vishal Asnani</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了TokenTrace，一种新颖的主动水印框架，能够对生成式AI图像中同时存在的多个概念（如物体和艺术风格）进行鲁棒的分离与溯源，解决了现有方法在多概念组合场景下难以独立归因的难题。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法通过在语义域嵌入秘密签名，同时扰动引导扩散模型生成过程的文本提示嵌入和初始潜在噪声。在检索阶段，设计了一个基于查询的TokenTrace模块，该模块以生成的图像和指定需要检索概念的文本查询为输入，从而能够从单张图像中分离并独立验证多个概念的存在。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量实验表明，该方法在单概念（物体和风格）和多概念溯源任务上均达到了最先进的性能，显著优于现有基线方法，同时保持了高视觉质量，并对常见的图像变换具有鲁棒性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Generative AI models pose a significant challenge to intellectual property (IP), as they can replicate unique artistic styles and concepts without attribution. While watermarking offers a potential solution, existing methods often fail in complex scenarios where multiple concepts (e.g., an object and an artistic style) are composed within a single image. These methods struggle to disentangle and attribute each concept individually. In this work, we introduce TokenTrace, a novel proactive watermarking framework for robust, multi-concept attribution. Our method embeds secret signatures into the semantic domain by simultaneously perturbing the text prompt embedding and the initial latent noise that guide the diffusion model's generation process. For retrieval, we propose a query-based TokenTrace module that takes the generated image and a textual query specifying which concepts need to be retrieved (e.g., a specific object or style) as inputs. This query-based mechanism allows the module to disentangle and independently verify the presence of multiple concepts from a single generated image. Extensive experiments show that our method achieves state-of-the-art performance on both single-concept (object and style) and multi-concept attribution tasks, significantly outperforming existing baselines while maintaining high visual quality and robustness to common transformations.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.19019" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.19019.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.18993</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.18993" target="_blank">SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models</a>
+      </h3>
+      <p class="paper-title-zh">SeaCache：用于加速扩散模型的光谱演化感知缓存</p>
+      <p class="paper-authors">Jiwoo Chung, Sangeek Hyun, MinKyu Lee, Byeongju Han, Geonho Cha 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种无需训练的光谱演化感知缓存调度方法（SeaCache），通过解耦内容与噪声，基于光谱对齐表示来决策中间特征的复用，显著改善了扩散模型推理速度与生成质量之间的权衡。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先通过理论与实证分析推导出光谱演化感知（SEA）滤波器，该滤波器能保留与内容相关的成分并抑制噪声；然后利用SEA滤波后的输入特征来估计相邻时间步之间的冗余度；最后基于此设计动态缓存调度策略，使其既能适应不同生成内容，又尊重扩散模型内在的光谱先验（低频结构先出现，高频细节后细化）。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在多种视觉生成模型和基线方法上的大量实验表明，SeaCache在保持生成质量的同时，实现了当前最优的延迟-质量权衡，显著加速了扩散模型的推理过程。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion models are a strong backbone for visual generation, but their inherently sequential denoising process leads to slow inference. Previous methods accelerate sampling by caching and reusing intermediate outputs based on feature distances between adjacent timesteps. However, existing caching strategies typically rely on raw feature differences that entangle content and noise. This design overlooks spectral evolution, where low-frequency structure appears early and high-frequency detail is refined later. We introduce Spectral-Evolution-Aware Cache (SeaCache), a training-free cache schedule that bases reuse decisions on a spectrally aligned representation. Through theoretical and empirical analysis, we derive a Spectral-Evolution-Aware (SEA) filter that preserves content-relevant components while suppressing noise. Employing SEA-filtered input features to estimate redundancy leads to dynamic schedules that adapt to content while respecting the spectral priors underlying the diffusion model. Extensive experiments on diverse visual generative models and the baselines show that SeaCache achieves state-of-the-art latency-quality trade-offs.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.18993" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.18993.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

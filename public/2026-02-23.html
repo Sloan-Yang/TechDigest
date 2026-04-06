@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-02-23</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.18422</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.18422" target="_blank">Generated Reality: Human-centric World Simulation using Interactive Video Generation with Hand and Camera Control</a>
+      </h3>
+      <p class="paper-title-zh">生成现实：基于手部和相机控制的交互式视频生成的人本世界模拟</p>
+      <p class="paper-authors">Linxi Xie, Lisong C. Sun, Ashley Neall, Tong Wu, Shengqu Cai 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个以人为中心的视频世界模型，能够根据用户跟踪的头部姿态和关节级手部姿态生成虚拟环境，实现了灵巧的手-物交互，并构建了一个可用于具身交互的因果式生成系统。</div>
+        <div class="summary-section"><strong>方法:</strong> 论文评估了现有的扩散Transformer条件控制策略，并提出了一种有效的3D头部和手部姿态控制机制。首先，使用该策略训练了一个双向视频扩散模型作为教师模型，然后通过知识蒸馏将其转化为一个因果式的、交互式的系统，用于生成以自我为中心的虚拟环境。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 通过人类受试者评估表明，与相关基线模型相比，该系统能显著提升用户在虚拟环境中的任务表现，并且用户感知到的对自身动作的控制程度也显著更高。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Extended reality (XR) demands generative models that respond to users' tracked real-world motion, yet current video world models accept only coarse control signals such as text or keyboard input, limiting their utility for embodied interaction. We introduce a human-centric video world model that is conditioned on both tracked head pose and joint-level hand poses. For this purpose, we evaluate existing diffusion transformer conditioning strategies and propose an effective mechanism for 3D head and hand control, enabling dexterous hand--object interactions. We train a bidirectional video diffusion model teacher using this strategy and distill it into a causal, interactive system that generates egocentric virtual environments. We evaluate this generated reality system with human subjects and demonstrate improved task performance as well as a significantly higher level of perceived amount of control over the performed actions compared with relevant baselines.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.18422" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.18422.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.18309</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.18309" target="_blank">Multi-Level Conditioning by Pairing Localized Text and Sketch for Fashion Image Generation</a>
+      </h3>
+      <p class="paper-title-zh">通过配对局部文本与草图进行多层级条件控制的时尚图像生成</p>
+      <p class="paper-authors">Ziyue Liu, Davide Talon, Federico Girella, Zanxi Ruan, Mattia Mondo 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了LOTS框架，通过结合全局草图引导与多个局部草图-文本对来增强时尚图像生成；并创建了首个包含多组文本-草图配对标注的时尚数据集Sketchy。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法包含两个阶段：1）多层级条件编码阶段，在共享潜在空间中独立编码局部特征，同时保持全局结构协调；2）扩散配对引导阶段，在扩散模型的多步去噪过程中，通过基于注意力的引导机制整合局部与全局条件信息。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，该方法在遵循全局结构的同时，能有效利用更丰富的局部语义引导，性能优于现有先进方法；所构建的Sketchy数据集（包含专业草图与“野生”非专业草图）验证了方法的鲁棒性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Sketches offer designers a concise yet expressive medium for early-stage fashion ideation by specifying structure, silhouette, and spatial relationships, while textual descriptions complement sketches to convey material, color, and stylistic details. Effectively combining textual and visual modalities requires adherence to the sketch visual structure when leveraging the guidance of localized attributes from text. We present LOcalized Text and Sketch with multi-level guidance (LOTS), a framework that enhances fashion image generation by combining global sketch guidance with multiple localized sketch-text pairs. LOTS employs a Multi-level Conditioning Stage to independently encode local features within a shared latent space while maintaining global structural coordination. Then, the Diffusion Pair Guidance stage integrates both local and global conditioning via attention-based guidance within the diffusion model's multi-step denoising process. To validate our method, we develop Sketchy, the first fashion dataset where multiple text-sketch pairs are provided per image. Sketchy provides high-quality, clean sketches with a professional look and consistent structure. To assess robustness beyond this setting, we also include an "in the wild" split with non-expert sketches, featuring higher variability and imperfections. Experiments demonstrate that our method strengthens global structural adherence while leveraging richer localized semantic guidance, achieving improvement over state-of-the-art. The dataset, platform, and code are publicly available.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.18309" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.18309.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.18282</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.18282" target="_blank">DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control</a>
+      </h3>
+      <p class="paper-title-zh">DEIG：基于细粒度语义控制的细节增强实例生成</p>
+      <p class="paper-authors">Shiyan Du, Conghan Yue, Xinyu Cheng, Dongyu Zhang</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了DEIG框架，通过引入实例细节提取器和细节融合模块，解决了多实例生成中细粒度语义理解与属性跨实例泄漏的难题，实现了对复杂文本描述的精确、可控场景生成。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法主要包括：1）设计实例细节提取器（IDE），将文本编码器嵌入转换为紧凑的实例感知表示；2）构建细节融合模块（DFM），采用基于实例的掩码注意力机制，防止不同实例间的属性泄露；3）利用视觉语言模型构建高质量细粒度标注数据集，并建立包含区域级标注的评估基准DEIG-Bench。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，DEIG在空间一致性、语义准确性和组合泛化能力上均优于现有方法，且可作为即插即用模块无缝集成到基于扩散的生成流程中，显著提升了复杂多实例场景的生成质量。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Multi-Instance Generation has advanced significantly in spatial placement and attribute binding. However, existing approaches still face challenges in fine-grained semantic understanding, particularly when dealing with complex textual descriptions. To overcome these limitations, we propose DEIG, a novel framework for fine-grained and controllable multi-instance generation. DEIG integrates an Instance Detail Extractor (IDE) that transforms text encoder embeddings into compact, instance-aware representations, and a Detail Fusion Module (DFM) that applies instance-based masked attention to prevent attribute leakage across instances. These components enable DEIG to generate visually coherent multi-instance scenes that precisely match rich, localized textual descriptions. To support fine-grained supervision, we construct a high-quality dataset with detailed, compositional instance captions generated by VLMs. We also introduce DEIG-Bench, a new benchmark with region-level annotations and multi-attribute prompts for both humans and objects. Experiments demonstrate that DEIG consistently outperforms existing approaches across multiple benchmarks in spatial consistency, semantic accuracy, and compositional generalization. Moreover, DEIG functions as a plug-and-play module, making it easily integrable into standard diffusion-based pipelines.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.18282" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.18282.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.18093</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.18093" target="_blank">Predict to Skip: Linear Multistep Feature Forecasting for Efficient Diffusion Transformers</a>
+      </h3>
+      <p class="paper-title-zh">预测以跳过：用于高效扩散变换器的线性多步特征预测</p>
+      <p class="paper-authors">Hanshuai Cui, Zhiqing Tang, Qianli Ma, Zhi Yao, Weijia Jia</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种无需训练的加速框架PrediT，通过线性多步方法预测扩散模型未来的特征输出，而非简单地重用缓存特征，从而在保持生成质量的同时显著降低计算延迟。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法将特征预测建模为线性多步问题，利用经典线性多步法根据历史信息预测未来模型输出；引入一个校正器，在特征变化剧烈的区域激活以防止误差累积；并设计了一个动态步长调制机制，通过监测特征变化率自适应调整预测范围。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，该方法在多种基于DiT的图像和视频生成模型上实现了最高5.54倍的延迟降低，且生成质量下降可忽略不计。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion Transformers (DiT) have emerged as a widely adopted backbone for high-fidelity image and video generation, yet their iterative denoising process incurs high computational costs. Existing training-free acceleration methods rely on feature caching and reuse under the assumption of temporal stability. However, reusing features for multiple steps may lead to latent drift and visual degradation. We observe that model outputs evolve smoothly along much of the diffusion trajectory, enabling principled predictions rather than naive reuse. Based on this insight, we propose \textbf{PrediT}, a training-free acceleration framework that formulates feature prediction as a linear multistep problem. We employ classical linear multistep methods to forecast future model outputs from historical information, combined with a corrector that activates in high-dynamics regions to prevent error accumulation. A dynamic step modulation mechanism adaptively adjusts the prediction horizon by monitoring the feature change rate. Together, these components enable substantial acceleration while preserving generation fidelity. Extensive experiments validate that our method achieves up to $5.54\times$ latency reduction across various DiT-based image and video generation models, while incurring negligible quality degradation.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.18093" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.18093.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.18022</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.18022" target="_blank">Dual-Channel Attention Guidance for Training-Free Image Editing Control in Diffusion Transformers</a>
+      </h3>
+      <p class="paper-title-zh">用于扩散Transformer中免训练图像编辑控制的双通道注意力引导</p>
+      <p class="paper-authors">Guandong Li, Mengxia Ye</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了双通道注意力引导（DCAG）框架，首次在扩散Transformer（DiT）中同时利用Key通道和Value通道进行免训练的编辑强度控制，实现了比单通道方法更精确的编辑-保真度权衡。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法基于对DiT中多模态注意力层的观察：Key和Value投影均呈现明显的偏置-增量结构。DCAG同时操纵Key通道（控制注意力投向何处）和Value通道（控制特征聚合内容）。理论分析表明，Key通道通过非线性softmax函数进行粗粒度控制，而Value通道通过线性加权求和进行细粒度补充，二者共同构成一个二维参数空间。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在PIE-Bench基准测试（700张图像，10个编辑类别）上的实验表明，DCAG在所有保真度指标上均优于仅使用Key引导的方法，尤其在局部编辑任务（如对象删除和对象添加）中提升显著，分别实现了4.9%和3.2%的LPIPS指标降低。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Training-free control over editing intensity is a critical requirement for diffusion-based image editing models built on the Diffusion Transformer (DiT) architecture. Existing attention manipulation methods focus exclusively on the Key space to modulate attention routing, leaving the Value space -- which governs feature aggregation -- entirely unexploited. In this paper, we first reveal that both Key and Value projections in DiT's multi-modal attention layers exhibit a pronounced bias-delta structure, where token embeddings cluster tightly around a layer-specific bias vector. Building on this observation, we propose Dual-Channel Attention Guidance (DCAG), a training-free framework that simultaneously manipulates both the Key channel (controlling where to attend) and the Value channel (controlling what to aggregate). We provide a theoretical analysis showing that the Key channel operates through the nonlinear softmax function, acting as a coarse control knob, while the Value channel operates through linear weighted summation, serving as a fine-grained complement. Together, the two-dimensional parameter space $(δ_k, δ_v)$ enables more precise editing-fidelity trade-offs than any single-channel method. Extensive experiments on the PIE-Bench benchmark (700 images, 10 editing categories) demonstrate that DCAG consistently outperforms Key-only guidance across all fidelity metrics, with the most significant improvements observed in localized editing tasks such as object deletion (4.9% LPIPS reduction) and object addition (3.2% LPIPS reduction).</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.18022" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.18022.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

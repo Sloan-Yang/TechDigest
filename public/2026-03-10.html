@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-03-10</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.07276</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.07276" target="_blank">Variational Flow Maps: Make Some Noise for One-Step Conditional Generation</a>
+      </h3>
+      <p class="paper-title-zh">变分流映射：为一步条件生成引入噪声</p>
+      <p class="paper-authors">Abbas Mammadov, So Takao, Bohan Chen, Ricardo Baptista, Morteza Mardani 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了变分流映射框架，将条件生成的核心从“引导采样路径”转变为“学习合适的初始噪声”，实现了在单步或少量步数内从复杂数据后验中生成高质量条件样本。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法通过训练一个噪声适配器模型，学习根据观测条件输出一个噪声分布；将该噪声通过流映射转换到数据空间后，生成的样本能同时满足观测约束和数据先验。采用一个原则性的变分目标联合训练噪声适配器和流映射，以改善噪声与数据的对齐。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在多种逆问题上的实验表明，VFMs能够以单步或少量步数生成校准良好的条件样本。在ImageNet数据集上，VFMs在保持竞争力的生成质量的同时，相比迭代式扩散/流模型将采样速度提升了数个数量级。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Flow maps enable high-quality image generation in a single forward pass. However, unlike iterative diffusion models, their lack of an explicit sampling trajectory impedes incorporating external constraints for conditional generation and solving inverse problems. We put forth Variational Flow Maps, a framework for conditional sampling that shifts the perspective of conditioning from "guiding a sampling path", to that of "learning the proper initial noise". Specifically, given an observation, we seek to learn a noise adapter model that outputs a noise distribution, so that after mapping to the data space via flow map, the samples respect the observation and data prior. To this end, we develop a principled variational objective that jointly trains the noise adapter and the flow map, improving noise-data alignment, such that sampling from complex data posterior is achieved with a simple adapter. Experiments on various inverse problems show that VFMs produce well-calibrated conditional samples in a single (or few) steps. For ImageNet, VFM attains competitive fidelity while accelerating the sampling by orders of magnitude compared to alternative iterative diffusion/flow models. Code is available at https://github.com/abbasmammadov/VFM</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.07276" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.07276.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.07244</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.07244" target="_blank">PresentBench: A Fine-Grained Rubric-Based Benchmark for Slide Generation</a>
+      </h3>
+      <p class="paper-title-zh">PresentBench：一个基于细粒度评分标准的幻灯片生成基准</p>
+      <p class="paper-authors">Xin-Sheng Chen, Jiayu Zhu, Pei-lin Li, Hanzheng Wang, Shuojin Yang 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个基于细粒度评分标准的基准测试PresentBench，用于评估现实场景下的自动化幻灯片生成，解决了现有评估方法粒度粗、依赖整体判断的问题。</div>
+        <div class="summary-section"><strong>方法:</strong> 研究团队构建了一个包含238个评估实例的数据集，每个实例都附带了创建幻灯片所需的背景材料。他们为每个实例手动设计了平均54.1个检查项，每个检查项都表述为一个二元问题，从而实现对生成幻灯片的细粒度、实例化评估。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量实验表明，PresentBench比现有方法提供了更可靠的评估结果，并且与人类偏好表现出显著更强的一致性。此外，该基准测试揭示NotebookLM在幻灯片生成方面显著优于其他方法，凸显了该领域近期取得的实质性进展。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Slides serve as a critical medium for conveying information in presentation-oriented scenarios such as academia, education, and business. Despite their importance, creating high-quality slide decks remains time-consuming and cognitively demanding. Recent advances in generative models, such as Nano Banana Pro, have made automated slide generation increasingly feasible. However, existing evaluations of slide generation are often coarse-grained and rely on holistic judgments, making it difficult to accurately assess model capabilities or track meaningful advances in the field. In practice, the lack of fine-grained, verifiable evaluation criteria poses a critical bottleneck for both research and real-world deployment. In this paper, we propose PresentBench, a fine-grained, rubric-based benchmark for evaluating automated real-world slide generation. It contains 238 evaluation instances, each supplemented with background materials required for slide creation. Moreover, we manually design an average of 54.1 checklist items per instance, each formulated as a binary question, to enable fine-grained, instance-specific evaluation of the generated slide decks. Extensive experiments show that PresentBench provides more reliable evaluation results than existing methods, and exhibits significantly stronger alignment with human preferences. Furthermore, our benchmark reveals that NotebookLM significantly outperforms other slide generation methods, highlighting substantial recent progress in this domain.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.07244" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.07244.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.07240</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.07240" target="_blank">FabricGen: Microstructure-Aware Woven Fabric Generation</a>
+      </h3>
+      <p class="paper-title-zh">FabricGen：基于微观结构感知的机织面料生成</p>
+      <p class="paper-authors">Yingjie Tang, Di Luo, Zixiong Wang, Xiaoli Ling, jian Yang 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个端到端的框架，能够根据文本描述生成高质量、符合编织规则的机织面料材料，通过解耦宏观纹理与微观编织结构，显著提升了生成面料的细节丰富度和真实感。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法将生成过程分解为宏观纹理和微观编织图案两部分：1）针对宏观纹理，在收集的无微观结构面料数据集上微调预训练的扩散模型；2）针对微观编织图案，开发了一个增强的程序化几何模型来合成具有纱线滑动和飞散纤维的纱线级几何结构，该模型由一个专门微调的大型语言模型（WeavingLLM）驱动，该模型基于格式化的编织图数据集进行训练，并融合了领域知识进行提示调优。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验结果表明，与先前的生成模型相比，该框架生成的面料材料具有更丰富的细节和更高的真实感，能够从文本提示中生成多样且符合编织原理的微观编织图案，并结合宏观纹理进行最终的面料渲染。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Woven fabric materials are widely used in rendering applications, yet designing realistic examples typically involves multiple stages, requiring expertise in weaving principles and texture authoring. Recent advances have explored diffusion models to streamline this process; however, pre-trained diffusion models often struggle to generate intricate yarn-level details that conform to weaving rules. To address this, we present FabricGen, an end-to-end framework for generating high-quality woven fabric materials from textual descriptions. A key insight of our method is the decomposition of macro-scale textures and micro-scale weaving patterns. To generate macro-scale textures free from microstructures, we fine-tune pre-trained diffusion models on a collected dataset of microstructure-free fabrics. As for micro-scale weaving patterns, we develop an enhanced procedural geometric model capable of synthesizing natural yarn-level geometry with yarn sliding and flyaway fibers. The procedural model is driven by a specialized large language model, WeavingLLM, which is fine-tuned on an annotated dataset of formatted weaving drafts, and prompt-tuned with domain-specific fabric expertise. Through fine-tuning and prompt tuning, WeavingLLM learns to design weaving drafts and fabric parameters from textual prompts, enabling the procedural model to produce diverse weaving patterns that stick to weaving principles. The generated macro-scale texture, along with the micro-scale geometry, can be used for fabric rendering. Consequently, our framework produces materials with significantly richer detail and realism compared to prior generative models.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.07240" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.07240.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.07236</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.07236" target="_blank">HY-WU (Part I): An Extensible Functional Neural Memory Framework and An Instantiation in Text-Guided Image Editing</a>
+      </h3>
+      <p class="paper-title-zh">HY-WU（第一部分）：一种可扩展的功能性神经记忆框架及其在文本引导图像编辑中的实例化</p>
+      <p class="paper-authors"> Tencent HY Team</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了HY-WU（权重释放）框架，将适应压力从覆盖单一共享参数点转移到功能性神经记忆上，实现了无需测试时优化的实例特定算子生成。</div>
+        <div class="summary-section"><strong>方法:</strong> 该框架采用记忆优先的适应方法，将功能性（算子级）记忆实现为一个神经模块。该模块作为生成器，能够根据实例条件动态合成权重更新，从而为每个实例生成特定的操作算子，避免了传统静态权重范式中的参数空间单点限制。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 通过将适应过程从重复覆盖共享权重转变为基于记忆的实例特定算子生成，HY-WU框架能够有效缓解持续学习和个性化任务中的性能退化、干扰或过度专门化问题，为异构和持续演化的部署环境提供了更灵活的架构支持。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Foundation models are transitioning from offline predictors to deployed systems expected to operate over long time horizons. In real deployments, objectives are not fixed: domains drift, user preferences evolve, and new tasks appear after the model has shipped. This elevates continual learning and instant personalization from optional features to core architectural requirements. Yet most adaptation pipelines still follow a static weight paradigm: after training (or after any adaptation step), inference executes a single parameter vector regardless of user intent, domain, or instance-specific constraints. This treats the trained or adapted model as a single point in parameter space. In heterogeneous and continually evolving regimes, distinct objectives can induce separated feasible regions over parameters, forcing any single shared update into compromise, interference, or overspecialization. As a result, continual learning and personalization are often implemented as repeated overwriting of shared weights, risking degradation of previously learned behaviors. We propose HY-WU (Weight Unleashing), a memory-first adaptation framework that shifts adaptation pressure away from overwriting a single shared parameter point. HY-WU implements functional (operator-level) memory as a neural module: a generator that synthesizes weight updates on-the-fly from the instance condition, yielding instance-specific operators without test-time optimization.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.07236" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.07236.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.07119</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.07119" target="_blank">TIQA: Human-Aligned Text Quality Assessment in Generated Images</a>
+      </h3>
+      <p class="paper-title-zh">TIQA：生成图像中符合人类感知的文本质量评估</p>
+      <p class="paper-authors">Kirill Koltsov, Aleksandr Gushchin, Dmitriy Vatolin, Anastasia Antsiferova</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了文本图像质量评估（TIQA）任务，并发布了两个人工标注的数据集（TIQA-Crops和TIQA-Images），同时设计了一种轻量级方法ANTIQA，显著提升了与人类评分的一致性。</div>
+        <div class="summary-section"><strong>方法:</strong> 论文提出了ANTIQA方法，这是一种轻量级的文本质量评估模型，通过引入针对文本渲染特性的偏置设计，专门用于预测裁剪文本区域的质量分数。该方法不依赖OCR正确性或通用视觉语言模型的判断，而是直接学习人类对文本保真度的感知评分。</div>
+        <div class="summary-section"><strong>关键发现:</strong> ANTIQA在TIQA-Crops和TIQA-Images数据集上，与人类评分的相关性（PLCC）分别比OCR置信度、VLM评判和通用无参考图像质量评估指标提高至少约0.05和0.08；在下游任务中，使用ANTIQA进行五选一筛选可使人类评定的文本质量平均提升14%，证明其在生成流程中具有实际过滤和重排序价值。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Text rendering remains a persistent failure mode of modern text-to-image models (T2I), yet existing evaluations rely on OCR correctness or VLM-based judging procedures that are poorly aligned with perceptual text artifacts. We introduce Text-in-Image Quality Assessment (TIQA), a task that predicts a scalar quality score that matches human judgments of rendered-text fidelity within cropped text regions. We release two MOS-labeled datasets: TIQA-Crops (10k text crops) and TIQA-Images (1,500 images), spanning 20+ T2I models, including proprietary ones. We also propose ANTIQA, a lightweight method with text-specific biases, and show that it improves correlation with human scores over OCR confidence, VLM judges, and generic NR-IQA metrics by at least $\sim0.05$ on TIQA-Crops and $\sim0.08$ on TIQA-Images, as measured by PLCC. Finally, we show that TIQA models are valuable in downstream tasks: for example, selecting the best-of-5 generations with ANTIQA improves human-rated text quality by $+14\%$ on average, demonstrating practical value for filtering and reranking in generation pipelines.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.07119" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.07119.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

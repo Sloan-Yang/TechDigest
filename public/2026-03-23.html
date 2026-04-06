@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-03-23</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 5</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.20192</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.20192" target="_blank">LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation</a>
+      </h3>
+      <p class="paper-title-zh">LumosX：通过属性关联任意身份以实现个性化视频生成</p>
+      <p class="paper-authors">Jiazheng Xing, Fei Du, Hangjie Yuan, Pengwei Liu, Hongbin Xu 等 (10 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个从数据和模型两方面协同优化的框架LumosX，通过构建包含显式主体-属性关系先验的数据集，并设计关系感知的注意力机制，首次实现了对多主体身份及其细粒度属性的精确、一致控制，推动了个性化视频生成的发展。</div>
+        <div class="summary-section"><strong>方法:</strong> 1. 数据层面：设计了一个定制化的数据收集流程，从独立视频中编排字幕和视觉线索，并利用多模态大语言模型推断并分配主体特定的依赖关系，构建了一个包含细粒度关系先验的数据集和评测基准。
+2. 模型层面：提出了关系自注意力与关系交叉注意力机制，将位置感知嵌入与精炼的注意力动态相结合，以编码显式的主体-属性依赖关系，从而强制实现组内一致性并增强不同主体簇之间的分离。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在构建的基准上进行全面评估表明，LumosX在细粒度、身份一致且语义对齐的个性化多主体视频生成任务上，取得了最先进的性能。该框架能有效确保同一主体在不同视频片段中的属性一致性，并精确区分不同主体及其属性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements. However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency. Addressing this gap requires both explicit modeling strategies and face-attribute-aware data resources. We therefore propose LumosX, a framework that advances both data and model design. On the data side, a tailored collection pipeline orchestrates captions and visual cues from independent videos, while multimodal large language models (MLLMs) infer and assign subject-specific dependencies. These extracted relational priors impose a finer-grained structure that amplifies the expressive control of personalized video generation and enables the construction of a comprehensive benchmark. On the modeling side, Relational Self-Attention and Relational Cross-Attention intertwine position-aware embeddings with refined attention dynamics to inscribe explicit subject-attribute dependencies, enforcing disciplined intra-group cohesion and amplifying the separation between distinct subject clusters. Comprehensive evaluations on our benchmark demonstrate that LumosX achieves state-of-the-art performance in fine-grained, identity-consistent, and semantically aligned personalized multi-subject video generation. Code and models are available at https://jiazheng-xing.github.io/lumosx-home/.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.20192" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.20192.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.19939</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.19939" target="_blank">Timestep-Aware Block Masking for Efficient Diffusion Model Inference</a>
+      </h3>
+      <p class="paper-title-zh">面向高效扩散模型推理的时序感知块掩码方法</p>
+      <p class="paper-authors">Haodong He, Yuan Gao, Weizhong Zhang, Gui-Song Xia</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种针对预训练扩散模型的计算图优化框架，通过为每个去噪时间步学习特定的块掩码，动态决定执行或跳过哪些计算块，从而在保证生成质量的同时显著降低推理延迟。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法首先分析去噪轨迹中特征动态变化的特点，为每个时间步独立学习掩码以决定模型块的执行或特征重用，避免了全局优化所需的高内存开销。其次，引入时序感知的损失缩放机制，在敏感的去噪阶段优先保证特征保真度，并结合知识引导的掩码修正策略来剪枝冗余的时空依赖。该方法与模型架构无关，可广泛适用于多种扩散模型。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，该方法将去噪过程视为一系列优化后的计算路径，在DDPM、LDM、DiT和PixArt等多种模型上均实现了采样速度与生成质量的优越平衡，显著提升了推理效率。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion Probabilistic Models (DPMs) have achieved great success in image generation but suffer from high inference latency due to their iterative denoising nature. Motivated by the evolving feature dynamics across the denoising trajectory, we propose a novel framework to optimize the computational graph of pre-trained DPMs on a per-timestep basis. By learning timestep-specific masks, our method dynamically determines which blocks to execute or bypass through feature reuse at each inference stage. Unlike global optimization methods that incur prohibitive memory costs via full-chain backpropagation, our method optimizes masks for each timestep independently, ensuring a memory-efficient training process. To guide this process, we introduce a timestep-aware loss scaling mechanism that prioritizes feature fidelity during sensitive denoising phases, complemented by a knowledge-guided mask rectification strategy to prune redundant spatial-temporal dependencies. Our approach is architecture-agnostic and demonstrates significant efficiency gains across a broad spectrum of models, including DDPM, LDM, DiT, and PixArt. Experimental results show that by treating the denoising process as a sequence of optimized computational paths, our method achieves a superior balance between sampling speed and generative quality. Our code will be released.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.19939" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.19939.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.19775</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.19775" target="_blank">Evaluating Image Editing with LLMs: A Comprehensive Benchmark and Intermediate-Layer Probing Approach</a>
+      </h3>
+      <p class="paper-title-zh">使用大语言模型评估图像编辑：一个综合性基准与中间层探测方法</p>
+      <p class="paper-authors">Shiqi Gao, Zitong Xu, Kang Fu, Huiyu Duan, Xiongkuo Min 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了一个用于系统评估文本引导图像编辑方法的基准TIEdit，并设计了一种基于大语言模型的评估器EditProbe，通过探测多模态大语言模型的中间层表示来更准确地预测编辑质量。</div>
+        <div class="summary-section"><strong>方法:</strong> 研究首先构建了TIEdit基准，包含512张源图像、8类编辑任务提示，并由10个前沿模型生成了5,120张编辑后图像，通过专家标注获得了三个维度（感知质量、编辑对齐、内容保留）的15,360个平均意见分数。在此基础上，提出了EditProbe评估器，该方法不依赖最终输出，而是从多模态大语言模型的中间隐藏层提取表征，以更好地捕捉源图像、编辑指令和编辑结果之间的语义与感知关系。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，广泛使用的自动评估指标在编辑任务上与人类判断的相关性有限；而EditProbe在评估文本引导图像编辑质量时，与人类感知判断具有显著更强的对齐性，为相关方法提供了更可靠、更符合人类感知的评估基础。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Evaluating text-guided image editing (TIE) methods remains a challenging problem, as reliable assessment should simultaneously consider perceptual quality, alignment with textual instructions, and preservation of original image content. Despite rapid progress in TIE models, existing evaluation benchmarks remain limited in scale and often show weak correlation with human perceptual judgments. In this work, we introduce TIEdit, a benchmark for systematic evaluation of text-guided image editing methods. TIEdit consists of 512 source images paired with editing prompts across eight representative editing tasks, producing 5,120 edited images generated by ten state-of-the-art TIE models. To obtain reliable subjective ratings, 20 experts are recruited to produce 307,200 raw subjective ratings, which accumulates into 15,360 mean opinion scores (MOSs) across three evaluation dimensions: perceptual quality, editing alignment, and content preservation. Beyond the benchmark itself, we further propose EditProbe, an LLM-based evaluator that estimates editing quality via intermediate-layer probing of hidden representations. Instead of relying solely on final model outputs, EditProbe extracts informative representations from intermediate layers of multimodal large language models to better capture semantic and perceptual relationships between source images, editing instructions, and edited results. Experimental results demonstrate that widely used automatic evaluation metrics show limited correlation with human judgments on editing tasks, while EditProbe achieves substantially stronger alignment with human perception. Together, TIEdit and EditProbe provide a foundation for more reliable and perceptually aligned evaluation of text-guided image editing methods.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.19775" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.19775.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.19676</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.19676" target="_blank">ATHENA: Adaptive Test-Time Steering for Improving Count Fidelity in Diffusion Models</a>
+      </h3>
+      <p class="paper-title-zh">ATHENA：用于提升扩散模型计数保真度的自适应测试时引导框架</p>
+      <p class="paper-authors">Mohammad Shahab Sepehri, Asal Mehradfar, Berk Tinaz, Salman Avestimehr, Mahdi Soltanolkotabi</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了ATHENA，一个无需修改模型架构或重新训练、适用于多种扩散模型的自适应测试时引导框架，旨在显著提升文本生成图像时对提示词中指定物体数量的遵循能力。</div>
+        <div class="summary-section"><strong>方法:</strong> ATHENA的核心方法是在去噪过程的早期阶段，利用采样过程中的中间表示来估计物体数量，并施加基于计数的噪声校正，从而在结构错误难以修正之前引导生成轨迹。框架包含三个复杂度递增的变体，从基于提示的静态引导到动态调整的计数感知控制，以计算开销换取更高的数值准确性。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在多个基准测试和一个新的视觉与语义复杂数据集上的实验表明，ATHENA能持续提升计数保真度，尤其在目标数量较高时效果显著，同时在多种扩散模型骨干网络上保持了良好的准确性与运行时开销的平衡。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Text-to-image diffusion models achieve high visual fidelity but surprisingly exhibit systematic failures in numerical control when prompts specify explicit object counts. To address this limitation, we introduce ATHENA, a model-agnostic, test-time adaptive steering framework that improves object count fidelity without modifying model architectures or requiring retraining. ATHENA leverages intermediate representations during sampling to estimate object counts and applies count-aware noise corrections early in the denoising process, steering the generation trajectory before structural errors become difficult to revise. We present three progressively more advanced variants of ATHENA that trade additional computation for improved numerical accuracy, ranging from static prompt-based steering to dynamically adjusted count-aware control. Experiments on established benchmarks and a new visually and semantically complex dataset show that ATHENA consistently improves count fidelity, particularly at higher target counts, while maintaining favorable accuracy-runtime trade-offs across multiple diffusion backbones.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.19676" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.19676.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2603.19598</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2603.19598" target="_blank">FlowScene: Style-Consistent Indoor Scene Generation with Multimodal Graph Rectified Flow</a>
+      </h3>
+      <p class="paper-title-zh">FlowScene：基于多模态图修正流的风格一致室内场景生成</p>
+      <p class="paper-authors">Zhifei Yang, Guangyao Zhai, Keyang Lu, YuYang Yin, Chao Zhang 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个基于多模态图条件的三分支场景生成模型，能够协同生成场景布局、物体形状和纹理，实现了对物体形状、纹理和关系的细粒度控制，同时保证了场景级别的风格一致性。</div>
+        <div class="summary-section"><strong>方法:</strong> FlowScene的核心是一个紧密耦合的修正流模型，它在生成过程中通过图结构交换物体信息，实现了跨图的协同推理。模型以多模态图（包含物体类别、属性及关系）为条件，通过三个分支分别负责生成场景布局、物体几何形状和物体纹理，从而将结构、形状和外观的生成统一在一个框架内。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量实验表明，FlowScene在生成真实性、风格一致性和与人类偏好的一致性方面，均优于基于语言条件和基于图条件的基线方法，证明了其在实现高真实感、高可控性场景生成方面的有效性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Scene generation has extensive industrial applications, demanding both high realism and precise control over geometry and appearance. Language-driven retrieval methods compose plausible scenes from a large object database, but overlook object-level control and often fail to enforce scene-level style coherence. Graph-based formulations offer higher controllability over objects and inform holistic consistency by explicitly modeling relations, yet existing methods struggle to produce high-fidelity textured results, thereby limiting their practical utility. We present FlowScene, a tri-branch scene generative model conditioned on multimodal graphs that collaboratively generates scene layouts, object shapes, and object textures. At its core lies a tight-coupled rectified flow model that exchanges object information during generation, enabling collaborative reasoning across the graph. This enables fine-grained control of objects' shapes, textures, and relations while enforcing scene-level style coherence across structure and appearance. Extensive experiments show that FlowScene outperforms both language-conditioned and graph-conditioned baselines in terms of generation realism, style consistency, and alignment with human preferences.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2603.19598" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2603.19598.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

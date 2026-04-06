@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 ArXiv Daily Digest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --card-border: #2a2a2a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #22c55e;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .stats {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .archive-link-top {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .archive-link-top a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        
+        .paper-card:hover {
+            border-color: var(--accent);
+        }
+        
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .category-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            padding: 0.15rem 0.6rem;
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.12);
+        }
+        
+        .paper-title {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .paper-title a:hover {
+            color: var(--accent);
+        }
+        
+        .paper-title-zh {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .paper-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .paper-summary {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-section {
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .summary-section strong {
+            color: var(--accent);
+        }
+        
+        .paper-abstract {
+            margin-bottom: 1rem;
+        }
+        
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .paper-abstract p {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .paper-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.5rem 1rem;
+            background: var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        
+        .link-btn:hover {
+            background: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            h1 { font-size: 1.75rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📚 ArXiv Daily Digest</h1>
+        <p class="subtitle">每日论文精选</p>
+        <p class="date">📅 2026-02-19</p>
+        <p class="stats">共 5 篇论文 | 计算机视觉: 4 | 图形学: 1</p>
+        <p class="archive-link-top"><a href="archive.html">查看历史归档 →</a></p>
+    </header>
+    
+    <main>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.15727</span>
+        </div>
+        <span class="score-badge">相关性 90/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.15727" target="_blank">Spanning the Visual Analogy Space with a Weight Basis of LoRAs</a>
+      </h3>
+      <p class="paper-title-zh">利用LoRA权重基张成视觉类比空间</p>
+      <p class="paper-authors">Hila Manor, Rinon Gal, Haggai Maron, Tomer Michaeli, Gal Chechik</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出LoRWeB方法，通过动态组合学习到的变换基元来专门处理每个类比任务，突破了现有方法使用单一固定适配模块的泛化限制。</div>
+        <div class="summary-section"><strong>方法:</strong> 方法包含两个核心组件：一是学习一组LoRA模块作为基，以覆盖不同的视觉变换空间；二是一个轻量级编码器，根据输入的类比对动态选择和加权这些基LoRA，实现推理时的动态组合。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 综合评估表明，该方法取得了最先进的性能，并显著提升了对未见视觉变换的泛化能力；研究结果证明LoRA基分解是实现灵活视觉操控的有效方向。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Visual analogy learning enables image manipulation through demonstration rather than textual description, allowing users to specify complex transformations difficult to articulate in words. Given a triplet $\{\mathbf{a}$, $\mathbf{a}'$, $\mathbf{b}\}$, the goal is to generate $\mathbf{b}'$ such that $\mathbf{a} : \mathbf{a}' :: \mathbf{b} : \mathbf{b}'$. Recent methods adapt text-to-image models to this task using a single Low-Rank Adaptation (LoRA) module, but they face a fundamental limitation: attempting to capture the diverse space of visual transformations within a fixed adaptation module constrains generalization capabilities. Inspired by recent work showing that LoRAs in constrained domains span meaningful, interpolatable semantic spaces, we propose LoRWeB, a novel approach that specializes the model for each analogy task at inference time through dynamic composition of learned transformation primitives, informally, choosing a point in a "space of LoRAs". We introduce two key components: (1) a learnable basis of LoRA modules, to span the space of different visual transformations, and (2) a lightweight encoder that dynamically selects and weighs these basis LoRAs based on the input analogy pair. Comprehensive evaluations demonstrate our approach achieves state-of-the-art performance and significantly improves generalization to unseen visual transformations. Our findings suggest that LoRA basis decompositions are a promising direction for flexible visual manipulation. Code and data are in https://research.nvidia.com/labs/par/lorweb</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.15727" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.15727.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">图形学</span>
+          <span class="paper-id">2602.16611</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.16611" target="_blank">Style-Aware Gloss Control for Generative Non-Photorealistic Rendering</a>
+      </h3>
+      <p class="paper-title-zh">面向生成式非真实感渲染的、具备风格感知的光泽度控制</p>
+      <p class="paper-authors">Santiago Jimenez-Navarro, Belen Masia, Ana Serrano</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了一种能够解耦艺术风格与物体光泽度表征的无监督生成模型，并设计了一个轻量级适配器，实现了在非真实感图像合成中对这两个因素进行细粒度控制。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先，作者构建了一个新的、系统性地包含不同艺术风格和光泽度变化的绘画对象数据集。基于此数据集，他们训练了一个无监督生成模型，其学习到的潜在空间具有层次化结构，能将光泽度与其他外观因素解耦。随后，他们引入一个轻量级适配器，将该解耦的潜在空间与一个潜在扩散模型连接起来。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 分析表明，模型学习到的潜在空间是层次化的，其中光泽度与其他外观因素（如风格）成功解耦，这为研究不同艺术风格下光泽度的表征方式提供了基础。与先前模型相比，该方法在解耦性和对学习因素（风格与光泽度）的可控性方面均有提升，能够合成出具有指定风格和精确光泽度的非真实感图像。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Humans can infer material characteristics of objects from their visual appearance, and this ability extends to artistic depictions, where similar perceptual strategies guide the interpretation of paintings or drawings. Among the factors that define material appearance, gloss, along with color, is widely regarded as one of the most important, and recent studies indicate that humans can perceive gloss independently of the artistic style used to depict an object. To investigate how gloss and artistic style are represented in learned models, we train an unsupervised generative model on a newly curated dataset of painterly objects designed to systematically vary such factors. Our analysis reveals a hierarchical latent space in which gloss is disentangled from other appearance factors, allowing for a detailed study of how gloss is represented and varies across artistic styles. Building on this representation, we introduce a lightweight adapter that connects our style- and gloss-aware latent space to a latent-diffusion model, enabling the synthesis of non-photorealistic images with fine-grained control of these factors. We compare our approach with previous models and observe improved disentanglement and controllability of the learned factors.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.16611" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.16611.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.15819</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.15819" target="_blank">VideoSketcher: Video Models Prior Enable Versatile Sequential Sketch Generation</a>
+      </h3>
+      <p class="paper-title-zh">VideoSketcher：利用视频模型先验实现多功能序列草图生成</p>
+      <p class="paper-authors">Hui Ren, Yuval Alaluf, Omer Bar Tal, Alexander Schwing, Antonio Torralba 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种数据高效的方法，通过微调预训练的文本到视频扩散模型来生成具有时序结构的草图绘制过程，实现了对绘制顺序的语义控制与高质量视觉呈现的结合。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法将草图表示为在空白画布上逐步绘制笔划的短视频，并采用两阶段微调策略：首先利用具有可控时序结构的合成形状组合学习笔划顺序，然后仅用极少量（如7个）人工绘制的草图过程数据来学习草图的外观细节，从而解耦顺序学习与外观学习。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 尽管使用的人类绘制草图数据极少，该方法能生成高质量、时序连贯的序列草图，能紧密遵循文本指定的绘制顺序，并展现丰富的视觉细节；此外，该方法可扩展支持笔刷风格条件控制与自回归草图生成，增强了可控性与交互协作绘图能力。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Sketching is inherently a sequential process, in which strokes are drawn in a meaningful order to explore and refine ideas. However, most generative models treat sketches as static images, overlooking the temporal structure that underlies creative drawing. We present a data-efficient approach for sequential sketch generation that adapts pretrained text-to-video diffusion models to generate sketching processes. Our key insight is that large language models and video diffusion models offer complementary strengths for this task: LLMs provide semantic planning and stroke ordering, while video diffusion models serve as strong renderers that produce high-quality, temporally coherent visuals. We leverage this by representing sketches as short videos in which strokes are progressively drawn on a blank canvas, guided by text-specified ordering instructions. We introduce a two-stage fine-tuning strategy that decouples the learning of stroke ordering from the learning of sketch appearance. Stroke ordering is learned using synthetic shape compositions with controlled temporal structure, while visual appearance is distilled from as few as seven manually authored sketching processes that capture both global drawing order and the continuous formation of individual strokes. Despite the extremely limited amount of human-drawn sketch data, our method generates high-quality sequential sketches that closely follow text-specified orderings while exhibiting rich visual detail. We further demonstrate the flexibility of our approach through extensions such as brush style conditioning and autoregressive sketch generation, enabling additional controllability and interactive, collaborative drawing.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.15819" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.15819.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.15539</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.15539" target="_blank">Dynamic Training-Free Fusion of Subject and Style LoRAs</a>
+      </h3>
+      <p class="paper-title-zh">基于主题与风格LoRA的动态免训练融合方法</p>
+      <p class="paper-authors">Qinglong Cao, Yuntian Chen, Chao Ma, Xiaokang Yang</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种动态免训练的LoRA融合框架，能够在整个生成过程中自适应地融合主题与风格LoRA，实现连贯的主题-风格合成，无需重新训练。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法包含两个互补机制：在前向传播阶段，通过动态计算基础模型与各LoRA输出特征间的KL散度，在每一层自适应选择最合适的权重进行融合；在反向去噪阶段，利用CLIP和DINO等客观度量导出的梯度校正，对生成轨迹进行持续语义与风格引导。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在多种主题-风格组合上的实验表明，该方法在定性和定量评估上均优于现有最先进的LoRA融合方法，能够更有效地合成符合预期主题与风格的图像。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent studies have explored the combination of multiple LoRAs to simultaneously generate user-specified subjects and styles. However, most existing approaches fuse LoRA weights using static statistical heuristics that deviate from LoRA's original purpose of learning adaptive feature adjustments and ignore the randomness of sampled inputs. To address this, we propose a dynamic training-free fusion framework that operates throughout the generation process. During the forward pass, at each LoRA-applied layer, we dynamically compute the KL divergence between the base model's original features and those produced by subject and style LoRAs, respectively, and adaptively select the most appropriate weights for fusion. In the reverse denoising stage, we further refine the generation trajectory by dynamically applying gradient-based corrections derived from objective metrics such as CLIP and DINO scores, providing continuous semantic and stylistic guidance. By integrating these two complementary mechanisms-feature-level selection and metric-guided latent adjustment-across the entire diffusion timeline, our method dynamically achieves coherent subject-style synthesis without any retraining. Extensive experiments across diverse subject-style combinations demonstrate that our approach consistently outperforms state-of-the-art LoRA fusion methods both qualitatively and quantitatively.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.15539" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.15539.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2602.15396</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2602.15396" target="_blank">Efficient Generative Modeling beyond Memoryless Diffusion via Adjoint Schrödinger Bridge Matching</a>
+      </h3>
+      <p class="paper-title-zh">通过伴随薛定谔桥匹配实现超越无记忆扩散的高效生成建模</p>
+      <p class="paper-authors">Jeongwoo Shin, Jinhwan Sul, Joonseok Lee, Jaewong Choi, Jaemoo Choi</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了伴随薛定谔桥匹配（ASBM）框架，通过构建数据与能量定义先验之间的最优耦合，实现了更直、更高效的高维生成采样轨迹。</div>
+        <div class="summary-section"><strong>方法:</strong> ASBM分为两个阶段：首先，将薛定谔桥的前向动态视为耦合构建问题，通过数据到能量采样的视角学习，将数据传输至能量定义的先验分布；然后，利用诱导出的最优耦合作为监督，通过简单的匹配损失学习反向生成动态。该方法摆脱了无记忆限制，直接学习最优传输路径。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，ASBM能生成显著更直、更高效的采样路径，在高维数据上具有更好的稳定性和效率；在图像生成任务中，能以更少的采样步骤提升生成保真度，并且其最优轨迹可有效蒸馏为一步生成器。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion models often yield highly curved trajectories and noisy score targets due to an uninformative, memoryless forward process that induces independent data-noise coupling. We propose Adjoint Schrödinger Bridge Matching (ASBM), a generative modeling framework that recovers optimal trajectories in high dimensions via two stages. First, we view the Schrödinger Bridge (SB) forward dynamic as a coupling construction problem and learn it through a data-to-energy sampling perspective that transports data to an energy-defined prior. Then, we learn the backward generative dynamic with a simple matching loss supervised by the induced optimal coupling. By operating in a non-memoryless regime, ASBM produces significantly straighter and more efficient sampling paths. Compared to prior works, ASBM scales to high-dimensional data with notably improved stability and efficiency. Extensive experiments on image generation show that ASBM improves fidelity with fewer sampling steps. We further showcase the effectiveness of our optimal trajectory via distillation to a one-step generator.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2602.15396" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2602.15396.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+    </main>
+    
+    <footer>
+        <p>由 <a href="https://github.com">ArXiv Daily Digest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> | AI 总结: DeepSeek</p>
+    </footer>
+</body>
+</html>

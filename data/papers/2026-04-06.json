@@ -1,0 +1,136 @@
+[
+  {
+    "id": "2604.03231",
+    "title": "CoME-VL: Scaling Complementary Multi-Encoder Vision-Language Learning",
+    "abstract": "Recent vision-language models (VLMs) typically rely on a single vision encoder trained with contrastive image-text objectives, such as CLIP-style pretraining. While contrastive encoders are effective for cross-modal alignment and retrieval, self-supervised visual encoders often capture richer dense semantics and exhibit stronger robustness on recognition and understanding tasks. In this work, we investigate how to scale the fusion of these complementary visual representations for vision-language modeling. We propose CoME-VL: Complementary Multi-Encoder Vision-Language, a modular fusion framework that integrates a contrastively trained vision encoder with a self-supervised DINO encoder. Our approach performs representation-level fusion by (i) entropy-guided multi-layer aggregation with orthogonality-constrained projections to reduce redundancy, and (ii) RoPE-enhanced cross-attention to align heterogeneous token grids and produce compact fused visual tokens. The fused tokens can be injected into a decoder-only LLM with minimal changes to standard VLM pipelines. Extensive experiments across diverse vision-language benchmarks demonstrate that CoME-VL consistently outperforms single-encoder baselines. In particular, we observe an average improvement of 4.9% on visual understanding tasks and 5.4% on grounding tasks. Our method achieves state-of-the-art performance on RefCOCO for detection while improving over the baseline by a large margin. Finally, we conduct ablation studies on layer merging, non-redundant feature mixing, and fusion capacity to evaluate how complementary contrastive and self-supervised signals affect VLM performance.",
+    "authors": [
+      "Ankan Deria",
+      "Komal Kumar",
+      "Xilin He",
+      "Imran Razzak",
+      "Hisham Cholakkal",
+      "Fahad Shahbaz Khan",
+      "Salman Khan"
+    ],
+    "published": "2026-04-03",
+    "updated": "2026-04-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.03231.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.03231",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "CoME-VL：扩展互补多编码器视觉-语言学习",
+      "core_contribution": "提出CoME-VL框架，通过融合对比训练和自监督视觉编码器的互补优势，显著提升视觉-语言模型的性能。",
+      "method": "1. 提出模块化融合框架，整合对比训练的视觉编码器和自监督DINO编码器；2. 采用熵引导的多层聚合与正交约束投影减少冗余；3. 使用RoPE增强的交叉注意力对齐异构令牌网格，生成紧凑的融合视觉令牌。",
+      "findings": "1. 在多样化视觉-语言基准测试中，CoME-VL始终优于单编码器基线模型；2. 在视觉理解任务和基础任务上分别平均提升4.9%和5.4%；3. 在RefCOCO检测任务上实现最先进性能，并大幅超越基线。"
+    }
+  },
+  {
+    "id": "2604.03061",
+    "title": "Can Nano Banana 2 Replace Traditional Image Restoration Models? An Evaluation of Its Performance on Image Restoration Tasks",
+    "abstract": "Recent advances in generative AI raise the question of whether general-purpose image editing models can serve as unified solutions for image restoration. In this work, we conduct a systematic evaluation of Nano Banana 2 for image restoration across diverse scenes and degradation types. Our results show that prompt design plays a critical role, where concise prompts with explicit fidelity constraints achieve the best trade-off between reconstruction accuracy and perceptual quality. Compared with state-of-the-art restoration models, Nano Banana 2 achieves superior performance in full-reference metrics while remaining competitive in perceptual quality, which is further supported by user studies. We also observe strong generalization in challenging scenarios, such as small faces, dense crowds, and severe degradations. However, the model remains sensitive to prompt formulation and may require iterative refinement for optimal results. Overall, our findings suggest that general-purpose generative models hold strong potential as unified image restoration solvers, while highlighting the importance of controllability and robustness. All test results are available on https://github.com/yxyuanxiao/NanoBanana2TestOnIR.",
+    "authors": [
+      "Weixiong Sun",
+      "Xiang Yin",
+      "Chao Dong"
+    ],
+    "published": "2026-04-03",
+    "updated": "2026-04-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.03061.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.03061",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "Nano Banana 2能否取代传统图像修复模型？其在图像修复任务中的性能评估",
+      "core_contribution": "系统评估了通用生成模型Nano Banana 2在多样化图像修复任务中的潜力，揭示了提示设计对性能的关键影响。",
+      "method": "研究通过设计不同提示策略（如简洁提示+显式保真约束）测试模型性能，在多样化场景和退化类型上进行基准测试，并与最先进的专用修复模型进行定量（全参考指标）和定性（用户研究）对比。",
+      "findings": "1. Nano Banana 2在全参考指标上优于专用模型，感知质量保持竞争力；2. 提示设计显著影响效果，简洁提示+保真约束能平衡重建精度与感知质量；3. 在小脸、密集人群等挑战性场景中展现强泛化能力；4. 模型对提示表述敏感，需迭代优化。结果表明通用生成模型有望成为统一修复方案，但需提升可控性和鲁棒性。"
+    }
+  },
+  {
+    "id": "2604.02979",
+    "title": "Not All Frames Deserve Full Computation: Accelerating Autoregressive Video Generation via Selective Computation and Predictive Extrapolation",
+    "abstract": "Autoregressive (AR) video diffusion models enable long-form video generation but remain expensive due to repeated multi-step denoising. Existing training-free acceleration methods rely on binary cache-or-recompute decisions, overlooking intermediate cases where direct reuse is too coarse yet full recomputation is unnecessary. Moreover, asynchronous AR schedules assign different noise levels to co-generated frames, yet existing methods process the entire valid interval uniformly. To address these AR-specific inefficiencies, we present SCOPE, a training-free framework for efficient AR video diffusion. SCOPE introduces a tri-modal scheduler over cache, predict, and recompute, where prediction via noise-level Taylor extrapolation fills the gap between reuse and recomputation with explicit stability controls backed by error propagation analysis. It further introduces selective computation that restricts execution to the active frame interval. On MAGI-1 and SkyReels-V2, SCOPE achieves up to 4.73x speedup while maintaining quality comparable to the original output, outperforming all training-free baselines.",
+    "authors": [
+      "Hanshuai Cui",
+      "Zhiqing Tang",
+      "Zhi Yao",
+      "Fanshuai Meng",
+      "Weijia Jia",
+      "Wei Zhao"
+    ],
+    "published": "2026-04-03",
+    "updated": "2026-04-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.02979.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.02979",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "并非所有帧都值得完整计算：通过选择性计算与预测外推加速自回归视频生成",
+      "core_contribution": "提出了SCOPE框架，通过三模态调度器（缓存、预测、重计算）和选择性计算，显著加速自回归视频扩散模型，同时保持生成质量。",
+      "method": "1. 引入三模态调度器，在缓存、预测和重计算之间动态选择，其中预测通过噪声级泰勒外推填补了重用与重计算之间的空白；2. 采用选择性计算，仅对活跃帧区间执行计算；3. 通过误差传播分析提供显式稳定性控制。",
+      "findings": "在MAGI-1和SkyReels-V2数据集上，SCOPE实现了高达4.73倍的加速，同时生成质量与原始输出相当，优于所有无需训练的基线方法。"
+    }
+  },
+  {
+    "id": "2604.02973",
+    "title": "Exploring Motion-Language Alignment for Text-driven Motion Generation",
+    "abstract": "Text-driven human motion generation aims to synthesize realistic motion sequences that follow textual descriptions. Despite recent advances, accurately aligning motion dynamics with textual semantics remains a fundamental challenge. In this paper, we revisit text-to-motion generation from the perspective of motion-language alignment and propose MLA-Gen, a framework that integrates global motion priors with fine-grained local conditioning. This design enables the model to capture common motion patterns, while establishing detailed alignment between texts and motions. Furthermore, we identify a previously overlooked attention sink phenomenon in human motion generation, where attention disproportionately concentrates on the start text token, limiting the utilization of informative textual cues and leading to degraded semantic grounding. To analyze this issue, we introduce SinkRatio, a metric for measuring attention concentration, and develop alignment-aware masking and control strategies to regulate attention during generation. Extensive experiments demonstrate that our approach consistently improves both motion quality and motion-language alignment over strong baselines. Code will be released upon acceptance.",
+    "authors": [
+      "Ruxi Gu",
+      "Zilei Wang",
+      "Wei Wang"
+    ],
+    "published": "2026-04-03",
+    "updated": "2026-04-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.02973.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.02973",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "探索运动-语言对齐在文本驱动运动生成中的应用",
+      "core_contribution": "提出MLA-Gen框架，通过全局运动先验与细粒度局部条件相结合，改善运动-语言对齐；发现并解决运动生成中的注意力集中现象（attention sink）。",
+      "method": "1. 提出MLA-Gen框架，整合全局运动模式与局部文本条件以增强对齐；2. 引入SinkRatio指标量化注意力集中问题；3. 设计对齐感知的掩码和控制策略调节生成过程中的注意力分布。",
+      "findings": "1. MLA-Gen显著提升了运动质量和运动-语言对齐效果；2. 注意力集中现象（过度关注起始文本标记）会削弱语义 grounding；3. 提出的对齐调节策略有效缓解了注意力失衡问题。"
+    }
+  },
+  {
+    "id": "2604.02966",
+    "title": "Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection",
+    "abstract": "Unmanned aerial vehicle (UAV) based object detection is a critical but challenging task, when applied in dynamically changing scenarios with limited annotated training data. Layout-to-image generation approaches have proved effective in promoting detection accuracy by synthesizing labeled images based on diffusion models. However, they suffer from frequently producing artifacts, especially near layout boundaries of tiny objects, thus substantially limiting their performance. To address these issues, we propose UAVGen, a novel layout-to-image generation framework tailored for UAV-based object detection. Specifically, UAVGen designs a Visual Prototype Conditioned Diffusion Model (VPC-DM) that constructs representative instances for each class and integrates them into latent embeddings for high-fidelity object generation. Moreover, a Focal Region Enhanced Data Pipeline (FRE-DP) is introduced to emphasize object-concentrated foreground regions in synthesis, combined with a label refinement to correct missing, extra and misaligned generations. Extensive experimental results demonstrate that our method significantly outperforms state-of-the-art approaches, and consistently promotes accuracy when integrated with distinct detectors. The source code is available at https://github.com/Sirius-Li/UAVGen.",
+    "authors": [
+      "Wenhao Li",
+      "Zimeng Wu",
+      "Yu Wu",
+      "Zehua Fu",
+      "Jiaxin Chen"
+    ],
+    "published": "2026-04-03",
+    "updated": "2026-04-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.02966.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.02966",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "基于视觉原型条件聚焦区域生成的无人机目标检测",
+      "core_contribution": "提出UAVGen框架，通过视觉原型条件扩散模型和聚焦区域增强数据管道，显著提升无人机目标检测中合成数据的生成质量。",
+      "method": "1. 设计视觉原型条件扩散模型（VPC-DM），通过构建类别代表性实例并嵌入潜在空间，实现高保真目标生成；2. 引入聚焦区域增强数据管道（FRE-DP），强化合成图像中目标密集的前景区域；3. 结合标签细化技术修正生成中的缺失、冗余和错位问题。",
+      "findings": "实验表明，UAVGen在生成质量和检测精度上均显著优于现有方法，且与不同检测器集成时能持续提升性能。"
+    }
+  }
+]
