@@ -7,10 +7,10 @@
     "url": "https://github.com/google-ai-edge/gallery",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-ai-edge /\n\n      gallery  \n\n    \n      A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
     "language": "Kotlin",
-    "stars": 17104,
+    "stars": 17134,
     "stars_today": 389,
     "relevance_score": 85,
-    "summary": "该项目是Google展示设备端机器学习和生成式AI应用的示例库，让用户能本地体验和使用模型，值得关注因为它提供了前沿的AI技术实践案例。"
+    "summary": "该项目展示了设备端机器学习和生成式AI的应用案例，让用户能够本地试用模型，值得关注因为它提供了前沿AI技术的实际落地示例。"
   },
   {
     "id": "block_goose",
@@ -20,10 +20,10 @@
     "url": "https://github.com/block/goose",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        block /\n\n      goose  \n\n    \n      an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
     "language": "Rust",
-    "stars": 37168,
+    "stars": 37192,
     "stars_today": 882,
     "relevance_score": 85,
-    "summary": "Goose 是一个开源、可扩展的 AI 代理，不仅能提供代码建议，还能安装、执行、编辑和测试任何大型语言模型（LLM），值得关注因其多功能性和对开发流程的全面支持。"
+    "summary": "Goose 是一个开源、可扩展的 AI 代理，不仅能提供代码建议，还能通过 LLM 进行安装、执行、编辑和测试操作。它值得关注因为它将 AI 辅助开发能力提升到了更主动的任务执行层面。"
   },
   {
     "id": "onyx-dot-app_onyx",
@@ -33,10 +33,10 @@
     "url": "https://github.com/onyx-dot-app/onyx",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        onyx-dot-app /\n\n      onyx  \n\n    \n      Open Source AI Platform - AI Chat with advanced features that works with every LLM",
     "language": "Python",
-    "stars": 25116,
+    "stars": 25134,
     "stars_today": 998,
     "relevance_score": 85,
-    "summary": "Onyx 是一个开源 AI 平台，提供支持多种大语言模型的高级 AI 聊天功能，因其灵活性和兼容性而值得关注。"
+    "summary": "Onyx 是一个开源的 AI 平台，提供支持多种大语言模型的高级 AI 聊天功能，因其灵活性和开源特性值得关注。"
   },
   {
     "id": "google-ai-edge_LiteRT-LM",
@@ -46,10 +46,10 @@
     "url": "https://github.com/google-ai-edge/LiteRT-LM",
     "description": "",
     "language": "C++",
-    "stars": 1616,
+    "stars": 1623,
     "stars_today": 124,
     "relevance_score": 85,
-    "summary": "LiteRT-LM 是 Google AI Edge 推出的轻量级实时语言模型推理框架，专注于在边缘设备上高效运行大语言模型，值得关注因其在资源受限环境中实现低延迟推理的突破性优化。"
+    "summary": "LiteRT-LM 是 Google AI Edge 推出的轻量级实时语言模型推理框架，专为边缘设备优化，值得关注因其高效性能和低延迟特性。"
   },
   {
     "id": "sponsors_Blaizzy",
@@ -59,10 +59,10 @@
     "url": "https://github.com/sponsors/Blaizzy",
     "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Blaizzy /\n\n      mlx-vlm  \n\n    \n      MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.",
     "language": "Python",
-    "stars": 3971,
+    "stars": 3975,
     "stars_today": 416,
     "relevance_score": 75,
-    "summary": "MLX-VLM是一个用于在Mac上使用MLX进行视觉语言模型（VLM）推理和微调的Python工具包，值得关注因为它为Mac用户提供了高效的本地运行能力。"
+    "summary": "该项目是一个用于在Mac上使用MLX进行视觉语言模型（VLM）推理和微调的Python工具包，值得关注因为它为Mac用户提供了高效的本地运行能力。"
   },
   {
     "id": "siddharthvaddem_openscreen",
@@ -72,10 +72,10 @@
     "url": "https://github.com/siddharthvaddem/openscreen",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        siddharthvaddem /\n\n      openscreen  \n\n    \n      Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
     "language": "TypeScript",
-    "stars": 22726,
+    "stars": 22766,
     "stars_today": 2749,
     "relevance_score": 45,
-    "summary": "OpenScreen 是一个开源的 TypeScript 项目，用于免费创建高质量演示视频，无订阅、无水印且可商用，是 Screen Studio 的替代方案。"
+    "summary": "\"OpenScreen 是一个开源免费的无水印演示录制工具，可作为 Screen Studio 的替代品，支持商业用途。\""
   },
   {
     "id": "sponsors_dmtrKovalenko",
@@ -85,10 +85,10 @@
     "url": "https://github.com/sponsors/dmtrKovalenko",
     "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        dmtrKovalenko /\n\n      fff.nvim  \n\n    \n      The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS",
     "language": "Rust",
-    "stars": 3730,
+    "stars": 3736,
     "stars_today": 76,
     "relevance_score": 40,
-    "summary": "该项目是用于AI代理、Neovim、Rust、C和NodeJS的最快且最准确的文件搜索工具包，值得关注因其高效和跨平台支持。"
+    "summary": "该项目是用于AI代理、Neovim、Rust、C和NodeJS的最快最准确文件搜索工具包，值得关注因其高效精准的搜索能力。"
   },
   {
     "id": "telegramdesktop_tdesktop",
@@ -98,9 +98,9 @@
     "url": "https://github.com/telegramdesktop/tdesktop",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        telegramdesktop /\n\n      tdesktop  \n\n    \n      Telegram Desktop messaging app",
     "language": "C++",
-    "stars": 31098,
+    "stars": 31103,
     "stars_today": 287,
     "relevance_score": 30,
-    "summary": "Telegram Desktop 是 Telegram 的官方桌面版即时通讯应用，提供安全、快速的跨平台消息服务，因其开源、隐私保护和丰富的功能而备受关注。"
+    "summary": "Telegram Desktop 是 Telegram 的官方桌面客户端，提供安全、快速的跨平台即时通讯服务，因其开源、隐私保护及丰富功能而备受关注。"
   }
 ]

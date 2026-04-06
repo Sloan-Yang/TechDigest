@@ -306,7 +306,7 @@
 </head>
 <body>
     <header class="site-header">
-        <a class="site-name" href="index.html">Recommend<span>Sys</span></a>
+        <a class="site-name" href="index.html">Tech<span>Digest</span></a>
         <nav class="header-nav">
             <a href="archive.html">归档</a>
         </nav>
@@ -328,30 +328,35 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2604.03231</span>
+          <span class="paper-id">2604.02880</span>
         </div>
         <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2604.03231" target="_blank">CoME-VL: Scaling Complementary Multi-Encoder Vision-Language Learning</a>
+        <a href="https://arxiv.org/abs/2604.02880" target="_blank">InstructTable: Improving Table Structure Recognition Through Instructions</a>
       </h3>
-      <p class="paper-title-zh">CoME-VL：扩展互补多编码器视觉-语言学习</p>
-      <p class="paper-authors">Ankan Deria, Komal Kumar, Xilin He, Imran Razzak, Hisham Cholakkal 等 (7 位作者)</p>
+      <p class="paper-title-zh">InstructTable：通过指令改进表格结构识别</p>
+      <p class="paper-authors">Boming Chen, Zining Wang, Zhentao Guo, Jianqiang Liu, Chen Duan 等 (8 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出CoME-VL框架，通过融合对比训练和自监督视觉编码器的互补优势，显著提升视觉-语言模型的性能。</div>
-        <div class="summary-section"><strong>方法:</strong> 1. 提出模块化融合框架，整合对比训练的视觉编码器和自监督DINO编码器；2. 采用熵引导的多层聚合与正交约束投影减少冗余；3. 使用RoPE增强的交叉注意力对齐异构令牌网格，生成紧凑的融合视觉令牌。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 1. 在多样化视觉-语言基准测试中，CoME-VL始终优于单编码器基线模型；2. 在视觉理解任务和基础任务上分别平均提升4.9%和5.4%；3. 在RefCOCO检测任务上实现最先进性能，并大幅超越基线。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出InstructTable框架，通过指令引导的多阶段训练提升复杂表格结构识别能力，并开发了无需模板的大规模表格数据合成方法TME。</div>
+        <div class="summary-section"><strong>方法:</strong> 1. 采用指令预训练引导模型关注细粒度结构模式
+2. 结合视觉信息建模的互补性TSR微调
+3. 提出Table Mix Expand (TME)方法合成逼真表格数据
+4. 构建BCDSTab基准测试集（含900张复杂表格）</div>
+        <div class="summary-section"><strong>关键发现:</strong> 1. 在FinTabNet、PubTabNet等公开数据集及BCDSTab上达到SOTA性能
+2. 表格专用指令和合成数据对性能提升有显著作用（消融实验验证）
+3. 在含合并/空单元格的复杂布局场景中表现优异</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Recent vision-language models (VLMs) typically rely on a single vision encoder trained with contrastive image-text objectives, such as CLIP-style pretraining. While contrastive encoders are effective for cross-modal alignment and retrieval, self-supervised visual encoders often capture richer dense semantics and exhibit stronger robustness on recognition and understanding tasks. In this work, we investigate how to scale the fusion of these complementary visual representations for vision-language modeling. We propose CoME-VL: Complementary Multi-Encoder Vision-Language, a modular fusion framework that integrates a contrastively trained vision encoder with a self-supervised DINO encoder. Our approach performs representation-level fusion by (i) entropy-guided multi-layer aggregation with orthogonality-constrained projections to reduce redundancy, and (ii) RoPE-enhanced cross-attention to align heterogeneous token grids and produce compact fused visual tokens. The fused tokens can be injected into a decoder-only LLM with minimal changes to standard VLM pipelines. Extensive experiments across diverse vision-language benchmarks demonstrate that CoME-VL consistently outperforms single-encoder baselines. In particular, we observe an average improvement of 4.9% on visual understanding tasks and 5.4% on grounding tasks. Our method achieves state-of-the-art performance on RefCOCO for detection while improving over the baseline by a large margin. Finally, we conduct ablation studies on layer merging, non-redundant feature mixing, and fusion capacity to evaluate how complementary contrastive and self-supervised signals affect VLM performance.</p>
+        <p>Table structure recognition (TSR) holds widespread practical importance by parsing tabular images into structured representations, yet encounters significant challenges when processing complex layouts involving merged or empty cells. Traditional visual-centric models rely exclusively on visual information while lacking crucial semantic support, thereby impeding accurate structural recognition in complex scenarios. Vision-language models leverage contextual semantics to enhance comprehension; however, these approaches underemphasize the modeling of visual structural information. To address these limitations, this paper introduces InstructTable, an instruction-guided multi-stage training TSR framework. Meticulously designed table instruction pre-training directs attention toward fine-grained structural patterns, enhancing comprehension of complex tables. Complementary TSR fine-tuning preserves robust visual information modeling, maintaining high-precision table parsing across diverse scenarios. Furthermore, we introduce Table Mix Expand (TME), an innovative template-free method for synthesizing large-scale authentic tabular data. Leveraging TME, we construct the Balanced Complex Dense Synthetic Tables (BCDSTab) benchmark, comprising 900 complex table images synthesized through our method to serve as a rigorous benchmark. Extensive experiments on multiple public datasets (FinTabNet, PubTabNet, MUSTARD) and BCDSTab demonstrate that InstructTable achieves state-of-the-art performance in TSR tasks. Ablation studies further confirm the positive impact of the proposed tabular-data-specific instructions and synthetic data.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2604.03231" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2604.03231.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2604.02880" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.02880.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,30 +365,36 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2604.03061</span>
+          <span class="paper-id">2604.02870</span>
         </div>
         <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2604.03061" target="_blank">Can Nano Banana 2 Replace Traditional Image Restoration Models? An Evaluation of Its Performance on Image Restoration Tasks</a>
+        <a href="https://arxiv.org/abs/2604.02870" target="_blank">Token Warping Helps MLLMs Look from Nearby Viewpoints</a>
       </h3>
-      <p class="paper-title-zh">Nano Banana 2能否取代传统图像修复模型？其在图像修复任务中的性能评估</p>
-      <p class="paper-authors">Weixiong Sun, Xiang Yin, Chao Dong</p>
+      <p class="paper-title-zh">令牌扭曲帮助多模态大语言模型从邻近视角观察</p>
+      <p class="paper-authors">Phillip Y. Lee, Chanho Park, Mingue Park, Seungwoo Yoo, Juil Koo 等 (6 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 系统评估了通用生成模型Nano Banana 2在多样化图像修复任务中的潜力，揭示了提示设计对性能的关键影响。</div>
-        <div class="summary-section"><strong>方法:</strong> 研究通过设计不同提示策略（如简洁提示+显式保真约束）测试模型性能，在多样化场景和退化类型上进行基准测试，并与最先进的专用修复模型进行定量（全参考指标）和定性（用户研究）对比。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 1. Nano Banana 2在全参考指标上优于专用模型，感知质量保持竞争力；2. 提示设计显著影响效果，简洁提示+保真约束能平衡重建精度与感知质量；3. 在小脸、密集人群等挑战性场景中展现强泛化能力；4. 模型对提示表述敏感，需迭代优化。结果表明通用生成模型有望成为统一修复方案，但需提升可控性和鲁棒性。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出令牌级扭曲方法，显著提升多模态大语言模型在视角变化下的视觉推理稳定性与语义一致性。</div>
+        <div class="summary-section"><strong>方法:</strong> 1. 基于人类心理意象理论，探索ViT模型中的图像令牌作为视角变换的表示基础
+2. 比较前向与后向令牌扭曲策略，发现后向扭曲（在目标视图定义密集网格并检索源视图对应令牌）更具优势
+3. 通过反向映射机制缓解深度估计误差带来的几何失真问题
+4. 构建ViewBench基准系统评估视角变换下的推理能力</div>
+        <div class="summary-section"><strong>关键发现:</strong> 1. 令牌级扭曲显著优于像素级扭曲方法，对微小深度误差具有更强鲁棒性
+2. 后向扭曲策略在保持语义连贯性方面表现最佳
+3. 在ViewBench测试中全面超越基线方法（包括像素扭曲、空间微调模型和生成式扭曲方法）
+4. 验证了视觉令牌可作为视角变换的有效表征载体</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Recent advances in generative AI raise the question of whether general-purpose image editing models can serve as unified solutions for image restoration. In this work, we conduct a systematic evaluation of Nano Banana 2 for image restoration across diverse scenes and degradation types. Our results show that prompt design plays a critical role, where concise prompts with explicit fidelity constraints achieve the best trade-off between reconstruction accuracy and perceptual quality. Compared with state-of-the-art restoration models, Nano Banana 2 achieves superior performance in full-reference metrics while remaining competitive in perceptual quality, which is further supported by user studies. We also observe strong generalization in challenging scenarios, such as small faces, dense crowds, and severe degradations. However, the model remains sensitive to prompt formulation and may require iterative refinement for optimal results. Overall, our findings suggest that general-purpose generative models hold strong potential as unified image restoration solvers, while highlighting the importance of controllability and robustness. All test results are available on https://github.com/yxyuanxiao/NanoBanana2TestOnIR.</p>
+        <p>Can warping tokens, rather than pixels, help multimodal large language models (MLLMs) understand how a scene appears from a nearby viewpoint? While MLLMs perform well on visual reasoning, they remain fragile to viewpoint changes, as pixel-wise warping is highly sensitive to small depth errors and often introduces geometric distortions. Drawing on theories of mental imagery that posit part-level structural representations as the basis for human perspective transformation, we examine whether image tokens in ViT-based MLLMs serve as an effective substrate for viewpoint changes. We compare forward and backward warping, finding that backward token warping, which defines a dense grid on the target view and retrieves a corresponding source-view token for each grid point, achieves greater stability and better preserves semantic coherence under viewpoint shifts. Experiments on our proposed ViewBench benchmark demonstrate that token-level warping enables MLLMs to reason reliably from nearby viewpoints, consistently outperforming all baselines including pixel-wise warping approaches, spatially fine-tuned MLLMs, and a generative warping method.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2604.03061" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2604.03061.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2604.02870" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.02870.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,30 +403,32 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2604.02979</span>
+          <span class="paper-id">2604.02847</span>
         </div>
         <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2604.02979" target="_blank">Not All Frames Deserve Full Computation: Accelerating Autoregressive Video Generation via Selective Computation and Predictive Extrapolation</a>
+        <a href="https://arxiv.org/abs/2604.02847" target="_blank">HiDiGen: Hierarchical Diffusion for B-Rep Generation with Explicit Topological Constraints</a>
       </h3>
-      <p class="paper-title-zh">并非所有帧都值得完整计算：通过选择性计算与预测外推加速自回归视频生成</p>
-      <p class="paper-authors">Hanshuai Cui, Zhiqing Tang, Zhi Yao, Fanshuai Meng, Weijia Jia 等 (6 位作者)</p>
+      <p class="paper-title-zh">HiDiGen：基于显式拓扑约束的分层扩散边界表示生成方法</p>
+      <p class="paper-authors">Shurui Liu, Weide Chen, Ancong Wu</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出了SCOPE框架，通过三模态调度器（缓存、预测、重计算）和选择性计算，显著加速自回归视频扩散模型，同时保持生成质量。</div>
-        <div class="summary-section"><strong>方法:</strong> 1. 引入三模态调度器，在缓存、预测和重计算之间动态选择，其中预测通过噪声级泰勒外推填补了重用与重计算之间的空白；2. 采用选择性计算，仅对活跃帧区间执行计算；3. 通过误差传播分析提供显式稳定性控制。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在MAGI-1和SkyReels-V2数据集上，SCOPE实现了高达4.73倍的加速，同时生成质量与原始输出相当，优于所有无需训练的基线方法。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出HiDiGen框架，通过分层建模和显式拓扑约束，首次实现了高效生成结构有效且几何多样的CAD边界表示模型。</div>
+        <div class="summary-section"><strong>方法:</strong> 1. 采用两阶段几何建模：首先生成拓扑骨架（面-边关联关系）及初始几何代理；
+2. 基于Transformer的扩散模块逐步细化几何（精确曲面和顶点位置）；
+3. 动态建立并强制边-顶点邻接关系以保持结构一致性。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明HiDiGen能生成新颖多样且拓扑有效的CAD模型，在生成质量和结构合理性上显著优于基线方法。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Autoregressive (AR) video diffusion models enable long-form video generation but remain expensive due to repeated multi-step denoising. Existing training-free acceleration methods rely on binary cache-or-recompute decisions, overlooking intermediate cases where direct reuse is too coarse yet full recomputation is unnecessary. Moreover, asynchronous AR schedules assign different noise levels to co-generated frames, yet existing methods process the entire valid interval uniformly. To address these AR-specific inefficiencies, we present SCOPE, a training-free framework for efficient AR video diffusion. SCOPE introduces a tri-modal scheduler over cache, predict, and recompute, where prediction via noise-level Taylor extrapolation fills the gap between reuse and recomputation with explicit stability controls backed by error propagation analysis. It further introduces selective computation that restricts execution to the active frame interval. On MAGI-1 and SkyReels-V2, SCOPE achieves up to 4.73x speedup while maintaining quality comparable to the original output, outperforming all training-free baselines.</p>
+        <p>Boundary representation (B-rep) is the standard 3D modeling format in CAD systems, encoding both geometric primitives and topological connectivity. Despite its prevalence, deep generative modeling of valid B-rep structures remains challenging due to the intricate interplay between discrete topology and continuous geometry. In this paper, we propose HiDiGen, a hierarchical generation framework that decouples geometry modeling into two stages, each guided by explicitly modeled topological constraints. Specifically, our approach first establishes face-edge incidence relations to define a coherent topological scaffold, upon which face proxies and initial edge curves are generated. Subsequently, multiple Transformer-based diffusion modules are employed to refine the geometry by generating precise face surfaces and vertex positions, with edge-vertex adjacencies dynamically established and enforced to preserve structural consistency. This progressive geometry hierarchy enables the generation of more novel and diverse shapes, while two-stage topological modeling ensures high validity. Experimental results show that HiDiGen achieves strong performance, generating novel, diverse, and topologically sound CAD models.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2604.02979" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2604.02979.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2604.02847" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.02847.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,30 +437,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2604.02973</span>
+          <span class="paper-id">2604.02846</span>
         </div>
         <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2604.02973" target="_blank">Exploring Motion-Language Alignment for Text-driven Motion Generation</a>
+        <a href="https://arxiv.org/abs/2604.02846" target="_blank">Adaptive Local Frequency Filtering for Fourier-Encoded Implicit Neural Representations</a>
       </h3>
-      <p class="paper-title-zh">探索运动-语言对齐在文本驱动运动生成中的应用</p>
-      <p class="paper-authors">Ruxi Gu, Zilei Wang, Wei Wang</p>
+      <p class="paper-title-zh">傅里叶编码隐式神经表示的自适应局部频率滤波</p>
+      <p class="paper-authors">Ligen Shi, Jun Qiu, Yuhang Zheng, Chang Liu</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出MLA-Gen框架，通过全局运动先验与细粒度局部条件相结合，改善运动-语言对齐；发现并解决运动生成中的注意力集中现象（attention sink）。</div>
-        <div class="summary-section"><strong>方法:</strong> 1. 提出MLA-Gen框架，整合全局运动模式与局部文本条件以增强对齐；2. 引入SinkRatio指标量化注意力集中问题；3. 设计对齐感知的掩码和控制策略调节生成过程中的注意力分布。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 1. MLA-Gen显著提升了运动质量和运动-语言对齐效果；2. 注意力集中现象（过度关注起始文本标记）会削弱语义 grounding；3. 提出的对齐调节策略有效缓解了注意力失衡问题。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种自适应局部频率滤波方法，通过空间变化的参数调制傅里叶分量，显著提升了傅里叶编码隐式神经表示对非平稳信号的建模能力。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法引入空间变化的参数α(x)动态调整傅里叶分量的滤波行为（低通/带通/高通），实现不同区域的最优频率响应。通过神经正切核(NTK)理论分析了滤波器对核频谱的重构作用，为自适应机制提供理论解释。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明：1) 在2D图像拟合、3D形状表示和稀疏重建任务中，该方法比固定频率基线收敛更快、重建质量更高；2) 学习到的α(x)可直观显示空间频率偏好，有效解释模型对非平稳信号的处理行为。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Text-driven human motion generation aims to synthesize realistic motion sequences that follow textual descriptions. Despite recent advances, accurately aligning motion dynamics with textual semantics remains a fundamental challenge. In this paper, we revisit text-to-motion generation from the perspective of motion-language alignment and propose MLA-Gen, a framework that integrates global motion priors with fine-grained local conditioning. This design enables the model to capture common motion patterns, while establishing detailed alignment between texts and motions. Furthermore, we identify a previously overlooked attention sink phenomenon in human motion generation, where attention disproportionately concentrates on the start text token, limiting the utilization of informative textual cues and leading to degraded semantic grounding. To analyze this issue, we introduce SinkRatio, a metric for measuring attention concentration, and develop alignment-aware masking and control strategies to regulate attention during generation. Extensive experiments demonstrate that our approach consistently improves both motion quality and motion-language alignment over strong baselines. Code will be released upon acceptance.</p>
+        <p>Fourier-encoded implicit neural representations (INRs) have shown strong capability in modeling continuous signals from discrete samples. However, conventional Fourier feature mappings use a fixed set of frequencies over the entire spatial domain, making them poorly suited to signals with spatially varying local spectra and often leading to slow convergence of high-frequency details. To address this issue, we propose an adaptive local frequency filtering method for Fourier-encoded INRs. The proposed method introduces a spatially varying parameter $α(\mathbf{x})$ to modulate encoded Fourier components, enabling a smooth transition among low-pass, band-pass, and high-pass behaviors at different spatial locations. We further analyze the effect of the proposed filter from the neural tangent kernel (NTK) perspective and provide an NTK-inspired interpretation of how it reshapes the effective kernel spectrum. Experiments on 2D image fitting, 3D shape representation, and sparse data reconstruction demonstrate that the proposed method consistently improves reconstruction quality and leads to faster optimization compared with fixed-frequency baselines. In addition, the learned $α(\mathbf{x})$ provides an intuitive visualization of spatially varying frequency preferences, which helps explain the behavior of the model on non-stationary signals. These results indicate that adaptive local frequency modulation is a practical enhancement for Fourier-encoded INRs.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2604.02973" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2604.02973.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2604.02846" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.02846.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,30 +469,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2604.02966</span>
+          <span class="paper-id">2604.02828</span>
         </div>
         <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2604.02966" target="_blank">Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection</a>
+        <a href="https://arxiv.org/abs/2604.02828" target="_blank">NavCrafter: Exploring 3D Scenes from a Single Image</a>
       </h3>
-      <p class="paper-title-zh">基于视觉原型条件聚焦区域生成的无人机目标检测</p>
-      <p class="paper-authors">Wenhao Li, Zimeng Wu, Yu Wu, Zehua Fu, Jiaxin Chen</p>
+      <p class="paper-title-zh">NavCrafter：从单张图像探索3D场景</p>
+      <p class="paper-authors">Hongbo Duan, Peiyu Zhuang, Yi Liu, Zhengyang Zhang, Yuxin Zhang 等 (8 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出UAVGen框架，通过视觉原型条件扩散模型和聚焦区域增强数据管道，显著提升无人机目标检测中合成数据的生成质量。</div>
-        <div class="summary-section"><strong>方法:</strong> 1. 设计视觉原型条件扩散模型（VPC-DM），通过构建类别代表性实例并嵌入潜在空间，实现高保真目标生成；2. 引入聚焦区域增强数据管道（FRE-DP），强化合成图像中目标密集的前景区域；3. 结合标签细化技术修正生成中的缺失、冗余和错位问题。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 实验表明，UAVGen在生成质量和检测精度上均显著优于现有方法，且与不同检测器集成时能持续提升性能。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出NavCrafter框架，通过合成具有相机可控性和时空一致性的新视角视频序列，实现从单张图像探索3D场景。</div>
+        <div class="summary-section"><strong>方法:</strong> NavCrafter利用视频扩散模型捕捉丰富的3D先验，并采用几何感知的扩展策略逐步扩大场景覆盖范围。通过双分支相机注入和注意力调制的多阶段相机控制机制，实现可控的多视角合成。此外，还提出碰撞感知相机轨迹规划器和增强的3D高斯泼溅（3DGS）流程，包括深度对齐监督、结构正则化和细化。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，NavCrafter在大视角变化下实现了最先进的新视角合成，并显著提高了3D重建的保真度。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Unmanned aerial vehicle (UAV) based object detection is a critical but challenging task, when applied in dynamically changing scenarios with limited annotated training data. Layout-to-image generation approaches have proved effective in promoting detection accuracy by synthesizing labeled images based on diffusion models. However, they suffer from frequently producing artifacts, especially near layout boundaries of tiny objects, thus substantially limiting their performance. To address these issues, we propose UAVGen, a novel layout-to-image generation framework tailored for UAV-based object detection. Specifically, UAVGen designs a Visual Prototype Conditioned Diffusion Model (VPC-DM) that constructs representative instances for each class and integrates them into latent embeddings for high-fidelity object generation. Moreover, a Focal Region Enhanced Data Pipeline (FRE-DP) is introduced to emphasize object-concentrated foreground regions in synthesis, combined with a label refinement to correct missing, extra and misaligned generations. Extensive experimental results demonstrate that our method significantly outperforms state-of-the-art approaches, and consistently promotes accuracy when integrated with distinct detectors. The source code is available at https://github.com/Sirius-Li/UAVGen.</p>
+        <p>Creating flexible 3D scenes from a single image is vital when direct 3D data acquisition is costly or impractical. We introduce NavCrafter, a novel framework that explores 3D scenes from a single image by synthesizing novel-view video sequences with camera controllability and temporal-spatial consistency. NavCrafter leverages video diffusion models to capture rich 3D priors and adopts a geometry-aware expansion strategy to progressively extend scene coverage. To enable controllable multi-view synthesis, we introduce a multi-stage camera control mechanism that conditions diffusion models with diverse trajectories via dual-branch camera injection and attention modulation. We further propose a collision-aware camera trajectory planner and an enhanced 3D Gaussian Splatting (3DGS) pipeline with depth-aligned supervision, structural regularization and refinement. Extensive experiments demonstrate that NavCrafter achieves state-of-the-art novel-view synthesis under large viewpoint shifts and substantially improves 3D reconstruction fidelity.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2604.02966" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2604.02966.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2604.02828" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2604.02828.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,7 +501,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 138 &nbsp;💬 10</span>
+          <span class="paper-id">▲ 171 &nbsp;💬 12</span>
         </div>
         <span class="score-badge">推荐度 90/100</span>
       </div>
@@ -496,7 +509,7 @@
         <a href="https://news.ycombinator.com/item?id=47655408" target="_blank">Show HN: I built a tiny LLM to demystify how language models work</a>
       </h3>
       <p class="paper-authors">by armanified</p>
-      <div class="paper-summary"><div class="summary-section">作者构建了一个约900万参数的小型语言模型，使用基础Transformer架构和6万条合成对话数据，仅用130行PyTorch代码实现，可在免费Colab T4上5分钟完成训练，模型以"鱼认为生命的意义是食物"为趣味示例，鼓励用户克隆并自定义角色性格。</div></div>
+      <div class="paper-summary"><div class="summary-section">作者构建了一个约900万参数的小型语言模型，使用基础Transformer架构和6万条合成对话数据，仅需130行PyTorch代码，5分钟即可在免费Colab T4上完成训练，旨在帮助理解语言模型的工作原理，并允许用户自定义模型个性。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=47655408" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://github.com/arman-bd/guppylm" target="_blank" class="link-btn">🔗 原文</a>
@@ -507,26 +520,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 1793 &nbsp;💬 469</span>
-        </div>
-        <span class="score-badge">推荐度 90/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=47616361" target="_blank">Google releases Gemma 4 open models</a>
-      </h3>
-      <p class="paper-authors">by jeffmcjunkin</p>
-      <div class="paper-summary"><div class="summary-section">谷歌发布了Gemma 4开源模型，提供高性能AI工具供开发者使用。</div></div>
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=47616361" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://deepmind.google/models/gemma/gemma-4/" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 477 &nbsp;💬 128</span>
+          <span class="paper-id">▲ 491 &nbsp;💬 130</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -534,7 +528,7 @@
         <a href="https://news.ycombinator.com/item?id=47652561" target="_blank">Gemma 4 on iPhone</a>
       </h3>
       <p class="paper-authors">by janandonly</p>
-      <div class="paper-summary"><div class="summary-section">谷歌推出Gemma 4模型可在iPhone上运行，展示移动端AI应用新进展。</div></div>
+      <div class="paper-summary"><div class="summary-section">谷歌推出Gemma 4模型，可在iPhone上运行。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=47652561" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://apps.apple.com/nl/app/google-ai-edge-gallery/id6749645337" target="_blank" class="link-btn">🔗 原文</a>
@@ -545,7 +539,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 676 &nbsp;💬 211</span>
+          <span class="paper-id">▲ 692 &nbsp;💬 215</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -553,7 +547,7 @@
         <a href="https://news.ycombinator.com/item?id=47648828" target="_blank">Eight years of wanting, three months of building with AI</a>
       </h3>
       <p class="paper-authors">by brilee</p>
-      <div class="paper-summary"><div class="summary-section">作者历经八年渴望，利用AI技术三个月内构建了SyntaQLite项目，分享其开发历程与成果。</div></div>
+      <div class="paper-summary"><div class="summary-section">作者历经八年渴望，借助AI技术仅用三个月时间开发出SyntaQLite项目，分享其快速实现的经历和成果。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=47648828" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://lalitm.com/post/building-syntaqlite-ai/" target="_blank" class="link-btn">🔗 原文</a>
@@ -564,7 +558,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 27 &nbsp;💬 1</span>
+          <span class="paper-id">▲ 29 &nbsp;💬 3</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -572,7 +566,7 @@
         <a href="https://news.ycombinator.com/item?id=47655367" target="_blank">Show HN: Gemma Gem – AI model embedded in a browser – no API keys, no cloud</a>
       </h3>
       <p class="paper-authors">by ikessler</p>
-      <div class="paper-summary"><div class="summary-section">Gemma Gem是一款Chrome扩展，将谷歌Gemma 4（2B）AI模型嵌入浏览器，无需API密钥或云端，可直接与网页交互（如读取内容、点击元素等），并内置小型聊天浮窗，支持链式思考推理，但多步骤操作可能不稳定。</div></div>
+      <div class="paper-summary"><div class="summary-section">Gemma Gem是一款Chrome扩展，将Google的Gemma 4 (2B) AI模型嵌入浏览器，通过WebGPU运行，无需API密钥或云端服务，可直接与网页交互（如读取内容、点击元素等），并提供小型聊天覆盖层，支持链式思考推理，适合简单页面操作但多步骤任务可能不稳定。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=47655367" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://github.com/kessler/gemma-gem" target="_blank" class="link-btn">🔗 原文</a>
@@ -583,7 +577,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 216 &nbsp;💬 55</span>
+          <span class="paper-id">▲ 220 &nbsp;💬 56</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -591,7 +585,7 @@
         <a href="https://news.ycombinator.com/item?id=47651540" target="_blank">Running Gemma 4 locally with LM Studio's new headless CLI and Claude Code</a>
       </h3>
       <p class="paper-authors">by vbtechguy</p>
-      <div class="paper-summary"><div class="summary-section">该帖子介绍了如何使用LM Studio的新命令行工具在本地运行Google的Gemma 4模型，并提到了与Claude Code的整合功能。</div></div>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍了如何使用LM Studio的无头CLI和Claude Code在本地运行Google的Gemma 4模型，展示了本地部署大型语言模型的方法。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=47651540" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://ai.georgeliu.com/p/running-google-gemma-4-locally-with" target="_blank" class="link-btn">🔗 原文</a>
@@ -602,7 +596,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 20 &nbsp;💬 2</span>
+          <span class="paper-id">▲ 24 &nbsp;💬 2</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -610,7 +604,7 @@
         <a href="https://news.ycombinator.com/item?id=47655268" target="_blank">Show HN: Modo – I built an open-source alternative to Kiro, Cursor, and Windsurf</a>
       </h3>
       <p class="paper-authors">by mohshomis</p>
-      <div class="paper-summary"><div class="summary-section">这是一个开源项目Modo，旨在替代Kiro、Cursor和Windsurf等工具，提供类似功能。</div></div>
+      <div class="paper-summary"><div class="summary-section">该帖子展示了一个名为Modo的开源项目，旨在替代Kiro、Cursor和Windsurf等工具，提供类似功能。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=47655268" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://github.com/mohshomis/modo" target="_blank" class="link-btn">🔗 原文</a>
@@ -621,7 +615,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 13 &nbsp;💬 8</span>
+          <span class="paper-id">▲ 15 &nbsp;💬 8</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -629,10 +623,29 @@
         <a href="https://news.ycombinator.com/item?id=47655335" target="_blank">Recall – local multimodal semantic search for your files</a>
       </h3>
       <p class="paper-authors">by patel_aayushya</p>
-      <div class="paper-summary"><div class="summary-section">Recall 是一个本地多模态语义搜索工具，可帮助用户快速查找文件内容，支持多种文件类型和语义理解。</div></div>
+      <div class="paper-summary"><div class="summary-section">一款本地多模态语义搜索工具，可智能检索用户文件内容。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=47655335" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://github.com/aayu22809/Recall" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 8 &nbsp;💬 6</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=47655721" target="_blank">LLMs can't justify their answers–this CLI forces them to</a>
+      </h3>
+      <p class="paper-authors">by volatilityfund</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍了一个命令行工具，能强制大型语言模型(LLMs)为其生成的答案提供解释和依据，解决了LLMs通常无法自我论证的问题。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=47655721" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://wheat.grainulation.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +654,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Kotlin</span>
-          <span class="paper-id">⭐ 17,104 &nbsp;+389 today</span>
+          <span class="paper-id">⭐ 17,134 &nbsp;+389 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -665,7 +678,7 @@
 
     
       A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.</p>
-      <div class="paper-summary"><div class="summary-section">该项目是Google展示设备端机器学习和生成式AI应用的示例库，让用户能本地体验和使用模型，值得关注因为它提供了前沿的AI技术实践案例。</div></div>
+      <div class="paper-summary"><div class="summary-section">该项目展示了设备端机器学习和生成式AI的应用案例，让用户能够本地试用模型，值得关注因为它提供了前沿AI技术的实际落地示例。</div></div>
       <div class="paper-links">
         <a href="https://github.com/google-ai-edge/gallery" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -675,7 +688,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 37,168 &nbsp;+882 today</span>
+          <span class="paper-id">⭐ 37,192 &nbsp;+882 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -699,7 +712,7 @@
 
     
       an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM</p>
-      <div class="paper-summary"><div class="summary-section">Goose 是一个开源、可扩展的 AI 代理，不仅能提供代码建议，还能安装、执行、编辑和测试任何大型语言模型（LLM），值得关注因其多功能性和对开发流程的全面支持。</div></div>
+      <div class="paper-summary"><div class="summary-section">Goose 是一个开源、可扩展的 AI 代理，不仅能提供代码建议，还能通过 LLM 进行安装、执行、编辑和测试操作。它值得关注因为它将 AI 辅助开发能力提升到了更主动的任务执行层面。</div></div>
       <div class="paper-links">
         <a href="https://github.com/block/goose" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -709,7 +722,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 25,116 &nbsp;+998 today</span>
+          <span class="paper-id">⭐ 25,134 &nbsp;+998 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -733,7 +746,7 @@
 
     
       Open Source AI Platform - AI Chat with advanced features that works with every LLM</p>
-      <div class="paper-summary"><div class="summary-section">Onyx 是一个开源 AI 平台，提供支持多种大语言模型的高级 AI 聊天功能，因其灵活性和兼容性而值得关注。</div></div>
+      <div class="paper-summary"><div class="summary-section">Onyx 是一个开源的 AI 平台，提供支持多种大语言模型的高级 AI 聊天功能，因其灵活性和开源特性值得关注。</div></div>
       <div class="paper-links">
         <a href="https://github.com/onyx-dot-app/onyx" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -743,7 +756,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 1,616 &nbsp;+124 today</span>
+          <span class="paper-id">⭐ 1,623 &nbsp;+124 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -751,7 +764,7 @@
         <a href="https://github.com/google-ai-edge/LiteRT-LM" target="_blank">google-ai-edge/LiteRT-LM</a>
       </h3>
       
-      <div class="paper-summary"><div class="summary-section">LiteRT-LM 是 Google AI Edge 推出的轻量级实时语言模型推理框架，专注于在边缘设备上高效运行大语言模型，值得关注因其在资源受限环境中实现低延迟推理的突破性优化。</div></div>
+      <div class="paper-summary"><div class="summary-section">LiteRT-LM 是 Google AI Edge 推出的轻量级实时语言模型推理框架，专为边缘设备优化，值得关注因其高效性能和低延迟特性。</div></div>
       <div class="paper-links">
         <a href="https://github.com/google-ai-edge/LiteRT-LM" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -761,7 +774,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 3,971 &nbsp;+416 today</span>
+          <span class="paper-id">⭐ 3,975 &nbsp;+416 today</span>
         </div>
         <span class="score-badge">推荐度 75/100</span>
       </div>
@@ -798,7 +811,7 @@
 
     
       MLX-VLM is a package for inference and fine-tuning of Vision Language Models (VLMs) on your Mac using MLX.</p>
-      <div class="paper-summary"><div class="summary-section">MLX-VLM是一个用于在Mac上使用MLX进行视觉语言模型（VLM）推理和微调的Python工具包，值得关注因为它为Mac用户提供了高效的本地运行能力。</div></div>
+      <div class="paper-summary"><div class="summary-section">该项目是一个用于在Mac上使用MLX进行视觉语言模型（VLM）推理和微调的Python工具包，值得关注因为它为Mac用户提供了高效的本地运行能力。</div></div>
       <div class="paper-links">
         <a href="https://github.com/sponsors/Blaizzy" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -808,7 +821,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 22,726 &nbsp;+2749 today</span>
+          <span class="paper-id">⭐ 22,766 &nbsp;+2749 today</span>
         </div>
         <span class="score-badge">推荐度 45/100</span>
       </div>
@@ -832,7 +845,7 @@
 
     
       Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.</p>
-      <div class="paper-summary"><div class="summary-section">OpenScreen 是一个开源的 TypeScript 项目，用于免费创建高质量演示视频，无订阅、无水印且可商用，是 Screen Studio 的替代方案。</div></div>
+      <div class="paper-summary"><div class="summary-section">"OpenScreen 是一个开源免费的无水印演示录制工具，可作为 Screen Studio 的替代品，支持商业用途。"</div></div>
       <div class="paper-links">
         <a href="https://github.com/siddharthvaddem/openscreen" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -842,7 +855,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 3,730 &nbsp;+76 today</span>
+          <span class="paper-id">⭐ 3,736 &nbsp;+76 today</span>
         </div>
         <span class="score-badge">推荐度 40/100</span>
       </div>
@@ -879,7 +892,7 @@
 
     
       The fastest and the most accurate file search toolkit for AI agents, Neovim, Rust, C, and NodeJS</p>
-      <div class="paper-summary"><div class="summary-section">该项目是用于AI代理、Neovim、Rust、C和NodeJS的最快且最准确的文件搜索工具包，值得关注因其高效和跨平台支持。</div></div>
+      <div class="paper-summary"><div class="summary-section">该项目是用于AI代理、Neovim、Rust、C和NodeJS的最快最准确文件搜索工具包，值得关注因其高效精准的搜索能力。</div></div>
       <div class="paper-links">
         <a href="https://github.com/sponsors/dmtrKovalenko" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -889,7 +902,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 31,098 &nbsp;+287 today</span>
+          <span class="paper-id">⭐ 31,103 &nbsp;+287 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -913,7 +926,7 @@
 
     
       Telegram Desktop messaging app</p>
-      <div class="paper-summary"><div class="summary-section">Telegram Desktop 是 Telegram 的官方桌面版即时通讯应用，提供安全、快速的跨平台消息服务，因其开源、隐私保护和丰富的功能而备受关注。</div></div>
+      <div class="paper-summary"><div class="summary-section">Telegram Desktop 是 Telegram 的官方桌面客户端，提供安全、快速的跨平台即时通讯服务，因其开源、隐私保护及丰富功能而备受关注。</div></div>
       <div class="paper-links">
         <a href="https://github.com/telegramdesktop/tdesktop" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
