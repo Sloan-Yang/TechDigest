@@ -1,127 +1,72 @@
 [
   {
-    "id": "2604.02880",
-    "title": "InstructTable: Improving Table Structure Recognition Through Instructions",
-    "abstract": "Table structure recognition (TSR) holds widespread practical importance by parsing tabular images into structured representations, yet encounters significant challenges when processing complex layouts involving merged or empty cells. Traditional visual-centric models rely exclusively on visual information while lacking crucial semantic support, thereby impeding accurate structural recognition in complex scenarios. Vision-language models leverage contextual semantics to enhance comprehension; however, these approaches underemphasize the modeling of visual structural information. To address these limitations, this paper introduces InstructTable, an instruction-guided multi-stage training TSR framework. Meticulously designed table instruction pre-training directs attention toward fine-grained structural patterns, enhancing comprehension of complex tables. Complementary TSR fine-tuning preserves robust visual information modeling, maintaining high-precision table parsing across diverse scenarios. Furthermore, we introduce Table Mix Expand (TME), an innovative template-free method for synthesizing large-scale authentic tabular data. Leveraging TME, we construct the Balanced Complex Dense Synthetic Tables (BCDSTab) benchmark, comprising 900 complex table images synthesized through our method to serve as a rigorous benchmark. Extensive experiments on multiple public datasets (FinTabNet, PubTabNet, MUSTARD) and BCDSTab demonstrate that InstructTable achieves state-of-the-art performance in TSR tasks. Ablation studies further confirm the positive impact of the proposed tabular-data-specific instructions and synthetic data.",
+    "id": "2604.02817",
+    "title": "MMPhysVideo: Scaling Physical Plausibility in Video Generation via Joint Multimodal Modeling",
+    "abstract": "Despite advancements in generating visually stunning content, video diffusion models (VDMs) often yield physically inconsistent results due to pixel-only reconstruction. To address this, we propose MMPhysVideo, the first framework to scale physical plausibility in video generation through joint multimodal modeling. We recast perceptual cues, specifically semantics, geometry, and spatio-temporal trajectory, into a unified pseudo-RGB format, enabling VDMs to directly capture complex physical dynamics. To mitigate cross-modal interference, we propose a Bidirectionally Controlled Teacher architecture, which utilizes parallel branches to fully decouple RGB and perception processing and adopts two zero-initialized control links to gradually learn pixel-wise consistency. For inference efficiency, the teacher's physical prior is distilled into a single-stream student model via representation alignment. Furthermore, we present MMPhysPipe, a scalable data curation and annotation pipeline tailored for constructing physics-rich multimodal datasets. MMPhysPipe employs a vision-language model (VLM) guided by a chain-of-visual-evidence rule to pinpoint physical subjects, enabling expert models to extract multi-granular perceptual information. Without additional inference costs, MMPhysVideo consistently improves physical plausibility and visual quality over advanced models across various benchmarks and achieves state-of-the-art performance compared to existing methods.",
     "authors": [
-      "Boming Chen",
-      "Zining Wang",
-      "Zhentao Guo",
-      "Jianqiang Liu",
-      "Chen Duan",
-      "Yu Gu",
-      "Kai zhou",
-      "Pengfei Yan"
+      "Shubo Lin",
+      "Xuanyang Zhang",
+      "Wei Cheng",
+      "Weiming Hu",
+      "Gang Yu",
+      "Jin Gao"
     ],
     "published": "2026-04-03",
     "updated": "2026-04-03",
     "categories": [
       "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.02880.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.02880",
+    "pdf_url": "https://arxiv.org/pdf/2604.02817.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.02817",
     "primary_category": "cs.CV",
     "score": 65,
     "summary": {
-      "title_zh": "InstructTable：通过指令改进表格结构识别",
-      "core_contribution": "提出InstructTable框架，通过指令引导的多阶段训练提升复杂表格结构识别能力，并开发了无需模板的大规模表格数据合成方法TME。",
-      "method": "1. 采用指令预训练引导模型关注细粒度结构模式\n2. 结合视觉信息建模的互补性TSR微调\n3. 提出Table Mix Expand (TME)方法合成逼真表格数据\n4. 构建BCDSTab基准测试集（含900张复杂表格）",
-      "findings": "1. 在FinTabNet、PubTabNet等公开数据集及BCDSTab上达到SOTA性能\n2. 表格专用指令和合成数据对性能提升有显著作用（消融实验验证）\n3. 在含合并/空单元格的复杂布局场景中表现优异"
+      "title_zh": "MMPhysVideo：通过联合多模态建模扩展视频生成中的物理合理性",
+      "core_contribution": "提出首个通过联合多模态建模提升视频生成物理合理性的框架MMPhysVideo，并开发了支持物理丰富多模态数据集构建的标注流程MMPhysPipe。",
+      "method": "1. 将语义、几何和时空轨迹等感知线索统一为伪RGB格式，使视频扩散模型直接学习复杂物理动态\n2. 设计双向控制教师架构（BCT），通过并行分支解耦RGB与感知处理，并采用零初始化控制链接逐步学习像素级一致性\n3. 通过表示对齐将教师模型的物理先验蒸馏到单流学生模型以提升推理效率\n4. 基于视觉证据链规则开发VLM引导的自动化数据标注流程，精准提取多粒度物理信息",
+      "findings": "1. 在多个基准测试中无需额外推理成本即显著提升物理合理性和视觉质量\n2. 相比现有方法实现最先进性能\n3. MMPhysPipe能有效构建物理信息丰富的多模态数据集"
     }
   },
   {
-    "id": "2604.02870",
-    "title": "Token Warping Helps MLLMs Look from Nearby Viewpoints",
-    "abstract": "Can warping tokens, rather than pixels, help multimodal large language models (MLLMs) understand how a scene appears from a nearby viewpoint? While MLLMs perform well on visual reasoning, they remain fragile to viewpoint changes, as pixel-wise warping is highly sensitive to small depth errors and often introduces geometric distortions. Drawing on theories of mental imagery that posit part-level structural representations as the basis for human perspective transformation, we examine whether image tokens in ViT-based MLLMs serve as an effective substrate for viewpoint changes. We compare forward and backward warping, finding that backward token warping, which defines a dense grid on the target view and retrieves a corresponding source-view token for each grid point, achieves greater stability and better preserves semantic coherence under viewpoint shifts. Experiments on our proposed ViewBench benchmark demonstrate that token-level warping enables MLLMs to reason reliably from nearby viewpoints, consistently outperforming all baselines including pixel-wise warping approaches, spatially fine-tuned MLLMs, and a generative warping method.",
+    "id": "2604.02799",
+    "title": "UNICA: A Unified Neural Framework for Controllable 3D Avatars",
+    "abstract": "Controllable 3D human avatars have found widespread applications in 3D games, the metaverse, and AR/VR scenarios. The conventional approach to creating such a 3D avatar requires a lengthy, intricate pipeline encompassing appearance modeling, motion planning, rigging, and physical simulation. In this paper, we introduce UNICA (UNIfied neural Controllable Avatar), a skeleton-free generative model that unifies all avatar control components into a single neural framework. Given keyboard inputs akin to video game controls, UNICA generates the next frame of a 3D avatar's geometry through an action-conditioned diffusion model operating on 2D position maps. A point transformer then maps the resulting geometry to 3D Gaussian Splatting for high-fidelity free-view rendering. Our approach naturally captures hair and loose clothing dynamics without manually designed physical simulation, and supports extra-long autoregressive generation. To the best of our knowledge, UNICA is the first model to unify the workflow of \"motion planning, rigging, physical simulation, and rendering\". Code is released at https://github.com/zjh21/UNICA.",
     "authors": [
-      "Phillip Y. Lee",
-      "Chanho Park",
-      "Mingue Park",
-      "Seungwoo Yoo",
-      "Juil Koo",
-      "Minhyuk Sung"
+      "Jiahe Zhu",
+      "Xinyao Wang",
+      "Yiyu Zhuang",
+      "Yanwen Wang",
+      "Jing Tian",
+      "Yao Yao",
+      "Hao Zhu"
     ],
     "published": "2026-04-03",
     "updated": "2026-04-03",
     "categories": [
       "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.02870.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.02870",
+    "pdf_url": "https://arxiv.org/pdf/2604.02799.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.02799",
     "primary_category": "cs.CV",
     "score": 65,
     "summary": {
-      "title_zh": "令牌扭曲帮助多模态大语言模型从邻近视角观察",
-      "core_contribution": "提出令牌级扭曲方法，显著提升多模态大语言模型在视角变化下的视觉推理稳定性与语义一致性。",
-      "method": "1. 基于人类心理意象理论，探索ViT模型中的图像令牌作为视角变换的表示基础\n2. 比较前向与后向令牌扭曲策略，发现后向扭曲（在目标视图定义密集网格并检索源视图对应令牌）更具优势\n3. 通过反向映射机制缓解深度估计误差带来的几何失真问题\n4. 构建ViewBench基准系统评估视角变换下的推理能力",
-      "findings": "1. 令牌级扭曲显著优于像素级扭曲方法，对微小深度误差具有更强鲁棒性\n2. 后向扭曲策略在保持语义连贯性方面表现最佳\n3. 在ViewBench测试中全面超越基线方法（包括像素扭曲、空间微调模型和生成式扭曲方法）\n4. 验证了视觉令牌可作为视角变换的有效表征载体"
+      "title_zh": "UNICA：可控3D数字人的统一神经框架",
+      "core_contribution": "提出首个将动作规划、骨骼绑定、物理模拟和渲染流程统一的神经框架，通过单一模型实现可控3D数字人生成。",
+      "method": "1. 采用基于2D位置图的动作条件扩散模型生成下一帧几何形态\n2. 使用点Transformer将几何映射到3D高斯泼溅表示\n3. 无需手动物理模拟即可捕捉头发/衣物动态\n4. 支持类游戏键盘控制的超长自回归生成",
+      "findings": "1. 实现端到端的高保真自由视角渲染\n2. 自动处理传统方法需分步解决的动态效果\n3. 在保持生成质量的同时支持长时间连续动作生成"
     }
   },
   {
-    "id": "2604.02847",
-    "title": "HiDiGen: Hierarchical Diffusion for B-Rep Generation with Explicit Topological Constraints",
-    "abstract": "Boundary representation (B-rep) is the standard 3D modeling format in CAD systems, encoding both geometric primitives and topological connectivity. Despite its prevalence, deep generative modeling of valid B-rep structures remains challenging due to the intricate interplay between discrete topology and continuous geometry. In this paper, we propose HiDiGen, a hierarchical generation framework that decouples geometry modeling into two stages, each guided by explicitly modeled topological constraints. Specifically, our approach first establishes face-edge incidence relations to define a coherent topological scaffold, upon which face proxies and initial edge curves are generated. Subsequently, multiple Transformer-based diffusion modules are employed to refine the geometry by generating precise face surfaces and vertex positions, with edge-vertex adjacencies dynamically established and enforced to preserve structural consistency. This progressive geometry hierarchy enables the generation of more novel and diverse shapes, while two-stage topological modeling ensures high validity. Experimental results show that HiDiGen achieves strong performance, generating novel, diverse, and topologically sound CAD models.",
+    "id": "2604.02787",
+    "title": "LumaFlux: Lifting 8-Bit Worlds to HDR Reality with Physically-Guided Diffusion Transformers",
+    "abstract": "The rapid adoption of HDR-capable devices has created a pressing need to convert the 8-bit Standard Dynamic Range (SDR) content into perceptually and physically accurate 10-bit High Dynamic Range (HDR). Existing inverse tone-mapping (ITM) methods often rely on fixed tone-mapping operators that struggle to generalize to real-world degradations, stylistic variations, and camera pipelines, frequently producing clipped highlights, desaturated colors, or unstable tone reproduction. We introduce LumaFlux, a first physically and perceptually guided diffusion transformer (DiT) for SDR-to-HDR reconstruction by adapting a large pretrained DiT. Our LumaFlux introduces (1) a Physically-Guided Adaptation (PGA) module that injects luminance, spatial descriptors, and frequency cues into attention through low-rank residuals; (2) a Perceptual Cross-Modulation (PCM) layer that stabilizes chroma and texture via FiLM conditioning from vision encoder features; and (3) an HDR Residual Coupler that fuses physical and perceptual signals under a timestep- and layer-adaptive modulation schedule. Finally, a lightweight Rational-Quadratic Spline decoder reconstructs smooth, interpretable tone fields for highlight and exposure expansion, enhancing the output of the VAE decoder to generate HDR. To enable robust HDR learning, we curate the first large-scale SDR-HDR training corpus. For fair and reproducible comparison, we further establish a new evaluation benchmark, comprising HDR references and corresponding expert-graded SDR versions. Across benchmarks, LumaFlux outperforms state-of-the-art baselines, achieving superior luminance reconstruction and perceptual color fidelity with minimal additional parameters.",
     "authors": [
-      "Shurui Liu",
-      "Weide Chen",
-      "Ancong Wu"
-    ],
-    "published": "2026-04-03",
-    "updated": "2026-04-03",
-    "categories": [
-      "cs.CV"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2604.02847.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.02847",
-    "primary_category": "cs.CV",
-    "score": 65,
-    "summary": {
-      "title_zh": "HiDiGen：基于显式拓扑约束的分层扩散边界表示生成方法",
-      "core_contribution": "提出HiDiGen框架，通过分层建模和显式拓扑约束，首次实现了高效生成结构有效且几何多样的CAD边界表示模型。",
-      "method": "1. 采用两阶段几何建模：首先生成拓扑骨架（面-边关联关系）及初始几何代理；\n2. 基于Transformer的扩散模块逐步细化几何（精确曲面和顶点位置）；\n3. 动态建立并强制边-顶点邻接关系以保持结构一致性。",
-      "findings": "实验表明HiDiGen能生成新颖多样且拓扑有效的CAD模型，在生成质量和结构合理性上显著优于基线方法。"
-    }
-  },
-  {
-    "id": "2604.02846",
-    "title": "Adaptive Local Frequency Filtering for Fourier-Encoded Implicit Neural Representations",
-    "abstract": "Fourier-encoded implicit neural representations (INRs) have shown strong capability in modeling continuous signals from discrete samples. However, conventional Fourier feature mappings use a fixed set of frequencies over the entire spatial domain, making them poorly suited to signals with spatially varying local spectra and often leading to slow convergence of high-frequency details. To address this issue, we propose an adaptive local frequency filtering method for Fourier-encoded INRs. The proposed method introduces a spatially varying parameter $α(\\mathbf{x})$ to modulate encoded Fourier components, enabling a smooth transition among low-pass, band-pass, and high-pass behaviors at different spatial locations. We further analyze the effect of the proposed filter from the neural tangent kernel (NTK) perspective and provide an NTK-inspired interpretation of how it reshapes the effective kernel spectrum. Experiments on 2D image fitting, 3D shape representation, and sparse data reconstruction demonstrate that the proposed method consistently improves reconstruction quality and leads to faster optimization compared with fixed-frequency baselines. In addition, the learned $α(\\mathbf{x})$ provides an intuitive visualization of spatially varying frequency preferences, which helps explain the behavior of the model on non-stationary signals. These results indicate that adaptive local frequency modulation is a practical enhancement for Fourier-encoded INRs.",
-    "authors": [
-      "Ligen Shi",
-      "Jun Qiu",
-      "Yuhang Zheng",
-      "Chang Liu"
-    ],
-    "published": "2026-04-03",
-    "updated": "2026-04-03",
-    "categories": [
-      "cs.CV",
-      "eess.IV"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2604.02846.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.02846",
-    "primary_category": "cs.CV",
-    "score": 65,
-    "summary": {
-      "title_zh": "傅里叶编码隐式神经表示的自适应局部频率滤波",
-      "core_contribution": "提出了一种自适应局部频率滤波方法，通过空间变化的参数调制傅里叶分量，显著提升了傅里叶编码隐式神经表示对非平稳信号的建模能力。",
-      "method": "该方法引入空间变化的参数α(x)动态调整傅里叶分量的滤波行为（低通/带通/高通），实现不同区域的最优频率响应。通过神经正切核(NTK)理论分析了滤波器对核频谱的重构作用，为自适应机制提供理论解释。",
-      "findings": "实验表明：1) 在2D图像拟合、3D形状表示和稀疏重建任务中，该方法比固定频率基线收敛更快、重建质量更高；2) 学习到的α(x)可直观显示空间频率偏好，有效解释模型对非平稳信号的处理行为。"
-    }
-  },
-  {
-    "id": "2604.02828",
-    "title": "NavCrafter: Exploring 3D Scenes from a Single Image",
-    "abstract": "Creating flexible 3D scenes from a single image is vital when direct 3D data acquisition is costly or impractical. We introduce NavCrafter, a novel framework that explores 3D scenes from a single image by synthesizing novel-view video sequences with camera controllability and temporal-spatial consistency. NavCrafter leverages video diffusion models to capture rich 3D priors and adopts a geometry-aware expansion strategy to progressively extend scene coverage. To enable controllable multi-view synthesis, we introduce a multi-stage camera control mechanism that conditions diffusion models with diverse trajectories via dual-branch camera injection and attention modulation. We further propose a collision-aware camera trajectory planner and an enhanced 3D Gaussian Splatting (3DGS) pipeline with depth-aligned supervision, structural regularization and refinement. Extensive experiments demonstrate that NavCrafter achieves state-of-the-art novel-view synthesis under large viewpoint shifts and substantially improves 3D reconstruction fidelity.",
-    "authors": [
-      "Hongbo Duan",
-      "Peiyu Zhuang",
-      "Yi Liu",
-      "Zhengyang Zhang",
-      "Yuxin Zhang",
-      "Pengting Luo",
-      "Fangming Liu",
-      "Xueqian Wang"
+      "Shreshth Saini",
+      "Hakan Gedik",
+      "Neil Birkbeck",
+      "Yilin Wang",
+      "Balu Adsumilli",
+      "Alan C. Bovik"
     ],
     "published": "2026-04-03",
     "updated": "2026-04-03",
@@ -129,15 +74,79 @@
       "cs.CV",
       "cs.AI"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.02828.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.02828",
+    "pdf_url": "https://arxiv.org/pdf/2604.02787.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.02787",
     "primary_category": "cs.CV",
     "score": 65,
     "summary": {
-      "title_zh": "NavCrafter：从单张图像探索3D场景",
-      "core_contribution": "提出NavCrafter框架，通过合成具有相机可控性和时空一致性的新视角视频序列，实现从单张图像探索3D场景。",
-      "method": "NavCrafter利用视频扩散模型捕捉丰富的3D先验，并采用几何感知的扩展策略逐步扩大场景覆盖范围。通过双分支相机注入和注意力调制的多阶段相机控制机制，实现可控的多视角合成。此外，还提出碰撞感知相机轨迹规划器和增强的3D高斯泼溅（3DGS）流程，包括深度对齐监督、结构正则化和细化。",
-      "findings": "实验表明，NavCrafter在大视角变化下实现了最先进的新视角合成，并显著提高了3D重建的保真度。"
+      "title_zh": "LumaFlux：通过物理引导的扩散变换器将8位世界提升至HDR现实",
+      "core_contribution": "提出了首个基于物理和感知引导的扩散变换器（DiT）LumaFlux，用于从标准动态范围（SDR）到高动态范围（HDR）的重建，并通过创新的模块设计提升了HDR重建的质量和稳定性。",
+      "method": "LumaFlux引入了三个关键模块：(1) 物理引导适应（PGA）模块，通过低秩残差将亮度、空间描述符和频率线索注入注意力机制；(2) 感知交叉调制（PCM）层，通过FiLM条件化从视觉编码器特征中稳定色度和纹理；(3) HDR残差耦合器，在时间和层自适应调制计划下融合物理和感知信号。此外，采用轻量级有理二次样条解码器重建平滑、可解释的色调场。",
+      "findings": "LumaFlux在多个基准测试中优于现有最先进方法，实现了更优的亮度重建和感知色彩保真度，同时仅需少量额外参数。此外，研究还构建了首个大规模SDR-HDR训练语料库和新的评估基准，为后续研究提供了可靠的数据支持。"
+    }
+  },
+  {
+    "id": "2604.02753",
+    "title": "DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection",
+    "abstract": "Open-vocabulary Object Detection (OVOD) enables models to recognize objects beyond predefined categories, but existing approaches remain limited in practical deployment. On the one hand, multimodal designs often incur substantial computational overhead due to their reliance on text encoders at inference time. On the other hand, tightly coupled training objectives introduce a trade-off between closed-set detection accuracy and open-world generalization. Thus, we propose Decoupled Cognition DETR (DeCo-DETR), a vision-centric framework that addresses these challenges through a unified decoupling paradigm. Instead of depending on online text encoding, DeCo-DETR constructs a hierarchical semantic prototype space from region-level descriptions generated by pre-trained LVLMs and aligned via CLIP, enabling efficient and reusable semantic representation. Building upon this representation, the framework further disentangles semantic reasoning from localization through a decoupled training strategy, which separates alignment and detection into parallel optimization streams. Extensive experiments on standard OVOD benchmarks demonstrate that DeCo-DETR achieves competitive zero-shot detection performance while significantly improving inference efficiency. These results highlight the effectiveness of decoupling semantic cognition from detection, offering a practical direction for scalable OVOD systems.",
+    "authors": [
+      "Siheng Wang",
+      "Yanshu Li",
+      "Bohan Hu",
+      "Zhengdao Li",
+      "Haibo Zhan",
+      "Linshan Li",
+      "Weiming Liu",
+      "Ruizhi Qian",
+      "Guangxin Wu",
+      "Hao Zhang",
+      "Jifeng Shen",
+      "Piotr Koniusz",
+      "Zhengtao Yao",
+      "Junhao Dong",
+      "Qiang Sun"
+    ],
+    "published": "2026-04-03",
+    "updated": "2026-04-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.02753.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.02753",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "DeCo-DETR：面向高效开放词汇目标检测的解耦认知DETR",
+      "core_contribution": "提出DeCo-DETR框架，通过解耦语义认知与目标检测，显著提升开放词汇目标检测的推理效率与性能。",
+      "method": "1. 利用预训练LVLMs生成区域级描述并构建层次化语义原型空间，避免推理时依赖文本编码器；2. 采用解耦训练策略，将语义对齐与目标检测分离为并行优化任务；3. 通过CLIP对齐语义表示，实现高效可复用的视觉-语言关联。",
+      "findings": "在标准OVOD基准测试中，DeCo-DETR在保持竞争力的零样本检测性能的同时，显著提升了推理效率，验证了解耦认知策略对可扩展开放词汇检测系统的有效性。"
+    }
+  },
+  {
+    "id": "2604.02736",
+    "title": "THOM: Generating Physically Plausible Hand-Object Meshes From Text",
+    "abstract": "The generation of 3D hand-object interactions (HOIs) from text is crucial for dexterous robotic grasping and VR/AR content generation, requiring both high visual fidelity and physical plausibility. Nevertheless, the ill-posed problem of mesh extraction from text-generated Gaussians, and physics-based optimization on the erroneous meshes pose challenges. To address these issues, we introduce THOM, a training-free framework that generates photorealistic, physically plausible 3D HOI meshes without the need for a template object mesh. THOM employs a two-stage pipeline, initially generating the hand and object Gaussians, followed by physics-based HOI optimization. Our new mesh extraction method and vertex-to-Gaussian mapping explicitly assign Gaussian elements to mesh vertices, allowing topology-aware regularization. Furthermore, we improve the physical plausibility of interactions by VLM-guided translation refinement and contact-aware optimization. Comprehensive experiments demonstrate that THOM consistently surpasses state-of-the-art methods in terms of text alignment, visual realism, and interaction plausibility.",
+    "authors": [
+      "Uyoung Jeong",
+      "Yihalem Yimolal Tiruneh",
+      "Hyung Jin Chang",
+      "Seungryul Baek",
+      "Kwang In Kim"
+    ],
+    "published": "2026-04-03",
+    "updated": "2026-04-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.02736.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.02736",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "THOM：从文本生成物理合理的手-物体网格",
+      "core_contribution": "提出了一种无需训练的框架THOM，能够生成高真实感且物理合理的3D手-物体交互网格，无需模板物体网格。",
+      "method": "THOM采用两阶段流程：首先生成手和物体的高斯表示，随后进行基于物理的交互优化。通过新颖的网格提取方法和顶点-高斯映射，实现拓扑感知的正则化。此外，利用视觉语言模型（VLM）引导的平移细化和接触感知优化，提升交互的物理合理性。",
+      "findings": "实验表明，THOM在文本对齐、视觉真实感和交互合理性方面均优于现有最先进方法。"
     }
   }
 ]
