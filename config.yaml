@@ -67,9 +67,9 @@ llm:
 preference:
   profile: >
     我是一名研究design intelligence的研究生，重点关注：
-    1）图像、海报、网页、UI、文档等视觉内容的生成与布局；
+    1）Graphic Design,图像、海报、网页、UI、文档等视觉内容的生成与布局；
     2）text-to-image、image generation、layout generation 等生成模型；
-    3）与Content-Aware layout generation,flow matching ,SVG generation 相关的工作;
+    3）与Content-Aware layout generation,flow matching ,SVG generation ,font generation相关的工作;
     4）像 "Z-Image: An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer" 与“Qwen-Image Technical Report” 这种
        sota的foundation model的technical report.
     对医学影像、临床应用等 medical / clinical / MRI / CT / cancer / tumor 方向不感兴趣，应当打低分。
