@@ -1,0 +1,156 @@
+[
+  {
+    "id": "2604.04192",
+    "title": "Graphic-Design-Bench: A Comprehensive Benchmark for Evaluating AI on Graphic Design Tasks",
+    "abstract": "We introduce GraphicDesignBench (GDB), the first comprehensive benchmark suite designed specifically to evaluate AI models on the full breadth of professional graphic design tasks. Unlike existing benchmarks that focus on natural-image understanding or generic text-to-image synthesis, GDB targets the unique challenges of professional design work: translating communicative intent into structured layouts, rendering typographically faithful text, manipulating layered compositions, producing valid vector graphics, and reasoning about animation. The suite comprises 50 tasks organized along five axes: layout, typography, infographics, template & design semantics and animation, each evaluated under both understanding and generation settings, and grounded in real-world design templates drawn from the LICA layered-composition dataset. We evaluate a set of frontier closed-source models using a standardized metric taxonomy covering spatial accuracy, perceptual quality, text fidelity, semantic alignment, and structural validity. Our results reveal that current models fall short on the core challenges of professional design: spatial reasoning over complex layouts, faithful vector code generation, fine-grained typographic perception, and temporal decomposition of animations remain largely unsolved. While high-level semantic understanding is within reach, the gap widens sharply as tasks demand precision, structure, and compositional awareness. GDB provides a rigorous, reproducible testbed for tracking progress toward AI systems that can function as capable design collaborators. The full evaluation framework is publicly available.",
+    "authors": [
+      "Adrienne Deganutti",
+      "Elad Hirsch",
+      "Haonan Zhu",
+      "Jaejung Seol",
+      "Purvanshi Mehta"
+    ],
+    "published": "2026-04-05",
+    "updated": "2026-04-05",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.04192.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04192",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "图形设计基准：评估人工智能在图形设计任务中的综合基准",
+      "core_contribution": "提出了首个全面评估AI在专业图形设计任务中表现的基准套件GraphicDesignBench (GDB)，填补了现有基准在专业设计领域评估的空白。",
+      "method": "1. 构建包含50项任务的基准套件，涵盖布局、排版、信息图表、模板与设计语义及动画五大维度\n2. 基于真实设计模板(LICA数据集)设置理解和生成两种评估场景\n3. 采用标准化指标分类体系评估空间准确性、感知质量、文本保真度等维度\n4. 对前沿闭源模型进行系统性评估",
+      "findings": "1. 当前模型在专业设计核心挑战上表现不足：复杂布局的空间推理、矢量代码生成、精细排版感知和动画时序分解\n2. 高层语义理解已初步实现，但对精度、结构和组合意识要求高的任务差距显著\n3. 基准为AI设计协作系统的能力追踪提供了可复现的测试平台"
+    }
+  },
+  {
+    "id": "2604.04911",
+    "title": "SpatialEdit: Benchmarking Fine-Grained Image Spatial Editing",
+    "abstract": "Image spatial editing performs geometry-driven transformations, allowing precise control over object layout and camera viewpoints. Current models are insufficient for fine-grained spatial manipulations, motivating a dedicated assessment suite. Our contributions are listed: (i) We introduce SpatialEdit-Bench, a complete benchmark that evaluates spatial editing by jointly measuring perceptual plausibility and geometric fidelity via viewpoint reconstruction and framing analysis. (ii) To address the data bottleneck for scalable training, we construct SpatialEdit-500k, a synthetic dataset generated with a controllable Blender pipeline that renders objects across diverse backgrounds and systematic camera trajectories, providing precise ground-truth transformations for both object- and camera-centric operations. (iii) Building on this data, we develop SpatialEdit-16B, a baseline model for fine-grained spatial editing. Our method achieves competitive performance on general editing while substantially outperforming prior methods on spatial manipulation tasks. All resources will be made public at https://github.com/EasonXiao-888/SpatialEdit.",
+    "authors": [
+      "Yicheng Xiao",
+      "Wenhu Zhang",
+      "Lin Song",
+      "Yukang Chen",
+      "Wenbo Li",
+      "Nan Jiang",
+      "Tianhe Ren",
+      "Haokun Lin",
+      "Wei Huang",
+      "Haoyang Huang",
+      "Xiu Li",
+      "Nan Duan",
+      "Xiaojuan Qi"
+    ],
+    "published": "2026-04-06",
+    "updated": "2026-04-06",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.04911.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04911",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SpatialEdit：细粒度图像空间编辑基准测试",
+      "core_contribution": "提出了一个全面的基准测试套件SpatialEdit-Bench，构建了大规模合成数据集SpatialEdit-500k，并开发了基线模型SpatialEdit-16B，用于评估和提升细粒度图像空间编辑性能。",
+      "method": "1. 通过Blender可控流水线生成包含多样化背景和系统相机轨迹的合成数据集SpatialEdit-500k，提供精确的对象和相机中心操作的地面真值变换。\n2. 开发SpatialEdit-16B基线模型，专注于细粒度空间编辑任务。\n3. 使用视角重建和构图分析联合测量感知合理性和几何保真度来评估空间编辑性能。",
+      "findings": "1. SpatialEdit-16B在通用编辑任务上表现具有竞争力。\n2. 在空间操纵任务上显著优于现有方法。\n3. 合成数据集和基准测试为细粒度空间编辑提供了可扩展的训练和评估解决方案。"
+    }
+  },
+  {
+    "id": "2604.04746",
+    "title": "Think in Strokes, Not Pixels: Process-Driven Image Generation via Interleaved Reasoning",
+    "abstract": "Humans paint images incrementally: they plan a global layout, sketch a coarse draft, inspect, and refine details, and most importantly, each step is grounded in the evolving visual states. However, can unified multimodal models trained on text-image interleaved datasets also imagine the chain of intermediate states? In this paper, we introduce process-driven image generation, a multi-step paradigm that decomposes synthesis into an interleaved reasoning trajectory of thoughts and actions. Rather than generating images in a single step, our approach unfolds across multiple iterations, each consisting of 4 stages: textual planning, visual drafting, textual reflection, and visual refinement. The textual reasoning explicitly conditions how the visual state should evolve, while the generated visual intermediate in turn constrains and grounds the next round of textual reasoning. A core challenge of process-driven generation stems from the ambiguity of intermediate states: how can models evaluate each partially-complete image? We address this through dense, step-wise supervision that maintains two complementary constraints: for the visual intermediate states, we enforce the spatial and semantic consistency; for the textual intermediate states, we preserve the prior visual knowledge while enabling the model to identify and correct prompt-violating elements. This makes the generation process explicit, interpretable, and directly supervisable. To validate proposed method, we conduct experiments under various text-to-image generation benchmarks.",
+    "authors": [
+      "Lei Zhang",
+      "Junjiao Tian",
+      "Zhipeng Fan",
+      "Kunpeng Li",
+      "Jialiang Wang",
+      "Weifeng Chen",
+      "Markos Georgopoulos",
+      "Felix Juefei-Xu",
+      "Yuxiang Bao",
+      "Julian McAuley",
+      "Manling Li",
+      "Zecheng He"
+    ],
+    "published": "2026-04-06",
+    "updated": "2026-04-06",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.04746.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04746",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "以笔触而非像素思考：通过交错推理实现过程驱动的图像生成",
+      "core_contribution": "提出了一种过程驱动的图像生成方法，通过多步骤的交错推理轨迹分解图像合成过程，使生成过程显式化、可解释且可直接监督。",
+      "method": "该方法将图像生成分解为多轮迭代，每轮包含四个阶段：文本规划、视觉草图绘制、文本反思和视觉细化。通过密集的逐步监督，保持视觉中间状态的空间和语义一致性，以及文本中间状态的先验视觉知识，同时识别和修正违反提示的元素。",
+      "findings": "实验验证了该方法在多种文本到图像生成基准上的有效性，展示了生成过程的显式性、可解释性和直接可监督性。"
+    }
+  },
+  {
+    "id": "2604.04646",
+    "title": "Training-Free Refinement of Flow Matching with Divergence-based Sampling",
+    "abstract": "Flow-based models learn a target distribution by modeling a marginal velocity field, defined as the average of sample-wise velocities connecting each sample from a simple prior to the target data. When sample-wise velocities conflict at the same intermediate state, however, this averaged velocity can misguide samples toward low-density regions, degrading generation quality. To address this issue, we propose the Flow Divergence Sampler (FDS), a training-free framework that refines intermediate states before each solver step. Our key finding reveals that the severity of this misguidance is quantified by the divergence of the marginal velocity field that is readily computable during inference with a well-optimized model. FDS exploits this signal to steer states toward less ambiguous regions. As a plug-and-play framework compatible with standard solvers and off-the-shelf flow backbones, FDS consistently improves fidelity across various generation tasks including text-to-image synthesis, and inverse problems.",
+    "authors": [
+      "Yeonwoo Cha",
+      "Jaehoon Yoo",
+      "Semin Kim",
+      "Yunseo Park",
+      "Jinhyeon Kwon",
+      "Seunghoon Hong"
+    ],
+    "published": "2026-04-06",
+    "updated": "2026-04-06",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.04646.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04646",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于发散采样的免训练流匹配优化",
+      "core_contribution": "提出Flow Divergence Sampler (FDS)，一种无需训练的框架，通过量化边际速度场的发散程度来优化中间状态，提升生成质量。",
+      "method": "FDS利用训练好的流模型中可计算的边际速度场发散信号，在求解器步骤前调整中间状态，将其引导至冲突较少的区域。该方法兼容标准求解器和现成的流模型主干，无需额外训练。",
+      "findings": "实验表明，FDS能有效改善生成质量，在文本到图像合成和逆问题等多种生成任务中均能提升保真度。"
+    }
+  },
+  {
+    "id": "2604.04575",
+    "title": "Erasure or Erosion? Evaluating Compositional Degradation in Unlearned Text-To-Image Diffusion Models",
+    "abstract": "Post-hoc unlearning has emerged as a practical mechanism for removing undesirable concepts from large text-to-image diffusion models. However, prior work primarily evaluates unlearning through erasure success; its impact on broader generative capabilities remains poorly understood. In this work, we conduct a systematic empirical study of concept unlearning through the lens of compositional text-to-image generation. Focusing on nudity removal in Stable Diffusion 1.4, we evaluate a diverse set of state-of-the-art unlearning methods using T2I-CompBench++ and GenEval, alongside established unlearning benchmarks. Our results reveal a consistent trade-off between unlearning effectiveness and compositional integrity: methods that achieve strong erasure frequently incur substantial degradation in attribute binding, spatial reasoning, and counting. Conversely, approaches that preserve compositional structure often fail to provide robust erasure. These findings highlight limitations of current evaluation practices and underscore the need for unlearning objectives that explicitly account for semantic preservation beyond targeted suppression.",
+    "authors": [
+      "Arian Komaei Koma",
+      "Seyed Amir Kasaei",
+      "Ali Aghayari",
+      "AmirMahdi Sadeghzadeh",
+      "Mohammad Hossein Rohban"
+    ],
+    "published": "2026-04-06",
+    "updated": "2026-04-06",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.04575.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04575",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "擦除还是侵蚀？评估文本到图像扩散模型在遗忘学习中的组合性退化",
+      "core_contribution": "本研究系统评估了文本到图像扩散模型在概念遗忘学习后对组合生成能力的影响，揭示了遗忘效果与组合完整性之间的权衡关系。",
+      "method": "研究以Stable Diffusion 1.4为对象，聚焦于裸体概念的移除任务。通过T2I-CompBench++和GenEval等评估工具，对多种先进遗忘学习方法进行了系统性测试，同时考察了属性绑定、空间推理和计数等组合生成能力。",
+      "findings": "实验结果表明：1) 强遗忘效果的方法往往导致属性绑定、空间推理和计数能力的显著退化；2) 保持组合结构完整的方法通常无法实现稳健的概念擦除；3) 当前评估方法存在局限，需要开发能同时考虑目标抑制和语义保持的遗忘学习目标。"
+    }
+  }
+]
