@@ -1,18 +1,5 @@
 [
   {
-    "id": "ggml-org_llama.cpp",
-    "full_name": "ggml-org/llama.cpp",
-    "owner": "ggml-org",
-    "name": "llama.cpp",
-    "url": "https://github.com/ggml-org/llama.cpp",
-    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ggml-org /\n\n      llama.cpp  \n\n    \n      LLM inference in C/C++",
-    "language": "C++",
-    "stars": 102197,
-    "stars_today": 267,
-    "relevance_score": 90,
-    "summary": "llama.cpp 是一个用 C/C++ 实现的高效轻量级大语言模型推理框架，值得关注因为它能在资源有限的设备上本地运行 LLM 模型。"
-  },
-  {
     "id": "google-ai-edge_gallery",
     "full_name": "google-ai-edge/gallery",
     "owner": "google-ai-edge",
@@ -20,23 +7,10 @@
     "url": "https://github.com/google-ai-edge/gallery",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-ai-edge /\n\n      gallery  \n\n    \n      A gallery that showcases on-device ML/GenAI use cases and allows people to try and use models locally.",
     "language": "Kotlin",
-    "stars": 18196,
-    "stars_today": 1107,
+    "stars": 18711,
+    "stars_today": 899,
     "relevance_score": 85,
-    "summary": "该项目展示并提供了本地运行的设备端机器学习和生成式AI用例，让用户能直接体验和使用这些模型。"
-  },
-  {
-    "id": "aaif-goose_goose",
-    "full_name": "aaif-goose/goose",
-    "owner": "aaif-goose",
-    "name": "goose",
-    "url": "https://github.com/aaif-goose/goose",
-    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        aaif-goose /\n\n      goose  \n\n    \n      an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
-    "language": "Rust",
-    "stars": 38425,
-    "stars_today": 1523,
-    "relevance_score": 85,
-    "summary": "Goose 是一个开源的、可扩展的 AI 代理，不仅能提供代码建议，还能安装、执行、编辑和测试任何 LLM，值得关注因为它将 AI 代理的能力扩展到更广泛的开发任务中。"
+    "summary": "该项目展示并让用户本地体验谷歌在设备端机器学习和生成式AI的应用案例，值得关注因其提供了前沿AI技术的实际演示和本地运行能力。"
   },
   {
     "id": "google-ai-edge_LiteRT-LM",
@@ -46,36 +20,23 @@
     "url": "https://github.com/google-ai-edge/LiteRT-LM",
     "description": "",
     "language": "C++",
-    "stars": 2195,
-    "stars_today": 483,
+    "stars": 2503,
+    "stars_today": 522,
     "relevance_score": 85,
-    "summary": "LiteRT-LM 是 Google AI Edge 推出的轻量级实时语言模型推理框架，专注于在边缘设备上高效运行大语言模型，值得关注因其为资源受限场景提供了低延迟、高性能的解决方案。"
+    "summary": "LiteRT-LM 是 Google AI Edge 推出的轻量级实时语言模型推理框架，专为边缘设备优化，值得关注因其高效性能和低延迟特性。"
   },
   {
-    "id": "ollama_ollama",
-    "full_name": "ollama/ollama",
-    "owner": "ollama",
-    "name": "ollama",
-    "url": "https://github.com/ollama/ollama",
-    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ollama /\n\n      ollama  \n\n    \n      Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-    "language": "Go",
-    "stars": 167881,
-    "stars_today": 196,
-    "relevance_score": 85,
-    "summary": "Ollama 是一个帮助用户快速部署和运行 Kimi-K2.5、GLM-5、MiniMax、DeepSeek 等多种 AI 模型的开源工具，值得关注因为它简化了大型语言模型的本地使用流程。"
-  },
-  {
-    "id": "NousResearch_hermes-agent",
-    "full_name": "NousResearch/hermes-agent",
-    "owner": "NousResearch",
-    "name": "hermes-agent",
-    "url": "https://github.com/NousResearch/hermes-agent",
-    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NousResearch /\n\n      hermes-agent  \n\n    \n      The agent that grows with you",
+    "id": "HKUDS_DeepTutor",
+    "full_name": "HKUDS/DeepTutor",
+    "owner": "HKUDS",
+    "name": "DeepTutor",
+    "url": "https://github.com/HKUDS/DeepTutor",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        HKUDS /\n\n      DeepTutor  \n\n    \n      \"DeepTutor: Agent-Native Personalized Learning Assistant\"",
     "language": "Python",
-    "stars": 28823,
-    "stars_today": 1574,
+    "stars": 12069,
+    "stars_today": 339,
     "relevance_score": 70,
-    "summary": "Hermes-Agent 是一个能随用户需求成长的智能代理项目，值得关注因其灵活性和适应性可满足不断变化的AI应用场景。"
+    "summary": "DeepTutor是一个基于深度学习的个性化学习助手，能够根据学生的需求提供定制化的学习支持，值得关注因其创新性地结合了AI技术实现教育领域的智能辅导。"
   },
   {
     "id": "tobi_qmd",
@@ -85,22 +46,61 @@
     "url": "https://github.com/tobi/qmd",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        tobi /\n\n      qmd  \n\n    \n      mini cli search engine for your docs, knowledge bases, meeting notes, whatever. Tracking current sota approaches while being all local",
     "language": "TypeScript",
-    "stars": 19022,
-    "stars_today": 394,
+    "stars": 19500,
+    "stars_today": 859,
     "relevance_score": 60,
-    "summary": "qmd 是一个本地迷你 CLI 搜索引擎，用于快速检索文档、知识库和会议笔记等，采用当前前沿技术且完全本地运行，值得关注。"
+    "summary": "qmd 是一个本地迷你 CLI 搜索引擎，用于快速检索文档、知识库和会议笔记等，采用当前前沿技术且完全离线运行，值得关注。"
   },
   {
-    "id": "siddharthvaddem_openscreen",
-    "full_name": "siddharthvaddem/openscreen",
-    "owner": "siddharthvaddem",
-    "name": "openscreen",
-    "url": "https://github.com/siddharthvaddem/openscreen",
-    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        siddharthvaddem /\n\n      openscreen  \n\n    \n      Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio.",
+    "id": "elebumm_RedditVideoMakerBot",
+    "full_name": "elebumm/RedditVideoMakerBot",
+    "owner": "elebumm",
+    "name": "RedditVideoMakerBot",
+    "url": "https://github.com/elebumm/RedditVideoMakerBot",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        elebumm /\n\n      RedditVideoMakerBot  \n\n    \n      Create Reddit Videos with just✨ one command ✨",
+    "language": "Python",
+    "stars": 9995,
+    "stars_today": 656,
+    "relevance_score": 50,
+    "summary": "这是一个用Python编写的自动化工具，能通过一条命令生成Reddit视频，适合快速制作社交媒体内容，因其高效便捷而值得关注。"
+  },
+  {
+    "id": "sponsors_abhigyanpatwari",
+    "full_name": "sponsors/abhigyanpatwari",
+    "owner": "sponsors",
+    "name": "abhigyanpatwari",
+    "url": "https://github.com/sponsors/abhigyanpatwari",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        abhigyanpatwari /\n\n      GitNexus  \n\n    \n      GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration",
     "language": "TypeScript",
-    "stars": 24558,
-    "stars_today": 1838,
-    "relevance_score": 45,
-    "summary": "OpenScreen 是一个开源的 TypeScript 项目，用于免费创建高质量演示视频，无订阅、无水印且可商用，是 Screen Studio 的替代方案。"
+    "stars": 24432,
+    "stars_today": 1174,
+    "relevance_score": 40,
+    "summary": "GitNexus是一个完全在浏览器中运行的客户端知识图谱生成工具，无需服务器即可通过GitHub仓库或ZIP文件创建交互式知识图谱，内置Graph RAG代理，非常适合代码探索。"
+  },
+  {
+    "id": "NVIDIA_personaplex",
+    "full_name": "NVIDIA/personaplex",
+    "owner": "NVIDIA",
+    "name": "personaplex",
+    "url": "https://github.com/NVIDIA/personaplex",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NVIDIA /\n\n      personaplex  \n\n    \n      PersonaPlex code.",
+    "language": "Python",
+    "stars": 7901,
+    "stars_today": 663,
+    "relevance_score": 30,
+    "summary": "NVIDIA/personaplex 是一个用于构建和管理个性化AI角色的Python项目，值得关注因为它由NVIDIA开发，可能涉及先进的AI技术和个性化交互体验。"
+  },
+  {
+    "id": "TheCraigHewitt_seomachine",
+    "full_name": "TheCraigHewitt/seomachine",
+    "owner": "TheCraigHewitt",
+    "name": "seomachine",
+    "url": "https://github.com/TheCraigHewitt/seomachine",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        TheCraigHewitt /\n\n      seomachine  \n\n    \n      A specialized Claude Code workspace for creating long-form, SEO-optimized blog content for any business. This system helps you research, write, analyze, and optimize content that ranks well and serves your target audience.",
+    "language": "Python",
+    "stars": 3828,
+    "stars_today": 213,
+    "relevance_score": 30,
+    "summary": "该项目是一个基于Python的SEO内容生成工具，专注于帮助企业创建长篇、SEO优化的博客内容，值得关注因为它能自动完成内容研究、撰写和优化，提升搜索引擎排名效果。"
   }
 ]

@@ -19,5 +19,9 @@
   "ollama_ollama": 85,
   "ggml-org_llama.cpp": 90,
   "NVIDIA_personaplex": 30,
-  "aaif-goose_goose": 85
+  "aaif-goose_goose": 85,
+  "forrestchang_andrej-karpathy-skills": 20,
+  "elebumm_RedditVideoMakerBot": 50,
+  "HKUDS_DeepTutor": 70,
+  "TheCraigHewitt_seomachine": 30
 }

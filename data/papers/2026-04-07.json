@@ -1,113 +1,102 @@
 [
   {
-    "id": "2604.04192",
-    "title": "Graphic-Design-Bench: A Comprehensive Benchmark for Evaluating AI on Graphic Design Tasks",
-    "abstract": "We introduce GraphicDesignBench (GDB), the first comprehensive benchmark suite designed specifically to evaluate AI models on the full breadth of professional graphic design tasks. Unlike existing benchmarks that focus on natural-image understanding or generic text-to-image synthesis, GDB targets the unique challenges of professional design work: translating communicative intent into structured layouts, rendering typographically faithful text, manipulating layered compositions, producing valid vector graphics, and reasoning about animation. The suite comprises 50 tasks organized along five axes: layout, typography, infographics, template & design semantics and animation, each evaluated under both understanding and generation settings, and grounded in real-world design templates drawn from the LICA layered-composition dataset. We evaluate a set of frontier closed-source models using a standardized metric taxonomy covering spatial accuracy, perceptual quality, text fidelity, semantic alignment, and structural validity. Our results reveal that current models fall short on the core challenges of professional design: spatial reasoning over complex layouts, faithful vector code generation, fine-grained typographic perception, and temporal decomposition of animations remain largely unsolved. While high-level semantic understanding is within reach, the gap widens sharply as tasks demand precision, structure, and compositional awareness. GDB provides a rigorous, reproducible testbed for tracking progress toward AI systems that can function as capable design collaborators. The full evaluation framework is publicly available.",
+    "id": "2604.04487",
+    "title": "Training-Free Image Editing with Visual Context Integration and Concept Alignment",
+    "abstract": "In image editing, it is essential to incorporate a context image to convey the user's precise requirements, such as subject appearance or image style. Existing training-based visual context-aware editing methods incur data collection effort and training cost. On the other hand, the training-free alternatives are typically established on diffusion inversion, which struggles with consistency and flexibility. In this work, we propose VicoEdit, a training-free and inversion-free method to inject the visual context into the pretrained text-prompted editing model. More specifically, VicoEdit directly transforms the source image into the target one based on the visual context, thereby eliminating the need for inversion that can lead to deviated trajectories. Moreover, we design a posterior sampling approach guided by concept alignment to enhance the editing consistency. Empirical results demonstrate that our training-free method achieves even better editing performance than the state-of-the-art training-based models.",
     "authors": [
-      "Adrienne Deganutti",
-      "Elad Hirsch",
-      "Haonan Zhu",
-      "Jaejung Seol",
-      "Purvanshi Mehta"
+      "Rui Song",
+      "Guo-Hua Wang",
+      "Qing-Guo Chen",
+      "Weihua Luo",
+      "Tongda Xu",
+      "Zhening Liu",
+      "Yan Wang",
+      "Zehong Lin",
+      "Jun Zhang"
+    ],
+    "published": "2026-04-06",
+    "updated": "2026-04-06",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.04487.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04487",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "无需训练的视觉上下文整合与概念对齐图像编辑",
+      "core_contribution": "提出VicoEdit方法，无需训练或扩散反演即可将视觉上下文整合到预训练的文本提示编辑模型中，显著提升编辑一致性和灵活性。",
+      "method": "1. 直接基于视觉上下文将源图像转换为目标图像，避免传统扩散反演导致的轨迹偏差；2. 设计概念对齐引导的后验采样策略以增强编辑一致性；3. 完全基于预训练模型实现，无需额外数据收集或微调。",
+      "findings": "实验表明，该训练免费方法在编辑性能上优于当前最先进的基于训练的模型，尤其在保持上下文一致性和处理灵活性方面表现突出。"
+    }
+  },
+  {
+    "id": "2604.04018",
+    "title": "1.x-Distill: Breaking the Diversity, Quality, and Efficiency Barrier in Distribution Matching Distillation",
+    "abstract": "Diffusion models produce high-quality text-to-image results, but their iterative denoising is computationally expensive.Distribution Matching Distillation (DMD) emerges as a promising path to few-step distillation, but suffers from diversity collapse and fidelity degradation when reduced to two steps or fewer. We present 1.x-Distill, the first fractional-step distillation framework that breaks the integer-step constraint of prior few-step methods and establishes 1.x-step generation as a practical regime for distilled diffusion models.Specifically, we first analyze the overlooked role of teacher CFG in DMD and introduce a simple yet effective modification to suppress mode collapse. Then, to improve performance under extreme steps, we introduce Stagewise Focused Distillation, a two-stage strategy that learns coarse structure through diversity-preserving distribution matching and refines details with inference-consistent adversarial distillation. Furthermore, we design a lightweight compensation module for Distill--Cache co-Training, which naturally incorporates block-level caching into our distillation pipeline.Experiments on SD3-Medium and SD3.5-Large show that 1.x-Distill surpasses prior few-step methods, achieving better quality and diversity at 1.67 and 1.74 effective NFEs, respectively, with up to 33x speedup over original 28x2 NFE sampling.",
+    "authors": [
+      "Haoyu Li",
+      "Tingyan Wen",
+      "Lin Qi",
+      "Zhe Wu",
+      "Yihuang Chen",
+      "Xing Zhou",
+      "Lifei Zhu",
+      "Xueqian Wang",
+      "Kai Zhang"
     ],
     "published": "2026-04-05",
     "updated": "2026-04-05",
     "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2604.04192.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.04192",
-    "primary_category": "cs.CV",
-    "score": 90,
-    "summary": {
-      "title_zh": "图形设计基准：评估人工智能在图形设计任务中的综合基准",
-      "core_contribution": "提出了首个全面评估AI在专业图形设计任务中表现的基准套件GraphicDesignBench (GDB)，填补了现有基准在专业设计领域评估的空白。",
-      "method": "1. 构建包含50项任务的基准套件，涵盖布局、排版、信息图表、模板与设计语义及动画五大维度\n2. 基于真实设计模板(LICA数据集)设置理解和生成两种评估场景\n3. 采用标准化指标分类体系评估空间准确性、感知质量、文本保真度等维度\n4. 对前沿闭源模型进行系统性评估",
-      "findings": "1. 当前模型在专业设计核心挑战上表现不足：复杂布局的空间推理、矢量代码生成、精细排版感知和动画时序分解\n2. 高层语义理解已初步实现，但对精度、结构和组合意识要求高的任务差距显著\n3. 基准为AI设计协作系统的能力追踪提供了可复现的测试平台"
-    }
-  },
-  {
-    "id": "2604.04911",
-    "title": "SpatialEdit: Benchmarking Fine-Grained Image Spatial Editing",
-    "abstract": "Image spatial editing performs geometry-driven transformations, allowing precise control over object layout and camera viewpoints. Current models are insufficient for fine-grained spatial manipulations, motivating a dedicated assessment suite. Our contributions are listed: (i) We introduce SpatialEdit-Bench, a complete benchmark that evaluates spatial editing by jointly measuring perceptual plausibility and geometric fidelity via viewpoint reconstruction and framing analysis. (ii) To address the data bottleneck for scalable training, we construct SpatialEdit-500k, a synthetic dataset generated with a controllable Blender pipeline that renders objects across diverse backgrounds and systematic camera trajectories, providing precise ground-truth transformations for both object- and camera-centric operations. (iii) Building on this data, we develop SpatialEdit-16B, a baseline model for fine-grained spatial editing. Our method achieves competitive performance on general editing while substantially outperforming prior methods on spatial manipulation tasks. All resources will be made public at https://github.com/EasonXiao-888/SpatialEdit.",
-    "authors": [
-      "Yicheng Xiao",
-      "Wenhu Zhang",
-      "Lin Song",
-      "Yukang Chen",
-      "Wenbo Li",
-      "Nan Jiang",
-      "Tianhe Ren",
-      "Haokun Lin",
-      "Wei Huang",
-      "Haoyang Huang",
-      "Xiu Li",
-      "Nan Duan",
-      "Xiaojuan Qi"
-    ],
-    "published": "2026-04-06",
-    "updated": "2026-04-06",
-    "categories": [
       "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.04911.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.04911",
+    "pdf_url": "https://arxiv.org/pdf/2604.04018.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04018",
     "primary_category": "cs.CV",
     "score": 85,
     "summary": {
-      "title_zh": "SpatialEdit：细粒度图像空间编辑基准测试",
-      "core_contribution": "提出了一个全面的基准测试套件SpatialEdit-Bench，构建了大规模合成数据集SpatialEdit-500k，并开发了基线模型SpatialEdit-16B，用于评估和提升细粒度图像空间编辑性能。",
-      "method": "1. 通过Blender可控流水线生成包含多样化背景和系统相机轨迹的合成数据集SpatialEdit-500k，提供精确的对象和相机中心操作的地面真值变换。\n2. 开发SpatialEdit-16B基线模型，专注于细粒度空间编辑任务。\n3. 使用视角重建和构图分析联合测量感知合理性和几何保真度来评估空间编辑性能。",
-      "findings": "1. SpatialEdit-16B在通用编辑任务上表现具有竞争力。\n2. 在空间操纵任务上显著优于现有方法。\n3. 合成数据集和基准测试为细粒度空间编辑提供了可扩展的训练和评估解决方案。"
+      "title_zh": "1.x-Distill：突破分布匹配蒸馏中的多样性、质量和效率壁垒",
+      "core_contribution": "提出了首个分数步蒸馏框架1.x-Distill，突破了传统整数步限制，实现了1.x步高效生成，并在极低步数下保持生成质量和多样性。",
+      "method": "1. 分析了教师CFG在DMD中的作用并改进以抑制模式崩溃；2. 提出两阶段蒸馏策略：先通过多样性保留的分布匹配学习粗粒度结构，再通过推理一致的对抗蒸馏优化细节；3. 设计了轻量级补偿模块，将块级缓存整合到蒸馏流程中。",
+      "findings": "在SD3-Medium和SD3.5-Large模型上，1.x-Distill以1.67/1.74有效NFEs超越现有少步方法，质量与多样性更优，相比原始28x2 NFE采样加速达33倍。"
     }
   },
   {
-    "id": "2604.04746",
-    "title": "Think in Strokes, Not Pixels: Process-Driven Image Generation via Interleaved Reasoning",
-    "abstract": "Humans paint images incrementally: they plan a global layout, sketch a coarse draft, inspect, and refine details, and most importantly, each step is grounded in the evolving visual states. However, can unified multimodal models trained on text-image interleaved datasets also imagine the chain of intermediate states? In this paper, we introduce process-driven image generation, a multi-step paradigm that decomposes synthesis into an interleaved reasoning trajectory of thoughts and actions. Rather than generating images in a single step, our approach unfolds across multiple iterations, each consisting of 4 stages: textual planning, visual drafting, textual reflection, and visual refinement. The textual reasoning explicitly conditions how the visual state should evolve, while the generated visual intermediate in turn constrains and grounds the next round of textual reasoning. A core challenge of process-driven generation stems from the ambiguity of intermediate states: how can models evaluate each partially-complete image? We address this through dense, step-wise supervision that maintains two complementary constraints: for the visual intermediate states, we enforce the spatial and semantic consistency; for the textual intermediate states, we preserve the prior visual knowledge while enabling the model to identify and correct prompt-violating elements. This makes the generation process explicit, interpretable, and directly supervisable. To validate proposed method, we conduct experiments under various text-to-image generation benchmarks.",
+    "id": "2604.03611",
+    "title": "PortraitCraft: A Benchmark for Portrait Composition Understanding and Generation",
+    "abstract": "Portrait composition plays a central role in portrait aesthetics and visual communication, yet existing datasets and benchmarks mainly focus on coarse aesthetic scoring, generic image aesthetics, or unconstrained portrait generation. This limits systematic research on structured portrait composition analysis and controllable portrait generation under explicit composition requirements. In this paper, we introduce PortraitCraft, a unified benchmark for portrait composition understanding and generation. PortraitCraft is built on a dataset of approximately 50,000 curated real portrait images with structured multi-level supervision, including global composition scores, annotations over 13 composition attributes, attribute-level explanation texts, visual question answering pairs, and composition-oriented textual descriptions for generation. Based on this dataset, we establish two complementary benchmark tasks for composition understanding and composition-aware generation within a unified framework. The first evaluates portrait composition understanding through score prediction, fine-grained attribute reasoning, and image-grounded visual question answering, while the second evaluates portrait generation from structured composition descriptions under explicit composition constraints. We further define standardized evaluation protocols and provide reference baseline results with representative multimodal models. PortraitCraft provides a comprehensive benchmark for future research on fine-grained portrait understanding, interpretable aesthetic assessment, and controllable portrait generation.",
     "authors": [
-      "Lei Zhang",
-      "Junjiao Tian",
-      "Zhipeng Fan",
-      "Kunpeng Li",
-      "Jialiang Wang",
-      "Weifeng Chen",
-      "Markos Georgopoulos",
-      "Felix Juefei-Xu",
-      "Yuxiang Bao",
-      "Julian McAuley",
-      "Manling Li",
-      "Zecheng He"
+      "Yuyang Sha",
+      "Zijie Lou",
+      "Youyun Tang",
+      "Xiaochao Qu",
+      "Haoxiang Li",
+      "Ting Liu",
+      "Luoqi Liu"
     ],
-    "published": "2026-04-06",
-    "updated": "2026-04-06",
+    "published": "2026-04-04",
+    "updated": "2026-04-04",
     "categories": [
       "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.04746.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.04746",
+    "pdf_url": "https://arxiv.org/pdf/2604.03611.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.03611",
     "primary_category": "cs.CV",
     "score": 85,
     "summary": {
-      "title_zh": "以笔触而非像素思考：通过交错推理实现过程驱动的图像生成",
-      "core_contribution": "提出了一种过程驱动的图像生成方法，通过多步骤的交错推理轨迹分解图像合成过程，使生成过程显式化、可解释且可直接监督。",
-      "method": "该方法将图像生成分解为多轮迭代，每轮包含四个阶段：文本规划、视觉草图绘制、文本反思和视觉细化。通过密集的逐步监督，保持视觉中间状态的空间和语义一致性，以及文本中间状态的先验视觉知识，同时识别和修正违反提示的元素。",
-      "findings": "实验验证了该方法在多种文本到图像生成基准上的有效性，展示了生成过程的显式性、可解释性和直接可监督性。"
+      "title_zh": "PortraitCraft：肖像构图理解与生成的基准数据集",
+      "core_contribution": "提出了PortraitCraft，一个统一的肖像构图理解与生成基准数据集，填补了现有研究在结构化肖像构图分析和可控肖像生成方面的空白。",
+      "method": "PortraitCraft基于约50,000张精选真实肖像图像构建，包含多级结构化标注（如全局构图评分、13种构图属性标注、解释文本、视觉问答对及生成导向的文本描述）。基于此数据集，作者设计了构图理解与构图感知生成两项互补的基准任务，并采用统一框架进行评估。",
+      "findings": "实验结果表明，PortraitCraft为细粒度肖像理解、可解释美学评估和可控肖像生成提供了全面基准，并通过标准化评估协议和代表性多模态模型基线结果验证了其有效性。"
     }
   },
   {
-    "id": "2604.04646",
-    "title": "Training-Free Refinement of Flow Matching with Divergence-based Sampling",
-    "abstract": "Flow-based models learn a target distribution by modeling a marginal velocity field, defined as the average of sample-wise velocities connecting each sample from a simple prior to the target data. When sample-wise velocities conflict at the same intermediate state, however, this averaged velocity can misguide samples toward low-density regions, degrading generation quality. To address this issue, we propose the Flow Divergence Sampler (FDS), a training-free framework that refines intermediate states before each solver step. Our key finding reveals that the severity of this misguidance is quantified by the divergence of the marginal velocity field that is readily computable during inference with a well-optimized model. FDS exploits this signal to steer states toward less ambiguous regions. As a plug-and-play framework compatible with standard solvers and off-the-shelf flow backbones, FDS consistently improves fidelity across various generation tasks including text-to-image synthesis, and inverse problems.",
+    "id": "2604.04924",
+    "title": "Your Pre-trained Diffusion Model Secretly Knows Restoration",
+    "abstract": "Pre-trained diffusion models have enabled significant advancements in All-in-One Restoration (AiOR), offering improved perceptual quality and generalization. However, diffusion-based restoration methods primarily rely on fine-tuning or Control-Net style modules to leverage the pre-trained diffusion model's priors for AiOR. In this work, we show that these pre-trained diffusion models inherently possess restoration behavior, which can be unlocked by directly learning prompt embeddings at the output of the text encoder. Interestingly, this behavior is largely inaccessible through text prompts and text-token embedding optimization. Furthermore, we observe that naive prompt learning is unstable because the forward noising process using degraded images is misaligned with the reverse sampling trajectory. To resolve this, we train prompts within a diffusion bridge formulation that aligns training and inference dynamics, enforcing a coherent denoising path from noisy degraded states to clean images. Building on these insights, we introduce our lightweight learned prompts on the pre-trained WAN video model and FLUX image models, converting them into high-performing restoration models. Extensive experiments demonstrate that our approach achieves competitive performance and generalization across diverse degradations, while avoiding fine-tuning and restoration-specific control modules.",
     "authors": [
-      "Yeonwoo Cha",
-      "Jaehoon Yoo",
-      "Semin Kim",
-      "Yunseo Park",
-      "Jinhyeon Kwon",
-      "Seunghoon Hong"
+      "Sudarshan Rajagopalan",
+      "Vishal M. Patel"
     ],
     "published": "2026-04-06",
     "updated": "2026-04-06",
@@ -115,42 +104,39 @@
       "cs.CV",
       "cs.AI"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.04646.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.04646",
+    "pdf_url": "https://arxiv.org/pdf/2604.04924.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04924",
     "primary_category": "cs.CV",
-    "score": 85,
+    "score": 75,
     "summary": {
-      "title_zh": "基于发散采样的免训练流匹配优化",
-      "core_contribution": "提出Flow Divergence Sampler (FDS)，一种无需训练的框架，通过量化边际速度场的发散程度来优化中间状态，提升生成质量。",
-      "method": "FDS利用训练好的流模型中可计算的边际速度场发散信号，在求解器步骤前调整中间状态，将其引导至冲突较少的区域。该方法兼容标准求解器和现成的流模型主干，无需额外训练。",
-      "findings": "实验表明，FDS能有效改善生成质量，在文本到图像合成和逆问题等多种生成任务中均能提升保真度。"
+      "title_zh": "你的预训练扩散模型暗藏修复能力",
+      "core_contribution": "揭示了预训练扩散模型本身具备修复能力，提出通过直接学习文本编码器输出的提示嵌入来解锁这种能力，无需微调或额外控制模块。",
+      "method": "1. 发现预训练扩散模型的修复行为可通过学习文本编码器输出的提示嵌入解锁，而非文本提示或文本标记嵌入优化。2. 提出在扩散桥框架中训练提示，使训练和推理动态对齐，确保从噪声退化状态到干净图像的一致去噪路径。3. 在预训练的WAN视频模型和FLUX图像模型上应用轻量级学习提示，将其转化为高性能修复模型。",
+      "findings": "1. 预训练扩散模型本身具备修复能力，但传统方法难以通过文本提示解锁。2. 提出的方法在多种退化情况下实现了竞争性的性能和泛化能力，避免了模型微调和专用控制模块的使用。"
     }
   },
   {
-    "id": "2604.04575",
-    "title": "Erasure or Erosion? Evaluating Compositional Degradation in Unlearned Text-To-Image Diffusion Models",
-    "abstract": "Post-hoc unlearning has emerged as a practical mechanism for removing undesirable concepts from large text-to-image diffusion models. However, prior work primarily evaluates unlearning through erasure success; its impact on broader generative capabilities remains poorly understood. In this work, we conduct a systematic empirical study of concept unlearning through the lens of compositional text-to-image generation. Focusing on nudity removal in Stable Diffusion 1.4, we evaluate a diverse set of state-of-the-art unlearning methods using T2I-CompBench++ and GenEval, alongside established unlearning benchmarks. Our results reveal a consistent trade-off between unlearning effectiveness and compositional integrity: methods that achieve strong erasure frequently incur substantial degradation in attribute binding, spatial reasoning, and counting. Conversely, approaches that preserve compositional structure often fail to provide robust erasure. These findings highlight limitations of current evaluation practices and underscore the need for unlearning objectives that explicitly account for semantic preservation beyond targeted suppression.",
+    "id": "2604.04859",
+    "title": "Unified Vector Floorplan Generation via Markup Representation",
+    "abstract": "Automatic residential floorplan generation has long been a central challenge bridging architecture and computer graphics, aiming to make spatial design more efficient and accessible. While early methods based on constraint satisfaction or combinatorial optimization ensure feasibility, they lack diversity and flexibility. Recent generative models achieve promising results but struggle to generalize across heterogeneous conditional tasks, such as generation from site boundaries, room adjacency graphs, or partial layouts, due to their suboptimal representations. To address this gap, we introduce Floorplan Markup Language (FML), a general representation that encodes floorplan information within a single structured grammar, which casts the entire floorplan generation problem into a next token prediction task. Leveraging FML, we develop a transformer-based generative model, FMLM, capable of producing high-fidelity and functional floorplans under diverse conditions. Comprehensive experiments on the RPLAN dataset demonstrate that FMLM, despite being a single model, surpasses the previous task-specific state-of-the-art methods.",
     "authors": [
-      "Arian Komaei Koma",
-      "Seyed Amir Kasaei",
-      "Ali Aghayari",
-      "AmirMahdi Sadeghzadeh",
-      "Mohammad Hossein Rohban"
+      "Kaede Shiohara",
+      "Toshihiko Yamasaki"
     ],
     "published": "2026-04-06",
     "updated": "2026-04-06",
     "categories": [
       "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.04575.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.04575",
+    "pdf_url": "https://arxiv.org/pdf/2604.04859.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.04859",
     "primary_category": "cs.CV",
-    "score": 85,
+    "score": 75,
     "summary": {
-      "title_zh": "擦除还是侵蚀？评估文本到图像扩散模型在遗忘学习中的组合性退化",
-      "core_contribution": "本研究系统评估了文本到图像扩散模型在概念遗忘学习后对组合生成能力的影响，揭示了遗忘效果与组合完整性之间的权衡关系。",
-      "method": "研究以Stable Diffusion 1.4为对象，聚焦于裸体概念的移除任务。通过T2I-CompBench++和GenEval等评估工具，对多种先进遗忘学习方法进行了系统性测试，同时考察了属性绑定、空间推理和计数等组合生成能力。",
-      "findings": "实验结果表明：1) 强遗忘效果的方法往往导致属性绑定、空间推理和计数能力的显著退化；2) 保持组合结构完整的方法通常无法实现稳健的概念擦除；3) 当前评估方法存在局限，需要开发能同时考虑目标抑制和语义保持的遗忘学习目标。"
+      "title_zh": "基于标记化表示的统一矢量平面图生成",
+      "core_contribution": "提出Floorplan Markup Language (FML)通用表示法，将平面图生成问题转化为序列预测任务，并开发了基于Transformer的生成模型FMLM，支持多种条件下的高保真平面图生成。",
+      "method": "1. 设计结构化语法标记语言FML统一编码平面图信息\n2. 将生成任务重构为序列预测问题\n3. 采用Transformer架构构建FMLM模型\n4. 支持边界、邻接图、局部布局等多种输入条件",
+      "findings": "在RPLAN数据集上的实验表明，FMLM作为单一模型，性能超越所有现有针对特定任务的state-of-the-art方法，且能生成功能完备的高质量平面图。"
     }
   }
 ]
