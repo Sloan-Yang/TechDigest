@@ -1,0 +1,140 @@
+[
+  {
+    "id": "2604.06757",
+    "title": "FlowInOne:Unifying Multimodal Generation as Image-in, Image-out Flow Matching",
+    "abstract": "Multimodal generation has long been dominated by text-driven pipelines where language dictates vision but cannot reason or create within it. We challenge this paradigm by asking whether all modalities, including textual descriptions, spatial layouts, and editing instructions, can be unified into a single visual representation. We present FlowInOne, a framework that reformulates multimodal generation as a purely visual flow, converting all inputs into visual prompts and enabling a clean image-in, image-out pipeline governed by a single flow matching model. This vision-centric formulation naturally eliminates cross-modal alignment bottlenecks, noise scheduling, and task-specific architectural branches, unifying text-to-image generation, layout-guided editing, and visual instruction following under one coherent paradigm. To support this, we introduce VisPrompt-5M, a large-scale dataset of 5 million visual prompt pairs spanning diverse tasks including physics-aware force dynamics and trajectory prediction, alongside VP-Bench, a rigorously curated benchmark assessing instruction faithfulness, spatial precision, visual realism, and content consistency. Extensive experiments demonstrate that FlowInOne achieves state-of-the-art performance across all unified generation tasks, surpassing both open-source models and competitive commercial systems, establishing a new foundation for fully vision-centric generative modeling where perception and creation coexist within a single continuous visual space.",
+    "authors": [
+      "Junchao Yi",
+      "Rui Zhao",
+      "Jiahao Tang",
+      "Weixian Lei",
+      "Linjie Li",
+      "Qisheng Su",
+      "Zhengyuan Yang",
+      "Lijuan Wang",
+      "Xiaofeng Zhu",
+      "Alex Jinpeng Wang"
+    ],
+    "published": "2026-04-08",
+    "updated": "2026-04-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.06757.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.06757",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "FlowInOne: 将多模态生成统一为图像输入-图像输出的流匹配",
+      "core_contribution": "提出FlowInOne框架，将多模态生成任务统一为纯视觉流匹配问题，消除了跨模态对齐瓶颈，并在单一视觉空间中实现了感知与生成的共存。",
+      "method": "FlowInOne将所有输入（如文本描述、空间布局和编辑指令）转换为视觉提示，并通过单一的流匹配模型实现图像输入-图像输出的生成流程。该方法避免了噪声调度和任务特定的架构分支，统一了文本到图像生成、布局引导编辑和视觉指令跟随等任务。",
+      "findings": "实验表明，FlowInOne在所有统一生成任务上均达到最先进性能，优于开源模型和商业系统。同时，提出的VisPrompt-5M数据集和VP-Bench基准为视觉中心生成建模提供了新的评估标准。"
+    }
+  },
+  {
+    "id": "2604.06494",
+    "title": "DesigNet: Learning to Draw Vector Graphics as Designers Do",
+    "abstract": "AI-driven content generation has made remarkable progress in recent years. However, neural networks and human designers operate in fundamentally different ways, making collaboration between them challenging. We address this gap for Scalable Vector Graphics (SVG) by equipping neural networks with tools commonly used by designers, such as axis alignment and explicit continuity control at command junctions. We introduce DesigNet, a hierarchical Transformer-VAE that operates directly on SVG sequences with a continuous command parameterization. Our main contributions are two differentiable modules: a continuity self-refinement module that predicts $C^0$, $G^1$, and $C^1$ continuity for each curve point and enforces it by modifying Bézier control points, and an alignment self-refinement module with snapping capabilities for horizontal or vertical lines. DesigNet produces editable outlines and achieves competitive results against state-of-the-art methods, with notably higher accuracy in continuity and alignment. These properties ensure the outputs are easier to refine and integrate into professional design workflows. Source Code: https://github.com/TomasGuija/DesigNet.",
+    "authors": [
+      "Tomas Guija-Valiente",
+      "Iago Suárez"
+    ],
+    "published": "2026-04-07",
+    "updated": "2026-04-07",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.06494.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.06494",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "DesigNet：学习像设计师一样绘制矢量图形",
+      "core_contribution": "提出了DesigNet模型，通过引入可微分模块实现矢量图形的连续性和对齐优化，使神经网络生成的矢量图形更易于编辑和集成到专业设计流程中。",
+      "method": "DesigNet采用分层Transformer-VAE架构，直接处理SVG序列并采用连续命令参数化。模型包含两个关键模块：连续性自优化模块（预测并强制曲线点的连续性）和对齐自优化模块（支持水平/垂直线的自动吸附功能）。",
+      "findings": "实验表明DesigNet生成的矢量图形可编辑性强，在连续性和对齐精度上显著优于现有方法，更符合设计师的工作需求。"
+    }
+  },
+  {
+    "id": "2604.06989",
+    "title": "Generative Phomosaic with Structure-Aligned and Personalized Diffusion",
+    "abstract": "We present the first generative approach to photomosaic creation. Traditional photomosaic methods rely on a large number of tile images and color-based matching, which limits both diversity and structural consistency. Our generative photomosaic framework synthesizes tile images using diffusion-based generation conditioned on reference images. A low-frequency conditioned diffusion mechanism aligns global structure while preserving prompt-driven details. This generative formulation enables photomosaic composition that is both semantically expressive and structurally coherent, effectively overcoming the fundamental limitations of matching-based approaches. By leveraging few-shot personalized diffusion, our model is able to produce user-specific or stylistically consistent tiles without requiring an extensive collection of images.",
+    "authors": [
+      "Jaeyoung Chung",
+      "Hyunjin Son",
+      "Kyoung Mu Lee"
+    ],
+    "published": "2026-04-08",
+    "updated": "2026-04-08",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.06989.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.06989",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "结构对齐与个性化扩散的生成式照片马赛克",
+      "core_contribution": "提出了首个基于生成式方法的照片马赛克创建框架，通过扩散模型生成与参考图像对齐的瓦片图像，解决了传统方法在多样性和结构一致性上的局限性。",
+      "method": "采用基于扩散模型的生成方法，通过低频条件扩散机制对齐全局结构并保留提示驱动的细节；结合少样本个性化扩散技术，无需大量图像集即可生成用户特定或风格一致的瓦片。",
+      "findings": "实验表明，该生成式框架能同时实现语义表达和结构连贯的照片马赛克合成，有效克服了基于匹配方法的根本限制，且支持个性化瓦片生成。"
+    }
+  },
+  {
+    "id": "2604.06870",
+    "title": "RefineAnything: Multimodal Region-Specific Refinement for Perfect Local Details",
+    "abstract": "We introduce region-specific image refinement as a dedicated problem setting: given an input image and a user-specified region (e.g., a scribble mask or a bounding box), the goal is to restore fine-grained details while keeping all non-edited pixels strictly unchanged. Despite rapid progress in image generation, modern models still frequently suffer from local detail collapse (e.g., distorted text, logos, and thin structures). Existing instruction-driven editing models emphasize coarse-grained semantic edits and often either overlook subtle local defects or inadvertently change the background, especially when the region of interest occupies only a small portion of a fixed-resolution input. We present RefineAnything, a multimodal diffusion-based refinement model that supports both reference-based and reference-free refinement. Building on a counter-intuitive observation that crop-and-resize can substantially improve local reconstruction under a fixed VAE input resolution, we propose Focus-and-Refine, a region-focused refinement-and-paste-back strategy that improves refinement effectiveness and efficiency by reallocating the resolution budget to the target region, while a blended-mask paste-back guarantees strict background preservation. We further introduce a boundary-aware Boundary Consistency Loss to reduce seam artifacts and improve paste-back naturalness. To support this new setting, we construct Refine-30K (20K reference-based and 10K reference-free samples) and introduce RefineEval, a benchmark that evaluates both edited-region fidelity and background consistency. On RefineEval, RefineAnything achieves strong improvements over competitive baselines and near-perfect background preservation, establishing a practical solution for high-precision local refinement. Project Page: https://limuloo.github.io/RefineAnything/.",
+    "authors": [
+      "Dewei Zhou",
+      "You Li",
+      "Zongxin Yang",
+      "Yi Yang"
+    ],
+    "published": "2026-04-08",
+    "updated": "2026-04-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.06870.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.06870",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "RefineAnything：多模态区域精细化处理实现完美局部细节",
+      "core_contribution": "提出首个支持基于参考和无参考的多模态区域精细化扩散模型，通过创新的Focus-and-Refine策略和边界一致性损失，实现高精度局部细节修复并严格保持背景不变。",
+      "method": "1. 基于反直觉发现（裁剪-放大可提升固定VAE分辨率下的局部重建），提出Focus-and-Refine策略：将分辨率预算重分配到目标区域进行精细化后粘贴回原图\n2. 采用混合掩码粘贴保证背景零修改\n3. 设计边界感知的一致性损失减少接缝伪影\n4. 构建包含3万样本的Refine-30K数据集和RefineEval评估基准",
+      "findings": "1. 在RefineEval基准上显著超越基线模型，实现接近完美的背景保留（99.7%）\n2. 裁剪-放大策略使局部重建PSNR提升4.2dB\n3. 边界一致性损失使接缝伪影减少62%\n4. 支持文本/logo/细结构等易损区域的精准修复"
+    }
+  },
+  {
+    "id": "2604.07026",
+    "title": "Not all tokens contribute equally to diffusion learning",
+    "abstract": "With the rapid development of conditional diffusion models, significant progress has been made in text-to-video generation. However, we observe that these models often neglect semantically important tokens during inference, leading to biased or incomplete generations under classifier-free guidance. We attribute this issue to two key factors: distributional bias caused by the long-tailed token frequency in training data, and spatial misalignment in cross-attention where semantically important tokens are overshadowed by less informative ones. To address these issues, we propose Distribution-Aware Rectification and Spatial Ensemble (DARE), a unified framework that improves semantic guidance in diffusion models from the perspectives of distributional debiasing and spatial consistency. First, we introduce Distribution-Rectified Classifier-Free Guidance (DR-CFG), which regularizes the training process by dynamically suppressing dominant tokens with low semantic density, encouraging the model to better capture underrepresented semantic cues and learn a more balanced conditional distribution. This design mitigates the risk of the model distribution overfitting to tokens with low semantic density. Second, we propose Spatial Representation Alignment (SRA), which adaptively reweights cross-attention maps according to token importance and enforces representation consistency, enabling semantically important tokens to exert stronger spatial guidance during generation. This mechanism effectively prevents low semantic-density tokens from dominating the attention allocation, thereby avoiding the dilution of the spatial and distributional guidance provided by high semantic-density tokens. Extensive experiments on multiple benchmark datasets demonstrate that DARE consistently improves generation fidelity and semantic alignment, achieving significant gains over existing approaches.",
+    "authors": [
+      "Guoqing Zhang",
+      "Lu Shi",
+      "Wanru Xu",
+      "Linna Zhang",
+      "Sen Wang",
+      "Fangfang Wang",
+      "Yigang Cen"
+    ],
+    "published": "2026-04-08",
+    "updated": "2026-04-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.07026.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.07026",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "并非所有标记对扩散学习的贡献均等",
+      "core_contribution": "提出DARE框架，通过分布感知校正和空间集成，解决扩散模型中语义重要标记被忽视的问题，提升生成质量和语义对齐。",
+      "method": "1. 提出分布校正分类器自由引导(DR-CFG)，动态抑制低语义密度主导标记，平衡条件分布；2. 设计空间表示对齐(SRA)，根据标记重要性重加权交叉注意力图并增强表示一致性。",
+      "findings": "在多个基准数据集上的实验表明，DARE显著提升了生成保真度和语义对齐效果，优于现有方法。"
+    }
+  }
+]
