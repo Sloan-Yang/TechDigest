@@ -1,0 +1,149 @@
+[
+  {
+    "id": "2604.08536",
+    "title": "RewardFlow: Generate Images by Optimizing What You Reward",
+    "abstract": "We introduce RewardFlow, an inversion-free framework that steers pretrained diffusion and flow-matching models at inference time through multi-reward Langevin dynamics. RewardFlow unifies complementary differentiable rewards for semantic alignment, perceptual fidelity, localized grounding, object consistency, and human preference, and further introduces a differentiable VQA-based reward that provides fine-grained semantic supervision through language-vision reasoning. To coordinate these heterogeneous objectives, we design a prompt-aware adaptive policy that extracts semantic primitives from the instruction, infers edit intent, and dynamically modulates reward weights and step sizes throughout sampling. Across several image editing and compositional generation benchmarks, RewardFlow delivers state-of-the-art edit fidelity and compositional alignment.",
+    "authors": [
+      "Onkar Susladkar",
+      "Dong-Hwan Jang",
+      "Tushar Prakash",
+      "Adheesh Juvekar",
+      "Vedant Shah",
+      "Ayush Barik",
+      "Nabeel Bashir",
+      "Muntasir Wahed",
+      "Ritish Shrirao",
+      "Ismini Lourentzou"
+    ],
+    "published": "2026-04-09",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08536.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08536",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "RewardFlow：通过优化奖励生成图像",
+      "core_contribution": "提出RewardFlow框架，通过多奖励Langevin动力学在推理时引导预训练的扩散和流匹配模型，实现语义对齐、感知保真度、局部定位、对象一致性和人类偏好等多目标优化。",
+      "method": "RewardFlow结合了多种可微分奖励，包括基于VQA的细粒度语义监督奖励，并通过提示感知的自适应策略动态调整奖励权重和步长，以协调不同目标。该方法从指令中提取语义基元，推断编辑意图，并在采样过程中动态调整参数。",
+      "findings": "在多个图像编辑和组合生成基准测试中，RewardFlow在编辑保真度和组合对齐方面达到了最先进的性能。"
+    }
+  },
+  {
+    "id": "2604.08364",
+    "title": "MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping",
+    "abstract": "In this paper, we introduce MegaStyle, a novel and scalable data curation pipeline that constructs an intra-style consistent, inter-style diverse and high-quality style dataset. We achieve this by leveraging the consistent text-to-image style mapping capability of current large generative models, which can generate images in the same style from a given style description. Building on this foundation, we curate a diverse and balanced prompt gallery with 170K style prompts and 400K content prompts, and generate a large-scale style dataset MegaStyle-1.4M via content-style prompt combinations. With MegaStyle-1.4M, we propose style-supervised contrastive learning to fine-tune a style encoder MegaStyle-Encoder for extracting expressive, style-specific representations, and we also train a FLUX-based style transfer model MegaStyle-FLUX. Extensive experiments demonstrate the importance of maintaining intra-style consistency, inter-style diversity and high-quality for style dataset, as well as the effectiveness of the proposed MegaStyle-1.4M. Moreover, when trained on MegaStyle-1.4M, MegaStyle-Encoder and MegaStyle-FLUX provide reliable style similarity measurement and generalizable style transfer, making a significant contribution to the style transfer community. More results are available at our project website https://jeoyal.github.io/MegaStyle/.",
+    "authors": [
+      "Junyao Gao",
+      "Sibo Liu",
+      "Jiaxing Li",
+      "Yanan Sun",
+      "Yuanpeng Tu",
+      "Fei Shen",
+      "Weidong Zhang",
+      "Cairong Zhao",
+      "Jun Zhang"
+    ],
+    "published": "2026-04-09",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08364.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08364",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MegaStyle：通过一致的文本到图像风格映射构建多样且可扩展的风格数据集",
+      "core_contribution": "提出了MegaStyle，一种新颖且可扩展的数据构建流程，用于创建风格内一致、风格间多样且高质量的图像风格数据集，并基于该数据集训练了风格编码器和风格迁移模型。",
+      "method": "利用大型生成模型的文本到图像风格一致映射能力，通过组合170K风格提示和400K内容提示生成大规模风格数据集MegaStyle-1.4M；采用风格监督对比学习微调风格编码器MegaStyle-Encoder，并训练基于FLUX的风格迁移模型MegaStyle-FLUX。",
+      "findings": "实验表明，保持风格内一致性和风格间多样性对风格数据集至关重要，MegaStyle-1.4M显著提升了风格相似性度量和风格迁移的泛化能力。MegaStyle-Encoder和MegaStyle-FLUX在风格迁移领域表现优异。"
+    }
+  },
+  {
+    "id": "2604.08048",
+    "title": "Guiding a Diffusion Model by Swapping Its Tokens",
+    "abstract": "Classifier-Free Guidance (CFG) is a widely used inference-time technique to boost the image quality of diffusion models. Yet, its reliance on text conditions prevents its use in unconditional generation. We propose a simple method to enable CFG-like guidance for both conditional and unconditional generation. The key idea is to generate a perturbed prediction via simple token swap operations, and use the direction between it and the clean prediction to steer sampling towards higher-fidelity distributions. In practice, we swap pairs of most semantically dissimilar token latents in either spatial or channel dimensions. Unlike existing methods that apply perturbation in a global or less constrained manner, our approach selectively exchanges and recomposes token latents, allowing finer control over perturbation and its influence on generated samples. Experiments on MS-COCO 2014, MS-COCO 2017, and ImageNet datasets demonstrate that the proposed Self-Swap Guidance (SSG), when applied to popular diffusion models, outperforms previous condition-free methods in image fidelity and prompt alignment under different set-ups. Its fine-grained perturbation granularity also improves robustness, reducing side-effects across a wider range of perturbation strengths. Overall, SSG extends CFG to a broader scope of applications including both conditional and unconditional generation, and can be readily inserted into any diffusion model as a plug-in to gain immediate improvements.",
+    "authors": [
+      "Weijia Zhang",
+      "Yuehao Liu",
+      "Shanyan Guan",
+      "Wu Ran",
+      "Yanhao Ge",
+      "Wei Li",
+      "Chao Ma"
+    ],
+    "published": "2026-04-09",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08048.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08048",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过交换标记引导扩散模型",
+      "core_contribution": "提出自交换引导（SSG）方法，将无分类器引导（CFG）技术扩展至无条件生成任务，同时提升条件生成的图像质量与提示对齐。",
+      "method": "通过交换语义差异最大的标记潜在表示（空间或通道维度），生成扰动预测，并利用其与干净预测的差异方向引导采样。该方法选择性地重组标记潜在表示，实现了更细粒度的扰动控制。",
+      "findings": "在MS-COCO和ImageNet数据集上的实验表明，SSG在图像保真度和提示对齐上优于现有无条件方法，且细粒度扰动提高了鲁棒性，可即插即用于任意扩散模型。"
+    }
+  },
+  {
+    "id": "2604.07427",
+    "title": "Personalizing Text-to-Image Generation to Individual Taste",
+    "abstract": "Modern text-to-image (T2I) models generate high-fidelity visuals but remain indifferent to individual user preferences. While existing reward models optimize for \"average\" human appeal, they fail to capture the inherent subjectivity of aesthetic judgment. In this work, we introduce a novel dataset and predictive framework, called PAMELA, designed to model personalized image evaluations. Our dataset comprises 70,000 ratings across 5,000 diverse images generated by state-of-the-art models (Flux 2 and Nano Banana). Each image is evaluated by 15 unique users, providing a rich distribution of subjective preferences across domains such as art, design, fashion, and cinematic photography. Leveraging this data, we propose a personalized reward model trained jointly on our high-quality annotations and existing aesthetic assessment subsets. We demonstrate that our model predicts individual liking with higher accuracy than the majority of current state-of-the-art methods predict population-level preferences. Using our personalized predictor, we demonstrate how simple prompt optimization methods can be used to steer generations towards individual user preferences. Our results highlight the importance of data quality and personalization to handle the subjectivity of user preferences. We release our dataset and model to facilitate standardized research in personalized T2I alignment and subjective visual quality assessment.",
+    "authors": [
+      "Anne-Sofie Maerten",
+      "Juliane Verwiebe",
+      "Shyamgopal Karthik",
+      "Ameya Prabhu",
+      "Johan Wagemans",
+      "Matthias Bethge"
+    ],
+    "published": "2026-04-08",
+    "updated": "2026-04-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.07427.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.07427",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "个性化文本到图像生成以满足个人品味",
+      "core_contribution": "提出了PAMELA数据集和预测框架，用于建模个性化图像评估，并通过个性化奖励模型优化文本到图像生成以满足个体用户偏好。",
+      "method": "1. 构建了一个包含70,000个评分、覆盖5,000张多样化图像的数据集，每张图像由15位独特用户评估。2. 结合高质量注释和现有美学评估子集，训练了一个个性化奖励模型。3. 使用简单的提示优化方法，将生成结果导向个体用户偏好。",
+      "findings": "1. 个性化奖励模型在预测个体喜好方面比现有最先进方法预测群体偏好的准确性更高。2. 数据质量和个性化处理对应对用户偏好的主观性至关重要。3. 通过提示优化可以有效地将生成结果个性化。"
+    }
+  },
+  {
+    "id": "2604.08411",
+    "title": "What a Comfortable World: Ergonomic Principles Guided Apartment Layout Generation",
+    "abstract": "Current data-driven floor plan generation methods often reproduce the ergonomic inefficiencies found in real-world training datasets. To address this, we propose a novel approach that integrates architectural design principles directly into a transformer-based generative process. We formulate differentiable loss functions based on established architectural standards from literature to optimize room adjacency and proximity. By guiding the model with these ergonomic priors during training, our method produces layouts with significantly improved livability metrics. Comparative evaluations show that our approach outperforms baselines in ergonomic compliance while maintaining high structural validity.",
+    "authors": [
+      "Piotr Nieciecki",
+      "Aleksander Plocharski",
+      "Przemyslaw Musialski"
+    ],
+    "published": "2026-04-09",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.GR",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08411.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08411",
+    "primary_category": "cs.GR",
+    "score": 75,
+    "summary": {
+      "title_zh": "舒适的世界：基于人体工程学原则的公寓布局生成",
+      "core_contribution": "提出了一种将人体工程学设计原则直接融入基于Transformer的生成过程的新方法，显著提高了布局的宜居性。",
+      "method": "该方法通过构建基于建筑文献标准的可微损失函数，优化房间的相邻性和接近性。在训练过程中，利用这些人体工程学先验知识引导模型，从而生成更符合人体工程学的布局。",
+      "findings": "对比评估表明，该方法在人体工程学合规性方面优于基线方法，同时保持了较高的结构有效性。"
+    }
+  }
+]
