@@ -7,10 +7,10 @@
     "url": "https://github.com/OpenBMB/VoxCPM",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        OpenBMB /\n\n      VoxCPM  \n\n    \n      VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
     "language": "Python",
-    "stars": 9291,
-    "stars_today": 953,
+    "stars": 9831,
+    "stars_today": 1136,
     "relevance_score": 85,
-    "summary": "VoxCPM2是一个无需分词器的多语言语音生成工具，支持创意语音设计和逼真语音克隆，因其创新的技术突破和广泛的应用场景而值得关注。"
+    "summary": "VoxCPM2是一个无需分词器的多语言语音生成工具，支持创意语音设计和逼真语音克隆，因其创新的无分词器技术和多语言能力而值得关注。"
   },
   {
     "id": "NousResearch_hermes-agent",
@@ -20,10 +20,10 @@
     "url": "https://github.com/NousResearch/hermes-agent",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NousResearch /\n\n      hermes-agent  \n\n    \n      The agent that grows with you",
     "language": "Python",
-    "stars": 55382,
-    "stars_today": 7671,
+    "stars": 58517,
+    "stars_today": 6437,
     "relevance_score": 70,
-    "summary": "NousResearch/hermes-agent 是一个能随着用户需求不断成长的智能代理项目，值得关注因为它结合了灵活性和可扩展性，适合开发者构建个性化智能助手。"
+    "summary": "Hermes-Agent 是一个能随需求成长的智能代理项目，值得关注因其灵活性和适应性可满足不同开发需求。"
   },
   {
     "id": "HKUDS_DeepTutor",
@@ -33,10 +33,10 @@
     "url": "https://github.com/HKUDS/DeepTutor",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        HKUDS /\n\n      DeepTutor  \n\n    \n      \"DeepTutor: Agent-Native Personalized Learning Assistant\"",
     "language": "Python",
-    "stars": 16357,
-    "stars_today": 1424,
+    "stars": 16706,
+    "stars_today": 836,
     "relevance_score": 70,
-    "summary": "DeepTutor是一个基于智能代理的个性化学习助手项目，利用深度学习技术提供定制化教育服务，值得关注因其创新性地将AI代理融入教育领域实现精准学习指导。"
+    "summary": "DeepTutor 是一个基于智能代理的个性化学习助手，利用深度学习技术提供定制化教育服务，值得关注因其创新性地结合AI与教育领域实现高效学习辅导。"
   },
   {
     "id": "multica-ai_multica",
@@ -46,10 +46,10 @@
     "url": "https://github.com/multica-ai/multica",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        multica-ai /\n\n      multica  \n\n    \n      The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills.",
     "language": "TypeScript",
-    "stars": 7031,
-    "stars_today": 1506,
+    "stars": 7791,
+    "stars_today": 1950,
     "relevance_score": 65,
-    "summary": "Multica 是一个开源的多智能体管理平台，能将编码智能体转化为可分配任务、追踪进度并持续提升技能的虚拟团队成员，值得关注因其开创性地将AI智能体协作引入实际开发流程。"
+    "summary": "Multica 是一个开源的管理式智能体平台，能将编码智能体转化为真正的团队成员，支持任务分配、进度追踪和技能复合，值得关注因其开创性地将AI协作融入开发流程。"
   },
   {
     "id": "coleam00_Archon",
@@ -59,10 +59,10 @@
     "url": "https://github.com/coleam00/Archon",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        coleam00 /\n\n      Archon  \n\n    \n      The first open-source harness builder for AI coding. Make AI coding deterministic and repeatable.",
     "language": "TypeScript",
-    "stars": 16122,
-    "stars_today": 756,
+    "stars": 16434,
+    "stars_today": 1339,
     "relevance_score": 60,
-    "summary": "Archon 是首个开源 AI 编程工具构建框架，旨在使 AI 编码过程变得确定性和可重复，值得关注因其创新性地解决了 AI 生成代码的可靠性问题。"
+    "summary": "Archon 是首个开源的 AI 编程工具构建框架，旨在使 AI 编码过程变得确定性和可重复，值得关注因其创新性地解决了 AI 生成代码的可靠性问题。"
   },
   {
     "id": "alexpate_awesome-design-systems",
@@ -72,10 +72,10 @@
     "url": "https://github.com/alexpate/awesome-design-systems",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        alexpate /\n\n      awesome-design-systems  \n\n    \n      💅🏻 ⚒ A collection of awesome design systems",
     "language": "",
-    "stars": 21258,
+    "stars": 22214,
     "stars_today": 1978,
     "relevance_score": 60,
-    "summary": "这是一个收集了各种优秀设计系统的GitHub项目，值得关注因为它为设计师和开发者提供了丰富的设计规范和资源参考。"
+    "summary": "该项目收集整理了各种优秀的**设计系统**资源库，为设计师和开发者提供丰富的参考案例和工具，值得关注因为它能帮助团队高效构建统一的产品设计语言。"
   },
   {
     "id": "microsoft_markitdown",
@@ -85,10 +85,10 @@
     "url": "https://github.com/microsoft/markitdown",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        microsoft /\n\n      markitdown  \n\n    \n      Python tool for converting files and office documents to Markdown.",
     "language": "Python",
-    "stars": 100927,
-    "stars_today": 2352,
+    "stars": 102014,
+    "stars_today": 3069,
     "relevance_score": 50,
-    "summary": "Microsoft的markitdown是一个Python工具，用于将文件和办公文档转换为Markdown格式，特别适合需要简化文档处理的开发者。"
+    "summary": "Microsoft的markitdown是一个Python工具，用于将文件和办公文档转换为Markdown格式，值得关注因为它简化了文档格式转换流程。"
   },
   {
     "id": "opendataloader-project_opendataloader-pdf",
@@ -98,9 +98,9 @@
     "url": "https://github.com/opendataloader-project/opendataloader-pdf",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        opendataloader-project /\n\n      opendataloader-pdf  \n\n    \n      PDF Parser for AI-ready data. Automate PDF accessibility. Open-source.",
     "language": "Java",
-    "stars": 15150,
-    "stars_today": 1306,
+    "stars": 15568,
+    "stars_today": 777,
     "relevance_score": 50,
-    "summary": "OpenDataloader-PDF 是一个用Java开发的开源PDF解析工具，专注于将PDF文档转换为AI可用的数据格式并自动化提升PDF可访问性，值得关注因为它能高效处理非结构化PDF数据，为AI项目提供高质量输入源。"
+    "summary": "OpenDataloader-PDF是一个用Java开发的开源PDF解析工具，专注于将PDF文档转换为AI可用的数据格式并自动化提升PDF可访问性，值得关注因其简化了非结构化PDF数据的处理流程。"
   }
 ]

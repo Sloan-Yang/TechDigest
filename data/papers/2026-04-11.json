@@ -1,19 +1,18 @@
 [
   {
-    "id": "2604.08536",
-    "title": "RewardFlow: Generate Images by Optimizing What You Reward",
-    "abstract": "We introduce RewardFlow, an inversion-free framework that steers pretrained diffusion and flow-matching models at inference time through multi-reward Langevin dynamics. RewardFlow unifies complementary differentiable rewards for semantic alignment, perceptual fidelity, localized grounding, object consistency, and human preference, and further introduces a differentiable VQA-based reward that provides fine-grained semantic supervision through language-vision reasoning. To coordinate these heterogeneous objectives, we design a prompt-aware adaptive policy that extracts semantic primitives from the instruction, infers edit intent, and dynamically modulates reward weights and step sizes throughout sampling. Across several image editing and compositional generation benchmarks, RewardFlow delivers state-of-the-art edit fidelity and compositional alignment.",
+    "id": "2604.08213",
+    "title": "EditCaption: Human-Aligned Instruction Synthesis for Image Editing via Supervised Fine-Tuning and Direct Preference Optimization",
+    "abstract": "High-quality training triplets (source-target image pairs with precise editing instructions) are a critical bottleneck for scaling instruction-guided image editing models. Vision-language models (VLMs) are widely used for automated instruction synthesis, but we identify three systematic failure modes in image-pair settings: orientation inconsistency (e.g., left/right confusion), viewpoint ambiguity, and insufficient fine-grained attribute description. Human evaluation shows that over 47% of instructions from strong baseline VLMs contain critical errors unusable for downstream training. We propose EditCaption, a scalable two-stage post-training pipeline for VLM-based instruction synthesis. Stage 1 builds a 100K supervised fine-tuning (SFT) dataset by combining GLM automatic annotation, EditScore-based filtering, and human refinement for spatial, directional, and attribute-level accuracy. Stage 2 collects 10K human preference pairs targeting the three failure modes and applies direct preference optimization (DPO) for alignment beyond SFT alone. On Eval-400, ByteMorph-Bench, and HQ-Edit, fine-tuned Qwen3-VL models outperform open-source baselines; the 235B model reaches 4.712 on Eval-400 (vs. Gemini-3-Pro 4.706, GPT-4.1 4.220, Kimi-K2.5 4.111) and 4.588 on ByteMorph-Bench (vs. Gemini-3-Pro 4.522, GPT-4.1 3.412). Human evaluation shows critical errors falling from 47.75% to 23% and correctness rising from 41.75% to 66%. The work offers a practical path to scalable, human-aligned instruction synthesis for image editing data.",
     "authors": [
-      "Onkar Susladkar",
-      "Dong-Hwan Jang",
-      "Tushar Prakash",
-      "Adheesh Juvekar",
-      "Vedant Shah",
-      "Ayush Barik",
-      "Nabeel Bashir",
-      "Muntasir Wahed",
-      "Ritish Shrirao",
-      "Ismini Lourentzou"
+      "Xiangyuan Wang",
+      "Honghao Cai",
+      "Yunhao Bai",
+      "Tianze Zhou",
+      "Haohua Chen",
+      "Yao Hu",
+      "Xu Tang",
+      "Yibo Chen",
+      "Wei Zhu"
     ],
     "published": "2026-04-09",
     "updated": "2026-04-09",
@@ -21,129 +20,126 @@
       "cs.CV",
       "cs.AI"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.08536.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.08536",
+    "pdf_url": "https://arxiv.org/pdf/2604.08213.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08213",
     "primary_category": "cs.CV",
-    "score": 85,
+    "score": 75,
     "summary": {
-      "title_zh": "RewardFlow：通过优化奖励生成图像",
-      "core_contribution": "提出RewardFlow框架，通过多奖励Langevin动力学在推理时引导预训练的扩散和流匹配模型，实现语义对齐、感知保真度、局部定位、对象一致性和人类偏好等多目标优化。",
-      "method": "RewardFlow结合了多种可微分奖励，包括基于VQA的细粒度语义监督奖励，并通过提示感知的自适应策略动态调整奖励权重和步长，以协调不同目标。该方法从指令中提取语义基元，推断编辑意图，并在采样过程中动态调整参数。",
-      "findings": "在多个图像编辑和组合生成基准测试中，RewardFlow在编辑保真度和组合对齐方面达到了最先进的性能。"
+      "title_zh": "EditCaption：通过监督微调与直接偏好优化实现图像编辑的人类对齐指令合成",
+      "core_contribution": "提出EditCaption，一种可扩展的两阶段训练后流程，显著提升视觉语言模型在图像编辑指令合成中的准确性与人类对齐性。",
+      "method": "1. 第一阶段通过GLM自动标注、EditScore过滤和人工修正构建10万条监督微调数据集，解决空间、方向和属性级精度问题；\n2. 第二阶段收集1万条人类偏好数据，针对三种系统错误模式，应用直接偏好优化（DPO）实现超越监督微调的对齐效果。",
+      "findings": "1. 微调后的Qwen3-VL模型在Eval-400、ByteMorph-Bench和HQ-Edit基准上超越开源基线，235B模型在Eval-400得分4.712（优于Gemini-3-Pro/GPT-4.1等）；\n2. 人类评估显示关键错误率从47.75%降至23%，正确率从41.75%提升至66%。"
     }
   },
   {
-    "id": "2604.08364",
-    "title": "MegaStyle: Constructing Diverse and Scalable Style Dataset via Consistent Text-to-Image Style Mapping",
-    "abstract": "In this paper, we introduce MegaStyle, a novel and scalable data curation pipeline that constructs an intra-style consistent, inter-style diverse and high-quality style dataset. We achieve this by leveraging the consistent text-to-image style mapping capability of current large generative models, which can generate images in the same style from a given style description. Building on this foundation, we curate a diverse and balanced prompt gallery with 170K style prompts and 400K content prompts, and generate a large-scale style dataset MegaStyle-1.4M via content-style prompt combinations. With MegaStyle-1.4M, we propose style-supervised contrastive learning to fine-tune a style encoder MegaStyle-Encoder for extracting expressive, style-specific representations, and we also train a FLUX-based style transfer model MegaStyle-FLUX. Extensive experiments demonstrate the importance of maintaining intra-style consistency, inter-style diversity and high-quality for style dataset, as well as the effectiveness of the proposed MegaStyle-1.4M. Moreover, when trained on MegaStyle-1.4M, MegaStyle-Encoder and MegaStyle-FLUX provide reliable style similarity measurement and generalizable style transfer, making a significant contribution to the style transfer community. More results are available at our project website https://jeoyal.github.io/MegaStyle/.",
+    "id": "2604.08042",
+    "title": "3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience",
+    "abstract": "Sketching in 3D space enables expressive reasoning about shape, structure, and spatial relationships, yet generating 3D sketches through natural language remains a major challenge. In this work, we introduce 3DrawAgent, a training-free, language-driven framework for 3D sketch generation that leverages large language models (LLMs) to sequentially draw 3D Bezier curves under geometric feedback. Unlike prior 2D sketch agents, our method introduces a relative experience optimization strategy that adapts the recently proposed Group Reward Policy Optimization (GRPO) paradigm. Instead of relying on explicit ground-truth supervision, we construct pairwise comparisons among generated sketches, with each pair consisting of a relatively better and a worse result based on CLIP-based perceptual rewards and LLM-based fine-grained qualitative assessment. These experiences are then used to iteratively refine the prior knowledge of 3D drawing, enabling black-box reinforcement of the model's 3D awareness. This design allows our model to self-improve its spatial understanding and drawing quality without parameter updates. Experiments show that 3DrawAgent can generate complex and coherent 3D Bezier sketches from diverse textual prompts, exhibit emergent geometric reasoning, and generalize to novel shapes, establishing a new paradigm for advancing the field of training-free 3D sketch intelligence.",
     "authors": [
-      "Junyao Gao",
-      "Sibo Liu",
-      "Jiaxing Li",
-      "Yanan Sun",
-      "Yuanpeng Tu",
-      "Fei Shen",
-      "Weidong Zhang",
-      "Cairong Zhao",
-      "Jun Zhang"
+      "Hongcan Xiao",
+      "Xinyue Xiao",
+      "Yilin Wang",
+      "Yue Zhang",
+      "Yonggang Qi"
+    ],
+    "published": "2026-04-09",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08042.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08042",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "3DrawAgent：通过早期对比经验教授大语言模型进行3D绘图",
+      "core_contribution": "提出了一种无需训练的3D草图生成框架3DrawAgent，利用大语言模型（LLMs）在几何反馈下顺序绘制3D贝塞尔曲线，并通过对比经验优化策略提升模型的空间感知能力。",
+      "method": "该方法采用相对经验优化策略，基于Group Reward Policy Optimization（GRPO）范式，通过构建生成草图的成对比较（基于CLIP感知奖励和LLM细粒度定性评估）来迭代优化模型的3D绘图先验知识。整个过程无需参数更新，实现了模型在3D空间理解和绘图质量上的自我提升。",
+      "findings": "实验表明，3DrawAgent能够根据多样化的文本提示生成复杂且连贯的3D贝塞尔草图，展现出涌现的几何推理能力，并能推广到新形状，为无需训练的3D草图智能领域建立了新范式。"
+    }
+  },
+  {
+    "id": "2604.07966",
+    "title": "Lighting-grounded Video Generation with Renderer-based Agent Reasoning",
+    "abstract": "Diffusion models have achieved remarkable progress in video generation, but their controllability remains a major limitation. Key scene factors such as layout, lighting, and camera trajectory are often entangled or only weakly modeled, restricting their applicability in domains like filmmaking and virtual production where explicit scene control is essential. We present LiVER, a diffusion-based framework for scene-controllable video generation. To achieve this, we introduce a novel framework that conditions video synthesis on explicit 3D scene properties, supported by a new large-scale dataset with dense annotations of object layout, lighting, and camera parameters. Our method disentangles these properties by rendering control signals from a unified 3D representation. We propose a lightweight conditioning module and a progressive training strategy to integrate these signals into a foundational video diffusion model, ensuring stable convergence and high fidelity. Our framework enables a wide range of applications, including image-to-video and video-to-video synthesis where the underlying 3D scene is fully editable. To further enhance usability, we develop a scene agent that automatically translates high-level user instructions into the required 3D control signals. Experiments show that LiVER achieves state-of-the-art photorealism and temporal consistency while enabling precise, disentangled control over scene factors, setting a new standard for controllable video generation.",
+    "authors": [
+      "Ziqi Cai",
+      "Taoyu Yang",
+      "Zheng Chang",
+      "Si Li",
+      "Han Jiang",
+      "Shuchen Weng",
+      "Boxin Shi"
     ],
     "published": "2026-04-09",
     "updated": "2026-04-09",
     "categories": [
       "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.08364.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.08364",
+    "pdf_url": "https://arxiv.org/pdf/2604.07966.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.07966",
     "primary_category": "cs.CV",
-    "score": 85,
+    "score": 75,
     "summary": {
-      "title_zh": "MegaStyle：通过一致的文本到图像风格映射构建多样且可扩展的风格数据集",
-      "core_contribution": "提出了MegaStyle，一种新颖且可扩展的数据构建流程，用于创建风格内一致、风格间多样且高质量的图像风格数据集，并基于该数据集训练了风格编码器和风格迁移模型。",
-      "method": "利用大型生成模型的文本到图像风格一致映射能力，通过组合170K风格提示和400K内容提示生成大规模风格数据集MegaStyle-1.4M；采用风格监督对比学习微调风格编码器MegaStyle-Encoder，并训练基于FLUX的风格迁移模型MegaStyle-FLUX。",
-      "findings": "实验表明，保持风格内一致性和风格间多样性对风格数据集至关重要，MegaStyle-1.4M显著提升了风格相似性度量和风格迁移的泛化能力。MegaStyle-Encoder和MegaStyle-FLUX在风格迁移领域表现优异。"
+      "title_zh": "基于光照基础与渲染器代理推理的视频生成",
+      "core_contribution": "提出了LiVER框架，通过解耦3D场景属性（布局、光照、相机轨迹）实现高度可控的视频生成，并开发了自动将用户指令转化为3D控制信号的场景代理。",
+      "method": "1. 构建了一个包含密集标注（物体布局、光照、相机参数）的大规模数据集；2. 通过统一3D表示渲染控制信号以解耦场景属性；3. 设计轻量级条件模块和渐进式训练策略，将控制信号集成到基础视频扩散模型中。",
+      "findings": "LiVER在光真实性和时间一致性上达到SOTA水平，同时支持对场景因素的精确解耦控制，为可控视频生成设立了新标准。"
     }
   },
   {
-    "id": "2604.08048",
-    "title": "Guiding a Diffusion Model by Swapping Its Tokens",
-    "abstract": "Classifier-Free Guidance (CFG) is a widely used inference-time technique to boost the image quality of diffusion models. Yet, its reliance on text conditions prevents its use in unconditional generation. We propose a simple method to enable CFG-like guidance for both conditional and unconditional generation. The key idea is to generate a perturbed prediction via simple token swap operations, and use the direction between it and the clean prediction to steer sampling towards higher-fidelity distributions. In practice, we swap pairs of most semantically dissimilar token latents in either spatial or channel dimensions. Unlike existing methods that apply perturbation in a global or less constrained manner, our approach selectively exchanges and recomposes token latents, allowing finer control over perturbation and its influence on generated samples. Experiments on MS-COCO 2014, MS-COCO 2017, and ImageNet datasets demonstrate that the proposed Self-Swap Guidance (SSG), when applied to popular diffusion models, outperforms previous condition-free methods in image fidelity and prompt alignment under different set-ups. Its fine-grained perturbation granularity also improves robustness, reducing side-effects across a wider range of perturbation strengths. Overall, SSG extends CFG to a broader scope of applications including both conditional and unconditional generation, and can be readily inserted into any diffusion model as a plug-in to gain immediate improvements.",
+    "id": "2604.07522",
+    "title": "Training-free Spatially Grounded Geometric Shape Encoding (Technical Report)",
+    "abstract": "Positional encoding has become the de facto standard for grounding deep neural networks on discrete point-wise positions, and it has achieved remarkable success in tasks where the input can be represented as a one-dimensional sequence. However, extending this concept to 2D spatial geometric shapes demands carefully designed encoding strategies that account not only for shape geometry and pose, but also for compatibility with neural network learning. In this work, we address these challenges by introducing a training-free, general-purpose encoding strategy, dubbed XShapeEnc, that encodes an arbitrary spatially grounded 2D geometric shape into a compact representation exhibiting five favorable properties, including invertibility, adaptivity, and frequency richness. Specifically, a 2D spatially grounded geometric shape is decomposed into its normalized geometry within the unit disk and its pose vector, where the pose is further transformed into a harmonic pose field that also lies within the unit disk. A set of orthogonal Zernike bases is constructed to encode shape geometry and pose either independently or jointly, followed by a frequency-propagation operation to introduce high-frequency content into the encoding. We demonstrate the theoretical validity, efficiency, discriminability, and applicability of XShapeEnc via extensive analysis and experiments across a wide range of shape-aware tasks and our self-curated XShapeCorpus. We envision XShapeEnc as a foundational tool for research that goes beyond one-dimensional sequential data toward frontier 2D spatial intelligence.",
     "authors": [
-      "Weijia Zhang",
-      "Yuehao Liu",
-      "Shanyan Guan",
-      "Wu Ran",
-      "Yanhao Ge",
-      "Wei Li",
-      "Chao Ma"
-    ],
-    "published": "2026-04-09",
-    "updated": "2026-04-09",
-    "categories": [
-      "cs.CV"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2604.08048.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.08048",
-    "primary_category": "cs.CV",
-    "score": 85,
-    "summary": {
-      "title_zh": "通过交换标记引导扩散模型",
-      "core_contribution": "提出自交换引导（SSG）方法，将无分类器引导（CFG）技术扩展至无条件生成任务，同时提升条件生成的图像质量与提示对齐。",
-      "method": "通过交换语义差异最大的标记潜在表示（空间或通道维度），生成扰动预测，并利用其与干净预测的差异方向引导采样。该方法选择性地重组标记潜在表示，实现了更细粒度的扰动控制。",
-      "findings": "在MS-COCO和ImageNet数据集上的实验表明，SSG在图像保真度和提示对齐上优于现有无条件方法，且细粒度扰动提高了鲁棒性，可即插即用于任意扩散模型。"
-    }
-  },
-  {
-    "id": "2604.07427",
-    "title": "Personalizing Text-to-Image Generation to Individual Taste",
-    "abstract": "Modern text-to-image (T2I) models generate high-fidelity visuals but remain indifferent to individual user preferences. While existing reward models optimize for \"average\" human appeal, they fail to capture the inherent subjectivity of aesthetic judgment. In this work, we introduce a novel dataset and predictive framework, called PAMELA, designed to model personalized image evaluations. Our dataset comprises 70,000 ratings across 5,000 diverse images generated by state-of-the-art models (Flux 2 and Nano Banana). Each image is evaluated by 15 unique users, providing a rich distribution of subjective preferences across domains such as art, design, fashion, and cinematic photography. Leveraging this data, we propose a personalized reward model trained jointly on our high-quality annotations and existing aesthetic assessment subsets. We demonstrate that our model predicts individual liking with higher accuracy than the majority of current state-of-the-art methods predict population-level preferences. Using our personalized predictor, we demonstrate how simple prompt optimization methods can be used to steer generations towards individual user preferences. Our results highlight the importance of data quality and personalization to handle the subjectivity of user preferences. We release our dataset and model to facilitate standardized research in personalized T2I alignment and subjective visual quality assessment.",
-    "authors": [
-      "Anne-Sofie Maerten",
-      "Juliane Verwiebe",
-      "Shyamgopal Karthik",
-      "Ameya Prabhu",
-      "Johan Wagemans",
-      "Matthias Bethge"
+      "Yuhang He"
     ],
     "published": "2026-04-08",
     "updated": "2026-04-08",
     "categories": [
       "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.07427.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.07427",
+    "pdf_url": "https://arxiv.org/pdf/2604.07522.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.07522",
     "primary_category": "cs.CV",
-    "score": 85,
+    "score": 75,
     "summary": {
-      "title_zh": "个性化文本到图像生成以满足个人品味",
-      "core_contribution": "提出了PAMELA数据集和预测框架，用于建模个性化图像评估，并通过个性化奖励模型优化文本到图像生成以满足个体用户偏好。",
-      "method": "1. 构建了一个包含70,000个评分、覆盖5,000张多样化图像的数据集，每张图像由15位独特用户评估。2. 结合高质量注释和现有美学评估子集，训练了一个个性化奖励模型。3. 使用简单的提示优化方法，将生成结果导向个体用户偏好。",
-      "findings": "1. 个性化奖励模型在预测个体喜好方面比现有最先进方法预测群体偏好的准确性更高。2. 数据质量和个性化处理对应对用户偏好的主观性至关重要。3. 通过提示优化可以有效地将生成结果个性化。"
+      "title_zh": "免训练的空间几何形状编码技术报告",
+      "core_contribution": "提出了一种免训练、通用的编码策略XShapeEnc，能够将任意空间接地的2D几何形状编码为具有五种优良特性的紧凑表示。",
+      "method": "该方法将2D几何形状分解为归一化几何和姿态向量，利用正交Zernike基对形状几何和姿态进行独立或联合编码，并通过频率传播操作引入高频内容。",
+      "findings": "通过广泛的分析和实验，证明了XShapeEnc在理论有效性、效率、可区分性和适用性方面的优势，适用于多种形状感知任务。"
     }
   },
   {
-    "id": "2604.08411",
-    "title": "What a Comfortable World: Ergonomic Principles Guided Apartment Layout Generation",
-    "abstract": "Current data-driven floor plan generation methods often reproduce the ergonomic inefficiencies found in real-world training datasets. To address this, we propose a novel approach that integrates architectural design principles directly into a transformer-based generative process. We formulate differentiable loss functions based on established architectural standards from literature to optimize room adjacency and proximity. By guiding the model with these ergonomic priors during training, our method produces layouts with significantly improved livability metrics. Comparative evaluations show that our approach outperforms baselines in ergonomic compliance while maintaining high structural validity.",
+    "id": "2604.06966",
+    "title": "MAR-GRPO: Stabilized GRPO for AR-diffusion Hybrid Image Generation",
+    "abstract": "Reinforcement learning (RL) has been successfully applied to autoregressive (AR) and diffusion models. However, extending RL to hybrid AR-diffusion frameworks remains challenging due to interleaved inference and noisy log-probability estimation. In this work, we study masked autoregressive models (MAR) and show that the diffusion head plays a critical role in training dynamics, often introducing noisy gradients that lead to instability and early performance saturation. To address this issue, we propose a stabilized RL framework for MAR. We introduce multi-trajectory expectation (MTE), which estimates the optimization direction by averaging over multiple diffusion trajectories, thereby reducing diffusion-induced gradient noise. To avoid over-smoothing, we further estimate token-wise uncertainty from multiple trajectories and apply multi-trajectory optimization only to the top-k% uncertain tokens. In addition, we introduce a consistency-aware token selection strategy that filters out AR tokens that are less aligned with the final generated content. Extensive experiments across multiple benchmarks demonstrate that our method consistently improves visual quality, training stability, and spatial structure understanding over baseline GRPO and pre-RL models. Code is available at: https://github.com/AMAP-ML/mar-grpo.",
     "authors": [
-      "Piotr Nieciecki",
-      "Aleksander Plocharski",
-      "Przemyslaw Musialski"
+      "Xiaoxiao Ma",
+      "Jiachen Lei",
+      "Tianfei Ren",
+      "Jie Huang",
+      "Siming Fu",
+      "Aiming Hao",
+      "Jiahong Wu",
+      "Xiangxiang Chu",
+      "Feng Zhao"
     ],
-    "published": "2026-04-09",
-    "updated": "2026-04-09",
+    "published": "2026-04-08",
+    "updated": "2026-04-08",
     "categories": [
-      "cs.GR",
-      "cs.LG"
+      "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2604.08411.pdf",
-    "abs_url": "https://arxiv.org/abs/2604.08411",
-    "primary_category": "cs.GR",
+    "pdf_url": "https://arxiv.org/pdf/2604.06966.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.06966",
+    "primary_category": "cs.CV",
     "score": 75,
     "summary": {
-      "title_zh": "舒适的世界：基于人体工程学原则的公寓布局生成",
-      "core_contribution": "提出了一种将人体工程学设计原则直接融入基于Transformer的生成过程的新方法，显著提高了布局的宜居性。",
-      "method": "该方法通过构建基于建筑文献标准的可微损失函数，优化房间的相邻性和接近性。在训练过程中，利用这些人体工程学先验知识引导模型，从而生成更符合人体工程学的布局。",
-      "findings": "对比评估表明，该方法在人体工程学合规性方面优于基线方法，同时保持了较高的结构有效性。"
+      "title_zh": "MAR-GRPO：用于AR-扩散混合图像生成的稳定化GRPO",
+      "core_contribution": "提出一种针对混合自回归-扩散框架的稳定强化学习算法，通过多轨迹期望和不确定性感知优化解决梯度噪声问题，显著提升生成质量和训练稳定性。",
+      "method": "1. 引入多轨迹期望(MTE)机制，通过平均多条扩散轨迹的梯度降低噪声；2. 基于多轨迹方差识别top-k%不确定token进行局部优化；3. 采用一致性感知的token选择策略过滤与最终生成内容不一致的AR token。",
+      "findings": "实验表明：1. 在多个基准测试中视觉质量和空间结构理解显著优于基线GRPO；2. 训练稳定性提升，避免了早期性能饱和；3. 代码已开源。"
     }
   }
 ]
