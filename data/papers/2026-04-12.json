@@ -1,0 +1,139 @@
+[
+  {
+    "id": "2604.06748",
+    "title": "From Static to Interactive: Adapting Visual in-Context Learners for User-Driven Tasks",
+    "abstract": "Visual in-context learning models are designed to adapt to new tasks by leveraging a set of example input-output pairs, enabling rapid generalization without task-specific fine-tuning. However, these models operate in a fundamentally static paradigm: while they can adapt to new tasks, they lack any mechanism to incorporate user-provided guidance signals such as scribbles, clicks, or bounding boxes to steer or refine the prediction process. This limitation is particularly restrictive in real-world applications, where users want to actively guide model predictions, e.g., by highlighting the target object for segmentation, indicating a region which should be visually altered, or isolating a specific person in a complex scene to run targeted pose estimation. In this work, we propose a simple method to transform static visual in-context learners, particularly the DeLVM approach, into highly controllable, user-driven systems, i.e., Interactive DeLVM, enabling seamless interaction through natural visual cues such as scribbles, clicks, or drawing boxes. Specifically, by encoding interactions directly into the example input-output pairs, we keep the philosophy of visual in-context learning intact: enabling users to prompt models with unseen interactions without fine-tuning and empowering them to dynamically steer model predictions with personalized interactions. Our experiments demonstrate that SOTA visual in-context learning models fail to effectively leverage interaction cues, often ignoring user guidance entirely. In contrast, our method excels in controllable, user-guided scenarios, achieving improvements of $+7.95%$ IoU for interactive segmentation, $+2.46$ PSNR for directed super-resolution, and $-3.14%$ LPIPS for interactive object removal. With this, our work bridges the gap between rigid static task adaptation and fluid interactivity for user-centric visual in-context learning.",
+    "authors": [
+      "Carlos Schmidt",
+      "Simon Reiß"
+    ],
+    "published": "2026-04-08",
+    "updated": "2026-04-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.06748.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.06748",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "从静态到交互：面向用户驱动任务的视觉上下文学习器适配方法",
+      "core_contribution": "提出了一种将静态视觉上下文学习模型（如DeLVM）转化为用户可交互驱动系统的方法，支持通过涂鸦、点击或绘制框等自然视觉线索动态引导模型预测。",
+      "method": "通过将用户交互直接编码到示例输入-输出对中，保持视觉上下文学习的核心思想不变，无需微调即可处理未见过的交互类型。该方法特别设计了交互式DeLVM框架，允许用户通过直观操作（如标记目标区域）实时调整模型行为。",
+      "findings": "实验表明：现有视觉上下文学习模型无法有效利用交互线索（常完全忽略用户引导），而本方法在交互式分割（IoU提升7.95%）、定向超分辨率（PSNR提高2.46）和交互式物体移除（LPIPS降低3.14%）等任务中显著优于静态模型，成功弥合了静态任务适应与用户中心化交互之间的鸿沟。"
+    }
+  },
+  {
+    "id": "2604.07230",
+    "title": "PhyEdit: Towards Real-World Object Manipulation via Physically-Grounded Image Editing",
+    "abstract": "Achieving physically accurate object manipulation in image editing is essential for its potential applications in interactive world models. However, existing visual generative models often fail at precise spatial manipulation, resulting in incorrect scaling and positioning of objects. This limitation primarily stems from the lack of explicit mechanisms to incorporate 3D geometry and perspective projection. To achieve accurate manipulation, we develop PhyEdit, an image editing framework that leverages explicit geometric simulation as contextual 3D-aware visual guidance. By combining this plug-and-play 3D prior with joint 2D--3D supervision, our method effectively improves physical accuracy and manipulation consistency. To support this method and evaluate performance, we present a real-world dataset, RealManip-10K, for 3D-aware object manipulation featuring paired images and depth annotations. We also propose ManipEval, a benchmark with multi-dimensional metrics to evaluate 3D spatial control and geometric consistency. Extensive experiments show that our approach outperforms existing methods, including strong closed-source models, in both 3D geometric accuracy and manipulation consistency.",
+    "authors": [
+      "Ruihang Xu",
+      "Dewei Zhou",
+      "Xiaolong Shen",
+      "Fan Ma",
+      "Yi Yang"
+    ],
+    "published": "2026-04-08",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.07230.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.07230",
+    "primary_category": "cs.CV",
+    "score": 70,
+    "summary": {
+      "title_zh": "PhyEdit：基于物理基础的图像编辑实现真实世界物体操控",
+      "core_contribution": "提出PhyEdit框架，通过显式几何模拟实现3D感知的图像编辑，显著提升物体操控的物理准确性和一致性。",
+      "method": "1. 结合可插拔的3D几何先验与联合2D-3D监督学习\n2. 利用显式几何模拟生成3D感知的视觉引导\n3. 构建RealManip-10K真实世界数据集（含配对图像与深度标注）\n4. 设计ManipEval多维度评估基准测试几何一致性",
+      "findings": "1. 在3D几何精度和操控一致性上超越现有方法（包括闭源模型）\n2. 提出的RealManip-10K数据集和ManipEval基准有效支持方法验证\n3. 物理模拟引导显著改善物体缩放/定位的空间准确性"
+    }
+  },
+  {
+    "id": "2604.08546",
+    "title": "When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models",
+    "abstract": "Text-to-video diffusion models have enabled open-ended video synthesis, but often struggle with generating the correct number of objects specified in a prompt. We introduce NUMINA , a training-free identify-then-guide framework for improved numerical alignment. NUMINA identifies prompt-layout inconsistencies by selecting discriminative self- and cross-attention heads to derive a countable latent layout. It then refines this layout conservatively and modulates cross-attention to guide regeneration. On the introduced CountBench, NUMINA improves counting accuracy by up to 7.4% on Wan2.1-1.3B, and by 4.9% and 5.5% on 5B and 14B models, respectively. Furthermore, CLIP alignment is improved while maintaining temporal consistency. These results demonstrate that structural guidance complements seed search and prompt enhancement, offering a practical path toward count-accurate text-to-video diffusion. The code is available at https://github.com/H-EmbodVis/NUMINA.",
+    "authors": [
+      "Zhengyang Sun",
+      "Yu Chen",
+      "Xin Zhou",
+      "Xiaofan Li",
+      "Xiwu Chen",
+      "Dingkang Liang",
+      "Xiang Bai"
+    ],
+    "published": "2026-04-09",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08546.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08546",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "当数字说话：在文本到视频扩散模型中对齐文本数字与视觉实例",
+      "core_contribution": "提出NUMINA框架，无需训练即可通过识别-引导机制提升文本到视频生成中数字与视觉实例的匹配精度。",
+      "method": "1. 通过筛选自注意力和交叉注意力头识别提示与潜在布局的不一致性，生成可计数的潜在布局；2. 保守优化该布局并调制交叉注意力以引导视频重新生成；3. 结合结构指导与种子搜索和提示增强技术。",
+      "findings": "1. 在CountBench测试集上，NUMINA使Wan2.1-1.3B模型的计数准确率最高提升7.4%，5B和14B模型分别提升4.9%和5.5%；2. 在保持时间一致性的同时改善了CLIP对齐效果；3. 代码已开源。"
+    }
+  },
+  {
+    "id": "2604.08539",
+    "title": "OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks",
+    "abstract": "Group Relative Policy Optimization (GRPO) has emerged as the de facto Reinforcement Learning (RL) objective driving recent advancements in Multimodal Large Language Models. However, extending this success to open-source multimodal generalist models remains heavily constrained by two primary challenges: the extreme variance in reward topologies across diverse visual tasks, and the inherent difficulty of balancing fine-grained perception with multi-step reasoning capabilities. To address these issues, we introduce Gaussian GRPO (G$^2$RPO), a novel RL training objective that replaces standard linear scaling with non-linear distributional matching. By mathematically forcing the advantage distribution of any given task to strictly converge to a standard normal distribution, $\\mathcal{N}(0,1)$, G$^2$RPO theoretically ensures inter-task gradient equity, mitigates vulnerabilities to heavy-tail outliers, and offers symmetric update for positive and negative rewards. Leveraging the enhanced training stability provided by G$^2$RPO, we introduce two task-level shaping mechanisms to seamlessly balance perception and reasoning. First, response length shaping dynamically elicits extended reasoning chains for complex queries while enforce direct outputs to bolster visual grounding. Second, entropy shaping tightly bounds the model's exploration zone, effectively preventing both entropy collapse and entropy explosion. Integrating these methodologies, we present OpenVLThinkerV2, a highly robust, general-purpose multimodal model. Extensive evaluations across 18 diverse benchmarks demonstrate its superior performance over strong open-source and leading proprietary frontier models.",
+    "authors": [
+      "Wenbo Hu",
+      "Xin Chen",
+      "Yan Gao-Tian",
+      "Yihe Deng",
+      "Nanyun Peng",
+      "Kai-Wei Chang"
+    ],
+    "published": "2026-04-09",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08539.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08539",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "OpenVLThinkerV2：一种面向多领域视觉任务的通用多模态推理模型",
+      "core_contribution": "提出高斯GRPO（G$^2$RPO）强化学习训练目标，解决多模态通用模型中奖励拓扑差异大和感知-推理平衡难题，并推出高性能开源多模态模型OpenVLThinkerV2。",
+      "method": "1. 设计G$^2$RPO目标，通过非线性分布匹配强制优势函数收敛至标准正态分布，实现跨任务梯度均衡；\n2. 引入响应长度塑造机制动态调节推理链长度与视觉 grounding；\n3. 采用熵塑造机制约束模型探索范围，避免熵崩溃或爆炸。",
+      "findings": "在18个多样化基准测试中，OpenVLThinkerV2性能超越主流开源模型及前沿专有模型，验证了其鲁棒性与通用性。"
+    }
+  },
+  {
+    "id": "2604.08526",
+    "title": "FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On",
+    "abstract": "Given a person and a garment image, virtual try-on (VTO) aims to synthesize a realistic image of the person wearing the garment, while preserving their original pose and identity. Although recent VTO methods excel at visualizing garment appearance, they largely overlook a crucial aspect of the try-on experience: the accuracy of garment fit -- for example, depicting how an extra-large shirt looks on an extra-small person. A key obstacle is the absence of datasets that provide precise garment and body size information, particularly for \"ill-fit\" cases, where garments are significantly too large or too small. Consequently, current VTO methods default to generating well-fitted results regardless of the garment or person size. In this paper, we take the first steps towards solving this open problem. We introduce FIT (Fit-Inclusive Try-on), a large-scale VTO dataset comprising over 1.13M try-on image triplets accompanied by precise body and garment measurements. We overcome the challenges of data collection via a scalable synthetic strategy: (1) We programmatically generate 3D garments using GarmentCode and drape them via physics simulation to capture realistic garment fit. (2) We employ a novel re-texturing framework to transform synthetic renderings into photorealistic images while strictly preserving geometry. (3) We introduce person identity preservation into our re-texturing model to generate paired person images (same person, different garments) for supervised training. Finally, we leverage our FIT dataset to train a baseline fit-aware virtual try-on model. Our data and results set the new state-of-the-art for fit-aware virtual try-on, as well as offer a robust benchmark for future research. We will make all data and code publicly available on our project page: https://johannakarras.github.io/FIT.",
+    "authors": [
+      "Johanna Karras",
+      "Yuanhao Wang",
+      "Yingwei Li",
+      "Ira Kemelmacher-Shlizerman"
+    ],
+    "published": "2026-04-09",
+    "updated": "2026-04-09",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08526.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08526",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "FIT：一个用于感知合身性的虚拟试穿大规模数据集",
+      "core_contribution": "提出了首个包含精确身体和服装尺寸信息的大规模虚拟试穿数据集FIT，并开发了一个基线模型，推动了合身感知虚拟试穿领域的研究。",
+      "method": "1. 通过程序化生成3D服装并使用物理模拟捕捉真实合身效果；2. 采用新颖的重纹理框架将合成渲染转化为逼真图像；3. 在重纹理模型中引入人物身份保留机制，生成成对人物图像用于监督训练。",
+      "findings": "FIT数据集和基线模型为合身感知虚拟试穿设立了新的技术基准，并提供了未来研究的可靠评估标准。实验表明该方法能有效处理不同合身情况（如过大或过小服装）的虚拟试穿任务。"
+    }
+  }
+]
