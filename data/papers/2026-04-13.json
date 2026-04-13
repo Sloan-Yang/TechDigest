@@ -1,0 +1,137 @@
+[
+  {
+    "id": "2604.09213",
+    "title": "SHIFT: Steering Hidden Intermediates in Flow Transformers",
+    "abstract": "Diffusion models have become leading approaches for high-fidelity image generation. Recent DiT-based diffusion models, in particular, achieve strong prompt adherence while producing high-quality samples. We propose SHIFT, a simple but effective and lightweight framework for concept removal in DiT diffusion models via targeted manipulation of intermediate activations at inference time, inspired by activation steering in large language models. SHIFT learns steering vectors that are dynamically applied to selected layers and timesteps to suppress unwanted visual concepts while preserving the prompt's remaining content and overall image quality. Beyond suppression, the same mechanism can shift generations into a desired \\emph{style domain} or bias samples toward adding or changing target objects. We demonstrate that SHIFT provides effective and flexible control over DiT generation across diverse prompts and targets without time-consuming retraining.",
+    "authors": [
+      "Nina Konovalova",
+      "Andrey Kuznetsov",
+      "Aibek Alanov"
+    ],
+    "published": "2026-04-10",
+    "updated": "2026-04-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.09213.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.09213",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SHIFT：在流式Transformer中引导隐藏中间层",
+      "core_contribution": "提出SHIFT框架，通过动态操纵DiT扩散模型的中间激活层，实现无需重新训练的概念移除与生成控制。",
+      "method": "受大语言模型激活引导启发，SHIFT学习动态应用于选定层和时间步的引导向量，抑制不需要的视觉概念或调整生成风格。该方法通过轻量级干预实现，无需修改模型参数或进行耗时微调。",
+      "findings": "实验表明，SHIFT能有效消除DiT生成图像中的特定概念（如物体、风格），同时保持其他内容与图像质量；同一机制还可用于定向添加目标对象或调整风格，且适用于多样化提示词。"
+    }
+  },
+  {
+    "id": "2604.09168",
+    "title": "ELT: Elastic Looped Transformers for Visual Generation",
+    "abstract": "We introduce Elastic Looped Transformers (ELT), a highly parameter-efficient class of visual generative models based on a recurrent transformer architecture. While conventional generative models rely on deep stacks of unique transformer layers, our approach employs iterative, weight-shared transformer blocks to drastically reduce parameter counts while maintaining high synthesis quality. To effectively train these models for image and video generation, we propose the idea of Intra-Loop Self Distillation (ILSD), where student configurations (intermediate loops) are distilled from the teacher configuration (maximum training loops) to ensure consistency across the model's depth in a single training step. Our framework yields a family of elastic models from a single training run, enabling Any-Time inference capability with dynamic trade-offs between computational cost and generation quality, with the same parameter count. ELT significantly shifts the efficiency frontier for visual synthesis. With $4\\times$ reduction in parameter count under iso-inference-compute settings, ELT achieves a competitive FID of $2.0$ on class-conditional ImageNet $256 \\times 256$ and FVD of $72.8$ on class-conditional UCF-101.",
+    "authors": [
+      "Sahil Goyal",
+      "Swayam Agrawal",
+      "Gautham Govind Anil",
+      "Prateek Jain",
+      "Sujoy Paul",
+      "Aditya Kusupati"
+    ],
+    "published": "2026-04-10",
+    "updated": "2026-04-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.09168.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.09168",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "弹性循环Transformer：用于视觉生成的可扩展循环架构",
+      "core_contribution": "提出参数高效的弹性循环Transformer（ELT），通过权重共享的循环架构和自蒸馏训练方法，在显著减少参数量的同时保持高质量视觉生成能力。",
+      "method": "1. 采用循环权重共享的Transformer块替代传统堆叠式结构，大幅降低参数量\n2. 提出Intra-Loop自蒸馏（ILSD）方法，在单步训练中通过教师-学生配置确保模型深度一致性\n3. 支持动态计算成本与生成质量的权衡，实现单一训练生成弹性模型家族",
+      "findings": "1. 在同等计算量下参数量减少4倍，ImageNet 256×256条件生成达到FID 2.0\n2. UCF-101视频生成取得FVD 72.8\n3. 首次实现单一模型支持任意时长的推理能力（Any-Time inference）"
+    }
+  },
+  {
+    "id": "2604.08836",
+    "title": "CatalogStitch: Dimension-Aware and Occlusion-Preserving Object Compositing for Catalog Image Generation",
+    "abstract": "Generative object compositing methods have shown remarkable ability to seamlessly insert objects into scenes. However, when applied to real-world catalog image generation, these methods require tedious manual intervention: users must carefully adjust masks when product dimensions differ, and painstakingly restore occluded elements post-generation. We present CatalogStitch, a set of model-agnostic techniques that automate these corrections, enabling user-friendly content creation. Our dimension-aware mask computation algorithm automatically adapts the target region to accommodate products with different dimensions; users simply provide a product image and background, without manual mask adjustments. Our occlusion-aware hybrid restoration method guarantees pixel-perfect preservation of occluding elements, eliminating post-editing workflows. We additionally introduce CatalogStitch-Eval, a 58-example benchmark covering aspect-ratio mismatch and occlusion-heavy catalog scenarios, together with supplementary PDF and HTML viewers. We evaluate our techniques with three state-of-the-art compositing models (ObjectStitch, OmniPaint, and InsertAnything), demonstrating consistent improvements across diverse catalog scenarios. By reducing manual intervention and automating tedious corrections, our approach transforms generative compositing into a practical, human-friendly tool for production catalog workflows.",
+    "authors": [
+      "Sanyam Jain",
+      "Pragya Kandari",
+      "Manit Singhal",
+      "He Zhang",
+      "Soo Ye Kim"
+    ],
+    "published": "2026-04-10",
+    "updated": "2026-04-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.08836.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.08836",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "CatalogStitch：面向目录图像生成的维度感知与遮挡保持对象合成技术",
+      "core_contribution": "提出CatalogStitch，通过自动化维度适配和遮挡修复技术，显著减少生成式对象合成在商品目录图像生成中的手动干预需求。",
+      "method": "1. 开发维度感知掩码计算算法，自动调整目标区域以适应不同尺寸的商品，无需手动修改掩码；2. 提出遮挡感知的混合修复方法，确保被遮挡元素的像素级完美恢复；3. 构建CatalogStitch-Eval基准测试集（含58个示例），覆盖比例失调和重度遮挡场景。",
+      "findings": "在三种先进合成模型（ObjectStitch/OmniPaint/InsertAnything）上的实验表明，该方法能一致性地提升各类商品目录场景的合成效果，将生成式合成转化为实用化生产工具。"
+    }
+  },
+  {
+    "id": "2604.09531",
+    "title": "VisionFoundry: Teaching VLMs Visual Perception with Synthetic Images",
+    "abstract": "Vision-language models (VLMs) still struggle with visual perception tasks such as spatial understanding and viewpoint recognition. One plausible contributing factor is that natural image datasets provide limited supervision for low-level visual skills. This motivates a practical question: can targeted synthetic supervision, generated from only a task keyword such as Depth Order, address these weaknesses? To investigate this question, we introduce VisionFoundry, a task-aware synthetic data generation pipeline that takes only the task name as input and uses large language models (LLMs) to generate questions, answers, and text-to-image (T2I) prompts, then synthesizes images with T2I models and verifies consistency with a proprietary VLM, requiring no reference images or human annotation. Using VisionFoundry, we construct VisionFoundry-10K, a synthetic visual question answering (VQA) dataset containing 10k image-question-answer triples spanning 10 tasks. Models trained on VisionFoundry-10K achieve substantial improvements on visual perception benchmarks: +7% on MMVP and +10% on CV-Bench-3D, while preserving broader capabilities and showing favorable scaling behavior as data size increases. Our results suggest that limited task-targeted supervision is an important contributor to this bottleneck and that synthetic supervision is a promising path toward more systematic training for VLMs.",
+    "authors": [
+      "Guanyu Zhou",
+      "Yida Yin",
+      "Wenhao Chai",
+      "Shengbang Tong",
+      "Xingyu Fu",
+      "Zhuang Liu"
+    ],
+    "published": "2026-04-10",
+    "updated": "2026-04-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.09531.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.09531",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "VisionFoundry：利用合成图像教授视觉语言模型视觉感知",
+      "core_contribution": "提出VisionFoundry框架，通过任务导向的合成数据生成方法，显著提升视觉语言模型在空间理解和视角识别等视觉感知任务上的性能。",
+      "method": "1. 设计任务感知的合成数据生成流程，仅需任务名称作为输入，利用大语言模型（LLMs）自动生成问题、答案和文本到图像（T2I）提示。\n2. 通过T2I模型合成图像，并利用专有视觉语言模型（VLM）验证数据一致性，全程无需参考图像或人工标注。\n3. 构建VisionFoundry-10K数据集，包含10个任务的1万组图像-问题-答案三元组。",
+      "findings": "1. 在VisionFoundry-10K上训练的模型在视觉感知基准测试中取得显著提升：MMVP任务准确率提高7%，CV-Bench-3D任务提高10%。\n2. 模型在保持广泛能力的同时，展现出随数据规模增加的正向扩展性。\n3. 结果表明任务导向的合成监督是突破视觉语言模型瓶颈的有效途径。"
+    }
+  },
+  {
+    "id": "2604.09405",
+    "title": "EGLOCE: Training-Free Energy-Guided Latent Optimization for Concept Erasure",
+    "abstract": "As text-to-image diffusion models grow increasingly prevalent, the ability to remove specific concepts-mostly explicit content and many copyrighted characters or styles-has become essential for safety and compliance. Existing unlearning approaches often require costly re-training, modify parameters at the cost of degradation of unrelated concept fidelity, or depend on indirect inference-time adjustment that compromise the effectiveness of concept erasure. Inspired by the success of energy-guided sampling for preservation of the condition of diffusion models, we introduce Energy-Guided Latent Optimization for Concept Erasure (EGLOCE), a training-free approach that removes unwanted concepts by re-directing noisy latent during inference. Our method employs a dual-objective framework: a repulsion energy that steers generation away from target concepts via gradient descent in latent space, and a retention energy that preserves semantic alignment to the original prompt. Combined with previous approaches that either require erroneous modified model weights or provide weak inference-time guidance, EGLOCE operates entirely at inference and enhances erasure performance, enabling plug-and-play integration. Extensive experiments demonstrate that EGLOCE improves concept removal while maintaining image quality and prompt alignment across baselines, even with adversarial attacks. To the best of our knowledge, our work is the first to establish a new paradigm for safe and controllable image generation through dual energy-based guidance during sampling.",
+    "authors": [
+      "Junyeong Ahn",
+      "Seojin Yoon",
+      "Sungyong Baik"
+    ],
+    "published": "2026-04-10",
+    "updated": "2026-04-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.09405.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.09405",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "EGLOCE：基于能量引导的无训练潜在优化概念擦除方法",
+      "core_contribution": "提出了一种无需重新训练的推理阶段概念擦除方法EGLOCE，通过双能量引导框架在潜在空间优化实现高效且可控的特定概念移除。",
+      "method": "1. 采用双目标框架：排斥能量通过潜在空间梯度下降远离目标概念，保留能量维持原始提示的语义对齐\n2. 完全在推理阶段操作，无需修改模型权重\n3. 结合能量引导采样技术实现即插即用集成",
+      "findings": "1. 在多种基线方法上显著提升概念擦除效果，同时保持图像质量和提示对齐\n2. 即使面对对抗性攻击仍能稳定工作\n3. 首次通过采样过程中的双能量引导建立了安全可控图像生成的新范式"
+    }
+  }
+]
