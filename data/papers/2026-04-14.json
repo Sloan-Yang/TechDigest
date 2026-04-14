@@ -1,0 +1,145 @@
+[
+  {
+    "id": "2604.10442",
+    "title": "ReContraster: Making Your Posters Stand Out with Regional Contrast",
+    "abstract": "Effective poster design requires rapidly capturing attention and clearly conveying messages. Inspired by the ``contrast effects'' principle, we propose ReContraster, the first training-free model to leverage regional contrast to make posters stand out. By emulating the cognitive behaviors of a poster designer, ReContraster introduces the compositional multi-agent system to identify elements, organize layout, and evaluate generated poster candidates. To further ensure harmonious transitions across region boundaries, ReContraster integrates the hybrid denoising strategy during the diffusion process. We additionally contribute a new benchmark dataset for comprehensive evaluation. Seven quantitative metrics and four user studies confirm its superiority over relevant state-of-the-art methods, producing visually striking and aesthetically appealing posters.",
+    "authors": [
+      "Peixuan Zhang",
+      "Zijian Jia",
+      "Ziqi Cai",
+      "Shuchen Weng",
+      "Si Li",
+      "Boxin Shi"
+    ],
+    "published": "2026-04-12",
+    "updated": "2026-04-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.10442.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.10442",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "ReContraster：通过区域对比使您的海报脱颖而出",
+      "core_contribution": "提出了首个无需训练的模型ReContraster，利用区域对比原理增强海报视觉吸引力，并通过多智能体系统模拟设计师认知行为优化海报设计。",
+      "method": "1. 采用组合式多智能体系统识别元素、组织布局并评估候选海报设计；2. 在扩散过程中集成混合去噪策略以确保区域边界的和谐过渡；3. 构建了新的基准数据集用于全面评估。",
+      "findings": "通过7项定量指标和4项用户研究验证，ReContraster在生成视觉冲击力强且美学吸引力高的海报方面优于现有最先进方法。"
+    }
+  },
+  {
+    "id": "2604.11792",
+    "title": "LottieGPT: Tokenizing Vector Animation for Autoregressive Generation",
+    "abstract": "Despite rapid progress in video generation, existing models are incapable of producing vector animation, a dominant and highly expressive form of multimedia on the Internet. Vector animations offer resolution-independence, compactness, semantic structure, and editable parametric motion representations, yet current generative models operate exclusively in raster space and thus cannot synthesize them. Meanwhile, recent advances in large multimodal models demonstrate strong capabilities in generating structured data such as slides, 3D meshes, LEGO sequences, and indoor layouts, suggesting that native vector animation generation may be achievable. In this work, we present the first framework for tokenizing and autoregressively generating vector animations. We adopt Lottie, a widely deployed JSON-based animation standard, and design a tailored Lottie Tokenizer that encodes layered geometric primitives, transforms, and keyframe-based motion into a compact and semantically aligned token sequence. To support large-scale training, we also construct LottieAnimation-660K, the largest and most diverse vector animation dataset to date, consisting of 660k real-world Lottie animation and 15M static Lottie image files curated from broad Internet sources. Building upon these components, we finetune Qwen-VL to create LottieGPT, a native multimodal model capable of generating coherent, editable vector animations directly from natural language or visual prompts. Experiments show that our tokenizer dramatically reduces sequence length while preserving structural fidelity, enabling effective autoregressive learning of dynamic vector content. LottieGPT exhibits strong generalization across diverse animation styles and outperforms previous state-of-the-art models on SVG generation (a special case of single-frame vector animation).",
+    "authors": [
+      "Junhao Chen",
+      "Kejun Gao",
+      "Yuehan Cui",
+      "Mingze Sun",
+      "Mingjin Chen",
+      "Shaohui Wang",
+      "Xiaoxiao Long",
+      "Fei Ma",
+      "Qi Tian",
+      "Ruqi Huang",
+      "Hao Zhao"
+    ],
+    "published": "2026-04-13",
+    "updated": "2026-04-13",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.11792.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.11792",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "LottieGPT：将矢量动画标记化以实现自回归生成",
+      "core_contribution": "提出了首个用于标记化和自回归生成矢量动画的框架，并构建了迄今为止最大、最多样化的矢量动画数据集LottieAnimation-660K。",
+      "method": "采用广泛应用的基于JSON的动画标准Lottie，设计了一个定制的Lottie标记器，将分层的几何图元、变换和基于关键帧的运动编码为紧凑且语义对齐的标记序列。在此基础上，对Qwen-VL进行微调，创建了能够直接从自然语言或视觉提示生成连贯、可编辑矢量动画的多模态模型LottieGPT。",
+      "findings": "实验表明，该标记器显著减少了序列长度，同时保持了结构保真度，从而实现了对动态矢量内容有效的自回归学习。LottieGPT在多样动画风格上表现出强大的泛化能力，并在SVG生成（单帧矢量动画的特例）上优于先前的最先进模型。"
+    }
+  },
+  {
+    "id": "2604.10940",
+    "title": "AmodalSVG: Amodal Image Vectorization via Semantic Layer Peeling",
+    "abstract": "We introduce AmodalSVG, a new framework for amodal image vectorization that produces semantically organized and geometrically complete SVG representations from natural images. Existing vectorization methods operate under a modal paradigm: tracing only visible pixels and disregarding occlusion. Consequently, the resulting SVGs are semantically entangled and geometrically incomplete, limiting SVG's structural editability. In contrast, AmodalSVG reconstructs full object geometries, including occluded regions, into independent, editable vector layers. To achieve this, AmodalSVG reformulates image vectorization as a two-stage framework, performing semantic decoupling and completion in the raster domain to produce amodally complete semantic layers, which are then independently vectorized. In the first stage, we introduce Semantic Layer Peeling (SLP), a VLM-guided strategy that progressively decomposes an image into semantically coherent layers. By hybrid inpainting, SLP recovers complete object appearances under occlusions, enabling explicit semantic decoupling. To vectorize these layers efficiently, we propose Adaptive Layered Vectorization (ALV), which dynamically modulates the primitive budget via an error-budget-driven adjustment mechanism. Extensive experiments demonstrate that AmodalSVG significantly outperforms prior methods in visual fidelity. Moreover, the resulting amodal layers enable object-level editing directly in the vector domain, capabilities not supported by existing vectorization approaches. Code will be released upon acceptance.",
+    "authors": [
+      "Juncheng Hu",
+      "Ziteng Xue",
+      "Guotao Liang",
+      "Anran Qi",
+      "Buyu Li",
+      "Sheng Wang",
+      "Dong Xu",
+      "Qian Yu"
+    ],
+    "published": "2026-04-13",
+    "updated": "2026-04-13",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.10940.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.10940",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "AmodalSVG：通过语义层剥离实现非模态图像矢量化",
+      "core_contribution": "提出AmodalSVG框架，首次实现从自然图像生成语义组织化且几何完整的SVG表示，支持矢量域的直接对象级编辑。",
+      "method": "1. 采用两阶段框架：先在栅格域完成语义解耦与补全，生成非模态语义层；再独立矢量化各层。2. 第一阶段提出VLM引导的语义层剥离(SLP)策略，通过混合修复恢复被遮挡对象的完整外观。3. 第二阶段提出自适应分层矢量化(ALV)，通过误差预算驱动机制动态调整图元数量。",
+      "findings": "1. 视觉保真度显著优于现有方法。2. 生成的非模态层支持矢量域直接对象级编辑（现有方法不具备此能力）。3. 实验验证了语义解耦与几何补全的有效性。"
+    }
+  },
+  {
+    "id": "2604.10675",
+    "title": "HiddenObjects: Scalable Diffusion-Distilled Spatial Priors for Object Placement",
+    "abstract": "We propose a method to learn explicit, class-conditioned spatial priors for object placement in natural scenes by distilling the implicit placement knowledge encoded in text-conditioned diffusion models. Prior work relies either on manually annotated data, which is inherently limited in scale, or on inpainting-based object-removal pipelines, whose artifacts promote shortcut learning. To address these limitations, we introduce a fully automated and scalable framework that evaluates dense object placements on high-quality real backgrounds using a diffusion-based inpainting pipeline. With this pipeline, we construct HiddenObjects, a large-scale dataset comprising 27M placement annotations, evaluated across 27k distinct scenes, with ranked bounding box insertions for different images and object categories. Experimental results show that our spatial priors outperform sparse human annotations on a downstream image editing task (3.90 vs. 2.68 VLM-Judge), and significantly surpass existing placement baselines and zero-shot Vision-Language Models for object placement. Furthermore, we distill these priors into a lightweight model for fast practical inference (230,000x faster).",
+    "authors": [
+      "Marco Schouten",
+      "Ioannis Siglidis",
+      "Serge Belongie",
+      "Dim P. Papadopoulos"
+    ],
+    "published": "2026-04-12",
+    "updated": "2026-04-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.10675.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.10675",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "HiddenObjects：基于扩散蒸馏的物体放置空间先验的规模化方法",
+      "core_contribution": "提出了一种通过蒸馏文本条件扩散模型中隐含的物体放置知识，学习显式、类别条件的空间先验的方法，并构建了包含2700万标注的大规模数据集HiddenObjects。",
+      "method": "1. 利用基于扩散的图像修复管道，在高质量真实背景上自动化评估密集物体放置。2. 构建了包含27K不同场景和27M标注的大规模数据集，提供不同图像和物体类别的排序边界框插入。3. 将空间先验蒸馏为轻量级模型以实现快速推理。",
+      "findings": "1. 空间先验在下游图像编辑任务中优于稀疏人工标注（VLM-Judge评分3.90 vs. 2.68）。2. 显著超越现有物体放置基线方法和零样本视觉语言模型。3. 蒸馏后的轻量级模型推理速度提升23万倍。"
+    }
+  },
+  {
+    "id": "2604.10268",
+    "title": "EditCrafter: Tuning-free High-Resolution Image Editing via Pretrained Diffusion Model",
+    "abstract": "We propose EditCrafter, a high-resolution image editing method that operates without tuning, leveraging pretrained text-to-image (T2I) diffusion models to process images at resolutions significantly exceeding those used during training. Leveraging the generative priors of large-scale T2I diffusion models enables the development of a wide array of novel generation and editing applications. Although numerous image editing methods have been proposed based on diffusion models and exhibit high-quality editing results, they are difficult to apply to images with arbitrary aspect ratios or higher resolutions since they only work at the training resolutions (512x512 or 1024x1024). Naively applying patch-wise editing fails with unrealistic object structures and repetition. To address these challenges, we introduce EditCrafter, a simple yet effective editing pipeline. EditCrafter operates by first performing tiled inversion, which preserves the original identity of the input high-resolution image. We further propose a noise-damped manifold-constrained classifier-free guidance (NDCFG++) that is tailored for high resolution image editing from the inverted latent. Our experiments show that the our EditCrafter can achieve impressive editing results across various resolutions without fine-tuning and optimization.",
+    "authors": [
+      "Kunho Kim",
+      "Sumin Seo",
+      "Yongjun Cho",
+      "Hyungjin Chung"
+    ],
+    "published": "2026-04-11",
+    "updated": "2026-04-11",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.10268.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.10268",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "EditCrafter：基于预训练扩散模型的无调优高分辨率图像编辑",
+      "core_contribution": "提出EditCrafter，一种无需调优的高分辨率图像编辑方法，利用预训练文本到图像扩散模型处理远超训练分辨率（如512x512或1024x1024）的图像，解决了现有方法在任意长宽比或高分辨率图像上的应用限制。",
+      "method": "1. 通过分块反演（tiled inversion）保留输入高分辨率图像的原始特征；2. 提出噪声阻尼流形约束分类器无引导（NDCFG++），专门针对反演潜在空间的高分辨率编辑优化；3. 整个流程无需微调或优化，直接利用预训练模型实现编辑。",
+      "findings": "实验表明，EditCrafter能在多种分辨率下实现高质量编辑，避免传统分块编辑导致的结构失真或重复问题，且无需针对特定图像进行调优。"
+    }
+  }
+]
