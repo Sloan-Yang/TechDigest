@@ -1,0 +1,145 @@
+[
+  {
+    "id": "2604.13030",
+    "title": "Generative Refinement Networks for Visual Synthesis",
+    "abstract": "While diffusion models dominate the field of visual generation, they are computationally inefficient, applying a uniform computational effort regardless of different complexity. In contrast, autoregressive (AR) models are inherently complexity-aware, as evidenced by their variable likelihoods, but are often hindered by lossy discrete tokenization and error accumulation. In this work, we introduce Generative Refinement Networks (GRN), a next-generation visual synthesis paradigm to address these issues. At its core, GRN addresses the discrete tokenization bottleneck through a theoretically near-lossless Hierarchical Binary Quantization (HBQ), achieving a reconstruction quality comparable to continuous counterparts. Built upon HBQ's latent space, GRN fundamentally upgrades AR generation with a global refinement mechanism that progressively perfects and corrects artworks -- like a human artist painting. Besides, GRN integrates an entropy-guided sampling strategy, enabling complexity-aware, adaptive-step generation without compromising visual quality. On the ImageNet benchmark, GRN establishes new records in image reconstruction (0.56 rFID) and class-conditional image generation (1.81 gFID). We also scale GRN to more challenging text-to-image and text-to-video generation, delivering superior performance on an equivalent scale. We release all models and code to foster further research on GRN.",
+    "authors": [
+      "Jian Han",
+      "Jinlai Liu",
+      "Jiahuan Wang",
+      "Bingyue Peng",
+      "Zehuan Yuan"
+    ],
+    "published": "2026-04-14",
+    "updated": "2026-04-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13030.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13030",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "生成式精修网络在视觉合成中的应用",
+      "core_contribution": "提出生成式精修网络（GRN），通过分层二值量化和全局精修机制，解决了自回归模型在视觉合成中的离散化瓶颈和误差累积问题，同时实现了复杂度感知的自适应生成。",
+      "method": "GRN采用分层二值量化（HBQ）方法，理论上实现了近乎无损的离散化，构建了高质量的潜在空间。在此基础上，GRN引入了全局精修机制，逐步优化和修正生成结果，类似于人类艺术家的创作过程。此外，GRN还整合了熵引导的采样策略，实现了复杂度感知的自适应步长生成。",
+      "findings": "在ImageNet基准测试中，GRN在图像重建（0.56 rFID）和类条件图像生成（1.81 gFID）方面创下了新纪录。GRN还被成功扩展到更具挑战性的文本到图像和文本到视频生成任务中，在同等规模下表现出卓越性能。"
+    }
+  },
+  {
+    "id": "2604.12652",
+    "title": "PromptEcho: Annotation-Free Reward from Vision-Language Models for Text-to-Image Reinforcement Learning",
+    "abstract": "Reinforcement learning (RL) can improve the prompt following capability of text-to-image (T2I) models, yet obtaining high-quality reward signals remains challenging: CLIP Score is too coarse-grained, while VLM-based reward models (e.g., RewardDance) require costly human-annotated preference data and additional fine-tuning. We propose PromptEcho, a reward construction method that requires \\emph{no} annotation and \\emph{no} reward model training. Given a generated image and a guiding query, PromptEcho computes the token-level cross-entropy loss of a frozen VLM with the original prompt as the label, directly extracting the image-text alignment knowledge encoded during VLM pretraining. The reward is deterministic, computationally efficient, and improves automatically as stronger open-source VLMs become available. For evaluation, we develop DenseAlignBench, a benchmark of concept-rich dense captions for rigorously testing prompt following capability. Experimental results on two state-of-the-art T2I models (Z-Image and QwenImage-2512) demonstrate that PromptEcho achieves substantial improvements on DenseAlignBench (+26.8pp / +16.2pp net win rate), along with consistent gains on GenEval, DPG-Bench, and TIIFBench without any task-specific training. Ablation studies confirm that PromptEcho comprehensively outperforms inference-based scoring with the same VLM, and that reward quality scales with VLM size. We will open-source the trained models and the DenseAlignBench.",
+    "authors": [
+      "Jinlong Liu",
+      "Wanggui He",
+      "Peng Zhang",
+      "Mushui Liu",
+      "Hao Jiang",
+      "Pipei Huang"
+    ],
+    "published": "2026-04-14",
+    "updated": "2026-04-14",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.12652.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.12652",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "PromptEcho：基于视觉语言模型的无需标注奖励机制用于文本到图像强化学习",
+      "core_contribution": "提出了一种无需人工标注和奖励模型训练的PromptEcho方法，直接从预训练的视觉语言模型中提取图像-文本对齐知识，用于文本到图像模型的强化学习。",
+      "method": "PromptEcho通过计算冻结视觉语言模型在原始提示下的token级交叉熵损失，直接利用预训练中编码的图像-文本对齐知识构建奖励信号。该方法具有确定性、计算高效性，并能随着开源视觉语言模型的增强而自动提升。",
+      "findings": "实验结果表明，PromptEcho在两个先进的文本到图像模型（Z-Image和QwenImage-2512）上显著提升了提示跟随能力（DenseAlignBench上净胜率分别提升26.8pp和16.2pp），并在GenEval、DPG-Bench和TIIFBench上取得一致改进。消融研究证实，PromptEcho全面优于基于相同视觉语言模型的推理评分，且奖励质量随模型规模提升。"
+    }
+  },
+  {
+    "id": "2604.12575",
+    "title": "StructDiff: A Structure-Preserving and Spatially Controllable Diffusion Model for Single-Image Generation",
+    "abstract": "This paper introduces StructDiff, a generative framework based on a single-scale diffusion model for single-image generation. Single-image generation aims to synthesize diverse samples with similar visual content to the source image by capturing its internal statistics, without relying on external data. However, existing methods often struggle to preserve the structural layout, especially for images with large rigid objects or strict spatial constraints. Moreover, most approaches lack spatial controllability, making it difficult to guide the structure or placement of generated content. To address these challenges, StructDiff introduces an \\textit{adaptive receptive field} module to maintain both global and local distributions. Building on this foundation, StructDiff incorporates 3D positional encoding (PE) as a spatial prior, allowing flexible control over positions, scale, and local details of generated objects. To our knowledge, this spatial control capability represents the first exploration of PE-based manipulation in single-image generation. Furthermore, we propose a novel evaluation criterion for single-image generation based on large language models (LLMs). This criterion specifically addresses the limitations of existing objective metrics and the high labor costs associated with user studies. StructDiff also demonstrates broad applicability across downstream tasks, such as text-guided image generation, image editing, outpainting, and paint-to-image synthesis. Extensive experiments demonstrate that StructDiff outperforms existing methods in structural consistency, visual quality, and spatial controllability. The project page is available at https://butter-crab.github.io/StructDiff/.",
+    "authors": [
+      "Yinxi He",
+      "Kang Liao",
+      "Chunyu Lin",
+      "Tianyi Wei",
+      "Yao Zhao"
+    ],
+    "published": "2026-04-14",
+    "updated": "2026-04-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.12575.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.12575",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "StructDiff：一种用于单图像生成的结构保持与空间可控扩散模型",
+      "core_contribution": "提出StructDiff框架，通过自适应感受野模块和3D位置编码实现单图像生成中的结构保持与空间控制，并引入基于大语言模型的评估标准。",
+      "method": "1. 采用单尺度扩散模型框架，通过自适应感受野模块同时学习全局和局部视觉分布；2. 引入3D位置编码作为空间先验，实现对生成对象位置、尺度和局部细节的灵活控制；3. 提出基于大语言模型的新评估标准以解决现有客观指标的局限性。",
+      "findings": "1. StructDiff在结构一致性、视觉质量和空间可控性上优于现有方法；2. 3D位置编码首次实现单图像生成中的空间控制；3. 框架可广泛应用于文本引导生成、图像编辑、外绘和绘画合成等下游任务。"
+    }
+  },
+  {
+    "id": "2604.12322",
+    "title": "Self-Adversarial One Step Generation via Condition Shifting",
+    "abstract": "The push for efficient text to image synthesis has moved the field toward one step sampling, yet existing methods still face a three way tradeoff among fidelity, inference speed, and training efficiency. Approaches that rely on external discriminators can sharpen one step performance, but they often introduce training instability, high GPU memory overhead, and slow convergence, which complicates scaling and parameter efficient tuning. In contrast, regression based distillation and consistency objectives are easier to optimize, but they typically lose fine details when constrained to a single step. We present APEX, built on a key theoretical insight: adversarial correction signals can be extracted endogenously from a flow model through condition shifting. Using a transformation creates a shifted condition branch whose velocity field serves as an independent estimator of the model's current generation distribution, yielding a gradient that is provably GAN aligned, replacing the sample dependent discriminator terms that cause gradient vanishing. This discriminator free design is architecture preserving, making APEX a plug and play framework compatible with both full parameter and LoRA based tuning. Empirically, our 0.6B model surpasses FLUX-Schnell 12B (20$\\times$ more parameters) in one step quality. With LoRA tuning on Qwen-Image 20B, APEX reaches a GenEval score of 0.89 at NFE=1 in 6 hours, surpassing the original 50-step teacher (0.87) and providing a 15.33$\\times$ inference speedup. Code is available https://github.com/LINs-lab/APEX.",
+    "authors": [
+      "Deyuan Liu",
+      "Peng Sun",
+      "Yansen Han",
+      "Zhenglin Cheng",
+      "Chuyan Chen",
+      "Tao Lin"
+    ],
+    "published": "2026-04-14",
+    "updated": "2026-04-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.12322.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.12322",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过条件偏移实现自对抗一步生成",
+      "core_contribution": "提出APEX框架，通过条件偏移从流模型中内生提取对抗校正信号，实现无需外部判别器的高效一步生成，解决了现有方法在保真度、推理速度和训练效率之间的三难权衡。",
+      "method": "APEX基于条件偏移理论，通过变换创建偏移条件分支，其速度场作为模型当前生成分布的独立估计器，生成可证明与GAN对齐的梯度。该方法无需外部判别器，保持架构不变，支持全参数和LoRA调优。",
+      "findings": "实验表明，0.6B参数的APEX模型在一步生成质量上超越20倍参数的FLUX-Schnell 12B；在Qwen-Image 20B上使用LoRA调优，6小时内达到NFE=1时GenEval分数0.89，超越原50步教师模型（0.87），推理速度提升15.33倍。"
+    }
+  },
+  {
+    "id": "2604.12281",
+    "title": "MAST: Mask-Guided Attention Mass Allocation for Training-Free Multi-Style Transfer",
+    "abstract": "Style transfer aims to render a content image with the visual characteristics of a reference style while preserving its underlying semantic layout and structural geometry. While recent diffusion-based models demonstrate strong stylization capabilities by leveraging powerful generative priors and controllable internal representations, they typically assume a single global style. Extending them to multi-style scenarios often leads to boundary artifacts, unstable stylization, and structural inconsistency due to interference between multiple style representations. To overcome these limitations, we propose MAST (Mask-Guided Attention Mass Allocation for Training-Free Multi-Style Transfer), a novel training-free framework that explicitly controls content-style interactions within the diffusion attention mechanism. To achieve artifact-free and structure-preserving stylization, MAST integrates four connected modules. First, Layout-preserving Query Anchoring prevents global layout collapse by firmly anchoring the semantic structure using content queries. Second, Logit-level Attention Mass Allocation deterministically distributes attention probability mass across spatial regions, seamlessly fusing multiple styles without boundary artifacts. Third, Sharpness-aware Temperature Scaling restores the attention sharpness degraded by multi-style expansion. Finally, Discrepancy-aware Detail Injection adaptively compensates for localized high-frequency detail losses by measuring structural discrepancies. Extensive experiments demonstrate that MAST effectively mitigates boundary artifacts and maintains structural consistency, preserving texture fidelity and spatial coherence even as the number of applied styles increases.",
+    "authors": [
+      "Dongkyung Kang",
+      "Jaeyeon Hwang",
+      "Junseo Park",
+      "Minji Kang",
+      "Yeryeong Lee",
+      "Beomseok Ko",
+      "Hanyoung Roh",
+      "Jeongmin Shin",
+      "Hyeryung Jang"
+    ],
+    "published": "2026-04-14",
+    "updated": "2026-04-14",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.12281.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.12281",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MAST：基于掩码引导注意力质量分配的无训练多风格迁移方法",
+      "core_contribution": "提出了一种无需训练的多风格迁移框架MAST，通过显式控制扩散注意力机制中的内容-风格交互，有效解决了多风格场景下的边界伪影和结构不一致问题。",
+      "method": "MAST包含四个核心模块：1) 布局保持查询锚定，通过内容查询固定语义结构；2) 对数级注意力质量分配，确定性分配注意力概率质量以无缝融合多风格；3) 锐度感知温度缩放，恢复因多风格扩展而降低的注意力锐度；4) 差异感知细节注入，通过测量结构差异自适应补偿高频细节损失。",
+      "findings": "实验表明，MAST能有效减少边界伪影并保持结构一致性，即使在应用风格数量增加时仍能保持纹理保真度和空间连贯性。"
+    }
+  }
+]
