@@ -1,0 +1,140 @@
+[
+  {
+    "id": "2604.13956",
+    "title": "Creo: From One-Shot Image Generation to Progressive, Co-Creative Ideation",
+    "abstract": "Text-to-image (T2I) systems enable rapid generation of high-fidelity imagery but are misaligned with how visual ideas develop. T2I systems generate outputs that make implicit visual decisions on behalf of the user, often introduce fine-grained details that can anchor users prematurely and limit their ability to keep options open early on, and cause unintended changes during editing that are difficult to correct and reduce users' sense of control. To address these concerns, we present Creo, a multi-stage T2I system that scaffolds image generation by progressing from rough sketches to high-resolution outputs, exposing intermediary abstractions where users can make incremental changes. Sketch-like abstractions invite user editing and allow users to keep design options open when ideas are still forming due to their provisional nature. Each stage in Creo can be modified with manual changes and AI-assisted operations, enabling fine-grained, step-wise control through a locking mechanism that preserves prior decisions so subsequent edits affect only specified regions or attributes. Users remain in the loop, making and verifying decisions across stages, while the system applies diffs instead of regenerating full images, reducing drift as fidelity increases. A comparative study with a one-shot baseline shows that participants felt stronger ownership over Creo outputs, as they were able to trace their decisions in building up the image. Furthermore, embedding-based analysis indicates that Creo outputs are less homogeneous than one-shot results. These findings suggest that multi-stage generation, combined with intermediate control and decision locking, is a key design principle for improving controllability, user agency, creativity, and output diversity in generative systems.",
+    "authors": [
+      "Zoe De Simone",
+      "Angie Boggust",
+      "Fredo Durand",
+      "Ashia Wilson",
+      "Arvind Satyanarayan"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.HC",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13956.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13956",
+    "primary_category": "cs.HC",
+    "score": 90,
+    "summary": {
+      "title_zh": "Creo：从单次图像生成到渐进式协同创意构思",
+      "core_contribution": "提出Creo系统，通过多阶段渐进式图像生成提升用户控制力和创意参与度，解决了传统文本到图像（T2I）系统在早期决策锚定和编辑漂移方面的问题。",
+      "method": "Creo采用从草图到高分辨率输出的多阶段生成框架，通过中间抽象层（如草图）支持用户逐步编辑和决策锁定。系统结合手动修改与AI辅助操作，利用差分更新（而非全图重生成）减少编辑漂移，并允许用户通过锁定机制保护已定区域。",
+      "findings": "与单次生成基线相比，用户对Creo输出更具所有权感，因其能追溯决策过程；嵌入分析显示Creo生成结果多样性更高，表明多阶段生成与中间控制能提升可控性、用户代理感和创意多样性。"
+    }
+  },
+  {
+    "id": "2604.13797",
+    "title": "DRG-Font: Dynamic Reference-Guided Few-shot Font Generation via Contrastive Style-Content Disentanglement",
+    "abstract": "Few-shot Font Generation aims to generate stylistically consistent glyphs from a few reference glyphs. However, capturing complex font styles from a few exemplars remains challenging, and the existing methods often struggle to retain discernible local characteristics in generated samples. This paper introduces DRG-Font, a contrastive font generation strategy that learns complex glyph attributes by decomposing style and content embedding spaces. For optimal style supervision, the proposed architecture incorporates a Reference Selection (RS) Module to dynamically select the best style reference from an available pool of candidates. The network learns to decompose glyph attributes into style and shape priors through a Multi-scale Style Head Block (MSHB) and a Multi-scale Content Head Block (MCHB). For style adaptation, a Multi-Fusion Upsampling Block (MFUB) produces the target glyph by combining the reference style prior and target content prior. The proposed method demonstrates significant improvements over state-of-the-art approaches across multiple visual and analytical benchmarks.",
+    "authors": [
+      "Rejoy Chakraborty",
+      "Prasun Roy",
+      "Saumik Bhattacharya",
+      "Umapada Pal"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13797.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13797",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "DRG-Font：基于对比式风格-内容解耦的动态参考引导小样本字体生成",
+      "core_contribution": "提出DRG-Font框架，通过动态参考选择与对比式风格-内容解耦技术，显著提升小样本条件下的字体生成质量与局部特征保持能力。",
+      "method": "1. 设计动态参考选择模块(RS)从候选池中自动选取最优风格参考；2. 通过多尺度风格头(MSHB)和内容头(MCHB)解耦字形风格与内容特征；3. 采用多融合上采样块(MFUB)结合参考风格与目标内容生成目标字形。",
+      "findings": "实验表明，该方法在视觉质量和分析指标上均超越现有最优方法，能有效捕捉复杂字体风格并保持清晰的局部特征。"
+    }
+  },
+  {
+    "id": "2604.13938",
+    "title": "ASTRA: Enhancing Multi-Subject Generation with Retrieval-Augmented Pose Guidance and Disentangled Position Embedding",
+    "abstract": "Subject-driven image generation has shown great success in creating personalized content, but its capabilities are largely confined to single subjects in common poses. Current approaches face a fundamental conflict when handling multiple subjects with complex, distinct actions: preserving individual identities while enforcing precise pose structures. This challenge often leads to identity fusion and pose distortion, as appearance and structure signals become entangled within the model's architecture. To resolve this conflict, we introduce ASTRA(Adaptive Synthesis through Targeted Retrieval Augmentation), a novel framework that architecturally disentangles subject appearance from pose structure within a unified Diffusion Transformer. ASTRA achieves this through a dual-pronged strategy. It first employs a Retrieval-Augmented Pose (RAG-Pose) pipeline to provide a clean, explicit structural prior from a curated database. Then, its core generative model learns to process these dual visual conditions using our Enhanced Universal Rotary Position Embedding (EURoPE), an asymmetric encoding mechanism that decouples identity tokens from spatial locations while binding pose tokens to the canvas. Concurrently, a Disentangled Semantic Modulation (DSM) adapter offloads the identity preservation task into the text conditioning stream. Extensive experiments demonstrate that our integrated approach achieves superior disentanglement. On our designed COCO-based complex pose benchmark, ASTRA achieves a new state-of-the-art in pose adherence, while maintaining high identity fidelity and text alignment in DreamBench.",
+    "authors": [
+      "Tianze Xia",
+      "Zijian Ning",
+      "Zonglin Zhao",
+      "Mingjia Wang"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13938.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13938",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ASTRA：通过检索增强姿态引导与解耦位置嵌入提升多主体生成",
+      "core_contribution": "提出ASTRA框架，通过解耦主体外观与姿态结构，解决了多主体复杂姿态生成中的身份融合与姿态失真问题。",
+      "method": "ASTRA采用双重策略：1）通过检索增强姿态（RAG-Pose）从精选数据库中获取清晰的结构先验；2）使用增强通用旋转位置嵌入（EURoPE）不对称编码机制，解耦身份标记与空间位置，同时将姿态标记绑定到画布。此外，通过解耦语义调制（DSM）适配器将身份保留任务卸载到文本条件流中。",
+      "findings": "在设计的基于COCO的复杂姿态基准测试中，ASTRA在姿态遵循方面达到新的最先进水平，同时在DreamBench中保持了高身份保真度和文本对齐。"
+    }
+  },
+  {
+    "id": "2604.13491",
+    "title": "Enhanced Text-to-Image Generation by Fine-grained Multimodal Reasoning",
+    "abstract": "With the rapid progress of Multimodal Large Language Models (MLLMs), unified MLLMs that jointly perform image understanding and generation have advanced significantly. However, despite the inherent reasoning capabilities of unified MLLMs for self-reflection and self-refinement, their use in text-to-image generation remains largely underexplored. Meanwhile, existing multimodal reasoning-based image generation methods mostly rely on holistic image-text alignment judgments, without fine-grained reflection and refinement of detailed prompt attributes, leading to limited fine-grained control. Therefore, we propose Fine-grained Multimodal Reasoning (FiMR), a framework that leverages decomposed visual question answering (VQA) to break down an input prompt into minimal semantic units-such as entities and attributes-and verify each unit via VQA to generate explicit, fine-grained feedback. Based on this feedback, FiMR then applies targeted, localized refinements. This fine-grained self-reasoning and self-refinement enable MLLMs to achieve more precise improvements in image-prompt alignment and overall generation quality at test time. Extensive experiments demonstrate that FiMR consistently outperforms image generation baselines, including reasoning-based methods, particularly on compositional text-to-image benchmarks.",
+    "authors": [
+      "Yongjin Kim",
+      "Yoonjin Oh",
+      "Yerin Kim",
+      "Hyomin Kim",
+      "Jeeyoung Yun",
+      "Yujung Heo",
+      "Minjun Kim",
+      "Sungwoong Kim"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13491.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13491",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过细粒度多模态推理增强文本到图像生成",
+      "core_contribution": "提出Fine-grained Multimodal Reasoning (FiMR)框架，通过细粒度多模态推理实现文本到图像生成的精准改进。",
+      "method": "FiMR框架利用分解的视觉问答(VQA)将输入提示分解为最小语义单元（如实体和属性），并通过VQA验证每个单元生成细粒度反馈。基于反馈，FiMR进行有针对性的局部优化。",
+      "findings": "实验表明，FiMR在图像生成基准测试中（包括基于推理的方法）表现优于其他方法，尤其在组合式文本到图像生成任务中效果显著。"
+    }
+  },
+  {
+    "id": "2604.12163",
+    "title": "Nucleus-Image: Sparse MoE for Image Generation",
+    "abstract": "We present Nucleus-Image, a text-to-image generation model that establishes a new Pareto frontier in quality-versus-efficiency by matching or exceeding leading models on GenEval, DPG-Bench, and OneIG-Bench while activating only approximately 2B parameters per forward pass. Nucleus-Image employs a sparse mixture-of-experts (MoE) diffusion transformer architecture with Expert-Choice Routing that scales total model capacity to 17B parameters across 64 routed experts per layer. We adopt a streamlined architecture optimized for inference efficiency by excluding text tokens from the transformer backbone entirely and using joint attention that enables text KV sharing across timesteps. To improve routing stability when using timestep modulation, we introduce a decoupled routing design that separates timestep-aware expert assignment from timestep-conditioned expert computation. We construct a large-scale training corpus of 1.5B high-quality training pairs spanning 700M unique images through multi-stage filtering, deduplication, aesthetic tiering, and caption curation. Training follows a progressive resolution curriculum (256 to 512 to 1024) with multi-aspect-ratio bucketing at every stage, coupled with progressive sparsification of the expert capacity factor. We adopt the Muon optimizer and share our parameter grouping recipe tailored for diffusion models with timestep modulation. Nucleus-Image demonstrates that sparse MoE scaling is a highly effective path to high-quality image generation, reaching the performance of models with significantly larger active parameter budgets at a fraction of the inference cost. These results are achieved without post-training optimization of any kind: no reinforcement learning, no direct preference optimization, and no human preference tuning. We release the training recipe, making Nucleus-Image the first fully open-source MoE diffusion model at this quality.",
+    "authors": [
+      "Chandan Akiti",
+      "Ajay Modukuri",
+      "Murali Nandan Nagarapu",
+      "Gunavardhan Akiti",
+      "Haozhe Liu"
+    ],
+    "published": "2026-04-14",
+    "updated": "2026-04-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.12163.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.12163",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Nucleus-Image：用于图像生成的稀疏混合专家模型",
+      "core_contribution": "提出Nucleus-Image，一种基于稀疏混合专家（MoE）架构的文本到图像生成模型，在保持高效推理（每次前向传播仅激活约20亿参数）的同时，在多个基准测试中达到或超越领先模型的性能。",
+      "method": "采用稀疏混合专家扩散变压器架构，引入专家选择路由（Expert-Choice Routing）将总模型容量扩展至170亿参数（每层64个路由专家）；通过完全排除文本标记的简化架构、联合注意力机制及解耦路由设计优化推理效率；使用多阶段过滤构建1.5亿高质量训练数据，并采用渐进分辨率课程与动态稀疏化训练策略。",
+      "findings": "模型在GenEval、DPG-Bench和OneIG-Bench上匹配或超越更大参数量的模型，且推理成本显著降低；解耦路由设计有效提升时间步调制下的路由稳定性；无需任何训练后优化（如强化学习或人类偏好调优）即可实现高性能，成为首个完全开源的同类质量MoE扩散模型。"
+    }
+  }
+]
