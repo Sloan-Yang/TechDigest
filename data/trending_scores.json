@@ -61,5 +61,9 @@
   "openai_openai-agents-python": 80,
   "EvoMap_evolver": 75,
   "SimoneAvogadro_android-reverse-engineering-skill": 30,
-  "sponsors_BasedHardware": 0
+  "sponsors_BasedHardware": 0,
+  "lukilabs_craft-agents-oss": 60,
+  "Tracer-Cloud_opensre": 60,
+  "pingdotgg_t3code": 50,
+  "ChromeDevTools_chrome-devtools-mcp": 50
 }

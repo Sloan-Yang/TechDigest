@@ -1,0 +1,149 @@
+[
+  {
+    "id": "2604.14605",
+    "title": "Towards Design Compositing",
+    "abstract": "Graphic design creation involves harmoniously assembling multimodal components such as images, text, logos, and other visual assets collected from diverse sources, into a visually-appealing and cohesive design. Recent methods have largely focused on layout prediction or complementary element generation, while retaining input elements exactly, implicitly assuming that provided components are already stylistically harmonious. In practice, inputs often come from disparate sources and exhibit visual mismatch, making this assumption limiting. We argue that identity-preserving stylization and compositing of input elements is a critical missing ingredient for truly harmonized components-to-design pipelines. To this end, we propose GIST, a training-free, identity-preserving image compositor that sits between layout prediction and typography generation, and can be plugged into any existing components-to-design or design-refining pipeline without modification. We demonstrate this by integrating GIST with two substantially different existing methods, LaDeCo and Design-o-meter. GIST shows significant improvements in visual harmony and aesthetic quality across both pipelines, as validated by LLaVA-OV and GPT-4V on aspect-wise ratings and pairwise preference over naive pasting. Project Page: abhinav-mahajan10.github.io/GIST/.",
+    "authors": [
+      "Abhinav Mahajan",
+      "Abhikhya Tripathy",
+      "Sudeeksha Reddy Pala",
+      "Vaibhav Methi",
+      "K J Joseph",
+      "Balaji Vasan Srinivasan"
+    ],
+    "published": "2026-04-16",
+    "updated": "2026-04-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.14605.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.14605",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "迈向设计合成",
+      "core_contribution": "提出GIST，一种无需训练、保持元素特性的图像合成器，解决了多源输入元素视觉不协调的问题，显著提升了设计流程的视觉和谐度与美学质量。",
+      "method": "GIST是一种无需训练的模块化方法，专注于在布局预测与排版生成之间实现输入元素的身份保留式风格化合成。它可直接嵌入现有设计流程（如LaDeCo和Design-o-meter），通过调整输入元素的视觉属性（如颜色、纹理）实现和谐融合，而无需修改原流程架构。",
+      "findings": "实验表明，集成GIST后，两种不同设计流程（LaDeCo和Design-o-meter）的视觉和谐度与美学质量均有显著提升，LLaVA-OV和GPT-4V的评估证实其效果优于直接粘贴。用户偏好测试中，GIST合成结果在多数对比场景中更受青睐。"
+    }
+  },
+  {
+    "id": "2604.15311",
+    "title": "LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories",
+    "abstract": "This paper focuses on the alignment of flow matching models with human preferences. A promising way is fine-tuning by directly backpropagating reward gradients through the differentiable generation process of flow matching. However, backpropagating through long trajectories results in prohibitive memory costs and gradient explosion. Therefore, direct-gradient methods struggle to update early generation steps, which are crucial for determining the global structure of the final image. To address this issue, we introduce LeapAlign, a fine-tuning method that reduces computational cost and enables direct gradient propagation from reward to early generation steps. Specifically, we shorten the long trajectory into only two steps by designing two consecutive leaps, each skipping multiple ODE sampling steps and predicting future latents in a single step. By randomizing the start and end timesteps of the leaps, LeapAlign leads to efficient and stable model updates at any generation step. To better use such shortened trajectories, we assign higher training weights to those that are more consistent with the long generation path. To further enhance gradient stability, we reduce the weights of gradient terms with large magnitude, instead of completely removing them as done in previous works. When fine-tuning the Flux model, LeapAlign consistently outperforms state-of-the-art GRPO-based and direct-gradient methods across various metrics, achieving superior image quality and image-text alignment.",
+    "authors": [
+      "Zhanhao Liang",
+      "Tao Yang",
+      "Jie Wu",
+      "Chengjian Feng",
+      "Liang Zheng"
+    ],
+    "published": "2026-04-16",
+    "updated": "2026-04-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.15311.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.15311",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "LeapAlign：通过构建两步轨迹在任意生成步骤中对齐后训练流匹配模型",
+      "core_contribution": "提出LeapAlign方法，通过缩短生成轨迹为两步跳跃，有效降低了计算成本并实现了从奖励到早期生成步骤的直接梯度传播，从而提升了流匹配模型与人类偏好的对齐效果。",
+      "method": "LeapAlign通过设计两个连续的跳跃步骤，每个步骤跳过多个ODE采样步骤并预测未来潜在状态，从而将长轨迹缩短为仅两步。通过随机化跳跃的起始和结束时间步，实现了高效且稳定的模型更新。此外，通过为与长生成路径更一致的轨迹分配更高的训练权重，并减小大梯度项的权重而非完全移除，进一步提升了梯度稳定性。",
+      "findings": "在Flux模型上的微调实验中，LeapAlign在各项指标上均优于基于GRPO和最先进直接梯度的方法，实现了更优的图像质量和图像-文本对齐效果。"
+    }
+  },
+  {
+    "id": "2604.15309",
+    "title": "MM-WebAgent: A Hierarchical Multimodal Web Agent for Webpage Generation",
+    "abstract": "The rapid progress of Artificial Intelligence Generated Content (AIGC) tools enables images, videos, and visualizations to be created on demand for webpage design, offering a flexible and increasingly adopted paradigm for modern UI/UX. However, directly integrating such tools into automated webpage generation often leads to style inconsistency and poor global coherence, as elements are generated in isolation. We propose MM-WebAgent, a hierarchical agentic framework for multimodal webpage generation that coordinates AIGC-based element generation through hierarchical planning and iterative self-reflection. MM-WebAgent jointly optimizes global layout, local multimodal content, and their integration, producing coherent and visually consistent webpages. We further introduce a benchmark for multimodal webpage generation and a multi-level evaluation protocol for systematic assessment. Experiments demonstrate that MM-WebAgent outperforms code-generation and agent-based baselines, especially on multimodal element generation and integration. Code & Data: https://aka.ms/mm-webagent.",
+    "authors": [
+      "Yan Li",
+      "Zezi Zeng",
+      "Yifan Yang",
+      "Yuqing Yang",
+      "Ning Liao",
+      "Weiwei Guo",
+      "Lili Qiu",
+      "Mingxi Cheng",
+      "Qi Dai",
+      "Zhendong Wang",
+      "Zhengyuan Yang",
+      "Xue Yang",
+      "Ji Li",
+      "Lijuan Wang",
+      "Chong Luo"
+    ],
+    "published": "2026-04-16",
+    "updated": "2026-04-16",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.15309.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.15309",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MM-WebAgent：一种用于网页生成的分层多模态网络代理",
+      "core_contribution": "提出了一种分层代理框架MM-WebAgent，通过分层规划和迭代自反思协调基于AIGC的元素生成，解决了网页生成中的风格不一致和全局连贯性问题。",
+      "method": "MM-WebAgent采用分层规划方法，首先优化全局布局，然后生成局部多模态内容，并通过迭代自反思确保内容与布局的整合。该方法结合了多模态内容生成与层次化协调机制。",
+      "findings": "实验表明，MM-WebAgent在代码生成和基于代理的基线方法中表现更优，尤其在多模态元素生成和整合方面。同时，论文还提出了一个多模态网页生成基准和多层次评估协议。"
+    }
+  },
+  {
+    "id": "2604.14591",
+    "title": "Prompt-Guided Image Editing with Masked Logit Nudging in Visual Autoregressive Models",
+    "abstract": "We address the problem of prompt-guided image editing in visual autoregressive models. Given a source image and a target text prompt, we aim to modify the source image according to the target prompt, while preserving all regions which are unrelated to the requested edit. To this end, we present Masked Logit Nudging, which uses the source image token maps to introduce a guidance step that aligns the model's predictions under the target prompt with these source token maps. Specifically, we convert the fixed source encodings into logits using the VAR encoding, nudging the model's predicted logits towards the targets along a semantic trajectory defined by the source-target prompts. Edits are applied only within spatial masks obtained through a dedicated masking scheme that leverages cross-attention differences between the source and edited prompts. Then, we introduce a refinement to correct quantization errors and improve reconstruction quality. Our approach achieves the best image editing performance on the PIE benchmark at 512px and 1024px resolutions. Beyond editing, our method delivers faithful reconstructions and outperforms previous methods on COCO at 512px and OpenImages at 1024px. Overall, our method outperforms VAR-related approaches and achieves comparable or even better performance than diffusion models, while being much faster. Code is available at 'https://github.com/AmirMaEl/MLN'.",
+    "authors": [
+      "Amir El-Ghoussani",
+      "Marc Hölle",
+      "Gustavo Carneiro",
+      "Vasileios Belagiannis"
+    ],
+    "published": "2026-04-16",
+    "updated": "2026-04-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.14591.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.14591",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于掩码逻辑引导的视觉自回归模型提示引导图像编辑",
+      "core_contribution": "提出掩码逻辑引导（Masked Logit Nudging）方法，实现基于文本提示的精准图像编辑，同时保留与编辑无关的区域。",
+      "method": "通过将源图像编码转换为逻辑值，引导模型在目标提示下的预测沿语义轨迹对齐源图像；利用跨注意力差异生成空间掩码限定编辑区域，并引入细化步骤修正量化误差。",
+      "findings": "在PIE基准测试中512px和1024px分辨率下取得最佳编辑性能；在COCO（512px）和OpenImages（1024px）上重建质量优于先前方法；计算效率显著高于扩散模型。"
+    }
+  },
+  {
+    "id": "2604.14302",
+    "title": "Geometrically Consistent Multi-View Scene Generation from Freehand Sketches",
+    "abstract": "We tackle a new problem: generating geometrically consistent multi-view scenes from a single freehand sketch. Freehand sketches are the most geometrically impoverished input one could offer a multi-view generator. They convey scene intent through abstract strokes while introducing spatial distortions that actively conflict with any consistent 3D interpretation. No prior method attempts this; existing multi-view approaches require photographs or text, while sketch-to-3D methods need multiple views or costly per-scene optimisation. We address three compounding challenges; absent training data, the need for geometric reasoning from distorted 2D input, and cross-view consistency, through three mutually reinforcing contributions: (i) a curated dataset of $\\sim$9k sketch-to-multiview samples, constructed via an automated generation and filtering pipeline; (ii) Parallel Camera-Aware Attention Adapters (CA3) that inject geometric inductive biases into the video transformer; and (iii) a Sparse Correspondence Supervision Loss (CSL) derived from Structure-from-Motion reconstructions. Our framework synthesizes all views in a single denoising process without requiring reference images, iterative refinement, or per-scene optimization. Our approach significantly outperforms state-of-the-art two-stage baselines, improving realism (FID) by over 60% and geometric consistency (Corr-Acc) by 23%, while providing up to a 3.7$\\times$ inference speedup.",
+    "authors": [
+      "Ahmed Bourouis",
+      "Savas Ozkan",
+      "Andrea Maracani",
+      "Yi-Zhe Song",
+      "Mete Ozay"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.14302.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.14302",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于手绘草图的几何一致多视角场景生成",
+      "core_contribution": "首次提出从单张手绘草图生成几何一致的多视角场景的方法，解决了草图输入几何信息匮乏与多视角一致性之间的矛盾。",
+      "method": "通过三项协同技术实现：(1) 构建包含约9000个草图-多视角样本的自动化生成数据集；(2) 设计并行相机感知注意力适配器(CA3)，将几何归纳偏置注入视频Transformer；(3) 提出基于运动恢复结构(SfM)的稀疏对应监督损失(CSL)。所有视角在单一去噪过程中同步生成，无需参考图像或逐场景优化。",
+      "findings": "实验表明，该方法显著优于现有两阶段基线：真实感指标(FID)提升超60%，几何一致性指标(Corr-Acc)提高23%，推理速度最高加快3.7倍，且无需迭代优化。"
+    }
+  }
+]
