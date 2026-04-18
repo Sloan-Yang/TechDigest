@@ -1,0 +1,149 @@
+[
+  {
+    "id": "2604.15310",
+    "title": "TokenLight: Precise Lighting Control in Images using Attribute Tokens",
+    "abstract": "This paper presents a method for image relighting that enables precise and continuous control over multiple illumination attributes in a photograph. We formulate relighting as a conditional image generation task and introduce attribute tokens to encode distinct lighting factors such as intensity, color, ambient illumination, diffuse level, and 3D light positions. The model is trained on a large-scale synthetic dataset with ground-truth lighting annotations, supplemented by a small set of real captures to enhance realism and generalization. We validate our approach across a variety of relighting tasks, including controlling in-scene lighting fixtures and editing environment illumination using virtual light sources, on synthetic and real images. Our method achieves state-of-the-art quantitative and qualitative performance compared to prior work. Remarkably, without explicit inverse rendering supervision, the model exhibits an inherent understanding of how light interacts with scene geometry, occlusion, and materials, yielding convincing lighting effects even in traditionally challenging scenarios such as placing lights within objects or relighting transparent materials plausibly. Project page: vrroom.github.io/tokenlight/",
+    "authors": [
+      "Sumit Chaturvedi",
+      "Yannick Hold-Geoffroy",
+      "Mengwei Ren",
+      "Jingyuan Liu",
+      "He Zhang",
+      "Yiqun Mei",
+      "Julie Dorsey",
+      "Zhixin Shu"
+    ],
+    "published": "2026-04-16",
+    "updated": "2026-04-16",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.15310.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.15310",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "TokenLight：基于属性标记的图像精确光照控制方法",
+      "core_contribution": "提出一种通过属性标记实现多光照属性连续精确控制的图像重照明方法，无需显式逆向渲染监督即可理解光线与场景的物理交互。",
+      "method": "1. 将重照明任务建模为条件图像生成问题，采用属性标记编码强度/颜色/环境光等独立光照因子\n2. 基于带真实光照标注的大规模合成数据训练，辅以少量真实图像提升泛化性\n3. 支持虚拟光源位置控制及场景内灯具编辑等多种重照明任务",
+      "findings": "1. 在合成/真实图像上均取得SOTA性能\n2. 模型自发理解光线与几何/遮挡/材质的交互，可处理光源置于物体内部或透明材质等挑战性场景\n3. 定量与定性评估均优于现有方法"
+    }
+  },
+  {
+    "id": "2604.14914",
+    "title": "Beyond Prompts: Unconditional 3D Inversion for Out-of-Distribution Shapes",
+    "abstract": "Text-driven inversion of generative models is a core paradigm for manipulating 2D or 3D content, unlocking numerous applications such as text-based editing, style transfer, or inverse problems. However, it relies on the assumption that generative models remain sensitive to natural language prompts. We demonstrate that for state-of-the-art native text-to-3D generative models, this assumption often collapses. We identify a critical failure mode where generation trajectories are drawn into latent ``sink traps'': regions where the model becomes insensitive to prompt modifications. In these regimes, changes to the input text fail to alter internal representations in a way that alters the output geometry. Crucially, we observe that this is not a limitation of the model's \\textit{geometric} expressivity; the same generative models possess the ability to produce a vast diversity of shapes but, as we demonstrate, become insensitive to out-of-distribution \\textit{text} guidance. We investigate this behavior by analyzing the sampling trajectories of the generative model, and find that complex geometries can still be represented and produced by leveraging the model's unconditional generative prior. This leads to a more robust framework for text-based 3D shape editing that bypasses latent sinks by decoupling a model's geometric representation power from its linguistic sensitivity. Our approach addresses the limitations of current 3D pipelines and enables high-fidelity semantic manipulation of out-of-distribution 3D shapes. Project webpage: https://daidedou.sorpi.fr/publication/beyondprompts",
+    "authors": [
+      "Victoria Yue Chen",
+      "Emery Pierson",
+      "Léopold Maillard",
+      "Maks Ovsjanikov"
+    ],
+    "published": "2026-04-16",
+    "updated": "2026-04-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.14914.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.14914",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "超越提示：针对分布外形状的无条件3D反转",
+      "core_contribution": "揭示了当前文本到3D生成模型在分布外文本引导下的失效模式（潜在“陷阱区”），并提出了一种不依赖文本提示的无条件生成先验框架，实现了对分布外3D形状的高保真语义编辑。",
+      "method": "1. 通过分析生成模型的采样轨迹，识别出模型对文本修改不敏感的潜在“陷阱区”；2. 利用模型的无条件生成先验能力，绕过文本敏感性限制；3. 提出解耦几何表示能力与语言敏感性的新框架，直接操作潜在空间实现形状编辑。",
+      "findings": "1. 先进文本到3D模型在分布外文本引导下会陷入对提示词不敏感的“陷阱区”；2. 模型本身具备生成多样几何形状的能力，但文本引导机制存在局限；3. 基于无条件先验的编辑框架能有效规避陷阱区，显著提升对非常规形状的编辑效果。"
+    }
+  },
+  {
+    "id": "2604.14910",
+    "title": "Reward-Aware Trajectory Shaping for Few-step Visual Generation",
+    "abstract": "Achieving high-fidelity generation in extremely few sampling steps has long been a central goal of generative modeling. Existing approaches largely rely on distillation-based frameworks to compress the original multi-step denoising process into a few-step generator. However, such methods inherently constrain the student to imitate a stronger multi-step teacher, imposing the teacher as an upper bound on student performance. We argue that introducing \\textbf{preference alignment awareness} enables the student to optimize toward reward-preferred generation quality, potentially surpassing the teacher instead of being restricted to rigid teacher imitation. To this end, we propose \\textbf{Reward-Aware Trajectory Shaping (RATS)}, a lightweight framework for preference-aligned few-step generation. Specifically, teacher and student latent trajectories are aligned at key denoising stages through horizon matching, while a \\textbf{reward-aware gate} is introduced to adaptively regulate teacher guidance based on their relative reward performance. Trajectory shaping is strengthened when the teacher achieves higher rewards, and relaxed when the student matches or surpasses the teacher, thereby enabling continued reward-driven improvement. By seamlessly integrating trajectory distillation, reward-aware gating, and preference alignment, RATS effectively transfers preference-relevant knowledge from high-step generators without incurring additional test-time computational overhead. Experimental results demonstrate that RATS substantially improves the efficiency--quality trade-off in few-step visual generation, significantly narrowing the gap between few-step students and stronger multi-step generators.",
+    "authors": [
+      "Rui Li",
+      "Bingyu Li",
+      "Yuanzhi Liang",
+      "HuangHai Bin",
+      "Chi Zhang",
+      "XueLong Li"
+    ],
+    "published": "2026-04-16",
+    "updated": "2026-04-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.14910.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.14910",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "奖励感知的轨迹整形用于少步视觉生成",
+      "core_contribution": "提出奖励感知轨迹整形（RATS）框架，通过偏好对齐和奖励感知门控机制，使少步生成模型能够超越教师模型的性能限制。",
+      "method": "该方法通过关键去噪阶段的水平匹配对齐师生潜在轨迹，并引入奖励感知门自适应调节教师指导强度：当教师奖励更高时加强轨迹整形，当学生表现更优时则放松约束。结合轨迹蒸馏、奖励感知门控和偏好对齐，实现高效知识迁移。",
+      "findings": "实验表明RATS显著提升了少步视觉生成的效率-质量权衡，大幅缩小了少步学生模型与多步强生成器之间的性能差距，且不增加测试时计算开销。"
+    }
+  },
+  {
+    "id": "2604.14379",
+    "title": "Step-level Denoising-time Diffusion Alignment with Multiple Objectives",
+    "abstract": "Reinforcement learning (RL) has emerged as a powerful tool for aligning diffusion models with human preferences, typically by optimizing a single reward function under a KL regularization constraint. In practice, however, human preferences are inherently pluralistic, and aligned models must balance multiple downstream objectives, such as aesthetic quality and text-image consistency. Existing multi-objective approaches either rely on costly multi-objective RL fine-tuning or on fusing separately aligned models at denoising time, but they generally require access to reward values (or their gradients) and/or introduce approximation error in the resulting denoising objectives. In this paper, we revisit the problem of RL fine-tuning for diffusion models and address the intractability of identifying the optimal policy by introducing a step-level RL formulation. Building on this, we further propose Multi-objective Step-level Denoising-time Diffusion Alignment (MSDDA), a retraining-free framework for aligning diffusion models with multiple objectives, obtaining the optimal reverse denoising distribution in closed form, with mean and variance expressed directly in terms of single-objective base models. We prove that this denoising-time objective is exactly equivalent to the step-level RL fine-tuning, introducing no approximation error. Moreover, we provide numerical results, which indicate our method outperforms existing denoising-time approaches.",
+    "authors": [
+      "Qi Zhang",
+      "Dawei Wang",
+      "Shaofeng Zou"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.14379.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.14379",
+    "primary_category": "cs.LG",
+    "score": 75,
+    "summary": {
+      "title_zh": "基于多目标的步骤级去噪时间扩散对齐方法",
+      "core_contribution": "提出了一种无需重新训练的多目标扩散模型对齐框架MSDDA，通过步骤级强化学习形式化，精确计算最优反向去噪分布，避免了近似误差。",
+      "method": "1. 引入步骤级强化学习形式化，解决传统方法中策略优化难题；2. 提出MSDDA框架，直接基于单目标基础模型推导出多目标最优去噪分布的均值和方差；3. 理论证明该方法与步骤级RL微调完全等价，无近似误差。",
+      "findings": "1. 该方法在数学上严格等价于步骤级RL微调，不引入近似误差；2. 实验结果表明，MSDDA在性能上优于现有的去噪时间对齐方法。"
+    }
+  },
+  {
+    "id": "2604.14113",
+    "title": "UI-Zoomer: Uncertainty-Driven Adaptive Zoom-In for GUI Grounding",
+    "abstract": "GUI grounding, which localizes interface elements from screenshots given natural language queries, remains challenging for small icons and dense layouts. Test-time zoom-in methods improve localization by cropping and re-running inference at higher resolution, but apply cropping uniformly across all instances with fixed crop sizes, ignoring whether the model is actually uncertain on each case. We propose \\textbf{UI-Zoomer}, a training-free adaptive zoom-in framework that treats both the trigger and scale of zoom-in as a prediction uncertainty quantification problem. A confidence-aware gate fuses spatial consensus among stochastic candidates with token-level generation confidence to selectively trigger zoom-in only when localization is uncertain. When triggered, an uncertainty-driven crop sizing module decomposes prediction variance into inter-sample positional spread and intra-sample box extent, deriving a per-instance crop radius via the law of total variance. Extensive experiments on ScreenSpot-Pro, UI-Vision, and ScreenSpot-v2 demonstrate consistent improvements over strong baselines across multiple model architectures, achieving gains of up to +13.4\\%, +10.3\\%, and +4.2\\% respectively, with no additional training required.",
+    "authors": [
+      "Fei Tang",
+      "Bofan Chen",
+      "Zhengxi Lu",
+      "Tongbo Chen",
+      "Songqin Nong",
+      "Tao Jiang",
+      "Wenhao Xu",
+      "Weiming Lu",
+      "Jun Xiao",
+      "Yueting Zhuang",
+      "Yongliang Shen"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.14113.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.14113",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "UI-Zoomer：基于不确定性的自适应放大方法用于GUI元素定位",
+      "core_contribution": "提出了一种无需训练的GUI元素定位自适应放大框架，通过预测不确定性量化动态触发放大并确定裁剪范围，显著提升了小图标和密集布局的定位精度。",
+      "method": "1. 设计置信感知门控机制，结合空间共识和生成置信度选择性触发放大；2. 将预测方差分解为样本间位置差异和样本内边界框范围，通过总方差定律计算实例级裁剪半径；3. 完全基于模型不确定性动态调整处理策略，无需额外训练。",
+      "findings": "在ScreenSpot-Pro、UI-Vision和ScreenSpot-v2数据集上分别实现+13.4%、+10.3%和+4.2%的性能提升，且兼容多种模型架构，验证了方法的普适性和有效性。"
+    }
+  }
+]
