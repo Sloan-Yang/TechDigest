@@ -1,0 +1,139 @@
+[
+  {
+    "id": "2604.13549",
+    "title": "Reconstruction of a 3D wireframe from a single line drawing via generative depth estimation",
+    "abstract": "The conversion of 2D freehand sketches into 3D models remains a pivotal challenge in computer vision, bridging the gap between human creativity and digital fabrication. Traditional line drawing reconstruction relies on brittle symbolic logic, while modern approaches are constrained by rigid parametric modeling, limiting users to predefined CAD primitives. We propose a generative approach by framing reconstruction as a conditional dense depth estimation task. To achieve this, we implement a Latent Diffusion Model (LDM) with a ControlNet-style conditioning framework to resolve the inherent ambiguities of orthographic projections. To support an iterative \"sketch-reconstruct-sketch\" workflow, we introduce a graph-based BFS masking strategy to simulate partial depth cues. We train and evaluate our approach using a massive dataset of over one million image-depth pairs derived from the ABC Dataset. Our framework demonstrates robust performance across varying shape complexities, providing a scalable pipeline for converting sparse 2D line drawings into dense 3D representations, effectively allowing users to \"draw in 3D\" without the rigid constraints of traditional CAD.",
+    "authors": [
+      "Elton Cao",
+      "Hod Lipson"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13549.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13549",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "通过生成式深度估计从单一线条图重建3D线框模型",
+      "core_contribution": "提出了一种基于条件密集深度估计的生成式方法，将2D手绘草图转化为3D模型，突破了传统CAD参数化建模的限制。",
+      "method": "1. 采用潜在扩散模型(LDM)结合ControlNet式条件框架，解决正交投影的固有歧义问题；\n2. 引入基于图的广度优先搜索(BFS)掩码策略，模拟部分深度线索以支持迭代式'草图-重建-草图'工作流；\n3. 使用从ABC数据集提取的百万级图像-深度对进行训练。",
+      "findings": "1. 框架在不同复杂度的形状上均表现鲁棒；\n2. 建立了可扩展的稀疏2D线条图到密集3D表示的转换流程；\n3. 实现了无需传统CAD刚性约束的'3D绘图'能力。"
+    }
+  },
+  {
+    "id": "2604.13540",
+    "title": "Free Lunch for Unified Multimodal Models: Enhancing Generation via Reflective Rectification with Inherent Understanding",
+    "abstract": "Unified Multimodal Models (UMMs) aim to integrate visual understanding and generation within a single structure. However, these models exhibit a notable capability mismatch, where their understanding capability significantly outperforms their generation. This mismatch indicates that the model's rich internal knowledge, while effective for understanding tasks, remains underactivated during generation. To address this, we draw inspiration from the human ``Thinking-While-Drawing'' paradigm, where humans continuously reflect to activate their knowledge and rectify intermediate results. In this paper, we propose UniRect-CoT, a training-free unified rectification chain-of-thought framework. Our approach unlocks the ``free lunch'' hidden in the UMM's powerful inherent understanding to continuously reflect, activating its internal knowledge and rectifying intermediate results during generation.We regard the diffusion denoising process in UMMs as an intrinsic visual reasoning process and align the intermediate results with the target instruction understood by the model, serving as a self-supervisory signal to rectify UMM generation.Extensive experiments demonstrate that UniRect-CoT can be easily integrated into existing UMMs, significantly enhancing generation quality across diverse complex tasks.",
+    "authors": [
+      "Yibo Jiang",
+      "Tao Wu",
+      "Rui Jiang",
+      "Yehao Lu",
+      "Chaoxiang Cai",
+      "Zequn Qin",
+      "Xi Li"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13540.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13540",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "统一多模态模型的免费午餐：通过基于内在理解的反思性修正增强生成能力",
+      "core_contribution": "提出UniRect-CoT框架，利用统一多模态模型（UMMs）的内在理解能力，通过反思性修正提升生成质量，无需额外训练。",
+      "method": "1. 受人类‘边思考边绘画’范式启发，将UMMs的扩散去噪过程视为内在视觉推理过程；2. 通过目标指令与中间结果的对齐生成自监督信号；3. 在生成过程中持续激活模型内部知识并修正中间结果。",
+      "findings": "实验表明UniRect-CoT可轻松集成到现有UMMs中，显著提升多种复杂任务下的生成质量。"
+    }
+  },
+  {
+    "id": "2604.13509",
+    "title": "DiT as Real-Time Rerenderer: Streaming Video Stylization with Autoregressive Diffusion Transformer",
+    "abstract": "Recent advances in video generation models has significantly accelerated video generation and related downstream tasks. Among these, video stylization holds important research value in areas such as immersive applications and artistic creation, attracting widespread attention. However, existing diffusion-based video stylization methods struggle to maintain stability and consistency when processing long videos, and their high computational cost and multi-step denoising make them difficult to apply in practical scenarios. In this work, we propose RTR-DiT (DiT as Real-Time Rerenderer), a steaming video stylization framework built upon Diffusion Transformer. We first fine-tune a bidirectional teacher model on a curated video stylization dataset, supporting both text-guided and reference-guided video stylization tasks, and subsequently distill it into a few-step autoregressive model via post-training with Self Forcing and Distribution Matching Distillation. Furthermore, we propose a reference-preserving KV cache update strategy that not only enables stable and consistent processing of long videos, but also supports real-time switching between text prompts and reference images. Experimental results show that RTR-DiT outperforms existing methods in both text-guided and reference-guided video stylization tasks, in terms of quantitative metrics and visual quality, and demonstrates excellent performance in real-time long video stylization and interactive style-switching applications.",
+    "authors": [
+      "Hengye Lyu",
+      "Zisu Li",
+      "Yue Hong",
+      "Yueting Weng",
+      "Jiaxin Shi",
+      "Hanwang Zhang",
+      "Chen Liang"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13509.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13509",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "DiT作为实时重渲染器：基于自回归扩散Transformer的流式视频风格化",
+      "core_contribution": "提出RTR-DiT框架，通过双向教师模型蒸馏和自回归设计，实现高效稳定的长视频风格化，并支持实时交互式风格切换。",
+      "method": "1. 在精选视频风格化数据集上微调双向教师模型，支持文本引导和参考引导任务；2. 通过自强制和分布匹配蒸馏将其蒸馏为少步自回归模型；3. 提出保留参考的KV缓存更新策略，增强长视频处理稳定性。",
+      "findings": "实验表明，RTR-DiT在文本/参考引导任务中均优于现有方法（定量指标与视觉质量），且在长视频风格化与实时风格切换中表现优异。"
+    }
+  },
+  {
+    "id": "2604.13432",
+    "title": "MaMe & MaRe: Matrix-Based Token Merging and Restoration for Efficient Visual Perception and Synthesis",
+    "abstract": "Token compression is crucial for mitigating the quadratic complexity of self-attention mechanisms in Vision Transformers (ViTs), which often involve numerous input tokens. Existing methods, such as ToMe, rely on GPU-inefficient operations (e.g., sorting, scattered writes), introducing overheads that limit their effectiveness. We introduce MaMe, a training-free, differentiable token merging method based entirely on matrix operations, which is GPU-friendly to accelerate ViTs. Additionally, we present MaRe, its inverse operation, for token restoration, forming a MaMe+MaRe pipeline for image synthesis. When applied to pre-trained models, MaMe doubles ViT-B throughput with a 2% accuracy drop. Notably, fine-tuning the last layer with MaMe boosts ViT-B accuracy by 1.0% at 1.1x speed. In SigLIP2-B@512 zero-shot classification, MaMe provides 1.3x acceleration with negligible performance degradation. In video tasks, MaMe accelerates VideoMAE-L by 48.5% on Kinetics-400 with only a 0.84% accuracy loss. Furthermore, MaMe achieves simultaneous improvements in both performance and speed on some tasks. In image synthesis, the MaMe+MaRe pipeline enhances quality while reducing Stable Diffusion v2.1 generation latency by 31%. Collectively, these results demonstrate MaMe's and MaRe's effectiveness in accelerating vision models. The code is available at https://github.com/cominder/mame}{https://github.com/cominder/mame.",
+    "authors": [
+      "Simin Huo",
+      "Ning Li"
+    ],
+    "published": "2026-04-15",
+    "updated": "2026-04-15",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13432.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13432",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "MaMe与MaRe：基于矩阵的令牌合并与恢复方法，用于高效视觉感知与合成",
+      "core_contribution": "提出了MaMe（基于矩阵的令牌合并方法）和MaRe（令牌恢复方法），通过GPU友好的矩阵操作实现高效的视觉模型加速，同时保持或提升模型性能。",
+      "method": "MaMe是一种无需训练、完全基于矩阵操作的可微分令牌合并方法，避免了GPU低效操作（如排序、分散写入），从而加速ViTs。MaRe是其逆操作，用于令牌恢复，两者结合形成MaMe+MaRe管道，适用于图像合成任务。",
+      "findings": "在ViT-B上，MaMe使吞吐量翻倍，仅损失2%准确率；微调最后一层后，准确率提升1.0%且速度提高1.1倍。在SigLIP2-B@512零样本分类中，加速1.3倍且性能几乎无损。视频任务中，VideoMAE-L在Kinetics-400上加速48.5%，准确率仅降0.84%。MaMe+MaRe管道在提升图像合成质量的同时，将Stable Diffusion v2.1生成延迟降低31%。"
+    }
+  },
+  {
+    "id": "2604.13305",
+    "title": "Bias at the End of the Score",
+    "abstract": "Reward models (RMs) are inherently non-neutral value functions designed and trained to encode specific objectives, such as human preferences or text-image alignment. RMs have become crucial components of text-to-image (T2I) generation systems where they are used at various stages for dataset filtering, as evaluation metrics, as a supervisory signal during optimization of parameters, and for post-generation safety and quality filtering of T2I outputs. While specific problems with the integration of RMs into the T2I pipeline have been studied (e.g. reward hacking or mode collapse), their robustness and fairness as scoring functions remains largely unknown. We conduct a large scale audit of RM robustness with respect to demographic biases during T2I model training and generation. We provide quantitative and qualitative evidence that while originally developed as quality measures, RMs encode demographic biases, which cause reward-guided optimization to disproportionately sexualize female image subjects reinforce gender/racial stereotypes, and collapse demographic diversity. These findings highlight shortcomings in current reward models, challenge their reliability as quality metrics, and underscore the need for improved data collection and training procedures to enable more robust scoring.",
+    "authors": [
+      "Salma Abdel Magid",
+      "Grace Guo",
+      "Esin Tureci",
+      "Amaya Dharmasiri",
+      "Vikram V. Ramaswamy",
+      "Hanspeter Pfister",
+      "Olga Russakovsky"
+    ],
+    "published": "2026-04-14",
+    "updated": "2026-04-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.13305.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.13305",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "评分末端的偏见",
+      "core_contribution": "揭示了奖励模型（RMs）在文本到图像生成系统中编码了人口统计偏见，导致优化过程中加剧性别/种族刻板印象并减少人口多样性。",
+      "method": "研究通过大规模审计评估奖励模型在文本到图像模型训练和生成过程中的稳健性和公平性，采用定量和定性分析方法，考察模型对不同人口统计群体的评分偏差。",
+      "findings": "研究发现奖励模型虽然旨在衡量质量，却编码了显著的人口统计偏见，导致奖励引导的优化过程过度性化女性形象、强化性别/种族刻板印象，并减少人口多样性。"
+    }
+  }
+]
