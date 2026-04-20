@@ -1,0 +1,146 @@
+[
+  {
+    "id": "2604.15521",
+    "title": "Frequency-Aware Flow Matching for High-Quality Image Generation",
+    "abstract": "Flow matching models have emerged as a powerful framework for realistic image generation by learning to reverse a corruption process that progressively adds Gaussian noise. However, because noise is injected in the latent domain, its impact on different frequency components is non-uniform. As a result, during inference, flow matching models tend to generate low-frequency components (global structure) in the early stages, while high-frequency components (fine details) emerge only later in the reverse process. Building on this insight, we propose Frequency-Aware Flow Matching (FreqFlow), a novel approach that explicitly incorporates frequency-aware conditioning into the flow matching framework via time-dependent adaptive weighting. We introduce a two-branch architecture: (1) a frequency branch that separately processes low- and high-frequency components to capture global structure and refine textures and edges, and (2) a spatial branch that synthesizes images in the latent domain, guided by the frequency branch's output. By explicitly integrating frequency information into the generation process, FreqFlow ensures that both large-scale coherence and fine-grained details are effectively modeled low-frequency conditioning reinforces global structure, while high-frequency conditioning enhances texture fidelity and detail sharpness. On the class-conditional ImageNet-256 generation benchmark, our method achieves state-of-the-art performance with an FID of 1.38, surpassing the prior diffusion model DiT and flow matching model SiT by 0.79 and 0.58 FID, respectively. Code is available at https://github.com/OliverRensu/FreqFlow.",
+    "authors": [
+      "Sucheng Ren",
+      "Qihang Yu",
+      "Ju He",
+      "Xiaohui Shen",
+      "Alan Yuille",
+      "Liang-Chieh Chen"
+    ],
+    "published": "2026-04-16",
+    "updated": "2026-04-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.15521.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.15521",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "面向高质量图像生成的频率感知流匹配方法",
+      "core_contribution": "提出频率感知流匹配框架（FreqFlow），通过显式建模频率分量解决了传统流匹配方法中高低频生成不均衡的问题，显著提升了图像生成质量。",
+      "method": "1. 设计双分支架构：频率分支分别处理高低频分量以捕获全局结构和细节，空间分支在频率分支引导下合成潜在域图像\n2. 采用时间依赖的自适应加权机制实现频率感知条件控制\n3. 低频条件强化全局结构，高频条件增强纹理保真度",
+      "findings": "在ImageNet-256生成任务中达到1.38 FID的SOTA性能，分别超越DiT扩散模型和SiT流匹配模型0.79和0.58 FID，显著改善了纹理细节和边缘清晰度。"
+    }
+  },
+  {
+    "id": "2604.16299",
+    "title": "Repurposing 3D Generative Model for Autoregressive Layout Generation",
+    "abstract": "We introduce LaviGen, a framework that repurposes 3D generative models for 3D layout generation. Unlike previous methods that infer object layouts from textual descriptions, LaviGen operates directly in the native 3D space, formulating layout generation as an autoregressive process that explicitly models geometric relations and physical constraints among objects, producing coherent and physically plausible 3D scenes. To further enhance this process, we propose an adapted 3D diffusion model that integrates scene, object, and instruction information and employs a dual-guidance self-rollout distillation mechanism to improve efficiency and spatial accuracy. Extensive experiments on the LayoutVLM benchmark show LaviGen achieves superior 3D layout generation performance, with 19% higher physical plausibility than the state of the art and 65% faster computation. Our code is publicly available at https://github.com/fenghora/LaviGen.",
+    "authors": [
+      "Haoran Feng",
+      "Yifan Niu",
+      "Zehuan Huang",
+      "Yang-Tian Sun",
+      "Chunchao Guo",
+      "Yuxin Peng",
+      "Lu Sheng"
+    ],
+    "published": "2026-04-17",
+    "updated": "2026-04-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.16299.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.16299",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "利用3D生成模型实现自回归布局生成",
+      "core_contribution": "提出LaviGen框架，通过重新利用3D生成模型实现高效、物理合理的3D场景布局生成。",
+      "method": "LaviGen将3D布局生成建模为自回归过程，直接在原生3D空间中显式建模物体间的几何关系和物理约束。采用改进的3D扩散模型整合场景、物体和指令信息，并通过双引导自展开蒸馏机制提升效率和空间准确性。",
+      "findings": "在LayoutVLM基准测试中，LaviGen的物理合理性比现有技术高19%，计算速度快65%，实现了优越的3D布局生成性能。"
+    }
+  },
+  {
+    "id": "2604.15948",
+    "title": "From Competition to Coopetition: Coopetitive Training-Free Image Editing Based on Text Guidance",
+    "abstract": "Text-guided image editing, a pivotal task in modern multimedia content creation, has seen remarkable progress with training-free methods that eliminate the need for additional optimization. Despite recent progress, existing methods are typically constrained by a competitive paradigm in which the editing and reconstruction branches are independently driven by their respective objectives to maximize alignment with target and source prompts. The adversarial strategy causes semantic conflicts and unpredictable outcomes due to the lack of coordination between branches. To overcome these issues, we propose Coopetitive Training-Free Image Editing (CoEdit), a novel zero-shot framework that transforms attention control from competition to coopetitive negotiation, achieving editing harmony across spatial and temporal dimensions. Spatially, CoEdit introduces Dual-Entropy Attention Manipulation, which quantifies directional entropic interactions between branches to reformulate attention control as a harmony-maximization problem, eventually improving the localization of editable and preservable regions. Temporally, we present Entropic Latent Refinement mechanism to dynamically adjust latent representations over time, minimizing accumulated editing errors and ensuring consistent semantic transitions throughout the denoising trajectory. Additionally, we propose the Fidelity-Constrained Editing Score, a composite metric that jointly evaluates semantic editing and background fidelity. Extensive experiments on standard benchmarks demonstrate that CoEdit achieves superior performance in both editing quality and structural preservation, enhancing multimedia information utilization by enabling more effective interaction between visual and textual modalities. The code will be available at https://github.com/JinhaoShen/CoEdit.",
+    "authors": [
+      "Jinhao Shen",
+      "Haoqian Du",
+      "Xulu Zhang",
+      "Xiao-Yong Wei",
+      "Qing Li"
+    ],
+    "published": "2026-04-17",
+    "updated": "2026-04-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.15948.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.15948",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "从竞争到竞合：基于文本引导的无需训练的竞合式图像编辑",
+      "core_contribution": "提出CoEdit框架，通过竞合式注意力控制实现空间和时间维度的编辑和谐，显著提升图像编辑质量和结构保持能力。",
+      "method": "1. 空间上引入双熵注意力操纵，通过量化分支间方向性熵交互将注意力控制重构为和谐最大化问题；2. 时间上采用熵潜在细化机制动态调整潜在表示；3. 提出保真度约束编辑评分联合评估语义编辑和背景保真度。",
+      "findings": "在标准基准测试中，CoEdit在编辑质量和结构保持方面均表现优异，通过增强视觉与文本模态的交互提升了多媒体信息利用效率。"
+    }
+  },
+  {
+    "id": "2604.15917",
+    "title": "Making Image Editing Easier via Adaptive Task Reformulation with Agentic Executions",
+    "abstract": "Instruction guided image editing has advanced substantially with recent generative models, yet it still fails to produce reliable results across many seemingly simple cases. We observe that a large portion of these failures stem not from insufficient model capacity, but from poorly formulated editing tasks, such as those involving small targets, implicit spatial relations, or under-specified instructions. In this work, we frame image editing failures as a task formulation problem and propose an adaptive task reformulation framework that improves editing performance without modifying the underlying model. Our key idea is to transform the original image-instruction pair into a sequence of operations that are dynamically determined and executed by a MLLM agent through analysis, routing, reformulation, and feedback-driven refinement. Experiments on multiple benchmarks, including ImgEdit, PICA, and RePlan, across diverse editing backbones such as Qwen Image Edit and Nano Banana, show consistent improvements, with especially large gains on challenging cases. These results suggest that task reformulation is a critical but underexplored factor, and that substantial gains can be achieved by better matching editing tasks to the effective operating regime of existing models.",
+    "authors": [
+      "Bo Zhao",
+      "Kairui Guo",
+      "Runnan Du",
+      "Haiyang Sun",
+      "Pengshan Wang",
+      "Huan Yang",
+      "Kun Gai",
+      "Yixin Cao",
+      "Wei Ji"
+    ],
+    "published": "2026-04-17",
+    "updated": "2026-04-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.15917.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.15917",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过自适应任务重构与智能执行简化图像编辑",
+      "core_contribution": "提出一种自适应任务重构框架，通过将原始图像编辑任务动态转化为适合现有模型执行的序列操作，显著提升编辑成功率，而无需修改底层模型。",
+      "method": "1. 将图像编辑失败归因于任务表述不当（如目标过小、空间关系隐晦或指令不明确）；2. 设计多模态大语言模型（MLLM）代理，通过分析-路由-重构-反馈循环动态生成可执行操作序列；3. 框架包含任务分析、子任务拆分、指令重写和结果验证四个阶段。",
+      "findings": "在ImgEdit、PICA和RePlan等基准测试中，使用Qwen Image Edit、Nano Banana等不同编辑模型均实现一致性提升，尤其在具有小目标、复杂空间关系等挑战性案例上改进显著（如部分任务成功率提升30%+），证明任务重构是提升现有模型效力的关键因素。"
+    }
+  },
+  {
+    "id": "2604.16114",
+    "title": "Towards In-Context Tone Style Transfer with A Large-Scale Triplet Dataset",
+    "abstract": "Tone style transfer for photo retouching aims to adapt the stylistic tone of the reference image to a given content image. However, the lack of high-quality large-scale triplet datasets with stylized ground truth forces existing methods to rely on self-supervised or proxy objectives, which limits model capability. To mitigate this gap, we design a data construction pipeline to build TST100K, a large-scale dataset of 100,000 content-reference-stylized triplets. At the core of this pipeline, we train a tone style scorer to ensure strict stylistic consistency for each triplet. In addition, existing methods typically extract content and reference features independently and then fuse them in a decoder, which may cause semantic loss and lead to inappropriate color transfer and degraded visual aesthetics. Instead, we propose ICTone, a diffusion-based framework that performs tone transfer in an in-context manner by jointly conditioning on both images, leveraging the semantic priors of generative models for semantic-aware transfer. Reward feedback learning using the tone style scorer is further incorporated to improve stylistic fidelity and visual quality. Experiments demonstrate the effectiveness of TST100K, and ICTone achieves state-of-the-art performance on both quantitative metrics and human evaluations.",
+    "authors": [
+      "Yuhai Deng",
+      "Huimin She",
+      "Wei Shen",
+      "Meng Li",
+      "Ruoxi Wu",
+      "Lunxi Yuan",
+      "Xiang Li"
+    ],
+    "published": "2026-04-17",
+    "updated": "2026-04-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.16114.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.16114",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "基于大规模三元组数据集的上下文色调风格迁移研究",
+      "core_contribution": "构建了包含10万组内容-参考-风格化三元组的大规模数据集TST100K，并提出基于扩散模型的上下文色调迁移框架ICTone，实现了语义感知的风格迁移。",
+      "method": "1. 设计数据构建流程，通过训练色调风格评分器确保三元组风格一致性；2. 提出ICTone框架，采用扩散模型联合编码内容与参考图像，利用生成模型的语义先验进行上下文条件迁移；3. 结合评分器的奖励反馈学习提升风格保真度与视觉质量。",
+      "findings": "实验表明TST100K数据集有效性显著，ICTone在定量指标和人工评估中均达到最先进性能，解决了传统方法因独立特征提取导致的语义丢失、色彩迁移不当等问题。"
+    }
+  }
+]
