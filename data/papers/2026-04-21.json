@@ -1,0 +1,141 @@
+[
+  {
+    "id": "2604.17054",
+    "title": "mEOL: Training-Free Instruction-Guided Multimodal Embedder for Vector Graphics and Image Retrieval",
+    "abstract": "Scalable Vector Graphics (SVGs) function both as visual images and as structured code that encode rich geometric and layout information, yet most methods rasterize them and discard this symbolic organization. At the same time, recent sentence embedding methods produce strong text representations but do not naturally extend to visual or structured modalities. We propose a training-free, instruction-guided multimodal embedding framework that uses a Multimodal Large Language Model (MLLM) to map text, raster images, and SVG code into an aligned embedding space. We control the direction of embeddings through modality-specific instructions and structural SVG cues, eliminating the need for learned projection heads or contrastive training. Our method has two key components: (1) Multimodal Explicit One-word Limitation (mEOL), which instructs the MLLM to summarize any multimodal input into a single token whose hidden state serves as a compact semantic embedding. (2) A semantic SVG rewriting module that assigns meaningful identifiers and simplifies nested SVG elements through visual reasoning over the rendered image, exposing geometric and relational cues hidden in raw code. Using a repurposed VGBench, we build the first text-to-SVG retrieval benchmark and show that our training-free embeddings outperform encoder-based and training-based multimodal baselines. These results highlight prompt-level control as an effective alternative to parameter-level training for structure-aware multimodal retrieval. Project page: https://scene-the-ella.github.io/meol/",
+    "authors": [
+      "Kyeong Seon Kim",
+      "Baek Seong-Eun",
+      "Lee Jung-Mok",
+      "Tae-Hyun Oh"
+    ],
+    "published": "2026-04-18",
+    "updated": "2026-04-18",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.17054.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.17054",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "mEOL：无需训练的指令引导多模态嵌入器用于矢量图形与图像检索",
+      "core_contribution": "提出一种无需训练的多模态嵌入框架，通过多模态大语言模型将文本、光栅图像和SVG代码映射到对齐的嵌入空间，实现了结构感知的多模态检索。",
+      "method": "1. 采用多模态显式单字限制（mEOL）技术，指导MLLM将多模态输入总结为单个令牌的隐藏状态作为紧凑语义嵌入；2. 设计语义SVG重写模块，通过视觉推理为SVG元素分配有意义的标识符并简化嵌套结构，揭示原始代码中的几何与关系线索。",
+      "findings": "在重构的VGBench上构建首个文本-SVG检索基准，实验表明该训练免费嵌入方法优于基于编码器和训练的多模态基线，验证了提示级控制对结构感知检索的有效性。"
+    }
+  },
+  {
+    "id": "2604.18575",
+    "title": "ReCap: Lightweight Referential Grounding for Coherent Story Visualization",
+    "abstract": "Story Visualization aims to generate a sequence of images that faithfully depicts a textual narrative that preserve character identity, spatial configuration, and stylistic coherence as the narratives unfold. Maintaining such cross-frame consistency has traditionally relied on explicit memory banks, architectural expansion, or auxiliary language models, resulting in substantial parameter growth and inference overhead. We introduce ReCap, a lightweight consistency framework that improves character stability and visual fidelity without modifying the base diffusion backbone. ReCap's CORE (COnditional frame REferencing) module treats anaphors, in our case pronouns, as visual anchors, activating only when characters are referred to by a pronoun and conditioning on the preceding frame to propagate visual identity. This selective design avoids unconditional cross-frame conditioning and introduces only 149K additional parameters, a fraction of the cost of memory-bank and LLM-augmented approaches. To further stabilize identity, we incorporate SemDrift (Guided Semantic Drift Correction) applied only during training. When text is vague or referential, the denoiser lacks a visual anchor for identity-defining attributes, causing character appearance to drift across frames, SemDrift corrects this by aligning denoiser representations with pretrained DINOv3 visual embeddings, enforcing semantic identity stability at zero inference cost. ReCap outperforms previous state-of-the-art, StoryGPT-V, on the two main benchmarks for story visualization by 2.63% Character-Accuracy on FlintstonesSV and by 5.65% on PororoSV, establishing a new state-of-the-art character consistency on both benchmarks. Furthermore, we extend story visualization to human-centric narratives derived from real films, demonstrating the capability of ReCap beyond stylized cartoon domains.",
+    "authors": [
+      "Aditya Arora",
+      "Akshita Gupta",
+      "Pau Rodriguez",
+      "Marcus Rohrbach"
+    ],
+    "published": "2026-04-20",
+    "updated": "2026-04-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.18575.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.18575",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ReCap：用于连贯故事可视化的轻量级指代基础",
+      "core_contribution": "提出ReCap框架，通过轻量级的条件帧引用和语义漂移校正技术，显著提升故事可视化中角色一致性和视觉保真度，无需修改基础扩散模型结构。",
+      "method": "1. 设计CORE模块，仅在代词指代角色时激活跨帧条件引用，减少参数开销（仅增加149K参数）；2. 引入SemDrift技术，在训练阶段通过DINOv3视觉嵌入对齐校正语义漂移，确保角色外观一致性且不影响推理效率。",
+      "findings": "在FlintstonesSV和PororoSV基准测试中，ReCap分别以2.63%和5.65%的优势超越此前最优模型StoryGPT-V，并在真实电影叙事数据上验证了其跨领域适用性。"
+    }
+  },
+  {
+    "id": "2604.18258",
+    "title": "Long-Text-to-Image Generation via Compositional Prompt Decomposition",
+    "abstract": "While modern text-to-image (T2I) models excel at generating images from intricate prompts, they struggle to capture the key details when the inputs are descriptive paragraphs. This limitation stems from the prevalence of concise captions that shape their training distributions. Existing methods attempt to bridge this gap by either fine-tuning T2I models on long prompts, which generalizes poorly to longer lengths; or by projecting the oversize inputs into normal-prompt space and compromising fidelity. We propose Prompt Refraction for Intricate Scene Modeling (PRISM), a compositional approach that enables pre-trained T2I models to process long sequence inputs. PRISM uses a lightweight module to extract constituent representations from the long prompts. The T2I model makes independent noise predictions for each component, and their outputs are merged into a single denoising step using energy-based conjunction. We evaluate PRISM across a wide range of model architectures, showing comparable performances to models fine-tuned on the same training data. Furthermore, PRISM demonstrates superior generalization, outperforming baseline models by 7.4% on prompts over 500 tokens in a challenging public benchmark.",
+    "authors": [
+      "Jen-Yuan Huang",
+      "Tong Lin",
+      "Yilun Du"
+    ],
+    "published": "2026-04-20",
+    "updated": "2026-04-20",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.18258.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.18258",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过组合式提示分解实现长文本到图像生成",
+      "core_contribution": "提出PRISM方法，使预训练文本到图像模型能够处理长序列输入，同时保持生成质量和泛化能力。",
+      "method": "PRISM采用轻量级模块从长提示中提取组成表示，让文本到图像模型为每个组件独立预测噪声，并通过基于能量的联合方式将输出合并到单个去噪步骤中。",
+      "findings": "PRISM在多种模型架构上表现优异，性能与相同训练数据微调的模型相当；在超过500个token的提示上，PRISM比基线模型高出7.4%。"
+    }
+  },
+  {
+    "id": "2604.18168",
+    "title": "Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation",
+    "abstract": "Few-step generation has been a long-standing goal, with recent one-step generation methods exemplified by MeanFlow achieving remarkable results. Existing research on MeanFlow primarily focuses on class-to-image generation. However, an intuitive yet unexplored direction is to extend the condition from fixed class labels to flexible text inputs, enabling richer content creation. Compared to the limited class labels, text conditions pose greater challenges to the model's understanding capability, necessitating the effective integration of powerful text encoders into the MeanFlow framework. Surprisingly, although incorporating text conditions appears straightforward, we find that integrating powerful LLM-based text encoders using conventional training strategies results in unsatisfactory performance. To uncover the underlying cause, we conduct detailed analyses and reveal that, due to the extremely limited number of refinement steps in the MeanFlow generation, such as only one step, the text feature representations are required to possess sufficiently high discriminability. This also explains why discrete and easily distinguishable class features perform well within the MeanFlow framework. Guided by these insights, we leverage a powerful LLM-based text encoder validated to possess the required semantic properties and adapt the MeanFlow generation process to this framework, resulting in efficient text-conditioned synthesis for the first time. Furthermore, we validate our approach on the widely used diffusion model, demonstrating significant generation performance improvements. We hope this work provides a general and practical reference for future research on text-conditioned MeanFlow generation. The code is available at https://github.com/AMAP-ML/EMF.",
+    "authors": [
+      "Chenxi Zhao",
+      "Chen Zhu",
+      "Xiaokun Feng",
+      "Aiming Hao",
+      "Jiashu Zhu",
+      "Jiachen Lei",
+      "Jiahong Wu",
+      "Xiangxiang Chu",
+      "Jufeng Yang"
+    ],
+    "published": "2026-04-20",
+    "updated": "2026-04-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.18168.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.18168",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "从类别标签到文本的判别性文本表示：扩展一步图像生成",
+      "core_contribution": "将MeanFlow框架从基于类别标签的图像生成扩展到基于文本条件的图像生成，并提出判别性文本表示方法以解决传统训练策略在一步生成中的性能不足问题。",
+      "method": "通过分析发现，一步生成要求文本特征具有高度判别性，因此采用基于LLM的强大文本编码器，并调整MeanFlow生成过程以适应文本条件。该方法还在扩散模型上进行了验证。",
+      "findings": "实验表明，所提出的方法首次实现了高效的文本条件合成，并在扩散模型上显著提升了生成性能。判别性文本表示是解决一步生成中文本条件集成问题的关键。"
+    }
+  },
+  {
+    "id": "2604.17850",
+    "title": "UniCSG: Unified High-Fidelity Content-Constrained Style-Driven Generation via Staged Semantic and Frequency Disentanglement",
+    "abstract": "Style transfer must match a target style while preserving content semantics. DiT-based diffusion models often suffer from content-style entanglement, leading to reference-content leakage and unstable generation. We present UniCSG, a unified framework for content-constrained, style-driven generation in both text-guided and reference-guided settings. UniCSG employs staged training: (i) a latent-space semantic disentanglement stage that combines low-frequency preprocessing with conditioning corruption to encourage content-style separation, and (ii) a latent-space frequency-aware detail reconstruction stage that refines details via multi-scale frequency supervision. We further incorporate pixel-space reward learning to align latent objectives with perceptual quality after decoding. Experiments demonstrate improved content faithfulness, style alignment, and robustness in both settings.",
+    "authors": [
+      "Jingwei Yang",
+      "Ruoxi Wu",
+      "Wei Shen",
+      "Meng Li",
+      "Yulong Liu",
+      "Huimin She",
+      "Lunxi Yuan"
+    ],
+    "published": "2026-04-20",
+    "updated": "2026-04-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.17850.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.17850",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "UniCSG：通过分阶段语义与频率解耦实现高保真内容约束的风格驱动统一生成框架",
+      "core_contribution": "提出UniCSG框架，通过分阶段解耦语义和频率，解决了基于DiT的扩散模型中内容与风格纠缠的问题，实现了文本引导和参考引导两种设置下的高质量风格迁移。",
+      "method": "1. 采用分阶段训练策略：第一阶段通过低频预处理和条件破坏实现潜在空间的语义解耦，促进内容与风格分离；第二阶段通过多尺度频率监督的潜在空间频率感知细节重建阶段优化细节。2. 引入像素空间奖励学习，使潜在目标与解码后的感知质量对齐。",
+      "findings": "实验表明，UniCSG在文本引导和参考引导两种设置下均显著提升了内容忠实度、风格对齐性和生成鲁棒性，有效减少了参考内容泄漏和不稳定生成问题。"
+    }
+  }
+]
