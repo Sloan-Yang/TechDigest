@@ -1,0 +1,147 @@
+[
+  {
+    "id": "2604.19632",
+    "title": "CreatiParser: Generative Image Parsing of Raster Graphic Designs into Editable Layers",
+    "abstract": "Graphic design images consist of multiple editable layers, such as text, background, and decorative elements, while most generative models produce rasterized outputs without explicit layer structures, limiting downstream editing. Existing graphic design parsing methods typically rely on multi-stage pipelines combining layout prediction, matting, and inpainting, which suffer from error accumulation and limited controllability. We propose a hybrid generative framework for raster-to-layer graphic design parsing that decomposes a design image into editable text, background, and sticker layers. Text regions are parsed using a vision-language model into a text rendering protocol, enabling faithful reconstruction and flexible re-editing, while background and sticker layers are generated using a multi-branch diffusion architecture with RGBA support. We further introduce ParserReward and integrate it with Group Relative Policy Optimization to align generation quality with human design preferences. Extensive experiments on two challenging datasets, \\emph{i.e.,} the Parser-40K and Crello datasets, demonstrate superior performance over existing methods, \\emph{eg.,} achieving an overall average improvement of 23.7\\% across all metrics.",
+    "authors": [
+      "Weidong Chen",
+      "Dexiang Hong",
+      "Zhendong Mao",
+      "Yutao Cheng",
+      "Xinyan Liu",
+      "Lei Zhang",
+      "Yongdong Zhang"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.19632.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.19632",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "CreatiParser：将栅格图形设计生成式解析为可编辑图层",
+      "core_contribution": "提出了一种混合生成框架，将设计图像分解为可编辑的文本、背景和贴纸图层，支持高质量重建和灵活编辑。",
+      "method": "1. 使用视觉语言模型解析文本区域并生成文本渲染协议；2. 采用支持RGBA的多分支扩散架构生成背景和贴纸图层；3. 引入ParserReward并结合Group Relative Policy Optimization以对齐人类设计偏好。",
+      "findings": "在两个数据集（Parser-40K和Crello）上的实验表明，该方法在所有指标上平均提升23.7%，显著优于现有方法。"
+    }
+  },
+  {
+    "id": "2604.19406",
+    "title": "HP-Edit: A Human-Preference Post-Training Framework for Image Editing",
+    "abstract": "Common image editing tasks typically adopt powerful generative diffusion models as the leading paradigm for real-world content editing. Meanwhile, although reinforcement learning (RL) methods such as Diffusion-DPO and Flow-GRPO have further improved generation quality, efficiently applying Reinforcement Learning from Human Feedback (RLHF) to diffusion-based editing remains largely unexplored, due to a lack of scalable human-preference datasets and frameworks tailored to diverse editing needs. To fill this gap, we propose HP-Edit, a post-training framework for Human Preference-aligned Editing, and introduce RealPref-50K, a real-world dataset across eight common tasks and balancing common object editing. Specifically, HP-Edit leverages a small amount of human-preference scoring data and a pretrained visual large language model (VLM) to develop HP-Scorer--an automatic, human preference-aligned evaluator. We then use HP-Scorer both to efficiently build a scalable preference dataset and to serve as the reward function for post-training the editing model. We also introduce RealPref-Bench, a benchmark for evaluating real-world editing performance. Extensive experiments demonstrate that our approach significantly enhances models such as Qwen-Image-Edit-2509, aligning their outputs more closely with human preference.",
+    "authors": [
+      "Fan Li",
+      "Chonghuinan Wang",
+      "Lina Lei",
+      "Yuping Qiu",
+      "Jiaqi Xu",
+      "Jiaxiu Jiang",
+      "Xinran Qin",
+      "Zhikai Chen",
+      "Fenglong Song",
+      "Zhixin Wang",
+      "Renjing Pei",
+      "Wangmeng Zuo"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.19406.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.19406",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "HP-Edit：基于人类偏好的图像编辑后训练框架",
+      "core_contribution": "提出HP-Edit框架和RealPref-50K数据集，通过人类偏好对齐的自动评估器（HP-Scorer）提升扩散模型在图像编辑任务中的表现。",
+      "method": "1. 利用少量人类偏好评分数据和预训练视觉大模型（VLM）开发自动评估器HP-Scorer；\n2. 使用HP-Scorer构建可扩展的偏好数据集并作为奖励函数对编辑模型进行后训练；\n3. 引入RealPref-Bench基准评估真实场景编辑性能。",
+      "findings": "实验表明，HP-Edit显著提升了Qwen-Image-Edit-2509等模型的输出质量，使其更符合人类偏好。"
+    }
+  },
+  {
+    "id": "2604.19234",
+    "title": "Learning to Credit the Right Steps: Objective-aware Process Optimization for Visual Generation",
+    "abstract": "Reinforcement learning, particularly Group Relative Policy Optimization (GRPO), has emerged as an effective framework for post-training visual generative models with human preference signals. However, its effectiveness is fundamentally limited by coarse reward credit assignment. In modern visual generation, multiple reward models are often used to capture heterogeneous objectives, such as visual quality, motion consistency, and text alignment. Existing GRPO pipelines typically collapse these rewards into a single static scalar and propagate it uniformly across the entire diffusion trajectory. This design ignores the stage-specific roles of different denoising steps and produces mistimed or incompatible optimization signals. To address this issue, we propose Objective-aware Trajectory Credit Assignment (OTCA), a structured framework for fine-grained GRPO training. OTCA consists of two key components. Trajectory-Level Credit Decomposition estimates the relative importance of different denoising steps. Multi-Objective Credit Allocation adaptively weights and combines multiple reward signals throughout the denoising process. By jointly modeling temporal credit and objective-level credit, OTCA converts coarse reward supervision into a structured, timestep-aware training signal that better matches the iterative nature of diffusion-based generation. Extensive experiments show that OTCA consistently improves both image and video generation quality across evaluation metrics.",
+    "authors": [
+      "Rui Li",
+      "Ke Hao",
+      "Yuanzhi Liang",
+      "Haibin Huang",
+      "Chi Zhang",
+      " YunGu",
+      "XueLong Li"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.19234.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.19234",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "学习正确归功步骤：面向视觉生成的客观感知过程优化",
+      "core_contribution": "提出了Objective-aware Trajectory Credit Assignment (OTCA)框架，通过细粒度的奖励分配优化视觉生成模型的训练过程。",
+      "method": "OTCA框架包含两个关键组件：轨迹级信用分解（估计不同去噪步骤的相对重要性）和多目标信用分配（自适应加权和组合多个奖励信号）。该方法通过联合建模时间信用和目标级信用，将粗粒度的奖励监督转化为结构化的、时间步感知的训练信号。",
+      "findings": "实验表明，OTCA在图像和视频生成任务中均能显著提升生成质量，并在多个评估指标上表现优于现有方法。"
+    }
+  },
+  {
+    "id": "2604.19141",
+    "title": "Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation",
+    "abstract": "Diffusion- and flow-based models usually allocate compute uniformly across space, updating all patches with the same timestep and number of function evaluations. While convenient, this ignores the heterogeneity of natural images: some regions are easy to denoise, whereas others benefit from more refinement or additional context. Motivated by this, we explore patch-level noise scales for image synthesis. We find that naively varying timesteps across image tokens performs poorly, as it exposes the model to overly informative training states that do not occur at inference. We therefore introduce a timestep sampler that explicitly controls the maximum patch-level information available during training, and show that moving from global to patch-level timesteps already improves image generation over standard baselines. By further augmenting the model with a lightweight per-patch difficulty head, we enable adaptive samplers that allocate compute dynamically where it is most needed. Combined with noise levels varying over both space and diffusion time, this yields Patch Forcing (PF), a framework that advances easier regions earlier so they can provide context for harder ones. PF achieves superior results on class-conditional ImageNet, remains orthogonal to representation alignment and guidance methods, and scales to text-to-image synthesis. Our results suggest that patch-level denoising schedules provide a promising foundation for adaptive image generation.",
+    "authors": [
+      "Johannes Schusterbauer",
+      "Ming Gui",
+      "Yusong Li",
+      "Pingchuan Ma",
+      "Felix Krause",
+      "Björn Ommer"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.19141.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.19141",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "去噪的快与慢：面向图像生成的难度感知自适应采样",
+      "core_contribution": "提出了一种基于补丁级别的自适应采样框架（Patch Forcing, PF），通过动态分配计算资源到图像中难度较高的区域，提升了图像生成的质量和效率。",
+      "method": "1. 通过分析补丁级别的噪声尺度，发现简单地跨图像标记变化时间步会导致训练与推理不一致。2. 引入一个时间步采样器，明确控制训练期间补丁级别的最大信息量。3. 进一步为模型配备轻量级的每个补丁难度头，实现动态计算资源分配。4. 结合空间和扩散时间上变化的噪声水平，提出Patch Forcing框架，使简单区域提前生成以提供上下文支持困难区域。",
+      "findings": "1. Patch Forcing在类条件ImageNet上取得了优于标准基线的生成效果。2. 该方法与表示对齐和引导方法正交，可扩展到文本到图像合成任务。3. 实验结果表明，补丁级别的去噪调度为自适应图像生成提供了有前景的基础。"
+    }
+  },
+  {
+    "id": "2604.17500",
+    "title": "Edit Fidelity Field: Semantics-Aware Region Isolation for Training-Free Scene Text Editing",
+    "abstract": "Scene text editing (STE) has achieved remarkable progress in accurately rendering target text through diffusion-based methods. However, we identify a critical yet overlooked problem: edit spillover -- when editing a target text region, existing methods inadvertently modify non-target regions, particularly neighboring text. Through systematic evaluation on 50 real-world scenes across four categories, we reveal that state-of-the-art diffusion editing models exhibit a spillover rate of 94%, meaning nearly all non-target text regions are altered during editing. To address this, we propose the Edit Fidelity Field (EFF), a semantics-aware continuous field that controls per-pixel editing fidelity. Unlike binary masks, EFF leverages OCR-detected text regions to construct a four-zone field: Edit Core (fully editable), Transition Zone (smooth decay), Protected Zone (non-target text, explicitly locked), and Background (strictly preserved). EFF operates as a training-free, model-agnostic post-processing module applicable to any diffusion-based STE method. We further propose per-region spillover quantification, a novel evaluation protocol that measures edit leakage at each non-target text region individually. Experiments demonstrate that EFF reduces spillover rate from 94% to 25% while improving non-target region preservation by +91.4 dB PSNR.",
+    "authors": [
+      "Guandong Li",
+      "Mengxia Ye"
+    ],
+    "published": "2026-04-19",
+    "updated": "2026-04-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.17500.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.17500",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "编辑保真场：基于语义感知的区域隔离实现免训练的场景文本编辑",
+      "core_contribution": "提出编辑保真场（EFF）解决场景文本编辑中的编辑溢出问题，显著降低非目标文本区域的误修改率。",
+      "method": "通过OCR检测的文本区域构建四区连续场（编辑核心区、过渡区、保护区和背景区），以像素级控制编辑保真度；作为免训练、模型无关的后处理模块，适用于任何基于扩散的STE方法。",
+      "findings": "EFF将编辑溢出率从94%降至25%，非目标区域保留质量提升+91.4 dB PSNR；提出的逐区域溢出量化协议可精准评估编辑泄漏。"
+    }
+  }
+]
