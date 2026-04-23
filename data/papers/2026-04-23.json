@@ -1,0 +1,203 @@
+[
+  {
+    "id": "2604.20730",
+    "title": "Render-in-the-Loop: Vector Graphics Generation via Visual Self-Feedback",
+    "abstract": "Multimodal Large Language Models (MLLMs) have shown promising capabilities in generating Scalable Vector Graphics (SVG) via direct code synthesis. However, existing paradigms typically adopt an open-loop \"blind drawing\" approach, where models generate symbolic code sequences without perceiving intermediate visual outcomes. This methodology severely underutilizes the powerful visual priors embedded in MLLMs vision encoders, treating SVG generation as a disjointed textual sequence modeling task rather than an integrated visuo-spatial one. Consequently, models struggle to reason about partial canvas states and implicit occlusion relationships, which are visually explicit but textually ambiguous. To bridge this gap, we propose Render-in-the-Loop, a novel generation paradigm that reformulates SVG synthesis as a step-wise, visual-context-aware process. By rendering intermediate code states into a cumulative canvas, the model explicitly observes the evolving visual context at each step, leveraging on-the-fly feedback to guide subsequent generation. However, we demonstrate that applying this visual loop naively to off-the-shelf models is suboptimal due to their inability to leverage incremental visual-code mappings. To address this, we first utilize fine-grained path decomposition to construct dense multi-step visual trajectories, and then introduce a Visual Self-Feedback (VSF) training strategy to condition the next primitive generation on intermediate visual states. Furthermore, a Render-and-Verify (RaV) inference mechanism is proposed to effectively filter degenerate and redundant primitives. Our framework, instantiated on a multimodal foundation model, outperforms strong open-weight baselines on the standard MMSVGBench. This result highlights the remarkable data efficiency and generalization capability of our Render-in-the-Loop paradigm for both Text-to-SVG and Image-to-SVG tasks.",
+    "authors": [
+      "Guotao Liang",
+      "Zhangcheng Wang",
+      "Juncheng Hu",
+      "Haitao Zhou",
+      "Ziteng Xue",
+      "Jing Zhang",
+      "Dong Xu",
+      "Qian Yu"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20730.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20730",
+    "primary_category": "cs.CV",
+    "score": 95,
+    "summary": {
+      "title_zh": "渲染循环中的矢量图形生成：通过视觉自反馈的方法",
+      "core_contribution": "提出了一种名为Render-in-the-Loop的新范式，通过视觉自反馈机制，将SVG生成转化为逐步、视觉上下文感知的过程，显著提升了矢量图形生成的性能。",
+      "method": "1. 通过渲染中间代码状态到累积画布，模型在每一步都能观察到演变的视觉上下文，利用即时反馈指导后续生成。2. 采用细粒度路径分解构建密集的多步视觉轨迹，并引入视觉自反馈（VSF）训练策略，使下一图元生成依赖于中间视觉状态。3. 提出Render-and-Verify（RaV）推理机制，有效过滤退化和冗余的图元。",
+      "findings": "在标准MMSVGBench上，该方法优于现有的开放权重基线，展示了在Text-to-SVG和Image-to-SVG任务中显著的数据效率和泛化能力。"
+    }
+  },
+  {
+    "id": "2604.19954",
+    "title": "Camera Control for Text-to-Image Generation via Learning Viewpoint Tokens",
+    "abstract": "Current text-to-image models struggle to provide precise camera control using natural language alone. In this work, we present a framework for precise camera control with global scene understanding in text-to-image generation by learning parametric camera tokens. We fine-tune image generation models for viewpoint-conditioned text-to-image generation on a curated dataset that combines 3D-rendered images for geometric supervision and photorealistic augmentations for appearance and background diversity. Qualitative and quantitative experiments demonstrate that our method achieves state-of-the-art accuracy while preserving image quality and prompt fidelity. Unlike prior methods that overfit to object-specific appearance correlations, our viewpoint tokens learn factorized geometric representations that transfer to unseen object categories. Our work shows that text-vision latent spaces can be endowed with explicit 3D camera structure, offering a pathway toward geometrically-aware prompts for text-to-image generation. Project page: https://randdl.github.io/viewtoken_control/",
+    "authors": [
+      "Xinxuan Lu",
+      "Charless Fowlkes",
+      "Alexander C. Berg"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.19954.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.19954",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "通过学习视角标记实现文本到图像生成的相机控制",
+      "core_contribution": "提出了一种通过学习参数化相机标记实现精确相机控制的框架，解决了现有文本到图像模型难以通过自然语言精确控制相机视角的问题。",
+      "method": "该方法在精心策划的数据集上对图像生成模型进行微调，该数据集结合了用于几何监督的3D渲染图像和用于外观和背景多样性的照片级增强。通过这种方式，模型能够学习到分解的几何表示，从而实现精确的相机控制。",
+      "findings": "实验结果表明，该方法在保持图像质量和提示保真度的同时，达到了最先进的准确性。与之前的方法不同，该方法学习的视角标记能够泛化到未见过的物体类别，证明了文本-视觉潜在空间可以被赋予显式的3D相机结构。"
+    }
+  },
+  {
+    "id": "2604.19858",
+    "title": "Wan-Image: Pushing the Boundaries of Generative Visual Intelligence",
+    "abstract": "We present Wan-Image, a unified visual generation system explicitly engineered to paradigm-shift image generation models from casual synthesizers into professional-grade productivity tools. While contemporary diffusion models excel at aesthetic generation, they frequently encounter critical bottlenecks in rigorous design workflows that demand absolute controllability, complex typography rendering, and strict identity preservation. To address these challenges, Wan-Image features a natively unified multi-modal architecture by synergizing the cognitive capabilities of large language models with the high-fidelity pixel synthesis of diffusion transformers, which seamlessly translates highly nuanced user intents into precise visual outputs. It is fundamentally powered by large-scale multi-modal data scaling, a systematic fine-grained annotation engine, and curated reinforcement learning data to surpass basic instruction following and unlock expert-level professional capabilities. These include ultra-long complex text rendering, hyper-diverse portrait generation, palette-guided generation, multi-subject identity preservation, coherent sequential visual generation, precise multi-modal interactive editing, native alpha-channel generation, and high-efficiency 4K synthesis. Across diverse human evaluations, Wan-Image exceeds Seedream 5.0 Lite and GPT Image 1.5 in overall performance, reaching parity with Nano Banana Pro in challenging tasks. Ultimately, Wan-Image revolutionizes visual content creation across e-commerce, entertainment, education, and personal productivity, redefining the boundaries of professional visual synthesis.",
+    "authors": [
+      "Chaojie Mao",
+      "Chen-Wei Xie",
+      "Chongyang Zhong",
+      "Haoyou Deng",
+      "Jiaxing Zhao",
+      "Jie Xiao",
+      "Jinbo Xing",
+      "Jingfeng Zhang",
+      "Jingren Zhou",
+      "Jingyi Zhang",
+      "Jun Dan",
+      "Kai Zhu",
+      "Kang Zhao",
+      "Keyu Yan",
+      "Minghui Chen",
+      "Pandeng Li",
+      "Shuangle Chen",
+      "Tong Shen",
+      "Yu Liu",
+      "Yue Jiang",
+      "Yulin Pan",
+      "Yuxiang Tuo",
+      "Zeyinzi Jiang",
+      "Zhen Han",
+      "Ang Wang",
+      "Bang Zhang",
+      "Baole Ai",
+      "Bin Wen",
+      "Boang Feng",
+      "Feiwu Yu",
+      "Gang Wang",
+      "Haiming Zhao",
+      "He Kang",
+      "Jianjing Xiang",
+      "Jianyuan Zeng",
+      "Jinkai Wang",
+      "Ke Sun",
+      "Linqian Wu",
+      "Pei Gong",
+      "Pingyu Wu",
+      "Ruiwen Wu",
+      "Tongtong Su",
+      "Wenmeng Zhou",
+      "Wenting Shen",
+      "Wenyuan Yu",
+      "Xianjun Xu",
+      "Xiaoming Huang",
+      "Xiejie Shen",
+      "Xin Xu",
+      "Yan Kou",
+      "Yangyu Lv",
+      "Yifan Zhai",
+      "Yitong Huang",
+      "Yun Zheng",
+      "Yuntao Hong",
+      "Zhicheng Zhang"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.19858.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.19858",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "万图：突破生成式视觉智能的边界",
+      "core_contribution": "Wan-Image通过统一的多模态架构，将大型语言模型的认知能力与扩散变换器的高保真像素合成相结合，显著提升了图像生成模型在专业级工作流程中的可控性和精确性。",
+      "method": "Wan-Image采用了一种原生统一的多模态架构，结合了大型语言模型的认知能力和扩散变换器的高保真像素合成技术。通过大规模多模态数据扩展、系统化的细粒度标注引擎和精选的强化学习数据，该方法能够将用户复杂的意图精确转化为视觉输出。",
+      "findings": "在多样化的人类评估中，Wan-Image在整体性能上超过了Seedream 5.0 Lite和GPT Image 1.5，并在挑战性任务中与Nano Banana Pro持平。该系统在超长复杂文本渲染、超多样化肖像生成、调色板引导生成、多主体身份保持、连贯序列视觉生成、精确多模态交互编辑、原生Alpha通道生成和高效4K合成等方面表现出色。"
+    }
+  },
+  {
+    "id": "2604.20816",
+    "title": "ParetoSlider: Diffusion Models Post-Training for Continuous Reward Control",
+    "abstract": "Reinforcement Learning (RL) post-training has become the standard for aligning generative models with human preferences, yet most methods rely on a single scalar reward. When multiple criteria matter, the prevailing practice of ``early scalarization'' collapses rewards into a fixed weighted sum. This commits the model to a single trade-off point at training time, providing no inference-time control over inherently conflicting goals -- such as prompt adherence versus source fidelity in image editing. We introduce ParetoSlider, a multi-objective RL (MORL) framework that trains a single diffusion model to approximate the entire Pareto front. By training the model with continuously varying preference weights as a conditioning signal, we enable users to navigate optimal trade-offs at inference time without retraining or maintaining multiple checkpoints. We evaluate ParetoSlider across three state-of-the-art flow-matching backbones: SD3.5, FluxKontext, and LTX-2. Our single preference-conditioned model matches or exceeds the performance of baselines trained separately for fixed reward trade-offs, while uniquely providing fine-grained control over competing generative goals.",
+    "authors": [
+      "Shelly Golan",
+      "Michael Finkelson",
+      "Ariel Bereslavsky",
+      "Yotam Nitzan",
+      "Or Patashnik"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20816.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20816",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "ParetoSlider：用于连续奖励控制的扩散模型后训练方法",
+      "core_contribution": "提出ParetoSlider框架，通过多目标强化学习（MORL）使单一扩散模型能够近似整个Pareto前沿，实现推理时对冲突目标（如图像编辑中的提示遵从与源保真度）的连续权衡控制。",
+      "method": "1. 将连续变化的偏好权重作为条件信号训练扩散模型；2. 基于多目标RL框架优化模型，避免早期标量化导致的固定权重问题；3. 支持用户在推理时通过调整权重动态探索最优权衡，无需重新训练或维护多个模型。",
+      "findings": "在SD3.5、FluxKontext和LTX-2三个流匹配骨干模型上的实验表明，单一偏好条件化模型的性能匹配或超越针对固定奖励权衡单独训练的基线模型，同时首次实现了对竞争性生成目标的细粒度控制。"
+    }
+  },
+  {
+    "id": "2604.20796",
+    "title": "LLaDA2.0-Uni: Unifying Multimodal Understanding and Generation with Diffusion Large Language Model",
+    "abstract": "We present LLaDA2.0-Uni, a unified discrete diffusion large language model (dLLM) that supports multimodal understanding and generation within a natively integrated framework. Its architecture combines a fully semantic discrete tokenizer, a MoE-based dLLM backbone, and a diffusion decoder. By discretizing continuous visual inputs via SigLIP-VQ, the model enables block-level masked diffusion for both text and vision inputs within the backbone, while the decoder reconstructs visual tokens into high-fidelity images. Inference efficiency is enhanced beyond parallel decoding through prefix-aware optimizations in the backbone and few-step distillation in the decoder. Supported by carefully curated large-scale data and a tailored multi-stage training pipeline, LLaDA2.0-Uni matches specialized VLMs in multimodal understanding while delivering strong performance in image generation and editing. Its native support for interleaved generation and reasoning establishes a promising and scalable paradigm for next-generation unified foundation models. Codes and models are available at https://github.com/inclusionAI/LLaDA2.0-Uni.",
+    "authors": [
+      "Inclusion AI",
+      "Tiwei Bie",
+      "Haoxing Chen",
+      "Tieyuan Chen",
+      "Zhenglin Cheng",
+      "Long Cui",
+      "Kai Gan",
+      "Zhicheng Huang",
+      "Zhenzhong Lan",
+      "Haoquan Li",
+      "Jianguo Li",
+      "Tao Lin",
+      "Qi Qin",
+      "Hongjun Wang",
+      "Xiaomei Wang",
+      "Haoyuan Wu",
+      "Yi Xin",
+      "Junbo Zhao"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20796.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20796",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "LLaDA2.0-Uni：基于扩散大语言模型的多模态理解与生成统一框架",
+      "core_contribution": "提出首个支持多模态理解与生成的离散扩散大语言模型（dLLM），通过原生集成框架实现跨模态推理与生成任务的高效统一。",
+      "method": "1. 采用SigLIP-VQ将连续视觉输入离散化，结合全语义分词器和MoE架构的dLLM主干网络\n2. 在主干中实现文本与视觉输入的块级掩码扩散，通过扩散解码器重建高保真图像\n3. 通过主干前缀感知优化和解码器少步蒸馏提升推理效率\n4. 基于大规模精选数据和多阶段训练流程优化模型性能",
+      "findings": "1. 在多模态理解任务上媲美专用视觉语言模型（VLM）\n2. 在图像生成与编辑任务中展现强大性能\n3. 原生支持交错式生成与推理，为下一代统一基础模型提供可扩展范式"
+    }
+  }
+]
