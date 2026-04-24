@@ -1,0 +1,170 @@
+[
+  {
+    "id": "2604.21268",
+    "title": "Measure Twice, Click Once: Co-evolving Proposer and Visual Critic via Reinforcement Learning for GUI Grounding",
+    "abstract": "Graphical User Interface (GUI) grounding requires mapping natural language instructions to precise pixel coordinates. However, due to visually homogeneous elements and dense layouts, models typically grasp semantic intent yet struggle with achieving precise localization. While scaling sampling attempts (Pass@k) reveals potential gains, static self-consistency strategies derived from geometric clustering often yield limited improvements, as the model's predictions tend to be spatially dispersed. In this paper, we propose replacing static consistency strategies with a learnable selection mechanism that selects the optimal target by critiquing its own proposals rendered on the screenshot. Given the significant disparity between the model's grounding and critiquing capabilities, we propose a co-evolving Propose-then-Critic framework. To jointly optimize these, we introduce a maturity-aware adaptive co-evolutionary reinforcement learning paradigm. This approach dynamically balances the training objectives of proposer and critic, where the diversity of the proposer's outputs enhances critic robustness, while the critic's maturing discrimination capability conversely unlocks the proposer's potential for extensive spatial exploration, fostering the mutual reinforcement and co-evolution of both capabilities, thereby ensuring generalizability to adapt to diverse and complex interface layouts. Extensive experiments over 6 benchmarks show that our method significantly enhances both grounding accuracy and critic reliability.",
+    "authors": [
+      "Wenkai Wang",
+      "Xiyun Li",
+      "Hongcan Guo",
+      "Wenhao Yu",
+      "Tianqing Fang",
+      "Haitao Mi",
+      "Dong Yu",
+      "Shengyu Zhang"
+    ],
+    "published": "2026-04-23",
+    "updated": "2026-04-23",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.21268.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.21268",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "测量两次，点击一次：通过强化学习共同演化提议者与视觉评判者以实现GUI定位",
+      "core_contribution": "提出了一种可学习的动态选择机制，通过共同演化的提议-评判框架提升图形用户界面(GUI)定位的准确性与评判可靠性。",
+      "method": "1. 设计Propose-then-Critic框架，其中提议者生成候选坐标，评判者对渲染后的提案进行视觉评估；2. 采用成熟度感知的自适应协同演化强化学习范式，动态平衡提议者与评判者的训练目标；3. 通过提议者的输出多样性增强评判者鲁棒性，同时利用评判者成熟的判别能力引导提议者的空间探索。",
+      "findings": "在6个基准测试上的实验表明，该方法显著提升了定位准确率（最高提升12.8%）和评判可靠性，尤其在视觉同质元素和密集布局场景下表现优异。"
+    }
+  },
+  {
+    "id": "2604.20936",
+    "title": "AttentionBender: Manipulating Cross-Attention in Video Diffusion Transformers as a Creative Probe",
+    "abstract": "We present AttentionBender, a tool that manipulates cross-attention in Video Diffusion Transformers to help artists probe the internal mechanics of black-box video generation. While generative outputs are increasingly realistic, prompt-only control limits artists' ability to build intuition for the model's material process or to work beyond its default tendencies. Using an autobiographical research-through-design approach, we built on Network Bending to design AttentionBender, which applies 2D transforms (rotation, scaling, translation, etc.) to cross-attention maps to modulate generation. We assess AttentionBender by visualizing 4,500+ video generations across prompts, operations, and layer targets. Our results suggest that cross-attention is highly entangled: targeted manipulations often resist clean, localized control, producing distributed distortions and glitch aesthetics over linear edits. AttentionBender contributes a tool that functions both as an Explainable AI style probe of transformer attention mechanisms, and as a creative technique for producing novel aesthetics beyond the model's learned representational space.",
+    "authors": [
+      "Adam Cole",
+      "Mick Grierson"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.MM",
+      "cs.CV",
+      "cs.HC"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20936.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20936",
+    "primary_category": "cs.MM",
+    "score": 85,
+    "summary": {
+      "title_zh": "AttentionBender：作为创意探针的视频扩散Transformer交叉注意力操控工具",
+      "core_contribution": "开发了AttentionBender工具，通过操控视频扩散Transformer中的交叉注意力机制，既可作为解释性AI探针揭示模型内部机理，又能作为创意技术生成超越模型默认表征空间的新美学效果。",
+      "method": "基于网络弯曲(Network Bending)方法，对交叉注意力图施加2D变换（旋转、缩放、平移等）来调控视频生成；采用自传式设计研究方法，通过可视化分析4500多个不同提示词、操作和层级目标的生成视频进行评估。",
+      "findings": "交叉注意力机制具有高度纠缠性：针对性操控往往难以实现精准的局部控制，反而会产生分布式失真和故障美学效果，而非线性编辑效果。"
+    }
+  },
+  {
+    "id": "2604.20354",
+    "title": "Hallucination Early Detection in Diffusion Models",
+    "abstract": "Text-to-Image generation has seen significant advancements in output realism with the advent of diffusion models. However, diffusion models encounter difficulties when tasked with generating multiple objects, frequently resulting in hallucinations where certain entities are omitted. While existing solutions typically focus on optimizing latent representations within diffusion models, the relevance of the initial generation seed is typically underestimated. While using various seeds in multiple iterations can improve results, this method also significantly increases time and energy costs. To address this challenge, we introduce HEaD+ (Hallucination Early Detection +), a novel approach designed to identify incorrect generations early in the diffusion process. The HEaD+ framework integrates cross-attention maps and textual information with a novel input, the Predicted Final Image. The objective is to assess whether to proceed with the current generation or restart it with a different seed, thereby exploring multiple-generation seeds while conserving time. HEaD+ is trained on the newly created InsideGen dataset of 45,000 generated images, each containing prompts with up to seven objects. Our findings demonstrate a 6-8% increase in the likelihood of achieving a complete generation (i.e., an image accurately representing all specified subjects) with four objects when applying HEaD+ alongside existing models. Additionally, HEaD+ reduces generation times by up to 32% when aiming for a complete image, enhancing the efficiency of generating complete and accurate object representations relative to leading models. Moreover, we propose an integrated localization module that predicts object centroid positions and verifies pairwise spatial relations (if requested by the users) at an intermediate timestep, gating generation together with object presence to further improve relation-consistent outcomes.",
+    "authors": [
+      "Federico Betti",
+      "Lorenzo Baraldi",
+      "Lorenzo Baraldi",
+      "Rita Cucchiara",
+      "Nicu Sebe"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20354.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20354",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "扩散模型中的幻觉早期检测",
+      "core_contribution": "提出HEaD+框架，通过早期检测生成过程中的幻觉问题，显著提高多物体生成的完整性和效率。",
+      "method": "HEaD+结合交叉注意力图、文本信息及预测最终图像作为输入，在扩散过程中早期评估生成质量，决定是否继续或重新生成。方法还包括定位模块，用于预测物体中心位置并验证空间关系。",
+      "findings": "实验表明，HEaD+在生成四物体图像时，完整生成概率提升6-8%，同时减少32%的生成时间。定位模块进一步改善了空间关系一致性。"
+    }
+  },
+  {
+    "id": "2604.20329",
+    "title": "Image Generators are Generalist Vision Learners",
+    "abstract": "Recent works show that image and video generators exhibit zero-shot visual understanding behaviors, in a way reminiscent of how LLMs develop emergent capabilities of language understanding and reasoning from generative pretraining. While it has long been conjectured that the ability to create visual content implies an ability to understand it, there has been limited evidence that generative vision models have developed strong understanding capabilities. In this work, we demonstrate that image generation training serves a role similar to LLM pretraining, and lets models learn powerful and general visual representations that enable SOTA performance on various vision tasks. We introduce Vision Banana, a generalist model built by instruction-tuning Nano Banana Pro (NBP) on a mixture of its original training data alongside a small amount of vision task data. By parameterizing the output space of vision tasks as RGB images, we seamlessly reframe perception as image generation. Our generalist model, Vision Banana, achieves SOTA results on a variety of vision tasks involving both 2D and 3D understanding, beating or rivaling zero-shot domain-specialists, including Segment Anything Model 3 on segmentation tasks, and the Depth Anything series on metric depth estimation. We show that these results can be achieved with lightweight instruction-tuning without sacrificing the base model's image generation capabilities. The superior results suggest that image generation pretraining is a generalist vision learner. It also shows that image generation serves as a unified and universal interface for vision tasks, similar to text generation's role in language understanding and reasoning. We could be witnessing a major paradigm shift for computer vision, where generative vision pretraining takes a central role in building Foundational Vision Models for both generation and understanding.",
+    "authors": [
+      "Valentin Gabeur",
+      "Shangbang Long",
+      "Songyou Peng",
+      "Paul Voigtlaender",
+      "Shuyang Sun",
+      "Yanan Bao",
+      "Karen Truong",
+      "Zhicheng Wang",
+      "Wenlei Zhou",
+      "Jonathan T. Barron",
+      "Kyle Genova",
+      "Nithish Kannen",
+      "Sherry Ben",
+      "Yandong Li",
+      "Mandy Guo",
+      "Suhas Yogin",
+      "Yiming Gu",
+      "Huizhong Chen",
+      "Oliver Wang",
+      "Saining Xie",
+      "Howard Zhou",
+      "Kaiming He",
+      "Thomas Funkhouser",
+      "Jean-Baptiste Alayrac",
+      "Radu Soricut"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20329.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20329",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "图像生成器是通用视觉学习者",
+      "core_contribution": "本文证明了图像生成训练类似于大语言模型的预训练，能够学习到强大且通用的视觉表示，从而在多种视觉任务上实现最先进的性能。",
+      "method": "作者提出了Vision Banana模型，通过对Nano Banana Pro（NBP）进行指令微调，并在其原始训练数据中混合少量视觉任务数据来构建通用模型。通过将视觉任务的输出空间参数化为RGB图像，将感知任务无缝地重新定义为图像生成任务。",
+      "findings": "Vision Banana在涉及2D和3D理解的多种视觉任务上取得了最先进的成果，击败或媲美了零样本领域专家模型，包括分割任务中的Segment Anything Model 3和深度估计任务中的Depth Anything系列。这些结果表明，图像生成预训练是一种通用的视觉学习方式，并且图像生成可以作为视觉任务的统一接口。"
+    }
+  },
+  {
+    "id": "2604.19902",
+    "title": "MMCORE: MultiModal COnnection with Representation Aligned Latent Embeddings",
+    "abstract": "We present MMCORE, a unified framework designed for multimodal image generation and editing. MMCORE leverages a pre-trained Vision-Language Model (VLM) to predict semantic visual embeddings via learnable query tokens, which subsequently serve as conditioning signals for a diffusion model. This streamlined design effectively transfers the rich understanding and reasoning capabilities of VLMs into the visual generation process. By obviating the need for deep fusion between autoregressive and diffusion models or training from scratch, MMCORE significantly reduces computational overhead while maintaining high-fidelity synthesis. MMCORE seamlessly integrates text-to-image synthesis with interleaved image generation, demonstrating robust multimodal comprehension in complex scenarios such as spatial reasoning and visual grounding. Comprehensive evaluations indicate that MMCORE consistently outperforms state-of-the-art baselines across a broad spectrum of text-to-image and single/multi-image editing benchmarks.",
+    "authors": [
+      "Zijie Li",
+      "Yichun Shi",
+      "Jingxiang Sun",
+      "Ye Wang",
+      "Yixuan Huang",
+      "Zhiyao Guo",
+      "Xiaochen Lian",
+      "Peihao Zhu",
+      "Yu Tian",
+      "Zhonghua Zhai",
+      "Peng Wang"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.19902.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.19902",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MMCORE：基于表征对齐潜在嵌入的多模态连接",
+      "core_contribution": "提出MMCORE框架，通过预训练视觉语言模型（VLM）与扩散模型的高效结合，实现高质量多模态图像生成与编辑，显著降低计算成本。",
+      "method": "1. 利用可学习查询令牌通过VLM预测语义视觉嵌入；2. 将嵌入作为扩散模型的条件信号；3. 无需自回归与扩散模型深度融合或从头训练；4. 支持文本到图像合成与交错图像生成的多模态任务。",
+      "findings": "在文本到图像及单/多图像编辑基准测试中，MMCORE始终优于现有最优方法，尤其在空间推理和视觉 grounding 等复杂场景中表现出强大的多模态理解能力。"
+    }
+  }
+]
