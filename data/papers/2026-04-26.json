@@ -1,0 +1,153 @@
+[
+  {
+    "id": "2604.21008",
+    "title": "Linear Image Generation by Synthesizing Exposure Brackets",
+    "abstract": "The life of a photo begins with photons striking the sensor, whose signals are passed through a sophisticated image signal processing (ISP) pipeline to produce a display-referred image. However, such images are no longer faithful to the incident light, being compressed in dynamic range and stylized by subjective preferences. In contrast, RAW images record direct sensor signals before non-linear tone mapping. After camera response curve correction and demosaicing, they can be converted into linear images, which are scene-referred representations that directly reflect true irradiance and are invariant to sensor-specific factors. Since image sensors have better dynamic range and bit depth, linear images contain richer information than display-referred ones, leaving users more room for editing during post-processing. Despite this advantage, current generative models mainly synthesize display-referred images, which inherently limits downstream editing. In this paper, we address the task of text-to-linear-image generation: synthesizing a high-quality, scene-referred linear image that preserves full dynamic range, conditioned on a text prompt, for professional post-processing. Generating linear images is challenging, as pre-trained VAEs in latent diffusion models struggle to simultaneously preserve extreme highlights and shadows due to the higher dynamic range and bit depth. To this end, we represent a linear image as a sequence of exposure brackets, each capturing a specific portion of the dynamic range, and propose a DiT-based flow-matching architecture for text-conditioned exposure bracket generation. We further demonstrate downstream applications including text-guided linear image editing and structure-conditioned generation via ControlNet.",
+    "authors": [
+      "Yuekun Dai",
+      "Zhoutong Zhang",
+      "Shangchen Zhou",
+      "Nanxuan Zhao"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.21008.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.21008",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "通过合成曝光包围生成线性图像",
+      "core_contribution": "本文首次提出文本到线性图像生成任务，通过将线性图像表示为曝光包围序列，并设计基于DiT的流匹配架构，实现了高动态范围、场景参考的线性图像合成，为专业后期处理提供了更丰富的编辑空间。",
+      "method": "论文将线性图像表示为一系列曝光包围，每个包围捕获动态范围中的特定部分。采用基于扩散变换器（DiT）的流匹配架构，以文本提示为条件生成这些曝光包围序列。通过预训练VAE的潜在空间处理，解决了高动态范围和位深下极端高光和阴影难以同时保留的问题。",
+      "findings": "实验表明，该方法能够生成保留完整动态范围的高质量线性图像，并支持文本引导的线性图像编辑以及通过ControlNet实现结构条件生成，验证了线性图像在下游后期处理中的优势。"
+    }
+  },
+  {
+    "id": "2604.20570",
+    "title": "Exploring Spatial Intelligence from a Generative Perspective",
+    "abstract": "Spatial intelligence is essential for multimodal large language models, yet current benchmarks largely assess it only from an understanding perspective. We ask whether modern generative or unified multimodal models also possess generative spatial intelligence (GSI), the ability to respect and manipulate 3D spatial constraints during image generation, and whether such capability can be measured or improved. We introduce GSI-Bench, the first benchmark designed to quantify GSI through spatially grounded image editing. It consists of two complementary components: GSI-Real, a high-quality real-world dataset built via a 3D-prior-guided generation and filtering pipeline, and GSI-Syn, a large-scale synthetic benchmark with controllable spatial operations and fully automated labeling. Together with a unified evaluation protocol, GSI-Bench enables scalable, model-agnostic assessment of spatial compliance and editing fidelity. Experiments show that fine-tuning unified multimodal models on GSI-Syn yields substantial gains on both synthetic and real tasks and, strikingly, also improves downstream spatial understanding. This provides the first clear evidence that generative training can tangibly strengthen spatial reasoning, establishing a new pathway for advancing spatial intelligence in multimodal models.",
+    "authors": [
+      "Muzhi Zhu",
+      "Shunyao Jiang",
+      "Huanyi Zheng",
+      "Zekai Luo",
+      "Hao Zhong",
+      "Anzhou Li",
+      "Kaijun Wang",
+      "Jintao Rong",
+      "Yang Liu",
+      "Hao Chen",
+      "Tao Lin",
+      "Chunhua Shen"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20570.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20570",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "从生成视角探索空间智能",
+      "core_contribution": "提出了首个量化生成空间智能（GSI）的基准GSI-Bench，并通过实验证明生成式训练能显著提升多模态模型的空间推理能力。",
+      "method": "构建了GSI-Bench基准，包含两个互补部分：GSI-Real（基于3D先验引导生成与过滤的高质量真实世界数据集）和GSI-Syn（具备可控空间操作与全自动标注的大规模合成基准）。采用统一的评估协议，实现模型无关的空间合规性与编辑保真度评估。",
+      "findings": "在GSI-Syn上微调统一多模态模型，在合成与真实任务上均取得显著提升，并且意外地改善了模型的下游空间理解能力，首次证明生成式训练能切实增强空间推理。"
+    }
+  },
+  {
+    "id": "2604.20258",
+    "title": "Rethinking Where to Edit: Task-Aware Localization for Instruction-Based Image Editing",
+    "abstract": "Instruction-based image editing (IIE) aims to modify images according to textual instructions while preserving irrelevant content. Despite recent advances in diffusion transformers, existing methods often suffer from over-editing, introducing unintended changes to regions unrelated to the desired edit. We identify that this limitation arises from the lack of an explicit mechanism for edit localization. In particular, different editing operations (e.g., addition, removal and replacement) induce distinct spatial patterns, yet current IIE models typically treat localization in a task-agnostic manner. To address this limitation, we propose a training-free, task-aware edit localization framework that exploits the intrinsic source and target image streams within IIE models. For each image stream, We first obtain attention-based edit cues, and then construct feature centroids based on these attentive cues to partition tokens into edit and non-edit regions. Based on the observation that optimal localization is inherently task-dependent, we further introduce a unified mask construction strategy that selectively leverages source and target image streams for different editing tasks. We provide a systematic analysis for our proposed insights and approaches. Extensive experiments on EdiVal-Bench demonstrate our framework consistently improves non-edit region consistency while maintaining strong instruction-following performance on top of powerful recent image editing backbones, including Step1X-Edit and Qwen-Image-Edit.",
+    "authors": [
+      "Jingxuan He",
+      "Xiyu Wang",
+      "Mengyu Zheng",
+      "Xiangyu Zeng",
+      "Yunke Wang",
+      "Chang Xu"
+    ],
+    "published": "2026-04-22",
+    "updated": "2026-04-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20258.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20258",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "重新思考编辑位置：面向指令的图像编辑中的任务感知定位",
+      "core_contribution": "提出了一种无需训练、任务感知的编辑定位框架，通过利用IIE模型内部的源图像和目标图像流，为不同编辑操作（如添加、删除、替换）构建统一的掩码策略，从而有效减少过度编辑问题。",
+      "method": "首先，从源图像流和目标图像流中提取基于注意力的编辑线索；然后，根据这些注意力线索构建特征质心，将图像标记划分为编辑区域和非编辑区域；最后，基于不同编辑任务对最优定位的依赖，提出一种统一的掩码构建策略，有选择地利用源和目标图像流来生成编辑掩码，实现任务感知的定位。",
+      "findings": "在EdiVal-Bench基准上的大量实验表明，该框架在保持强指令跟随性能的同时，显著提升了非编辑区域的一致性，并能在Step1X-Edit和Qwen-Image-Edit等最新图像编辑骨干模型上稳定改进效果。"
+    }
+  },
+  {
+    "id": "2604.20041",
+    "title": "Normalizing Flows with Iterative Denoising",
+    "abstract": "Normalizing Flows (NFs) are a classical family of likelihood-based methods that have received revived attention. Recent efforts such as TARFlow have shown that NFs are capable of achieving promising performance on image modeling tasks, making them viable alternatives to other methods such as diffusion models. In this work, we further advance the state of Normalizing Flow generative models by introducing iterative TARFlow (iTARFlow). Unlike diffusion models, iTARFlow maintains a fully end-to-end, likelihood-based objective during training. During sampling, it performs autoregressive generation followed by an iterative denoising procedure inspired by diffusion-style methods. Through extensive experiments, we show that iTARFlow achieves competitive performance across ImageNet resolutions of 64, 128, and 256 pixels, demonstrating its potential as a strong generative model and advancing the frontier of Normalizing Flows. In addition, we analyze the characteristic artifacts produced by iTARFlow, offering insights that may shed light on future improvements. Code is available at https://github.com/apple/ml-itarflow.",
+    "authors": [
+      "Tianrong Chen",
+      "Jiatao Gu",
+      "David Berthelot",
+      "Joshua Susskind",
+      "Shuangfei Zhai"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.20041.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.20041",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "基于迭代去噪的归一化流",
+      "core_contribution": "提出iTARFlow，将迭代去噪过程引入归一化流模型，在保持端到端似然训练的同时，显著提升了图像生成性能，在多个ImageNet分辨率上达到竞争水平。",
+      "method": "iTARFlow基于TARFlow架构，在训练阶段使用完全端到端的似然目标进行优化；在采样阶段，先进行自回归生成，再借鉴扩散模型的思路执行迭代去噪过程，从而结合了两种方法的优势。",
+      "findings": "在ImageNet 64×64、128×128和256×256分辨率上，iTARFlow均取得了与当前先进生成模型（如扩散模型）竞争的性能，并展现出特有的生成伪影模式，为未来改进提供了方向。"
+    }
+  },
+  {
+    "id": "2604.19587",
+    "title": "SmartPhotoCrafter: Unified Reasoning, Generation and Optimization for Automatic Photographic Image Editing",
+    "abstract": "Traditional photographic image editing typically requires users to possess sufficient aesthetic understanding to provide appropriate instructions for adjusting image quality and camera parameters. However, this paradigm relies on explicit human instruction of aesthetic intent, which is often ambiguous, incomplete, or inaccessible to non-expert users. In this work, we propose SmartPhotoCrafter, an automatic photographic image editing method which formulates image editing as a tightly coupled reasoning-to-generation process. The proposed model first performs image quality comprehension and identifies deficiencies by the Image Critic module, and then the Photographic Artist module realizes targeted edits to enhance image appeal, eliminating the need for explicit human instructions. A multi-stage training pipeline is adopted: (i) Foundation pretraining to establish basic aesthetic understanding and editing capabilities, (ii) Adaptation with reasoning-guided multi-edit supervision to incorporate rich semantic guidance, and (iii) Coordinated reasoning-to generation reinforcement learning to jointly optimize reasoning and generation. During training, SmartPhotoCrafter emphasizes photo-realistic image generation, while supporting both image restoration and retouching tasks with consistent adherence to color- and tone-related semantics. We also construct a stage-specific dataset, which progressively builds reasoning and controllable generation, effective cross-module collaboration, and ultimately high-quality photographic enhancement. Experiments demonstrate that SmartPhotoCrafter outperforms existing generative models on the task of automatic photographic enhancement, achieving photo-realistic results while exhibiting higher tonal sensitivity to retouching instructions. Project page: https://github.com/vivoCameraResearch/SmartPhotoCrafter.",
+    "authors": [
+      "Ying Zeng",
+      "Miaosen Luo",
+      "Guangyuan Li",
+      "Yang Yang",
+      "Ruiyang Fan",
+      "Linxiao Shi",
+      "Qirui Yang",
+      "Jian Zhang",
+      "Chengcheng Liu",
+      "Siming Zheng",
+      "Jinwei Chen",
+      "Bo Li",
+      "Peng-Tao Jiang"
+    ],
+    "published": "2026-04-21",
+    "updated": "2026-04-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.19587.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.19587",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "SmartPhotoCrafter：面向自动摄影图像编辑的统一推理、生成与优化",
+      "core_contribution": "提出了一种无需用户显式指令的自动摄影图像编辑方法，将图像编辑建模为紧密耦合的推理到生成过程，并通过多阶段训练实现高质量、符合色调语义的影像增强。",
+      "method": "该方法包含两个核心模块：Image Critic模块负责理解图像质量并识别缺陷，Photographic Artist模块则执行针对性编辑以提升图像吸引力。训练采用三阶段流水线：基础预训练建立审美与编辑能力，适应阶段引入推理引导的多编辑监督以丰富语义指导，最后通过协调的推理到生成强化学习联合优化推理与生成过程。同时构建了阶段专用数据集，逐步提升推理、可控生成及跨模块协作能力。",
+      "findings": "实验表明，SmartPhotoCrafter在自动摄影增强任务上优于现有生成模型，能够生成照片级真实的结果，同时对润饰指令展现出更高的色调敏感性，在图像修复和润饰任务中均能保持颜色与色调语义的一致性。"
+    }
+  }
+]
