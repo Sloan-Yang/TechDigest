@@ -113,5 +113,10 @@
   "gastownhall_beads": 30,
   "sponsors_curl": 30,
   "home-assistant_core": 30,
-  "sponsors_openclaw": 0
+  "sponsors_openclaw": 0,
+  "penpot_penpot": 85,
+  "microsoft_VibeVoice": 85,
+  "TauricResearch_TradingAgents": 20,
+  "deepseek-ai_DeepSeek-V3": 95,
+  "donnemartin_system-design-primer": 40
 }

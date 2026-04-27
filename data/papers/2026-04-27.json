@@ -1,0 +1,152 @@
+[
+  {
+    "id": "2604.22302",
+    "title": "Knowledge Visualization: A Benchmark and Method for Knowledge-Intensive Text-to-Image Generation",
+    "abstract": "Recent text-to-image (T2I) models have demonstrated impressive capabilities in photorealistic synthesis and instruction following. However, their reliability in knowledge-intensive settings remains largely unexplored. Unlike natural image generation, knowledge visualization requires not only semantic alignment but also strict adherence to domain knowledge, structural constraints, and symbolic conventions, exposing a critical gap between visual plausibility and scientific correctness. To systematically study this problem, we introduce KVBench, a curriculum-grounded benchmark for evaluating knowledge-intensive T2I generation. KVBench covers six senior high-school subjects: Biology, Chemistry, Geography, History, Mathematics, and Physics. The benchmark consists of 1,800 expert-curated prompts derived from over 30 authoritative textbooks. Using this benchmark, we evaluate 14 state-of-the-art open- and closed-source models, revealing substantial deficiencies in logical reasoning, symbolic precision, and multilingual robustness, with open-source models consistently underperforming proprietary systems. To address these limitations, we further propose KE-Check, a two-stage framework that improves scientific fidelity via (1) Knowledge Elaboration for structured prompt enrichment, and (2) Checklist-Guided Refinement for explicit constraint enforcement through violation identification and constraint-guided editing. KE-Check effectively mitigates scientific hallucinations, narrowing the performance gap between open-source and leading closed-source models. Data and codes are publicly available at https://github.com/zhaoran66/KVBench.",
+    "authors": [
+      "Ran Zhao",
+      "Sheng Jin",
+      "Size Wu",
+      "Kang Liao",
+      "Zerui Gong",
+      "Zujin Guo",
+      "Yang Xiao",
+      "Wei Li"
+    ],
+    "published": "2026-04-24",
+    "updated": "2026-04-24",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.22302.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.22302",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "知识可视化：面向知识密集型文本到图像生成的基准与方法的系统研究",
+      "core_contribution": "提出了首个面向知识密集型文本到图像生成的课程化基准KVBench，并设计了两阶段框架KE-Check，有效提升了模型在科学知识可视化中的准确性和可靠性。",
+      "method": "首先构建KVBench基准，涵盖高中六大学科（生物、化学、地理、历史、数学、物理），包含1800条来自30余本权威教材的专家精选提示词。然后提出KE-Check两阶段框架：第一阶段通过知识细化（Knowledge Elaboration）对提示词进行结构化丰富；第二阶段通过清单引导的修正（Checklist-Guided Refinement）识别并修正违反领域约束的生成结果。",
+      "findings": "评估14个主流开源与闭源模型发现，现有模型在逻辑推理、符号精度和多语言鲁棒性上存在显著缺陷，开源模型整体表现弱于闭源系统；KE-Check能有效缓解科学幻觉，缩小开源模型与领先闭源模型之间的性能差距。"
+    }
+  },
+  {
+    "id": "2604.22554",
+    "title": "Video Analysis and Generation via a Semantic Progress Function",
+    "abstract": "Transformations produced by image and video generation models often evolve in a highly non-linear manner: long stretches where the content barely changes are followed by sudden, abrupt semantic jumps. To analyze and correct this behavior, we introduce a Semantic Progress Function, a one-dimensional representation that captures how the meaning of a given sequence evolves over time. For each frame, we compute distances between semantic embeddings and fit a smooth curve that reflects the cumulative semantic shift across the sequence. Departures of this curve from a straight line reveal uneven semantic pacing. Building on this insight, we propose a semantic linearization procedure that reparameterizes (or retimes) the sequence so that semantic change unfolds at a constant rate, yielding smoother and more coherent transitions. Beyond linearization, our framework provides a model-agnostic foundation for identifying temporal irregularities, comparing semantic pacing across different generators, and steering both generated and real-world video sequences toward arbitrary target pacing.",
+    "authors": [
+      "Gal Metzer",
+      "Sagi Polaczek",
+      "Ali Mahdavi-Amiri",
+      "Raja Giryes",
+      "Daniel Cohen-Or"
+    ],
+    "published": "2026-04-24",
+    "updated": "2026-04-24",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.22554.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.22554",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "基于语义进展函数的视频分析与生成",
+      "core_contribution": "提出了一种语义进展函数，用于量化和校正图像与视频生成中语义变化不均匀的问题，并实现语义节奏的线性化，使生成内容的变化更加平滑连贯。",
+      "method": "首先，对视频序列的每一帧提取语义嵌入，并计算相邻帧之间的语义距离；然后，拟合一条平滑曲线来累积语义变化，得到语义进展函数。通过比较该曲线与理想直线的偏离程度，识别语义节奏的不均匀性。最后，利用语义线性化过程对序列进行重新参数化或重新定时，使语义变化以恒定速率展开。",
+      "findings": "该方法能够有效检测生成视频中的语义跳跃和不均匀变化，通过线性化处理显著提升过渡的平滑性和连贯性；同时，该框架与具体模型无关，可用于比较不同生成器的语义节奏，并引导生成或真实视频序列达到任意目标节奏。"
+    }
+  },
+  {
+    "id": "2604.21915",
+    "title": "Vista4D: Video Reshooting with 4D Point Clouds",
+    "abstract": "We present Vista4D, a robust and flexible video reshooting framework that grounds the input video and target cameras in a 4D point cloud. Specifically, given an input video, our method re-synthesizes the scene with the same dynamics from a different camera trajectory and viewpoint. Existing video reshooting methods often struggle with depth estimation artifacts of real-world dynamic videos, while also failing to preserve content appearance and failing to maintain precise camera control for challenging new trajectories. We build a 4D-grounded point cloud representation with static pixel segmentation and 4D reconstruction to explicitly preserve seen content and provide rich camera signals, and we train with reconstructed multiview dynamic data for robustness against point cloud artifacts during real-world inference. Our results demonstrate improved 4D consistency, camera control, and visual quality compared to state-of-the-art baselines under a variety of videos and camera paths. Moreover, our method generalizes to real-world applications such as dynamic scene expansion and 4D scene recomposition. See our project page for results, code, and models: https://eyeline-labs.github.io/Vista4D",
+    "authors": [
+      "Kuan Heng Lin",
+      "Zhizheng Liu",
+      "Pablo Salamanca",
+      "Yash Kant",
+      "Ryan Burgert",
+      "Yuancheng Xu",
+      "Koichi Namekata",
+      "Yiwei Zhao",
+      "Bolei Zhou",
+      "Micah Goldblum",
+      "Paul Debevec",
+      "Ning Yu"
+    ],
+    "published": "2026-04-23",
+    "updated": "2026-04-23",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.21915.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.21915",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "Vista4D：基于4D点云的视频重拍",
+      "core_contribution": "提出了一种鲁棒且灵活的视频重拍框架Vista4D，通过将输入视频和目标相机嵌入4D点云，解决了现有方法在真实动态视频中深度估计伪影、内容外观保持不佳以及相机控制不精确的问题。",
+      "method": "该方法首先对输入视频进行静态像素分割和4D重建，构建一个4D点云表示，以显式保留已见内容并提供丰富的相机信号。然后，利用重建的多视图动态数据进行训练，增强模型对点云伪影的鲁棒性，从而在真实世界推理中实现稳定的视频重拍。",
+      "findings": "实验表明，与最先进的基线方法相比，Vista4D在多种视频和相机路径下显著提升了4D一致性、相机控制精度和视觉质量。此外，该方法可泛化到动态场景扩展和4D场景重组等实际应用。"
+    }
+  },
+  {
+    "id": "2604.21911",
+    "title": "When Prompts Override Vision: Prompt-Induced Hallucinations in LVLMs",
+    "abstract": "Despite impressive progress in capabilities of large vision-language models (LVLMs), these systems remain vulnerable to hallucinations, i.e., outputs that are not grounded in the visual input. Prior work has attributed hallucinations in LVLMs to factors such as limitations of the vision backbone or the dominance of the language component, yet the relative importance of these factors remains unclear. To resolve this ambiguity, We propose HalluScope, a benchmark to better understand the extent to which different factors induce hallucinations. Our analysis indicates that hallucinations largely stem from excessive reliance on textual priors and background knowledge, especially information introduced through textual instructions. To mitigate hallucinations induced by textual instruction priors, we propose HalluVL-DPO, a framework for fine-tuning off-the-shelf LVLMs towards more visually grounded responses. HalluVL-DPO leverages preference optimization using a curated training dataset that we construct, guiding the model to prefer grounded responses over hallucinated ones. We demonstrate that our optimized model effectively mitigates the targeted hallucination failure mode, while preserving or improving performance on other hallucination benchmarks and visual capability evaluations. To support reproducibility and further research, we will publicly release our evaluation benchmark, preference training dataset, and code at https://pegah-kh.github.io/projects/prompts-override-vision/ .",
+    "authors": [
+      "Pegah Khayatan",
+      "Jayneel Parekh",
+      "Arnaud Dapogny",
+      "Mustafa Shukor",
+      "Alasdair Newson",
+      "Matthieu Cord"
+    ],
+    "published": "2026-04-23",
+    "updated": "2026-04-23",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.21911.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.21911",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "当提示压倒视觉：大型视觉语言模型中的提示诱导幻觉",
+      "core_contribution": "本文揭示了大型视觉语言模型中的幻觉主要源于对文本先验和背景知识的过度依赖，特别是文本指令引入的信息，并提出了HalluScope基准和HalluVL-DPO微调框架来评估和缓解这一问题。",
+      "method": "首先，作者构建了HalluScope基准，通过系统性地控制视觉输入和文本提示，量化不同因素（如视觉骨干限制、语言模型主导性）对幻觉的贡献。其次，基于分析结果，提出HalluVL-DPO框架，利用偏好优化方法，在精心构建的训练数据集上微调现成的LVLM，使其更倾向于生成基于视觉的响应而非幻觉响应。",
+      "findings": "实验表明，文本指令先验是导致幻觉的主要因素；HalluVL-DPO有效缓解了由文本提示诱导的幻觉，同时在其他幻觉基准和视觉能力评估上保持或提升了性能。"
+    }
+  },
+  {
+    "id": "2604.21879",
+    "title": "Addressing Image Authenticity When Cameras Use Generative AI",
+    "abstract": "The ability of generative AI (GenAI) methods to photorealistically alter camera images has raised awareness about the authenticity of images shared online. Interestingly, images captured directly by our cameras are considered authentic and faithful. However, with the increasing integration of deep-learning modules into cameras' capture-time hardware -- namely, the image signal processor (ISP) -- there is now a potential for hallucinated content in images directly output by our cameras. Hallucinated capture-time image content is typically benign, such as enhanced edges or texture, but in certain operations, such as AI-based digital zoom or low-light image enhancement, hallucinations can potentially alter the semantics and interpretation of the image content. As a result, users may not realize that the content in their camera images is not authentic. This paper addresses this issue by enabling users to recover the 'unhallucinated' version of the camera image to avoid misinterpretation of the image content. Our approach works by optimizing an image-specific multi-layer perceptron (MLP) decoder together with a modality-specific encoder so that, given the camera image, we can recover the image before hallucinated content was added. The encoder and MLP are self-contained and can be applied post-capture to the image without requiring access to the camera ISP. Moreover, the encoder and MLP decoder require only 180 KB of storage and can be readily saved as metadata within standard image formats such as JPEG and HEIC.",
+    "authors": [
+      "Umar Masud",
+      "Abhijith Punnappurath",
+      "Luxi Zhao",
+      "David B. Lindell",
+      "Michael S. Brown"
+    ],
+    "published": "2026-04-23",
+    "updated": "2026-04-23",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.21879.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.21879",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "当相机使用生成式AI时如何解决图像真实性问题",
+      "core_contribution": "本文提出了一种方法，允许用户从相机直接输出的图像中恢复出“未幻觉”版本，从而避免因生成式AI模块（如ISP中的AI处理）引入的幻觉内容导致对图像语义的误判。",
+      "method": "该方法通过联合优化一个图像特定的多层感知机（MLP）解码器和一个模态特定的编码器来实现。给定相机输出图像后，编码器与MLP解码器协同工作，恢复出幻觉内容添加之前的原始图像。整个系统无需访问相机ISP，且编码器和MLP解码器仅需180 KB存储空间，可轻松作为元数据嵌入JPEG或HEIC等标准图像格式中。",
+      "findings": "实验表明，该方法能够有效去除由AI驱动的ISP模块（如数字变焦或低光增强）引入的幻觉内容，恢复出更真实的图像版本，同时保持极低的存储开销（180 KB），便于实际部署和元数据保存。"
+    }
+  }
+]
