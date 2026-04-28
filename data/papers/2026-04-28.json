@@ -1,0 +1,152 @@
+[
+  {
+    "id": "2604.24459",
+    "title": "TextGround4M: A Prompt-Aligned Dataset for Layout-Aware Text Rendering",
+    "abstract": "Despite recent advances in text-to-image generation, models still struggle to accurately render prompt-specified text with correct spatial layout -- especially in multi-span, structured settings. This challenge is driven not only by the lack of datasets that align prompts with the exact text and layout expected in the image, but also by the absence of effective metrics for evaluating layout quality. To address these issues, we introduce TextGround4M, a large-scale dataset of over 4 million prompt-image pairs, each annotated with span-level text grounded in the prompt and corresponding bounding boxes. This enables fine-grained supervision for layout-aware, prompt-grounded text rendering. Building on this, we propose a lightweight training strategy for autoregressive T2I models that appends layout-aware span tokens during training, without altering model architecture or inference behavior. We further construct a benchmark with stratified layout complexity to evaluate both open-source and proprietary models in a zero-shot setting. In addition, we introduce two layout-aware metrics to address the long-standing lack of spatial evaluation in text rendering. Our results show that models trained on TextGround4M outperform strong baselines in text fidelity, spatial accuracy, and prompt consistency, highlighting the importance of fine-grained layout supervision for grounded T2I generation.",
+    "authors": [
+      "Dongxing Mao",
+      "Yilin Wang",
+      "Linjie Li",
+      "Zhengyuan Yang",
+      "Alex Jinpeng Wang"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24459.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24459",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "TextGround4M：面向布局感知文本渲染的提示对齐数据集",
+      "core_contribution": "提出了一个包含超过400万对提示-图像的大规模数据集TextGround4M，每个样本都带有与提示对齐的文本跨度级标注和边界框，从而为布局感知的文本渲染提供细粒度监督；同时引入了两种新的布局感知评估指标，填补了文本渲染中空间评估长期缺失的空白。",
+      "method": "首先构建了TextGround4M数据集，通过自动标注流程为每个提示-图像对生成跨度级文本和对应的边界框。然后提出一种轻量级训练策略，在自回归文本到图像模型的训练过程中附加布局感知的跨度标记，而不改变模型架构或推理行为。最后，构建了一个按布局复杂度分层的基准测试，并设计了两种布局感知指标来评估文本渲染的空间准确性。",
+      "findings": "在TextGround4M上训练的模型在文本保真度、空间准确性和提示一致性方面均优于强基线模型，证明了细粒度布局监督对于基于提示的文本到图像生成的重要性。"
+    }
+  },
+  {
+    "id": "2604.24763",
+    "title": "Tuna-2: Pixel Embeddings Beat Vision Encoders for Multimodal Understanding and Generation",
+    "abstract": "Unified multimodal models typically rely on pretrained vision encoders and use separate visual representations for understanding and generation, creating misalignment between the two tasks and preventing fully end-to-end optimization from raw pixels. We introduce Tuna-2, a native unified multimodal model that performs visual understanding and generation directly based on pixel embeddings. Tuna-2 drastically simplifies the model architecture by employing simple patch embedding layers to encode visual input, completely discarding the modular vision encoder designs such as the VAE or the representation encoder. Experiments show that Tuna-2 achieves state-of-the-art performance in multimodal benchmarks, demonstrating that unified pixel-space modelling can fully compete with latent-space approaches for high-quality image generation. Moreover, while the encoder-based variant converges faster in early pretraining, Tuna-2's encoder-free design achieves stronger multimodal understanding at scale, particularly on tasks requiring fine-grained visual perception. These results show that pretrained vision encoders are not necessary for multimodal modelling, and end-to-end pixel-space learning offers a scalable path toward stronger visual representations for both generation and perception.",
+    "authors": [
+      "Zhiheng Liu",
+      "Weiming Ren",
+      "Xiaoke Huang",
+      "Shoufa Chen",
+      "Tianhong Li",
+      "Mengzhao Chen",
+      "Yatai Ji",
+      "Sen He",
+      "Jonas Schult",
+      "Belinda Zeng",
+      "Tao Xiang",
+      "Wenhu Chen",
+      "Ping Luo",
+      "Luke Zettlemoyer",
+      "Yuren Cong"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24763.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24763",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Tuna-2：像素嵌入在多模态理解与生成中击败视觉编码器",
+      "core_contribution": "提出了一种无需预训练视觉编码器的原生统一多模态模型Tuna-2，直接基于像素嵌入进行视觉理解与生成，简化了架构并实现了端到端优化，证明了像素空间建模在性能上可媲美甚至超越潜在空间方法。",
+      "method": "Tuna-2采用简单的补丁嵌入层直接编码视觉输入，完全摒弃了VAE或表示编码器等模块化视觉编码器设计。模型在统一框架下同时处理视觉理解与生成任务，通过端到端学习从原始像素中提取视觉表示，避免了传统方法中理解与生成任务之间的表示不一致问题。",
+      "findings": "实验表明，Tuna-2在多模态基准测试中达到了最先进性能，证明统一像素空间建模能够与潜在空间方法在高质量图像生成上完全竞争。此外，虽然基于编码器的变体在早期预训练中收敛更快，但Tuna-2的无编码器设计在更大规模下实现了更强的多模态理解能力，尤其是在需要细粒度视觉感知的任务上表现突出。"
+    }
+  },
+  {
+    "id": "2604.24351",
+    "title": "Diffusion Templates: A Unified Plugin Framework for Controllable Diffusion",
+    "abstract": "Controllable diffusion methods have substantially expanded the practical utility of diffusion models, but they are typically developed as isolated, backbone-specific systems with incompatible training pipelines, parameter formats, and runtime hooks. This fragmentation makes it difficult to reuse infrastructure across tasks, transfer capabilities across backbones, or compose multiple controls within a single generation pipeline. We present Diffusion Templates, a unified and open plugin framework that decouples base-model inference from controllable capability injection. The framework is organized around three components: Template models that map arbitrary task-specific inputs to an intermediate capability representation, a Template cache that functions as a standardized interface for capability injection, and a Template pipeline that loads, merges, and injects one or more Template caches into the base diffusion runtime. Because the interface is defined at the systems level rather than tied to a specific control architecture, heterogeneous capability carriers such as KV-Cache and LoRA can be supported under the same abstraction. Based on this design, we build a diverse model zoo spanning structural control, brightness adjustment, color adjustment, image editing, super-resolution, sharpness enhancement, aesthetic alignment, content reference, local inpainting, and age control. These case studies show that Diffusion Templates can unify a broad range of controllable generation tasks while preserving modularity, composability, and practical extensibility across rapidly evolving diffusion backbones. All resources will be open sourced, including code, models, and datasets.",
+    "authors": [
+      "Zhongjie Duan",
+      "Hong Zhang",
+      "Yingda Chen"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-27",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV",
+      "cs.SE"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24351.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24351",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "扩散模板：一种用于可控扩散的统一插件框架",
+      "core_contribution": "提出了一种名为Diffusion Templates的统一开源插件框架，将基础模型推理与可控能力注入解耦，支持多种控制任务（如结构控制、亮度调整、图像编辑等）在同一个生成管线中灵活组合与复用。",
+      "method": "该框架围绕三个核心组件构建：Template模型将任意任务特定输入映射为中间能力表示；Template缓存作为标准化接口存储能力；Template管线负责加载、合并并将一个或多个Template缓存注入基础扩散模型运行时。由于接口定义在系统层面而非特定控制架构，KV-Cache和LoRA等异构能力载体可在同一抽象下被支持。",
+      "findings": "通过构建涵盖结构控制、亮度调整、颜色调整、图像编辑、超分辨率、锐度增强、美学对齐、内容参考、局部修复和年龄控制等多种任务的模型库，实验表明该框架能够统一广泛的可控生成任务，同时保持模块化、可组合性和对快速演进的扩散骨干的实用扩展性。"
+    }
+  },
+  {
+    "id": "2604.24171",
+    "title": "POCA: Pareto-Optimal Curriculum Alignment for Visual Text Generation",
+    "abstract": "Current visual text generation models struggle with the trade-off between text accuracy and overall image coherence. We find that achieving high text accuracy can reduce aesthetic quality and instruction-following capability. Although reinforcement learning approaches can alleviate the problem through aligning with multiple rewards, they are often unstable for text generation, as existing approaches normally optimize multiple rewards in a weighted-sum way. In addition, it is difficult to balance the weight of each reward. Moreover, reinforcement learning requires a set of training instructions. A large number of prompts require more training time and computing resources, while a small set leads to poor performance. Hence, how to select the prompts for efficient training is an unsolved problem. In this study, we propose Pareto-Optimal Curriculum Alignment (POCA), a framework that addresses this issue as a multi-objective problem by: 1) identifying the Pareto-optimal set to avoid simple scalarization and 2) designing an adaptive curriculum alignment strategy to manage a learning sequence of a multi-reward dataset using automatic difficulty assessment, which is crucial for optimal convergence as RL methods explore in a limited data environment. In synergy, POCA finds the Pareto-optimal set in a unified reward space, which eliminates inconsistent signals to find the best trade-off solution from different rewards under an easy-to-hard optimization landscape. The experimental results show that POCA significantly improves all metrics such as CLIP, HPS scores and sentence accuracy.",
+    "authors": [
+      "Yaohou Fan",
+      "Qingzhong Wang",
+      "Yongsong Huang",
+      "Junyi Liu",
+      "Tomo Miyazaki",
+      "Shinichiro Omachi"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24171.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24171",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "POCA：面向视觉文本生成的帕累托最优课程对齐",
+      "core_contribution": "提出了一种名为POCA的框架，通过将视觉文本生成中的文本准确性与图像一致性之间的权衡问题建模为多目标优化问题，并引入帕累托最优集与自适应课程对齐策略，实现了在不牺牲图像质量的前提下提升文本准确率。",
+      "method": "首先，POCA通过识别帕累托最优集来避免传统加权求和方式带来的信号冲突，从而在统一奖励空间中寻找最优折衷解。其次，设计了一种自适应课程对齐策略，利用自动难度评估对多奖励数据集进行学习序列管理，使强化学习在有限数据环境下能够更稳定地收敛。该方法通过从易到难的优化路径，逐步平衡不同奖励信号。",
+      "findings": "实验结果表明，POCA在CLIP分数、HPS分数和句子准确率等所有指标上均取得显著提升，验证了其在提升文本生成准确性的同时保持图像整体连贯性的有效性。"
+    }
+  },
+  {
+    "id": "2604.24023",
+    "title": "ServImage: An Image Generation and Editing Benchmark from Real-world Commercial Imaging Services",
+    "abstract": "Recent image generation and editing models demonstrate robust adherence to instructions and high visual quality on academic benchmarks. However, their performance on paid, real-world design projects remains uncertain. We introduce \\textbf{ServImage}, a benchmark that explicitly correlates model outputs with economic value in commercial design projects. ServImage consists of (i) \\textbf{\\textit{ServImageBench}}: a dataset of 1.07k paid commercial design tasks and 2.05k designer deliverables totaling over \\$295k, covering portrait, product, and digital content, along with 33k candidate images and 33k human annotations. (ii) \\textbf{\\textit{ServImageScore}}: an integrated scoring system that combines three quality dimensions: baseline requirements fulfilment, visual execution quality, and commercial necessity satisfaction. These three dimensions are designed to characterize the factors that drive human payment decisions and indicate whether an image is commercially acceptable. (iii) \\textbf{\\textit{ServImageModel}}: under this scoring system, we propose a payment prediction model trained on the human-annotated candidate images, achieving 82.00\\% accuracy in predicting human payment decisions and producing calibrated payment probabilities. ServImage provides a comprehensive foundation for assessing the commercial viability of image generation models and offers a scalable resource for future research on economically grounded vision systems \\href{https://github.com/FengxianJi/ServImage}{Github.}",
+    "authors": [
+      "Fengxian Ji",
+      "Jingpu Yang",
+      "Zirui Song",
+      "Lang Gao",
+      "Junhong Liang",
+      "Zhenhao Chen",
+      "Jinghui Zhang",
+      "Xiuying Chen"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24023.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24023",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ServImage：来自真实世界商业成像服务的图像生成与编辑基准",
+      "core_contribution": "提出了一个将图像生成模型输出与经济价值直接关联的基准ServImage，包含付费商业设计任务数据集、多维度评分系统以及支付预测模型，用于评估图像生成模型的商业可行性。",
+      "method": "首先构建ServImageBench数据集，包含1.07k个付费商业设计任务和2.05k个设计师交付物，总价值超过29.5万美元，并收集33k张候选图像及33k条人工标注。其次设计ServImageScore评分系统，从基线需求满足、视觉执行质量和商业必要性满意度三个维度综合评估图像。最后基于人工标注的候选图像训练ServImageModel支付预测模型，输出校准后的支付概率。",
+      "findings": "ServImageModel在预测人类支付决策上达到82.00%的准确率，表明该评分系统能有效反映商业可接受性；实验揭示了当前图像生成模型在真实商业设计场景中与专业设计师交付物之间的差距，为经济导向的视觉系统研究提供了可扩展的资源基础。"
+    }
+  }
+]
