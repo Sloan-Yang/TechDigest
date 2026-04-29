@@ -1,0 +1,142 @@
+[
+  {
+    "id": "2604.25636",
+    "title": "Refinement via Regeneration: Enlarging Modification Space Boosts Image Refinement in Unified Multimodal Models",
+    "abstract": "Unified multimodal models (UMMs) integrate visual understanding and generation within a single framework. For text-to-image (T2I) tasks, this unified capability allows UMMs to refine outputs after their initial generation, potentially extending the performance upper bound. Current UMM-based refinement methods primarily follow a refinement-via-editing (RvE) paradigm, where UMMs produce editing instructions to modify misaligned regions while preserving aligned content. However, editing instructions often describe prompt-image misalignment only coarsely, leading to incomplete refinement. Moreover, pixel-level preservation, though necessary for editing, unnecessarily restricts the effective modification space for refinement. To address these limitations, we propose Refinement via Regeneration (RvR), a novel framework that reformulates refinement as conditional image regeneration rather than editing. Instead of relying on editing instructions and enforcing strict content preservation, RvR regenerates images conditioned on the target prompt and the semantic tokens of the initial image, enabling more complete semantic alignment with a larger modification space. Extensive experiments demonstrate the effectiveness of RvR, improving Geneval from 0.78 to 0.91, DPGBench from 84.02 to 87.21, and UniGenBench++ from 61.53 to 77.41.",
+    "authors": [
+      "Jiayi Guo",
+      "Linqing Wang",
+      "Jiangshan Wang",
+      "Yang Yue",
+      "Zeyu Liu",
+      "Zhiyuan Zhao",
+      "Qinglin Lu",
+      "Gao Huang",
+      "Chunyu Wang"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-04-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.25636.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.25636",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过再生进行精炼：扩大修改空间提升统一多模态模型中的图像精炼能力",
+      "core_contribution": "提出了一种名为“通过再生进行精炼”（RvR）的新框架，将图像精炼从基于编辑的范式转变为基于条件再生的范式，从而扩大修改空间，实现更完整的语义对齐。",
+      "method": "RvR不再依赖编辑指令和严格的内容保留，而是将精炼任务重新定义为条件图像再生：以目标提示和初始图像的语义标记为条件，重新生成图像。该方法利用统一多模态模型（UMM）的生成能力，在更大修改空间内直接修正提示-图像对齐问题，而非仅对局部区域进行编辑。",
+      "findings": "实验表明，RvR在多个基准测试上显著提升了图像精炼效果：Geneval从0.78提升至0.91，DPGBench从84.02提升至87.21，UniGenBench++从61.53提升至77.41，验证了扩大修改空间对提升对齐质量的积极作用。"
+    }
+  },
+  {
+    "id": "2604.25358",
+    "title": "Benchmarking Layout-Guided Diffusion Models through Unified Semantic-Spatial Evaluation in Closed and Open Settings",
+    "abstract": "Evaluating layout-guided text-to-image generative models requires assessing both semantic alignment with textual prompts and spatial fidelity to prescribed layouts. Assessing layout alignment requires collecting fine-grained annotations, which is costly and labor-intensive. Consequently, current benchmarks rarely provide comprehensive layout evaluation and often remain limited in scale or coverage, making model comparison, ranking, and interpretation difficult. In this work, we introduce a closed-set benchmark (C-Bench) designed to isolate key generative capabilities while providing varying levels of complexity in both prompt structure and layout. To complement this controlled setting, we propose an open-set benchmark (O-Bench) that evaluates models using real-world prompts and layouts, offering a measure of semantic and spatial alignment in the wild. We further develop a unified evaluation protocol that combines semantic and spatial accuracy into a single score, ensuring consistent model ranking. Using our benchmarks, we conduct a large-scale evaluation of six state-of-the-art layout-guided diffusion models, totaling 319,086 generated and evaluated images. We establish a model ranking based on their overall performance and provide detailed breakdowns for text and layout alignment to enhance interpretability. Fine-grained analyses across scenarios and prompt complexities highlight the strengths and limitations of current models. Code is available at https://github.com/lparolari/cobench.",
+    "authors": [
+      "Luca Parolari",
+      "Nicla Faccioli",
+      "Lamberto Ballan"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-04-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.25358.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.25358",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过统一语义-空间评估在封闭与开放设定下对布局引导扩散模型的基准测试",
+      "core_contribution": "提出了一个综合性的布局引导文本到图像生成模型评估框架，包括封闭集基准（C-Bench）和开放集基准（O-Bench），并开发了统一的评估协议，将语义准确性和空间准确性合并为单一分数，实现了对六种最先进模型的一致排名与细粒度分析。",
+      "method": "首先构建了封闭集基准C-Bench，通过控制提示结构和布局的复杂度来隔离关键生成能力；同时提出了开放集基准O-Bench，使用真实世界提示和布局评估模型在野外的语义与空间对齐性能。进一步开发了统一评估协议，将语义和空间准确性合并为单一分数，确保模型排名的一致性。基于这两个基准，对六种最先进的布局引导扩散模型进行了大规模评估，共生成和评估了319,086张图像。",
+      "findings": "通过大规模实验建立了基于整体性能的模型排名，并提供了文本对齐和布局对齐的详细分解以增强可解释性。细粒度分析揭示了当前模型在不同场景和提示复杂度下的优势与局限性，为布局引导扩散模型的改进提供了方向。"
+    }
+  },
+  {
+    "id": "2604.25314",
+    "title": "Golden RPG: Confidence-Adaptive Region-Aware Noise for Compositional Text-to-Image Generation",
+    "abstract": "Compositional text-to-image (T2I) generation requires a model to honour multiple sub-prompts that describe distinct image regions. Recent work shows that the \\emph{starting noise} of a diffusion model carries significant semantic information: ``golden'' noise predicted from text can substantially raise prompt fidelity. We observe that this noise prediction is, however, fundamentally global: the same network is asked to summarise a long, multi-region prompt with a single text embedding, which becomes the bottleneck whenever the prompt describes scenes with spatially-separated entities. We introduce \\textbf{Golden RPG}, a region-aware noise predictor that extends a frozen NPNet with two trainable additions: (i) a per-region \\textbf{FiLM adapter} that reshapes the predicted noise according to each sub-prompt; and (ii) a \\textbf{Region Cross-Attention} layer injected between two stages of the Swin backbone, allowing different spatial locations to attend to different sub-prompt tokens. To prevent the regional conditioning from degrading samples whose prompts are already easy, we further propose a \\textbf{Confidence-Adaptive Blending} head that dynamically predicts, per sample, how strongly the regional signal should override the global signal. We evaluate on the original RPG benchmark (20 prompts, 100 samples) and on four multi-region categories of T2I-CompBench (1{,}200 images, six competing methods). Golden RPG achieves the highest Cross-Region-Coherence score on every category, while matching the strongest baselines on absolute CLIP-Score and CLIP-IQA. A paired user study further shows a $\\boldsymbol{\\sim}$67\\% preference over the strongest baseline. The adapter contains $\\sim$2M trainable parameters and adds only $0.6$\\,s of inference overhead on top of SDXL.",
+    "authors": [
+      "Hao Li"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-04-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.25314.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.25314",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "黄金RPG：用于组合式文本到图像生成的置信度自适应区域感知噪声",
+      "core_contribution": "提出了一种区域感知的噪声预测器Golden RPG，通过引入每区域FiLM适配器和区域交叉注意力机制，解决了组合式文本到图像生成中全局文本嵌入对多区域场景描述的限制，显著提升了跨区域一致性。",
+      "method": "该方法在冻结的NPNet基础上添加了两个可训练模块：一是每区域FiLM适配器，根据每个子提示重塑预测噪声；二是在Swin骨干网络的两个阶段之间注入区域交叉注意力层，使不同空间位置关注不同的子提示词。此外，还引入了一个置信度自适应混合头，动态预测每个样本中区域信号应覆盖全局信号的强度，以避免对简单样本造成退化。",
+      "findings": "在RPG基准（20个提示，100个样本）和T2I-CompBench的四个多区域类别（1200张图像，六种对比方法）上，Golden RPG在所有类别中均取得了最高的跨区域一致性得分，同时匹配了最强的基线在绝对CLIP-Score和CLIP-IQA上的表现。用户偏好研究显示，约67%的用户更倾向于Golden RPG生成的结果。该适配器仅包含约2M可训练参数，推理开销仅增加0.6秒（基于SDXL）。"
+    }
+  },
+  {
+    "id": "2604.24885",
+    "title": "VibeToken: Scaling 1D Image Tokenizers and Autoregressive Models for Dynamic Resolution Generations",
+    "abstract": "We introduce an efficient, resolution-agnostic autoregressive (AR) image synthesis approach that generalizes to arbitrary resolutions and aspect ratios, narrowing the gap to diffusion models at scale. At its core is VibeToken, a novel resolution-agnostic 1D Transformer-based image tokenizer that encodes images into a dynamic, user-controllable sequence of 32-256 tokens, achieving a state-of-the-art efficiency and performance trade-off. Building on VibeToken, we present VibeToken-Gen, a class-conditioned AR generator with out-of-the-box support for arbitrary resolutions while requiring significantly fewer compute resources. Notably, VibeToken-Gen synthesizes 1024x1024 images using only 64 tokens and achieves 3.94 gFID; by comparison, a diffusion-based state-of-the-art alternative requires 1,024 tokens and attains 5.87 gFID. In contrast to fixed-resolution AR models such as LlamaGen -- whose inference FLOPs grow quadratically with resolution (11T FLOPs at 1024x1024) -- VibeToken-Gen maintains a constant 179G FLOPs (63.4x efficient) independent of resolution. We hope VibeToken can help unlock the wide adoption of AR visual generative models in production use cases.",
+    "authors": [
+      "Maitreya Patel",
+      "Jingtao Li",
+      "Weiming Zhuang",
+      "Yezhou Yang",
+      "Lingjuan Lv"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-27",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24885.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24885",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "VibeToken：扩展一维图像分词器与自回归模型以实现动态分辨率生成",
+      "core_contribution": "提出了一种分辨率无关的自回归图像合成方法VibeToken-Gen，能够在任意分辨率和宽高比下高效生成图像，并在计算效率上显著优于扩散模型和固定分辨率自回归模型。",
+      "method": "该方法基于VibeToken，一种新型分辨率无关的一维Transformer图像分词器，可将图像编码为32-256个动态、用户可控的token序列。在此基础上构建VibeToken-Gen，一个类条件自回归生成器，支持任意分辨率且计算资源需求显著降低。",
+      "findings": "VibeToken-Gen在生成1024x1024图像时仅需64个token，gFID达到3.94；而扩散模型需要1024个token，gFID为5.87。与LlamaGen等固定分辨率模型相比，VibeToken-Gen的推理FLOPs恒定为179G（63.4倍效率提升），不随分辨率增长，而LlamaGen的FLOPs随分辨率二次增长（1024x1024时达11T）。"
+    }
+  },
+  {
+    "id": "2604.23763",
+    "title": "Edit Where You Mean: Region-Aware Adapter Injection for Mask-Free Local Image Editing",
+    "abstract": "Large diffusion transformers (DiTs) follow global editing instructions well but consistently leak local edits into unrelated regions, because joint-attention architectures offer no explicit channel telling the network where to apply the edit. We introduce REDEdit, a co-trained, instruction- and region-aware adapter framework that retrofits a frozen DiT into a precise local editor without modifying its backbone weights. A lightweight Block Adapter at every transformer block injects a structured condition stream that factorizes what to edit (instruction semantics) from where to edit (spatial mask); a learned SpatialGate routes the adapter signal selectively into the edit region while keeping the rest of the image near-identical to the source; and a Region-Aware Loss focuses the training objective on the changing pixels. Because these components make the backbone's internal representation mask-aware end-to-end, a thin MaskPredictor head trained jointly with the editor can ground the edit region directly from the instruction and source image eliminating any user-mask requirement at deployment. We evaluate on two complementary benchmarks: MagicBrush (paired ground-truth targets) to measure pixel-level preservation and edit accuracy, and Emu-Edit Test (no ground-truth images, 9 diverse edit categories) to stress-test instruction following and generalization across edit types. On both, REDEdit achieves state-of-the-art results, simultaneously outperforming mask-free and oracle-mask baselines. A seven-variant ablation cleanly isolates the contribution of each component.",
+    "authors": [
+      "Honghao Cai",
+      "Xiangyuan Wang",
+      "Yunhao Bai",
+      "Haohua Chen",
+      "Tianze Zhou",
+      "Runqi Wang",
+      "Wei Zhu",
+      "Yibo Chen",
+      "Xu Tang",
+      "Yao Hu",
+      "Zhen Li"
+    ],
+    "published": "2026-04-26",
+    "updated": "2026-04-26",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.23763.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.23763",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "在你想要的地方编辑：面向无掩码局部图像编辑的区域感知适配器注入方法",
+      "core_contribution": "提出REDEdit框架，通过向冻结的大规模扩散Transformer（DiT）中注入轻量级区域感知适配器，实现了无需用户提供掩码的精确局部图像编辑，同时保持未编辑区域与源图像高度一致。",
+      "method": "REDEdit在每个Transformer块中插入一个轻量级Block Adapter，将编辑指令语义与空间掩码解耦为结构化条件流；通过可学习的SpatialGate模块选择性激活编辑区域的适配器信号，保持其他区域不变；并引入Region-Aware Loss聚焦于变化像素的训练目标。此外，联合训练的MaskPredictor头能够直接从指令和源图像预测编辑区域，从而在部署时完全消除用户提供掩码的需求。",
+      "findings": "在MagicBrush（像素级保真度和编辑精度）和Emu-Edit Test（9种编辑类别泛化）两个基准上，REDEdit均达到最优结果，同时超越无掩码和有掩码基线。七种变体的消融实验清晰分离了每个组件的贡献，验证了各模块的有效性。"
+    }
+  }
+]
