@@ -1,0 +1,139 @@
+[
+  {
+    "id": "2604.26883",
+    "title": "SEAL: Semantic-aware Single-image Sticker Personalization with a Large-scale Sticker-tag Dataset",
+    "abstract": "Synthesizing a target concept from a single reference image is challenging in diffusion-based personalized text-to-image generation, particularly for sticker personalization where prompts often require explicit attribute edits. With only one reference, test-time fine-tuning (TTF) methods tend to overfit, producing \\textit{visual entanglement}, where background artifacts are absorbed into the learned concept, and \\textit{structural rigidity}, where the model memorizes reference-specific spatial configurations and loses contextual controllability. To address these issues, we introduce \\textbf{SE}mantic-aware single-image sticker person\\textbf{AL}ization (\\textbf{SEAL}), a plug-and-play, architecture-agnostic adaptation module that integrates into existing personalization pipelines without modifying their U-Net-based diffusion backbones. SEAL applies three components during embedding adaptation: (1) a Semantic-guided Spatial Attention Loss, (2) a Split-merge Token Strategy, and (3) Structure-aware Layer Restriction. To support sticker-domain personalization with attribute-level control, we present StickerBench, a large-scale sticker image dataset with structured tags under a six-attribute schema (Appearance, Emotion, Action, Camera Composition, Style, Background). These annotations provide a consistent interface for varying context while keeping target identity fixed, enabling systematic evaluation of identity disentanglement and contextual controllability. Experiments show that SEAL consistently improves identity preservation while maintaining contextual controllability, highlighting the importance of explicit spatial and structural constraints during test-time adaptation. The code, StickerBench, and project page will be publicly released.",
+    "authors": [
+      "Changhyun Roh",
+      "Yonghyun Jeong",
+      "Jonghyun Lee",
+      "Chanho Eom",
+      "Jihyong Oh"
+    ],
+    "published": "2026-04-29",
+    "updated": "2026-04-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.26883.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.26883",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SEAL：基于大规模贴纸标签数据集的语义感知单图像贴纸个性化生成",
+      "core_contribution": "提出了一种即插即用、架构无关的适配模块SEAL，解决了单图像贴纸个性化中的视觉纠缠和结构僵化问题，并发布了包含六属性标签的大规模贴纸数据集StickerBench，支持属性级控制评估。",
+      "method": "SEAL在嵌入适配阶段应用三个组件：语义引导的空间注意力损失、拆分合并令牌策略和结构感知层限制。该方法无需修改U-Net扩散骨干网络，可集成到现有个性化流程中。同时构建了StickerBench数据集，按外观、情感、动作、镜头构图、风格和背景六个属性对贴纸图像进行标注，提供一致的上下文变化接口。",
+      "findings": "实验表明，SEAL在保持目标身份一致性的同时，显著提升了上下文可控性，证明了在测试时适配中引入显式空间和结构约束的重要性。"
+    }
+  },
+  {
+    "id": "2604.26503",
+    "title": "Delta Score Matters! Spatial Adaptive Multi Guidance in Diffusion Models",
+    "abstract": "Diffusion models have achieved remarkable success in synthesizing complex static and temporal visuals, a breakthrough largely driven by Classifier-Free Guidance (CFG). However, despite its pivotal role in aligning generated content with textual prompts, standard CFG relies on a globally uniform scalar. This homogeneous amplification traps models in a well-documented \"detail-artifact dilemma\": low guidance scales fail to inject intricate semantics, while high scales inevitably cause structural degradation, color over-saturation, and temporal inconsistencies in videos. In this paper, we expose the physical root of this flaw through the lens of differential geometry. By analyzing Tweedie's Formula, we reveal that CFG intrinsically performs a tangential linear extrapolation. Because the natural data manifold is highly curved, this uniform linear step introduces a severe orthogonal deviation. To keep the generation trajectory safely bounded, we formulate a theoretical upper bound for spatial and adaptive guidance. Based on these geometric insights, we propose Spatial Adaptive Multi Guidance (SAMG), a training-free and virtually zero-cost sampling algorithm. SAMG dynamically computes point-wise conditional guidance energy, applying a conservative minimum scale to high-energy boundary regions to preserve delicate micro-textures, while deploying an aggressive maximum scale in low-energy regions to maximize semantic injection. Extensive experiments across diverse image (SD 1.5, SDXL, SD3.5 Medium) and video (CogVideoX, ModelScope) architectures demonstrate that SAMG effectively resolves the detail-artifact dilemma, achieving superior semantic alignment, structural integrity, and temporal smoothness without any computational overhead.",
+    "authors": [
+      "Haosen Li",
+      "Wenshuo Chen",
+      "Lei Wang",
+      "Shaofeng Liang",
+      "Bowen Tian",
+      "Soning Lai",
+      "Yutao Yue"
+    ],
+    "published": "2026-04-29",
+    "updated": "2026-04-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.26503.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.26503",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "Delta分数至关重要！扩散模型中的空间自适应多重引导",
+      "core_contribution": "本文揭示了扩散模型中分类器自由引导（CFG）导致“细节-伪影困境”的几何根源，并提出了一种无需训练、零计算开销的空间自适应多重引导（SAMG）采样算法，有效解决了语义注入与结构保真度之间的权衡问题。",
+      "method": "作者通过微分几何视角分析Tweedie公式，发现CFG本质上是切向线性外推，而自然数据流形的高度弯曲会导致严重的正交偏差。基于此，他们推导了空间自适应引导的理论上界，并提出了SAMG算法：该算法动态计算逐点条件引导能量，在高能量边界区域使用保守的最小尺度以保留精细微纹理，在低能量区域使用激进的最大尺度以最大化语义注入。",
+      "findings": "在多种图像（SD 1.5、SDXL、SD3.5 Medium）和视频（CogVideoX、ModelScope）架构上的实验表明，SAMG有效解决了细节-伪影困境，在无任何计算开销的前提下，实现了更优的语义对齐、结构完整性和时间平滑性。"
+    }
+  },
+  {
+    "id": "2604.26244",
+    "title": "MetaSR: Content-Adaptive Metadata Orchestration for Generative Super-Resolution",
+    "abstract": "We study generative super-resolution (SR) in real-world scenarios where content and degradations vary across domains, genres, and segments. For example, images and videos may alternate between text overlays, fast motion, smooth cartoons, and low-light faces, each benefiting from different forms of side information. Existing metadata-guided SR methods typically use a fixed conditioning design, which is suboptimal when useful cues are content dependent and transmission budgets are limited. We propose MetaSR, a Diffusion Transformer (DiT)-based framework that selects and injects task-relevant metadata to guide SR under resource constraints. Specifically, we use the DiT's own VAE and transformer backbone to fuse heterogeneous metadata, and adopt an efficient distillation strategy that enables one-step diffusion inference. Experiments across diverse content buckets and degradation regimes show that MetaSR outperforms reference solutions by up to 1.0~dB PSNR while achieving up to 50\\% transmission bitrate saving at matched quality. We assess these gains under a rate--distortion optimization (RDO) framework that jointly accounts for sender-side bitrate and receiver/display quality metrics (e.g., PSNR and SSIM).",
+    "authors": [
+      "Jiaqi Guo",
+      "Mingzhen Li",
+      "Haohong Wang",
+      "Aggelos K. Katsaggelos"
+    ],
+    "published": "2026-04-29",
+    "updated": "2026-04-29",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.26244.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.26244",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "MetaSR：面向生成式超分辨率的内容自适应元数据编排",
+      "core_contribution": "提出了一种基于扩散变换器（DiT）的生成式超分辨率框架MetaSR，能够根据图像/视频内容自适应地选择和注入任务相关的元数据，在有限传输带宽下显著提升超分辨率质量，并实现高达50%的传输比特率节省。",
+      "method": "MetaSR利用扩散变换器自身的VAE和变换器骨干网络融合异构元数据，避免了固定条件设计；同时采用高效的蒸馏策略，将多步扩散推理压缩为单步推理，从而在保持高质量的同时降低计算开销。整个系统在率失真优化（RDO）框架下联合优化发送端比特率与接收端质量指标（如PSNR和SSIM）。",
+      "findings": "在多种内容类型（如文本叠加、快速运动、平滑卡通、低光人脸）和退化场景下，MetaSR相比参考方案在PSNR上提升高达1.0 dB，并在相同质量下实现最高50%的传输比特率节省。实验验证了其内容自适应元数据编排策略在资源受限场景下的显著优势。"
+    }
+  },
+  {
+    "id": "2604.25299",
+    "title": "The Thinking Pixel: Recursive Sparse Reasoning in Multimodal Diffusion Latents",
+    "abstract": "Diffusion models have achieved success in high-fidelity data synthesis, yet their capacity for more complex, structured reasoning like text following tasks remains constrained. While advances in language models have leveraged strategies such as latent reasoning and recursion to enhance text understanding capabilities, extending these to multimodal text-to-image generation tasks is challenging due to the continuous and non-discrete nature of visual tokens. To tackle this problem, we draw inspiration from modular human cognition and propose a recursive, sparse mixture-of-experts framework integrated into conventional diffusion models. Our approach introduces a recursive component within joint attention layers that iteratively refines visual tokens over multiple latent steps while efficiently sharing parameters via sparse selection of neural modules. At each step, a gating network is devised to dynamically select specialized neural modules, conditioned on the current visual tokens, the diffusion timestep, and the conditioning information. Comprehensive evaluation on class-conditioned ImageNet image generation tasks and additional studies on the GenEval and DPG benchmark demonstrate the superiority of the proposed method in enhancing model image generation performance.",
+    "authors": [
+      "Yuwei Sun",
+      "Yuxuan Yao",
+      "Hui Li",
+      "Siyu Zhu"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-04-28",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.25299.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.25299",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "思考像素：多模态扩散潜变量中的递归稀疏推理",
+      "core_contribution": "提出一种递归稀疏混合专家框架，将语言模型中的递归推理思想引入多模态扩散模型，在不增加过多参数的情况下显著提升图像生成中的结构化推理能力。",
+      "method": "该方法在扩散模型的联合注意力层中引入递归组件，通过多个潜在步骤迭代优化视觉令牌。每个步骤中，一个门控网络根据当前视觉令牌、扩散时间步和条件信息动态选择专门的神经模块，实现参数的稀疏共享与高效利用。",
+      "findings": "在类条件ImageNet图像生成任务以及GenEval和DPG基准测试上的综合评估表明，该方法在提升模型图像生成性能方面优于现有方法，尤其在需要复杂文本跟随和结构化推理的任务中表现突出。"
+    }
+  },
+  {
+    "id": "2604.25128",
+    "title": "ResetEdit: Precise Text-guided Editing of Generated Image via Resettable Starting Latent",
+    "abstract": "Recent advances in diffusion models have enabled high-quality image generation, leading to increasing demand for post-generation editing that modifies local regions while preserving global structure. Achieving such flexible and precise editing requires a high-quality starting point, a latent representation that provides both the freedom needed for diverse modifications and the precision required for fine-grained, region-specific control. However, existing inversion-based approaches such as DDIM inversion often yield unsatisfactory starting latents, resulting in degraded edit fidelity and structural inconsistency. Ideally, the most suitable editing anchor should be the original latent used during the generation process, as it inherently captures the scene's structure and semantics. Yet, storing this latent for every generated image is impractical due to massive storage and retrieval costs. To address this challenge, we propose ResetEdit, a proactive diffusion editing framework that embeds recoverable latent information directly into the generation process. By injecting the discrepancy between the clean and diffused latents into the diffusion trajectory and extracting it during inversion, ResetEdit reconstructs a resettable latent that closely approximates the true starting state. Additionally, a lightweight latent optimization module compensates for reconstruction bias caused by VAE asymmetry. Built upon Stable Diffusion, ResetEdit integrates seamlessly with existing tuning-free editing methods and consistently outperforms state-of-the-art baselines in both controllability and visual fidelity.",
+    "authors": [
+      "Hanyi Wang",
+      "Han Fang",
+      "Zheng Wang",
+      "Shilin Wang",
+      "Ee-Chien Chang"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-04-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.25128.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.25128",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "ResetEdit：通过可重置起始潜变量实现文本引导的精确图像编辑",
+      "core_contribution": "提出一种名为ResetEdit的主动扩散编辑框架，通过将可恢复的潜变量信息嵌入生成过程，在无需存储原始潜变量的情况下重建接近真实起始状态的潜变量，从而显著提升文本引导图像编辑的精确性和结构一致性。",
+      "method": "该方法首先在扩散生成过程中，将干净潜变量与扩散后潜变量之间的差异注入扩散轨迹；然后在反转阶段提取该差异，重建出可重置的起始潜变量，使其逼近原始生成时的真实潜变量。此外，引入一个轻量级潜变量优化模块，用于补偿变分自编码器（VAE）非对称性带来的重建偏差。该方法基于Stable Diffusion实现，可无缝集成现有的免调优编辑方法。",
+      "findings": "实验结果表明，ResetEdit在可控性和视觉保真度上持续优于当前最先进的基线方法，能够实现更精确的局部编辑，同时保持全局结构的完整性，且无需额外存储原始潜变量。"
+    }
+  }
+]
