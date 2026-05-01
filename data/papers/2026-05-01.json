@@ -1,0 +1,165 @@
+[
+  {
+    "id": "2604.28185",
+    "title": "Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling",
+    "abstract": "Recent visual generation models have made major progress in photorealism, typography, instruction following, and interactive editing, yet they still struggle with spatial reasoning, persistent state, long-horizon consistency, and causal understanding. We argue that the field should move beyond appearance synthesis toward intelligent visual generation: plausible visuals grounded in structure, dynamics, domain knowledge, and causal relations. To frame this shift, we introduce a five-level taxonomy: Atomic Generation, Conditional Generation, In-Context Generation, Agentic Generation, and World-Modeling Generation, progressing from passive renderers to interactive, agentic, world-aware generators. We analyze key technical drivers, including flow matching, unified understanding-and-generation models, improved visual representations, post-training, reward modeling, data curation, synthetic data distillation, and sampling acceleration. We further show that current evaluations often overestimate progress by emphasizing perceptual quality while missing structural, temporal, and causal failures. By combining benchmark review, in-the-wild stress tests, and expert-constrained case studies, this roadmap offers a capability-centered lens for understanding, evaluating, and advancing the next generation of intelligent visual generation systems.",
+    "authors": [
+      "Keming Wu",
+      "Zuhao Yang",
+      "Kaichen Zhang",
+      "Shizun Wang",
+      "Haowei Zhu",
+      "Sicong Leng",
+      "Zhongyu Yang",
+      "Qijie Wang",
+      "Sudong Wang",
+      "Ziting Wang",
+      "Zili Wang",
+      "Hui Zhang",
+      "Haonan Wang",
+      "Hang Zhou",
+      "Yifan Pu",
+      "Xingxuan Li",
+      "Fangneng Zhan",
+      "Bo Li",
+      "Lidong Bing",
+      "Yuxin Song",
+      "Ziwei Liu",
+      "Wenhu Chen",
+      "Jingdong Wang",
+      "Xinchao Wang",
+      "Xiaojuan Qi",
+      "Shijian Lu",
+      "Bin Wang"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-04-30",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.28185.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.28185",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "新时代的视觉生成：从原子映射到智能世界建模的演进",
+      "core_contribution": "本文提出一个五级分类法（原子生成、条件生成、上下文生成、智能体生成、世界建模生成），系统梳理了视觉生成从被动渲染到智能世界建模的演进路径，并指出当前评估过度依赖感知质量而忽视结构、时序与因果推理的缺陷。",
+      "method": "论文通过构建五级分类框架来组织视觉生成技术的发展阶段，并分析了流匹配、统一理解与生成模型、改进的视觉表征、后训练、奖励建模、数据整理、合成数据蒸馏和采样加速等关键技术驱动因素。同时，结合基准评测、野外压力测试和专家约束案例研究，对现有方法的实际能力进行多维度评估。",
+      "findings": "当前视觉生成模型在照片级真实感、排版、指令跟随和交互编辑方面取得显著进展，但在空间推理、持久状态、长程一致性和因果理解上仍存在明显不足；现有评估体系因侧重感知质量而高估了实际进展，忽略了结构、时序和因果层面的失败模式。"
+    }
+  },
+  {
+    "id": "2604.28126",
+    "title": "AdvDMD: Adversarial Reward Meets DMD For High-Quality Few-Step Generation",
+    "abstract": "Diffusion models offer superior generation quality at the expense of extensive sampling steps. Distillation methods, with Distribution Matching Distillation (DMD) as a popular example, can mitigate this issue, but performance degradation remains pronounced when sampling steps are limited. Reinforcement learning (RL) has been leveraged to improve the few-step generation quality during distillation, with the potential to even surpass the performance of the teacher model. However, existing approaches are combinatorial in nature, merely integrating an RL process with the distillation process, which introduces unnecessary complexities. To address this gap, we propose AdvDMD, a method that seamlessly unifies DMD distillation and RL. Specifically, AdvDMD employs the adversarially trained discriminator from DMD2 as the reward model, which assigns low scores to generated images and high scores to real ones. It is trained on both intermediate and final states of the denoising process and updated online with the distilled model, enabling a holistic supervision of the sampling trajectories and mitigating reward hacking. We adopt a unified SDE backward simulation and a different training schedule for DMD and RL to enable a more stable and efficient training. Experimental results demonstrate that the 4-step AdvDMD outperforms the original 40-step model for SD3.5 on DPG-Bench, while achieving significant performance gains for SD3 on the GenEval. On Qwen-Image, our 2-step AdvDMD achieves superior performance over TwinFlow.",
+    "authors": [
+      "Xu Wang",
+      "Zexian Li",
+      "Litong Gong",
+      "Tiezheng Ge",
+      "Zhijie Deng"
+    ],
+    "published": "2026-04-29",
+    "updated": "2026-04-29",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.28126.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.28126",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "AdvDMD：对抗性奖励结合DMD实现高质量少步生成",
+      "core_contribution": "提出AdvDMD方法，将分布匹配蒸馏（DMD）与强化学习（RL）无缝统一，利用DMD2中的对抗训练判别器作为奖励模型，在少步生成中实现超越教师模型的性能，同时避免现有组合方法的复杂性。",
+      "method": "AdvDMD采用DMD2中对抗训练的判别器作为奖励模型，该模型对生成图像给予低分、对真实图像给予高分，并在去噪过程的中间和最终状态上训练，与蒸馏模型在线更新，从而全面监督采样轨迹并缓解奖励黑客问题。方法通过统一的SDE反向模拟以及为DMD和RL设计不同的训练调度，实现更稳定高效的训练。",
+      "findings": "实验表明，4步AdvDMD在DPG-Bench上超越了原始40步的SD3.5模型，在GenEval上对SD3实现了显著性能提升；对于Qwen-Image，2步AdvDMD的性能优于TwinFlow。"
+    }
+  },
+  {
+    "id": "2604.28190",
+    "title": "Representation Fréchet Loss for Visual Generation",
+    "abstract": "We show that Fréchet Distance (FD), long considered impractical as a training objective, can in fact be effectively optimized in the representation space. Our idea is simple: decouple the population size for FD estimation (e.g., 50k) from the batch size for gradient computation (e.g., 1024). We term this approach FD-loss. Optimizing FD-loss reveals several surprising findings. First, post-training a base generator with FD-loss in different representation spaces consistently improves visual quality. Under the Inception feature space, a one-step generator achieves0.72 FID on ImageNet 256x256. Second, the same FD-loss repurposes multi-step generators into strong one-step generators without teacher distillation, adversarial training or per-sample targets. Third, FID can misrank visual quality: modern representations can yield better samples despite worse Inception FID. This motivates FDr$^k$, a multi-representation metric. We hope this work will encourage further exploration of distributional distances in diverse representation spaces as both training objectives and evaluation metrics for generative models.",
+    "authors": [
+      "Jiawei Yang",
+      "Zhengyang Geng",
+      "Xuan Ju",
+      "Yonglong Tian",
+      "Yue Wang"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-04-30",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.28190.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.28190",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "用于视觉生成的表示弗雷歇损失",
+      "core_contribution": "本文证明了弗雷歇距离（FD）可以在表示空间中作为训练目标被有效优化，并提出了一种名为FD-loss的简单方法，显著提升了一步生成器的视觉质量，同时揭示了FID指标在评估视觉质量时可能存在的误导性。",
+      "method": "该方法的核心思想是将FD估计所需的总体本大小（如50k）与梯度计算所需的批次大小（如1024）解耦，从而使得原本被认为不适用于训练的FD损失变得可优化。通过在多种表示空间中后训练基础生成器，FD-loss能够在不依赖教师蒸馏、对抗训练或逐样本目标的情况下，将多步生成器转化为强一步生成器。",
+      "findings": "实验发现：1）在Inception特征空间下，一步生成器在ImageNet 256x256上达到了0.72的FID；2）FID指标可能错误排序视觉质量——使用现代表示空间生成的样本尽管Inception FID更差，但实际视觉质量更好；3）为此提出了多表示评估指标FDr^k，以更准确衡量生成质量。"
+    }
+  },
+  {
+    "id": "2604.27505",
+    "title": "Leveraging Verifier-Based Reinforcement Learning in Image Editing",
+    "abstract": "While Reinforcement Learning from Human Feedback (RLHF) has become a pivotal paradigm for text-to-image generation, its application to image editing remains largely unexplored. A key bottleneck is the lack of a robust general reward model for all editing tasks. Existing edit reward models usually give overall scores without detailed checks, ignoring different instruction requirements and causing biased rewards. To address this, we argue that the key is to move from a simple scorer to a reasoning verifier. We introduce Edit-R1, a framework that builds a chain-of-thought (CoT) verifier-based reasoning reward model (RRM) and then leverages it for downstream image editing. The Edit-RRM breaks instructions into distinct principles, evaluates the edited image against each principle, and aggregates these checks into an interpretable, fine-grained reward. To build such an RRM, we first apply supervised fine-tuning (SFT) as a ``cold-start'' to generate CoT reward trajectories. Then, we introduce Group Contrastive Preference Optimization (GCPO), a reinforcement learning algorithm that leverages human pairwise preference data to reinforce our pointwise RRM. After building the RRM, we use GRPO to train editing models with this non-differentiable yet powerful reward model. Extensive experiments demonstrate that our Edit-RRM surpasses powerful VLMs such as Seed-1.5-VL and Seed-1.6-VL as an editing-specific reward model, and we observe a clear scaling trend, with performance consistently improving from 3B to 7B parameters. Moreover, Edit-R1 delivers gains to editing models like FLUX.1-kontext, highlighting its effectiveness in enhancing image editing.",
+    "authors": [
+      "Hanzhong Guo",
+      "Jie Wu",
+      "Jie Liu",
+      "Yu Gao",
+      "Zilyu Ye",
+      "Linxiao Yuan",
+      "Xionghui Wang",
+      "Yizhou Yu",
+      "Weilin Huang"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-04-30",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.27505.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.27505",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "基于验证器的强化学习在图像编辑中的应用",
+      "core_contribution": "提出Edit-R1框架，通过构建基于思维链的推理奖励模型（RRM）替代传统简单评分器，实现了可解释、细粒度的图像编辑奖励，并利用该奖励模型通过强化学习提升下游图像编辑模型的性能。",
+      "method": "首先，通过监督微调（SFT）进行冷启动，生成思维链奖励轨迹；然后，提出组对比偏好优化（GCPO）算法，利用人类成对偏好数据强化点式推理奖励模型；最后，使用GRPO算法将训练好的非可微奖励模型用于优化图像编辑模型。",
+      "findings": "Edit-RRM作为编辑专用奖励模型，性能超越了Seed-1.5-VL和Seed-1.6-VL等强大视觉语言模型；模型规模从3B扩展到7B时性能持续提升；Edit-R1框架能有效增强FLUX.1-kontext等编辑模型的效果。"
+    }
+  },
+  {
+    "id": "2604.24952",
+    "title": "Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization",
+    "abstract": "Human visual preferences are inherently multi-dimensional, encompassing aesthetics, detail fidelity, and semantic alignment. However, existing datasets provide only single, holistic annotations, resulting in severe label noise: images that excel in some dimensions but are deficient in others are simply marked as winner or loser. We theoretically demonstrate that compressing multi-dimensional preferences into binary labels generates conflicting gradient signals that misguide Diffusion Direct Preference Optimization (DPO). To address this, we propose Semi-DPO, a semi-supervised approach that treats consistent pairs as clean labeled data and conflicting ones as noisy unlabeled data. Our method starts by training on a consensus-filtered clean subset, then uses this model as an implicit classifier to generate pseudo-labels for the noisy set for iterative refinement. Experimental results demonstrate that Semi-DPO achieves state-of-the-art performance and significantly improves alignment with complex human preferences, without requiring additional human annotation or explicit reward models during training. We will release our code and models at: https://github.com/L-CodingSpace/semi-dpo",
+    "authors": [
+      "Xinxin Liu",
+      "Ming Li",
+      "Zonglin Lyu",
+      "Yuzhang Shang",
+      "Chen Chen"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-27",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24952.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24952",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "从含噪偏好中学习：一种面向直接偏好优化的半监督学习方法",
+      "core_contribution": "提出了一种半监督学习方法Semi-DPO，通过区分干净与含噪偏好对并利用伪标签迭代优化，解决了多维度人类偏好压缩为二元标签时产生的梯度冲突问题，显著提升了扩散模型与复杂人类偏好的对齐效果。",
+      "method": "首先，将偏好对分为一致对（干净标签）和冲突对（含噪无标签）两类；然后，在共识过滤后的干净子集上训练初始模型；接着，利用该模型作为隐式分类器为含噪集生成伪标签；最后，通过迭代训练不断优化模型，无需额外人工标注或显式奖励模型。",
+      "findings": "实验表明，Semi-DPO在多个基准上达到了最先进性能，显著改善了模型对美学、细节保真度和语义对齐等多维复杂偏好的对齐能力，且无需额外人工标注或训练时的显式奖励模型。"
+    }
+  }
+]
