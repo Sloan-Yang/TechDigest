@@ -1,0 +1,150 @@
+[
+  {
+    "id": "2604.28078",
+    "title": "AesRM: Improving Video Aesthetics with Expert-Level Feedback",
+    "abstract": "Despite rapid advances in photorealistic video generation, real-world applications such as filmmaking require video aesthetics, e.g., harmonious colors and cinematic lighting, beyond visual fidelity. Prior work on visual aesthetics largely focuses on images, often reducing aesthetics to coarse definitions, e.g., visual pleasure, without a rigorous and systematic evaluation. To improve video aesthetics, we propose a hierarchical rubric that decomposes video aesthetics into three core dimensions, Visual Aesthetics (VA), Visual Fidelity (VF), and Visual Plausibility (VP), with 15 fine-grained criteria, e.g., shot composition. This framework enables a large-scale expert-annotated preference dataset and an evaluation benchmark, AesVideo-Bench, containing about 2500 video pairs with expert annotations on VA, VF, and VP. We then build a family of Video Aesthetic Reward Models (AesRM): AesRM-Base, which directly predicts pairwise preferences on these dimensions to provide efficient post-training rewards, and AesRM-CoT, which additionally generates CoT aligned with all 15 criteria to improve assessment interpretability. Specifically, we train AesRM with a three-stage progressive scheme: (1) Atomic Aesthetic Capability Learning, which strengthens AesRM's recognition of fundamental aesthetic concepts, e.g., accurately identifying centered composition; (2) Cold-Start, aligning the model with structured reasoning protocols; and (3) GRPO, further improving evaluation accuracy. To enhance AesRM-CoT, we additionally propose self-consistency-based CoT synthesis to improve CoT quality and design CoT-based process rewards during GRPO. Extensive experiments show AesRM outperforms baselines on multiple aesthetics benchmarks and is more robust, with lower position bias. Finally, we align Wan2.2 with AesRM and observe clear aesthetic gains over existing aesthetic reward models.",
+    "authors": [
+      "Yujin Han",
+      "Yujie Wei",
+      "Yefei He",
+      "Xinyu Liu",
+      "Tianle Li",
+      "Zichao Yu",
+      "Andi Han",
+      "Shiwei Zhang",
+      "Tingyu Weng",
+      "Difan Zou"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-04-30",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.28078.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.28078",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "AesRM：利用专家级反馈提升视频美学质量",
+      "core_contribution": "提出了一种层次化的视频美学评估框架（包含15个细粒度标准），并基于此构建了专家标注的大规模偏好数据集和基准（AesVideo-Bench），同时开发了视频美学奖励模型家族（AesRM），能够有效提升视频生成的美学质量。",
+      "method": "首先，将视频美学分解为视觉美学、视觉保真度和视觉合理性三个核心维度，并细化为15个具体标准（如镜头构图），以此构建专家标注的偏好数据集和评估基准。然后，训练两个奖励模型：AesRM-Base直接预测维度偏好，AesRM-CoT额外生成与15个标准对齐的思维链以增强可解释性。训练采用三阶段渐进式方案：原子美学能力学习、冷启动对齐结构化推理协议、以及基于GRPO的进一步优化。此外，还提出了基于自一致性的思维链合成方法和基于思维链的过程奖励机制来提升AesRM-CoT的性能。",
+      "findings": "实验表明，AesRM在多个美学基准上优于现有基线模型，且具有更低的立场偏差和更高的鲁棒性。将Wan2.2模型与AesRM对齐后，相比现有美学奖励模型，在视频美学质量上取得了明显的提升。"
+    }
+  },
+  {
+    "id": "2604.26365",
+    "title": "Beyond Fixed Formulas: Data-Driven Linear Predictor for Efficient Diffusion Models",
+    "abstract": "To address the high sampling cost of Diffusion Transformers (DiTs), feature caching offers a training-free acceleration method. However, existing methods rely on hand-crafted forecasting formulas that fail under aggressive skipping. We propose L2P (Learnable Linear Predictor), a simple data-driven caching framework that replaces fixed coefficients with learnable per-timestep weights. Rapidly trained in ~20 seconds on a single GPU, L2P accurately reconstructs current features from past trajectories. L2P significantly outperforms existing baselines: it achieves a 4.55x FLOPs reduction and 4.15x latency speedup on FLUX.1-dev, and maintains high visual fidelity under up to 7.18x acceleration on Qwen-Image models, where prior methods show noticeable quality degradation. Our results show learning linear predictors is highly effective for efficient DiT inference. Code is available at https://github.com/Aredstone/L2P-Cache.",
+    "authors": [
+      "Zhirong Shen",
+      "Rui Huang",
+      "Jiacheng Liu",
+      "Chang Zou",
+      "Peiliang Cai",
+      "Shikang Zheng",
+      "Zhengyi Shi",
+      "Liang Feng",
+      "Linfeng Zhang"
+    ],
+    "published": "2026-04-29",
+    "updated": "2026-04-29",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.26365.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.26365",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "超越固定公式：面向高效扩散模型的数据驱动线性预测器",
+      "core_contribution": "提出一种简单高效的数据驱动特征缓存框架L2P，通过可学习的逐时间步权重替代传统手工设计的固定系数，在极短训练时间内显著提升扩散Transformer的推理加速效果。",
+      "method": "L2P框架采用可学习的线性预测器，针对扩散模型每个时间步独立学习一组线性权重，用于从历史特征轨迹中重建当前特征。该方法仅需在单个GPU上训练约20秒即可完成参数优化，无需修改模型结构或增加额外推理开销。",
+      "findings": "在FLUX.1-dev模型上实现4.55倍FLOPs减少和4.15倍延迟加速；在Qwen-Image模型上最高达到7.18倍加速且保持高视觉保真度，而现有方法在激进跳跃下会出现明显质量下降。实验表明，学习线性预测器对高效扩散Transformer推理非常有效。"
+    }
+  },
+  {
+    "id": "2604.26348",
+    "title": "ACPO: Anchor-Constrained Perceptual Optimization for Diffusion Models with No-Reference Quality Guidance",
+    "abstract": "Diffusion models have achieved remarkable success in image generation, yet their training is predominantly driven by full-reference objectives that enforce pixel-wise similarity to ground-truth images.Such supervision, while effective for fidelity, may insufficient in terms of subjective visual perception quality and text-image semantic consistency. In this work, we investigate the problem of incorporating no-reference perceptual quality into diffusion training. A key challenge is that directly optimizing perceptual signals, such as those provided by no-reference image quality assessment (NR-IQA) models, introduces a mismatch with the original diffusion objective, leading to training instability and distributional drift during fine-tuning. To address this issue, we propose an anchor-constrained optimization framework that enables stable perceptual adaptation. Specifically, we leverage a learned NR-IQA model as a perceptual guidance signal, while introducing an anchor-based regularization that enforces consistency with the base diffusion model in terms of noise prediction. This design effectively balances perceptual quality improvement and generative fidelity, allowing controlled adaptation toward perceptually favorable outputs without compromising the original generative behavior. Extensive experiments demonstrate that our method consistently enhances perceptual quality while preserving generation diversity and training stability, highlighting the effectiveness of anchor-constrained perceptual optimization for diffusion models.",
+    "authors": [
+      "Yang Yang",
+      "Feifan Meng",
+      "Han Fang",
+      "Weiming Zhang"
+    ],
+    "published": "2026-04-29",
+    "updated": "2026-04-29",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.26348.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.26348",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "ACPO：基于锚点约束的扩散模型感知优化与无参考质量引导",
+      "core_contribution": "提出了一种锚点约束的优化框架，首次将无参考图像质量评估（NR-IQA）信号稳定地引入扩散模型训练中，在提升感知质量的同时保持生成保真度和训练稳定性。",
+      "method": "该方法利用预训练的NR-IQA模型提供感知指导信号，同时引入基于锚点的正则化项，强制微调后的模型在噪声预测上与原始扩散模型保持一致。通过这种锚点约束，有效平衡了感知质量优化与生成保真度，避免了直接优化感知信号导致的训练不稳定和分布偏移问题。",
+      "findings": "实验表明，该方法在保持生成多样性和训练稳定性的前提下，持续提升了生成图像的感知质量，验证了锚点约束感知优化在扩散模型中的有效性。"
+    }
+  },
+  {
+    "id": "2604.26341",
+    "title": "SpatialFusion: Endowing Unified Image Generation with Intrinsic 3D Geometric Awareness",
+    "abstract": "Recent unified image generation models have achieved remarkable success by employing MLLMs for semantic understanding and diffusion backbones for image generation. However, these models remain fundamentally limited in spatially-aware tasks due to a lack of intrinsic spatial understanding and the absence of explicit geometric guidance during generation. In this paper, we propose SpatialFusion, a novel framework that internalizes 3D geometric awareness into unified image generation models. Specifically, we first employ a Mixture-of-Transformers (MoT) architecture to augment the MLLM with a parallel spatial transformer to enhance 3D geometric modeling capability. By sharing self-attention with the MLLM, the spatial transformer learns to derive metric-depth maps of target images from rich semantic contexts. These explicit geometric scaffolds are then injected into the diffusion backbone through a specialized depth adapter, providing precise spatial constraints for spatially-coherent image generation. Through a progressive two-stage training strategy, SpatialFusion significantly enhances performance on spatially-aware benchmarks, notably outperforming leading models such as GPT-4o. Additionally, it achieves generalized performance gains across both text-to-image generation and image editing scenarios, all while maintaining negligible inference overhead.",
+    "authors": [
+      "Haiyi Qiu",
+      "Kaihang Pan",
+      "Jiacheng Li",
+      "Juncheng Li",
+      "Siliang Tang",
+      "Yueting Zhuang"
+    ],
+    "published": "2026-04-29",
+    "updated": "2026-04-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.26341.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.26341",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "SpatialFusion：赋予统一图像生成内在的3D几何感知能力",
+      "core_contribution": "提出SpatialFusion框架，首次将内在的3D几何感知能力融入统一图像生成模型，通过显式的几何引导显著提升空间感知任务的性能，并超越GPT-4o等领先模型。",
+      "method": "首先采用混合变换器（MoT）架构，在MLLM中并行添加一个空间变换器以增强3D几何建模能力，通过共享自注意力机制从语义上下文中学习生成目标图像的度量深度图；然后将这些显式几何骨架通过专门的深度适配器注入扩散主干网络，为空间一致的图像生成提供精确的空间约束；最后通过渐进式两阶段训练策略优化整个框架。",
+      "findings": "在空间感知基准测试上显著优于GPT-4o等领先模型，同时在文本到图像生成和图像编辑场景中均取得泛化性能提升，且推理开销可忽略不计。"
+    }
+  },
+  {
+    "id": "2604.24953",
+    "title": "ViPO: Visual Preference Optimization at Scale",
+    "abstract": "While preference optimization is crucial for improving visual generative models, how to effectively scale this paradigm remains largely unexplored. Current open-source preference datasets contain conflicting preference patterns, where winners excel in some dimensions but underperform in others. Naively optimizing on such noisy datasets fails to learn preferences, hindering effective scaling. To enhance robustness against noise, we propose Poly-DPO, which extends the DPO objective with an additional polynomial term that dynamically adjusts model confidence based on dataset characteristics, enabling effective learning across diverse data distributions. Beyond biased patterns, existing datasets suffer from low resolution, limited prompt diversity, and imbalanced distributions. To facilitate large-scale visual preference optimization by tackling data bottlenecks, we construct ViPO, a massive-scale preference dataset with 1M image pairs at 1024px across five categories and 300K video pairs at 720p+ across three categories. State-of-the-art generative models and diverse prompts ensure reliable preference signals with balanced distributions. Remarkably, when applying Poly-DPO to our high-quality dataset, the optimal configuration converges to standard DPO. This convergence validates dataset quality and Poly-DPO's adaptive nature: sophisticated optimization becomes unnecessary with sufficient data quality, yet remains valuable for imperfect datasets. We validate our approach across visual generation models. On noisy datasets like Pick-a-Pic V2, Poly-DPO achieves 6.87 and 2.32 gains over Diffusion-DPO on GenEval for SD1.5 and SDXL, respectively. For ViPO, models achieve performance far exceeding those trained on existing open-source preference datasets. These results confirm that addressing both algorithmic adaptability and data quality is essential for scaling visual preference optimization.",
+    "authors": [
+      "Ming Li",
+      "Jie Wu",
+      "Justin Cui",
+      "Xiaojie Li",
+      "Rui Wang",
+      "Chen Chen"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-29",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24953.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24953",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "ViPO：大规模视觉偏好优化",
+      "core_contribution": "本文提出了Poly-DPO算法以增强偏好优化对噪声数据的鲁棒性，并构建了大规模高质量视觉偏好数据集ViPO（包含100万图像对和30万视频对），从而有效推动了视觉生成模型中偏好优化的规模化扩展。",
+      "method": "首先，针对现有开源偏好数据集中存在的冲突偏好模式（即同一图像在不同维度上表现优劣不一），作者提出了Poly-DPO，通过在标准DPO目标函数中引入一个多项式项，根据数据集特征动态调整模型置信度，从而在不同数据分布下实现有效学习。其次，为解决数据瓶颈，作者构建了ViPO数据集，使用最先进的生成模型和多样化提示生成高分辨率（1024px图像、720p+视频）且分布均衡的偏好对。最后，在高质量数据集上应用Poly-DPO时，最优配置收敛为标准DPO，验证了数据集质量与算法自适应性的互补关系。",
+      "findings": "在噪声数据集（如Pick-a-Pic V2）上，Poly-DPO相比Diffusion-DPO在GenEval指标上分别提升6.87（SD1.5）和2.32（SDXL）。在ViPO数据集上训练的模型性能显著优于现有开源偏好数据集训练的模型。结果表明，解决算法适应性与数据质量是规模化视觉偏好优化的关键。"
+    }
+  }
+]
