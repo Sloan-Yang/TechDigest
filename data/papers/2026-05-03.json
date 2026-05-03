@@ -1,0 +1,146 @@
+[
+  {
+    "id": "2604.24877",
+    "title": "Learning Illumination Control in Diffusion Models",
+    "abstract": "Controlling illumination in images is essential for photography and visual content creation. While closed-source models have demonstrated impressive illumination control, open-source alternatives either require heavy control inputs like depth maps or do not release their data and code. We present a fully open-source and reproducible pipeline for learning illumination control in diffusion models. Our approach builds a data engine that transforms well-lit images into supervised training triplets consisting of a poorly-illuminated input image, a natural language lighting instruction, and a well-illuminated output image. We finetune a diffusion model on this data and demonstrate significant improvements over baseline SD 1.5, SDXL, and FLUX.1-dev models in perceptual similarity, structural similarity, and identity preservation. Our work provides a reproducible solution built entirely with open-source tools and publicly available data. We release all our code, data, and model weights publicly.",
+    "authors": [
+      "Nishit Anand",
+      "Manan Suri",
+      "Christopher Metzler",
+      "Dinesh Manocha",
+      "Ramani Duraiswami"
+    ],
+    "published": "2026-04-27",
+    "updated": "2026-04-27",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "eess.IV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.24877.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.24877",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "扩散模型中的光照控制学习",
+      "core_contribution": "提出了一种完全开源且可复现的扩散模型光照控制方法，通过构建监督训练三元组数据集并微调模型，显著提升了图像在感知相似性、结构相似性和身份保持方面的表现。",
+      "method": "首先构建一个数据引擎，将光照良好的图像转换为监督训练三元组，包括光照不足的输入图像、自然语言光照指令和光照良好的输出图像。然后基于该数据集对扩散模型（如SD 1.5、SDXL和FLUX.1-dev）进行微调，使其能够根据文本指令控制图像光照。所有工具和数据均来自开源资源。",
+      "findings": "微调后的模型在感知相似性、结构相似性和身份保持方面显著优于基线SD 1.5、SDXL和FLUX.1-dev模型。该方法完全基于开源工具和公开数据构建，并公开了所有代码、数据和模型权重。"
+    }
+  },
+  {
+    "id": "2604.25289",
+    "title": "Exploring Time Conditioning in Diffusion Generative Models from Disjoint Noisy Data Manifolds",
+    "abstract": "Practically, training diffusion models typically requires explicit time conditioning to guide the network through the denoising sampling process. Especially in deterministic methods like DDIM, the absence of time conditioning leads to significant performance degradation. However, other deterministic sampling approaches, such as flow matching, can generate high-quality content without this conditioning, raising the question of its necessity. In this work, we revisit the role of time conditioning from a geometric perspective. We analyze the evolution of noisy data distributions under the forward diffusion process and demonstrate that, in high-dimensional spaces, these distributions concentrate on low-dimensional hyper-cylinder-like manifolds embedded within the input space. Successful generation, we argue, stems from the disentanglement of these manifolds in high-dimensional space. Based on this insight, we modify the forward process of DDIM to align the noisy data manifold with the flow-matching approach, proving that DDIM can generate high-quality content without time conditioning, provided the noisy manifold evolves according to the flow-matching method. Additionally, we extend our framework to class-conditioned generation by decoupling classes into distinct time spaces, enabling class-conditioned synthesis with a class-unconditional denoising model. Extensive experiments validate our theoretical analysis and show that high-quality generation is achievable without explicit conditional embeddings.",
+    "authors": [
+      "Liuzhuozheng Li",
+      "Zhiyuan Zhan",
+      "Shuhong Liu",
+      "Dengyang Jiang",
+      "Zanyi Wang",
+      "Guang Dai",
+      "Jingdong Wang",
+      "Mengmeng Wang"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-04-28",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.25289.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.25289",
+    "primary_category": "cs.LG",
+    "score": 60,
+    "summary": {
+      "title_zh": "探索扩散生成模型中基于不相交噪声数据流形的时间条件作用",
+      "core_contribution": "本文从几何视角重新审视了扩散模型中时间条件的必要性，证明在流形演化符合流匹配方法时，DDIM无需显式时间条件也能生成高质量内容，并进一步将框架扩展至无类别条件的类别生成。",
+      "method": "首先，作者分析了前向扩散过程中噪声数据分布在高维空间中的演化，发现其集中在低维超圆柱形流形上。基于此，他们修改了DDIM的前向过程，使其噪声流形演化方式与流匹配方法对齐，从而消除对时间条件的依赖。此外，通过将不同类别解耦到独立的时间空间中，作者实现了仅使用无类别条件的去噪模型进行类别条件生成。",
+      "findings": "实验验证了理论分析，表明在流形演化与流匹配一致时，DDIM无需显式时间条件嵌入即可达到高质量生成效果；同时，所提出的无类别条件类别生成方法也能有效工作，证明了时间条件并非扩散模型生成质量的必要条件。"
+    }
+  },
+  {
+    "id": "2604.25457",
+    "title": "GramSR: Visual Feature Conditioning for Diffusion-Based Super-Resolution",
+    "abstract": "Despite recent advances, single-image super-resolution (SR) remains challenging, especially in real-world scenarios with complex degradations. Diffusion-based SR methods, particularly those built on Stable Diffusion, leverage strong generative priors but commonly rely on text conditioning derived from semantic captioning. Such textual descriptions provide only high-level semantics and lack the spatially aligned visual information required for faithful restoration, leading to a representation gap between abstract semantics and spatially aligned visual details. To address this limitation, we propose GramSR, a one-step diffusion-based SR framework that replaces text conditioning with dense visual features extracted from the low-resolution input using a pre-trained DINOv3 encoder. GramSR adopts a three-stage LoRA architecture, where pixel-level, semantic-level, and texture-level LoRA modules are trained sequentially. The pixel-level module focuses on degradation removal using $\\ell_2$ loss, the semantic-level module enhances perceptual details via LPIPS and CSD losses, and the texture-level module enforces feature correlation consistency through a Gram matrix loss computed from DINOv3 features. At inference, independent guidance scales enable flexible control over degradation removal, semantic enhancement, and texture preservation. Extensive experiments on standard SR benchmarks demonstrate that GramSR consistently outperforms existing one-step diffusion-based methods, achieving superior structural fidelity and texture realism. The code for this work is available at: https://github.com/aimagelab/GramSR.",
+    "authors": [
+      "Fabio D'Oronzio",
+      "Federico Putamorsi",
+      "Leonardo Zini",
+      "Marcella Cornia",
+      "Lorenzo Baraldi"
+    ],
+    "published": "2026-04-28",
+    "updated": "2026-04-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.25457.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.25457",
+    "primary_category": "cs.CV",
+    "score": 55,
+    "summary": {
+      "title_zh": "GramSR：基于扩散的超分辨率中的视觉特征条件控制",
+      "core_contribution": "提出了一种名为GramSR的单步扩散超分辨率框架，通过用低分辨率图像提取的密集视觉特征替代文本条件，弥合了抽象语义与空间对齐视觉细节之间的表征鸿沟，从而在结构保真度和纹理真实性上超越了现有单步扩散方法。",
+      "method": "GramSR采用三阶段LoRA架构，依次训练像素级、语义级和纹理级LoRA模块。像素级模块使用ℓ2损失去除退化；语义级模块通过LPIPS和CSD损失增强感知细节；纹理级模块利用从DINOv3特征计算的Gram矩阵损失强制特征相关性一致性。推理时，独立的引导尺度可灵活控制退化去除、语义增强和纹理保留。",
+      "findings": "在标准超分辨率基准上的大量实验表明，GramSR在结构保真度和纹理真实性上始终优于现有的单步扩散方法，实现了更优的恢复效果。"
+    }
+  },
+  {
+    "id": "2604.27553",
+    "title": "Revealing the Impact of Visual Text Style on Attribute-based Descriptions Produced by Large Visual Language Models",
+    "abstract": "When the visual style of text is considered, a wide variety can be observed in font, color, and size. However, when a word is read, its meaning is independent of the style in which it has been written or rendered. In this paper, we investigate whether, and how, the style in which a word is visualized in an image impacts the description that a Large Visual Language Model (LVLM) provides for the concept to which that word refers. Specifically, we investigate how functional text styles (readability-oriented, e.g., black sans-serif) versus decorative styles (display-oriented, e.g., colored cursive/script) affect LVLMs' descriptions of a concept in terms of the attributes of that concept. Our experiments study the situation in which the LVLM is able to correctly identify the concept referred to by a visual text, i.e., by a word or words rendered as an image, and in which the visual text style should not influence the attribute-based description that the LVLM produces. Our experimental results reveal that even when the concept is correctly identified, text style influences the model's attribute-based descriptions of the concept. Our findings demonstrate non-trivial style leakage from text style into semantic inference and motivate style-aware evaluation and mitigation for LVLM-based multimedia systems.",
+    "authors": [
+      "Xiaomeng Wang",
+      "Martha Larson",
+      "Zhengyu Zhao"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-04-30",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.27553.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.27553",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "揭示视觉文本风格对大型视觉语言模型生成的基于属性描述的影响",
+      "core_contribution": "本文首次系统研究了视觉文本风格（如功能性风格与装饰性风格）如何影响大型视觉语言模型对概念属性的描述，揭示了即使模型正确识别文本内容，文本风格仍会“泄露”到语义推理中，导致描述偏差。",
+      "method": "作者设计了对比实验，通过向LVLM展示不同视觉风格（如黑色无衬线字体 vs. 彩色手写体）的文本图像，并确保模型能正确识别文本所指概念，然后分析模型输出的基于属性的描述。通过比较功能性风格与装饰性风格下描述中属性提及的频率和类型，量化风格对语义推断的影响。",
+      "findings": "实验结果表明，即使LVLM正确识别了文本概念，文本风格仍显著影响模型对概念属性的描述，例如装饰性风格更易引发与颜色、形状等视觉属性相关的描述。这一发现揭示了非平凡的“风格泄露”现象，并呼吁对基于LVLM的多媒体系统进行风格感知的评估与缓解策略开发。"
+    }
+  },
+  {
+    "id": "2604.27389",
+    "title": "COHERENCE: Benchmarking Fine-Grained Image-Text Alignment in Interleaved Multimodal Contexts",
+    "abstract": "In recent years, Multimodal Large Language Models (MLLMs) have achieved remarkable progress on a wide range of multimodal benchmarks. Despite these advances, most existing benchmarks mainly focus on single-image or multi-image comprehension. In real-world scenarios such as document reading, information is often presented as interleaved multimodel contexts. This requires MLLMs not only to recognize the content of individual images, but also to identify relevant textual and visual evidence, establish fine-grained alignments between them, and reason over these aligned signals in interleaved contexts based on contextual evidence. However, there is still a lack of systematic benchmarks for quantifying the fine-grained understanding ability of MLLMs in interleaved image-text contexts. To fill this gap, we propose COHERENCE, a benchmark designed to evaluate the ability of MLLMs to recover fine-grained image-text correspondences in interleaved multimodal contexts. COHERENCE covers interleaved image-text content from four representative domains and contains 6,161 high-quality questions. Moreover, we perform a six-type error analysis, enabling fine-grained attribution of failures in interleaved image-text understanding to the specific capabilities missing in current MLLMs.",
+    "authors": [
+      "Bingli Wang",
+      "Huanze Tang",
+      "Haijun Lv",
+      "Zhishan Lin",
+      "Lixin Gu",
+      "Lei Feng",
+      "Qipeng Guo",
+      "Kai Chen"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-04-30",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2604.27389.pdf",
+    "abs_url": "https://arxiv.org/abs/2604.27389",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "COHERENCE：在交错多模态上下文中评估细粒度图像-文本对齐的基准",
+      "core_contribution": "提出了COHERENCE基准，系统性地评估多模态大语言模型在交错图像-文本上下文中恢复细粒度图像-文本对应关系的能力，并提供了六类错误分析以归因模型失败的具体能力缺失。",
+      "method": "COHERENCE从四个代表性领域收集交错图像-文本内容，构建了6,161个高质量问题。通过设计需要模型识别相关文本和视觉证据、建立细粒度对齐并在交错上下文中推理的任务，量化评估MLLMs的理解能力。同时，引入六类错误分析框架，对模型在交错理解中的失败进行细粒度归因。",
+      "findings": "实验表明，现有MLLMs在交错多模态上下文中仍存在显著不足，尤其在需要跨模态细粒度对齐和上下文推理的任务上表现不佳；六类错误分析揭示了模型在视觉证据定位、文本-图像匹配和上下文推理等具体能力上的缺失，为未来改进提供了方向。"
+    }
+  }
+]
