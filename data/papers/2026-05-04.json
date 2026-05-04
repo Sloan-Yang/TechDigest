@@ -1,0 +1,144 @@
+[
+  {
+    "id": "2605.00503",
+    "title": "End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer",
+    "abstract": "Autoregressive image modeling relies on visual tokenizers to compress images into compact latent representations. We design an end-to-end training pipeline that jointly optimizes reconstruction and generation, enabling direct supervision from generation results to the tokenizer. This contrasts with prior two-stage approaches that train tokenizers and generative models separately. We further investigate leveraging vision foundation models to improve 1D tokenizers for autoregressive modeling. Our autoregressive generative model achieves strong empirical results, including a state-of-the-art FID score of 1.48 without guidance on ImageNet 256x256 generation.",
+    "authors": [
+      "Wenda Chu",
+      "Bingliang Zhang",
+      "Jiaqi Han",
+      "Yizhuo Li",
+      "Linjie Yang",
+      "Yisong Yue",
+      "Qiushan Guo"
+    ],
+    "published": "2026-05-01",
+    "updated": "2026-05-01",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.00503.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.00503",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于一维语义分词器的端到端自回归图像生成",
+      "core_contribution": "提出了一种端到端的自回归图像生成训练流程，将重建与生成联合优化，使分词器能够直接接收生成任务的监督信号，从而替代传统的两阶段训练方法。",
+      "method": "该方法设计了一个联合训练管道，同时优化图像重建和自回归生成两个目标，使得视觉分词器在训练过程中不仅关注重建质量，还能从生成任务中学习语义信息。进一步地，利用视觉基础模型（如预训练的特征提取器）来改进一维分词器的表示能力，以更好地适配自回归建模。整个模型在ImageNet 256x256数据集上以无引导方式训练和评估。",
+      "findings": "在ImageNet 256x256图像生成任务上，该方法取得了1.48的FID分数（无引导），达到了当前最优水平，证明了端到端联合训练和语义分词器对自回归图像生成的有效性。"
+    }
+  },
+  {
+    "id": "2605.00825",
+    "title": "Posterior Augmented Flow Matching",
+    "abstract": "Flow matching (FM) trains a time-dependent vector field that transports samples from a simple prior to a complex data distribution. However, for high-dimensional images, each training sample supervises only a single trajectory and intermediate point, yielding an extremely sparse and high-variance training signal. This under-constrained supervision can cause flow collapse, where the learned dynamics memorize specific source-target pairings, mapping diverse inputs to overly similar outputs, failing to generalize. We introduce Posterior-Augmented Flow Matching (PAFM), a theoretically grounded generalization of FM that replaces single-target supervision with an expectation over an approximate posterior of valid target completions for a given intermediate state and condition. PAFM factorizes this intractable posterior into (i) the likelihood of the intermediate under a hypothesized endpoint and (ii) the prior probability of that endpoint under the condition, and uses an importance sampling scheme to construct a mixture over multiple candidate targets. We prove that PAFM yields an unbiased estimator of the original FM objective while substantially reducing gradient variance during training by aggregating information from many plausible continuation trajectories per intermediate. Finally, we show that PAFM improves over FM by up to 3.4 FID50K across different model scales (SiT-B/2 and SiT-XL/2), different architectures (SiT and MMDiT), and in both class and text conditioned benchmarks (ImageNet and CC12M), with a negligible increase in the compute overhead. Code: https://github.com/gstoica27/PAFM.git.",
+    "authors": [
+      "George Stoica",
+      "Sayak Paul",
+      "Matthew Wallingford",
+      "Vivek Ramanujan",
+      "Abhay Nori",
+      "Winson Han",
+      "Ali Farhadi",
+      "Ranjay Krishna",
+      "Judy Hoffman"
+    ],
+    "published": "2026-05-01",
+    "updated": "2026-05-01",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.00825.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.00825",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "后验增强的流匹配",
+      "core_contribution": "提出后验增强流匹配（PAFM），通过引入近似后验期望替代单目标监督，显著降低流匹配训练中的梯度方差，从而缓解流坍塌问题，提升生成质量。",
+      "method": "PAFM将原始流匹配中每个中间状态仅对应一个目标点的监督方式，扩展为对多个合理目标点的后验期望。该方法将难以直接计算的后验分解为中间状态在假设终点下的似然与终点在条件先验下的概率之积，并通过重要性采样构建多个候选目标的混合分布，从而得到原始目标的无偏估计且方差更小。",
+      "findings": "在不同模型规模（SiT-B/2和SiT-XL/2）、不同架构（SiT和MMDiT）以及类别条件（ImageNet）和文本条件（CC12M）基准上，PAFM相比标准流匹配在FID50K指标上最高提升3.4，且计算开销增加极小。"
+    }
+  },
+  {
+    "id": "2605.00548",
+    "title": "Colorful-Noise: Training-Free Low-Frequency Noise Manipulation for Color-Based Conditional Image Generation",
+    "abstract": "Text-to-image diffusion models generate images by gradually converting white Gaussian noise into a natural image. White Gaussian noise is well suited for producing diverse outputs from a single text prompt due to its absence of structure. However, this very property limits control over, and predictability of, specific visual attributes, as the noise is not human-interpretable. In this work, we investigate the characteristics of the input noise in diffusion models. We show that, although all frequencies in white Gaussian noise have comparable statistical energy, low-frequency components primarily determine the images global structure and color composition, while high-frequency components control finer details. Building on this observation, we demonstrate that simple manipulations of the low-frequency noise using low-frequency image priors can effectively condition the generation process to reconstruct these low-frequency visual cues. This allows us to define a simple, training-free method with minimal overhead that steers overall image structure and color, while letting high-frequency components freely emerge as fine details, enabling variability across generated outputs.",
+    "authors": [
+      "Nadav Z. Cohen",
+      "Ofir Abramovich",
+      "Ariel Shamir"
+    ],
+    "published": "2026-05-01",
+    "updated": "2026-05-01",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.00548.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.00548",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "彩色噪声：基于颜色的条件图像生成中无需训练的低频噪声操控方法",
+      "core_contribution": "本文发现扩散模型中输入噪声的低频成分主要决定图像的全局结构和颜色分布，并据此提出一种无需训练、计算开销极小的低频噪声操控方法，能够有效引导生成过程以控制图像颜色和整体结构。",
+      "method": "作者首先分析了白噪声在频率域的特性，发现低频成分对图像全局结构和颜色起主导作用，而高频成分影响细节。基于此，他们提出直接对输入噪声的低频部分进行简单操作，例如用低通滤波后的图像先验替换或调整低频噪声，从而在不改变模型参数或额外训练的情况下，使生成结果在颜色和结构上符合预期。高频部分则保持随机性，以保留生成图像的多样性和细节丰富性。",
+      "findings": "实验表明，通过低频噪声操控，可以稳定地控制生成图像的整体色调和布局，同时保持高频细节的随机变化，从而在条件生成中实现颜色和结构可控性与输出多样性之间的平衡。该方法无需训练，且计算开销极小，适用于多种文本到图像的扩散模型。"
+    }
+  },
+  {
+    "id": "2605.00273",
+    "title": "When Do Diffusion Models learn to Generate Multiple Objects?",
+    "abstract": "Text-to-image diffusion models achieve impressive visual fidelity, yet they remain unreliable in multi-object generation. Despite extensive empirical evidence of these failures, the underlying causes remain unclear. We begin by asking how much of this limitation arises from the data itself. To disentangle data effects, we consider two regimes across different dataset sizes: (1) concept generalization, where each individual concept is observed during training under potentially imbalanced data distributions, and (2) compositional generalization, where specific combinations of concepts are systematically held out. To study these regimes, we introduce mosaic (Multi-Object Spatial relations, AttrIbution, Counting), a controlled framework for dataset generation. By training diffusion models on mosaic, we find that scene complexity plays a dominant role rather than concept imbalance, and that counting is uniquely difficult to learn in low-data regimes. Moreover, compositional generalization collapses as more concept combinations are held out during training. These findings highlight fundamental limitations of diffusion models and motivate stronger inductive biases and data design for robust multi-object compositional generation.",
+    "authors": [
+      "Yujin Jeong",
+      "Arnas Uselis",
+      "Iro Laina",
+      "Seong Joon Oh",
+      "Anna Rohrbach"
+    ],
+    "published": "2026-04-30",
+    "updated": "2026-04-30",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.00273.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.00273",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "扩散模型何时学会生成多个物体？",
+      "core_contribution": "本文通过引入可控数据集生成框架Mosaic，系统研究了扩散模型在多物体生成中失败的根本原因，揭示了场景复杂度和数据组合缺失对模型性能的关键影响。",
+      "method": "作者提出了Mosaic（Multi-Object Spatial relations, AttrIbution, Counting）框架，用于生成具有可控场景复杂度、概念分布和组合关系的多物体图像数据集。通过在不同数据集规模下训练扩散模型，分别考察概念泛化（单个概念在训练中是否平衡出现）和组合泛化（特定概念组合是否被系统性地保留）两种机制，从而分离数据本身对模型性能的影响。",
+      "findings": "实验发现：场景复杂度是影响多物体生成的主要因素，而非概念不平衡；在低数据量下，计数任务尤其难以学习；当训练中保留更多概念组合时，组合泛化能力显著下降。这些结果表明扩散模型在鲁棒的多物体组合生成中面临根本性局限，需要更强的归纳偏置和数据设计策略。"
+    }
+  },
+  {
+    "id": "2605.00605",
+    "title": "Faithful Extreme Image Rescaling with Learnable Reversible Transformation and Semantic Priors",
+    "abstract": "Most recent extreme rescaling methods struggle to preserve semantically consistent structures and produce realistic details, due to the severely ill-posed nature of low- to high-resolution mapping under scaling factors of $16\\times$ or higher. To alleviate the above problems, we propose FaithEIR, a diffusion-based framework for extreme image rescaling. Inspired by singular value decomposition, we develop learnable reversible transformation that enables invertible downscaling and upscaling in the latent space. To compensate for information loss due to quantization, we propose an adaptive detail prior, a high-frequency dictionary that captures the empirical average of commonly occurring structures in the training data. Finally, we design a lightweight pixel semantic embedder to provide semantic conditioning for the pretrained diffusion model. We present extensive experimental results demonstrating that our FaithEIR consistently outperforms state-of-the-art methods, achieving superior reconstruction fidelity and perceptual quality. Our code, model weights, and detailed results are released at https://github.com/cshw2021/FaithEIR.",
+    "authors": [
+      "Hao Wei",
+      "Yanhui Zhou",
+      "Chenyang Ge",
+      "Saeed Anwar",
+      "Ajmal Mian"
+    ],
+    "published": "2026-05-01",
+    "updated": "2026-05-01",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.00605.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.00605",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "基于可学习可逆变换与语义先验的忠实极端图像缩放",
+      "core_contribution": "提出了一种名为FaithEIR的扩散模型框架，通过可学习可逆变换和语义先验，解决了极端缩放因子（16倍及以上）下图像重建中语义结构保持与细节真实性的难题。",
+      "method": "受奇异值分解启发，设计了一种可学习的可逆变换，在潜在空间中实现可逆的下采样和上采样；为补偿量化导致的信息损失，提出自适应细节先验——一个高频字典，用于捕捉训练数据中常见结构的经验平均值；最后，设计轻量级像素语义嵌入器，为预训练扩散模型提供语义条件。",
+      "findings": "实验结果表明，FaithEIR在极端图像缩放任务上持续优于现有最先进方法，在重建保真度和感知质量上均取得更优性能。"
+    }
+  }
+]
