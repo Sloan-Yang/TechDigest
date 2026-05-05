@@ -1,0 +1,143 @@
+[
+  {
+    "id": "2605.02417",
+    "title": "DirectEdit: Step-Level Accurate Inversion for Flow-Based Image Editing",
+    "abstract": "With recent advancements in large-scale pre-trained text-to-image (T2I) models, training-free image editing methods have demonstrated remarkable success. Typically, these methods involve adding noise to a clean image via an inversion process, followed by separate denoising steps for the reconstruction and editing paths during the forward process. However, since the reconstruction path is approximated using noisy latents from mismatched timesteps, existing methods inevitably suffer from accumulated drift, which fundamentally limits reconstruction fidelity. To address this challenge, we systematically analyze the inversion process within the flow transformer and propose DirectEdit, a simple yet effective editing method that eliminates the inherent reconstruction error without introducing additional neural function evaluations (NFEs). Unlike most prior works that attempt to rectify the inversion path, DirectEdit focuses on directly aligning the forward paths, enabling precise reconstruction and reliable feature sharing. Furthermore, we introduce a preservation mechanism based on attention feature injection and multi-branch mask-guided noise blending, which effectively balances fidelity and editability. Extensive experiments across diverse scenarios demonstrate that DirectEdit achieves efficient and accurate image editing, delivering superior performance that outperforms state-of-the-art methods. Code and examples are available at https://desongyang.github.io/Directedit.",
+    "authors": [
+      "Desong Yang",
+      "Mang Ye"
+    ],
+    "published": "2026-05-04",
+    "updated": "2026-05-04",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.02417.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.02417",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "DirectEdit：基于流的图像编辑的逐步骤精确反演方法",
+      "core_contribution": "提出了一种无需额外神经函数评估的训练自由图像编辑方法DirectEdit，通过直接对齐前向路径而非修正反演路径，从根本上消除了现有方法中因时间步不匹配导致的累积重建误差。",
+      "method": "首先，系统分析了流变换器中的反演过程，发现传统方法因使用不匹配时间步的噪声潜变量导致重建漂移。DirectEdit通过直接对齐前向路径实现精确重建和可靠特征共享，避免了引入额外神经函数评估。其次，引入了一种基于注意力特征注入和多分支掩码引导噪声混合的保留机制，在保持编辑能力的同时有效平衡了重建保真度。",
+      "findings": "在多种场景下的广泛实验表明，DirectEdit实现了高效且准确的图像编辑，其性能优于当前最先进的方法，尤其在重建保真度和编辑可控性方面表现突出。"
+    }
+  },
+  {
+    "id": "2605.02152",
+    "title": "SpecEdit: Training-Free Acceleration for Diffusion based Image Editing via Semantic Locking",
+    "abstract": "Diffusion-based image editing offers strong semantic controllability, but remains computationally expensive due to iterative high-resolution denoising over all spatial tokens. Dynamic-resolution sampling reduces this cost by performing early steps at reduced resolution. However, existing approaches prioritize upsampling using low-level heuristics such as edge detection or channel variance, which are weakly aligned with editing semantics and may lead to structural inconsistency. Moreover, spatial regions are often upsampled without verifying whether semantic modification is actually required, resulting in redundant high-resolution computation and accumulated errors. Therefore, we propose SpecEdit, a training-free dynamic-resolution framework tailored for diffusion-based image editing. SpecEdit follows a draft-and-verify scheme: a low-resolution draft first estimates the semantic outcome, after which token-level discrepancies are used to identify edit-relevant tokens for high-resolution denoising, while the remaining tokens stay at a coarse resolution. Experiments on Qwen-Image-Edit and FLUX.1-Kontext-dev demonstrate up to 10x and 7x acceleration, while maintaining strong quality. SpecEdit is complementary to step distillation and other acceleration techniques, achieving up to 13x speedup when combined with existing methods. Our code is in supplementary material and will be released on GitHub.",
+    "authors": [
+      "Zhengan Yan",
+      "Shikang Zheng",
+      "Haoran Qin",
+      "Xiaobing Tu",
+      "Yinggui Wang",
+      "Jiacheng Liu",
+      "Jiaxuan Ren",
+      "Yuqi Lin",
+      "Peiliang Cai",
+      "Jinkui Ren",
+      "Xiantao Zhang",
+      "Linfeng Zhang"
+    ],
+    "published": "2026-05-04",
+    "updated": "2026-05-04",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.02152.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.02152",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SpecEdit：基于语义锁定的无训练加速扩散图像编辑方法",
+      "core_contribution": "提出一种无需额外训练的动态分辨率框架SpecEdit，通过低分辨率草稿与令牌级语义差异检测，实现扩散模型图像编辑的高效加速，同时保持编辑质量。",
+      "method": "采用“草稿-验证”两阶段方案：首先在低分辨率下生成编辑结果的粗略估计（草稿），然后通过计算草稿与原始图像在令牌级别的差异，识别出与编辑语义相关的令牌，仅对这些令牌进行高分辨率去噪，其余令牌保持低分辨率处理，从而避免冗余计算并减少累积误差。",
+      "findings": "在Qwen-Image-Edit和FLUX.1-Kontext-dev模型上分别实现最高10倍和7倍的加速，且编辑质量保持良好；与步数蒸馏等其他加速技术结合时，最高可达13倍加速，验证了方法的互补性与通用性。"
+    }
+  },
+  {
+    "id": "2605.01653",
+    "title": "SteeringDiffusion: A Bottlenecked Activation Control Interface for Diffusion Models",
+    "abstract": "We introduce SteeringDiffusion, a bottlenecked activation-level control interface for diffusion models that exposes a smooth, monotonic, and runtime-adjustable control surface over the content--style trade-off. Our method keeps the U-Net backbone frozen and learns a small, prompt-conditioned latent code projected to FiLM/AdaGN-style modulation parameters. A zero-initialized design guarantees exact equivalence to the base model at zero scale, while timestep-aware gating restricts modulation to later denoising stages. A single scalar at inference continuously traverses the control surface without retraining. Across experiments on Stable Diffusion~1.5 and SDXL covering multiple artistic styles, we show that SteeringDiffusion produces smooth and monotonic content--style trade-offs. Under matched parameter budgets, it outperforms LoRA in controllability and stability, while ControlNet and rank-1 adapters do not expose a comparable control surface. We further introduce an inversion-stability diagnostic based on DDIM inversion, used as a post-hoc trajectory probe, which reveals strong correlations with intervention magnitude. These results position \\emph{Steering Bottlenecked Explicit Control (S-BEC)} as a practical, general-purpose control interface for frozen diffusion backbones.",
+    "authors": [
+      "Fangzheng Wu",
+      "Brian Summa"
+    ],
+    "published": "2026-05-03",
+    "updated": "2026-05-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.01653.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.01653",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SteeringDiffusion：扩散模型的瓶颈激活控制接口",
+      "core_contribution": "提出一种名为SteeringDiffusion的瓶颈式激活级控制接口，能够在保持扩散模型U-Net骨干网络冻结的前提下，实现内容与风格之间平滑、单调且可运行时调节的控制。",
+      "method": "该方法学习一个小的、提示条件化的潜在编码，并将其投影为FiLM/AdaGN风格的调制参数。采用零初始化设计确保在零尺度下与基础模型完全等价，并通过时间步感知门控将调制限制在后期去噪阶段。推理时仅需一个标量即可连续遍历控制表面，无需重新训练。",
+      "findings": "在Stable Diffusion 1.5和SDXL上的多个艺术风格实验中，SteeringDiffusion实现了平滑且单调的内容-风格权衡。在相同参数预算下，其在可控性和稳定性上优于LoRA，而ControlNet和秩1适配器无法提供类似的控制表面。此外，基于DDIM反转的反演稳定性诊断揭示了干预幅度与轨迹之间的强相关性。"
+    }
+  },
+  {
+    "id": "2605.01517",
+    "title": "VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation",
+    "abstract": "Scalable Vector Graphics (SVG) animation generation is pivotal for professional design due to their structural editability and resolution independence. However, this task remains challenging as it requires bridging discrete code representations with continuous visual dynamics. Existing optimization-based methods often destroy topological consistency, while general-purpose LLMs rely on rigid CSS/SMIL transformations, failing to model geometry-level non-rigid deformations. To address these limitations, we present VAnim, the first LLM-based framework for open-domain text-to-SVG animation. We reconceptualize animation not as sequence generation, but as Sparse State Updates (SSU) on a persistent SVG DOM tree. This paradigm compresses sequence length by over 9.8x while preserving the SVG DOM structure and non-participating elements by construction. To enable precise control, we propose an Identification-First Motion Planning mechanism that grounds textual instructions in explicit visual entities. Furthermore, to overcome the non-differentiable nature of SVG rendering, we employ Rendering-Aware Reinforcement Learning via Group Relative Policy Optimization (GRPO). By leveraging a hybrid reward from a state-of-the-art video perception encoder, we align discrete code updates with high-fidelity visual feedback. We also introduce SVGAnim-134k, the first benchmark for vector animation. Extensive experiments demonstrate that VAnim significantly outperforms state-of-the-art baselines in semantic alignment and structural validity, with additional appendix metrics further validating motion quality and identity preservation.",
+    "authors": [
+      "Guotao Liang",
+      "Zhangcheng Wang",
+      "Chuang Wang",
+      "Juncheng Hu",
+      "Haitao Zhou",
+      "Junhua Liu",
+      "Jing Zhang",
+      "Dong Xu",
+      "Qian Yu"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-05-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.01517.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.01517",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "VAnim：面向结构保持的矢量动画的渲染感知稀疏状态建模",
+      "core_contribution": "VAnim是首个基于大语言模型（LLM）的开放域文本到SVG动画生成框架，通过将动画重新定义为对持久SVG DOM树的稀疏状态更新（SSU），在保留拓扑结构的同时大幅压缩序列长度，并利用渲染感知强化学习实现离散代码更新与连续视觉动态的对齐。",
+      "method": "VAnim提出稀疏状态更新（SSU）范式，将动画视为对SVG DOM树的增量修改而非完整序列生成，从而压缩序列长度9.8倍以上。采用识别优先的运动规划机制，将文本指令显式关联到具体视觉实体。针对SVG渲染不可微的问题，引入基于组相对策略优化（GRPO）的渲染感知强化学习，利用来自视频感知编码器的混合奖励信号对齐离散代码更新与高保真视觉反馈。",
+      "findings": "在自建基准SVGAnim-134k上的实验表明，VAnim在语义对齐和结构有效性上显著优于现有基线方法，附录指标进一步验证了其运动质量和身份保持能力。"
+    }
+  },
+  {
+    "id": "2605.01510",
+    "title": "SwiftPie: Lightning-fast Subject-driven Image Personalization via One step Diffusion",
+    "abstract": "Diffusion models have achieved remarkable success in high-quality image synthesis, sparking interest in image-guided generation tasks such as subject-driven image personalization. Despite their impressive personalization results, existing methods typically rely on computationally intensive fine-tuning, iterative optimization, or multi-step denoising processes, which significantly hinder their deployment and interactive capability in real-time applications. In this work, we present SwiftPie, the first one-step diffusion image personalization tool that enables lightning-fast generation of personalized images. SwiftPie introduces a novel dual-branch identity injection mechanism that effectively integrates subject identity into a one-step diffusion model. In addition, we incorporate a mask-guided rescaling strategy to further enhance subject contextualization within a single diffusion step. Extensive experiments demonstrate that SwiftPie not only delivers superior image personalization speed but also achieves comparable performance with multi-step approaches in both identity fidelity and prompt alignment. This work opens new opportunities for real-time, high-quality personalized image generation, paving the way for interactive visual synthesis.",
+    "authors": [
+      "Huy Duong",
+      "Trong-Tung Nguyen",
+      "Cuong Pham",
+      "Anh Tran",
+      "Khoi Nguyen",
+      "Minh Hoai"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-05-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.01510.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.01510",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SwiftPie：基于单步扩散的闪电般快速的主题驱动图像个性化生成",
+      "core_contribution": "提出了首个单步扩散图像个性化工具SwiftPie，在保持与多步方法相当的图像质量和身份保真度的同时，实现了极快的个性化图像生成速度，为实时交互式视觉合成开辟了新可能。",
+      "method": "SwiftPie引入了一种新颖的双分支身份注入机制，能够高效地将主体身份信息整合到单步扩散模型中；同时，结合了掩码引导的重缩放策略，在单个扩散步骤内进一步增强主体与上下文的融合。整个方法避免了传统方法中耗时的微调、迭代优化或多步去噪过程。",
+      "findings": "大量实验表明，SwiftPie在图像个性化生成速度上显著优于现有方法，同时在身份保真度和提示对齐方面达到了与多步方法相当的性能，证明了单步扩散在个性化图像生成中的可行性与高效性。"
+    }
+  }
+]
