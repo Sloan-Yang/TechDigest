@@ -1,0 +1,138 @@
+[
+  {
+    "id": "2605.04040",
+    "title": "Large Language Models are Universal Reasoners for Visual Generation",
+    "abstract": "Text-to-image generation has advanced rapidly with diffusion models, progressing from CLIP and T5 conditioning to unified systems where a single LLM backbone handles both visual understanding and generation. Despite the architectural unification, these systems frequently fail to faithfully align complex prompts during synthesis, even though they remain highly accurate at verifying whether an image satisfies those same prompts. We formalize this as the \\emph{understanding-generation gap} and propose UniReasoner, a framework that leverages the LLM as a universal reasoner to convert its understanding strength into direct generation guidance. Given a prompt, the LLM first produces a coarse visual draft composed of discrete vision tokens. It then performs a self-critique by evaluating the draft for prompt consistency, producing a grounded textual evaluation that pinpoints what needs to be corrected. Finally, a diffusion model is conditioned jointly on the prompt, the visual draft, and the evaluation, ensuring that generation is guided by explicit corrective signals. Each signal addresses a limitation of the other: the draft provides a concrete, scene-level anchor that reduces under-specification in text-only conditioning, while the evaluation turns verification into grounded, actionable constraints that correct omissions, hallucinations, and relational errors. Experiments show that UniReasoner improves compositional alignment and semantic faithfulness under the same diffusion backbone while maintaining image quality, demonstrating a practical way to exploit LLM reasoning to close the understanding-generation gap.",
+    "authors": [
+      "Sucheng Ren",
+      "Chen Chen",
+      "Zhenbang Wang",
+      "Liangchen Song",
+      "Xiangxin Zhu",
+      "Alan Yuille",
+      "Liang-Chieh Chen",
+      "Jiasen Lu"
+    ],
+    "published": "2026-05-05",
+    "updated": "2026-05-05",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.04040.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.04040",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "大型语言模型是视觉生成的通用推理器",
+      "core_contribution": "提出UniReasoner框架，利用大型语言模型作为通用推理器，弥合视觉生成中理解与生成之间的差距，通过自我批评和显式纠正信号提升文本到图像生成的语义对齐能力。",
+      "method": "首先，LLM根据输入提示生成由离散视觉标记组成的粗略视觉草稿。然后，LLM对草稿进行自我批评，评估其与提示的一致性，并生成基于文本的评估，指出需要修正的问题。最后，扩散模型同时以提示、视觉草稿和评估为条件进行生成，确保生成过程受到明确的纠正信号引导，从而减少文本条件中的欠指定问题，并修正遗漏、幻觉和关系错误。",
+      "findings": "实验表明，在相同扩散骨干网络下，UniReasoner显著提升了组合对齐和语义忠实度，同时保持了图像质量，验证了利用LLM推理能力缩小理解-生成差距的有效性。"
+    }
+  },
+  {
+    "id": "2605.03652",
+    "title": "AniMatrix: An Anime Video Generation Model that Thinks in Art, Not Physics",
+    "abstract": "Video generation models internalize physical realism as their prior. Anime deliberately violates physics: smears, impact frames, chibi shifts; and its thousands of coexisting artistic conventions yield no single \"physics of anime\" a model can absorb. Physics-biased models therefore flatten the artistry that defines the medium or collapse under its stylistic variance. We present AniMatrix, a video generation model that targets artistic rather than physical correctness through a dual-channel conditioning mechanism and a three-step transition: redefine correctness, override the physics prior, and distinguish art from failure. First, a Production Knowledge System encodes anime as a structured taxonomy of controllable production variables (Style, Motion, Camera, VFX), and AniCaption infers these variables from pixels as directorial directives. A trainable tag encoder preserves the field-value structure of this taxonomy while a frozen T5 encoder handles free-form narrative; dual-path injection (cross-attention for fine-grained control, AdaLN modulation for global enforcement) ensures categorical directives are never diluted by open-ended text. Second, a style-motion-deformation curriculum transitions the model from near-physical motion to full anime expressiveness. Third, deformation-aware preference optimization with a domain-specific reward model separates intentional artistry from pathological collapse. On an anime-specific human evaluation with five production dimensions scored by professional animators, AniMatrix ranks first on four of five, with the largest gains over Seedance-Pro 1.0 on Prompt Understanding (+0.70, +22.4 percent) and Artistic Motion (+0.55, +16.9 percent). We will publicly release the AniMatrix model weights and inference code.",
+    "authors": [
+      " Tencent HY Team"
+    ],
+    "published": "2026-05-05",
+    "updated": "2026-05-05",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.03652.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.03652",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "AniMatrix：一种以艺术而非物理逻辑思考的动漫视频生成模型",
+      "core_contribution": "提出了一种面向动漫艺术而非物理真实性的视频生成模型AniMatrix，通过双通道条件机制和三阶段转换，解决了现有物理偏置模型无法捕捉动漫多样化艺术风格的问题。",
+      "method": "首先构建了生产知识系统，将动漫编码为可控生产变量（风格、运动、相机、特效）的结构化分类体系，并通过AniCaption从像素中推断这些变量作为导演指令；采用可训练标签编码器保留分类体系的字段-值结构，同时用冻结的T5编码器处理自由文本，通过交叉注意力（细粒度控制）和AdaLN调制（全局强制）的双路径注入确保分类指令不被稀释。其次设计了风格-运动-变形课程，使模型从近似物理运动逐步过渡到完整的动漫表现力。最后通过变形感知偏好优化和领域特定奖励模型，将有意艺术处理与病理变形区分开来。",
+      "findings": "在由专业动画师评分的五个生产维度的人类评估中，AniMatrix在五个维度中的四个上排名第一，其中在提示理解（+0.70，+22.4%）和艺术运动（+0.55，+16.9%）上相比Seedance-Pro 1.0提升最大。"
+    }
+  },
+  {
+    "id": "2605.03317",
+    "title": "AHPA: Adaptive Hierarchical Prior Alignment for Diffusion Transformers",
+    "abstract": "Representation alignment has recently emerged as an effective paradigm for accelerating Diffusion Transformer training. Despite their success, existing alignment methods typically impose a fixed supervision target or a fixed alignment granularity throughout the entire denoising trajectory, whether the guidance is provided by external vision encoders, internal self-representations, or VAE-derived features. We argue that such timestep-agnostic alignment is suboptimal because the useful granularity of representation supervision changes systematically with the signal-to-noise ratio. In high-noise regimes, diffusion models benefit more from coarse semantic and layout-level anchoring, whereas in low-noise regimes, the training signal should emphasize spatially detailed and structurally faithful refinement. This non-stationary alignment behavior creates a representational mismatch for static single-level supervisors. To address this issue, we propose Adaptive Hierarchical Prior Alignment (AHPA), a lightweight alignment framework that exploits the hierarchical representations naturally embedded in the frozen VAE encoder. Instead of using only a single compressed latent as the alignment target, AHPA extracts multi-level VAE features that provide complementary priors ranging from local geometry and spatial topology to coarse semantic layout. A timestep-conditioned Dynamic Router adaptively selects and weights these hierarchical priors along the denoising trajectory, thereby synchronizing the alignment granularity with the model's evolving training needs. Extensive experiments show that AHPA improves convergence and generation quality over baselines and incurs no additional inference cost while avoiding external encoder supervision during training.",
+    "authors": [
+      "Ruibin Min",
+      "Yexin Liu",
+      "Aimin Pan",
+      "Changsheng Lu",
+      "Jiafei Wu",
+      "Kelu Yao",
+      "Xiaogang Xu",
+      "Harry Yang"
+    ],
+    "published": "2026-05-05",
+    "updated": "2026-05-05",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.03317.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.03317",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "自适应分层先验对齐用于扩散变换器",
+      "core_contribution": "提出了一种自适应分层先验对齐（AHPA）框架，通过利用冻结VAE编码器中自然嵌入的多层特征，并根据去噪时间步动态调整对齐粒度，从而解决了现有静态对齐方法在扩散变换器训练中因信噪比变化导致的表示不匹配问题，显著提升了收敛速度和生成质量。",
+      "method": "AHPA从冻结的VAE编码器中提取多层特征，这些特征提供从局部几何、空间拓扑到粗语义布局的互补先验。一个时间步条件化的动态路由器（Dynamic Router）沿去噪轨迹自适应地选择和加权这些分层先验，使对齐粒度与模型在不同噪声阶段的训练需求同步。该方法避免了外部编码器监督，且不增加推理成本。",
+      "findings": "实验表明，AHPA在收敛速度和生成质量上均优于基线方法，且训练过程中无需额外编码器监督，推理时无额外计算开销。"
+    }
+  },
+  {
+    "id": "2605.01480",
+    "title": "AttnRouter: Per-Category Attention Routing for Training-Free Image Editing on MMDiT",
+    "abstract": "We study training-free image editing on Qwen-Image-Edit-2511, a 60-block multi-modal diffusion transformer (MMDiT) that concatenates noise and source-image tokens within a single attention stream. We make three contributions. (i) We introduce KVInject, a single-forward attention manipulation that alpha-blends source-half key/value projections into the noise-half within a localized layer/step band. KVInject is simpler than the classical two-pass MasaCtrl recipe and avoids the prompt-mismatch failure mode that disables MasaCtrl on MMDiT (composite score drops 31% versus baseline). (ii) We show that no single attention operation dominates across edit types, motivating AttnRouter, a per-category routing table that dispatches edits to the operation that best preserves source structure for that type. With ground-truth categories the router improves the CLIP-T+DINO-I composite by 6.4% over the editing baseline; an automatic CLIP zero-shot classifier closes 98% of this gap despite only 55% category accuracy. (iii) Through layer-, step-, and alpha-band ablations we localize the editing-effective attention sub-circuit: K/V injection in early denoising steps (S0-7) recovers nearly all of the gain of full-step injection, while injection in early (L0-15) or late (L45-60) layer bands fails to drive editing entirely; alpha in [0.3, 0.5] is a stable sweet spot. We also report negative results that highlight what does not transfer from the UNet folklore: simple K/V rescaling never beats baseline and aggressive variants collapse generation entirely (composite 0.084). We release code, pre-computed routing tables, and a 100-sample stratified subset of ImgEdit-Bench used in all ablations.",
+    "authors": [
+      "Guandong Li",
+      "Mengxia Ye"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-05-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.01480.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.01480",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "AttnRouter：面向MMDiT的无训练图像编辑的逐类别注意力路由",
+      "core_contribution": "提出一种针对多模态扩散变换器（MMDiT）的无训练图像编辑方法，通过单次前向注意力操作KVInject和逐类别路由表AttnRouter，在避免提示不匹配问题的同时，显著提升了编辑质量。",
+      "method": "首先，引入KVInject，在单次前向传播中通过alpha混合将源图像的键/值投影注入到噪声部分的局部层和步长带中，替代了传统的双次前向MasaCtrl方法。其次，发现不同编辑类型对注意力操作敏感度不同，因此提出AttnRouter，为每种编辑类别预计算最优操作的路由表，并利用CLIP零样本分类器自动选择路由。最后，通过层、步长和alpha带的消融实验定位了编辑有效的注意力子电路。",
+      "findings": "KVInject在MMDiT上避免了MasaCtrl的提示不匹配问题（复合分数下降31%），AttnRouter在真实类别下将CLIP-T+DINO-I复合指标提升6.4%，自动分类器可缩小98%的差距。编辑效果集中在早期去噪步长（S0-7）和alpha在[0.3, 0.5]区间，而简单K/V缩放无法超越基线，激进变体导致生成崩溃（复合分数0.084）。"
+    }
+  },
+  {
+    "id": "2605.01220",
+    "title": "Visual Implicit Autoregressive Modeling",
+    "abstract": "Visual Autoregressive Modeling (VAR) based on next-scale prediction achieves strong generation quality, but their explicit deep stacks fix the amount of computation per scale and inflate memory at high resolutions. We introduce Visual Implicit Autoregressive Modeling (VIAR), a next-scale autoregressive generator that embeds an implicit equilibrium layer between shallow pre/post blocks. The implicit layer is trained with Jacobian-Free Backpropagation, yielding constant training memory, while inference exposes a per-scale iteration knob that enables compute control. On ImageNet 256x256 benchmark, VIAR attains FID 2.16, and sFID 8.07 with only 38.4% parameters of VAR, matching or surpassing strong AR baselines and remaining competitive with large diffusion models. By controlling the per-scale knob, VIAR can reduce peak memory from 19.24 GB to 8.53 GB and doubles throughput from 15.16 to 32.08 images/s on a single RTX 4090, without retraining. Ablations show that fewer steps are sufficient for fixed-point iterations to converge and that VIAR consistently dominates VAR across quality efficiency operating points. In zero shot in-painting and class-conditional editing, VIAR produces sharper details and smoother boundaries while preserving global structure, validating the benefits of implicit equilibria and per-scale compute control for practical, deployable visual generation.",
+    "authors": [
+      "Pengfei Jiang",
+      "Jixiang Luo",
+      "Luxi Lin",
+      "Zhaohong Huang",
+      "Xuelong Li"
+    ],
+    "published": "2026-05-02",
+    "updated": "2026-05-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.01220.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.01220",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "视觉隐式自回归建模",
+      "core_contribution": "提出了一种基于隐式平衡层的视觉自回归生成模型VIAR，在显著减少参数量和内存占用的同时，实现了与强自回归基线及扩散模型相媲美的生成质量，并支持推理时按需控制计算量。",
+      "method": "VIAR在浅层的前处理和后处理模块之间嵌入一个隐式平衡层，该层通过雅可比自由反向传播进行训练，从而保持训练内存恒定。在推理时，该层暴露一个每尺度迭代旋钮，允许用户在不重新训练的情况下动态控制计算量，实现峰值内存与吞吐量的灵活调节。",
+      "findings": "在ImageNet 256x256上，VIAR以仅VAR 38.4%的参数达到FID 2.16和sFID 8.07，匹配或超越强自回归基线并与大扩散模型竞争。通过调节每尺度迭代次数，峰值内存从19.24GB降至8.53GB，吞吐量从15.06提升至32.08 images/s。在零样本修复和类别条件编辑任务中，VIAR生成更清晰的细节和更平滑的边界，验证了隐式平衡与每尺度计算控制的实用优势。"
+    }
+  }
+]
