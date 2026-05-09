@@ -1,0 +1,140 @@
+[
+  {
+    "id": "2605.06421",
+    "title": "FREPix: Frequency-Heterogeneous Flow Matching for Pixel-Space Image Generation",
+    "abstract": "Pixel-space diffusion has re-emerged as a promising alternative to latent-space generation because it avoids the representation bottleneck introduced by VAEs. Yet most existing methods still treat image generation as a frequency-homogeneous process, overlooking the distinct roles and learning dynamics of low- and high-frequency components. To address this, we propose FREPix, a FREquency-heterogeneous flow matching framework for Pixel-space image generation. FREPix explicitly decomposes generation into low- and high-frequency components, assigns them separate transport paths, predicts them with a factorized network, and trains them with a frequency-aware objective. In this way, coarse-to-fine generation becomes an explicit design principle rather than an implicit behavior. On ImageNet class-to-image generation, FREPix achieves competitive results among pixel-space generation models, reaching 1.91 FID at $256\\times256$ and 2.38 FID at $512\\times512$, with particularly strong behavior in the low-NFE regime.",
+    "authors": [
+      "Mingfeng Lin",
+      "Jiakun Chen",
+      "Liang Han",
+      "Liqiang Nie"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.06421.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.06421",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "FREPix：面向像素空间图像生成的频率异构流匹配方法",
+      "core_contribution": "提出了一种频率异构的流匹配框架FREPix，将像素空间图像生成显式分解为低频与高频分量的独立传输路径，从而将粗到细生成从隐式行为转变为显式设计原则，在保持竞争力的同时显著提升了低NFE（函数评估次数）下的生成性能。",
+      "method": "FREPix首先将图像分解为低频和高频分量，并为它们分配独立的传输路径；然后使用一个分解式网络分别预测这两个分量的流场；最后通过频率感知的损失函数进行联合训练。该方法使得模型能够显式地控制不同频率成分的学习动态，避免了传统方法中频率同质化处理带来的信息混淆。",
+      "findings": "在ImageNet类别到图像生成任务上，FREPix在256×256分辨率下达到1.91 FID，在512×512分辨率下达到2.38 FID，与现有像素空间生成模型相比具有竞争力，尤其在低NFE（函数评估次数）场景下表现出显著优势。"
+    }
+  },
+  {
+    "id": "2605.06207",
+    "title": "Taming the Entropy Cliff: Variable Codebook Size Quantization for Autoregressive Visual Generation",
+    "abstract": "Most discrete visual tokenizers rely on a default design: every position in the sequence shares the same codebook. Researchers try to scale the codebook size $K$ to get better reconstruction performance. Such a constant-codebook design hits a fundamental information-theoretic limit. We observe that the per-position conditional entropy of the training set decays so quickly along the sequence that, after a few positions, the conditional distribution becomes essentially deterministic. On ImageNet with $K=16384$, this happens within only 2 out of 256 positions, turning the remaining 254 into a memorization problem. We call this phenomenon the Entropy Cliff and formalize it with a simple expression: $t^{*} = \\lceil \\log_2 N / \\log_2 K \\rceil$. Interestingly, this phenomenon is not observed in language, as its natural structure keeps the effective entropy per position well below the codebook capacity. To address this, we propose Variable Codebook Size Quantization (VCQ), where the codebook size $K_t$ grows monotonically along the sequence from $K_{\\min}=2$ to $K_{\\max}$, leaving the loss function, parameter count, and AR training procedure unchanged. With a vanilla autoregressive Transformer and standard next-token prediction, a base version of VCQ reduces gFID w/o CFG from 27.98 to 14.80 on ImageNet $256\\times256$ over the baseline. Scaled up, it reaches gFID 1.71 with 684M autoregressive parameters, without any extra training techniques such as semantic regularization or causal alignment. The extreme information bottleneck at $K_{\\min}=2$ naturally induces a coarse-to-fine semantic hierarchy: a linear probe on only the first 10 tokens reaches 43.8% top-1 accuracy on ImageNet, compared to 27.1% for uniform codebooks. Ultimately, these results show that what matters is not only the total capacity of the codebook, but also how that capacity is distributed and organized.",
+    "authors": [
+      "Bowen Zheng",
+      "Weijian Luo",
+      "Guang Yang",
+      "Colin Zhang",
+      "Tianyang Hu"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.06207.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.06207",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "驯服熵悬崖：面向自回归视觉生成的变码本大小量化方法",
+      "core_contribution": "本文揭示了视觉离散分词器中固定码本设计存在“熵悬崖”现象，并提出变码本大小量化方法（VCQ），通过沿序列单调增大码本大小，在不改变损失函数和训练流程的情况下显著提升自回归图像生成质量。",
+      "method": "首先，作者通过信息论分析发现，在固定码本下，序列中前几个位置后条件熵急剧下降，导致后续位置退化为记忆问题。基于此，提出VCQ方法，让码本大小K_t沿序列从K_min=2单调增长至K_max，从而在早期位置强制形成信息瓶颈，诱导粗到细的语义层次。该方法无需修改损失函数、参数数量或自回归训练过程，仅改变每个位置可选的离散编码数量。",
+      "findings": "在ImageNet 256×256上，基础版VCQ将无CFG的gFID从27.98降至14.80；扩展至684M自回归参数后，gFID达到1.71，且无需语义正则化或因果对齐等额外技巧。此外，仅用前10个token的线性探针即可达到43.8%的ImageNet top-1准确率（统一码本仅27.1%），表明早期位置自然编码了语义信息。"
+    }
+  },
+  {
+    "id": "2605.06137",
+    "title": "Autoregressive Visual Generation Needs a Prologue",
+    "abstract": "In this work, we propose Prologue, an approach to bridging the reconstruction-generation gap in autoregressive (AR) image generation. Instead of modifying visual tokens to satisfy both reconstruction and generation, Prologue generates a small set of prologue tokens prepended to the visual token sequence. These prologue tokens are trained exclusively with the AR cross-entropy (CE) loss, while visual tokens remain dedicated to reconstruction. This decoupled design lets us optimize generation through the AR model's true distribution without affecting reconstruction quality, which we further formalize from an ELBO perspective. On ImageNet 256x256, Prologue-Base reduces gFID from 21.01 to 10.75 without classifier-free guidance while keeping reconstruction almost unchanged; Prologue-Large reaches a competitive rFID of 0.99 and gFID of 1.46 using a standard AR model without auxiliary semantic supervision. Interestingly, driven only by AR gradients, prologue tokens exhibit emergent semantic structure: linear probing on 16 prologue tokens reaches 35.88% Top-1, far above the 23.71% of the first 16 tokens from a standard tokenizer; resampling with fixed prologue tokens preserves a similar high-level semantic layout. Our results suggest a new direction: generation quality can be improved by introducing a separate learned generative representation while leaving the original representation intact.",
+    "authors": [
+      "Bowen Zheng",
+      "Weijian Luo",
+      "Guang Yang",
+      "Colin Zhang",
+      "Tianyang Hu"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.06137.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.06137",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "自回归视觉生成需要一个序言",
+      "core_contribution": "提出Prologue方法，通过引入独立的序言令牌（prologue tokens）来弥合自回归图像生成中重建与生成之间的差距，在不影响重建质量的前提下显著提升生成性能。",
+      "method": "Prologue在视觉令牌序列前添加一组可学习的序言令牌，这些令牌仅通过自回归交叉熵损失训练，而视觉令牌则专注于重建任务。这种解耦设计使得生成优化基于自回归模型的真实分布，同时从ELBO角度进行了理论形式化。",
+      "findings": "在ImageNet 256x256上，Prologue-Base在无分类器引导下将gFID从21.01降至10.75，重建几乎不变；Prologue-Large达到rFID 0.99和gFID 1.46。序言令牌展现出涌现的语义结构，16个序言令牌的线性探测Top-1准确率达35.88%，远超标准分词器前16个令牌的23.71%。"
+    }
+  },
+  {
+    "id": "2605.06070",
+    "title": "Arena as Offline Reward: Efficient Fine-Grained Preference Optimization for Diffusion Models",
+    "abstract": "Reinforcement learning from human feedback (RLHF) effectively promotes preference alignment of text-to-image (T2I) diffusion models. To improve computational efficiency, direct preference optimization (DPO), which avoids explicit reward modeling, has been widely studied. However, its reliance on binary feedback limits it to coarse-grained modeling on chosen-rejected pairs, resulting in suboptimal optimization. In this paper, we propose ArenaPO, which leverages Arena scores as offline rewards to provide refined feedback, thus achieving efficient and fine-grained optimization without a reward model. This enables ArenaPO to benefit from both the rich rewards of traditional RLHF and the efficiency of DPO. Specifically, we first construct a model Arena in which each model's capability is represented as a Gaussian distribution, and infer these capabilities by traversing the annotated pairwise preferences. Each output image is treated as a sample from the corresponding capability distribution. Then, for a image pair, conditioned on the two capability distributions and the observed pairwise preference, the absolute quality gap is estimated using latent-variable inference based on truncated normal distribution, which serves as fine-grained feedback during training. It does not require a reward model and can be computed offline, thus introducing no additional training overhead. We conduct ArenaPO training on Pick-a-Pic v2 and HPD v3 datasets, showing that ArenaPO consistently outperforms existing baselines.",
+    "authors": [
+      "Zhikai Li",
+      "Yue Zhao",
+      "Edward Zhongwei Zhang",
+      "Xuewen Liu",
+      "Jing Zhang",
+      "Qingyi Gu",
+      "Zhen Dong"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.06070.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.06070",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "竞技场作为离线奖励：扩散模型的高效细粒度偏好优化",
+      "core_contribution": "提出ArenaPO方法，利用竞技场评分作为离线奖励，在不依赖奖励模型的情况下实现扩散模型的细粒度偏好优化，兼顾了传统RLHF的丰富奖励与DPO的高效性。",
+      "method": "首先构建一个模型竞技场，将每个模型的能力表示为高斯分布，并通过遍历标注的成对偏好推断这些能力分布；每个输出图像被视为对应能力分布的样本。然后，对于一对图像，基于两个能力分布和观察到的成对偏好，利用截断正态分布进行潜变量推理，估计绝对质量差距，作为训练中的细粒度反馈。该方法无需奖励模型且可离线计算，不引入额外训练开销。",
+      "findings": "在Pick-a-Pic v2和HPD v3数据集上进行的ArenaPO训练表明，该方法在性能上持续优于现有基线方法。"
+    }
+  },
+  {
+    "id": "2605.05865",
+    "title": "InkDiffuser: High-Fidelity One-shot Chinese Calligraphy via Differentiable Morphological Optimization",
+    "abstract": "Current Chinese calligraphy generation methods suffer from poor stroke rendering and unrealistic ink morphology, resulting in outputs with limited visual fidelity and artistic fluidity. To address this problem, we propose \\textbf{InkDiffuser}, a diffusion-based generative framework for one-shot Chinese calligraphy synthesis. To guarantee high-fidelity rendering, we introduce two core contributions: a high-frequency enhancement mechanism and a Differentiable Ink Structure (DIS) loss that explicitly regularizes ink morphology. Inspired by the observation that high-frequency information in individual samples typically carries contour details, we enhance content extraction by explicitly fusing high-frequency representations for more accurate font structure. Furthermore, we propose a differentiable ink structure loss that integrates differentiable morphological operations into the diffusion process. By allowing the model to learn an explicit decomposition of ink-trace structures, DIS facilitates fine-grained refinement of stroke contours and delivers significantly improved visual realism in the generated calligraphy. Extensive experiments on various calligraphic styles and complex characters demonstrate that InkDiffuser can generate superior calligraphy fonts with realistic ink rendering effects from only a single reference glyph and outperform existing few-shot font generation approaches in structural consistency, detail fidelity, and visual authenticity. The code is available at the following address: https://github.com/JingVIPLab/InkDiffuser.",
+    "authors": [
+      "Kunchong Shi",
+      "Jing Zhang"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.05865.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.05865",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "InkDiffuser：基于可微分形态优化的高保真单样本中国书法生成",
+      "core_contribution": "提出了一种基于扩散模型的单样本中国书法生成框架InkDiffuser，通过高频增强机制和可微分墨迹结构损失，显著提升了书法字体的结构保真度和墨迹渲染的真实感。",
+      "method": "该方法首先在扩散模型中引入高频增强机制，通过显式融合输入样本的高频信息来提取更精确的字体轮廓细节。其次，提出可微分墨迹结构损失（DIS），将可微分形态学操作集成到扩散训练过程中，使模型能够学习墨迹轨迹的显式分解，从而对笔画轮廓进行细粒度优化。最终，仅需一个参考字形即可生成任意风格和复杂度的书法字体。",
+      "findings": "在多种书法风格和复杂字符上的实验表明，InkDiffuser仅需单个参考字形就能生成具有逼真墨迹渲染效果的优质书法字体，在结构一致性、细节保真度和视觉真实性上全面超越现有的少样本字体生成方法。"
+    }
+  }
+]
