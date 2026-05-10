@@ -1,0 +1,161 @@
+[
+  {
+    "id": "2605.05331",
+    "title": "ViTok-v2: Scaling Native Resolution Auto-Encoders to 5 Billion Parameters",
+    "abstract": "Vision Transformer (ViT) autoencoders have emerged as compelling tokenizers for images, offering improved reconstruction over convolutional tokenizers. However, existing ViT tokenizers cannot explore this landscape as performance degrades outside training resolutions, and reliance on adversarial losses prevents stable scaling. ViTok (Hansen-Estruch et al., 2025) found that the compression ratio r mediates a reconstruction-generation trade-off where lower r means better reconstructions but harder generations, so improving tokenizer reconstruction is key to more Pareto-optimal tokenizers. We introduce ViTok-v2, which addresses these limitations with native resolution support via NaFlex for generalization across resolutions and aspect ratios, and a novel DINOv3 perceptual loss that replaces both LPIPS and GAN objectives for stable training at any scale. ViTok-v2 is trained on about 2B images and scaled to 5B parameters, the largest image autoencoder to date. ViTok-v2 matches or exceeds state-of-the-art reconstruction at 256p and outperforms all baselines at 512p and above. In joint scaling experiments with flow matching generators, we show that scaling both the autoencoder and the generator advances the Pareto frontier of this trade-off.",
+    "authors": [
+      "Philippe Hansen-Estruch",
+      "Jiahui Chen",
+      "Vivek Ramanujan",
+      "Orr Zohar",
+      "Yan Ping",
+      "Animesh Sinha",
+      "Markos Georgopoulos",
+      "Edgar Schoenfeld",
+      "Ji Hou",
+      "Felix Juefei-Xu",
+      "Sriram Vishwanath",
+      "Ali Thabet"
+    ],
+    "published": "2026-05-06",
+    "updated": "2026-05-06",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.05331.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.05331",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ViTok-v2：将原生分辨率自动编码器扩展至50亿参数",
+      "core_contribution": "提出ViTok-v2，通过原生分辨率支持和新型感知损失函数，解决了现有ViT分词器在训练分辨率外性能下降及对抗性损失导致的扩展不稳定问题。",
+      "method": "1. 采用NaFlex技术实现跨分辨率和宽高比的原生分辨率支持；2. 提出基于DINOv3的感知损失函数，替代LPIPS和GAN目标，确保任意规模下的稳定训练；3. 在约20亿图像上训练并扩展至50亿参数。",
+      "findings": "1. ViTok-v2在256p分辨率下达到或超越现有最佳重建性能，在512p及以上分辨率全面优于基线模型；2. 与流匹配生成器联合实验表明，同时扩展自动编码器和生成器可推动重建-生成权衡的帕累托前沿。"
+    }
+  },
+  {
+    "id": "2605.06376",
+    "title": "Continuous-Time Distribution Matching for Few-Step Diffusion Distillation",
+    "abstract": "Step distillation has become a leading technique for accelerating diffusion models, among which Distribution Matching Distillation (DMD) and Consistency Distillation are two representative paradigms. While consistency methods enforce self-consistency along the full PF-ODE trajectory to steer it toward the clean data manifold, vanilla DMD relies on sparse supervision at a few predefined discrete timesteps. This restricted discrete-time formulation and mode-seeking nature of the reverse KL divergence tends to exhibit visual artifacts and over-smoothed outputs, often necessitating complex auxiliary modules -- such as GANs or reward models -- to restore visual fidelity. In this work, we introduce Continuous-Time Distribution Matching (CDM), migrating the DMD framework from discrete anchoring to continuous optimization for the first time. CDM achieves this through two continuous-time designs. First, we replace the fixed discrete schedule with a dynamic continuous schedule of random length, so that distribution matching is enforced at arbitrary points along sampling trajectories rather than only at a few fixed anchors. Second, we propose a continuous-time alignment objective that performs active off-trajectory matching on latents extrapolated via the student's velocity field, improving generalization and preserving fine visual details. Extensive experiments on different architectures, including SD3-Medium and Longcat-Image, demonstrate that CDM provides highly competitive visual fidelity for few-step image generation without relying on complex auxiliary objectives. Code is available at https://github.com/byliutao/cdm.",
+    "authors": [
+      "Tao Liu",
+      "Hao Yan",
+      "Mengting Chen",
+      "Taihang Hu",
+      "Zhengrong Yue",
+      "Zihao Pan",
+      "Jinsong Lan",
+      "Xiaoyong Zhu",
+      "Ming-Ming Cheng",
+      "Bo Zheng",
+      "Yaxing Wang"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.06376.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.06376",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "连续时间分布匹配用于少步扩散蒸馏",
+      "core_contribution": "首次将分布匹配蒸馏（DMD）框架从离散锚点迁移到连续时间优化，提出连续时间分布匹配（CDM），显著提升了少步图像生成的视觉保真度。",
+      "method": "CDM通过两种连续时间设计实现优化：1）用动态连续随机长度计划替代固定离散计划，使分布匹配在采样轨迹任意点执行；2）提出连续时间对齐目标，通过学生速度场外推潜在变量进行主动离轨迹匹配，提升泛化能力并保留细节。",
+      "findings": "在SD3-Medium和Longcat-Image等架构上的实验表明，CDM无需复杂辅助目标即可在少步生成中实现高度竞争力的视觉保真度，有效缓解传统DMD的过平滑和伪影问题。"
+    }
+  },
+  {
+    "id": "2605.06170",
+    "title": "DynT2I-Eval: A Dynamic Evaluation Framework for Text-to-Image Models",
+    "abstract": "Existing text-to-image (T2I) benchmarks largely rely on fixed prompt sets, leaving them vulnerable to overfitting and benchmark contamination once publicly released and repeatedly reused. In this work, we propose DynT2I-Eval, a fully automated dynamic evaluation framework for T2I models. It constructs a structured visual semantic space from long-form descriptions, decomposing prompts into controllable dimensions (e.g., subject, logical constraint, environment, and composition). This enables the continuous generation of fresh prompts via task-specific spaces and difficulty-aware sampling. DynT2I-Eval evaluates model performance across text alignment, perceptual quality, and aesthetics. Heterogeneous outputs are unified into prompt-conditioned pairwise comparisons, allowing a dynamic scheduler, micro-batch aggregation, and weighted Bayesian updates to maintain a stable online leaderboard despite changing prompt distributions and model injection. Experiments with independently sampled prompt streams demonstrate that continually refreshed prompts provide a robust evaluation protocol, reducing the impact of prompt-set-specific tuning. Simulations and ablations further confirm that the proposed ranking framework achieves a strong balance among cold-start convergence, late-entry discovery, and long-run ranking fidelity.",
+    "authors": [
+      "Juntong Wang",
+      "Jiarui Wang",
+      "Huiyu Duan",
+      "Lewei Li",
+      "Guangtao Zhai",
+      "Xiongkuo Min"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.06170.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.06170",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "DynT2I-Eval：文本到图像模型的动态评估框架",
+      "core_contribution": "提出DynT2I-Eval动态评估框架，通过结构化视觉语义空间和持续生成新提示词，解决传统T2I评估中因固定提示集导致的过拟合和基准污染问题。",
+      "method": "1. 从长文本描述构建结构化视觉语义空间，将提示词分解为可控维度（如主体、逻辑约束、环境等）；\n2. 通过任务特定空间和难度感知采样持续生成新提示词；\n3. 采用基于提示词的成对比较方法，结合动态调度、微批次聚合和加权贝叶斯更新，维持稳定的在线排行榜。",
+      "findings": "实验表明，持续刷新的提示词能提供鲁棒的评估协议，减少针对特定提示集调优的影响；排名框架在冷启动收敛、新模型发现和长期排名稳定性之间取得良好平衡。"
+    }
+  },
+  {
+    "id": "2605.05646",
+    "title": "MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality",
+    "abstract": "Unified visual tokenization faces a fundamental trade-off between high-fidelity pixel reconstruction (spatial equivariance) and semantic abstraction (conceptual invariance). We attribute this conflict to Manifold Misalignment: naive joint optimization induces opposing gradients, creating a zero-sum game between reconstruction and perception. To address this, we propose MUSE, a framework based on Topological Orthogonality. By treating Structure as an orthogonal bridge, MUSE decouples optimization within Transformers: structural gradients refine attention topology, while semantic gradients update feature values. This turns destructive interference into Mutual Reinforcement. Experiments show that MUSE breaks the trade-off, achieving state-of-the-art generation quality (gFID 3.08) and surpassing its teacher InternViT-300M in linear probing (85.2\\% vs. 82.5\\%), demonstrating that structurally aligned reconstruction can enhance semantic perception. Code is available at https://github.com/PanqiYang1/MUSE.",
+    "authors": [
+      "Panqi Yang",
+      "Haodong Jing",
+      "Jiahao Chao",
+      "Tingyan Xiang",
+      "Li Lin",
+      "Yao Hu",
+      "Yang Luo",
+      "Yongqiang Ma"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.05646.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.05646",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "MUSE：通过拓扑正交性解决视觉标记化中的流形错位问题",
+      "core_contribution": "提出MUSE框架，通过拓扑正交性解决视觉标记化中重建保真度与语义抽象之间的冲突，实现了重建与感知的相互增强。",
+      "method": "MUSE框架基于拓扑正交性，将结构作为正交桥梁，解耦了Transformer中的优化过程：结构梯度优化注意力拓扑，语义梯度更新特征值。这种方法将破坏性干扰转化为相互增强。",
+      "findings": "实验表明，MUSE打破了重建与感知之间的权衡，实现了最先进的生成质量（gFID 3.08），并在线性探测中超越了其教师模型InternViT-300M（85.2% vs. 82.5%），证明结构对齐的重建可以增强语义感知。"
+    }
+  },
+  {
+    "id": "2605.05781",
+    "title": "Steering Visual Generation in Unified Multimodal Models with Understanding Supervision",
+    "abstract": "Unified multimodal models are envisioned to bridge the gap between understanding and generation. Yet, to achieve competitive performance, state-of-the-art models adopt largely decoupled understanding and generation components. This design, while effective for individual tasks, weakens the connection required for mutual enhancement, leaving the potential synergy empirically uncertain. We propose to explicitly restore this synergy by introducing Understanding-Oriented Post-Training (UNO), a lightweight framework that treats understanding not only as a distinct task, but also a direct supervisory signal to steer generative representations. By incorporating objectives that encode semantic abstraction (captioning) and structural details (visual regression), we enable effective gradient flow from understanding to generation. Extensive experiments on image generation and editing demonstrate that understanding can serve as an effective catalyst for generation.",
+    "authors": [
+      "Zeyu Liu",
+      "Zanlin Ni",
+      "Yang Yue",
+      "Cheng Da",
+      "Huan Yang",
+      "Di Zhang",
+      "Kun Gai",
+      "Gao Huang"
+    ],
+    "published": "2026-05-07",
+    "updated": "2026-05-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.05781.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.05781",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "通过理解监督引导统一多模态模型中的视觉生成",
+      "core_contribution": "提出理解导向的微调框架（UNO），将理解任务作为直接监督信号来引导生成表征，实现了理解与生成能力的协同增强。",
+      "method": "1. 设计轻量级框架UNO，在预训练模型基础上引入理解任务的监督信号；2. 通过语义抽象（标题生成）和结构细节（视觉回归）双目标编码，建立理解到生成的梯度流；3. 在图像生成与编辑任务中验证框架有效性。",
+      "findings": "实验表明：1. 理解监督能显著提升生成质量；2. 语义与结构双重监督比单一监督更有效；3. 该方法在保持模型轻量化的同时实现了生成能力的可解释性提升。"
+    }
+  }
+]
