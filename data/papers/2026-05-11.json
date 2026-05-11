@@ -1,0 +1,158 @@
+[
+  {
+    "id": "2605.08063",
+    "title": "Flow-OPD: On-Policy Distillation for Flow Matching Models",
+    "abstract": "Existing Flow Matching (FM) text-to-image models suffer from two critical bottlenecks under multi-task alignment: the reward sparsity induced by scalar-valued rewards, and the gradient interference arising from jointly optimizing heterogeneous objectives, which together give rise to a 'seesaw effect' of competing metrics and pervasive reward hacking. Inspired by the success of On-Policy Distillation (OPD) in the large language model community, we propose Flow-OPD, the first unified post-training framework that integrates on-policy distillation into Flow Matching models. Flow-OPD adopts a two-stage alignment strategy: it first cultivates domain-specialized teacher models via single-reward GRPO fine-tuning, allowing each expert to reach its performance ceiling in isolation; it then establishes a robust initial policy through a Flow-based Cold-Start scheme and seamlessly consolidates heterogeneous expertise into a single student via a three-step orchestration of on-policy sampling, task-routing labeling, and dense trajectory-level supervision. We further introduce Manifold Anchor Regularization (MAR), which leverages a task-agnostic teacher to provide full-data supervision that anchors generation to a high-quality manifold, effectively mitigating the aesthetic degradation commonly observed in purely RL-driven alignment. Built upon Stable Diffusion 3.5 Medium, Flow-OPD raises the GenEval score from 63 to 92 and the OCR accuracy from 59 to 94, yielding an overall improvement of roughly 10 points over vanilla GRPO, while preserving image fidelity and human-preference alignment and exhibiting an emergent 'teacher-surpassing' effect. These results establish Flow-OPD as a scalable alignment paradigm for building generalist text-to-image models.",
+    "authors": [
+      "Zhen Fang",
+      "Wenxuan Huang",
+      "Yu Zeng",
+      "Yiming Zhao",
+      "Shuang Chen",
+      "Kaituo Feng",
+      "Yunlong Lin",
+      "Lin Chen",
+      "Zehui Chen",
+      "Shaosheng Cao",
+      "Feng Zhao"
+    ],
+    "published": "2026-05-08",
+    "updated": "2026-05-08",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.08063.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.08063",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "Flow-OPD：面向流匹配模型的在线策略蒸馏方法",
+      "core_contribution": "Flow-OPD首次将在线策略蒸馏（OPD）引入流匹配模型，提出统一的后训练对齐框架，通过两阶段对齐策略和流式冷启动方案，有效解决了多任务对齐中的奖励稀疏和梯度干扰问题，显著提升了文本到图像生成模型的综合性能。",
+      "method": "Flow-OPD采用两阶段对齐策略：第一阶段通过单奖励GRPO微调培养领域专精的教师模型，使每个专家独立达到性能上限；第二阶段通过流式冷启动方案建立稳健的初始策略，并利用三步协调机制（在线策略采样、任务路由标注、密集轨迹级监督）将异构专业知识无缝整合到单个学生模型中。此外，引入流形锚点正则化（MAR），利用任务无关教师提供全数据监督，将生成锚定到高质量流形，缓解纯RL驱动对齐中的美学退化问题。",
+      "findings": "基于Stable Diffusion 3.5 Medium，Flow-OPD将GenEval分数从63提升至92，OCR准确率从59提升至94，整体性能比原始GRPO提升约10个百分点，同时保持图像保真度和人类偏好对齐，并展现出新兴的‘超越教师’效应。"
+    }
+  },
+  {
+    "id": "2605.08043",
+    "title": "SCOPE: Structured Decomposition and Conditional Skill Orchestration for Complex Image Generation",
+    "abstract": "While text-to-image models have made strong progress in visual fidelity, faithfully realizing complex visual intents remains challenging because many requirements must be tracked across grounding, generation, and verification. We refer to these requirements as semantic commitments and formalize their lifecycle discontinuity as the Conceptual Rift, where commitments may be locally resolved or checked but fail to remain identifiable as the same operational units throughout the generation lifecycle. To address this, we propose SCOPE, a specification-guided skill orchestration framework that maintains semantic commitments in an evolving structured specification and conditionally invokes retrieval, reasoning, and repair skills around unresolved or violated commitments. To evaluate commitment-level intent realization, we introduce Gen-Arena, a human-annotated benchmark with entity- and constraint-level specifications, together with Entity-Gated Intent Pass Rate (EGIP), a strict entity-first pass criterion. SCOPE substantially outperforms all evaluated baselines on Gen-Arena, achieving 0.60 EGIP, and further achieves strong results on WISE-V (0.907) and MindBench (0.61), demonstrating the effectiveness of persistent commitment tracking for complex image generation.",
+    "authors": [
+      "Tianfei Ren",
+      "Zhipeng Yan",
+      "Yiming Zhao",
+      "Zhen Fang",
+      "Yu Zeng",
+      "Guohui Zhang",
+      "Hang Xu",
+      "Xiaoxiao Ma",
+      "Shiting Huang",
+      "Ke Xu",
+      "Wenxuan Huang",
+      "Lionel Z. Wang",
+      "Lin Chen",
+      "Zehui Chen",
+      "Jie Huang",
+      "Feng Zhao"
+    ],
+    "published": "2026-05-08",
+    "updated": "2026-05-08",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.08043.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.08043",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SCOPE：面向复杂图像生成的结构化解耦与条件化技能编排",
+      "core_contribution": "提出了一种基于结构化规范驱动的技能编排框架SCOPE，通过持续追踪语义承诺（semantic commitments）来解决复杂图像生成中概念断层（Conceptual Rift）问题，显著提升了多约束条件下图像生成的意图实现能力。",
+      "method": "SCOPE框架将用户需求形式化为可演化的结构化规范，并围绕未解决或违反的承诺条件性地调用检索、推理和修复技能。具体而言，它通过解耦生成过程中的语义承诺，在生成生命周期中保持承诺的可识别性，并针对不同阶段的承诺状态动态触发相应的技能模块，从而实现对复杂视觉意图的忠实还原。",
+      "findings": "在自建基准Gen-Arena上，SCOPE的EGIP（实体优先意图通过率）达到0.60，显著优于所有基线方法；同时在WISE-V（0.907）和MindBench（0.61）上也取得了领先结果，验证了持久化承诺追踪在复杂图像生成中的有效性。"
+    }
+  },
+  {
+    "id": "2605.07940",
+    "title": "Delta-Adapter: Scalable Exemplar-Based Image Editing with Single-Pair Supervision",
+    "abstract": "Exemplar-based image editing applies a transformation defined by a source-target image pair to a new query image. Existing methods rely on a pair-of-pairs supervision paradigm, requiring two image pairs sharing the same edit semantics to learn the target transformation. This constraint makes training data difficult to curate at scale and limits generalization across diverse edit types. We propose Delta-Adapter, a method that learns transferable editing semantics under single-pair supervision, requiring no textual guidance. Rather than directly exposing the exemplar pair to the model, we leverage a pre-trained vision encoder to extract a semantic delta that encodes the visual transformation between the two images. This semantic delta is injected into a pre-trained image editing model via a Perceiver-based adapter. Since the target image is never directly visible to the model, it can serve as the prediction target, enabling single-pair supervision without requiring additional exemplar pairs. This formulation allows us to leverage existing large-scale editing datasets for training. To further promote faithful transformation transfer, we introduce a semantic delta consistency loss that aligns the semantic change of the generated output with the ground-truth semantic delta extracted from the exemplar pair. Extensive experiments demonstrate that Delta-Adapter consistently improves both editing accuracy and content consistency over four strong baselines on seen editing tasks, while also generalizing more effectively to unseen editing tasks. Code will be available at https://delta-adapter.github.io.",
+    "authors": [
+      "Jiacheng Chen",
+      "Songze Li",
+      "Han Fu",
+      "Baoquan Zhao",
+      "Wei Liu",
+      "Yanyan Liang",
+      "Li Qing",
+      "Xudong Mao"
+    ],
+    "published": "2026-05-08",
+    "updated": "2026-05-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.07940.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.07940",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Delta-Adapter：基于单对监督的可扩展示例图像编辑方法",
+      "core_contribution": "提出了一种仅需单对图像（源-目标对）即可学习可迁移编辑语义的图像编辑方法，无需文本指导或额外的示例对，显著降低了训练数据收集难度并提升了编辑任务的泛化能力。",
+      "method": "该方法利用预训练的视觉编码器从示例图像对中提取“语义增量”（semantic delta），即两幅图像之间的视觉变换表示。该语义增量通过基于Perceiver的适配器注入到预训练的图像编辑模型中。由于目标图像在训练时对模型不可见，它可直接作为预测目标，从而实现单对监督。此外，引入语义增量一致性损失，确保生成图像的语义变化与真实示例对的语义增量对齐。",
+      "findings": "在多个强基线模型上的实验表明，Delta-Adapter在已知编辑任务上一致提升了编辑准确性和内容一致性，同时在未见过的编辑任务上展现出更强的泛化能力。"
+    }
+  },
+  {
+    "id": "2605.07846",
+    "title": "BRIDGE: Background Routing and Isolated Discrete Gating for Coarse-Mask Local Editing",
+    "abstract": "Coarse-mask local image editing asks a model to modify a user-indicated region while preserving the surrounding scene. In practice, however, rough masks often become unintended shape priors: instead of serving as flexible edit support, the mask can pull the generated object toward its accidental boundary. We study this failure as mask-shape bias and frame the task through a Two-Zone Constraint, where the background should remain stable while the editable region should follow the instruction without being forced to inherit the mask contour. BRIDGE addresses this setting by keeping masks outside the DiT backbone for support construction and blending, avoiding DiT-internal mask injection and copied control branches. It uses BridgePath generation, where a Main Path preserves background context and a Subject Path generates editable content from independent noise. Motivated by a diagnostic Qwen-Image experiment showing that positional embeddings and attention connectivity regulate which image context visual tokens reuse, BRIDGE introduces a learnable Discrete Geometric Gate for token-level positional-embedding routing. This gate lets subject tokens borrow background-anchored coordinates near fusion regions or keep subject-centric coordinates for geometric freedom. We evaluate BRIDGE on BRIDGE-Bench, MagicBrush, and ICE-Bench. On BRIDGE-Bench, BRIDGE improves Local SigLIP2-T from 0.262 with FLUX.1-Fill and 0.390 with ACE++ to 0.503, with parallel gains in local DINO and DreamSim. Zero-shot results on MagicBrush and ICE-Bench further indicate competitive alignment and source preservation beyond the curated benchmark, while the added routing module remains compact at 13.31M parameters compared with ControlNet-style copied branches.",
+    "authors": [
+      "Peilin Xiong",
+      "Honghui Yuan",
+      "Junwen Chen",
+      "Keiji Yanai"
+    ],
+    "published": "2026-05-08",
+    "updated": "2026-05-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.07846.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.07846",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "BRIDGE：面向粗掩码局部编辑的背景路由与离散门控机制",
+      "core_contribution": "提出BRIDGE方法，通过将掩码置于DiT骨干网络之外进行支持构建与混合，并引入可学习的离散几何门控实现令牌级位置嵌入路由，有效解决了粗掩码局部图像编辑中的掩码形状偏差问题。",
+      "method": "BRIDGE采用双路径生成架构：主路径保留背景上下文，主题路径从独立噪声生成可编辑内容。方法核心在于一个可学习的离散几何门控，该门控根据令牌级位置嵌入路由，允许主题令牌在融合区域附近借用背景锚定坐标或保持主题中心坐标以获得几何自由度。整个路由模块仅13.31M参数，远小于ControlNet风格的复制分支。",
+      "findings": "在BRIDGE-Bench上，BRIDGE将Local SigLIP2-T从FLUX.1-Fill的0.262和ACE++的0.390提升至0.503，同时在local DINO和DreamSim指标上也有并行提升。在MagicBrush和ICE-Bench上的零样本结果进一步表明，该方法在保持源图像内容的同时实现了有竞争力的对齐效果，且路由模块参数紧凑（13.31M）。"
+    }
+  },
+  {
+    "id": "2605.07455",
+    "title": "EditTransfer++: Toward Faithful and Efficient Visual-Prompt-Guided Image Editing",
+    "abstract": "Visual-prompt-guided edit transfer aims to learn image transformations directly from example pairs, offering more precise and controllable editing than purely text-driven approaches. However, existing diffusion transformer-based methods often fail to faithfully reproduce the demonstrated edits due to structural mismatches between the task and the backbone, including a pretrained bias toward textual conditioning and inherent stochastic instability during sampling. To bridge this gap, we present EditTransfer++, a framework that combines progressively structured training with an efficient conditioning scheme to improve both visual prompt faithfulness and inference efficiency. We first mitigate textual dominance with a text-decoupled training strategy that removes text conditioning during fine-tuning, compelling the model to infer transformations solely from visual evidence while still supporting optional text guidance at inference. On top of this visually grounded model, a best-worst contrastive refinement mechanism reshapes the denoising trajectories to suppress unfaithful generations and improve consistency across random seeds. To alleviate the computational bottleneck of high-resolution in-context editing, we further introduce a condition compression and reuse strategy that reduces token redundancy and enables efficient generation of images with a 1024-pixel long edge. Extensive experiments on existing benchmarks and the proposed EditTransfer-Bench show that EditTransfer++ achieves state-of-the-art visual prompt faithfulness with substantially faster inference than prior methods, suggesting a promising direction for scalable prompt-guided image editing and broader visual in-context learning.",
+    "authors": [
+      "Lan Chen",
+      "Qi Mao",
+      "Yiren Song",
+      "Yuchao Gu",
+      "Siwei Ma"
+    ],
+    "published": "2026-05-08",
+    "updated": "2026-05-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.07455.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.07455",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "EditTransfer++：迈向忠实且高效的视觉提示引导图像编辑",
+      "core_contribution": "提出了一种名为EditTransfer++的框架，通过文本解耦训练、对比优化和条件压缩策略，显著提升了视觉提示引导图像编辑的忠实度和推理效率，在保持高质量编辑效果的同时实现了更快的生成速度。",
+      "method": "首先，采用文本解耦训练策略，在微调阶段移除文本条件，迫使模型仅从视觉证据推断变换，同时允许推理时可选文本引导。其次，引入最佳-最差对比优化机制，重塑去噪轨迹以抑制不忠实生成并提高随机种子间的一致性。最后，提出条件压缩与重用策略，减少令牌冗余，支持1024像素长边的高效高分辨率图像生成。",
+      "findings": "在现有基准和新提出的EditTransfer-Bench上，EditTransfer++在视觉提示忠实度上达到最先进水平，且推理速度显著快于先前方法，为可扩展的提示引导图像编辑和视觉上下文学习提供了有前景的方向。"
+    }
+  }
+]
