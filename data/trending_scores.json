@@ -179,5 +179,14 @@
   "AUTOMATIC1111_stable-diffusion-webui": 95,
   "rasbt_LLMs-from-scratch": 95,
   "apernet_hysteria": 20,
-  "anonfaded_FadCam": 40
+  "anonfaded_FadCam": 40,
+  "influxdata_telegraf": 30,
+  "K-Dense-AI_scientific-agent-skills": 60,
+  "sponsors_danielmiessler": 85,
+  "supertone-inc_supertonic": 85,
+  "Greedeks_GTweak": 20,
+  "ArthurBrussee_brush": 85,
+  "sponsors_imthenachoman": 0,
+  "ton-blockchain_acton": 30,
+  "github_spec-kit": 0
 }

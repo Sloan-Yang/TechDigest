@@ -1,0 +1,215 @@
+[
+  {
+    "id": "2605.11061",
+    "title": "HiDream-O1-Image: A Natively Unified Image Generative Foundation Model with Pixel-level Unified Transformer",
+    "abstract": "The evolution of visual generative models has long been constrained by fragmented architectures relying on disjoint text encoders and external VAEs. In this report, we present HiDream-O1-Image, a natively unified generative foundation model via pixel-space Diffusion Transformer, that pioneers a paradigm shift from modular architectures to an end-to-end in-context visual generation engine. By mapping raw image pixels, text tokens, and task-specific conditions into a single shared token space, HiDream-O1-Image achieves a structural unification of multimodal inputs within an Unified Transformer (UiT) architecture. This native encoding paradigm eliminates the need for separate VAEs or disjoint pre-trained text encoders, allowing the model to treat diverse generation and editing tasks as a consistent in-context reasoning process. Extensive experiments show that HiDream-O1-Image excels across various generation tasks, including text-to-image generation, instruction-based editing, and subject-driven personalization. Notably, with only 8B parameters, HiDream-O1-Image (8B) achieves performance parity with or even surpasses established state-of-the-art models with significantly larger parameters (e.g., 27B Qwen-Image). Crucially, to validate the immense scalability of this paradigm, we successfully scale the architecture up to over 200B parameters. Experimental results demonstrate that this massive-scale version HiDream-O1-Image-Pro (200B+) unlocks unprecedented generative capabilities and superior performance, establishing new state-of-the-art benchmarks. Ultimately, HiDream-O1-Image highlights the immense potential of natively unified architectures and charts a highly scalable path toward next-generation multimodal AI.",
+    "authors": [
+      "Qi Cai",
+      "Jingwen Chen",
+      "Chengmin Gao",
+      "Zijian Gong",
+      "Yehao Li",
+      "Yingwei Pan",
+      "Yi Peng",
+      "Zhaofan Qiu",
+      "Kai Yu",
+      "Yiheng Zhang",
+      "Hao Ai",
+      "Siying Bai",
+      "Yang Chen",
+      "Zhihui Chen",
+      "Fengbin Gao",
+      "Ying Guo",
+      "Dong Li",
+      "Zhen Shen",
+      "Leilei Shi",
+      "Jing Wang",
+      "Siyu Wang",
+      "Yimeng Wang",
+      "Rui Zheng",
+      "Ting Yao",
+      "Tao Mei"
+    ],
+    "published": "2026-05-11",
+    "updated": "2026-05-11",
+    "categories": [
+      "cs.CV",
+      "cs.MM"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.11061.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.11061",
+    "primary_category": "cs.CV",
+    "score": 95,
+    "summary": {
+      "title_zh": "HiDream-O1-Image：一种原生统一的图像生成基础模型，基于像素级统一Transformer",
+      "core_contribution": "提出了一种原生统一的图像生成基础模型HiDream-O1-Image，通过像素空间扩散Transformer实现端到端上下文视觉生成，消除了对分离式VAE和预训练文本编码器的依赖，并在8B参数下达到甚至超越更大规模模型（如27B Qwen-Image）的性能。",
+      "method": "该方法采用像素级统一Transformer（UiT）架构，将原始图像像素、文本令牌和任务特定条件映射到单一共享令牌空间，实现多模态输入的结构统一。通过这种原生编码范式，模型将多种生成和编辑任务视为一致的上下文推理过程，无需外部VAE或分离的预训练文本编码器。",
+      "findings": "实验表明，HiDream-O1-Image在文本到图像生成、指令式编辑和主体驱动个性化等任务上均表现优异。8B参数版本性能与27B参数的Qwen-Image相当甚至更优；进一步扩展到200B以上参数后，HiDream-O1-Image-Pro解锁了前所未有的生成能力，建立了新的最先进基准。"
+    }
+  },
+  {
+    "id": "2605.12500",
+    "title": "SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-unify Architecture",
+    "abstract": "Recent large vision-language models (VLMs) remain fundamentally constrained by a persistent dichotomy: understanding and generation are treated as distinct problems, leading to fragmented architectures, cascaded pipelines, and misaligned representation spaces. We argue that this divide is not merely an engineering artifact, but a structural limitation that hinders the emergence of native multimodal intelligence. Hence, we introduce SenseNova-U1, a native unified multimodal paradigm built upon NEO-unify, in which understanding and generation evolve as synergistic views of a single underlying process. We launch two native unified variants, SenseNova-U1-8B-MoT and SenseNova-U1-A3B-MoT, built on dense (8B) and mixture-of-experts (30B-A3B) understanding baselines, respectively. Designed from first principles, they rival top-tier understanding-only VLMs across text understanding, vision-language perception, knowledge reasoning, agentic decision-making, and spatial intelligence. Meanwhile, they deliver strong semantic consistency and visual fidelity, excelling in conventional or knowledge-intensive any-to-image (X2I) synthesis, complex text-rich infographic generation, and interleaved vision-language generation, with or without think patterns. Beyond performance, we show detailed model design, data preprocessing, pre-/post-training, and inference strategies to support community research. Last but not least, preliminary evidence demonstrates that our models extend beyond perception and generation, performing strongly in vision-language-action (VLA) and world model (WM) scenarios. This points toward a broader roadmap where models do not translate between modalities, but think and act across them in a native manner. Multimodal AI is no longer about connecting separate systems, but about building a unified one and trusting the necessary capabilities to emerge from within.",
+    "authors": [
+      "Haiwen Diao",
+      "Penghao Wu",
+      "Hanming Deng",
+      "Jiahao Wang",
+      "Shihao Bai",
+      "Silei Wu",
+      "Weichen Fan",
+      "Wenjie Ye",
+      "Wenwen Tong",
+      "Xiangyu Fan",
+      "Yan Li",
+      "Yubo Wang",
+      "Zhijie Cao",
+      "Zhiqian Lin",
+      "Zhitao Yang",
+      "Zhongang Cai",
+      "Yuwei Niu",
+      "Yue Zhu",
+      "Bo Liu",
+      "Chengguang Lv",
+      "Haojia Yu",
+      "Haozhe Xie",
+      "Hongli Wang",
+      "Jianan Fan",
+      "Jiaqi Li",
+      "Jiefan Lu",
+      "Jingcheng Ni",
+      "Junxiang Xu",
+      "Kaihuan Liang",
+      "Lianqiang Shi",
+      "Linjun Dai",
+      "Linyan Wang",
+      "Oscar Qian",
+      "Peng Gao",
+      "Pengfei Liu",
+      "Qingping Sun",
+      "Rui Shen",
+      "Ruisi Wang",
+      "Shengnan Ma",
+      "Shuang Yang",
+      "Siyi Xie",
+      "Siying Li",
+      "Tianbo Zhong",
+      "Xiangli Kong",
+      "Xuanke Shi",
+      "Yang Gao",
+      "Yongqiang Yao",
+      "Yves Wang",
+      "Zhengqi Bai",
+      "Zhengyu Lin",
+      "Zixin Yin",
+      "Wenxiu Sun",
+      "Ruihao Gong",
+      "Quan Wang",
+      "Lewei Lu",
+      "Lei Yang",
+      "Ziwei Liu",
+      "Dahua Lin"
+    ],
+    "published": "2026-05-12",
+    "updated": "2026-05-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.12500.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.12500",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SenseNova-U1：基于NEO-unify架构统一多模态理解与生成",
+      "core_contribution": "提出了一种原生统一的多模态范式SenseNova-U1，打破了传统视觉语言模型中理解与生成分离的架构限制，实现了两者在单一底层过程中的协同演化，并在多项任务上达到顶尖性能。",
+      "method": "基于NEO-unify架构构建，分别以密集模型（8B）和混合专家模型（30B-A3B）作为理解基线，通过统一的设计原则将理解与生成融合为协同视图。论文详细介绍了模型设计、数据预处理、预训练/后训练及推理策略，并展示了模型在视觉-语言-动作和世界模型场景中的初步能力。",
+      "findings": "SenseNova-U1在文本理解、视觉语言感知、知识推理、智能体决策和空间智能上媲美顶尖理解专用模型，同时在任意图像生成、复杂文本信息图生成及交错视觉语言生成中表现出强语义一致性和视觉保真度。初步实验还表明模型在视觉-语言-动作和世界模型任务中具有潜力，指向原生跨模态思维与行动的统一AI路线。"
+    }
+  },
+  {
+    "id": "2605.12495",
+    "title": "AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward",
+    "abstract": "In this paper, we propose AlphaGRPO, a novel framework that applies Group Relative Policy Optimization (GRPO) to AR-Diffusion Unified Multimodal Models (UMMs) to enhance multimodal generation capabilities without an additional cold-start stage. Our approach unlocks the model's intrinsic potential to perform advanced reasoning tasks: Reasoning Text-to-Image Generation, where the model actively infers implicit user intents, and Self-Reflective Refinement, where it autonomously diagnoses and corrects misalignments in generated outputs. To address the challenge of providing stable supervision for real-world multimodal generation, we introduce the Decompositional Verifiable Reward (DVReward). Unlike holistic scalar rewards, DVReward utilizes an LLM to decompose complex user requests into atomic, verifiable semantic and quality questions, which are then evaluated by a general MLLM to provide reliable and interpretable feedback. Extensive experiments demonstrate that AlphaGRPO yields robust improvements across multimodal generation benchmarks, including GenEval, TIIF-Bench, DPG-Bench and WISE, while also achieving significant gains in editing tasks on GEdit without training on editing tasks. These results validate that our self-reflective reinforcement approach effectively leverages inherent understanding to guide high-fidelity generation. Project page: https://huangrh99.github.io/AlphaGRPO/",
+    "authors": [
+      "Runhui Huang",
+      "Jie Wu",
+      "Rui Yang",
+      "Zhe Liu",
+      "Hengshuang Zhao"
+    ],
+    "published": "2026-05-12",
+    "updated": "2026-05-12",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.12495.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.12495",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "AlphaGRPO：通过可分解的可验证奖励解锁统一多模态模型中的自我反思式多模态生成",
+      "core_contribution": "提出AlphaGRPO框架，首次将组相对策略优化（GRPO）应用于AR-Diffusion统一多模态模型（UMMs），无需冷启动阶段即可增强多模态生成能力，并引入可分解的可验证奖励（DVReward）为真实世界多模态生成提供稳定、可解释的监督信号。",
+      "method": "AlphaGRPO采用GRPO算法对UMMs进行强化学习训练，通过模型自身的推理能力实现推理式文本到图像生成和自我反思式精炼。为解决多模态生成中奖励信号不稳定的问题，DVReward利用大语言模型（LLM）将复杂用户请求分解为原子化的可验证语义与质量子问题，再由通用多模态大模型（MLLM）逐一评估，生成可靠且可解释的反馈信号。",
+      "findings": "在GenEval、TIIF-Bench、DPG-Bench和WISE等多模态生成基准上，AlphaGRPO均取得稳健性能提升；在未经过编辑任务训练的GEdit数据集上，编辑任务也获得显著改进。结果表明，自我反思式强化方法能有效利用模型内在理解能力引导高保真生成。"
+    }
+  },
+  {
+    "id": "2605.12309",
+    "title": "G$^2$TR: Generation-Guided Visual Token Reduction for Separate-Encoder Unified Multimodal Models",
+    "abstract": "The development of separate-encoder Unified multimodal models (UMMs) comes with a rapidly growing inference cost due to dense visual token processing. In this paper, we focus on understanding-side visual token reduction for improving the efficiency of separate-encoder UMMs. While this topic has been widely studied for MLLMs, existing methods typically rely on attention scores, text-image similarity and so on, implicitly assuming that the final objective is discriminative reasoning. This assumption does not hold for UMMs, where understanding-side visual tokens must also preserve the model's capabilities for editing images. We propose G$^2$TR, a generation-guided visual token reduction framework for separate-encoder UMMs. Our key insight is that the generation branch provides a task-agnostic signal for identifying understanding-side visual tokens that are not only semantically relevant but also important for latent-space image reconstruction and generation. G$^2$TR estimates token importance from consistency with VAE latent, performs balanced token selection, and merges redundant tokens into retained representatives to reduce information loss. The method is training-free, plug-and-play, and applied only after the understanding encoding stage, making it compatible with existing UMM inference pipelines. Experiments on image understanding and editing benchmarks show that G$^2$TR substantially reduces visual tokens and prefill computation by 1.94x while maintaining both reasoning accuracy and editing quality, outperforming baselines on almost all benchmarks.",
+    "authors": [
+      "Junxian Li",
+      "Kai Liu",
+      "Zizhong Ding",
+      "Zhixin Wang",
+      "Zhikai Chen",
+      "Renjing Pei",
+      "Yulun Zhang"
+    ],
+    "published": "2026-05-12",
+    "updated": "2026-05-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.12309.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.12309",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "G²TR：面向分离编码器统一多模态模型的生成引导视觉令牌精简方法",
+      "core_contribution": "提出了一种无需训练、即插即用的视觉令牌精简框架G²TR，能够在保持推理准确性和图像编辑质量的同时，显著降低分离编码器统一多模态模型的计算开销。",
+      "method": "G²TR利用生成分支提供的任务无关信号，通过评估视觉令牌与VAE潜在空间的一致性来估计其重要性；然后执行平衡的令牌选择，并将冗余令牌合并到保留的代表性令牌中，以减少信息损失。该方法仅在理解编码阶段之后应用，无需修改现有推理流程。",
+      "findings": "在图像理解与编辑基准测试中，G²TR实现了1.94倍的视觉令牌和预填充计算缩减，同时保持了推理准确性和编辑质量，在几乎所有基准上优于现有基线方法。"
+    }
+  },
+  {
+    "id": "2605.12305",
+    "title": "Images in Sentences: Scaling Interleaved Instructions for Unified Visual Generation",
+    "abstract": "While recent advancements in multimodal language models have enabled image generation from expressive multi-image instructions, existing methods struggle to maintain performance under complex interleaved instructions. This limitation stems from the structural separation of images and text in current paradigms, which forces models to bridge difficult long-range dependencies to match descriptions with visual targets. To address these challenges, we propose \\texttt{I}mages i\\texttt{N} \\texttt{SE}n\\texttt{T}ences (\\textit{a.k.a}, INSET), a unified generation model that seamlessly embeds images as native vocabulary within textual instructions. By positioning visual features directly at their corresponding semantic slots, INSET leverages the contextual locality of transformers for precise object binding, effectively treating images as dense, expressive language tokens. Furthermore, we introduce a scalable data engine that synthesizes 15M high-quality interleaved samples from standard image and video datasets, utilizing VLMs and LLMs to construct rich, long-horizon sequences. Evaluation results on InterleaveBench demonstrate that INSET significantly outperforms state-of-the-art methods in multi-image consistency and text alignment, with performance gaps widening as input complexity increases. Beyond standard generation, our approach inherently extends to multimodal image editing, integrating visual content as part of the instruction to facilitate highly expressive and creative visual manipulations.",
+    "authors": [
+      "Yabo Zhang",
+      "Kunchang Li",
+      "Dewei Zhou",
+      "Xinyu Huang",
+      "Xun Wang"
+    ],
+    "published": "2026-05-12",
+    "updated": "2026-05-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.12305.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.12305",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "句子中的图像：扩展交错指令以实现统一视觉生成",
+      "core_contribution": "提出INSET模型，将图像作为原生词汇嵌入文本指令中，解决了现有方法在处理复杂交错指令时因图像与文本结构分离导致的性能下降问题，实现了统一的多模态生成。",
+      "method": "INSET将视觉特征直接放置在文本指令中对应的语义位置，利用Transformer的上下文局部性实现精确的对象绑定，将图像视为密集、表达性的语言标记。同时，引入可扩展的数据引擎，从标准图像和视频数据集中合成1500万高质量交错样本，利用VLM和LLM构建丰富的长序列数据。",
+      "findings": "在InterleaveBench上的评估表明，INSET在多图像一致性和文本对齐方面显著优于现有方法，且随着输入复杂度增加，性能差距进一步扩大。此外，该方法自然扩展到多模态图像编辑，将视觉内容作为指令的一部分，实现高度表达性和创造性的视觉操作。"
+    }
+  }
+]
