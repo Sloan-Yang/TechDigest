@@ -1,0 +1,185 @@
+[
+  {
+    "id": "2605.13565",
+    "title": "Qwen-Image-VAE-2.0 Technical Report",
+    "abstract": "We present Qwen-Image-VAE-2.0, a suite of high-compression Variational Autoencoders (VAEs) that achieve significant advances in both reconstruction fidelity and diffusability. To address the reconstruction bottlenecks of high compression, we adopt an improved architecture featuring Global Skip Connections (GSC) and expanded latent channels. Moreover, we scale training to billions of images and incorporate a synthetic rendering engine to improve performance in text-rich scenarios. To tackle the convergence challenges of high-dimensional latent space, we implement an enhanced semantic alignment strategy to make the latent space highly amenable to diffusion modeling. To optimize computational efficiency, we leverage an asymmetric and attention-free encoder-decoder backbone to minimize encoding overhead. We present a comprehensive evaluation of Qwen-Image-VAE-2.0 on public reconstruction benchmarks. To evaluate performance in text-rich scenarios, we propose OmniDoc-TokenBench, a new benchmark comprising a diverse collection of real-world documents coupled with specialized OCR-based evaluation metrics. Qwen-Image-VAE-2.0 achieves state-of-the-art reconstruction performance, demonstrating exceptional capabilities in both general domains and text-rich scenarios at high compression ratio. Furthermore, downstream DiT experiments reveal our models possess superior diffusability, significantly accelerating convergence compared to existing high-compression baselines. These establish Qwen-Image-VAE-2.0 as a leading model with high compression, superior reconstruction, and exceptional diffusability.",
+    "authors": [
+      "Zekai Zhang",
+      "Deqing Li",
+      "Kuan Cao",
+      "Yujia Wu",
+      "Chenfei Wu",
+      "Yu Wu",
+      "Liang Peng",
+      "Hao Meng",
+      "Jiahao Li",
+      "Jie Zhang",
+      "Kaiyuan Gao",
+      "Kun Yan",
+      "Lihan Jiang",
+      "Ningyuan Tang",
+      "Shengming Yin",
+      "Tianhe Wu",
+      "Xiao Xu",
+      "Xiaoyue Chen",
+      "Yan Shu",
+      "Yanran Zhang",
+      "Yilei Chen",
+      "Yixian Xu",
+      "Yuxiang Chen",
+      "Zhendong Wang",
+      "Zihao Liu",
+      "Zikai Zhou",
+      "Yiliang Gu",
+      "Yi Wang",
+      "Xiaoxiao Xu",
+      "Lin Qu"
+    ],
+    "published": "2026-05-13",
+    "updated": "2026-05-13",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.13565.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.13565",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "Qwen-图像-VAE-2.0 技术报告",
+      "core_contribution": "提出了一套高压缩变分自编码器（VAE）Qwen-Image-VAE-2.0，在重建保真度和扩散友好性上均取得显著进步，成为高压缩、高重建质量与优异扩散性能的领先模型。",
+      "method": "采用改进的架构，包括全局跳跃连接（GSC）和扩展的潜在通道以解决高压缩下的重建瓶颈；通过数十亿图像训练并引入合成渲染引擎提升文本丰富场景的性能；实施增强的语义对齐策略以解决高维潜在空间的收敛挑战，使其更易于扩散建模；利用非对称且无注意力的编码器-解码器骨干网络来最小化编码开销。",
+      "findings": "在公开重建基准上达到最先进性能，并在高压缩比下展现出在通用领域和文本丰富场景中的卓越能力；下游DiT实验表明模型具有优越的扩散友好性，显著加速了收敛速度，优于现有高压缩基线。"
+    }
+  },
+  {
+    "id": "2605.12964",
+    "title": "Asymmetric Flow Models",
+    "abstract": "Flow-based generation in high-dimensional spaces is difficult because velocity prediction requires modeling high-dimensional noise, even when data has strong low-rank structure. We present Asymmetric Flow Modeling (AsymFlow), a rank-asymmetric velocity parameterization that restricts noise prediction to a low-rank subspace while keeping data prediction full-dimensional. From this asymmetric prediction, AsymFlow analytically recovers the full-dimensional velocity without changing the network architecture or training/sampling procedures. On ImageNet 256$\\times$256, AsymFlow achieves a leading 1.57 FID, outperforming prior DiT/JiT-like pixel diffusion models by a large margin. AsymFlow also provides the first-ever route for finetuning pretrained latent flow models into pixel-space models: aligning the low-rank pixel subspace to the latent space gives a seamless initialization that preserves the latent model's high-level semantics and structure, so finetuning mainly improves low-level mismatches rather than relearning pixel generation. We show that the pixel AsymFlow model finetuned from FLUX.2 klein 9B establishes a new state of the art for pixel-space text-to-image generation, beating its latent base on HPSv3, DPG-Bench, and GenEval while qualitatively showing substantially improved visual realism.",
+    "authors": [
+      "Hansheng Chen",
+      "Jan Ackermann",
+      "Minseo Kim",
+      "Gordon Wetzstein",
+      "Leonidas Guibas"
+    ],
+    "published": "2026-05-13",
+    "updated": "2026-05-13",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.12964.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.12964",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "非对称流模型",
+      "core_contribution": "提出了一种非对称速度参数化方法（AsymFlow），通过将噪声预测限制在低秩子空间而保持数据预测为全维度，从而在不改变网络架构或训练/采样流程的情况下，显著提升了高维空间中基于流的生成模型的性能。",
+      "method": "AsymFlow 采用秩非对称的速度参数化：在流模型中，将噪声预测部分限制在低秩子空间中，而数据预测部分保持全维度。通过这种非对称预测，可以解析地恢复全维度的速度场，无需修改网络结构或训练/采样过程。该方法还支持将预训练的潜在空间流模型微调为像素空间模型，通过将低秩像素子空间与潜在空间对齐，实现无缝初始化。",
+      "findings": "在 ImageNet 256×256 上，AsymFlow 取得了领先的 1.57 FID，大幅优于之前的 DiT/JiT 类像素扩散模型。此外，从 FLUX.2 klein 9B 微调得到的像素空间 AsymFlow 模型在像素级文本到图像生成任务上达到了新的最优水平，在 HPSv3、DPG-Bench 和 GenEval 上超越了其潜在空间基模型，并在视觉真实感上表现出显著提升。"
+    }
+  },
+  {
+    "id": "2605.12271",
+    "title": "Beyond Text Prompts: Visual-to-Visual Generation as A Unified Paradigm",
+    "abstract": "Humans often specify and create through visual artifacts: typography sheets, sketches, reference images, and annotated scenes. Yet modern visual generators still ask users to serialize this intent into text, a bottleneck that compresses signals like spatial structure, exact appearance, and glyph shape. We propose \\textbf{\\emph{visual-to-visual} (V2V)} generation, in which the user conditions a generative model with a visual specification page rather than a text prompt. The page is not an edit target, but a visual document that specifies the desired output. We introduce \\textbf{V2V-Zero}, a training-free framework that exposes this interface in existing vision-language model (VLM) conditioned generators by replacing text-only conditioning with final-layer hidden states extracted from visual pages, exploiting the fact that the frozen VLM already maps both text and images into the generator's conditioning space. On GenEval, V2V-Zero reaches 0.85 with a frozen Qwen-Image backbone, closely matching its optimized text-to-image performance without fine-tuning. To evaluate the broader V2V space, we introduce \\textbf{Simple-V2V Bench}, spanning seven visual-conditioning tasks and seven models, including GPT Image 2, Nano Banana 2, Seedream 5.0 Lite, open-weight baselines, and a video extension. V2V-Zero scores 32.7/100, outperforming evaluated open-weight image baselines and revealing a clear capability hierarchy: attribute binding is strong, content generation is unreliable, and structural control remains hard even for commercial systems. A HunyuanVideo-1.5 extension scores 20.2/100, showing the interface transfers beyond images. Mechanistic analysis shows the default reasoning path is primarily visually routed, with 95.0\\% of conditioning-token attention mass on visual-page hidden states.",
+    "authors": [
+      "Yaofang Liu",
+      "Kangning Cui",
+      "Meng Chu",
+      "Zhaoqing Li",
+      "Suiyun Zhang",
+      "Jean-Michel Morel",
+      "Xiaodong Cun",
+      "Haoxuan Che",
+      "Rui Liu",
+      "Raymond H. Chan"
+    ],
+    "published": "2026-05-12",
+    "updated": "2026-05-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.12271.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.12271",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "超越文本提示：视觉到视觉生成作为统一范式",
+      "core_contribution": "提出视觉到视觉（V2V）生成范式，用视觉规格页面替代文本提示作为条件输入，并引入无需训练的V2V-Zero框架，在现有视觉语言模型生成器中实现该接口，显著扩展了视觉生成的条件控制方式。",
+      "method": "V2V-Zero利用冻结的视觉语言模型（VLM）将文本和图像映射到生成器的条件空间，通过提取视觉页面最后一层的隐藏状态替换纯文本条件，无需额外训练即可实现视觉条件生成。在Simple-V2V Bench上评估了七个视觉条件任务和七个模型，包括商业系统和开源基线，并扩展至视频生成。",
+      "findings": "在GenEval上，V2V-Zero使用冻结的Qwen-Image骨干达到0.85分，接近其优化后的文本到图像性能。Simple-V2V Bench上V2V-Zero得分为32.7/100，优于开源图像基线，揭示了能力层级：属性绑定强、内容生成不可靠、结构控制困难。机制分析显示95.0%的条件令牌注意力集中在视觉页面隐藏状态上，表明默认推理路径主要依赖视觉路由。"
+    }
+  },
+  {
+    "id": "2605.12138",
+    "title": "Design Your Ad: Personalized Advertising Image and Text Generation with Unified Autoregressive Models",
+    "abstract": "Generating realistic and user-preferred advertisements is a key challenge in e-commerce. Existing approaches utilize multiple independent models driven by click-through-rate (CTR) to controllably create attractive image or text advertisements. However, their pipelines lack cross-modal perception and rely on CTR that only reflects average preferences. Therefore, we explore jointly generating personalized image-text advertisements from historical click behaviors. We first design a Unified Advertisement Generative model (Uni-AdGen) that employs a single autoregressive framework to produce both advertising images and texts. By incorporating a foreground perception module and instruction tuning, Uni-AdGen enhances the realism of the generated content. To further personalize advertisements, we equip Uni-AdGen with a coarse-to-fine preference understanding module that effectively captures user interests from noisy multimodal historical behaviors to drive personalized generation. Additionally, we construct the first large-scale Personalized Advertising image-text dataset (PAd1M) and introduce a Product Background Similarity (PBS) metric to facilitate training and evaluation. Extensive experiments show that our method outperforms baselines in general and personalized advertisement generation. Our project is available at https://github.com/JD-GenX/Uni-AdGen.",
+    "authors": [
+      "Yexing Xu",
+      "Wei Feng",
+      "Shen Zhang",
+      "Haohan Wang",
+      "Yuxin Qin",
+      "Yaoyu Li",
+      "Ao Ma",
+      "Yuhao Luo",
+      "Lu Wang",
+      "Xudong Ren",
+      "Haoran Wang",
+      "Run Ling",
+      "Zheng Zhang",
+      "Jingjing Lv",
+      "Junjie Shen",
+      "Ching Law",
+      "Longguang Wang",
+      "Yulan Guo"
+    ],
+    "published": "2026-05-12",
+    "updated": "2026-05-12",
+    "categories": [
+      "cs.CV",
+      "cs.CL",
+      "cs.IR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.12138.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.12138",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "设计你的广告：基于统一自回归模型的个性化广告图文生成",
+      "core_contribution": "提出了一种统一的自回归框架Uni-AdGen，能够联合生成个性化的广告图像和文本，并通过粗到细的偏好理解模块从用户历史点击行为中捕捉个性化兴趣，从而克服了传统方法缺乏跨模态感知和仅依赖平均偏好的局限。",
+      "method": "首先设计了一个统一广告生成模型Uni-AdGen，采用单一自回归架构同时生成广告图像和文本，并引入前景感知模块和指令微调以增强生成内容的真实感。为了个性化广告，进一步装备了粗到细的偏好理解模块，从含噪声的多模态历史行为中有效捕捉用户兴趣，驱动个性化生成。此外，构建了首个大规模个性化广告图文数据集PAd1M，并提出了产品背景相似度（PBS）指标用于训练和评估。",
+      "findings": "大量实验表明，该方法在通用和个性化广告生成任务上均优于基线模型，能够生成更真实且符合用户偏好的广告图文内容。"
+    }
+  },
+  {
+    "id": "2605.12112",
+    "title": "When Policy Entropy Constraint Fails: Preserving Diversity in Flow-based RLHF via Perceptual Entropy",
+    "abstract": "RLHF is widely used to align flow-matching text-to-image models with human preferences, but often leads to severe diversity collapse after fine-tuning. In RL, diversity is often assumed to correlate with policy entropy, motivating entropy regularization. However, we show this intuition breaks in flow models: policy entropy remains constant, even while perceptual diversity collapses. We explain this mismatch both theoretically and empirically: the constant entropy arises from the fixed, pre-defined noise schedule, while the diversity collapse is driven by the mode-seeking nature of policy gradients. As a result, policy entropy fails to prevent the model from converging to a narrow high-reward region in the perceptual space. To this end, we introduce perceptual entropy that captures diversity in a perceptual space and maintains the property of standard entropy. Building upon this insight, we propose two entropy-regularized strategies, Perceptual Entropy Constraint and Perceptual Constraints on Generation Space, to preserve perceptual diversity and improve the quality. Experiments across two base models, neural and rule-based rewards, and three perceptual spaces demonstrate consistent gains in the quality-diversity trade-off; PEC achieves the best overall score of 0.734 (vs. baseline's 0.366); a complementary setting of PEC further reaches a diversity average of 0.989 (vs. baseline's 0.047). Our project page (https://xiaofeng-tan.github.io/projects/PEC) is publicly available.",
+    "authors": [
+      "Xiaofeng Tan",
+      "Jun Liu",
+      "Bin-Bin Gao",
+      "Yuanting Fan",
+      "Xi Jiang",
+      "Chengjie Wang",
+      "Hongsong Wang",
+      "Feng Zheng"
+    ],
+    "published": "2026-05-12",
+    "updated": "2026-05-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.12112.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.12112",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "当策略熵约束失效时：通过感知熵保留基于流的RLHF中的多样性",
+      "core_contribution": "本文揭示了在基于流的文本到图像模型的RLHF微调中，策略熵无法反映感知多样性下降的问题，并首次提出感知熵（Perceptual Entropy）作为替代指标，进而设计了两种正则化策略以在保持质量的同时有效保留生成多样性。",
+      "method": "作者首先从理论和实验上证明，在流匹配模型中策略熵因固定的噪声调度而保持恒定，无法阻止策略梯度导致感知空间中的多样性崩溃。基于此，他们引入感知熵，在感知空间（如CLIP、DINO等特征空间）中度量多样性，并保持标准熵的数学性质。随后提出两种正则化方法：感知熵约束（PEC）直接最大化生成样本的感知熵，以及生成空间感知约束（PCGS）在生成过程中施加多样性约束。",
+      "findings": "实验在两个基础模型、神经与规则奖励以及三种感知空间上一致表明，所提方法显著改善了质量-多样性权衡：PEC在综合得分上达到0.734（基线为0.366），而PCGS的多样性平均值达到0.989（基线为0.047），有效缓解了RLHF导致的多样性崩溃问题。"
+    }
+  }
+]
