@@ -192,5 +192,8 @@
   "roboflow_supervision": 85,
   "Genymobile_scrcpy": 85,
   "NVIDIA-AI-Blueprints_video-search-and-summarization": 85,
-  "garrytan_gstack": 30
+  "garrytan_gstack": 30,
+  "anthropics_skills": 0,
+  "oven-sh_bun": 75,
+  "joeseesun_qiaomu-anything-to-notebooklm": 85
 }
