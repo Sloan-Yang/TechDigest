@@ -1,0 +1,153 @@
+[
+  {
+    "id": "2605.14333",
+    "title": "InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation",
+    "abstract": "Text and faces are among the most perceptually salient and practically important patterns in visual generation, yet they remain challenging for autoregressive generators built on discrete tokenization. A central bottleneck is the tokenizer: aggressive downsampling and quantization often discard the fine-grained structures needed to preserve readable glyphs and distinctive facial features. We attribute this gap to standard discrete-tokenizer objectives being weakly aligned with text legibility and facial fidelity, as these objectives typically optimize generic reconstruction while compressing diverse content uniformly. To address this, we propose InsightTok, a simple yet effective discrete visual tokenization framework that enhances text and face fidelity through localized, content-aware perceptual losses. With a compact 16k codebook and a 16x downsampling rate, InsightTok significantly outperforms prior tokenizers in text and face reconstruction without compromising general reconstruction quality. These gains consistently transfer to autoregressive image generation in InsightAR, producing images with clearer text and more faithful facial details. Overall, our results highlight the potential of specialized supervision in tokenizer training for advancing discrete image generation.",
+    "authors": [
+      "Yang Yue",
+      "Fangyun Wei",
+      "Tianyu He",
+      "Jinjing Zhao",
+      "Zanlin Ni",
+      "Zeyu Liu",
+      "Jiayi Guo",
+      "Lei Shi",
+      "Yue Dong",
+      "Li Chen",
+      "Ji Li",
+      "Gao Huang",
+      "Dong Chen"
+    ],
+    "published": "2026-05-14",
+    "updated": "2026-05-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.14333.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.14333",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "InsightTok：在自回归图像生成的离散分词中提升文本和人脸保真度",
+      "core_contribution": "提出InsightTok框架，通过局部、内容感知的感知损失显著提升离散分词器在文本和人脸重建上的保真度，同时不牺牲通用重建质量，并将改进成功迁移至自回归图像生成任务。",
+      "method": "InsightTok在标准离散分词器训练中引入局部化、内容感知的感知损失，专门针对文本和面部区域进行优化。该方法使用紧凑的16k码本和16倍下采样率，通过加权感知损失使分词器更关注文本可读性和面部细节，而非均匀压缩所有内容。",
+      "findings": "在文本和人脸重建任务上，InsightTok显著优于先前分词器，且通用重建质量未下降。将其应用于自回归图像生成模型InsightAR后，生成的图像文本更清晰、面部细节更忠实，证明了专门化监督在分词器训练中的有效性。"
+    }
+  },
+  {
+    "id": "2605.14191",
+    "title": "CoReDiT: Spatial Coherence-Guided Token Pruning and Reconstruction for Efficient Diffusion Transformers",
+    "abstract": "Diffusion Transformers (DiTs) deliver remarkable image and video generation quality but incur high computational cost, limiting scalability and on-device deployment. We introduce CoReDiT, a structured token pruning framework for DiTs across vision tasks. CoReDiT uses a linear-time spatial coherence score to estimate local redundancy in the latent token lattice and skips high coherence (redundant) tokens in self-attention. To maintain a dense representation and avoid visual discontinuities, we reconstruct skipped attention outputs via coherence-guided aggregation of spatially neighboring retained tokens. We further introduce a progressive, block-adaptive pruning schedule that increases pruning gradually and allocates larger budgets to blocks and denoising steps with higher redundancy. Across state-of-the-art diffusion backbones including PixArt-α and MagicDrive-V2, CoReDiT achieves up to 55% self-attention FLOPs reduction and inference speedups of 1.33x on cloud GPUs and 1.72x on mobile NPUs, while maintaining high visual quality. Notably, CoReDiT also increases on-device memory head-room, enabling higher-resolution generation.",
+    "authors": [
+      "Zhuojin Li",
+      "Hsin-Pai Cheng",
+      "Hong Cai",
+      "Shizhong Han",
+      "Fatih Porikli"
+    ],
+    "published": "2026-05-13",
+    "updated": "2026-05-13",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.14191.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.14191",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "CoReDiT：基于空间连贯性引导的令牌剪枝与重构以实现高效扩散变换器",
+      "core_contribution": "提出了一种名为CoReDiT的结构化令牌剪枝框架，通过线性时间空间连贯性评分和邻近令牌重构，在保持高视觉质量的同时显著降低扩散变换器（DiTs）的计算成本，并首次实现了在移动NPU上的高效部署。",
+      "method": "CoReDiT首先利用线性时间空间连贯性评分估计潜在令牌网格中的局部冗余，在自注意力中跳过高连贯性（即冗余）令牌。为维持密集表示并避免视觉不连续，通过连贯性引导的聚合，用空间相邻的保留令牌重构被跳过令牌的注意力输出。此外，还引入了一种渐进式、块自适应的剪枝调度，逐步增加剪枝比例，并为冗余更高的块和去噪步骤分配更大的剪枝预算。",
+      "findings": "在PixArt-α和MagicDrive-V2等最先进扩散骨干网络上，CoReDiT实现了高达55%的自注意力FLOPs减少，在云GPU上获得1.33倍推理加速，在移动NPU上获得1.72倍加速，同时保持高视觉质量。此外，该方法还增加了设备端内存余量，支持更高分辨率生成。"
+    }
+  },
+  {
+    "id": "2605.13974",
+    "title": "Few Channels Draw The Whole Picture: Revealing Massive Activations in Diffusion Transformers",
+    "abstract": "Diffusion Transformers (DiTs) and related flow-based architectures are now among the strongest text-to-image generators, yet the internal mechanisms through which prompts shape image semantics remain poorly understood. In this work, we study massive activations: a small subset of hidden-state channels whose responses are consistently much larger than the rest. We show that, despite their sparsity, these few channels effectively draw the whole picture, in three complementary senses. First, they are functionally critical: a controlled disruption probe that zeroes the massive channels causes a sharp collapse in generation quality, while disrupting an equally-sized set of low-statistic channels has marginal effect. Second, they are spatially organized: restricting image-stream tokens to massive channels and clustering them yields coherent partitions that closely align with the main subject and salient regions, exposing a structured spatial code hidden inside an apparently outlier-like subspace. Third, they are transferable: transporting massive activations from one prompt-conditioned trajectory into another, shifts the final image toward the source prompt while preserving substantial content from the target, producing localized semantic interpolation rather than unstructured pixel blending. We exploit this property in two use cases: text-conditioned and image-conditioned semantic transport, where massive activations transport enables prompt interpolation and subject-driven generation without any additional training. Together, these results recast massive activations not as activation anomalies, but as a sparse prompt-conditioned carrier subspace that organizes and controls semantic information in modern DiT models.",
+    "authors": [
+      "Evelyn Turri",
+      "Davide Bucciarelli",
+      "Sara Sarto",
+      "Lorenzo Baraldi",
+      "Marcella Cornia"
+    ],
+    "published": "2026-05-13",
+    "updated": "2026-05-13",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.MM"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.13974.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.13974",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "少数通道描绘全局：揭示扩散Transformer中的大规模激活现象",
+      "core_contribution": "本文首次系统揭示了扩散Transformer（DiT）中大规模激活通道的关键作用，证明这些稀疏通道不仅是功能上不可或缺的，还承载着空间语义编码，并能在不同提示间迁移实现语义插值，从而将大规模激活重新定义为一种稀疏的、受提示调节的语义载体子空间。",
+      "method": "作者首先通过统计隐藏状态通道的响应幅度，识别出少量响应显著大于其余通道的“大规模激活”通道。随后设计了三种互补的分析方法：1）功能关键性测试——将大规模通道置零以观察生成质量崩溃；2）空间组织分析——仅保留图像令牌的大规模通道并进行聚类，观察其与图像主体的对齐程度；3）迁移性实验——将源提示下的大规模激活传输到目标提示的生成轨迹中，观察图像语义的局部插值效果。最后，基于迁移性提出了文本条件和图像条件两种无需额外训练的应用场景。",
+      "findings": "实验表明：1）大规模激活通道在功能上至关重要，将其置零会导致生成质量急剧下降，而同等数量的低统计量通道则影响甚微；2）这些通道在空间上组织良好，仅通过大规模通道聚类即可得到与图像主体和显著区域高度一致的分割；3）大规模激活可在不同提示间迁移，实现语义插值，并成功应用于提示插值和主体驱动生成任务，无需额外训练。"
+    }
+  },
+  {
+    "id": "2605.15193",
+    "title": "Aligning Latent Geometry for Spherical Flow Matching in Image Generation",
+    "abstract": "Latent flow matching for image generation usually transports Gaussian noise to variational autoencoder latents along linear paths. Both endpoints, however, concentrate in thin spherical shells, and a Euclidean chord leaves those shells even when preprocessing aligns their radii. By decomposing each latent token into radial and angular components, we show through component-swap probes that decoded perceptual and semantic content is carried predominantly by direction, with radius contributing much less. We therefore project data latents onto a fixed token radius, use the radial projection of Gaussian noise as the spherical prior, finetune the decoder with the encoder frozen, and replace linear interpolation with spherical linear interpolation. The resulting geodesic paths stay on the sphere at every timestep, and their velocity targets are purely angular by construction. Under matched training, the method consistently improves class-conditional ImageNet-256 FID across different image tokenizers, leaves the diffusion architecture unchanged, and requires no auxiliary encoder or representation-alignment objective.",
+    "authors": [
+      "Tuna Han Salih Meral",
+      "Kaan Oktay",
+      "Hidir Yesiltepe",
+      "Adil Kaan Akan",
+      "Pinar Yanardag"
+    ],
+    "published": "2026-05-14",
+    "updated": "2026-05-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.15193.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.15193",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "对齐潜在几何结构以实现图像生成中的球形流匹配",
+      "core_contribution": "提出了一种将潜在流匹配中的线性路径替换为球形测地线路径的方法，通过将潜在变量分解为径向和角度分量，证明图像内容主要由角度方向承载，从而在保持扩散架构不变的情况下显著提升图像生成质量。",
+      "method": "首先将每个潜在token分解为径向和角度分量，通过分量交换实验验证了感知和语义内容主要由方向决定。然后，将数据潜在变量投影到固定半径的球面上，并将高斯噪声的径向投影作为球形先验，冻结编码器微调解码器。最后，将线性插值替换为球形线性插值，使得路径始终保持在球面上，速度目标纯为角度方向。",
+      "findings": "在类条件ImageNet-256数据集上，该方法在不同图像分词器下均一致提升了FID指标，且无需改变扩散架构、无需额外编码器或表示对齐目标函数。"
+    }
+  },
+  {
+    "id": "2605.15055",
+    "title": "DiffusionOPD: A Unified Perspective of On-Policy Distillation in Diffusion Models",
+    "abstract": "Reinforcement learning has emerged as a powerful tool for improving diffusion-based text-to-image models, but existing methods are largely limited to single-task optimization. Extending RL to multiple tasks is challenging: joint optimization suffers from cross-task interference and imbalance, while cascade RL is cumbersome and prone to catastrophic forgetting. We propose DiffusionOPD, a new multi-task training paradigm for diffusion models based on Online Policy Distillation (OPD). DiffusionOPD first trains task-specific teachers independently, then distills their capabilities into a unified student along the student own rollout trajectories. This decouples single-task exploration from multi-task integration and avoids the optimization burden of solving all tasks jointly from scratch. Theoretically, we lift the OPD framework from discrete tokens to continuous-state Markov processes, deriving a closed-form per-step KL objective that unifies both stochastic SDE and deterministic ODE refinement via mean-matching. We formally and empirically demonstrate that this analytic gradient provides lower variance and better generality compared to conventional PPO-style policy gradients. Extensive experiments show that DiffusionOPD consistently surpasses both multi-reward RL and cascade RL baselines in training efficiency and final performance, while achieving state-of-the-art results on all evaluated benchmarks.",
+    "authors": [
+      "Quanhao Li",
+      "Junqiu Yu",
+      "Kaixun Jiang",
+      "Yujie Wei",
+      "Zhen Xing",
+      "Pandeng Li",
+      "Ruihang Chu",
+      "Shiwei Zhang",
+      "Yu Liu",
+      "Zuxuan Wu"
+    ],
+    "published": "2026-05-14",
+    "updated": "2026-05-14",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.15055.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.15055",
+    "primary_category": "cs.LG",
+    "score": 75,
+    "summary": {
+      "title_zh": "扩散模型在线策略蒸馏的统一视角",
+      "core_contribution": "提出了一种名为DiffusionOPD的多任务训练范式，通过在线策略蒸馏将多个任务特定教师模型的能力统一整合到一个学生模型中，有效解决了多任务强化学习中的跨任务干扰和灾难性遗忘问题。",
+      "method": "首先独立训练多个任务特定的教师模型，然后沿着学生模型自身的 rollout 轨迹将这些教师的能力蒸馏到统一的学生模型中。该方法将单任务探索与多任务整合解耦，避免了从头联合优化所有任务的负担。理论上，将在线策略蒸馏框架从离散令牌扩展到连续状态马尔可夫过程，推导出闭式逐步骤KL散度目标，通过均值匹配统一了随机SDE和确定性ODE的细化过程。",
+      "findings": "实验表明，DiffusionOPD在训练效率和最终性能上持续超越多奖励强化学习和级联强化学习基线，并在所有评估基准上取得了最先进的结果。该方法的解析梯度相比传统PPO策略梯度具有更低的方差和更好的泛化性。"
+    }
+  }
+]
