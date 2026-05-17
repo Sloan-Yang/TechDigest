@@ -1,0 +1,144 @@
+[
+  {
+    "id": "2605.14948",
+    "title": "ACE-LoRA: Adaptive Orthogonal Decoupling for Continual Image Editing",
+    "abstract": "State-of-the-art diffusion models often rely on parameter-efficient fine-tuning to perform specialized image editing tasks. However, real-world applications require continual adaptation to new tasks while preserving previously learned knowledge. Despite the practical necessity, continual learning for image editing remains largely underexplored. We propose ACE-LoRA, a dynamic regularization framework for continual image editing that effectively mitigates catastrophic forgetting. ACE-LoRA leverages Adaptive Orthogonal Decoupling to identify and orthogonalize task interference, and introduces a Rank-Invariant Historical Information Compression strategy to address scalability issues in continual updates. To facilitate continual learning in image editing and provide a standardized evaluation protocol, we introduce CIE-Bench, the first comprehensive benchmark in this domain. CIE-Bench encompasses diverse and practically relevant image editing scenarios with a balanced level of difficulty to effectively expose limitations of existing models while remaining compatible with parameter-efficient fine-tuning. Extensive experiments demonstrate that our method consistently outperforms existing baselines in terms of instruction fidelity, visual realism, and robustness to forgetting, establishing a strong foundation for continual learning in image editing.",
+    "authors": [
+      "Yuehao Liu",
+      "Weijia Zhang",
+      "Xuanming Shang",
+      "Zhizhou Chen",
+      "Yanhao Ge",
+      "Shanyan Guan",
+      "Chao Ma"
+    ],
+    "published": "2026-05-14",
+    "updated": "2026-05-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.14948.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.14948",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "ACE-LoRA：持续图像编辑的自适应正交解耦",
+      "core_contribution": "提出ACE-LoRA框架，通过动态正则化解决持续图像编辑中的灾难性遗忘问题，并建立首个持续图像编辑基准CIE-Bench。",
+      "method": "1. 采用自适应正交解耦技术识别并正交化任务间的干扰；2. 引入秩不变历史信息压缩策略以解决持续更新中的可扩展性问题；3. 结合动态正则化机制平衡新旧任务的学习。",
+      "findings": "实验表明，ACE-LoRA在指令保真度、视觉真实性和抗遗忘性上均优于基线方法，为持续图像编辑提供了可靠解决方案。"
+    }
+  },
+  {
+    "id": "2605.14270",
+    "title": "Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers",
+    "abstract": "Multimodal Diffusion Transformers (MM-DiTs) have achieved remarkable progress in text-to-image generation, yet they frequently suffer from concept omission, where specified objects or attributes fail to emerge in the generated image. By performing linear probing on text tokens, we demonstrate that text embeddings can distinguish a characteristic `omission signal' representing the absence of target concepts. Leveraging this insight, we propose Omission Signal Intervention (OSI), which amplifies the omission signal to actively catalyze the generation of missing concepts. Comprehensive experiments on FLUX.1-Dev and SD3.5-Medium demonstrate that OSI significantly alleviates concept omission even in extreme scenarios.",
+    "authors": [
+      "Kanghyun Baek",
+      "Jaihyun Lew",
+      "Chaehun Shin",
+      "Jungbeom Lee",
+      "Sungroh Yoon"
+    ],
+    "published": "2026-05-14",
+    "updated": "2026-05-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.14270.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.14270",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "多模态扩散变换器中概念遗漏的诊断与校正",
+      "core_contribution": "提出了一种通过识别和放大文本嵌入中的'遗漏信号'来缓解多模态扩散变换器在文本生成图像过程中概念遗漏问题的方法。",
+      "method": "首先通过线性探测文本标记识别出表征目标概念缺失的'遗漏信号'，然后提出遗漏信号干预（OSI）方法，通过放大该信号主动促进缺失概念的生成。",
+      "findings": "在FLUX.1-Dev和SD3.5-Medium数据集上的实验表明，OSI能显著缓解概念遗漏问题，即使在极端场景下也有效。"
+    }
+  },
+  {
+    "id": "2605.13155",
+    "title": "Pareto-Guided Optimal Transport for Multi-Reward Alignment",
+    "abstract": "Text-to-image generation models have achieved remarkable progress in preference optimization, yet achieving robust alignment across diverse reward models remains a significant challenge. Existing multi-reward fusion approaches rely on weighted summation, which is costly to tune and insufficient for balancing conflicting objectives. More critically, optimization with reward models is highly susceptible to reward hacking, where reward scores increase while the perceived quality of generated images deteriorates. We demonstrate that optimizing against a unified global target under heterogeneous reward upper bounds can induce reward hacking, a risk further exacerbated by the inherent instability of weak reward models. To mitigate this, we propose a Pareto Frontier-Guided Optimal Transport (PG-OT) framework. Our method constructs a prompt-specific Pareto frontier and maps dominated samples toward it via distribution-aware optimal transport. Furthermore, we develop both online and offline optimization strategies tailored to diverse reward signal characteristics. To provide a more rigorous assessment, we introduce the Joint Domination Rate (JDR) and Joint Collapse Rate (JCR) as principled metrics to quantify multi-reward synergy and reward hacking. Experimental results show that our approach outperforms strong baselines with an 11% gain in JDR and achieves a near 80% win rate in human evaluations.",
+    "authors": [
+      "Ying Ba",
+      "Tianyu Zhang",
+      "Mohan Zhou",
+      "Yalong Bai",
+      "Wenyi Mo",
+      "Guiwei Zhang",
+      "Bing Su",
+      "Ji-Rong Wen"
+    ],
+    "published": "2026-05-13",
+    "updated": "2026-05-13",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.13155.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.13155",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "帕累托引导的多奖励对齐最优传输方法",
+      "core_contribution": "提出帕累托前沿引导的最优传输框架(PG-OT)，解决多奖励模型对齐中的奖励黑客问题，并引入联合支配率(JDR)和联合崩溃率(JCR)作为量化指标。",
+      "method": "1. 构建提示特定的帕累托前沿\n2. 通过分布感知的最优传输将样本映射到前沿\n3. 针对不同奖励信号特性开发在线和离线优化策略",
+      "findings": "实验结果表明，该方法在JDR指标上优于基线11%，在人类评估中获得近80%的胜率，有效缓解了奖励黑客问题。"
+    }
+  },
+  {
+    "id": "2605.14819",
+    "title": "The Velocity Deficit: Initial Energy Injection for Flow Matching",
+    "abstract": "While Flow Matching theoretically guarantees constant-velocity trajectories, we identify a critical breakdown in high-dimensional practice: the Velocity Deficit. We show that the MSE objective systematically underestimates velocity magnitude, causing generated samples to fail to reach the data manifold-a phenomenon we term Integration Lag. To rectify this, we propose Initial Energy Injection, instantiated via two complementary methods: the training-based Magnitude-Aware Flow Matching (MAFM) and the training-free Scale Schedule Corrector (SSC). Both are grounded in our discovery of a crucial asymmetry: velocity contraction causes harmful kinetic stagnation at the trajectory's start, yet acts as a beneficial denoising mechanism at its end. Empirically, SSC yields significant efficiency gains with zero retraining and just one line of code. On ImageNet-1k (256x256), it improves FID by 44.6% (from 13.68 to 7.58) and achieves a 5x speedup, enabling a 50-step generator (FID 7.58) to beat a 250-step baseline (FID 8.65). Furthermore, our methods generalize to Text-to-Image tasks and high-resolution generation, improving FID on MS-COCO by ~22%.",
+    "authors": [
+      "Linze Li",
+      "Zong-Wei Hong",
+      "Shen Zhang",
+      "Bo Lin",
+      "Jinglun Li",
+      "Yao Tang",
+      "Jiajun Liang"
+    ],
+    "published": "2026-05-14",
+    "updated": "2026-05-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.14819.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.14819",
+    "primary_category": "cs.CV",
+    "score": 70,
+    "summary": {
+      "title_zh": "速度赤字：流匹配的初始能量注入",
+      "core_contribution": "揭示了流匹配在高维实践中存在的速度赤字问题，并提出初始能量注入方法（MAFM和SSC）以解决积分滞后现象，显著提升生成样本的质量和效率。",
+      "method": "论文首先发现MSE目标函数会系统性低估速度幅度，导致生成样本无法到达数据流形（积分滞后）。为此提出两种方法：基于训练的Magnitude-Aware Flow Matching (MAFM) 和无需训练的Scale Schedule Corrector (SSC)，均基于速度收缩在轨迹起始阶段有害但在末端有益的发现。",
+      "findings": "SSC无需重新训练且仅需一行代码即可实现：在ImageNet-1k (256x256)上FID提升44.6%（13.68→7.58），速度提升5倍（50步生成器优于250步基线）；在MS-COCO文本生成图像任务中FID提升约22%，且方法可推广至高分辨率生成。"
+    }
+  },
+  {
+    "id": "2605.14842",
+    "title": "Editor's Choice: Evaluating Abstract Intent in Image Editing through Atomic Entity Analysis",
+    "abstract": "Humans naturally communicate through abstract concepts like \"mood\". However, current image editing benchmarks focus primarily on explicit, literal commands, leaving abstract instructions largely underexplored. In this work, we first formalize the definition and taxonomy of abstract image editing. To measure instruction-following in this challenging domain, we introduce Entity-Rubrics, a framework that breaks down abstract edits into individual, entity-level assessments and achieves strong correlation with human judgment. Alongside this framework, we contribute AbstractEdit, the first benchmark dedicated to abstract image editing across diverse real-world scenes. Evaluating 11 leading models on this dataset reveals a fundamental challenge: standard architectures struggle to balance intent and preservation, commonly defaulting to under-editing or over-editing. Our analysis demonstrates that driving meaningful improvements relies heavily on integrating advanced LLM text encoders and iterative thinking. Looking forward, our entity-based paradigm can generalize beyond assessment to serve as a reward model, enable models to correctly interpret abstract communication, or highlight specific failures in test-time critique loops. Ultimately, we hope this work serves as a stepping stone toward seamless multimodal interaction, closing the gap between rigid machine execution and the natural, open-ended way humans communicate.",
+    "authors": [
+      "Mor Ventura",
+      "Roy Hirsch",
+      "Yonatan Bitton",
+      "Regev Cohen",
+      "Roi Reichart"
+    ],
+    "published": "2026-05-14",
+    "updated": "2026-05-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.14842.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.14842",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "编辑精选：通过原子实体分析评估图像编辑中的抽象意图",
+      "core_contribution": "该论文首次形式化了抽象图像编辑的定义与分类体系，并提出了Entity-Rubrics评估框架和AbstractEdit基准数据集，填补了抽象指令图像编辑领域的评估空白。",
+      "method": "研究提出Entity-Rubrics框架，将抽象编辑任务分解为实体级别的可量化评估单元；同时构建首个真实场景抽象编辑基准AbstractEdit。通过11个主流模型的测试发现，传统架构在意图保持与内容保留间存在失衡问题，需依赖大语言模型文本编码器与迭代思维实现改进。",
+      "findings": "实验表明：现有模型普遍存在欠编辑或过编辑现象；集成先进LLM文本编码器和迭代推理能显著提升性能；该实体评估范式可扩展为奖励模型或失败诊断工具，推动多模态交互的自然化发展。"
+    }
+  }
+]
