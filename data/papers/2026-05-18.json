@@ -1,0 +1,162 @@
+[
+  {
+    "id": "2605.15741",
+    "title": "HyperDiT: Hyper-Connected Transformers for High-Fidelity Pixel-Space Diffusion",
+    "abstract": "Pixel-space diffusion models bypass the reconstruction bottleneck of Variational Autoencoders (VAEs) but face a fundamental \"granularity dilemma\": capturing global semantics favors large patch scales, while generating high-fidelity details demands fine-grained inputs. To address this issue, we propose HyperDiT, a unified framework establishing Hyper-Connected Cross-Scale Interactions to bridge the semantic and pixel manifold. Diverging from injecting semantics by AdaLN, HyperDiT utilizes Cross-Attention mechanisms, enabling fine-grained tokens to query multi-level semantic anchors globally. To resolve the spatial mismatch during multi-scale interactions, we introduce Scale-Aware Rotary Position Embedding (SA-RoPE) to ensure precise geometric alignment among tokens of varying patch sizes. Furthermore, we incorporate Registers to learn the dense semantics from a pretrained Visual Foundation Model (VFM), effectively reducing generation hallucination and artifacts. Extensive experiments demonstrate that HyperDiT achieves state-of-the-art (SoTA) FID of $\\mathbf{1.56}$ on ImageNet $256\\times256$ directly within the pixel space. By combining the fine-grained stream with semantic guidance, HyperDiT offers a superior paradigm for high-fidelity pixel generation.",
+    "authors": [
+      "Yu He",
+      "Lichen Ma",
+      "Zipeng Guo",
+      "Xinyuan Shan",
+      "Jingling Fu",
+      "Dong Chen",
+      "Junshi Huang",
+      "Yan Li"
+    ],
+    "published": "2026-05-15",
+    "updated": "2026-05-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.15741.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.15741",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "HyperDiT：用于高保真像素空间扩散的超连接变换器",
+      "core_contribution": "提出HyperDiT框架，通过超连接跨尺度交互机制，解决了像素空间扩散模型中全局语义与细粒度细节之间的“粒度困境”，在不依赖VAE重构的情况下实现了高保真像素生成。",
+      "method": "HyperDiT采用交叉注意力机制替代传统的AdaLN注入语义，使细粒度令牌能够全局查询多级语义锚点。为解决多尺度交互中的空间错位问题，引入了尺度感知旋转位置编码（SA-RoPE），确保不同块大小的令牌之间的精确几何对齐。此外，通过注册（Registers）机制从预训练视觉基础模型（VFM）中学习密集语义，减少生成幻觉和伪影。",
+      "findings": "在ImageNet 256×256数据集上，HyperDiT在像素空间中直接实现了最先进的FID分数1.56，证明了结合细粒度流与语义引导的范式在高保真像素生成中的优越性。"
+    }
+  },
+  {
+    "id": "2605.15684",
+    "title": "ElasticDiT: Efficient Diffusion Transformers via Elastic Architecture and Sparse Attention for High-Resolution Image Generation on Mobile Devices",
+    "abstract": "The Diffusion Transformer (DiT) architecture is the state-of-the-art paradigm for high-fidelity image generation, underpinning models like Stable Diffusion-3 and FLUX.1. However, deploying these models on resource-constrained mobile devices entails prohibitive computational and memory overhead. While efficiency-driven approaches like Linear-DiT and static pruning alleviate bottlenecks, they often incur quality degradation. Unlike cloud environments, mobile constraints require a single-model paradigm that dynamically balances fidelity and latency. We introduce ElasticDiT, which achieves this dynamic trade-off by adjusting spatial compression ratios and DiT block depths. By integrating Shift Sparse Block Attention (SSBA) and a Tiny DWT-Distilled VAE (T-DVAE), ElasticDiT reduces inference latency and memory footprint while maintaining image quality. Experiments confirm that ElasticDiT effectively covers a wide range of fidelity-latency trade-offs within a single set of parameters. By jointly adjusting compression and depth, a single ElasticDiT model can be reconfigured on-the-fly to outperform task-specific baselines. Specifically, our flex lite variant achieves an HPS of 32.87, surpassing the Flux model, while maintaining competitive quality at 84.16 percent average sparsity through SSBA. Furthermore, the plug-and-play T-DVAE provides SD3-level reconstruction with only 1/8x the computational cost of standard VAEs, and Flow-GRPO boosts semantic alignment (GenEval: 66.93 to 73.62). These results demonstrate that ElasticDiT offers a versatile, hardware-adaptive solution that eliminates the need for multiple specialized models, providing a promising path for future high-resolution image generation on mobile devices.",
+    "authors": [
+      "Kunpeng Du",
+      "Haizhen Xie",
+      "Sen Lu",
+      "Lei Yu",
+      "Binglei Bao",
+      "Huaao Tang",
+      "Chuntao Liu",
+      "Hao Wu",
+      "Yang Zhao",
+      "Zhicai Huang",
+      "Heyuan Gao",
+      "Zhijun Tu",
+      "Jie Hu",
+      "Xinghao Chen"
+    ],
+    "published": "2026-05-15",
+    "updated": "2026-05-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.15684.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.15684",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ElasticDiT：通过弹性架构和稀疏注意力实现移动设备上高效高分辨率图像生成的扩散变换器",
+      "core_contribution": "提出了一种名为ElasticDiT的单一模型框架，通过动态调整空间压缩比和DiT块深度，在移动设备上实现了图像保真度与推理延迟之间的灵活权衡，无需维护多个专用模型。",
+      "method": "ElasticDiT结合了三种关键技术：一是Shift Sparse Block Attention (SSBA)，通过稀疏注意力机制降低计算开销；二是Tiny DWT-Distilled VAE (T-DVAE)，利用小波变换蒸馏的变分自编码器以1/8的计算成本实现高质量图像重建；三是Flow-GRPO，通过强化学习提升语义对齐。模型通过联合调整压缩率和深度，可在推理时动态重新配置，适应不同硬件约束。",
+      "findings": "实验表明，ElasticDiT的flex lite变体在HPS指标上达到32.87，超越Flux模型，并通过SSBA实现84.16%的平均稀疏度；T-DVAE以标准VAE 1/8的计算成本提供SD3级别的重建质量；Flow-GRPO将GenEval得分从66.93提升至73.62。该方案在单一参数集内覆盖广泛的保真度-延迟权衡，为移动端高分辨率图像生成提供了可行路径。"
+    }
+  },
+  {
+    "id": "2605.15677",
+    "title": "VCG-Bench: Towards A Unified Visual-Centric Benchmark for Structured Generation and Editing",
+    "abstract": "Despite the rapid advancements in Vision-Language Models (VLMs), a critical gap remains in their ability to handle structured, controllable diagrammatic tasks essential for professional workflows. Existing methods predominantly rely on pixel-based synthesis, which operates in probabilistic pixel spaces and is inherently limited in editability and fidelity. Instead, we propose a new Diagram-as-Code paradigm with symbolic logic that leverages mxGraph Extensible Markup Language (XML) for precise diagram generation and editing. We present VCG-Bench, a unified benchmark for visual-centric \\texttt{mxGraph} tasks. VCG-Bench comprises: (1) a taxonomized dataset of 1,449 diverse diagrams spanning 6 domains and 15 sub-domains, (2) a paradigm definition that integrates Generation (Vision-to-Code) and Editability (Code-to-Code), (3) a Tailored Evaluation Protocol employing multi-dimensional metrics such as \\texttt{mxGraph} Execution Success Rate, Style Consistency Score (SCS), etc. Experimental results highlight the challenges faced by current State-of-the-Art (SOTA) VLMs in structured fidelity and instruction compliance, reflecting their vision and reasoning capabilities.",
+    "authors": [
+      "Xiaoyan Su",
+      "Peijie Dong",
+      "Zhenheng Tang",
+      "Song Tang",
+      "Yuyao Zhai",
+      "Kaitao Lin",
+      "Liang Chen",
+      "Gai Yuhang",
+      "Yuyu Luo",
+      "Qiang Wang",
+      "Xiaowen Chu"
+    ],
+    "published": "2026-05-15",
+    "updated": "2026-05-15",
+    "categories": [
+      "cs.CL",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.15677.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.15677",
+    "primary_category": "cs.CL",
+    "score": 85,
+    "summary": {
+      "title_zh": "VCG-Bench：面向结构化生成与编辑的统一视觉中心基准测试",
+      "core_contribution": "提出了一个基于Diagram-as-Code范式的统一基准VCG-Bench，通过符号逻辑和mxGraph XML实现精确的图表生成与编辑，填补了现有视觉语言模型在结构化、可控图表任务上的评估空白。",
+      "method": "采用Diagram-as-Code范式，利用mxGraph可扩展标记语言（XML）将图表表示为符号化代码，替代传统的像素级合成方法。基准包含1,449个跨6个领域和15个子领域的分类图表数据集，并定义了生成（视觉到代码）和可编辑性（代码到代码）两个任务，使用mxGraph执行成功率、风格一致性分数等多维指标进行评估。",
+      "findings": "实验结果表明，当前最先进的视觉语言模型在结构化保真度和指令遵循方面仍面临显著挑战，反映了它们在视觉和推理能力上的局限性。"
+    }
+  },
+  {
+    "id": "2605.15523",
+    "title": "Self-Prompting Diffusion Transformer for Open-Vocabulary Scene Text Editing via In-Context Learning",
+    "abstract": "Scene text editing aims to modify text in a target region of an image while preserving surrounding background style and texture. Existing methods rely solely on image background information while neglecting the visual details of target regions, which discards stylistic features in the original text and essentially degrades the task to text rendering. Moreover, the conditions imposed by pre-trained glyph encoder limit the scope of editable text. To address these issues, this paper proposes a self-prompting scene text editing method that constructs style and glyph prompts directly from the original image, without introducing additional style or glyph encoders. We employ a two-stage training strategy: the diffusion transformer is first trained on large-scale self-supervised data and then refined using a small set of paired images. By leveraging the in-context learning capability of the Multi-Modal Diffusion Transformer (MM-DiT), it achieves open-vocabulary and style-consistent text editing. Experimental results on various languages demonstrate that our method achieves the state-of-the-art performance in both text accuracy and style consistency. Our project page: \\href{https://hongxiii.github.io/mstedit}{hongxiii.github.io/mstedit}.",
+    "authors": [
+      "Hongxi Li",
+      "Tong Wang",
+      "Chengjing Wu",
+      "Tianbao Liu",
+      "Jiangtao Yao",
+      "Xiaochao Qu",
+      "Xinxiao Wu",
+      "Luoqi Liu",
+      "Ting Liu"
+    ],
+    "published": "2026-05-15",
+    "updated": "2026-05-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.15523.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.15523",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于自提示扩散Transformer的开放词汇场景文本编辑：通过上下文学习实现",
+      "core_contribution": "提出了一种无需额外风格或字形编码器的自提示场景文本编辑方法，通过利用多模态扩散Transformer的上下文学习能力，实现了开放词汇、风格一致的文本编辑，并在多种语言上达到了最先进性能。",
+      "method": "该方法直接从原始图像构建风格和字形提示，避免引入额外编码器。采用两阶段训练策略：首先在大规模自监督数据上训练扩散Transformer，然后使用少量配对图像进行微调。通过多模态扩散Transformer的上下文学习能力，实现开放词汇和风格一致的文本编辑。",
+      "findings": "在多种语言上的实验结果表明，该方法在文本准确性和风格一致性方面均达到了最先进性能，有效解决了现有方法忽略目标区域视觉细节、依赖预训练字形编码器限制可编辑文本范围的问题。"
+    }
+  },
+  {
+    "id": "2605.16223",
+    "title": "Evaluating Design Video Generation: Metrics for Compositional Fidelity",
+    "abstract": "Generative video models are increasingly used in design animation tasks, yet no standardized evaluation framework exists for this domain. Unlike natural video generation, design animation imposes structured constraints: specific components shall animate with prescribed motion types, directions, speed and timing, while non-animated regions must remain stable and layout structure must be preserved. This paper provides a fully automated evaluation framework organized across four dimensions: layout fidelity, motion correctness, temporal quality, and content fidelity. This eliminates the reliance on subjective human evaluation and establishes a common basis for benchmarking progress in the field.",
+    "authors": [
+      "Adrienne Deganutti",
+      "Dingning Cao",
+      "Jaejung Seol",
+      "Elad Hirsch",
+      "Purvanshi Mehta"
+    ],
+    "published": "2026-05-15",
+    "updated": "2026-05-15",
+    "categories": [
+      "cs.GR",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.16223.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.16223",
+    "primary_category": "cs.GR",
+    "score": 75,
+    "summary": {
+      "title_zh": "评估设计视频生成：用于组合保真度的度量标准",
+      "core_contribution": "本文提出了首个针对设计动画视频生成的自动化评估框架，从布局保真度、运动正确性、时间质量和内容保真度四个维度进行度量，消除了对主观人工评估的依赖。",
+      "method": "该框架完全自动化，通过四个维度对生成的设计视频进行评估：布局保真度检查非动画区域的稳定性和布局结构保持；运动正确性验证指定组件是否按规定的运动类型、方向、速度和时序运动；时间质量评估视频的时序一致性；内容保真度衡量生成内容与原始设计的匹配程度。",
+      "findings": "实验表明，该评估框架能够有效区分不同生成模型在设计动画任务上的表现，为领域内的基准测试提供了统一标准，并验证了自动化评估替代主观人工评估的可行性。"
+    }
+  }
+]
