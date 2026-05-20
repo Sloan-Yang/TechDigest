@@ -1,0 +1,160 @@
+[
+  {
+    "id": "2605.19320",
+    "title": "TextAlign: Preference Alignment for Text Rendering with Hierarchical Rewards",
+    "abstract": "Faithful text rendering remains a persistent weakness of large text-to-image generative models, as it requires both semantic instruction following and fine-grained glyph-level structure. Prior methods often improve this ability through architecture-specific modules or encoder modifications, which complicate deployment across foundation models. We study text rendering as a post-training preference-alignment problem and propose TextAlign, a non-invasive framework that keeps the generator architecture unchanged. The key component is a hierarchical vision-language model (VLM)-based reward that decomposes rendering errors into global, word, and glyph levels, then converts binary defect judgments into a scalar preference signal. The resulting signal supports both Group Relative Policy Optimization (GRPO) and Direct Preference Optimization (DPO). Experiments on FLUX.1-dev and Z-Image-Turbo show consistent gains in OCR-based text accuracy without degrading general generation quality. Compared with strong foundation and text-rendering baselines, including SD3.5, Qwen-Image, AnyText, and TextDiffuser, these results indicate that reward design offers a scalable alternative to model redesign for improving text rendering.",
+    "authors": [
+      "Mingxuan Cui",
+      "Jingpu Yang",
+      "Fengxian Ji",
+      "Qian Jiang",
+      "Zhecheng Shi",
+      "Jiaming Wang",
+      "Zirui Song",
+      "Fajri Koto",
+      "Xiuying Chen"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-19",
+    "categories": [
+      "cs.CV",
+      "cs.DB"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.19320.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.19320",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "TextAlign：基于分层奖励的文本渲染偏好对齐方法",
+      "core_contribution": "提出了一种非侵入式的后训练偏好对齐框架TextAlign，在不改变生成器架构的前提下，通过分层奖励信号显著提升文本到图像模型中的文本渲染准确性。",
+      "method": "该方法将文本渲染错误分解为全局、单词和字形三个层次，利用基于视觉语言模型（VLM）的分层奖励将二值缺陷判断转换为标量偏好信号。该信号可同时支持组相对策略优化（GRPO）和直接偏好优化（DPO）两种对齐算法，无需修改生成器结构。",
+      "findings": "在FLUX.1-dev和Z-Image-Turbo模型上的实验表明，该方法在基于OCR的文本准确性上取得了一致提升，且未降低通用生成质量。与SD3.5、Qwen-Image、AnyText和TextDiffuser等强基线相比，结果表明奖励设计是改进文本渲染的一种可扩展替代方案，优于传统的模型重设计方法。"
+    }
+  },
+  {
+    "id": "2605.20147",
+    "title": "PixVerve: Advancing Native UHR Image Generation to 100MP with a Large-Scale High-Quality Dataset",
+    "abstract": "Text-to-Image (T2I) models have recently seen notable progress around 1K and 2K resolution. With the extreme desire for better visual experience and the rapid development of imaging technology, the demand for Ultra-High-Resolution (UHR) image generation has grown significantly. However, UHR image generation poses great challenges due to the scarcity and complexity of high-resolution content. In this paper, we first introduce PixVerve-95K, a high-quality, open-source UHR T2I dataset curated with a carefully designed data pipeline, which contains 95K images across diverse scenarios (each image has a minimum pixel-count of 100M) and seven-dimensional annotations. Based on our large-scale image-text dataset, we take a pioneering step to extend various T2I foundation models to native 100MP generation with three training schemes. Finally, leveraging both conventional metrics and multimodal large language model-based assessments, our proposed PixVerve-Bench benchmark establishes a comprehensive evaluation protocol for UHR images encompassing visual quality and semantic alignment. Extensive experimental results on our benchmark and the constructive exploration of training strategies collaboratively provide valuable insights for future breakthroughs.",
+    "authors": [
+      "Haojun Chen",
+      "Haoyang He",
+      "Chengming Xu",
+      "Qingdong He",
+      "Junwei Zhu",
+      "Yabiao Wang",
+      "Zhucun Xue",
+      "Xianfang Zeng",
+      "Zhennan Chen",
+      "Xiaobin Hu",
+      "Hao Zhao",
+      "Yong Liu",
+      "Jiangning Zhang",
+      "Dacheng Tao"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.20147.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.20147",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "PixVerve：利用大规模高质量数据集推动原生超高清图像生成至1亿像素",
+      "core_contribution": "本文首次构建了包含9.5万张、每张至少1亿像素的高质量开源超高清文本到图像数据集PixVerve-95K，并基于该数据集探索了多种训练方案，将现有T2I基础模型扩展至原生1亿像素生成能力。",
+      "method": "首先，设计了一套精细的数据处理流水线，从多样场景中筛选出95K张超高清图像并配以七维标注。其次，基于该数据集，采用三种训练方案（如微调、渐进式训练等）对现有T2I基础模型进行扩展，使其能够原生生成100MP分辨率的图像。最后，构建了PixVerve-Bench基准，结合传统指标和多模态大语言模型评估，对超高清图像的视觉质量和语义对齐进行综合评价。",
+      "findings": "实验结果表明，所提出的数据集和训练策略能有效支持原生100MP图像生成，在视觉质量和语义对齐方面均优于现有方法；同时，对训练方案的探索为未来超高清图像生成研究提供了重要见解。"
+    }
+  },
+  {
+    "id": "2605.19750",
+    "title": "CPC-VAR:Continual Personalized and Compositional Generation in Visual Autoregressive Models",
+    "abstract": "Visual autoregressive (VAR) models have recently emerged as an efficient paradigm for text-to-image generation. Despite their strong generative capability, existing VAR-based personalization methods remain limited to static settings, failing to accommodate evolving user demands. In particular, sequential concept learning leads to severe catastrophic forgetting, while multi-concept synthesis often suffers from feature entanglement and attribute inconsistency. In this work, we present the first systematic study of continual personalized generation in VAR models. We identify two key challenges: (i) preserving previously learned concepts during sequential customization, and (ii) composing multiple personalized concepts in a controllable manner. To address these issues, we propose a unified framework with two core components. For continual single-concept learning, we introduce Gradient-based Concept Neuron Selection (GCNS), which identifies concept-relevant neurons and constrains only conflicting parameters across tasks, effectively mitigating forgetting without additional model expansion. For multi-concept synthesis, we propose a context-aware composition strategy that performs multi-branch feature modeling and localized cross-attention fusion guided by spatial conditions, enabling precise and disentangled concept composition. Extensive experiments demonstrate that our method significantly improves performance in long-sequence continual personalization while achieving superior results in multi-concept image synthesis compared to existing baselines. These findings highlight the potential of VAR models for scalable and controllable personalized generation.",
+    "authors": [
+      "Junhao Li",
+      "Xinhao Zhong",
+      "Yi sun",
+      "Yuxia Qiao",
+      "Bin Chen",
+      "Shu-Tao Xia",
+      "Yaowei Wang"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.19750.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.19750",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "CPC-VAR：视觉自回归模型中的持续个性化与组合生成",
+      "core_contribution": "本文首次系统研究了视觉自回归（VAR）模型中的持续个性化生成问题，提出了一个统一框架，能够同时解决顺序学习中的灾难性遗忘和多概念合成中的特征纠缠与属性不一致问题。",
+      "method": "该方法包含两个核心组件：一是基于梯度的概念神经元选择（GCNS），通过识别与概念相关的神经元并仅约束跨任务中的冲突参数，在不增加模型规模的情况下有效缓解遗忘；二是上下文感知的组合策略，通过多分支特征建模和基于空间条件的局部交叉注意力融合，实现精确且解耦的多概念合成。",
+      "findings": "大量实验表明，该方法在长序列持续个性化任务中显著提升了性能，并在多概念图像合成上取得了优于现有基线的结果，展示了VAR模型在可扩展且可控的个性化生成方面的潜力。"
+    }
+  },
+  {
+    "id": "2605.19639",
+    "title": "Benchmarking and Evolving Reason-Reflect-Rectify for Reflective Visual Generation",
+    "abstract": "Text-to-Image (T2I) models and Unified Multimodal Models (UMMs) have achieved remarkable progress in visual generation. However, their reliance on a single-pass generation paradigm limits their ability to handle complex prompts requiring iterative refinement. To enable multi-round Reflective Visual Generation (RVG), we formalize the Reason-Reflect-Rectify (R^3) loop as a core framework and introduce R^3-Bench, a benchmark of over 600 expert-annotated instances that quantifies iterative reasoning and rectification capabilities. Evaluation on R^3-Bench reveals a critical gap: while state-of-the-art models can identify generation errors, they fail to generate actionable rectification instructions. To bridge this gap, we propose R^3-Refiner, a dual-stage framework leveraging Group Relative Policy Optimization (GRPO) and a Hierarchical Reward Mechanism (HRM) to better align rectification with reflective reasoning. Experiments show that R^3-Refiner achieves significant improvements on R^3-Bench (+12.0% in Reflective Verdict Score, +9.0% in Rectification Score), and can be seamlessly integrated with various MLLMs to enhance the generation quality of different T2I models on GenEval++ and T2I-CompBench. Code is available at https://github.com/xiaomoguhz/R3-Bench.",
+    "authors": [
+      "Junjie Wang",
+      "Xinghua Lou",
+      "Jason Li",
+      "Ye Tian",
+      "Keyu Chen",
+      "Yulin Li",
+      "Bin Kang",
+      "Jacky Mai",
+      "Yanwei Li",
+      "Zhuotao Tian",
+      "Liqiang Nie"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.19639.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.19639",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "反思性视觉生成的基准测试与推理-反思-修正框架的演进",
+      "core_contribution": "本文提出了一个用于多轮反思性视觉生成的基准R^3-Bench，并设计了一个双阶段框架R^3-Refiner，通过强化学习和分层奖励机制显著提升了模型在迭代推理与修正任务上的表现。",
+      "method": "首先，作者形式化了Reason-Reflect-Rectify (R^3)循环作为反思性视觉生成的核心框架，并构建了包含600多个专家标注实例的R^3-Bench基准。其次，针对现有模型无法生成可执行修正指令的问题，提出了R^3-Refiner，该框架采用双阶段训练策略，结合组相对策略优化（GRPO）和分层奖励机制（HRM），以更好地对齐修正行为与反思推理过程。",
+      "findings": "在R^3-Bench上，R^3-Refiner在反思性判决得分上提升12.0%，在修正得分上提升9.0%；该方法可无缝集成到多种多模态大语言模型中，显著提升不同文生图模型在GenEval++和T2I-CompBench上的生成质量。"
+    }
+  },
+  {
+    "id": "2605.19551",
+    "title": "AnchorFlow: Editable SVG Reconstruction via Sparse Anchor Point Fields",
+    "abstract": "Image-to-SVG reconstruction aims to produce vector graphics that are faithful to raster inputs and easy to edit. Existing methods face a structural trade-off in how vector structure is parameterized, including how many paths represent an image and how many anchor points define each path. High-fidelity methods often rely on many paths or densely parameterized curves, whereas overly compact SVG generation may deviate from the input geometry. This issue becomes more pronounced when local raster evidence is imperfect, where boundary-following reconstruction can introduce redundant anchors and fragmented structures. We argue that this trade-off should be addressed at the level of anchor placement, since anchors on Bezier curves define local path structure and strongly affect both accuracy and editability. We propose AnchorFlow, an editable SVG reconstruction framework that models path-level anchor placement with sparse anchor point fields. Given path-like foreground components extracted from a raster image, AnchorFlow predicts an image-conditioned sparse anchor field for each component and resolves it into an ordered Bezier path. Rendering-guided feedback then corrects local structural errors before re-resolution. The recovered paths are then assembled and optimized into the final SVG. Experiments on isolated paths and full images show that AnchorFlow achieves a favorable fidelity-editability trade-off, substantially reducing editable complexity while preserving competitive raster fidelity.",
+    "authors": [
+      "Mengnan Jiang",
+      "Christian Franke",
+      "Michele Franco Adesso",
+      "Antonio Haas",
+      "Grace Li Zhang"
+    ],
+    "published": "2026-05-19",
+    "updated": "2026-05-19",
+    "categories": [
+      "cs.GR",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.19551.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.19551",
+    "primary_category": "cs.GR",
+    "score": 85,
+    "summary": {
+      "title_zh": "AnchorFlow：通过稀疏锚点场实现可编辑的SVG重建",
+      "core_contribution": "提出了一种新的SVG重建框架AnchorFlow，通过在贝塞尔路径上建模稀疏锚点放置，有效解决了矢量重建中保真度与可编辑性之间的结构性权衡问题。",
+      "method": "首先从光栅图像中提取路径状前景组件，然后为每个组件预测一个图像条件化的稀疏锚点场，并将其解析为有序的贝塞尔路径。接着通过渲染引导的反馈机制修正局部结构错误，最后将所有路径组装并优化为最终的SVG。",
+      "findings": "在孤立路径和完整图像上的实验表明，AnchorFlow在保持与光栅图像竞争性保真度的同时，显著降低了可编辑复杂度，实现了保真度与可编辑性之间的良好平衡。"
+    }
+  }
+]
