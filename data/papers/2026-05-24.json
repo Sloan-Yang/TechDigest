@@ -1,0 +1,137 @@
+[
+  {
+    "id": "2605.20808",
+    "title": "Spatial Gram Alignment for Ultra-High-Resolution Image Synthesis",
+    "abstract": "Modern ultra-high-resolution image synthesis relies heavily on the robust generative capacity of large-scale pre-trained Latent Diffusion Models (LDMs). While recent representation alignment methods have proven effective by distilling visual priors from foundation models (e.g., SAM or DINO) into generative latent features, scaling these approaches to pre-trained LDMs at extreme resolutions exposes a critical learnability-fidelity conflict. Specifically, forcing direct patch-wise feature distillation inherently perturbs the pre-trained latent manifold, ultimately leading to generation degradation. To address this bottleneck, we propose Spatial Gram Alignment (SGA), a novel framework that explicitly leverages the representation priors of vision foundation models while preserving the native generative capacity of LDMs. Moving beyond restrictive direct alignment, SGA imposes a non-invasive spatial constraint by aligning the internal self-similarities of the generative features with those of the foundation priors. This spatial constraint effectively establishes macroscopic structural coherence, while the native generative objectives retain the microscopic pixel-level fidelity inherent to the original LDMs. Notably, this versatile strategy integrates seamlessly across both intermediate diffusion features and VAE latents within pre-trained LDMs. Extensive experiments demonstrate that SGA achieves state-of-the-art performance for ultra-high-resolution text-to-image synthesis, yielding an effective reconciliation between global structural integrity and fine-grained visual details. Code is available at https://github.com/zhang0jhon/SGA.",
+    "authors": [
+      "Jinjin Zhang",
+      "Xiefan Guo",
+      "Di Huang"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.20808.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.20808",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "面向超高分辨率图像合成的空间格拉姆对齐方法",
+      "core_contribution": "提出了一种名为空间格拉姆对齐（SGA）的新框架，在利用视觉基础模型表示先验的同时，避免了直接特征蒸馏对预训练潜扩散模型生成能力的破坏，解决了超高分辨率图像合成中的可学习性与保真度冲突。",
+      "method": "SGA通过对齐生成特征与基础模型先验的内部自相似性（即格拉姆矩阵）来施加非侵入式的空间约束，从而建立宏观结构一致性，同时保留原始扩散模型的微观像素级保真度。该方法可无缝集成到预训练潜扩散模型的中间扩散特征和VAE潜变量中，无需修改原有生成目标。",
+      "findings": "实验表明，SGA在超高分辨率文本到图像合成任务上达到了最先进性能，有效平衡了全局结构完整性与细粒度视觉细节，代码已开源。"
+    }
+  },
+  {
+    "id": "2605.20807",
+    "title": "Decomposing Subject-Driven Image Generation via Intermediate Structural Prediction",
+    "abstract": "Subject-driven text-to-image generation still struggles to preserve high-frequency identity details such as logos, patterns, and text. Existing methods typically operate directly in RGB space, which often leads to detail degradation under substantial edits. We propose a two-stage framework that decouples structure from appearance by first predicting a Canny map and then rendering the final image conditioned on both the source appearance and the predicted structure. To improve text handling, we further introduce a fully automatic pipeline that constructs a 100k-pair text-aware dataset with cross-view textual consistency. Experiments, including GPT-4.1-based evaluation and a knowledge distillation study, show clear gains over selected baselines and suggest that intermediate structural prediction is an effective route for high-fidelity subject-driven generation. Our dataset and code will be made publicly available.",
+    "authors": [
+      "Hanzhong Guo",
+      "Yizhou Yu"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.20807.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.20807",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过中间结构预测分解主体驱动的图像生成",
+      "core_contribution": "提出了一种两阶段框架，通过先预测Canny边缘图再渲染最终图像，将结构信息与外观信息解耦，从而在主体驱动的图像生成中更好地保留高频身份细节（如标志、图案和文字）。",
+      "method": "该方法首先从源图像中提取外观特征，并利用文本提示预测一个中间Canny边缘结构图；然后，基于源外观和预测的结构图，通过条件生成模型渲染最终图像。为了提升文字处理能力，还构建了一个包含10万对图像的文本感知数据集，并通过自动管道确保跨视角的文本一致性。",
+      "findings": "实验表明，该方法在保留高频细节方面显著优于现有基线，基于GPT-4.1的评估和知识蒸馏研究均证实了中间结构预测策略对于高保真主体驱动生成的有效性。"
+    }
+  },
+  {
+    "id": "2605.20731",
+    "title": "TASTE: A Designer-Annotated Multi-Dimensional Preference Dataset for AI-Generated Graphic Design",
+    "abstract": "Text-to-image models produce graphic design at production scale, but their supervision comes from photo-style preference data with a single overall verdict per comparison. Designers evaluate along several distinct axes, including typography, visual hierarchy, color harmony, layout, and brief fidelity, and a single label collapses them. We release TASTE (Typography, Aesthetics, Spatial, Tone, Etc.): ten professional designers ranked outputs from four current text-to-image models on nine criteria across two disjoint cohorts, yielding 1,600 ratings per criterion plus per-image hallucination flags on the holistic-preference cohorts. We pair the dataset with three contributions. First, a criterion-agnostic signal test framework, using Kendall's tau, majority probability, and Condorcet cycles against exact iid-uniform nulls at p = 4 and R = 5, places designer agreement on graphic design between food and movie preferences and photo-style image quality, with every TASTE criterion rejecting the random-rater null. Second, no pre-trained system in our benchmark, including six open-weight VLM judges from 3B to 33B parameters and three dedicated T2I scorers, HPSv2.1, PickScore-v1, and LAION-Aesthetic-V2, exceeds 0.55 macro agreement with the 5-designer majority; VLM judges trade off position bias against content sensitivity, so scaling moves along this frontier without improving accuracy. Third, a small pairwise-difference head trained on TASTE reaches 0.611, closing roughly half the gap to the 0.741 single-rater ceiling.",
+    "authors": [
+      "Haonan Zhu",
+      "Elad Hirsch",
+      "Alexandria Minetti",
+      "Allison Nulty",
+      "Purvanshi Mehta"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "stat.AP"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.20731.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.20731",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "TASTE：面向AI生成平面设计的设计师标注多维偏好数据集",
+      "core_contribution": "本文提出了首个由专业设计师在多维度上标注的AI生成平面设计偏好数据集TASTE，并揭示了现有自动评估系统在平面设计评价上的严重不足，为提升AI生成设计的评估准确性提供了基准与方向。",
+      "method": "作者邀请十位专业设计师，对四个当前文本到图像模型生成的输出，在九个独立评价标准（如排版、视觉层次、色彩和谐、布局、简报忠实度等）上进行排序，并在两个不相交的队列中收集数据，最终每个标准获得1600个评分，同时为整体偏好队列标注了每张图像的幻觉标记。论文还构建了一个与标准无关的信号检验框架，使用Kendall's tau、多数概率和Condorcet循环，在精确的iid均匀零假设下（p=4, R=5）检验设计师间的一致性。",
+      "findings": "研究发现，设计师在平面设计评价上的一致性介于食物偏好、电影偏好与照片风格图像质量之间，且每个TASTE标准均拒绝随机评分者零假设；但所有预训练系统（包括6个开源视觉语言模型和3个专用T2I评分器）与5位设计师多数意见的宏观一致性均未超过0.55，而基于TASTE训练的简单成对差异头模型达到了0.611，接近单评分者上限0.741，表明现有自动评估系统与专业设计师判断之间存在显著差距。"
+    }
+  },
+  {
+    "id": "2605.20640",
+    "title": "Pareto-Enhanced Portrait Generation: Vision-Aligned Text Supervision for Alignment, Realism, and Aesthetics",
+    "abstract": "Text-to-image diffusion models often face a severe trilemma in human portrait generation: text-image alignment, photorealism, and human-perceived aesthetics inherently inhibit one another. Supervised Fine-Tuning (SFT) is an effective method for enhancing the photorealism of image generation. However, it often leads to overfitting to the training dataset, corrupts pre-trained image priors, and degrades alignment or aesthetics. To break this bottleneck, we propose a feature supervision paradigm for Multimodal Diffusion Transformers (MM-DiT). Specifically, we introduce a lightweight cross-modal alignment mechanism that implicitly extracts multi-granularity vision-aligned text representations from SigLIP 2 and applies supervision to the image branch of MM-DiT during the training stage, with zero extra inference overhead. Our method injects vision-aligned text guidance while preserving the base model's original generalization, avoiding degradation caused by SFT. Furthermore, our method directly mines implicit multi-granularity aesthetic signals from pre-trained vision foundation models to optimize human-perceived aesthetics. Extensive experiments on MM-DiTs show that our method pushes the Pareto frontier and achieves synergistic improvements across text-image alignment, photorealism, and human-perceived aesthetics.",
+    "authors": [
+      "Yunlong Wang",
+      "Jinjin Shi",
+      "Wenbin Gao",
+      "Xuran Xu",
+      "Runyu Shi",
+      "Ying Huang"
+    ],
+    "published": "2026-05-20",
+    "updated": "2026-05-20",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.20640.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.20640",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "帕累托增强的人像生成：面向对齐、真实感和美学的视觉对齐文本监督",
+      "core_contribution": "提出了一种针对多模态扩散变换器（MM-DiT）的特征监督范式，在不增加推理开销的情况下，同时提升文本-图像对齐、照片真实感和人类感知美学，突破了传统监督微调（SFT）导致三者相互抑制的瓶颈。",
+      "method": "该方法引入一个轻量级跨模态对齐机制，从SigLIP 2中隐式提取多粒度视觉对齐文本表示，并在训练阶段对MM-DiT的图像分支施加监督，同时保留基础模型的泛化能力。此外，直接从预训练视觉基础模型中挖掘隐式多粒度美学信号，以优化人类感知的美学效果。整个方法在推理时无额外开销。",
+      "findings": "在MM-DiT上的大量实验表明，该方法推动了帕累托前沿，在文本-图像对齐、照片真实感和人类感知美学三个维度上实现了协同提升，避免了SFT导致的退化问题。"
+    }
+  },
+  {
+    "id": "2605.22777",
+    "title": "DecQ: Detail-Condensing Queries for Enhanced Reconstruction and Generation in Representation Autoencoders",
+    "abstract": "Representation Autoencoders (RAEs) leverage frozen vision foundation models (VFMs) as tokenizer encoders, providing robust high-level representations that facilitate fast convergence and high-quality generation in latent diffusion models. However, freezing the VFM inherently constrains its spatial reconstruction capacity, limiting fine-grained generation and image editing; in contrast, incorporating reconstruction-oriented signals via fine-tuning disrupts the pretrained semantic space and degrades generative fidelity. To address this trade-off, we propose DecQ, a simple yet effective framework for RAEs. Specifically, DecQ introduces lightweight detail-condensing queries that extract fine-grained information from intermediate VFM features through condenser modules. These queries are incorporated into the decoder to support reconstruction and are jointly generated with patch tokens during generative modeling. By aggregating information from both shallow and deep layers, DecQ effectively mitigates the reconstruction--generation trade-off, improving both reconstruction quality and generative performance. Our experiments demonstrate that: (1) with only 8 additional queries and 3.9% extra computation, DecQ improves reconstruction over the frozen DINOv2-based RAE, increasing PSNR from 19.13 dB to 22.76 dB; and (2) for generative modeling, DecQ achieves 3.3$\\times$ faster convergence than RAE, attaining an FID of 1.41 without guidance and 1.05 with guidance.",
+    "authors": [
+      "Tianhang Wang",
+      "Yitong Chen",
+      "Wei Song",
+      "Zuxuan Wu",
+      "Min Li",
+      "Jiaqi Wang"
+    ],
+    "published": "2026-05-21",
+    "updated": "2026-05-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.22777.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.22777",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "DecQ：面向表示自编码器中增强重建与生成的细节凝聚查询",
+      "core_contribution": "提出DecQ框架，通过引入轻量级细节凝聚查询，在不破坏预训练语义空间的前提下，有效缓解了表示自编码器中重建质量与生成保真度之间的权衡问题。",
+      "method": "DecQ在冻结的视觉基础模型（VFM）基础上，通过冷凝模块从中间层特征中提取细粒度信息，生成少量细节凝聚查询。这些查询被注入解码器以辅助重建，并在生成建模阶段与补丁令牌联合生成。通过聚合浅层和深层特征，DecQ在仅增加3.9%计算量的情况下显著提升了重建与生成性能。",
+      "findings": "实验表明：(1) 仅使用8个额外查询和3.9%额外计算，DecQ将基于冻结DINOv2的RAE的重建PSNR从19.13 dB提升至22.76 dB；(2) 在生成建模中，DecQ收敛速度比RAE快3.3倍，无引导时FID为1.41，有引导时FID为1.05。"
+    }
+  }
+]
