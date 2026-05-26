@@ -1,0 +1,145 @@
+[
+  {
+    "id": "2605.25763",
+    "title": "AI-T2I: Aggregating-and-Isolating Cross-Attention to Diffusion Models for Text-to-Image Synthesis",
+    "abstract": "Text-to-image synthesis has made significant progress, benefiting from the strong generative capabilities of diffusion models. However, these models struggle to achieve precise text-to-image alignment within cross-attention maps during the denoising process. Existing works primarily focus on inter-subject-token activations (i.e., cross-attention scores) overlap for different subjects, overlooking the intra-subject-token activations scattering issue for identical subjects. In this paper, we propose an Aggregating-and-Isolating cross-attention approach to diffusion models for Text-to-Image synthesis, dubbed AI-T2I. Technically, to address the scattering issue, we devise an aggregation loss to identify and consolidate the scattered intra-token activations, which implicitly helps mitigate the potential overlap issue. Upon that, an isolation loss is further introduced to push the inter-token activations apart, thus fulfilling precise text-to-image alignment. Extensive experiments on various benchmarks demonstrate the superiority of AI-T2I over the state-of-the-art works for text-to-image synthesis. Furthermore, our AI-T2I exhibits excellent generalization across other tasks, e.g., controllable layout generation and personalized generation.",
+    "authors": [
+      "Shipeng Cao",
+      "Biao Qian",
+      "Haipeng Liu",
+      "Yang Wang",
+      "Meng Wang"
+    ],
+    "published": "2026-05-25",
+    "updated": "2026-05-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.25763.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.25763",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "AI-T2I：扩散模型中聚合与隔离交叉注意力以实现文本到图像合成",
+      "core_contribution": "提出了一种聚合与隔离交叉注意力的方法（AI-T2I），通过解决注意力散射和重叠问题，显著提升了文本到图像合成的对齐精度。",
+      "method": "1. 设计聚合损失函数，识别并整合同一主题内分散的注意力激活，隐含缓解注意力重叠问题；2. 引入隔离损失函数，迫使不同主题间的注意力激活相互分离；3. 结合两种损失优化交叉注意力机制，实现更精准的文本-图像对齐。",
+      "findings": "1. 在多个基准测试中，AI-T2I优于现有最先进的文本到图像合成方法；2. 该方法可泛化至其他任务（如可控布局生成和个性化生成），表现出优秀的扩展性。"
+    }
+  },
+  {
+    "id": "2605.26108",
+    "title": "Reinforcing Few-step Generators via Reward-Tilted Distribution Matching",
+    "abstract": "Recent advances in few-step diffusion distillation have enabled efficient image generation, yet aligning these models with human preferences remains challenging. We propose Reward-Tilted Distribution Matching Distillation (RTDMD), a two-stage framework that unifies distribution matching distillation with reward-guided reinforcement learning for few-step flow generators. We show that minimizing the KL divergence to a reward-tilted teacher distribution naturally decomposes into a distribution matching term and a reward maximization term. In the first stage, we introduce Ambient-Consistent Distribution Matching Distillation (AC-DMD), which performs subinterval-wise distribution matching and augments the fake score objective with a consistency regularizer to help the fake score model track the shifting generator distribution under limited updates. In the second stage, we jointly optimize both terms: for the reward maximization term, we derive a hybrid policy gradient that combines a GRPO-style estimator for the stochastic intermediate transitions with direct reward backpropagation through the deterministic final step, and further introduce step-subset GRPO (SubGRPO) to reduce variance. Experiments on SD3, SD3.5, and FLUX.2 demonstrate that RTDMD establishes new state-of-the-art results across preference, aesthetic, and compositional metrics with only 4 inference steps, outperforming previous few-step text-to-image generation methods. Code and models are available at https://github.com/Harahan/RTDMD.",
+    "authors": [
+      "Yushi Huang",
+      "Xiangxin Zhou",
+      "Ruoyu Wang",
+      "Chi Zhang",
+      "Jun Zhang",
+      "Tianyu Pang"
+    ],
+    "published": "2026-05-25",
+    "updated": "2026-05-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.26108.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.26108",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过奖励倾斜分布匹配强化少步生成器",
+      "core_contribution": "提出奖励倾斜分布匹配蒸馏（RTDMD）框架，将分布匹配蒸馏与奖励引导的强化学习相结合，优化少步流生成器。",
+      "method": "RTDMD分为两阶段：第一阶段引入环境一致分布匹配蒸馏（AC-DMD），通过子区间分布匹配和一致性正则化优化假分数模型；第二阶段联合优化分布匹配项和奖励最大化项，采用混合策略梯度（结合GRPO估计器和直接奖励反向传播）及子集GRPO（SubGRPO）降低方差。",
+      "findings": "在SD3、SD3.5和FLUX.2上的实验表明，RTDMD仅需4步推理即可在偏好、审美和组合指标上达到最优性能，超越现有少步文本生成图像方法。"
+    }
+  },
+  {
+    "id": "2605.26089",
+    "title": "Channel-wise Vector Quantization",
+    "abstract": "We present Channel-wise Vector Quantization (CVQ), a novel image tokenization paradigm that replaces patch-wise tokens with channel-wise tokens. Unlike conventional vector quantization, which assigns a discrete token to each patch feature vector, CVQ quantizes each channel of the feature map. This formulation represents an image as discrete levels of visual details, rather than as a grid of spatial patches. Based on CVQ, we introduce a new visual autoregressive framework with \"next-channel prediction\". Instead of rendering images patch by patch in raster order, our Channel-wise Autoregressive (CAR) model predicts image channels sequentially, producing progressively enriched visual details. Specifically, it first sketches global structure and then refines fine-grained attributes, akin to a human artist's workflow. Empirically, we show that: (1) CVQ achieves 100% codebook utilization with a 16K+ codebook size without any bells and whistles, and substantially improves reconstruction quality over conventional VQ; and (2) CAR attains a DPG score of 86.7 and a GenEval score of 0.79, demonstrating strong effectiveness for text-to-image generation.",
+    "authors": [
+      "Wei Song",
+      "Tianhang Wang",
+      "Yitong Chen",
+      "Tong Zhang",
+      "Zuxuan Wu",
+      "Ming Li",
+      "Jiaqi Wang",
+      "Kaicheng Yu"
+    ],
+    "published": "2026-05-25",
+    "updated": "2026-05-25",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.26089.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.26089",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通道级向量量化",
+      "core_contribution": "提出通道级向量量化（CVQ）新范式，将传统基于图像块的标记替换为通道级标记，并基于此构建了通道级自回归（CAR）生成框架。",
+      "method": "1. 通过量化特征图的每个通道（而非整块特征向量）生成离散标记；2. 提出'下一通道预测'的自回归框架，按通道顺序生成图像；3. 模拟人类绘画流程，先构建全局结构再细化细节。",
+      "findings": "1. CVQ在16K+码本规模下实现100%利用率，重建质量显著优于传统VQ；2. CAR模型在文本生成图像任务中表现优异（DPG 86.7分，GenEval 0.79分）。"
+    }
+  },
+  {
+    "id": "2605.25876",
+    "title": "DyCoRM: Dynamic Criterion-Aware Reward Modeling for Text-to-Image Generation",
+    "abstract": "With the continued advancement of text-to-image (T2I) generation, producing high-quality images is becoming increasingly attainable; consequently, user demands are shifting toward images that better satisfy their specific requirements. As reward models play an increasingly important role in assessing whether generated images align with user preference, this trend introduces an important challenge for reward modeling: rather than relying solely on static and general evaluation dimensions, reward models should account for the task-relevant and fine-grained criteria through which users assess whether generated images meet their specific requirements. To address this challenge, we propose DyCoRM, a dynamic, criterion-aware reward model that grounds task-relevant criteria and performs criterion-aware preference comparison. To support this setting, we construct DyCoDataset-20K, which provides dynamic criteria together with criterion-level annotations, and further derive DyCoBench-1K, a benchmark for systematically evaluating reward models under dynamic criteria. We further introduce DyCoPick, which applies criterion-aware reward modeling to selecting T2I images. Our contributions establish the first reward modeling framework for dynamic and fine-grained evaluation and practical application in T2I generation.",
+    "authors": [
+      "Jiaying Qian",
+      "Ziheng Jia",
+      "Qian Zhang",
+      "Zicheng Zhang",
+      "Jiayi Guo",
+      "Junqi Zhang",
+      "Guangtao Zhai",
+      "Xiongkuo Min"
+    ],
+    "published": "2026-05-25",
+    "updated": "2026-05-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.25876.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.25876",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "DyCoRM：面向文本到图像生成的动态准则感知奖励建模",
+      "core_contribution": "提出了DyCoRM，一种动态、准则感知的奖励模型，能够根据任务相关准则进行细粒度评估，并构建了包含动态准则标注的数据集DyCoDataset-20K及评测基准DyCoBench-1K。",
+      "method": "1. 设计动态准则感知奖励模型（DyCoRM），通过任务相关准则进行细粒度偏好比较\n2. 构建包含20K动态准则标注的数据集DyCoDataset-20K\n3. 提出DyCoPick方法，将准则感知奖励建模应用于T2I图像选择",
+      "findings": "1. DyCoRM首次实现了动态细粒度评估的奖励建模框架\n2. 实验表明该方法能有效提升生成图像与用户特定需求的匹配度\n3. 构建的DyCoBench-1K为动态准则下的奖励模型评估提供了系统化基准"
+    }
+  },
+  {
+    "id": "2605.25661",
+    "title": "DRM: Diffusion-based Reward Model With Step-wise Guidance",
+    "abstract": "Current mainstream methods of aligning diffusion models with human preferences typically employ VLM-based reward models. However, these reward models, pre-trained for semantic alignment, struggle to capture the essential perceptual qualities-such as aesthetics, composition, and visual harmony. In this work, we argue that a model capable of high-fidelity generation must possess a profound understanding of these visual attributes. Based on this insight, we introduce the Diffusion-based Reward Model (DRM), a novel paradigm that use the pre-trained diffusion model as a powerful evaluative backbone. A key advantage of the DRM is its unique ability to assess not only the final image but also the noisy intermediate latents at any stage of the generative process. We leverage this step-wise evaluative capacity in two ways. First, we propose Step-wise GRPO, a reinforcement learning algorithm that provides dense, per-step rewards to resolve the imprecise credit assignment problem in GRPO algorithm, leading to more stable and effective alignment. Second, we introduce Step-wise Sampling, a novel inference strategy that employs the DRM as a dynamic guide to evaluate multiple generation paths at each step, steering the process towards higher-quality outcomes. Extensive experiments confirm that our approach significantly enhances the final quality of generated images. Code: https://github.com/jjaxonx/DRM.",
+    "authors": [
+      "Jaxon Zhang",
+      "Binxin Yang",
+      "Hubery Yin",
+      "Chen Li",
+      "Jing Lyu"
+    ],
+    "published": "2026-05-25",
+    "updated": "2026-05-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.25661.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.25661",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "DRM：基于扩散模型的逐步引导奖励模型",
+      "core_contribution": "提出基于预训练扩散模型的奖励模型（DRM），通过评估生成过程中的中间潜在状态，解决了传统VLM奖励模型难以捕捉感知质量（如美学、构图等）的问题，并开发了两种逐步优化方法。",
+      "method": "1. 利用预训练扩散模型作为评估主干，构建DRM奖励模型，可评估生成过程中的任意中间噪声潜在状态；2. 提出Step-wise GRPO强化学习算法，通过逐步密集奖励解决GRPO算法的信用分配不精确问题；3. 设计Step-wise Sampling推理策略，在每一步动态评估多条生成路径以引导高质量输出。",
+      "findings": "实验表明：1. DRM显著提升生成图像的最终质量；2. 逐步评估机制能更稳定有效地对齐人类偏好；3. Step-wise Sampling策略可动态优化生成路径。"
+    }
+  }
+]
