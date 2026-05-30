@@ -1,0 +1,181 @@
+[
+  {
+    "id": "2605.30174",
+    "title": "LiveSVG: Zero-Shot SVG Animation via Video Generation",
+    "abstract": "We introduce LiveSVG, a zero-shot approach for generating Scalable Vector Graphics (SVG) animations using video diffusion models. Current SVG animation methods struggle with complex motions: LLM-based code synthesis fails to express fine, non-rigid Bézier deformations, while Score Distillation Sampling (SDS) provides noisy gradients and often requires category-specific priors like skeletons. In contrast, LiveSVG fits vector geometry directly to an explicitly generated target video. Given an input SVG image and a motion prompt, we generate a previewable target video using a frozen image-to-video model, then fit the original SVG to this video via differentiable rendering. Our fitting stage is skeleton-free, utilizing a dual-level motion representation that combines per-group homographies for coarse articulation with per-path Bézier control-point offsets for local deformations. To resolve color-induced correspondence ambiguities during pixel-wise fitting, we introduce a novel sphere-packing recolorization strategy. We also present ChallengeSVG, a benchmark of complex, multi-object scenes that exposes the limitations of prior work. Evaluations demonstrate that LiveSVG significantly outperforms existing methods on both AniClipart and ChallengeSVG, establishing direct reference-video fitting as a practical, robust route to prompt-aligned and fully editable vector animation.",
+    "authors": [
+      "Matan Levy",
+      "Ran Margolin",
+      "Bar Cavia",
+      "Dvir Samuel",
+      "Yael Pritch",
+      "Shmuel Peleg",
+      "Alex Rav Acha",
+      "Ariel Shamir",
+      "Dani Lischinski"
+    ],
+    "published": "2026-05-28",
+    "updated": "2026-05-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.30174.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.30174",
+    "primary_category": "cs.CV",
+    "score": 95,
+    "summary": {
+      "title_zh": "LiveSVG：基于视频生成技术的零样本SVG动画方法",
+      "core_contribution": "提出首个通过视频扩散模型实现零样本SVG动画生成的框架，解决了复杂运动建模问题，并引入球体填充重着色策略解决颜色歧义。",
+      "method": "1. 使用冻结的图像-视频模型根据输入SVG和运动提示生成目标视频；2. 通过可微分渲染将原始SVG拟合至目标视频；3. 采用双层次运动表示（组级单应变换+路径级贝塞尔控制点偏移）；4. 提出球体填充重着色策略解决像素级拟合时的颜色歧义问题。",
+      "findings": "在AniClipart和ChallengeSVG基准测试中显著优于现有方法，验证了基于参考视频拟合的方法能生成提示对齐、完全可编辑的矢量动画，且无需骨架先验。"
+    }
+  },
+  {
+    "id": "2605.28091",
+    "title": "Qwen-Image-Bench: From Generation to Creation in Text-to-Image Evaluation",
+    "abstract": "Text-to-Image generation has evolved from basic image synthesis into a frequently used core capability in professional creative workflows, where simple text-image alignment can no longer satisfy users' pressing demands for faithful real-world reconstruction and genuine creative expression. Existing benchmarks, however, remain anchored in these foundational criteria and do not yet capture the nuanced capabilities that matter in authentic artistic practice, making it difficult to reliably distinguish state-of-the-art T2I models. To address the gap, we introduce Qwen-Image-Bench, a creator-centric benchmark co-designed with professional artists and grounded in real-world creation scenarios. Qwen-Image-Bench enriches conventional evaluation with two application-driven dimensions: Real-world Fidelity and Creative Generation. Drawing on the staged reasoning inherent in professional artistic workflows, we organize these five pillars into a top-down hierarchical taxonomy that further decomposes into 23 second-level sub-capabilities and 56 third-level verifiable rubrics. To ensure broad coverage, we curate 1000 stratified prompts with each prompt jointly exercising more than four fine-grained facets across multiple pillars. We train a unified judge model Q-Judger based on Qwen3.6-27B, supervised by 80 professional annotators from global art academies under blind labeling and triple-review protocols, that scores every image across all 56 verifiable facets, producing fine-grained, rubric-grounded, and fully attributable diagnostics rather than a single opaque score. Empirically, Qwen-Image-Bench reliably distinguishes leading T2I models, achieving the greatest separation on the two application-driven dimensions of Real-world Fidelity and Creative Generation where existing benchmarks provide little insight, while also providing a trustworthy optimization signal for production-level T2I development.",
+    "authors": [
+      "Niantong Li",
+      "Guangzheng Hu",
+      "Weixu Qiao",
+      "Ying Ba",
+      "Qichen Hong",
+      "Shijun Shen",
+      "Jinlin Wang",
+      "Fan Zhou",
+      "Jianye Kang",
+      "Xin Shang",
+      "Ziyi He",
+      "Wei Wang",
+      "Dalin Li",
+      "Jiahao Li",
+      "Jie Zhang",
+      "Kaiyuan Gao",
+      "Kun Yan",
+      "Lihan Jiang",
+      "Ningyuan Tang",
+      "Shengming Yin",
+      "Tianhe Wu",
+      "Xiao Xu",
+      "Xiaoyue Chen",
+      "Yuxiang Chen",
+      "Yan Shu",
+      "Yanran Zhang",
+      "Yilei Chen",
+      "Yixian Xu",
+      "Zekai Zhang",
+      "Zhendong Wang",
+      "Zihao Liu",
+      "Zikai Zhou",
+      "Hongzhu Shi",
+      "Yi Wang",
+      "Bing Zhao",
+      "Hu Wei",
+      "Lin Qu",
+      "Chenfei Wu"
+    ],
+    "published": "2026-05-27",
+    "updated": "2026-05-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.28091.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.28091",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "Qwen-Image-Bench：从生成到创造的文本到图像评估",
+      "core_contribution": "提出了一个以创作者为中心的基准Qwen-Image-Bench，专注于真实世界保真度和创意生成两个应用驱动维度，填补了现有基准在专业艺术实践中的不足。",
+      "method": "1. 与专业艺术家合作设计了基于真实创作场景的评估框架，包含五个主要维度和56个可验证的细分子项。\n2. 构建了1000个分层提示词集，每个提示词覆盖多个维度的细分子项。\n3. 基于Qwen3.6-27B训练了统一评判模型Q-Judger，由80位专业标注员通过盲标和三审协议进行监督。",
+      "findings": "Qwen-Image-Bench能有效区分领先的文本到图像生成模型，尤其在真实世界保真度和创意生成这两个现有基准难以评估的维度上表现突出，为生产级开发提供了可靠的优化信号。"
+    }
+  },
+  {
+    "id": "2605.30248",
+    "title": "GenClaw: Code-Driven Agentic Image Generation",
+    "abstract": "Image generation models have evolved from text-conditioned pixel synthesis toward multimodal agents endowed with visual comprehension and tool invocation capabilities. Yet, existing agents remain at the mercy of underlying black-box image models. Their workflow is trapped in a repetitive cycle of prompt rewriting for generation refinement, leaving them with no mechanism to directly manipulate the canvas. In essence, the potential of LLMs to serve as a genuine \"brush\" for precise visual construction remains largely untapped. In this paper, we propose GenClaw, a code-driven agentic image generation paradigm that empowers the agent to create like a human artist: first conceptualizing, then sketching, and finally coloring. Specifically, the agent first constructs the conceptual knowledge and context through search and reasoning. It then utilizes code (e.g., SVG, HTML, Three.js) to render executable visual sketches. Finally, it employs an image generation model to supplement textures, materials, and photorealism. In this workflow, code serves as a controllable intermediate canvas bridging linguistic reasoning and pixel synthesis, seamlessly integrating programmatic logic with the visual expressiveness of generative models. By transforming image generation from a black-box paradigm into a staged process akin to authentic human creation, GenClaw offers a step toward for highly controllable and interpretable visual generation systems.",
+    "authors": [
+      "Junyan Ye",
+      "Jun He",
+      "Zilong Huang",
+      "Dongzhi Jiang",
+      "Xuan Yang",
+      "Rui Chen",
+      "Weijia Li"
+    ],
+    "published": "2026-05-28",
+    "updated": "2026-05-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.30248.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.30248",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "GenClaw：代码驱动的代理式图像生成",
+      "core_contribution": "提出GenClaw框架，通过代码驱动的分阶段生成方法（概念化-草图-着色），实现高可控性和可解释性的图像生成，突破传统黑盒模型的限制。",
+      "method": "1. 代理首先通过搜索和推理构建概念知识；2. 使用代码（如SVG/HTML/Three.js）生成可执行的视觉草图；3. 调用图像生成模型补充纹理和真实感。代码作为可控中间画布，连接语言推理与像素合成。",
+      "findings": "GenClaw将图像生成转化为类人类创作的分阶段流程，实验表明其能显著提升生成过程的可控性，同时保持生成模型的视觉表现力。"
+    }
+  },
+  {
+    "id": "2605.30341",
+    "title": "GPIC: A Giant Permissive Image Corpus for Visual Generation",
+    "abstract": "Studying scalable methods for visual generative modeling requires large, accessible, and stable datasets. We introduce GPIC, a Giant Permissive Image Corpus of approximately 28 trillion pixels. GPIC comprises diverse internet images captioned by a state-of-the-art vision-language model, including 100M training, 200K validation, and 1M test examples. Moreover, all GPIC images are permissively licensed for both research and commercial use. GPIC is safety-filtered, deduplicated, and centrally hosted on Hugging Face. We provide a benchmarking protocol for generative modeling on GPIC. Finally, we provide a reference baseline for pixel-space flow matching on GPIC. Our dataset, benchmark, and models are available at https://huggingface.co/datasets/stanford-vision-lab/gpic. Evaluation toolkit and code are available at https://gpic.stanford.edu",
+    "authors": [
+      "Keshigeyan Chandrasegaran",
+      "Kyle Sargent",
+      "Suchir Agarwal",
+      "Michael Jang",
+      "Michael Poli",
+      "Juan Carlos Niebles",
+      "Justin Johnson",
+      "Jiajun Wu",
+      "Li Fei-Fei"
+    ],
+    "published": "2026-05-28",
+    "updated": "2026-05-28",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.30341.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.30341",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "GPIC：一个用于视觉生成的巨型许可图像语料库",
+      "core_contribution": "提出了一个大规模、可访问且稳定的图像数据集GPIC，为视觉生成模型的研究提供了重要资源。",
+      "method": "GPIC数据集包含约28万亿像素的互联网图像，这些图像由先进的视觉语言模型标注，并经过安全过滤、去重处理。数据集包括1亿训练样本、20万验证样本和100万测试样本，所有图像均获得研究和商业使用的许可。",
+      "findings": "GPIC数据集在Hugging Face上集中托管，并提供了生成模型的基准测试协议和像素空间流匹配的参考基线。"
+    }
+  },
+  {
+    "id": "2605.30257",
+    "title": "Stable-Layers: Fine-Tuning Image Layer Decomposition Models with VLM-Scored Reinforcement Learning",
+    "abstract": "We present Stable-Layers, a reinforcement learning framework that eliminates the need for paired supervision by fine-tuning a pretrained layer decomposition model using only feedback from a vision-language model (VLM). Starting from Qwen-Image-Layered, we apply Flow-GRPO with LoRA adaptation, sampling multiple candidate decompositions per image, scoring them with a VLM, and optimising the policy from group-relative advantages. The key challenge lies in designing a reliable reward signal: VLMs scoring samples in isolation tend to compress their judgements into a narrow band, leaving GRPO with little within-group variance to learn from. We address this with a two-stage evaluation pipeline that pairs structured per-sample scoring across five edit-centric criteria with a grid-based calibration step in which the VLM re-scores all candidates side-by-side. Stable-Layers produces decompositions with stronger layer separation, fewer blank or artifact-heavy layers, and lower per-layer reconstruction error on the Crello dataset compared to the base model.",
+    "authors": [
+      "Ciara Rowles",
+      "Reshinth Adithyan",
+      "Nikhil Pinnaparaju",
+      "Vikram Voleti",
+      "Mark Boss"
+    ],
+    "published": "2026-05-28",
+    "updated": "2026-05-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.30257.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.30257",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "稳定层：基于VLM评分强化学习的图像层分解模型微调方法",
+      "core_contribution": "提出Stable-Layers框架，通过视觉语言模型（VLM）的反馈实现无配对监督的预训练层分解模型微调，解决了传统方法依赖标注数据的问题。",
+      "method": "1. 基于Qwen-Image-Layered预训练模型，采用Flow-GRPO算法与LoRA适配技术进行微调；\n2. 对每张图像生成多个候选分解结果，利用VLM进行评分；\n3. 设计两阶段评估流程（结构化样本评分+网格校准）解决VLM评分分布狭窄的问题；\n4. 通过组间相对优势优化策略。",
+      "findings": "在Crello数据集上，相比基线模型，Stable-Layers生成的分解结果具有更优的层分离效果、更少的空白/伪影层，且单层重建误差更低。"
+    }
+  }
+]
