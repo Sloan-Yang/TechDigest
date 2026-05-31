@@ -1,0 +1,142 @@
+[
+  {
+    "id": "2605.30038",
+    "title": "Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models",
+    "abstract": "Diffusion models generate highly realistic images but often struggle with precise text-image alignment. While recent post-training methods improve alignment using external rewards or human preference signals, their performance heavily depends on reward quality and does not directly address alignment within the diffusion process itself. Recent reward-free approaches such as SoftREPA demonstrate that optimizing soft text tokens via contrastive learning can effectively improve text-image representation alignment, outperforming standard parameter-efficient fine-tuning baselines. However, the contrastive formulation can excessively penalize negative pairs, which manifests as characteristic failure cases such as over-counting and repetition. To address this issue, we propose a lightweight, reward-free post-training method that refines soft tokens by integrating contrastive alignment guidance directly into the score-matching objective of diffusion models. By assigning alignment directions at the score level, our approach mitigates these limitations and yields more coherent and semantically faithful generations. Experiments show that our method matches SoftREPA while substantially improving its failure cases, achieving over 35% improvement in counting accuracy on the GenEval benchmark. Our method is seamlessly applicable to existing diffusion backbones (SD1.5, SDXL, and SD3), and is complementary to existing RL-based diffusion post-training methods. Project page: https://jaayeon.github.io/AGSM",
+    "authors": [
+      "Jaa-Yeon Lee",
+      "Yeobin Hong",
+      "Taesung Kwon",
+      "Jong Chul Ye"
+    ],
+    "published": "2026-05-28",
+    "updated": "2026-05-28",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.30038.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.30038",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "扩散模型中文本-图像对齐的对齐引导分数匹配方法",
+      "core_contribution": "提出一种轻量级、无需奖励的后训练方法，通过将对比对齐指导直接集成到扩散模型的分数匹配目标中，显著改善了文本-图像对齐的准确性和生成图像的语义连贯性。",
+      "method": "该方法通过优化软文本标记，将对比对齐指导直接集成到扩散模型的分数匹配目标中，避免了传统对比学习方法对负样本的过度惩罚问题。具体而言，通过在分数级别分配对齐方向，有效缓解了过计数和重复等典型失败案例。",
+      "findings": "实验结果表明，该方法在GenEval基准测试中计数准确率提高了35%以上，同时保持了与SoftREPA相当的性能，并显著改善了其失败案例。该方法可无缝应用于现有扩散模型（如SD1.5、SDXL和SD3），并与基于强化学习的后训练方法互补。"
+    }
+  },
+  {
+    "id": "2605.29809",
+    "title": "Cert-LAS: Toward Certified Model Ownership Verification for Text-to-Image Diffusion Models via Layer-Adaptive Smoothing",
+    "abstract": "Large-scale text-to-image (T2I) diffusion models have enabled unprecedented creative applications, but their unauthorized use has raised serious intellectual property concerns, making model ownership verification (MOV) increasingly critical. We find that existing backdoor-based diffusion watermarking methods often (implicitly) assume a \"faithful\" verification process, namely, that the verifier can query a suspicious model and obtain the faithful watermark response to complete MOV. However, in practice, adversaries may intentionally or unintentionally damage potential watermark signals, significantly degrading verification reliability. To address this issue, we propose Cert-LAS, the first certified MOV method for T2I models based on layer-adaptive smoothing. In general, Cert-LAS embeds specified watermarks using diffusion classifiers and an LFS-guided layer-adaptive noise, and verifies ownership by examining whether the suspected model exhibits significantly stronger watermark responses compared to unwatermarked references through hypothesis testing. We further prove that, under certain conditions, our Cert-LAS can still achieve reliable verification even in the presence of malicious removal attacks. Extensive experiments validate the effectiveness of Cert-LAS and its resistance to adaptive attacks. Our code is available at https://github.com/Leyi-Qi/Cert-LAS.",
+    "authors": [
+      "Leyi Qi",
+      "Yiming Li",
+      "Siyuan Liang",
+      "Zhengzhong Tu",
+      "Dacheng Tao"
+    ],
+    "published": "2026-05-28",
+    "updated": "2026-05-28",
+    "categories": [
+      "cs.CR",
+      "cs.CV",
+      "cs.GR",
+      "cs.LG",
+      "cs.MM"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.29809.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.29809",
+    "primary_category": "cs.CR",
+    "score": 85,
+    "summary": {
+      "title_zh": "Cert-LAS：基于层自适应平滑的文本到图像扩散模型认证所有权验证方法",
+      "core_contribution": "提出了首个基于层自适应平滑的文本到图像扩散模型认证所有权验证方法（Cert-LAS），能够在恶意移除攻击下仍保持可靠的验证能力。",
+      "method": "Cert-LAS通过扩散分类器和LFS引导的层自适应噪声嵌入指定水印，并利用假设检验验证可疑模型是否表现出显著强于未加水印参考的水印响应。该方法进一步证明了在特定条件下，即使存在恶意移除攻击，仍能实现可靠验证。",
+      "findings": "大量实验验证了Cert-LAS的有效性及其对自适应攻击的抵抗能力，证明该方法在模型所有权验证中具有鲁棒性和可靠性。"
+    }
+  },
+  {
+    "id": "2605.29390",
+    "title": "Orthogonal Negative Guidance in Attention Feature Space for Text-to-Image Generation",
+    "abstract": "Text-to-image (T2I) models have become increasingly capable of generating high-quality images. Yet, enforcing the explicit absence of a specified object or attribute remains a fundamentally challenging problem. Existing approaches, including prompt negation, post-hoc editing, and negative guidance, remain insufficient for explicit concept suppression, often failing to remove the target concept or degrading overall image quality. To this end, we propose Orthogonal Negative Guidance in attention feature space, a training-free method that operates in the attention output space of MM-DiT-based T2I transformers. Our method orthogonalizes negative-prompt attention features with respect to positive-prompt features and subtracts only the orthogonal component, suppressing unwanted concepts while preserving desired semantics. Experiments on FLUX-dev and FLUX-schnell show that our method achieves favorable trade-offs between concept suppression, prompt alignment, and image quality. In human evaluation, our method outperforms the second-best baseline by 18.78%. We further show that our method supports multi-concept suppression and adjustable concept suppression.",
+    "authors": [
+      "Jungmin Ko",
+      "Jungwon Park",
+      "Jimyeong Kim",
+      "Changin Choi",
+      "Wonseok Lee",
+      "Wonjong Rhee"
+    ],
+    "published": "2026-05-28",
+    "updated": "2026-05-28",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.29390.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.29390",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于注意力特征空间的正交负向引导在文本到图像生成中的应用",
+      "core_contribution": "提出了一种无需训练的正交负向引导方法，有效抑制文本到图像生成中不需要的概念，同时保持所需语义。",
+      "method": "该方法在基于MM-DiT的文本到图像变换器的注意力输出空间中操作，通过将负向提示的注意力特征与正向提示特征正交化，并仅减去正交分量，从而抑制不需要的概念。",
+      "findings": "在FLUX-dev和FLUX-schnell数据集上的实验表明，该方法在概念抑制、提示对齐和图像质量之间取得了良好的平衡。人类评估中，该方法比第二好的基线方法提高了18.78%。此外，该方法还支持多概念抑制和可调节的概念抑制。"
+    }
+  },
+  {
+    "id": "2605.28615",
+    "title": "Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization",
+    "abstract": "Despite the rapid progress of text-to-image (T2I) models, generating images that accurately reflect complex compositional prompts (covering attribute bindings, object relationships, counting) still remains challenging. To address this, we propose BiDPO, a framework to enhance T2I model's capability of compositional text-to-image generation. We begin by introducing an carefully designed pipeline to construct a large-scale preference dataset, BiComp, with strictly quality control. Then, we extend Diffusion DPO to jointly optimize image and text preferences, which is shown to greatly effective in improving the models to follow complex text prompt in generation. To further enhance the models for fine-grained alignment, we employ a region-level guidance method to focus on regions relevant to compositional concepts. Experimental results demonstrate that our BiDPO substantially improves compositional fidelity, consistently outperforming prior methods across multiple benchmarks. Our approach highlights the potential of preference-based fine-tuning for complex text-to-image tasks, offering a flexible and scalable alternative to existing techniques.",
+    "authors": [
+      "Zhuohan Liu",
+      "Wujian Peng",
+      "Yitong Chen",
+      "Zuxuan Wu"
+    ],
+    "published": "2026-05-27",
+    "updated": "2026-05-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.28615.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.28615",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于区域感知双模态直接偏好优化的组合式文本到图像生成",
+      "core_contribution": "提出BiDPO框架，通过双模态直接偏好优化和区域级引导方法，显著提升文本到图像模型在组合式生成任务中的准确性和细粒度对齐能力。",
+      "method": "1. 设计严格质量控制的流程构建大规模偏好数据集BiComp；2. 扩展Diffusion DPO以联合优化图像和文本偏好；3. 采用区域级引导方法聚焦组合概念相关区域。",
+      "findings": "实验表明，BiDPO在组合保真度上显著优于现有方法，并在多个基准测试中表现一致优越，验证了基于偏好微调在复杂文本到图像任务中的潜力。"
+    }
+  },
+  {
+    "id": "2605.28173",
+    "title": "MangaFlow: An End-to-End Agentic Framework for Controllable Story to Manga Generation",
+    "abstract": "End-to-end manga generation is a structured visual storytelling task that requires story decomposition, recurring character and scene grounding, page layout design, panel rendering, page composition, and lettering. However, existing generative models often perform direct page synthesis, entangling these factors in a single visual output and limiting precise control over layout geometry, visual references, and cross-panel consistency. To address these limitations, we propose MangaFlow, an agentic framework for controllable long-form manga generation that decomposes manga creation into planning, grounding, layout construction, reference-conditioned rendering, composition, and text placement. By treating layout and visual references as explicit intermediate variables, MangaFlow enables both simple text-to-manga generation and more precise user-controlled manga creation. This design exposes layout, visual assets, and lettering as editable intermediate controls for refining panel geometry, references, and text placement. To support long-form consistency, MangaFlow introduces a story section memory that links section descriptions with corresponding character, scene, and object references for reuse across panels. We further present a meta-benchmark for evaluating layout controllability, visual consistency, and generation quality. Experiments show that MangaFlow improves layout adherence and cross-panel consistency over direct generation baselines while supporting flexible human control.",
+    "authors": [
+      "Muyao Wang",
+      "Zeke Xie",
+      "Yanhao Chen",
+      "Lixin Xiu",
+      "Hideki Nakayama"
+    ],
+    "published": "2026-05-27",
+    "updated": "2026-05-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.28173.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.28173",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MangaFlow：一种端到端的可控故事到漫画生成代理框架",
+      "core_contribution": "提出了MangaFlow框架，通过显式解构漫画生成流程并引入中间变量控制，实现了布局、视觉参考和跨面板一致性的精准可控生成。",
+      "method": "1. 将漫画生成分解为规划、定位、布局构建、参考条件渲染、合成和文本放置六个代理模块；2. 将布局和视觉参考作为显式中间变量，支持用户编辑控制；3. 引入故事片段记忆机制维护长篇幅内容的一致性。",
+      "findings": "实验表明，MangaFlow在布局遵循度和跨面板一致性上优于直接生成基线方法，同时支持灵活的人工控制干预。"
+    }
+  }
+]
