@@ -1,0 +1,150 @@
+[
+  {
+    "id": "2605.31266",
+    "title": "Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation",
+    "abstract": "The layout-to-image (L2I) task enables fine-grained control over image generation via object categories and spatial layouts. However, existing L2I methods yield fragmented and distorted generations under few-shot atypical settings. We term this failure as representation fragmentation, arising from a granularity mismatch that entangles semantic identity with visual details. To address this issue, we propose a representation-driven framework that disentangles semantics from primitives for robust few-shot adaptation. Specifically, Semantic Anchoring aggregates categorical semantics into anchors for stable identity, while Primitive Imbuing models recomposable primitives for robust local detail modeling. Conceptual Steering further regulates optimization with a saliency-aware objective to preserve foreground semantic consistency. Extensive experiments demonstrate consistent improvements in the 5-shot regime over state-of-the-art L2I methods in both visual fidelity and alignment across diverse atypical domains. The source code is publicly available at https://github.com/iCVTEAM/DSP.",
+    "authors": [
+      "Nan Bao",
+      "Yifan Zhao",
+      "Wenzhuang Wang",
+      "Jia Li"
+    ],
+    "published": "2026-05-29",
+    "updated": "2026-05-29",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.31266.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.31266",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "超越少量样本的构想：解耦语义与基元的小样本非典型布局到图像生成",
+      "core_contribution": "提出了一种解耦语义与基元的表示驱动框架，解决了小样本非典型布局到图像生成中的表示碎片化问题。",
+      "method": "1. 通过语义锚定（Semantic Anchoring）将类别语义聚合为锚点以稳定语义身份；2. 使用基元注入（Primitive Imbuing）建模可重组基元以增强局部细节建模；3. 引入概念引导（Conceptual Steering）通过显著性感知目标优化以保持前景语义一致性。",
+      "findings": "在5-shot设置下，该方法在视觉保真度和布局对齐方面均优于现有最先进的布局到图像生成方法，适用于多种非典型领域。"
+    }
+  },
+  {
+    "id": "2605.31590",
+    "title": "TunerDiT: Training-free Progressive Steering of Diffusion Transformer for Multi-Event Video Generation",
+    "abstract": "Text-to-video (T2V) generation faces challenging questions when generating videos with long horizons containing multiple events. Inspired by the intrinsics of the diffusion process, we probe video diffusion transformers (DiTs) and uncover intrinsic turning points in the DiT denoising trajectory where conditioning text affects generation from global layout to fine-grained details. Building on this finding, we present TunerDiT, a simple yet effective progressive steering method that requires no additional training for multi-event generation. TunerDiT comprises two steering handles: (1) Event-Partitioned Masking that enforces event boundaries while allowing cross-event transition bands; (2) Cross-Event Prompt Fusion that injects neighboring event semantics for late-stage refinement. We contribute a self-curated prompt suite for benchmarking multi-event generation, i.e., Meve. TunerDiT achieves state-of-the-art performance across 8 metrics and offers a tunable trade-off between video consistency and event separation, compared with other training-free methods. The improvement in text alignment increases with the event count, indicating a scaling possibility with increasing event count.",
+    "authors": [
+      "Ruotong Liao",
+      "Guowen Huang",
+      "Qing Cheng",
+      "Guangyao Zhai",
+      "Lei Zhang",
+      "Xun Xiao",
+      "Thomas Seidl",
+      "Daniel Cremers",
+      "Volker Tresp"
+    ],
+    "published": "2026-05-29",
+    "updated": "2026-05-29",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.31590.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.31590",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "TunerDiT：无需训练的扩散变压器渐进式引导方法用于多事件视频生成",
+      "core_contribution": "提出了TunerDiT，一种无需额外训练的渐进式引导方法，用于生成包含多个事件的长视频，并在视频一致性和事件分离之间提供可调节的权衡。",
+      "method": "TunerDiT通过分析扩散变压器（DiT）的去噪轨迹，发现文本条件在生成过程中从全局布局到细节的影响存在内在转折点。基于此，该方法采用两种引导机制：1）事件分区掩码，强制事件边界同时允许跨事件过渡带；2）跨事件提示融合，在后期细化中注入相邻事件语义。",
+      "findings": "TunerDiT在8个指标上达到了最先进的性能，与其他无需训练的方法相比，提供了视频一致性和事件分离之间的可调节权衡。随着事件数量的增加，文本对齐的改进也随之增加，显示出随着事件数量增加的扩展可能性。"
+    }
+  },
+  {
+    "id": "2605.31336",
+    "title": "DecMem: Towards Minute-Long Consistent World Generation with Decoupled Memory",
+    "abstract": "Recent advances in video generative models have promoted rapid progress in controllable world models. However, maintaining fine-grained spatio-temporal consistency under long-horizon reasoning remains a key challenge. In this work, we move beyond explicit 3D memory and coarse frame-level implicit modeling, and propose a fine-grained, learnable, and scalable memory for consistent world generation. We first identify two fundamental limitations of naïve learnable memory architectures in long-horizon extrapolation, namely computational inefficiency and attention dispersion. Through a systematic analysis of attention dispersion, we propose DecMem, a decoupled memory architecture that employs Sparse Global Memory for efficient fine-grained access to global history and Anchored Local Memory for stable and high-quality extrapolation. Extensive experiments demonstrate that DecMem significantly outperforms current state-of-the-art methods. By ensuring precise and efficient long-term memory and achieving superior extrapolation capabilities, DecMem enables minute-level controllable long video generation with high fidelity and consistency.",
+    "authors": [
+      "Zhenhao Yang",
+      "Xiaoshi Wu",
+      "Zhengyao Lv",
+      "Xiaoyu Shi",
+      "Xintao Wang",
+      "Pengfei Wan",
+      "Kun Gai",
+      "Kwan-Yee K. Wong"
+    ],
+    "published": "2026-05-29",
+    "updated": "2026-05-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.31336.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.31336",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "DecMem：通过解耦记忆实现分钟级一致性世界生成",
+      "core_contribution": "提出了一种细粒度、可学习且可扩展的记忆架构DecMem，解决了长时程推理中保持时空一致性的关键挑战。",
+      "method": "通过分析注意力分散问题，提出了解耦记忆架构DecMem，包含稀疏全局记忆（Sparse Global Memory）和锚定局部记忆（Anchored Local Memory）。稀疏全局记忆用于高效细粒度访问全局历史，锚定局部记忆则专注于稳定高质量的外推生成。",
+      "findings": "实验表明，DecMem在长视频生成任务中显著优于现有方法，能够实现分钟级高保真且时空一致的视频生成。"
+    }
+  },
+  {
+    "id": "2605.30991",
+    "title": "Parallel Tempering Initial Sampling in Inference-Time Reward Alignment",
+    "abstract": "Inference-time reward alignment steers pretrained diffusion and flow-based generative models to satisfy user-specified rewards without retraining. Recently, Sequential Monte Carlo (SMC) has emerged as a powerful framework for this task by iteratively filtering and propagating multiple particles. However, we show that standard SMC-based methods often suffer from poor performance because they initialize particles from a standard prior, whereas high-reward regions in complex reward landscapes are extremely rare. Further, we show that even recent reward-aware initial sampling approaches remain vulnerable to getting trapped in local modes, as complex reward landscapes are often multi-modal. To overcome these limitations, we propose PATHS (PArallel Tempering for High-complexity reward Sampling), a novel initialization method that couples multiple sampling chains through parallel tempering. PATHS maintains a ladder of reward-tempered chains and periodically performs Metropolis swaps, enabling efficient exploration across flattened reward landscapes, thereby mitigating the mode-trapping issues. Our analysis reveals that this mechanism substantially enhances the finite-budget exploration of rare, high-reward regions that are typically challenging to sample. Experiments on layout-to-image and quantity-aware generation show that PATHS achieves consistent gains in alignment quality, particularly on complex prompts.",
+    "authors": [
+      "Myeongjun Oh",
+      "Gwangho Kim",
+      "Sungyoon Lee"
+    ],
+    "published": "2026-05-29",
+    "updated": "2026-05-29",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.30991.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.30991",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "推理时奖励对齐中的并行回火初始采样",
+      "core_contribution": "提出了PATHS方法，通过并行回火技术解决复杂奖励景观中的模式陷阱问题，显著提升了高奖励区域的采样效率。",
+      "method": "PATHS方法结合了并行回火技术，维护一组奖励温度化的链，并定期进行Metropolis交换，从而在平坦的奖励景观中实现高效探索。该方法通过多链耦合机制，有效避免了局部模式的陷阱。",
+      "findings": "实验表明，PATHS在布局到图像生成和数量感知生成任务中，显著提升了对齐质量，特别是在复杂提示条件下表现优异。"
+    }
+  },
+  {
+    "id": "2605.30904",
+    "title": "MergeTok: Unified Continuous and Discrete Visual Tokenization via Token Merging",
+    "abstract": "Most visual tokenizers for image generation are bifurcated into two families with complementary limitations: continuous VAEs offer high-fidelity reconstruction but suffer from dense, entangled latents that are poorly suited for semantic control, whereas discrete VQ-based models enable autoregressive generation yet struggle with gradient sparsity, unstable training, and codebook collapse. In this work, we introduce MergeTok, a unified tokenizer that jointly optimizes continuous (VAE) and discrete (VQ) tokenizers within a encoder-decoder architecture, leveraging token merging techniques as a semantic bridge. By clustering similar tokens during encoding, MergeTok establishes a structural prior that provides dual supervision signals: (i) it imposes merged-token semantic alignment in the VAE branch, regularizing its latent space toward disentangled, semantic-aware representations; (ii) it derives group-wise constraints, promoting intra-group diversity and inter-group exclusivity that stabilize VQ training. MergeTok shows competitive reconstruction and generation performance on ImageNet-256, with substantially lower rFID than strong VAE and VQ models under matched token budgets, while producing semantically-organized token representations compatible with both autoregressive and diffusion generators. This shows that a single architecture can endow visual tokenizers with robust semantic organization and generator-friendly discreteness.",
+    "authors": [
+      "Luyuan Zhang",
+      "Siyuan Li",
+      "Zedong Wang",
+      "Qingsong Xie",
+      "Cheng Tan",
+      "Anna Wang",
+      "Yanhao Zhang",
+      "Chen Chen",
+      "Haonan Lu",
+      "Haoqian Wang"
+    ],
+    "published": "2026-05-29",
+    "updated": "2026-05-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2605.30904.pdf",
+    "abs_url": "https://arxiv.org/abs/2605.30904",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MergeTok：通过令牌合并实现统一连续与离散视觉令牌化",
+      "core_contribution": "提出MergeTok，一种统一连续（VAE）和离散（VQ）令牌化的视觉令牌生成器，通过令牌合并技术建立语义桥梁，同时优化两种令牌化方法。",
+      "method": "MergeTok在编码器-解码器架构中联合优化连续（VAE）和离散（VQ）令牌化方法，通过编码过程中聚类相似令牌建立结构先验。该方法利用合并令牌的语义对齐约束VAE分支的潜在空间，同时通过组间约束提升VQ训练的稳定性。",
+      "findings": "在ImageNet-256上，MergeTok在匹配令牌预算下表现出优于强VAE和VQ模型的重建和生成性能（显著更低的rFID），并生成与自回归和扩散生成器兼容的语义组织令牌表示。"
+    }
+  }
+]
