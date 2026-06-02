@@ -1,0 +1,133 @@
+[
+  {
+    "id": "2606.02580",
+    "title": "Thinking in Blender: Staged Executable Inverse Graphics with Vision-Language Models",
+    "abstract": "Inverse graphics is a longstanding and highly underconstrained problem that seeks to reconstruct images as editable 3D scenes which can be rendered, relit, and manipulated. In this work, we investigate whether pretrained vision-language models (VLMs) can perform executable inverse graphics directly from a single image by reconstructing a scene as an editable Blender program, without relying on specialized 2D or 3D foundation models, differentiable rendering, or multi-view supervision. We introduce Staged Executable Inverse Graphics (SEIG), an agentic framework that reconstructs a 3D scene from a single image by progressively refining scene factors including geometry, materials, composition, and lighting directly in executable Blender code space. We evaluate our framework across diverse scenes using a range of reconstruction metrics spanning pixel-level, perceptual, and semantic fidelity. Our experiments show that staged reconstruction substantially improves reconstruction fidelity, highlighting the importance of task decomposition for executable inverse graphics with general-purpose VLMs. Finally, we showcase various downstream applications enabled by the reconstructed editable Blender scenes.",
+    "authors": [
+      "Guangzhao He",
+      "Rundong Luo",
+      "Wei-Chiu Ma",
+      "Hadar Averbuch-Elor"
+    ],
+    "published": "2026-06-01",
+    "updated": "2026-06-01",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.02580.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.02580",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Blender中的思考：基于视觉语言模型的分阶段可执行逆向图形学",
+      "core_contribution": "提出了一种分阶段可执行逆向图形学（SEIG）框架，利用预训练的视觉语言模型（VLMs）直接从单张图像重建可编辑的3D场景，无需依赖专用2D/3D基础模型、可微分渲染或多视角监督。",
+      "method": "该方法通过代理框架逐步优化场景要素（几何、材质、构图、光照），直接在Blender代码空间中生成可执行程序。采用分阶段重建策略，将复杂任务分解为多个子步骤，利用通用VLMs实现场景重建。",
+      "findings": "实验表明：1) 分阶段重建显著提升重建保真度（像素级、感知和语义层面）；2) 任务分解对通用VLMs执行逆向图形学至关重要；3) 重建的可编辑Blender场景支持多种下游应用。"
+    }
+  },
+  {
+    "id": "2606.02521",
+    "title": "Drifting Preference Optimization for One-Step Generative Models",
+    "abstract": "One-step text-to-image generators are attractive for deployment because they generate an image with a single forward pass, but preference finetuning them remains difficult: standard alignment methods often rely on policy likelihoods, denoising trajectories, differentiable reward gradients, or test-time optimization. We propose Drifting Preference Optimization (DrPO), an online preference-finetuning method for deterministic one-step generators. For each prompt, DrPO samples candidates from the current generator, ranks them with a target reward, and uses high- and low-scoring samples to synthesize a feature-space update direction. The update is a non-parametric dipole preference field plus a reference drift estimated from the frozen base generator, and is optimized through a detached feature-space regression target. The target reward is used only for ranking, so DrPO can train with large, black-box, or non-differentiable rewards while inference remains a single generator call. We evaluate DrPO on SD-Turbo and SDXL-Turbo with multiple target rewards and benchmarks, including HPSv3 and GenEval. DrPO improves alignment over reward-gradient-free one-step preference baselines and reduces HPSv3 training computation by $3.51\\times$ under the matched effective-batch setting by removing reward-model backpropagation. Initial offline experiments suggest that sample-based gradient synthesis can also be used beyond online reward ranking.",
+    "authors": [
+      "Zhou Jiang",
+      "Yandong Wen",
+      "Zhen Liu"
+    ],
+    "published": "2026-06-01",
+    "updated": "2026-06-01",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.02521.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.02521",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "一步生成模型的漂移偏好优化",
+      "core_contribution": "提出Drifting Preference Optimization (DrPO)，一种在线偏好微调方法，用于优化确定性一步生成模型的对齐性能，无需依赖奖励模型的梯度反向传播。",
+      "method": "DrPO通过从当前生成器中采样候选图像，用目标奖励进行排名，并利用高、低分样本合成特征空间更新方向。更新方向由非参数化偶极偏好场和冻结基础生成器的参考漂移组成，通过分离的特征空间回归目标进行优化。该方法仅需奖励排名，可兼容不可微分或黑盒奖励模型。",
+      "findings": "在SD-Turbo和SDXL-Turbo上的实验表明，DrPO在HPSv3等基准上优于无奖励梯度的基线方法，训练计算量减少3.51倍（等效批次下），且初步离线实验验证了梯度合成方法可扩展至在线奖励排名之外的场景。"
+    }
+  },
+  {
+    "id": "2606.02453",
+    "title": "Initialization is Half the Battle: Generating Diverse Images from a Guidance Potential Posterior",
+    "abstract": "Despite the remarkable fidelity of generative models, they frequently suffer from mode collapse. Existing strategies for enhancing diversity predominantly focus on intervening during the generation trajectory. We identify a critical oversight that the standard Gaussian initialization often causes trajectories to collapse into dominant modes because it is agnostic to the guidance potential landscape. In this work, we formulate selecting the initial noise from a guidance potential posterior, which effectively re-weights the prior towards diversity-rich regions. To sample from this distribution efficiently, we introduce Diversity-inducing Initialization (DivIn), which leverages Langevin dynamics to actively navigate the initialization landscape, steering initial noise away from collapsing regions while anchoring them to the valid data manifold. Our method serves as an inference-time diversity enhancement compatible with both diffusion and flow matching models. Extensive experiments show that DivIn exhibits a superior performance in both class-to-image and text-to-image scenarios. Furthermore, we highlight that as DivIn is orthogonal to trajectory-based methods, combining them significantly expands the diversity-quality Pareto frontier beyond what either achieves in isolation.",
+    "authors": [
+      "Xiang Li",
+      "Dianbo Liu",
+      "Kenji Kawaguchi"
+    ],
+    "published": "2026-06-01",
+    "updated": "2026-06-01",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.02453.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.02453",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "初始化即半场胜利：从引导势后验生成多样化图像",
+      "core_contribution": "提出了一种通过引导势后验选择初始噪声的方法（DivIn），有效解决了生成模型中常见的模式崩溃问题，显著提升了生成图像的多样性。",
+      "method": "该方法通过Langevin动力学在初始化阶段主动导航，避免初始噪声落入主导模式区域，同时将其锚定在有效数据流形上。DivIn作为一种推理时多样性增强方法，兼容扩散模型和流匹配模型。",
+      "findings": "实验表明，DivIn在类别到图像和文本到图像场景中均表现出色，且与基于轨迹的方法正交，结合使用时能显著扩展多样性-质量的帕累托前沿。"
+    }
+  },
+  {
+    "id": "2606.02129",
+    "title": "Equilibrated Diffusion: Frequency-aware Textual Embedding for Equilibrated Image Customization",
+    "abstract": "Image customization learns target subjects from reference concept images and generates conditioned images per text prompts, mainly modifying styles or backgrounds. Prevailing methods adopt fine-tuning to pack diverse concept attributes into a unified latent embedding, yet entangled attributes hinder elimination of irrelevant disturbances from style and background. To address this issue, we propose Equilibrated Diffusion, a frequency-driven approach that disentangles tangled concept features for balanced customization and consistent text-visual matching. Unlike conventional methods learning full concepts with shared embeddings and unified tuning, our work utilizes the inherent link between image frequency components and semantics: low frequencies represent subject content and high frequencies correspond to styles. We decompose concepts in frequency space and optimize each embedding independently. This separate optimization enables the denoiser to capture style detached from subject identity and generalize better to unseen stylistic prompts. Merging multi-frequency embeddings preserves the model's original spatial customization ability. We further deploy mask-guided diffusion to restrict irrelevant background changes and boost text alignment. Residual Reference Attention (RRA) is inserted into spatial attention to retain subject structure and identity consistency. Experiments prove Equilibrated Diffusion exceeds mainstream baselines on subject fidelity and text adherence, verifying our method's superiority.",
+    "authors": [
+      "Liyuan Ma",
+      "Xueji Fang",
+      "Guo-Jun Qi"
+    ],
+    "published": "2026-06-01",
+    "updated": "2026-06-01",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.02129.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.02129",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "均衡扩散：基于频率感知的文本嵌入实现均衡图像定制",
+      "core_contribution": "提出一种频率驱动的均衡扩散方法，通过解耦概念特征实现平衡定制和文本-视觉一致性匹配，解决了现有方法中属性纠缠的问题。",
+      "method": "该方法利用图像频率分量与语义的固有联系：低频代表主体内容，高频对应风格。在频率空间分解概念并独立优化每个嵌入，通过掩码引导扩散限制无关背景变化，并引入残差参考注意力（RRA）保持主体结构和身份一致性。",
+      "findings": "实验证明，均衡扩散在主体保真度和文本遵循度上优于主流基线方法，验证了该方法的优越性。"
+    }
+  },
+  {
+    "id": "2606.02090",
+    "title": "FocusDiT: Masking Queries in Diffusion Transformers for Fine-grained Image Generation",
+    "abstract": "Diffusion transformer (DiT) has been widely adopted in the generative diffusion field, advancing the denoising of query tokens through attention and Feed-Forward (\\text{FFN}) layers. FFN actually acts as the key-value vocabulary for decoding visual contents where the value embeds the visual semantical knowledge. We present that focusing on critical query tokens corresponding to more complex details and encouraging the model to improve these tokens is essential for fine-grained visual generation. To this end, we propose FocusDiT, which applies a Masking scheme to focus on critical query tokens that are exclusively fed into FFN. The masked queries can retrieve visual tokens from the FFN vocabularies, and use them to decode their visual details. Extensive text-to-image experiments validate the effectiveness of token masking in enhancing generative performance.",
+    "authors": [
+      "Xueji Fang",
+      "Liyuan Ma",
+      "Jianhao Zeng",
+      "Jinjin Cao",
+      "Mingyuan Zhou",
+      "Guo-Jun Qi"
+    ],
+    "published": "2026-06-01",
+    "updated": "2026-06-01",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.02090.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.02090",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "FocusDiT：通过掩码查询实现细粒度图像生成的扩散Transformer",
+      "core_contribution": "提出FocusDiT方法，通过掩码关键查询令牌并专注其改进，显著提升扩散Transformer在细粒度图像生成中的表现。",
+      "method": "1. 识别与复杂细节对应的关键查询令牌；2. 设计掩码方案，仅将关键令牌输入前馈网络（FFN）进行解码；3. 通过FFN的视觉语义词汇库检索并增强细节生成。",
+      "findings": "文本到图像生成实验表明，该方法能有效提升生成图像的细粒度细节质量，验证了掩码关键查询令牌策略的优越性。"
+    }
+  }
+]
