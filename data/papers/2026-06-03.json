@@ -1,0 +1,164 @@
+[
+  {
+    "id": "2606.03243",
+    "title": "MemoGen: Can Past Experience Improve Future Text-to-Image Generation?",
+    "abstract": "Modern text-to-image models have achieved strong visual synthesis, yet remain unreliable when prompts require implicit visual constraints, relational reasoning, or external knowledge. Existing retrieval-augmented and agentic generation methods mitigate this issue by acquiring external knowledge, references, or refined prompts for the current request, yet they typically treat each generation as an isolated episode and do not systematically preserve past successes or failures for future use. In this work, we ask whether a text-to-image system can continually improve from its own generation experience without updating the underlying generator. We propose MemoGen, a training-free framework that augments existing image generators with an agentic evolution layer. For each task, MemoGen explicitly infers visual requirements, retrieves external evidence and references when necessary, translates them into executable generation constraints, evaluates the generated result, and stores task understanding, reference choices, visual feedback, successful strategies, and failure lessons as reusable experience memory. Across evolution rounds, the agent retrieves relevant experience to improve similar future generations, selectively repairing previously failed cases while preserving successful ones, thereby enabling test-time self-evolution without parameter updates. Extensive experiments on knowledge-intensive and reasoning-oriented benchmarks demonstrate the effectiveness of this paradigm: after only two evolution rounds, MemoGen built upon the open-source Qwen-Image backbone surpasses strong proprietary systems such as Nano Banana Pro and GPT-Image-1 on WISE and Mind-Bench, showing that explicit experience memory can serve as a powerful continual learning signal for reliable text-to-image generation.",
+    "authors": [
+      "Wenshuo Chen",
+      "Kuimou Yu",
+      "Bowen Tian",
+      "Jianfei Song",
+      "Shaofeng Liang",
+      "Haozhe Jia",
+      "Kan Cheng",
+      "Haosen Li",
+      "Kaishen Yuan",
+      "Lei Wang",
+      "Jiemin Wu",
+      "Songning Lai",
+      "Yutao Yue"
+    ],
+    "published": "2026-06-02",
+    "updated": "2026-06-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.03243.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.03243",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "MemoGen：过往经验能否提升未来文本到图像的生成效果？",
+      "core_contribution": "提出MemoGen框架，通过构建可重用的经验记忆库，使文本到图像生成系统能够在无需更新底层模型参数的情况下，持续从自身生成经验中学习并改进未来生成效果。",
+      "method": "MemoGen是一个无需训练的框架，通过代理进化层增强现有图像生成器。其核心流程包括：推断视觉需求、检索外部证据、转化为可执行约束、评估生成结果，并将任务理解、参考选择、反馈信息等存储为经验记忆。后续生成时检索相关经验以优化结果，实现测试时自我进化。",
+      "findings": "实验表明：仅经过两轮进化，基于开源模型Qwen-Image的MemoGen在知识密集型和推理导向基准（WISE和Mind-Bench）上超越Nano Banana Pro等商业系统，证明显式经验记忆可作为持续学习的有效信号。"
+    }
+  },
+  {
+    "id": "2606.03911",
+    "title": "Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching",
+    "abstract": "Modern generative models possess a deep understanding of visual content, yet training them for image editing typically requires massive datasets of paired examples. This limits scalability, especially for video editing where collecting paired data is prohibitively expensive. We propose Bootstrap Your Generator (ByG), a general framework for unpaired training of flow matching editing models. It leverages the base model's knowledge without any external signal. Our approach pairs instruction-following cues extracted from the frozen model with cycle-consistency for structure preservation. To make this tractable, we propose to route gradients from downstream losses over clean predictions to noisy training states. We demonstrate state-of-the-art results on challenging data-scarce image and video editing scenarios. Extensive evaluations and user studies show that our method effectively generalizes to unseen domains and outperforms supervised baselines trained on millions of samples. Analysis reveals that our gradient routing bridges the train-inference gap, and extracting semantic cues from a base model provides a robust training signal that obviates the need for external reward models.",
+    "authors": [
+      "Yoad Tewel",
+      "Yuval Atzmon",
+      "Gal Chechik",
+      "Lior Wolf"
+    ],
+    "published": "2026-06-02",
+    "updated": "2026-06-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.03911.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.03911",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "自举生成器：基于流匹配的无配对视觉编辑方法",
+      "core_contribution": "提出ByG框架，通过无配对训练实现流匹配编辑模型，无需外部信号即可利用基础模型的知识。",
+      "method": "该方法从冻结模型中提取指令跟随线索，并结合循环一致性以保持结构；通过将下游损失的梯度路由到噪声训练状态，使训练可行。",
+      "findings": "在数据稀缺的图像和视频编辑场景中取得了最先进的结果，能够泛化到未见过的领域，并优于基于数百万样本训练的监督基线；梯度路由弥合了训练与推理的差距，且从基础模型中提取语义线索提供了鲁棒的训练信号，无需外部奖励模型。"
+    }
+  },
+  {
+    "id": "2606.03792",
+    "title": "Training-Free Multi-Concept LoRA Composition with Prompt-Aware Weighting",
+    "abstract": "Low-Rank Adaptation (LoRA) successfully enables personalization in text-to-image generation by adapting pre-trained diffusion models to specific visual concepts and styles. However, extending such models to multi-concept customization remains challenging. Naively combining multiple LoRA weights or their outputs often leads to interference among concepts, resulting in degraded visual quality and reduced fidelity to the reference images of individual concepts. This paper proposes a simple yet effective approach for multi-concept customization by optimally combining the outputs of multiple LoRA modules. We leverage the relative importance of each concept during generation, as inferred from its corresponding prompt tokens and introduce two methods, W-Switch and W-Composite, that employ a prompt-aware importance weighting strategy in which each LoRA is weighted according to the semantic influence of its trigger words in the target prompt. In addition, we extend existing quantitative evaluation metrics by proposing a new image-based similarity evaluation framework that assesses image fidelity and identity preservation through comparisons between real-world reference images and automatically segmented concept regions from generated images. We evaluate our approach on the ComposLoRA testbed and demonstrate consistent improvements over existing state-of-the-art methods in terms of visual quality, identity preservation and compositionality. Qualitative evaluations, including a Large Language Model (LLM) based assessment and a user study, further validate the effectiveness of the proposed methods and align with the newly introduced quantitative image-based metrics. Our code is available at https://github.com/GeorgeTsoumplekas/Prompt-Aware-Multi-LoRA-Composition.",
+    "authors": [
+      "Georgios Tsoumplekas",
+      "Stella Bounareli",
+      "Vasileios Argyriou"
+    ],
+    "published": "2026-06-02",
+    "updated": "2026-06-02",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.03792.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.03792",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "无需训练的多概念LoRA组合与提示感知加权",
+      "core_contribution": "提出一种通过提示感知加权策略优化多LoRA模块输出的方法，解决了多概念定制中的概念干扰问题。",
+      "method": "该方法通过分析目标提示中触发词的语义影响力，为每个LoRA模块分配权重（W-Switch和W-Composite策略），并设计了一种基于图像的相似性评估框架，用于量化生成图像与真实参考图像之间的保真度。",
+      "findings": "实验表明，该方法在视觉质量、身份保持和组合性方面优于现有技术，定性评估（基于LLM和用户研究）与定量指标一致验证了其有效性。"
+    }
+  },
+  {
+    "id": "2606.03746",
+    "title": "Qwen-Image-Flash: Beyond Objective Design",
+    "abstract": "Few-step distillation has become an effective strategy for accelerating advanced visual generative models, yet prior work has largely focused on distillation objectives. In this work, we revisit few-step distillation from a complementary perspective, focusing on the training recipe that critically shapes student performance. Using Qwen-Image-2.0 as a representative case, we systematically investigate three factors in unified text-to-image generation and instruction-guided image editing distillation: data composition, teacher guidance, and task mixture. Our empirical analysis reveals several non-obvious behaviors, which motivate the development of Qwen-Image-Flash. Overall, our results suggest that effective few-step distillation requires not only carefully designed objectives, but also principled organization of the broader training pipeline.",
+    "authors": [
+      "Tianhe Wu",
+      "Kun Yan",
+      "Zikai Zhou",
+      "Lihan Jiang",
+      "Jiahao Li",
+      "Jie Zhang",
+      "Kaiyuan Gao",
+      "Ningyuan Tang",
+      "Shengming Yin",
+      "Xiaoyue Chen",
+      "Xiao Xu",
+      "Yilei Chen",
+      "Yuxiang Chen",
+      "Yan Shu",
+      "Yixian Xu",
+      "Yanran Zhang",
+      "Zihao Liu",
+      "Zhendong Wang",
+      "Zekai Zhang",
+      "Deqing Li",
+      "Liang Peng",
+      "Yi Wang",
+      "Jingren Zhou",
+      "Chenfei Wu"
+    ],
+    "published": "2026-06-02",
+    "updated": "2026-06-02",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.03746.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.03746",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Qwen-Image-Flash：超越目标设计",
+      "core_contribution": "本文从训练流程的角度重新审视少步蒸馏，揭示了数据组合、教师指导和任务混合对模型性能的关键影响，并提出了Qwen-Image-Flash方法。",
+      "method": "以Qwen-Image-2.0为研究对象，系统分析了统一文本到图像生成和指令引导图像编辑蒸馏中的三个因素：数据组合、教师指导和任务混合。通过实证分析发现了一些非直观的行为，并据此开发了Qwen-Image-Flash。",
+      "findings": "研究发现，有效的少步蒸馏不仅需要精心设计的目标函数，还需要对更广泛的训练流程进行原则性组织。"
+    }
+  },
+  {
+    "id": "2606.03715",
+    "title": "Text-to-Image Models Need Less from Text Encoders Than You Think",
+    "abstract": "Text-to-image models rely on text prompts as their primary interface to human intent. Prompts are encoded by a text encoder into embeddings that condition the image generation process. Beyond individual token meanings, text embeddings encode contextual information across the full prompt, such as compositionality and attribute binding. However, whether image models actually exploit this richer information remains underexplored. Here, we address the question: Which aspects of text representation are essential for image generation? We show that text-to-image diffusion transformer-based models commonly rely only on two relatively straightforward aspects of text representations: (i) the merging of adjacent tokens into a word representation, for words spanning multiple tokens, and (ii) word order, which is imprinted by the positional embedding of the text-encoder. To show this, we construct a new text embedding that encodes only individual word meanings and order but lacks any contextual information about the full prompt. We find that this bag of position-tagged words representation is sufficient to successfully guide image generation, achieving visual quality and text fidelity that are on par with full text embedding-guided generation. This demonstrates that, contrary to common belief, text-to-image models often do not use the rich information encoded in the text embedding beyond individual word meanings and word order. Instead, the decoding of complex linguistic structures is performed by the image model itself. Project webpage: https://nsping13.github.io/contextless-TTI/",
+    "authors": [
+      "Nurit Spingarn",
+      "Noa Cohen",
+      "Tamar Rott Shaham",
+      "Tomer Michaeli"
+    ],
+    "published": "2026-06-02",
+    "updated": "2026-06-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.03715.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.03715",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "文本到图像模型对文本编码器的需求比你想象的要少",
+      "core_contribution": "揭示了文本到图像模型主要依赖单词表示和词序，而非文本嵌入中的丰富上下文信息。",
+      "method": "研究构建了一种新的文本嵌入方法，仅编码单个单词含义和词序，缺乏完整提示的上下文信息。通过实验比较这种简化嵌入与完整文本嵌入在图像生成中的表现。",
+      "findings": "实验表明，仅包含单词含义和词序的简化文本嵌入足以成功指导图像生成，其视觉质量和文本保真度与完整文本嵌入相当。这说明文本到图像模型通常不利用文本嵌入中的复杂上下文信息，而是由图像模型自身解码复杂语言结构。"
+    }
+  }
+]
