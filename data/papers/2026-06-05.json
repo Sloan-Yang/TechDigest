@@ -1,0 +1,146 @@
+[
+  {
+    "id": "2606.04264",
+    "title": "UniCanvas: A Diffusion-base Unified Model for Text-in-Image Joint Generation",
+    "abstract": "Recent years have seen remarkable progress in unified vision-language models handling both multimodal understanding and generation within a single architecture. While autoregressive VLMs can reason across modalities, they fail to generate high-quality images. In contrast, diffusion models produce photorealistic visuals yet struggle to generate coherent text, making it challenging to develop a single unified model that can seamlessly handle both visual and text generation. Recent advances suggest that language can be effectively embedded within visual representations, allowing models to reason about textual semantics directly from images. To this end, we propose UniCanvas, a first attempt that unifies diffusion models to generate interleaved multimodal contents through text-in-image generation. Diffusion models naturally capture transformations on a shared pixel canvas, which can be viewed as world models of visual change. Instead of producing discrete text tokens, the model learns to represent language as visual patterns inside images, leveraging its inherent multimodal embedding space. This design allows the model to \"draw\" text naturally within a single pixel canvas during image synthesis, achieving seamless multimodal generation. Experiments demonstrate that UniCanvas improves performance over previous unified models, positioning text-in-image generation with diffusion models as a promising unified multimodal generation paradigm.",
+    "authors": [
+      "Zeyuan Yang",
+      "Hao-Wei Chen",
+      "Xueyang Yu",
+      "Yuncong Yang",
+      "Haoyu Zhen",
+      "Ziqiao Ma",
+      "Maohao Shen",
+      "Chuang Gan"
+    ],
+    "published": "2026-06-02",
+    "updated": "2026-06-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.04264.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.04264",
+    "primary_category": "cs.CV",
+    "score": 95,
+    "summary": {
+      "title_zh": "UniCanvas：基于扩散模型的文本-图像联合生成统一框架",
+      "core_contribution": "首次提出将扩散模型统一用于生成交织的多模态内容（文本嵌入图像），通过单一像素画布实现无缝的多模态生成。",
+      "method": "1. 利用扩散模型在共享像素画布上捕捉视觉变化的特性，将语言表示为图像内的视觉模式。\n2. 通过多模态嵌入空间直接学习文本语义的视觉表达，避免生成离散文本标记。\n3. 在图像合成过程中自然‘绘制’文本，实现文本与图像的联合生成。",
+      "findings": "实验表明，UniCanvas优于现有统一模型，证实了基于扩散模型的文本-图像生成是一种有前景的多模态统一生成范式。"
+    }
+  },
+  {
+    "id": "2606.06066",
+    "title": "FontFusion: Enhancing Generative Text in Diffusion Models with Typographic Conditioning",
+    "abstract": "Typography generation in diffusion models faces a persistent trade-off: enabling precise font control typically degrades text legibility, while maintaining readability often sacrifices typographic fidelity. We present FontFusion, a plug-and-play conditioning framework for Diffusion Transformer (DiT) architectures that resolves this dilemma through three core innovations: (1) a hierarchical token representation establishing explicit text-font relationships at multiple granularities, (2) position-aware embeddings creating spatial bindings between typography and image content, and (3) a multi-level token dropping strategy improving both computational efficiency and generalization to unseen fonts. Our systematic evaluation of font embedding spaces reveals that a dual encoder combining DeepFont and DINOv2 outperforms any single encoder for typography tasks. FontFusion demonstrates 76% relative improvement on challenging decorative fonts over single-encoder baselines and font consistency gains exceeding approximately 68-76% over unconditioned models, while integrating into existing DiT architectures without retraining.",
+    "authors": [
+      "Marian Lupascu",
+      "Nipun Jindal",
+      "Ionut Mironica",
+      "Zhaowen Wang"
+    ],
+    "published": "2026-06-04",
+    "updated": "2026-06-04",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.06066.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.06066",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "FontFusion：通过字体条件增强扩散模型中的生成文本",
+      "core_contribution": "提出FontFusion框架，解决了扩散模型中字体控制与文本可读性之间的权衡问题，实现了高保真字体生成与文本清晰度的兼顾。",
+      "method": "方法包括：(1) 分层令牌表示建立多粒度文本-字体关系，(2) 位置感知嵌入创建字体与图像内容的空间绑定，(3) 多级令牌丢弃策略提升计算效率及未见字体泛化能力。采用DeepFont与DINOv2双编码器优化字体嵌入空间。",
+      "findings": "实验表明：在装饰性字体上相对单编码器基线提升76%，字体一致性较无条件模型提高68-76%，且无需重新训练即可适配现有DiT架构。"
+    }
+  },
+  {
+    "id": "2606.05261",
+    "title": "NIV: Neural Axis Variations for Variable Font Generation",
+    "abstract": "Variable fonts enable continuous variation of glyph geometry along semantic design axes such as weight, width, slant, and optical size. However, constructing a variable font from a static font remains a labor-intensive process requiring expert typographic design and manual specification of glyph variation data. We introduce NIV (Neural Axis Variations), a method that automatically converts a static font into a fully functional variable font. Given glyph outlines and a set of desired design axes, NIV predicts per-point displacements. The model operates directly on vector glyph geometry and employs a novel Property Embedding mechanism that captures interactions between multiple axes, enabling consistent multi-axis variation within a unified framework. We train NIV on a newly constructed dataset derived from variable Google Fonts, comprising over one million variation tuples. The resulting model generalizes across unseen code points, unseen font styles, high-complexity CJK glyphs, and even out-of-distribution handwriting inputs. The generated outputs are standard variable font files supporting continuous interpolation via existing rendering engines. To facilitate research, we release the dataset, the complete training and inference implementation, and trained models at https://github.com/ndvbd/NIV. Beyond typography, our approach demonstrates how structured geometric objects with continuous parametric variation can be synthesized using neural deformations.",
+    "authors": [
+      "Nadav Benedek",
+      "Ariel Shamir",
+      "Ohad Fried"
+    ],
+    "published": "2026-06-03",
+    "updated": "2026-06-03",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.05261.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.05261",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "NIV：用于可变字体生成的神经轴变体",
+      "core_contribution": "提出NIV方法，能够自动将静态字体转换为功能完整的可变字体，支持多轴一致变化，并释放了首个包含百万级变体元组的数据集。",
+      "method": "NIV通过神经网络直接处理矢量字形几何数据，采用创新的属性嵌入机制捕捉多轴间交互作用。模型基于从Google Fonts构建的新数据集训练，包含超过100万个变体元组。",
+      "findings": "模型能泛化至未见过的码点、字体样式、复杂CJK字形及手写体输入，生成的输出为标准可变字体文件，可通过现有渲染引擎实现连续插值。"
+    }
+  },
+  {
+    "id": "2606.06228",
+    "title": "SAM-Flow: Source-Anchored Masked Flow for Training-Free Image Editing",
+    "abstract": "Training-free image editing has recently attracted increasing attention due to its ability to modify real images using powerful pre-trained diffusion and flow-matching models without additional training. However, existing inversion-based and differential-flow-based methods usually perform global latent transport, which inevitably propagates editing effects to non-target regions and leads to background leakage. To address this problem, we propose SAM-Flow, a source-anchored masked flow framework for localized training-free image editing. Instead of updating the whole latent representation, SAM-Flow first uses a scout image and token-grounded attention maps to localize the editable semantic regions. It then applies differential velocity updates only within these regions, while anchoring the remaining areas to the source-image latent trajectory. To further improve spatial stability and boundary naturalness, we introduce a time-varying source-anchored projection mechanism with dynamic soft masks, transition regions, and temporal mask accumulation. The proposed method is plug-and-play and can be integrated with mainstream flow-matching backbones such as Stable Diffusion 3 and FLUX without any fine-tuning. Extensive qualitative and quantitative experiments demonstrate that SAM-Flow achieves accurate semantic editing while significantly improving background preservation, providing a simple and general localized editing paradigm for training-free image editing. Code is available at: https://github.com/chwbob/Sam-Flow.",
+    "authors": [
+      "Haowang Cui",
+      "Rui Chen",
+      "Tao Luo",
+      "Tao Guo",
+      "Zheng Qin",
+      "Jiaze Wang"
+    ],
+    "published": "2026-06-04",
+    "updated": "2026-06-04",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.06228.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.06228",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SAM-Flow：基于源锚定掩码流的免训练图像编辑方法",
+      "core_contribution": "提出SAM-Flow框架，通过源锚定掩码流实现局部化免训练图像编辑，显著提升背景保留能力。",
+      "method": "1. 使用侦察图像和基于token的注意力图定位可编辑语义区域\n2. 仅在这些区域内应用差分速度更新，同时将其他区域锚定到源图像潜在轨迹\n3. 引入时变源锚定投影机制，包含动态软掩码、过渡区域和时间掩码累积",
+      "findings": "实验表明SAM-Flow能实现精确语义编辑，同时显著改善背景保留效果，为免训练图像编辑提供了简单通用的局部化编辑范式。"
+    }
+  },
+  {
+    "id": "2606.06113",
+    "title": "Where, What, Why, and Importance: Structured Defect Grounding for Text-to-Image Feedback",
+    "abstract": "Despite generating increasingly photorealistic images, text-to-image (T2I) models still exhibit localized, subtle, and structurally complex failures. Diagnosing these failures requires instance-level feedback that answers where a defect occurs, what type it is, why it is defective, and its importance to overall image quality. While recent dense-feedback methods move beyond scalar supervision, their heatmap-centric representations still formulate diagnosis as pixel-field regression, making it difficult to localize variable-cardinality defects and bind semantic reasons to individual failures. To address this representation bottleneck, we propose Structured Defect Grounding (SDG), which casts T2I diagnosis as structured set prediction by modeling each defect as a (location, type, reason, importance) tuple. To make this formulation trainable and measurable, we introduce SDG-30K, a 30K-image dataset with box-grounded annotations across four modern T2I generators, together with a dedicated evaluation protocol, SDG-Eval. Building on this structured representation, we further present a diagnosis-to-alignment framework in which a Vision-Language Model (VLM) serves as the SDG detector, and BoxFlow-GRPO converts predicted defect sets into box-derived, importance-weighted spatial rewards for diffusion model alignment. Extensive experiments show that our SDG detector outperforms leading proprietary VLMs on structured defect grounding, while SDG-guided rewards consistently improve T2I alignment and support localized image refinement. These results establish SDG as a unified, instance-level interface for diagnosing, evaluating, and enhancing modern generative models.",
+    "authors": [
+      "Huaisong Zhang",
+      "Hao Yu",
+      "Yuxuan Zhang",
+      "Jiahe Wang",
+      "Xinrui Chen",
+      "Haoxiang Cao",
+      "Feng Lu",
+      "Wendong Zhang",
+      "Changqian Yu",
+      "Chun Yuan"
+    ],
+    "published": "2026-06-04",
+    "updated": "2026-06-04",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.06113.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.06113",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "何处、何物、何因与重要性：文本到图像反馈的结构化缺陷定位",
+      "core_contribution": "提出了结构化缺陷定位（SDG）方法，将文本到图像（T2I）模型的诊断问题转化为结构化集合预测，并通过SDG-30K数据集和SDG-Eval评估协议实现了可训练和可测量的缺陷定位。",
+      "method": "1. 将每个缺陷建模为一个（位置、类型、原因、重要性）元组，实现结构化表示。\n2. 引入SDG-30K数据集，包含30,000张图像及其标注，覆盖四种现代T2I生成器。\n3. 提出诊断到对齐框架，利用视觉语言模型（VLM）作为SDG检测器，并通过BoxFlow-GRPO将缺陷集合转化为空间奖励以优化扩散模型对齐。",
+      "findings": "实验表明，SDG检测器在结构化缺陷定位上优于主流专有视觉语言模型，且SDG引导的奖励能显著提升T2I模型的对齐效果，并支持局部图像细化。"
+    }
+  }
+]
