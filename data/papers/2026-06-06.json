@@ -1,0 +1,147 @@
+[
+  {
+    "id": "2606.06002",
+    "title": "Global-Local Monte Carlo Tree Search in Vision-Language Models for Text-to-3D Indoor Scene Generation",
+    "abstract": "Large Vision-Language Models have achieved significant reasoning performance in various tasks.However, there are few studies on text-to-3D indoor scene generation with LVLMs. The main challenge is that prevailing LVLM-based methods employ chain-of-thought sequential decision mechanisms that cannot revise earlier decisions, causing error propagation.In this paper, we consider the task as a planning problem constrained by spatial and layout commonsense.To solve this problem, we model it as a tree search problem with global and local trees, which differs from existing sequential decision-making approaches.In the global tree, we place each object iteratively and explore multiple attempts like humans furnishing a room, where the problem space is represented as a tree.To effectively search the tree, we propose a hierarchical scene representation and a PRM-guided MCTS method.The hierarchical representation abstracts a scene into room level, region level, floor object level, and supported object level.The PRM-guided MCTS method uses the PRM to prune unnecessary branches and the MCTS algorithm to balance exploration and exploitation to get an optimal solution with fewer attempts.In the local tree, it further decomposes the placement of each object into finer sub-steps, including the specific placement parameters.To make the whole appearance of the scene consistent, we leverage pre-trained diffusion image generative models to predict textures for all the objects in the scene.As existing benchmarks for text-to-3D indoor scene generation remain limited in scale and diversity, we collect a new large-scale diverse dataset that contains 65 scene types and 3,250 instructions with diverse sizes, layouts, and styles, named 3DTindo-bench, to better assess the capability of the state-of-the-art models. Our experiments show that our method generates more realistic 3D scenes than state-of-the-art approaches.",
+    "authors": [
+      "Mengshi Qi",
+      "Wei Deng",
+      "Xianlin Zhang",
+      "Huadong Ma"
+    ],
+    "published": "2026-06-04",
+    "updated": "2026-06-04",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.06002.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.06002",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "视觉语言模型中的全局-局部蒙特卡洛树搜索用于文本到3D室内场景生成",
+      "core_contribution": "提出了一种基于全局-局部蒙特卡洛树搜索的方法，解决了现有基于LVLM的序列决策方法无法修正早期决策导致错误传播的问题，实现了更真实的文本到3D室内场景生成。",
+      "method": "将任务建模为全局和局部树搜索问题，全局树通过分层场景表示和PRM引导的MCTS方法迭代放置物体；局部树进一步分解物体放置为更细粒度的子步骤，并利用预训练扩散模型预测纹理。",
+      "findings": "实验表明，该方法生成的3D场景比现有方法更真实；同时构建了一个包含65种场景类型和3,250条指令的大规模多样化数据集3DTindo-bench用于评估。"
+    }
+  },
+  {
+    "id": "2606.05730",
+    "title": "TextWand: A Unified Framework for Scene Text Editing",
+    "abstract": "We propose TextWand, a general-purpose framework that unifies scene text removal, generation, and replacement into a single model. By decomposing complex editing tasks into the atomic primitives of rendering and erasure, TextWand achieves precise control over both text appearance and background integrity. Specifically, we introduce a novel design, Overlay-Reference Positional Encoding (ORPE), to enforce pixel-level layout fidelity and exemplar-driven style control, alongside a new strategy, Region-Adaptive Suppression (RAS), to ensure clean text erasure. To address the absence of a comprehensive benchmark for general-purpose scene text editing among existing single-task datasets, we construct TextWand-Bench. Extensive experiments demonstrate that TextWand outperforms existing leading open-source and closed-source models by delivering superior text content accuracy, layout and style consistency, and overall image quality across scene text removal, generation and replacement tasks.",
+    "authors": [
+      "Shuyu Wang",
+      "Zhile Guan",
+      "Hongxiu Chen",
+      "Yule Duan",
+      "Weiqi Li",
+      "Xin Shan",
+      "Ronggang Wang",
+      "Jian Zhang"
+    ],
+    "published": "2026-06-04",
+    "updated": "2026-06-04",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.05730.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.05730",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "TextWand：场景文本编辑的统一框架",
+      "core_contribution": "提出TextWand框架，首次将场景文本的去除、生成和替换任务统一到单一模型中，并通过创新设计实现精确的文本外观控制和背景完整性保持。",
+      "method": "1. 将复杂编辑任务分解为渲染和擦除原子操作；2. 提出Overlay-Reference位置编码(ORPE)实现像素级布局保真和样本驱动风格控制；3. 设计区域自适应抑制(RAS)策略确保干净文本擦除；4. 构建TextWand-Bench综合评测基准。",
+      "findings": "实验表明，TextWand在文本内容准确性、布局/风格一致性和图像质量方面均优于现有开源/闭源模型，在场景文本去除、生成和替换任务中表现全面领先。"
+    }
+  },
+  {
+    "id": "2606.05652",
+    "title": "CoFi-UCGen: Coarse-to-Fine Unsupervised Conditional Generation without Label Priors",
+    "abstract": "Unsupervised conditional image generation (UCGen) aims to control generation without relying on manually annotated labels, yet remains challenging due to unstructured semantic representations across granularities. To address this, we propose a novel coarse-to-fine UCGen framework (CoFi-UCGen) that explicitly disentangles global semantics from fine-grained variations, which to the best of our knowledge, sets out the first successful attempt for both coarse- and fine-grained conditional generation without any labels. More specifically, we first propose the adversarial semantic reciprocal learning theory to ensure the semantic consistency and completeness between images and latent spaces. Based on the consistency, we propose the bit-codes to learn a structured coarse-grained latent space, and further prove distinct global semantics inherent from our bit-codes while preserving independent noise sampling for generation. Building upon these bit-codes, we establish a fine-grained semantic basis and introduce a hierarchical modulation mechanism in diffusion models, by enabling layer-wise injection from coarse conditions to progressively control fine-grained attributes during generation. Extensive experiments demonstrate that without any label priors or pre-trained feature extractors, our CoFi-UCGen consistently outperforms existing UCGen methods in terms of image quality, semantic consistency, and control accuracy, verifying the effectiveness of explicit coarse-to-fine semantic decomposition for the challenging UCGen task.",
+    "authors": [
+      "Shengxi Li",
+      "Zhaokun Hu",
+      "Ce Zheng",
+      "Mai Xu",
+      "Jingyuan Xia",
+      "Si Liu"
+    ],
+    "published": "2026-06-04",
+    "updated": "2026-06-04",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.05652.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.05652",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "CoFi-UCGen：无需标签先验的从粗到细无监督条件生成",
+      "core_contribution": "提出首个无需任何标签即可实现粗粒度和细粒度条件生成的框架，通过显式解耦全局语义与细粒度变化，解决了无监督条件图像生成的挑战。",
+      "method": "1. 提出对抗性语义互惠学习理论，确保图像与潜在空间之间的语义一致性和完整性；2. 设计比特码学习结构化粗粒度潜在空间，并证明其能保留独立噪声采样；3. 在扩散模型中建立细粒度语义基，引入分层调制机制，通过逐层注入粗粒度条件逐步控制生成过程中的细粒度属性。",
+      "findings": "实验表明，CoFi-UCGen在无任何标签先验或预训练特征提取器的情况下，在图像质量、语义一致性和控制准确性上均优于现有无监督条件生成方法，验证了显式粗到细语义分解的有效性。"
+    }
+  },
+  {
+    "id": "2606.05635",
+    "title": "ShotCrop$^3$: Cropping Human-Centric Images into Cinematic Triple-Shot Compositions",
+    "abstract": "Prior work on aesthetic composition typically produces a single aesthetically pleasing crop, overlooking the narrative value of composing multiple shots from one scene. In practice, multi-shot composition is critical for downstream creative workflows: commercial posters often require multiple crops with different emphases (e.g., context, subject, and emotion/product details) to present key story beats. Therefore, we propose \\textbf{Triple-Shot Compositions (TSC)}, a composition task that generates a three-shot set -- establishing, medium, and close-up -- from a single human-centric image, each paired with a brief shot description to support visual narration. To learn TSC with limited expert annotations, we introduce \\textbf{ShotCrop} which undergoes a three-stage training process: it first applies Chain-of-Thought supervised fine-tuning to establish basic reasoning and aesthetic shot-cropping skills, then performs semi-supervised fine-tuning with high-confidence pseudo labels to further enhance aesthetic capability, and is finally optimized with Group Relative Policy Optimization for \\textbf{ShotCrop} (GRPO-S) using a composite reward tailored for it. Specifically, our pseudo-labeling strategy combines MLLM-based scoring, aesthetic assessment, and CLIP similarity to retain high-confidence training signals. In addition, we present TSC-Bench, a benchmark of 1.2k expert-annotated test cases. Notably, ShotCrop achieves an average improvement of \\textbf{2.82} times over GPT-5 in shot localization accuracy.",
+    "authors": [
+      "Dehong Kong",
+      "Lina Lei",
+      "Lingtao Zheng",
+      "Chenyang Wu",
+      "Ailing Zhang",
+      "Xinran Qin",
+      "Teng Ma",
+      "Jiaqi Xu",
+      "Zhixin Wang",
+      "Zhikai Chen",
+      "Xuecheng Qi",
+      "Renjing Pei",
+      "Fan Li"
+    ],
+    "published": "2026-06-04",
+    "updated": "2026-06-04",
+    "categories": [
+      "cs.CV",
+      "cs.MM"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.05635.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.05635",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ShotCrop$^3$：将人物中心图像裁剪为电影级三镜头构图",
+      "core_contribution": "提出了三镜头构图（TSC）任务，通过单张人物中心图像生成包含远景、中景和特写的三镜头组合，并设计了三阶段训练的ShotCrop方法以解决专家标注数据有限的问题。",
+      "method": "1. 通过思维链监督微调建立基础推理和美学裁剪能力；2. 利用高置信度伪标签进行半监督微调以增强美学能力；3. 采用专为ShotCrop设计的复合奖励函数（GRPO-S）进行优化。伪标签策略结合了MLLM评分、美学评估和CLIP相似度。",
+      "findings": "ShotCrop在镜头定位准确率上比GPT-5平均提升2.82倍，并构建了包含1200个专家标注测试案例的TSC-Bench基准。"
+    }
+  },
+  {
+    "id": "2606.05478",
+    "title": "Can We Predict The Human Preference For Text-to-Image Content Prior To Generation And Is It Even Useful To Do So?",
+    "abstract": "Diffusion Models (DM) have revolutionized text-driven generation by enabling the synthesis of high-quality, photorealistic visual content from user prompts. Whereas prior advances in visual generation such as VAEs and GANs were primarily evaluated on perceptual or visual similarity metrics such as FID PSNR, DM advances have fostered the development of more advanced Human Preference Metrics (HPM) that model and quantify human judgment as scalar values. However, DMs synthesize content using an inherently stochastic process where random noise seeds generation. The initial random noise directly affects the quality of generated outputs, both qualitatively and quantitatively. This influence is pronounced in smaller models for local deployment scenarios. Given this phenomenon, we first investigate to what extent we can predict scalar HPM scores prior to committing compute resources for generation. Further, we then investigate to what extent we can leverage such prediction to improve the quality of generated images, and also study which HPMs are best suited for this task. Our investigation reveals that not only is this possible, but that it is feasible to achieve negligible hardware overhead.",
+    "authors": [
+      "Joong Ho Kim",
+      "Keith G. Mills"
+    ],
+    "published": "2026-06-03",
+    "updated": "2026-06-03",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.05478.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.05478",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "能否在生成前预测人类对文本生成图像内容的偏好？这样做是否有用？",
+      "core_contribution": "论文提出了一种在生成前预测人类偏好评分（HPM）的方法，并验证了利用该预测提升生成图像质量的可行性。",
+      "method": "研究首先分析了随机噪声种子对扩散模型（DM）生成质量的影响，随后构建了基于预生成特征的HPM预测模型。通过实验比较了不同HPM指标的适用性，并评估了预测方法对生成质量的优化效果。",
+      "findings": "结果表明：1）在生成前预测HPM分数具有可行性且硬件开销可忽略；2）利用预测结果可显著提升小模型在本地部署场景下的生成质量；3）不同HPM指标对预测任务的适用性存在差异。"
+    }
+  }
+]

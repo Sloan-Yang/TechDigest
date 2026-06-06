@@ -281,5 +281,12 @@
   "openai_plugins": 60,
   "MemPalace_mempalace": 60,
   "sponsors_withastro": 40,
-  "github_copilot-sdk": 60
+  "github_copilot-sdk": 60,
+  "sponsors_sveltejs": 30,
+  "nginx_nginx": 30,
+  "golang_go": 30,
+  "sponsors_santifer": 20,
+  "openai_whisper": 85,
+  "sponsors_vitejs": 50,
+  "microsoft_mxc": 30
 }
