@@ -1,0 +1,149 @@
+[
+  {
+    "id": "2606.05268",
+    "title": "Aggregating LLM-Based Weak Verifiers for Spatial Layout Generation",
+    "abstract": "We present a pipeline for building and aggregating task-specific, LLM-generated weak (imperfect) verifiers into a strong verifier for spatial layout domains. Given a task description, our pipeline asks an LLM to synthesize a collection of verifier programs using a layout verification DSL. Each individual LLM-generated verifier usually provides an imperfect check for a match between the layout and the corresponding task description. We show that by aggregating the responses of many such verifiers we can produce a stronger verifier. Moreover, by applying techniques from weak learning, our pipeline can learn how to aggregate the weak verifiers from a very sparse set of human labeled example layouts (about 10). We find that the strong verifiers produced by our pipeline outperform the status-quo approach of using a set of LLM judges to directly check whether a layout matches a task description, raising F1-scores by up to 7X across a variety of 3D room layout and 2D poster design tasks. We also demonstrate that verifier-guided layout generation using natural language feedback from our strong verifiers improves layout quality of a base layout generator by up to 66.2% according to a human evaluator.",
+    "authors": [
+      "Sharon Zhang",
+      "R. Kenny Jones",
+      "Jiajun Wu",
+      "Maneesh Agrawala"
+    ],
+    "published": "2026-06-03",
+    "updated": "2026-06-03",
+    "categories": [
+      "cs.GR",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.05268.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.05268",
+    "primary_category": "cs.GR",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于大语言模型的弱验证器聚合用于空间布局生成",
+      "core_contribution": "提出一种将多个基于大语言模型（LLM）的弱验证器聚合为强验证器的管道，显著提升了空间布局验证的准确性。",
+      "method": "1. 使用布局验证领域特定语言（DSL）让LLM生成多个弱验证器程序。2. 通过弱学习技术，仅需约10个人工标注样本即可学习如何聚合这些弱验证器。3. 最终聚合后的强验证器用于评估布局与任务描述的匹配度。",
+      "findings": "1. 聚合后的强验证器比直接使用LLM法官的现有方法F1分数提升高达7倍。2. 验证器引导的布局生成结合自然语言反馈，使基础布局生成器的质量提升高达66.2%（人工评估）。"
+    }
+  },
+  {
+    "id": "2606.05031",
+    "title": "MetaPoint: Unlocking Precise Spatial Control in Agentic Visual Generation",
+    "abstract": "Generative visual models fundamentally struggle with precise spatial control. This arises from a core disconnect: models can process textual descriptions of space but cannot directly map numerical coordinates onto the 2D image canvas. We introduce MetaPoint, a method that bridges this gap by representing a continuous 2D coordinate as a single, special token. Crucially, MetaPoint requires no new architectural components; it directly leverages the model's inherent positional encoding schemes to interpret these coordinates, treating our token as a virtual point on the canvas. This lightweight approach enables pixel-level control of an object's position with one token or its bounding box with two, all without requiring architectural changes or bespoke attention masking. The MetaPoint tokens are designed to be compositional, serving as spatial primitives. This allows a planner agent to decompose a high-level user request into a structured sequence of primitives for the generator. By providing a simple, precise, and scalable building block for spatial control, MetaPoint unlocks more powerful compositional generative agents and enables intuitive, interactive editing systems.",
+    "authors": [
+      "Dewei Zhou",
+      "Xinyu Huang",
+      "Xun Wang",
+      "Ji Xie",
+      "Yabo Zhang",
+      "Liang Li",
+      "Kunchang Li",
+      "Zongxin Yang",
+      "Yi Yang"
+    ],
+    "published": "2026-06-03",
+    "updated": "2026-06-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.05031.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.05031",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MetaPoint：实现代理视觉生成中的精确空间控制",
+      "core_contribution": "提出MetaPoint方法，通过将连续2D坐标表示为特殊令牌，实现了生成视觉模型中的像素级空间控制，无需修改模型架构。",
+      "method": "MetaPoint将2D坐标编码为单一特殊令牌，直接利用模型的固有位置编码机制解释这些坐标，将其视为画布上的虚拟点。该方法仅需1个令牌控制对象位置或2个令牌定义边界框，无需架构改动或定制注意力掩码。这些令牌具有组合性，可作为空间基元供规划代理分解用户请求。",
+      "findings": "MetaPoint实现了像素级的对象位置控制，支持通过组合令牌完成复杂空间操作，为构建更强大的组合生成代理和交互式编辑系统提供了基础。"
+    }
+  },
+  {
+    "id": "2606.04797",
+    "title": "Crafting Your Evolving Dreams: Concept-Incremental Versatile Customization",
+    "abstract": "Custom diffusion models (CDMs) have garnered significant interest owing to their remarkable capacity for generating personalized concepts. However, the majority of CDMs unrealistically presume that the user's collection of personalized concepts is static and incapable of incremental growth over time. Furthermore, they exhibit significant catastrophic forgetting and concept neglect of previously learned concepts when incrementally learning a sequence of new ones. To resolve the above challenges, we develop a novel Continually Customizable Diffusion Model (CCDM), enabling users to perform concept-incremental versatile customization. Specifically, we design an attribute-decoupled LoRA (AD-LoRA) module and a relevance-guided AD-LoRA aggregation strategy to mitigate catastrophic forgetting. They can preserve concept-specific attributes of each task and leverage beneficial inter-task correlations to enhance the continual learning of new customization tasks. Additionally, to address the challenge of concept neglect, we propose a controllable regional context synthesis strategy that performs multi-concept composition in alignment with user-provided conditions. This strategy enhances the overall consistency in multi-concept synthesis by guaranteeing semantic independence between user-defined regions and their smooth boundary transitions. Experiments show our CCDM exhibits significant improvements over baseline methods.",
+    "authors": [
+      "Jiahua Dong",
+      "Wenqi Liang",
+      "Hongliu Li",
+      "Yang Cong",
+      "Duzhen Zhang",
+      "Hanbin Zhao",
+      "Henghui Ding",
+      "Yulun Zhang",
+      "Salman Khan",
+      "Fahad Shahbaz Khan"
+    ],
+    "published": "2026-06-03",
+    "updated": "2026-06-03",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.04797.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.04797",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "编织你不断演变的梦想：概念增量式多功能定制",
+      "core_contribution": "提出了一种持续可定制扩散模型（CCDM），解决了现有定制扩散模型在增量学习新概念时的灾难性遗忘和概念忽视问题。",
+      "method": "设计了属性解耦的LoRA（AD-LoRA）模块和相关性引导的AD-LoRA聚合策略，以减轻灾难性遗忘；提出了一种可控区域上下文合成策略，用于多概念组合，确保语义独立性和边界平滑过渡。",
+      "findings": "实验表明，CCDM在基线方法上表现出显著改进，能够有效保留已学习概念的特定属性，并利用任务间的有益相关性增强新定制任务的持续学习能力。"
+    }
+  },
+  {
+    "id": "2606.04621",
+    "title": "MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer",
+    "abstract": "We present MeshFlow, a new method for generating artist-like 3D meshes. Current mesh generators often adopt Auto-Regressive (AR) next-token prediction, a natural choice given the discrete nature of mesh topology. However, AR methods scale poorly because the inference cost is quadratic in mesh size. They also require discretizing the vertex coordinates, which introduces quantization errors. To address these challenges, we introduce a Variational Autoencoder (VAE) that, supervised with a contrastive loss, represents both continuous vertex positions and discrete connectivity in a continuous latent space. This latent space is significantly more compact than prior token-based mesh representations. We then build a 3D generator based on a Rectified Flow transformer, generating all mesh vertices and edges in parallel. Our model generates meshes 18x faster than the fastest AR generator while also achieving excellent accuracy across standard mesh-generation metrics. Homepage: https://mesh-flow.github.io/, Code: https://github.com/facebookresearch/meshflow",
+    "authors": [
+      "Weiyu Li",
+      "Antoine Toisoul",
+      "Tom Monnier",
+      "Roman Shapovalov",
+      "Rakesh Ranjan",
+      "Ping Tan",
+      "Andrea Vedaldi"
+    ],
+    "published": "2026-06-03",
+    "updated": "2026-06-03",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.04621.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.04621",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MeshFlow：通过MeshVAE和基于流的扩散变压器实现高效艺术化网格生成",
+      "core_contribution": "提出MeshFlow方法，通过结合变分自编码器（VAE）和基于流的扩散变压器，实现了高效且高质量的三维网格生成，解决了自回归方法在网格生成中的效率和质量问题。",
+      "method": "1. 使用变分自编码器（VAE）在连续潜在空间中表示网格的顶点位置和连接性，通过对比损失进行监督学习。\n2. 构建基于Rectified Flow变压器的三维生成器，并行生成所有网格顶点和边。\n3. 潜在空间比传统的基于令牌的网格表示更紧凑，显著提高了生成效率。",
+      "findings": "1. MeshFlow生成网格的速度比最快的自回归生成器快18倍。\n2. 在标准网格生成指标上表现出色，避免了顶点坐标离散化带来的量化误差。"
+    }
+  },
+  {
+    "id": "2606.04479",
+    "title": "Evaluating Reasoning Fidelity in Visual Text Generation",
+    "abstract": "Recent text-to-image (T2I) models can render highly legible and well-structured text within images, enabling applications including document generation and slide generation. However, it remains unclear whether such systems faithfully preserve reasoning ability when complex solutions must be expressed directly through rendered text, or whether they merely imitate surface-level patterns. We investigate this question by evaluating reasoning fidelity in visual text generation, where models must express complete reasoning processes as images. Our evaluation includes long text rendering, factual knowledge probing, context understanding, and multi-step reasoning. Across these settings, we find that current T2I models frequently produce semantic errors, logical inconsistencies, and incorrect intermediate steps, even when the rendered text appears visually clear. These failures contrast with the strong reasoning performance of text-only models on the same tasks. Our findings reveal a substantial gap between visual text generation and procedural reasoning, motivating more reliable visual text reasoning.",
+    "authors": [
+      "Jiajun Hong",
+      "Jiawei Zhou"
+    ],
+    "published": "2026-06-03",
+    "updated": "2026-06-03",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.04479.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.04479",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "评估视觉文本生成中的推理保真度",
+      "core_contribution": "揭示了当前文本到图像（T2I）模型在生成包含复杂推理过程的视觉文本时存在语义错误和逻辑不一致问题，与纯文本模型的推理能力形成鲜明对比。",
+      "method": "研究通过评估长文本渲染、事实知识探测、上下文理解和多步推理等场景，检验T2I模型在生成包含完整推理过程的图像时的表现。实验设计覆盖了视觉清晰度与语义准确性的对比分析。",
+      "findings": "当前T2I模型即使能生成视觉清晰的文本，仍频繁出现语义错误、逻辑矛盾及错误中间步骤，其推理保真度显著低于纯文本模型。这表明视觉文本生成与程序性推理能力之间存在明显差距。"
+    }
+  }
+]

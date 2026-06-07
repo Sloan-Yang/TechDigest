@@ -288,5 +288,9 @@
   "sponsors_santifer": 20,
   "openai_whisper": 85,
   "sponsors_vitejs": 50,
-  "microsoft_mxc": 30
+  "microsoft_mxc": 30,
+  "sponsors_opencv": 40,
+  "RyanCodrai_turbovec": 60,
+  "refactoringhq_tolaria": 30,
+  "microsoft_pg_durable": 50
 }
