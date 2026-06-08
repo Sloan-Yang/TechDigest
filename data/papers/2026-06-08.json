@@ -1,0 +1,136 @@
+[
+  {
+    "id": "2606.06813",
+    "title": "Breaking the Lock-in: Diversifying Text-to-Image Generation via Representation Modulation",
+    "abstract": "Recent text-to-image models built on large-scale Transformer backbones and flow-based objectives deliver strong text-image alignment and high visual quality, yet often produce overly similar samples under a fixed prompt. Existing diversity-enhancement methods alleviate this issue, but typically require expensive sampling or auxiliary optimization, incurring non-trivial overhead. To investigate the root cause of this homogeneity, we examine intermediate Transformer features and observe that the zero-frequency spatial average (DC) component rapidly converges across seeds early in generation, causing early trajectory lock-in that limits downstream variation. Building on this observation, we propose DC Attenuation for diVersity Enhancement (DAVE), a training-free representation-level intervention that selectively attenuates this component in the early regime. DAVE preserves the sampling pipeline with negligible overhead, improving prompt-consistent diversity while maintaining competitive image quality.",
+    "authors": [
+      "Dahee Kwon",
+      "Haeun Lee",
+      "Jaesik Choi"
+    ],
+    "published": "2026-06-05",
+    "updated": "2026-06-05",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.06813.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.06813",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "打破锁定：通过表征调制实现文本到图像生成的多样化",
+      "core_contribution": "提出DAVE方法，通过训练自由的表征级干预，有效提升文本到图像生成模型的多样性，同时保持图像质量。",
+      "method": "论文首先分析了Transformer中间特征，发现零频率空间平均（DC）分量在生成早期迅速收敛，导致早期轨迹锁定。基于此，作者提出了DAVE方法，在生成早期选择性地衰减DC分量，从而增加多样性。该方法无需额外训练，计算开销极小。",
+      "findings": "实验表明，DAVE能显著提高在相同提示词下生成图像的多样性，同时保持与基线模型相当的图像质量。该方法解决了现有方法需要昂贵采样或辅助优化的问题。"
+    }
+  },
+  {
+    "id": "2606.07145",
+    "title": "Consistent-Inversion: Reverse Consistency Guidance for Structure-Preserving Visual Editing",
+    "abstract": "Text-guided diffusion models have become effective tools for real-image visual editing, where the edited image must follow a target instruction while preserving editing-irrelevant structure. Most training-free editors rely on inversion: a source image is mapped to a noisy latent trajectory and the terminal latent is reused for target-prompt denoising. This reuse is useful for preservation, but it also couples source reconstruction and target editing. The resulting trajectory mismatch may either damage background/layout details or over-constrain the intended edit. This paper presents Consistent-Inversion, a training-free reverse consistency guidance framework for structure-preserving visual editing. Instead of treating the inverted source latent as a fixed initialization, Consistent-Inversion checks whether an intermediate target trajectory can be reversed toward the source inversion trajectory under the source prompt. To make this check well-defined, we construct an auxiliary target-side noise representation, perform source-guided reverse denoising, and use the resulting reverse consistency discrepancy as a correction signal for selected early target denoising steps. The method does not update model parameters, is compatible with inversion-based editors, and introduces only a small inference overhead when applied sparsely. Experiments on PIE-Bench show that Consistent-Inversion improves background and structural fidelity under a unified SD3.5 protocol while maintaining target-prompt alignment, and compatibility experiments further verify the same correction principle on classical Stable-Diffusion inversion pipelines.",
+    "authors": [
+      "Xiaocheng Lu",
+      "Jingcai Guo",
+      "Song Guo"
+    ],
+    "published": "2026-06-05",
+    "updated": "2026-06-05",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.07145.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.07145",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "一致性反转：结构保持视觉编辑的反向一致性引导",
+      "core_contribution": "提出了一种无需训练的反向一致性引导框架（Consistent-Inversion），通过反向一致性检查优化目标轨迹，在保持图像结构的同时提升编辑质量。",
+      "method": "1. 构建辅助目标侧噪声表示，执行源引导的反向去噪；2. 利用反向一致性差异作为早期目标去噪步骤的校正信号；3. 不更新模型参数，与基于反转的编辑器兼容；4. 稀疏应用时仅引入少量推理开销。",
+      "findings": "在PIE-Bench测试中，该方法在统一SD3.5协议下显著提升了背景和结构保真度，同时保持目标提示对齐；兼容性实验验证了该校正原则在经典Stable-Diffusion反转流程中的有效性。"
+    }
+  },
+  {
+    "id": "2606.07079",
+    "title": "AsyncPatch Diffusion: spatially-flexible image generation",
+    "abstract": "Standard diffusion models corrupt an entire sample with a single shared noise level, forcing all spatial regions to follow the same denoising trajectory. We introduce AsyncPatch Diffusion, a joint-diffusion framework that assigns distinct noise levels to different input dimensions, such as image pixels, or latent tokens. We show how this asynchronous corruption defines a valid generative process while supporting a richer family of spatially heterogeneous denoising trajectories, and prove the first valid ELBO for this process. We show that a single pretrained model can perform spatially adaptive generation, where different regions are denoised on different schedules. A key challenge is training: naive independent noise-level sampling overemphasizes highly heterogeneous configurations and underrepresents homogeneous noise levels, that are crucial during sampling. We address this with a controlled noise-level sampler that regulates both the average corruption level and its spatial variability. AsyncPatch achieves generation quality comparable to conventional diffusion on ImageNet 256 and LSUN, while being natively suited for inpainting without task-specific fine-tuning. We further introduce input guidance, which uses clean or partially corrupted regions to guide the generation of unknown regions, improving local consistency and texture matching. Finally, we demonstrate adaptive generation strategies including uncertainty-guided acceleration and autoregressive sampling.",
+    "authors": [
+      "Samuele Papa",
+      "Valentin De Bortoli",
+      "Guillaume Couairon",
+      "Daniel Sýkora",
+      "Romuald Elie",
+      "Klaus Greff"
+    ],
+    "published": "2026-06-05",
+    "updated": "2026-06-05",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.07079.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.07079",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "异步分块扩散：空间灵活的图像生成",
+      "core_contribution": "提出AsyncPatch Diffusion框架，通过为不同空间区域分配不同的噪声水平，实现空间异质性的去噪轨迹，并证明了该过程的有效ELBO。",
+      "method": "AsyncPatch Diffusion采用联合扩散框架，为图像像素或潜在标记等不同输入维度分配不同的噪声水平。通过控制噪声采样器调节平均噪声水平及其空间变异性，解决了训练中的不平衡问题。此外，引入输入引导机制，利用干净或部分损坏区域指导未知区域的生成。",
+      "findings": "AsyncPatch在ImageNet 256和LSUN上实现了与传统扩散模型相当的生成质量，且无需特定任务微调即可原生支持修复。输入引导机制提高了局部一致性和纹理匹配，自适应生成策略包括不确定性引导加速和自回归采样。"
+    }
+  },
+  {
+    "id": "2606.07053",
+    "title": "TrioPose: Native Triple-Stream Diffusion Transformers for Pose-Guided Text-to-Image Generation",
+    "abstract": "Pose-guided text-to-image generation often suffers from limb distortions and feature crosstalk in complex multi-person scenarios. While existing UNet-based adapters struggle with long-range spatial dependencies, emerging Multimodal Diffusion Transformers (MM-DiTs) offer superior global modeling. However, naive signal concatenation in MM-DiTs severely disrupts pre-trained latent distributions. To address this, we propose TrioPose, a native pose-driven framework built upon the SD3.5M architecture. Specifically, we introduce a Triple-Stream Pose-Aware DiT (TSPA-DiT) that treats pose as an independent modality. It employs layer-wise activation and zero-initialized dual-residual injection to smoothly enforce geometric constraints while preserving pre-trained latent stability. To resolve severe multi-instance occlusions, we design a Learnable Relational Bias Mask that categorizes topological connectivity into fine-grained physical states, mapping them into continuous attention soft constraints to effectively decouple inter-instance interference. Furthermore, a Pose-Guided Spatial Loss Weighting strategy modulates the native diffusion objective using heatmap-derived error maps, focusing anatomical supervision strictly on distortion-prone regions. Extensive experiments demonstrate that TrioPose achieves state-of-the-art performance across challenging benchmarks, including Human-Art, CrowdPose, and OCHuman. Notably, it attains an AP of $64.33$ on Human-Art, representing a $30\\%$ improvement over prior arts, while setting new standards for visual fidelity and text-image semantic alignment in complex multi-human generation.",
+    "authors": [
+      "Dian Gu",
+      "Zhengyi Yang"
+    ],
+    "published": "2026-06-05",
+    "updated": "2026-06-05",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.07053.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.07053",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "TrioPose：基于原生三流扩散Transformer的姿势引导文本到图像生成",
+      "core_contribution": "提出TrioPose框架，通过独立处理姿势模态和创新的注意力机制，显著改善了多人复杂场景下的肢体扭曲和特征串扰问题。",
+      "method": "1. 设计三流姿势感知DiT（TSPA-DiT），将姿势作为独立模态处理，采用分层激活和零初始化双残差注入保持潜在空间稳定性；2. 提出可学习关系偏置掩码，通过拓扑连通性分类实现实例间干扰解耦；3. 开发姿势引导空间损失加权策略，基于热图误差聚焦解剖学监督。",
+      "findings": "在Human-Art、CrowdPose和OCHuman等基准测试中达到SOTA性能，其中Human-Art上的AP值达64.33（较先前提升30%），同时在视觉保真度和图文语义对齐方面树立了新标准。"
+    }
+  },
+  {
+    "id": "2606.06875",
+    "title": "Unified Safe In-context Image Generation in Multimodal Diffusion Transformers via Restricting Unsafe Information Flows",
+    "abstract": "Diffusion transformers (DiTs) equipped with multimodal attention (MM-Attn) have become a dominant paradigm for image generation. However, preventing the generation of harmful content remains a critical challenge, particularly in image-to-image (I2I) editing tasks. Existing safety mechanisms are primarily designed for text-to-image (T2I) synthesis or U-Net-based architectures, which limits their effectiveness for unified safety mitigation in DiT-based frameworks. To bridge this gap, we propose Unified Visual Safety Regulator (UVR), a training-free safe generation framework that regulates unsafe semantics in generated images. UVR is grounded in an analysis of attention dynamics from the perspective of information flow in MM-Attn. We identify a task-independent start-up stage, during which unsafe semantics in output patches rapidly emerge and can be accurately localized, followed by task-specific semantic amplification and interference stages, where harmful signals are further propagated and entangled with benign content. Based on these observations, UVR mitigates unsafe generation through unified, targeted attention modulation and explicit restriction of harmful information flow over the identified unsafe output patches. Experiments across various concepts show that UVR achieves state-of-the-art safety performance by achieving 91% and 77% erase rate in image synthesis and editing tasks, while preserving visual quality and fidelity with minimal degradation. Code is available at https://github.com/deng12yx/UVR.",
+    "authors": [
+      "Xiang Yang",
+      "Feifei Li",
+      "Mi Zhang",
+      "Geng Hong",
+      "Xiaoyu You",
+      "Mi Wen",
+      "Min Yang"
+    ],
+    "published": "2026-06-05",
+    "updated": "2026-06-05",
+    "categories": [
+      "cs.CV",
+      "cs.CR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.06875.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.06875",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过限制不安全信息流实现多模态扩散变换器中的统一安全上下文图像生成",
+      "core_contribution": "提出了一种无需训练的统一视觉安全调节器（UVR），通过分析多模态注意力中的信息流动态，有效抑制扩散变换器生成有害内容。",
+      "method": "UVR基于对多模态注意力中信息流的分析，识别出任务无关的启动阶段（不安全语义快速出现并可精确定位）和任务相关的语义放大/干扰阶段。通过统一的目标注意力调制和显式限制有害信息流，在保持视觉质量的同时实现安全生成。",
+      "findings": "实验表明UVR在图像合成和编辑任务中分别达到91%和77%的有害内容消除率，同时视觉质量和保真度仅有轻微下降，实现了最先进的安全性能。"
+    }
+  }
+]
