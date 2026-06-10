@@ -1,0 +1,191 @@
+[
+  {
+    "id": "2606.11188",
+    "title": "ARM: An AutoRegressive Large Multimodal Model with Unified Discrete Representations",
+    "abstract": "This paper introduces ARM, a discrete representation-based AutoRegressive Model that unifies image understanding, generation, and editing within a next-token prediction framework. ARM is built on three efforts: first, we train a discrete semantic visual tokenizer that maps images into compact token sequences. Our tokenizer is supervised with multiple objectives that jointly promote semantic discriminability, language alignment and faithful reconstruction, thereby supporting diverse tasks in a shared latent space. With this, we train a 7B autoregressive model over large-scale text and image token sequences, seamlessly developing vision-language perception and generation capabilities. Finally, to further improve preference-aligned behavior for text-to-image generation and instruction-guided editing, ARM applies reinforcement learning (RL) to optimize task-level objectives such as visual quality, instruction adherence, and edit consistency. Surprisingly, the results show that RL not only substantially improves performance on the target tasks (e.g., raising WISE overall from 0.50 to 0.56, GEdit-Bench-EN G_O from 5.75 to 6.68), but also induces cross-task synergy between text-to-image generation and editing. Collectively, these findings highlight autoregressive modeling, when paired with strong representations and preference optimization, as a scalable foundation for multimodal intelligence. Code: https://github.com/wdrink/ARM.",
+    "authors": [
+      "Junke Wang",
+      "Xiao Wang",
+      "Jiacheng Pan",
+      "Xuefeng Hu",
+      "Feng Li",
+      "Jingxiang Sun",
+      "Chaorui Deng",
+      "Zilong Chen",
+      "Yunpeng Chen",
+      "Kaibin Tian",
+      "Matthew Gwilliam",
+      "Hao Chen",
+      "Danhui Guan",
+      "Kun Xu",
+      "Weilin Huang",
+      "Zuxuan Wu",
+      "Haoqi Fan",
+      "Yu-Gang Jiang",
+      "Zhenheng Yang"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.11188.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.11188",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ARM：一种具有统一离散表征的自回归大型多模态模型",
+      "core_contribution": "提出ARM模型，通过自回归框架统一实现图像理解、生成与编辑，并利用强化学习优化任务级目标，实现跨任务协同效应。",
+      "method": "1. 训练离散语义视觉分词器，将图像映射为紧凑的标记序列；2. 在大规模文本和图像标记序列上训练7B参数的自回归模型；3. 应用强化学习优化视觉质量、指令遵循和编辑一致性等任务目标。",
+      "findings": "强化学习显著提升目标任务性能（如WISE从0.50提升至0.56，GEdit-Bench-EN G_O从5.75提升至6.68），并诱导文本到图像生成与编辑之间的跨任务协同效应。"
+    }
+  },
+  {
+    "id": "2606.11096",
+    "title": "IDEAL: In-DEpth ALignment Makes A Discrete Representation AutoEncoder",
+    "abstract": "Built on pretrained vision foundation models (VFMs), representation autoencoders (RAEs) have recently emerged as a promising approach for constructing semantically rich latent spaces for image generation. However, their reconstruction quality often remains suboptimal, largely because deep VFM representations do not preserve sufficient fine-grained visual detail. This limitation becomes even more severe after discretization, where missing low-level information is difficult to recover. In fact, we observe that shallow VFM features retain considerably richer local appearance and structural detail, which complements the high-level semantics carried by deep features used in existing RAEs. Motivated by this complementary property, we propose Ideal, an In-depth Alignment framework for discrete representation autoencoding. By jointly aligning quantized tokens with both shallow and deep VFM features, Ideal enables the resulting discrete visual tokens to preserve both visual fidelity and rich semantics. Extensive experiments demonstrate that Ideal yields superior reconstruction performance, achieving 0.61 rFID on ImageNet and outperforming the previous best method by 0.28. When used for autoregressive image generation, Ideal further produces a gFID of 1.89, establishing a new state of the art for autoregressive image generation.",
+    "authors": [
+      "Yitong Chen",
+      "Zijie Diao",
+      "Junke Wang",
+      "Lingyu Kong",
+      "Yixuan Ren",
+      "Bo He",
+      "Yu-Gang Jiang",
+      "Zuxuan Wu"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.11096.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.11096",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "IDEAL：深度对齐构建离散表征自动编码器",
+      "core_contribution": "提出IDEAL框架，通过联合对齐浅层和深层视觉基础模型特征，使离散视觉标记同时保留视觉保真度和丰富语义。",
+      "method": "1. 观察到浅层VFM特征保留更多局部细节，而深层特征侧重高层语义；2. 设计深度对齐框架，将量化标记与浅层及深层特征联合对齐；3. 通过互补特征融合提升离散表征的完整性。",
+      "findings": "1. 在ImageNet上实现0.61 rFID，比之前最佳方法提升0.28；2. 自回归图像生成达到1.89 gFID，创下新SOTA。"
+    }
+  },
+  {
+    "id": "2606.10902",
+    "title": "Pose-ICL: 3D-Aware In-Context Learning for Pose-Controllable Subject Customization",
+    "abstract": "Subject Customization is a foundational task in modern image generation. By providing a few reference images and a text prompt, users can generate images of a specific object in any desired scene. However, existing methods still struggle to achieve effective pose control for customized subjects. In practice, they often exhibit inaccurate poses or inconsistent cross-pose appearances. These limitations suggest that understanding objects in a volumetric manner remains a significant challenge for 2D-native backbones. To address this challenge, we propose Pose-ICL, a tuning-free framework that leverages 3D-aware In-Context Learning (ICL) to directly adapt to new subjects through multiple paired image-pose references. Its core mechanism,Surface-Anchored Position Embedding (SAPE), equips the model with explicit 3D awareness by anchoring image tokens to the surface coordinates of a volumetric bounding box. Dedicated refinements ensure its seamless compatibility with existing DiT models. Extensive evaluations on both 3D assets and real-world subjects demonstrate that Pose-ICL significantly outperforms current methods in both pose accuracy and identity consistency.",
+    "authors": [
+      "Xuan Han",
+      "Yihao Zhao",
+      "Mingyu You"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.10902.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.10902",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Pose-ICL：基于三维感知的上下文学习实现姿态可控的主体定制",
+      "core_contribution": "提出Pose-ICL框架，通过三维感知的上下文学习实现高精度姿态控制的主体定制，解决了现有方法在姿态准确性和跨姿态外观一致性上的不足。",
+      "method": "1. 采用无需微调的框架，通过多组图像-姿态配对参考直接适配新主体；2. 核心机制为表面锚定位置嵌入（SAPE），通过将图像标记锚定到体积边界框的表面坐标，赋予模型显式的三维感知能力；3. 通过专门优化确保与现有DiT模型的无缝兼容。",
+      "findings": "在3D资产和真实世界主体上的大量实验表明，Pose-ICL在姿态准确性和身份一致性方面显著优于现有方法。"
+    }
+  },
+  {
+    "id": "2606.10894",
+    "title": "The 1st PortraitCraft Challenge: A CVPR 2026 Workshop Competition on Portrait Composition Understanding and Generation",
+    "abstract": "This paper presents an overview of the inaugural PortraitCraft Challenge, held as one of the official competitions at CVPR 2026. The challenge focuses on portrait composition understanding and generation, aiming to advance AI research in portrait aesthetics analysis and controllable image synthesis. Unlike existing datasets and tasks that primarily focus on global aesthetic scoring, PortraitCraft introduces a unified evaluation framework comprising two complementary tracks. Track 1 requires models to perform structured portrait composition understanding, and Track 2 requires models to generate portrait images from structured composition descriptions under explicit compositional constraints. To support the challenge, we constructed and publicly released a large-scale portrait composition dataset consisting of approximately 50,000 curated real portrait images, providing multi-level supervision. This report describes the challenge setup, evaluation protocols, dataset composition, and final results, along with an analysis of the technical characteristics of the submitted solutions. The PortraitCraft Challenge provides a standardized and reproducible platform for research on portrait composition understanding and generation, and is expected to foster further progress in the fields of portrait aesthetics and controllable image generation.",
+    "authors": [
+      "Zijie Lou",
+      "Youyun Tang",
+      "Xiaochao Qu",
+      "Haoxiang Li",
+      "Ting Liu",
+      "Luoqi Liu",
+      "Xun Zhu",
+      "Zheng Zhang",
+      "Xi Chen",
+      "Miao Li",
+      "Ji Wu",
+      "Dizhe Zhang",
+      "Xian Ge",
+      "Sujia Wang",
+      "Ruiyang Zhang",
+      "Jiaming Wang",
+      "Xianshun Wang",
+      "Lu Qi",
+      "Boao Kang",
+      "Wei Zhou",
+      "Jinghui Sun",
+      "Zhenyu Yan",
+      "Jiliang Zhao",
+      "Rui Yang",
+      "Yipo Huang",
+      "Boyuan Liu",
+      "Shanglin Li",
+      "Zifan Xie",
+      "Yichen Zhang",
+      "Anlan Wang",
+      "Wenfeng Lin",
+      "Mingyu Guo",
+      "Dong Li",
+      "Xinghao Wang",
+      "Yanting Li",
+      "Shanzhao Tong",
+      "Shuai He",
+      "Qiu Zhou",
+      "Yongqi Yang",
+      "Taoyang Mu",
+      "Dianqiao Lei",
+      "Anlong Ming",
+      "Huadong Ma"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.10894.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.10894",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "首届PortraitCraft挑战赛：CVPR 2026关于人像构图理解与生成的研讨会竞赛",
+      "core_contribution": "提出了一个统一的人像构图理解与生成评估框架，并构建了一个包含约5万张精选真实人像图像的大规模数据集，推动了人像美学分析和可控图像合成的研究。",
+      "method": "该挑战赛分为两个互补的赛道：赛道1要求模型进行结构化的人像构图理解，赛道2要求模型在明确的构图约束下根据结构化描述生成人像图像。为此，研究团队构建并公开了一个大规模人像构图数据集，提供多层次的监督信息。",
+      "findings": "PortraitCraft挑战赛为人像构图理解与生成研究提供了一个标准化且可复现的平台，有望促进人像美学和可控图像生成领域的进一步发展。"
+    }
+  },
+  {
+    "id": "2606.10892",
+    "title": "Improving Text-Instance Alignment Of Foreground Conditioned Out-Painting Via Customized Concept Embedding",
+    "abstract": "To showcase products, merchants often incur substantial costs creating high-quality display images. Foreground Conditioned Outpainting (FCO) meets this demand, allowing users to create desired backgrounds for foreground instances at a low cost by adjusting the text prompt. However, existing text-driven FCO methods exhibit critical flaws in their outputs, most notably the presence of artifacts, which refer to regions in the synthesized background that share the same semantics as the foreground instance. Such artifacts diminish the object's prominence and degrade image quality. We attribute the issue to the misalignment between the given instance and text-derived concept embeddings. To address this, we propose the Customized Concept Embedding Diffusion (CCE-Diffusion) framework. Its core is a CCE-Module to customize concept embeddings, bridging the gap between generic noun semantics and a specific visual instance. An Instance-Aware Loss guides the module's optimization, while a Semantic-Preserving Prompt Template prevents customized embeddings from distorting other words in the prompt. Both qualitative and quantitative evaluations demonstrate that CCE-Diffusion significantly reduces artifacts in the outputs. As a plug-and-play component, the CCE-Module can integrate with various FCO methods, enhancing their performance.",
+    "authors": [
+      "Yihao Zhao",
+      "Xuan Han",
+      "Bin He",
+      "Mingyu You"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.10892.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.10892",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过定制化概念嵌入改善前景条件外绘中的文本-实例对齐",
+      "core_contribution": "提出CCE-Diffusion框架，通过定制化概念嵌入解决前景条件外绘中的语义错位问题，显著减少输出中的伪影。",
+      "method": "1. 设计CCE-Module定制概念嵌入，将通用名词语义与特定视觉实例对齐；2. 使用实例感知损失指导模块优化；3. 通过语义保留提示模板防止定制嵌入扭曲提示中的其他词语。",
+      "findings": "定性与定量实验表明，CCE-Diffusion能有效减少输出伪影，且CCE-Module可作为即插即用组件提升多种FCO方法的性能。"
+    }
+  }
+]
