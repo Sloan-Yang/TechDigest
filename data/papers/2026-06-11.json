@@ -1,0 +1,144 @@
+[
+  {
+    "id": "2606.11837",
+    "title": "LASA: A Weak Supervision Method for Open-Vocabulary Scene Sketch Semantic Segmentation",
+    "abstract": "Open-vocabulary scene sketch semantic segmentation aims to assign dense semantic labels to sparse line drawings based on flexible category vocabularies specified at inference time, without relying on pixel-level annotations during training. Unlike natural images, sketches lack texture and color cues, making semantic understanding heavily dependent on stroke layout and spatial configuration, a challenge that renders single-layer vision-language features inherently unstable. Our key observation is that attention maps from different Vision Transformer layers encode complementary spatial cues: shallow layers capture global structural layouts, while deeper layers focus on local stroke intersections and object parts. This suggests that cross-layer aggregation provides a more robust structural prior than any individual layer alone. Leveraging this insight, we propose a structure-aware framework built upon \\textbf{L}ayer-wise \\textbf{A}ccumulated \\textbf{S}tructural \\textbf{A}ttention (\\textbf{LASA}), which aggregates multi-layer attention to guide hierarchical semantic alignment under weak supervision and refine predictions during inference. Experiments on FS-COCO, SFSD, and FrISS show that LASA improves mIoU by $+3.43$, $+8.01$, and $+15.74$ over the prior weakly supervised baselines, demonstrating consistent gains in both segmentation accuracy and spatial coherence. Our source code will be made publicly available.",
+    "authors": [
+      "Liwen Yi",
+      "Xianlin Zhang",
+      "Yue Zhang",
+      "Yue Ming",
+      "Xueming Li"
+    ],
+    "published": "2026-06-10",
+    "updated": "2026-06-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.11837.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.11837",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "LASA：一种面向开放词汇场景草图语义分割的弱监督方法",
+      "core_contribution": "提出基于层级累积结构注意力（LASA）的弱监督框架，通过聚合多层级视觉Transformer的注意力特征，显著提升开放词汇场景草图语义分割的准确性和空间一致性。",
+      "method": "1. 观察到不同Transformer层注意力图的互补性：浅层捕捉全局结构，深层聚焦局部笔画细节。2. 设计LASA模块，跨层聚合注意力以构建鲁棒的结构先验。3. 在弱监督下实现分层语义对齐，并在推理时通过注意力引导优化预测结果。",
+      "findings": "在FS-COCO、SFSD和FrISS数据集上，LASA相比基线方法mIoU分别提升+3.43、+8.01和+15.74，显著改善了分割精度和空间连贯性。"
+    }
+  },
+  {
+    "id": "2606.11751",
+    "title": "AnchorEdit: Maintaining Temporal Consistency in Multi-turn Image Editing via Causal Memory",
+    "abstract": "Multi-turn image editing is essential for iterative design, yet current models often struggle with identity drift and error accumulation over successive steps. While existing research leverages video priors for consistency, their reliance on bidirectional attention is fundamentally misaligned with the causal, sequential nature of interactive editing. In this paper, we propose AnchorEdit, the first autoregressive (AR) diffusion-based framework designed specifically for high-resolution, long-term multi-turn editing. AnchorEdit bridges the gap between video priors and causal inference through a three-stage training curriculum: identity-preserving sing-turn pretraining, causal AR forcing fine-tuning with a novel self-rollout strategy to mitigate exposure bias, and consistency distillation for efficient 4-step generation. During inference, we introduce a memory mechanism to anchor the initial subject identity and ensure stable extrapolation across extended editing trajectories. To evaluate performance, we provide a new high-resolution multi-turn editing benchmark designed to stress-test long-horizon stability. Extensive experiments demonstrate that AnchorEdit achieves state-of-the-art results, maintaining exceptional subject fidelity and instruction following even over 10+ interaction rounds.",
+    "authors": [
+      "Hang Xu",
+      "Xiaoxiao Ma",
+      "Guohui Zhang",
+      "Yu Hu",
+      "Siming Fu",
+      "Jie Huang",
+      "Lin Song",
+      "Haoyang Huang",
+      "Nan Duan",
+      "Feng Zhao"
+    ],
+    "published": "2026-06-10",
+    "updated": "2026-06-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.11751.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.11751",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "AnchorEdit：通过因果记忆保持多轮图像编辑中的时间一致性",
+      "core_contribution": "提出了首个基于自回归扩散模型的高分辨率长时序多轮编辑框架AnchorEdit，通过因果记忆机制解决身份漂移和错误累积问题。",
+      "method": "1. 采用三阶段训练策略：单轮身份保留预训练、因果自回归微调（含自展开策略缓解曝光偏差）、一致性蒸馏实现4步高效生成\n2. 推理时引入记忆机制锚定初始主体身份\n3. 构建高分辨率多轮编辑基准测试长时序稳定性",
+      "findings": "实验表明AnchorEdit在10+轮次编辑中保持最佳主体保真度和指令跟随能力，达到SOTA效果。"
+    }
+  },
+  {
+    "id": "2606.11289",
+    "title": "i1: A Simple and Fully Open Recipe for Strong Text-to-Image Models",
+    "abstract": "Diffusion models have consistently driven progress in text-to-image generation. However, it is challenging to attribute recent progress to specific modeling and data choices: state-of-the-art open-weight models provide limited ablations, and do not disclose their training data and full training details. The research community needs fully open (weights, data, and code) models as a foundation for further research; yet existing fully open models still fall significantly short of leading models in performance. In this project, we conduct a systematic investigation of the modeling and data design choices in text-to-image diffusion training and inference with 300+ controlled experiments totaling 700K+ TPU v6e hours. Our experiments highlight several empirical findings (e.g., equal weighting is a strong default for mixing curated datasets) and simple design decisions (e.g., larger text encoder adapters improve performance with minimal added parameters) for training strong models. Guided by these insights, we train i1, a 3B-parameter text-to-image diffusion model using only publicly available datasets. i1 is competitive with leading models on five representative benchmarks (GenEval, DPG, PRISM, CVTG-2K, and LongText), and outperforms the best existing fully open model by 29.5 absolute percentage points on average. We provide the i1 checkpoints, training and inference code, and the data processing pipeline. Together, our findings and the i1 recipe establish a practical foundation for future open research in text-to-image diffusion models. Our code is available at https://github.com/zlab-princeton/i1.",
+    "authors": [
+      "Boya Zeng",
+      "Tianze Luo",
+      "Shu Pu",
+      "Jucheng Shen",
+      "Taiming Lu",
+      "Gabriel Sarch",
+      "Zhuang Liu"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.11289.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.11289",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "i1：一种简单且完全开放的强大文本到图像模型配方",
+      "core_contribution": "通过系统研究文本到图像扩散模型的建模与数据设计选择，提出了一种完全开放的训练方法，并发布了性能优异的i1模型。",
+      "method": "研究团队通过300多项对照实验（总计超过70万TPU v6e小时），分析了建模和数据设计的关键选择。实验发现了一些简单但有效的设计决策，例如在混合精选数据集时使用等权重分配，以及通过更大的文本编码器适配器提升性能。基于这些发现，团队训练了一个3B参数的文本到图像扩散模型i1，仅使用公开可用的数据集。",
+      "findings": "i1在五个代表性基准测试（GenEval、DPG、PRISM、CVTG-2K和LongText）上与领先模型表现相当，并且比现有最佳完全开放模型的平均性能高出29.5个百分点。研究团队还公开了i1的检查点、训练和推理代码以及数据处理流程。"
+    }
+  },
+  {
+    "id": "2606.10653",
+    "title": "STEDiff: Strengthening Text Embedding for Text-to-Image Alignment in Diffusion Model",
+    "abstract": "Although pretrained text-to-image (T2I) generation models can produce high-quality images, they often fail to faithfully reflect the semantic intent of complex prompts due to stochastic noise and inherent model limitations. This issue frequently manifests as the model overlooking specific objects or failing to correctly bind attributes to their corresponding entities, a challenge referred to as semantic alignment. Unlike existing approaches that rely on computationally expensive fine-tuning or labor-intensive layout priors, we propose STEDiff, a training-free method designed to enhance semantic representations directly within the text-embedding space. Specifically, we introduce a method that primarily leverages the [EOT] token to strengthen the relevant semantics of sub-sentences and then replaces the corresponding tokens in the original prompt. Furthermore, a novel semantic enhancement loss is incorporated to enforce spatial constraints, ensuring that the semantics of each entity are precisely mapped to their respective image regions. Extensive quantitative and qualitative evaluations on the T2I-CompBench demonstrate that our method notably improves semantic consistency and generation integrity in complex scenarios.",
+    "authors": [
+      "Hailan Zhang",
+      "Haipeng Liu",
+      "Bo Fu",
+      "Yang Wang"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.10653.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.10653",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "STEDiff：增强扩散模型中文本到图像对齐的文本嵌入",
+      "core_contribution": "提出了一种无需训练的STEDiff方法，通过增强文本嵌入空间的语义表示，显著提升了复杂提示下的语义对齐和生成完整性。",
+      "method": "该方法主要利用[EOT]标记强化子句的相关语义，并替换原始提示中的对应标记；同时引入一种新颖的语义增强损失函数，通过空间约束确保每个实体的语义精确映射到图像区域。",
+      "findings": "在T2I-CompBench上的大量定量和定性评估表明，该方法在复杂场景中显著提高了语义一致性和生成完整性。"
+    }
+  },
+  {
+    "id": "2606.12412",
+    "title": "Reroute, Don't Remove: Recoverable Visual Token Routing for Vision-Language Models",
+    "abstract": "Vision-language models (VLMs) project images into hundreds to thousands of visual tokens, making decoder inference expensive in both attention computation and KV-cache memory. Existing visual-token reduction methods largely follow a rank-and-remove paradigm: they score visual tokens, keep a compact subset, and permanently discard the rest. We show that this irreversible action is fragile because visual-token importance changes across decoder depth; tokens ranked low at one stage may become relevant in later layers, especially for grounding-sensitive queries. We propose Reroute, a training-free plug-in that replaces removal with recoverable routing. At each routing stage, selected vision tokens pass through decoder blocks, while deferred tokens bypass the stage and re-enter the candidate pool at the next routing decision. Reroute reuses existing attention-score ranking rules and stage-wise schedules, preserving the theoretical TFLOPs and KV-cache budget class of the pruning method it augments. Across FastV, PDrop, and Nüwa variants on LLaVA-1.5 and Qwen backbones, reroute improves grounding under aggressive token reduction while maintaining general VQA performance. These results suggest that VLM token reduction should not be viewed only as irreversible pruning, but also as recoverable routing. The code can be found here: https://github.com/elmma/mllm-reroute/",
+    "authors": [
+      "Cheng-Yu Yang",
+      "Shao-Yuan Lo",
+      "Yu-Lun Liu"
+    ],
+    "published": "2026-06-10",
+    "updated": "2026-06-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.12412.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.12412",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "重路由而非移除：视觉语言模型中可恢复的视觉令牌路由方法",
+      "core_contribution": "提出了一种名为Reroute的训练免费插件，通过可恢复的路由机制替代传统的永久性令牌移除方法，从而在视觉语言模型中实现更鲁棒的令牌压缩。",
+      "method": "Reroute方法在每个路由阶段，将选中的视觉令牌通过解码器块处理，而延迟的令牌则绕过当前阶段并在下一次路由决策时重新进入候选池。该方法复用了现有的注意力分数排名规则和阶段调度策略，保持了理论上的计算和内存预算不变。",
+      "findings": "在LLaVA-1.5和Qwen等模型上的实验表明，Reroute在激进令牌压缩的情况下显著提升了模型的定位能力，同时保持了通用视觉问答（VQA）性能。这表明视觉语言模型的令牌压缩不应仅被视为不可逆的剪枝，而应作为可恢复的路由过程。"
+    }
+  }
+]
