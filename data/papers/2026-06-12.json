@@ -1,0 +1,143 @@
+[
+  {
+    "id": "2606.13382",
+    "title": "SmartFont: Dynamic Condition Allocation for Few-Shot Font Generation",
+    "abstract": "Few-shot font generation simultaneously requires global structural completeness and fine-grained local style fidelity. Existing methods usually either rely on global content-style modeling, which is robust but imperfectly disentangled, or emphasize component/local modeling, which captures fine details but relies heavily on local priors and reference coverage. We argue that the key challenge is not merely to learn purer conditions, but to organize complementary yet biased global and local conditions through multi-level allocation during generation. To this end, we propose SmartFont, a diffusion-based few-shot font generation framework that combines global content-style generation with weakly supervised local corrective experts. The local branch performs semantic-spatial allocation by learning expert-wise local concepts and semantically meaningful spatial maps under weak component supervision, enabling fine-grained correction without requiring explicit component-conditioned inference. On top of this, a denoising-state condition allocation module adaptively weights global content, global style, and local corrective feature across timesteps and injection blocks. Extensive experiments show that SmartFont achieves better global-local balance, improves glyph quality and local detail fidelity.",
+    "authors": [
+      "Zian Yang",
+      "Zixin Wang"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13382.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13382",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "SmartFont：少样本字体生成中的动态条件分配",
+      "core_contribution": "提出SmartFont框架，通过动态分配全局内容-风格生成与局部校正专家的多级条件，实现少样本字体生成中全局结构与局部细节的平衡。",
+      "method": "1. 基于扩散模型框架，结合全局内容-风格生成与弱监督局部校正分支；2. 局部分支通过弱组件监督学习语义-空间映射，实现细粒度校正；3. 提出去噪状态条件分配模块，动态调整全局内容、全局风格和局部特征的时序权重。",
+      "findings": "实验表明SmartFont在全局-局部平衡性、字形质量和局部细节保真度上优于现有方法，无需显式组件条件推理即可实现精细校正。"
+    }
+  },
+  {
+    "id": "2606.13679",
+    "title": "InterleaveThinker: Reinforcing Agentic Interleaved Generation",
+    "abstract": "Recent image generators have demonstrated impressive photorealism and instruction-following capabilities in single-image generation and editing. However, constrained by their architectures, they cannot achieve interleaved generation (text-image sequence), which has crucial applications in visual narratives, guidance, and embodied manipulation. Even the latest open-source Unified Multimodal Models (UMMs) exhibit limited performance in this regard. In this paper, we introduce InterleaveThinker, the first multi-agent pipeline designed to endow any existing image generator with interleaved generation capabilities. Specifically, we employ a planner agent to organize the image-text input sequence, instructing the image generator on the required execution at each step. Subsequently, we introduce a critic agent to evaluate the generator's outputs, identify samples that deviate from the planned instructions, and refine the instructions for regeneration. To implement this pipeline, we construct the Interleave-Planner-SFT-80k and Interleave-Critic-SFT-112k to perform a format cold-start. Then we develop Interleave-Critic-RL-13k to reinforce the step-wise instruction correction capability within a generation trajectory using GRPO. Since a single interleaved generation trajectory may involve over 25 generator calls, optimizing the entire trajectory is computationally impractical. Therefore, we propose accuracy reward and step-wise reward, allowing single-step RL to effectively guide the entire generation trajectory. The results show that InterleaveThinker improves performance across various image generators. On interleaved generation benchmarks, it achieves performance comparable to Nano Banana and GPT-5. Surprisingly, it also significantly enhances the base model on reasoning-based benchmarks; for example, on 4-step FLUX.2-klein, we observe substantial gains on WISE and RISE.",
+    "authors": [
+      "Dian Zheng",
+      "Harry Lee",
+      "Manyuan Zhang",
+      "Kaituo Feng",
+      "Zoey Guo",
+      "Ray Zhang",
+      "Hongsheng Li"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13679.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13679",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "InterleaveThinker：强化代理交错生成",
+      "core_contribution": "提出首个多智能体管道InterleaveThinker，赋予现有图像生成器交错生成（文本-图像序列）能力，并通过强化学习优化生成轨迹。",
+      "method": "1. 使用规划智能体组织图像-文本输入序列，指导图像生成器逐步执行；2. 引入批评智能体评估输出，识别偏离计划的样本并优化指令；3. 构建专用数据集（Interleave-Planner-SFT-80k和Interleave-Critic-SFT-112k）进行格式冷启动；4. 提出基于GRPO的逐步奖励机制（Interleave-Critic-RL-13k），通过单步强化学习优化整个生成轨迹。",
+      "findings": "1. InterleaveThinker显著提升多种图像生成器的交错生成性能，在基准测试中达到与Nano Banana和GPT-5相当的水平；2. 意外发现该方法能大幅提升基础模型在推理任务上的表现（如4步FLUX.2-klein任务中WISE和RISE指标显著提升）。"
+    }
+  },
+  {
+    "id": "2606.13676",
+    "title": "Modality Forcing for Scalable Spatial Generation",
+    "abstract": "Text-to-image (T2I) models contain rich spatial priors. Synthesizing photorealistic, cluttered scenes requires an understanding of geometry, including perspective and relative scale. Prior works adapt T2I models to leverage this prior for depth prediction, but they require dense depth data and involve complex recipes. We propose Modality Forcing, a simple, scalable post-training recipe for joint image-depth generation using a single DiT trained on sparse depth data. Modality Forcing enables conditional and joint generation of image and depth in any permutation by assigning separate noise levels per modality. Per-modality decoders let us train on sparse, real-world depth and achieve strong, generalizable depth prediction. We further show that Modality Forcing inherits the scalability of T2I pre-training: by training a set of T2I models from scratch (370M to 3.3B parameters), we find that larger models trained on more image data produce more accurate depth. Our strongest model is competitive with state-of-the-art monocular depth estimators and reduces AbsRel by 57% relative to existing joint image-depth generative models. These results provide strong evidence that image generation is a scalable pre-training objective for spatial perception. https://modality-forcing.github.io/",
+    "authors": [
+      "Bardienus Pieter Duisterhof",
+      "Deva Ramanan",
+      "Jeffrey Ichnowski",
+      "Justin Johnson",
+      "Keunhong Park"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13676.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13676",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "模态强制：可扩展的空间生成方法",
+      "core_contribution": "提出了一种简单、可扩展的训练后方法Modality Forcing，通过单模态DiT模型实现图像和深度的联合生成，显著提升了深度预测的准确性。",
+      "method": "Modality Forcing通过在训练时为每种模态分配独立的噪声水平，实现了图像和深度的条件联合生成。该方法利用稀疏深度数据进行训练，并通过模态特定的解码器实现泛化性强的深度预测。",
+      "findings": "实验表明，Modality Forcing在深度预测上优于现有联合生成模型，AbsRel误差降低了57%。更大的模型和更多的训练数据进一步提升了深度预测的准确性，证明了图像生成作为空间感知预训练目标的可扩展性。"
+    }
+  },
+  {
+    "id": "2606.12575",
+    "title": "High-Fidelity Two-Step Image Generation via Teacher-Aligned End-to-End Distillation",
+    "abstract": "Few-step diffusion distillation has become increasingly mature for 4-8-step generation, yet pushing further to 2 steps remains challenging. In this work, we introduce Z-Image Turbo++, a high-quality 2-step image generation model distilled from the 8-step Z-Image Turbo teacher. Our method addresses the central bottlenecks of increased task difficulty and limited model capacity in 2-step generation through three simple but effective design choices tailored to this regime. First, we propose Distribution-Aligned Adversarial Learning, which uses teacher-generated images rather than external real images as real samples for GAN training, providing a more attainable and informative adversarial target. Second, we adopt Step-Decoupled Parameterization, assigning independent model parameters to the two denoising steps to better match their distinct capacity demands. Third, we perform End-to-End Training with Iterative Regularization, allowing the first step to receive gradients from final image quality while preserving a meaningful intermediate generation through an explicit step-1 loss. Together, these designs substantially narrow the quality gap between 2-step and 8-step generation in both qualitative and quantitative evaluations, highlighting the potential of carefully tailored distillation strategies for improving the quality-efficiency trade-off in few-step generation.",
+    "authors": [
+      "Dongyang Liu",
+      "Ruoyi Du",
+      "David Liu",
+      "Dengyang Jiang",
+      "Liangchen Li",
+      "Qilong Wu",
+      "Zhen Li",
+      "Steven C. H. Hoi",
+      "Hongsheng Li",
+      "Peng Gao"
+    ],
+    "published": "2026-06-10",
+    "updated": "2026-06-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.12575.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.12575",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过教师对齐端到端蒸馏实现高保真两步图像生成",
+      "core_contribution": "提出Z-Image Turbo++模型，通过三种针对性设计显著提升两步图像生成质量，缩小与八步生成的差距。",
+      "method": "1. 提出分布对齐对抗学习，使用教师生成图像作为GAN训练的真实样本；2. 采用步解耦参数化，为两个去噪步骤分配独立参数；3. 实施端到端训练与迭代正则化，使第一步梯度影响最终图像质量。",
+      "findings": "实验表明，该方法在定性和定量评估中均大幅缩小两步与八步生成的差距，验证了定制蒸馏策略对提升少步生成质量-效率权衡的潜力。"
+    }
+  },
+  {
+    "id": "2606.13558",
+    "title": "Edit the Bits, Diff the Codes: Bitwise Residual Editing for Visual Autoregressive Models",
+    "abstract": "Text-guided image editing with visual autoregressive (VAR) generators requires controlling both what the model samples and where the sampled change is written back into the image code. Existing VAR editors mainly operate on token streams, features, or flat next-token logits, leaving two native structures of bitwise-residual VAR models underused: the per-bit Bernoulli prediction head and the additive multi-scale residual code field from which the image is assembled. We propose BitResEdit, a training-free editor for bitwise-residual VAR generators such as Infinity. BitEdit performs source-negative guidance by tilting the post-CFG per-bit log-odds along a source--target contrast computed on a shared edited prefix, then projects each update into a closed-form Bernoulli-KL trust region around the clean CFG sampler. ResEdit converts the sampled bits into per-scale continuous-code residuals, gates them with a localization mask, and re-injects them through the generator's native sum-of-scales. Together they couple decision-time bit guidance with combination-time code composition, so masked-out latent features are preserved exactly by code arithmetic while localized, scale-aware edits are applied inside the target region. On PIE-Bench with Infinity-2B, BitResEdit attains the strongest text alignment among same-backbone VAR editors, improving CLIP on the edited region by +1.07 over the strongest prior editor while keeping background preservation competitive with it. Ablations show BitEdit and ResEdit play complementary roles in target alignment and background preservation.",
+    "authors": [
+      "Shengqiang Zhang",
+      "Ruotong Liao",
+      "Volker Tresp",
+      "Barbara Plank",
+      "Hinrich Schütze"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13558.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13558",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "编辑比特，差分代码：视觉自回归模型的比特级残差编辑",
+      "core_contribution": "提出了BitResEdit，一种无需训练的比特级残差视觉自回归模型编辑器，通过结合比特级引导和代码残差编辑，显著提升了文本对齐效果。",
+      "method": "BitResEdit利用视觉自回归模型的两个原生结构：每比特伯努利预测头和加性多尺度残差代码场。它通过源-目标对比倾斜后CFG的每比特对数几率进行源负引导，并将每个更新投影到干净CFG采样器的封闭形式伯努利-KL信任区域内。ResEdit将采样的比特转换为每尺度连续代码残差，用定位掩码门控它们，并通过生成器的原生多尺度求和重新注入。",
+      "findings": "在PIE-Bench上使用Infinity-2B模型，BitResEdit在同骨干VAR编辑器中取得了最强的文本对齐效果，编辑区域的CLIP分数比之前最强的编辑器提高了+1.07，同时保持了竞争力的背景保留效果。消融研究表明BitEdit和ResEdit在目标对齐和背景保留中发挥了互补作用。"
+    }
+  }
+]
