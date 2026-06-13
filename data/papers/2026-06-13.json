@@ -1,0 +1,160 @@
+[
+  {
+    "id": "2606.13368",
+    "title": "IterCAD: An Iterative Multimodal Agent for Visually-Grounded CAD Generation and Editing",
+    "abstract": "Computer-Aided Design is pivotal in modern manufacturing, yet existing automated methods predominantly rely on open-loop, one-shot generation, creating a mismatch with iterative real-world practices. In this paper, we present IterCAD, a unified multimodal agent framework for closed-loop, interactive CAD generation and editing. We formulate the task as a multi-turn interaction between a multimodal agent and an executable CAD sandbox, covering three tasks: Drawing-to-Code, Text-to-Code, and Interactive Editing. To support this, we develop a data synthesis pipeline incorporating advanced industrial manufacturing features to generate standard-compliant multi-view engineering drawings, complex code-editing tasks, and high-fidelity interaction trajectories. We optimize the agent via progressive SFT followed by geometry-aware reinforcement learning with viable-prefix masking to enhance code executability and geometric fidelity. Finally, we introduce the IterCAD-Bench evaluation suite and propose the Chamfer Distance Tolerance-Recall (CD-TR) curve alongside its AUC-TR metric, establishing a survivor-bias-free standard that unifies code validity and geometric precision. Extensive experiments demonstrate that IterCAD achieves highly competitive performance across multiple benchmarks, significantly outperforming existing approaches in both code executability and geometric precision, while exhibiting superior capabilities in closed-loop iterative refinement.",
+    "authors": [
+      "Tao Hu",
+      "Jiaxin Ai",
+      "Licheng Wen",
+      "Xueheng Li",
+      "Shu Zou",
+      "Siqi Li",
+      "Nianchen Deng",
+      "Xinyu Cai",
+      "Hongbin Zhou",
+      "Pinlong Cai",
+      "Daocheng Fu",
+      "Yu Yang",
+      "Hairong Zhang",
+      "Botian Shi",
+      "Xuemeng Yang"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13368.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13368",
+    "primary_category": "cs.AI",
+    "score": 75,
+    "summary": {
+      "title_zh": "IterCAD：一种用于视觉基础CAD生成与编辑的迭代式多模态智能体",
+      "core_contribution": "提出了IterCAD，一个统一的多模态智能体框架，用于闭环交互式CAD生成与编辑，显著提升了代码可执行性和几何精度。",
+      "method": "1. 将任务建模为多模态智能体与可执行CAD沙盒的多轮交互，涵盖绘图到代码、文本到代码和交互式编辑三项任务。\n2. 开发了数据合成流程，生成符合标准的多视图工程图纸、复杂代码编辑任务和高保真交互轨迹。\n3. 通过渐进式监督微调（SFT）和几何感知强化学习（结合可行前缀掩码）优化智能体。\n4. 引入CD-TR曲线和AUC-TR指标，建立无幸存者偏差的评估标准。",
+      "findings": "实验表明，IterCAD在多个基准测试中表现优异，代码可执行性和几何精度显著优于现有方法，并在闭环迭代优化中展现出卓越能力。"
+    }
+  },
+  {
+    "id": "2606.13303",
+    "title": "DuET: Dual Expert Trajectories for Diffusion Image Editing",
+    "abstract": "Recent diffusion editors perform diverse instruction-based edits while conditioning on the source image at every denoising step. Yet persistent source-image conditioning can limit how fully an edit is executed and how natural the result appears, especially when the target scene diverges substantially from the input. We introduce DuET (Dual Expert Trajectories), a training-free inference method that temporarily relaxes source-image conditioning by transitioning through a text-to-image phase before returning to edit mode, allowing the denoising trajectory to move toward the target distribution while retaining the structural benefits of image-conditioned editing. Without modifying model weights or increasing sampling cost, DuET consistently improves instruction relevance, semantic fidelity, and perceptual quality across diverse models and benchmarks. In some cases, these gains come with a modest reduction in source-image preservation, revealing a predictable trade-off between source preservation and edit fidelity.",
+    "authors": [
+      "Lidia Troeshestova",
+      "Alexander Ustyuzhanin",
+      "Sergey Kastryulin"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13303.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13303",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "DuET：基于双专家轨迹的扩散模型图像编辑",
+      "core_contribution": "提出了一种无需训练的推理方法DuET，通过暂时放松源图像条件约束，在编辑过程中引入文本到图像阶段，显著提升了编辑指令相关性、语义保真度和感知质量。",
+      "method": "DuET方法在去噪过程中动态切换两种模式：1）先通过文本到图像阶段脱离源图像约束，使轨迹向目标分布迁移；2）再返回图像条件编辑模式保留结构优势。整个过程不修改模型权重或增加计算成本。",
+      "findings": "实验表明DuET在不同模型和基准测试中均能提升编辑效果，但会轻微降低源图像保留度，揭示了编辑保真度与源图像保留之间的可预测权衡关系。"
+    }
+  },
+  {
+    "id": "2606.13289",
+    "title": "HYDRA-X: Native Unified Multimodal Models with Holistic Visual Tokenizers",
+    "abstract": "Holistic visual tokenizers are fundamental to unified multimodal models (UMMs) as they map diverse visual inputs into a unified representation space. In this paper, we present HYDRA-X, the first UMM that unifies image and video tokenization within a single Vision Transformer (ViT). Our design is driven by two core challenges: efficiently injecting spatiotemporal reconstruction capability into a native ViT, and embedding image- and video-level semantic awareness into the latent space. To address the first, comprehensive ablations reveal two key findings: (1) frame-level causal temporal attention suffices for visual reconstruction, whereas full spatiotemporal attention degrades it; and (2) hierarchical temporal compression substantially outperforms single-step alternatives. To tackle the second, we propose a lightweight decompressor that upsamples temporally compressed features under joint image-video teacher supervision, thereby enforcing complementary semantic structures within the compact latent space. Building on this holistic tokenizer, we further propose a principled improvement of the editing pipeline: source-target interaction should occur at the latent level inside the tokenizer rather than at the semantic level inside the LLM, substantially improving editing consistency and accelerating convergence. Instantiated at the 7B dense model, HYDRA-X achieves strong performance across image and video understanding and generation tasks, paving the way for future unified-tokenizer UMMs.",
+    "authors": [
+      "Guozhen Zhang",
+      "Xuerui Qiu",
+      "Yutao Cui",
+      "Tianhui Song",
+      "Changlin Li",
+      "Junzhe Li",
+      "Tao Huang",
+      "Xiao Zhang",
+      "Yang Li",
+      "Jianbing Wu",
+      "Miles Yang",
+      "Zhao Zhong",
+      "Liefeng Bo",
+      "Limin Wang"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13289.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13289",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "HYDRA-X：基于整体视觉分词器的原生统一多模态模型",
+      "core_contribution": "提出了首个在单一视觉Transformer（ViT）中统一图像与视频分词的多模态模型HYDRA-X，并通过轻量化解码器和改进的编辑流程显著提升语义一致性与收敛速度。",
+      "method": "1. 通过帧级因果时序注意力注入时空重建能力，避免全时空注意力导致的性能下降；2. 采用分层时序压缩策略提升效率；3. 设计轻量化解码器在图像-视频联合监督下上采样特征，增强潜在空间的互补语义结构；4. 将编辑流程的交互从LLM语义层转移到分词器潜在层。",
+      "findings": "1. 帧级因果时序注意力足以实现视觉重建，全时空注意力反而会降低性能；2. 分层时序压缩显著优于单步压缩方法；3. 潜在层编辑策略提升一致性并加速收敛；4. 7B密集模型在图像/视频理解与生成任务中表现优异。"
+    }
+  },
+  {
+    "id": "2606.13041",
+    "title": "SeamEdit: A Black-Box VLM-Agnostic Pipeline for Large-Image Semantic Editing",
+    "abstract": "Semantic region editing for large images must satisfy two requirements at the same time: high generative quality and natural integration with surrounding content. Some related methods rely on white-box models and leave the strong generation capability of closed-source models underexplored. Directly applying closed-source models to tiled editing, however, introduces several failure modes: semantic deformation, canvas-level alignment drift, and visible seam artifacts. This paper presents SeamEdit, a training-free and model-agnostic pipeline that treats any VLM with inpainting capability as a black-box oracle. SeamEdit mitigates these issues through a five-stage post-hoc pipeline: overlay-based tile decomposition, black-box VLM inpainting, geometric and color-consistency correction, seam-risk-based multi-candidate ranking, and dynamic-programming curved seam fusion. The pipeline reduces seam visibility and supports semantic modification of arbitrary tile regions.",
+    "authors": [
+      "Xiangyu Lyu",
+      "Dan Lei"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV",
+      "cs.GR",
+      "cs.MM"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13041.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13041",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "SeamEdit：一种与黑盒视觉语言模型无关的大图像语义编辑流程",
+      "core_contribution": "提出了一种无需训练、与模型无关的流程SeamEdit，能够利用任何具备修复能力的视觉语言模型进行大图像语义编辑，同时解决拼接编辑中的语义变形、画布对齐漂移和可见接缝问题。",
+      "method": "SeamEdit通过五阶段后处理流程实现：基于覆盖的瓦片分解、黑盒视觉语言模型修复、几何和颜色一致性校正、基于接缝风险的多候选排序以及动态规划曲线接缝融合。该方法不依赖白盒模型，将任何具备修复能力的视觉语言模型视为黑盒预言机。",
+      "findings": "实验表明，SeamEdit能够有效减少接缝可见性，支持对任意瓦片区域的语义修改，并在生成质量和与周围内容的自然融合方面表现优异。"
+    }
+  },
+  {
+    "id": "2606.12263",
+    "title": "VOID: Defeating Unauthorized Mimicry in Latent Diffusion Models",
+    "abstract": "While Latent Diffusion Models (LDMs) have revolutionized visual synthesis, they are increasingly exploited for unauthorized mimicry of individuals. Existing defenses inject deceptive perturbations to steer the generated images toward irrelevant targets. However, this approach hinges on an ungrounded assumption: subtle perturbations can maintain their deceptive efficacy throughout an LDM's extensive generation process. In reality, the model's innate restoration mechanism will remove such perturbations and cause individual identities to re-emerge in the images generated. We propose VOID, a defense framework that overcomes this conundrum by manipulating an LDM's intrinsic stochasticity. VOID perturbs the diffusion pipeline in two novel ways: 1) amplifying the latent encoding errors to shatter an image's semantic structure, and 2) counteracting the target guidance signals to suppress the model's restoration capabilities. This results in a semantic corruption that thwarts any unauthorized mimicry. Notably, the security gain does not come at the price of visual utility, as VOID simultaneously manages to confine perturbations to human-imperceptible regions of protected images. Our comprehensive evaluation of 24 state-of-the-art defenses against 10 mimicry attacks on 5 datasets demonstrates VOID's unprecedented protection power: it increases the average Frechet Inception Distance (FID) from 113 to 365, a 223% improvement over the strongest defense to date.",
+    "authors": [
+      "Chunlin Qiu",
+      "Ang Li",
+      "Tianxiao Huang",
+      "Ruilin Gan",
+      "Yunjie Ge",
+      "Shenyi Zhang",
+      "Huayi Duan",
+      "Lingchen Zhao",
+      "Chao Shen",
+      "Qian Wang"
+    ],
+    "published": "2026-06-10",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.12263.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.12263",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "VOID：防御潜在扩散模型中的未经授权模仿行为",
+      "core_contribution": "提出VOID防御框架，通过操纵潜在扩散模型的内在随机性，有效阻止未经授权的个体模仿，同时保持图像的视觉实用性。",
+      "method": "VOID通过两种新颖方式扰动扩散过程：1）放大潜在编码错误以破坏图像的语义结构；2）抵消目标引导信号以抑制模型的恢复能力。这种方法导致语义损坏，从而阻止任何未经授权的模仿。",
+      "findings": "在5个数据集上对24种最先进防御方法对抗10种模仿攻击的全面评估表明，VOID将平均Frechet Inception Distance（FID）从113提高到365，比现有最强防御方法提高了223%，展现出前所未有的保护能力。"
+    }
+  }
+]
