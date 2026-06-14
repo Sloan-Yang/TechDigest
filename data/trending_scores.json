@@ -315,5 +315,12 @@
   "iptv-org_iptv": 20,
   "LMCache_LMCache": 80,
   "andrewyng_aisuite": 85,
-  "sponsors_swc-project": 60
+  "sponsors_swc-project": 60,
+  "sponsors_pytest-dev": 30,
+  "meshery_meshery": 30,
+  "cypress-io_cypress": 50,
+  "sponsors_GorvGoyl": 60,
+  "Introduction-to-Autonomous-Robots_Introduction-to-Autonomous-Robots": 30,
+  "Free-TV_IPTV": 20,
+  "puppeteer_puppeteer": 70
 }

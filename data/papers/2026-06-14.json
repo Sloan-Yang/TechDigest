@@ -1,0 +1,142 @@
+[
+  {
+    "id": "2606.12213",
+    "title": "SHERPA: Seam-aware Harmonized ERP Adaptation for Open-Domain 360$^\\circ$ Panorama Generation",
+    "abstract": "Panoramic imagery is increasingly used in world-generation, games, and simulation, where users may need not only photorealistic scenes but also stylized and non-photorealistic environments. Large-scale text-to-image diffusion and flow models provide broad style and semantic priors for this goal, but planar image training misaligns them with the wrap-around topology and polar regions of $360^\\circ$ panoramas represented in equirectangular projection (ERP). We present SHERPA, a lightweight adaptation framework that combines frequency-selective Circular RoPE, Circular Latent Encoding/Decoding, image-side FFN adapters, and a Dual-Path Training Scheme. Circular RoPE replaces only the seam-sensitive high-frequency horizontal RoPE band with integer-periodic harmonics while preserving the pretrained lower-frequency spectrum. The Paired Panorama Path supervises geometry, while the Unpaired Style Path uses self-supervised yaw consistency for target-free stylized prompts. As a result, SHERPA generates $360^\\circ$ panoramas across both photorealistic panorama domains and open-domain stylized prompts.",
+    "authors": [
+      "Jungwoon Kang",
+      "Jaehun Kim",
+      "Yiwon Yu",
+      "Hyungyum Jang",
+      "Sanghoon Lee",
+      "Jongyoo Kim"
+    ],
+    "published": "2026-06-10",
+    "updated": "2026-06-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.12213.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.12213",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "SHERPA：面向开放域360°全景生成的无缝感知协调ERP适配方法",
+      "core_contribution": "提出SHERPA框架，通过轻量级适配技术解决文本到图像扩散模型在360°全景生成中的拓扑错位问题，支持开放域风格化提示与真实感场景生成。",
+      "method": "1. 采用频率选择性Circular RoPE替换高频率水平带，保留预训练低频频谱；2. 结合环形潜在编码/解码与图像侧FFN适配器；3. 设计双路径训练方案：配对全景路径监督几何结构，非配对风格路径利用自监督偏航一致性处理风格化提示。",
+      "findings": "SHERPA能同时生成真实感全景和开放域风格化全景，有效解决ERP投影中的环绕拓扑与极地区域错位问题，且无需目标数据即可适配多样化风格。"
+    }
+  },
+  {
+    "id": "2606.10953",
+    "title": "Architect-Ant: Editable Automatic Furnishing of Architectural Floor Plans",
+    "abstract": "Furnished floor plans are fundamental to real estate visualization, interior design, and architectural workflows. However, progress in automatic furniture arrangement has been limited by the lack of real, professionally designed floor-plan datasets with object-level furniture annotations. To address this gap, we introduce AntPlan-270, a curated dataset of 270 architectural floor plans with per-room furniture bounding box annotations across ten residential room categories. Building on this dataset, we present Architect-Ant, an editable automatic furnishing framework powered by a fine-tuned vision-language model. Furniture layouts are represented using a compact, coordinate-based domain-specific language (DSL) that encodes object categories and placements relative to the room geometry. To improve spatial reasoning, we generate procedural reasoning traces that capture architectural constraints such as wall alignment, door and window clearance, circulation, fixture compatibility, and room-specific furniture inventories, and use them to supervise fine-tuning of the model. We then apply preference optimization over candidate object placements to further refine layout quality. The generated DSL can be rasterized into semantic masks and used to condition a Flux-based LoRA renderer, producing realistic blueprint-style furnished floor-plan images while preserving the editable symbolic layout. Experiments on layout furnishing show that Architect-Ant produces geometrically valid and functionally plausible layouts, and suggest a scalable path for furnishing larger structure-only floor-plan datasets.",
+    "authors": [
+      "Fedor Rodionov",
+      "Aleksandar Cvejic",
+      "Michael Birsak",
+      "John Femiani",
+      "Peter Wonka"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.10953.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.10953",
+    "primary_category": "cs.AI",
+    "score": 75,
+    "summary": {
+      "title_zh": "Architect-Ant：可编辑的建筑平面图自动家具布置系统",
+      "core_contribution": "提出了AntPlan-270数据集和Architect-Ant框架，填补了缺乏真实专业设计平面图数据集的空白，并实现了可编辑的自动家具布置。",
+      "method": "1. 使用基于坐标的领域特定语言（DSL）表示家具布局，编码对象类别和相对于房间几何形状的放置。\n2. 生成程序化推理轨迹以捕捉建筑约束，如墙壁对齐、门窗间距、流通、固定装置兼容性和房间特定家具清单，并用于监督模型的微调。\n3. 对候选对象放置进行偏好优化以进一步提高布局质量。\n4. 生成的DSL可栅格化为语义掩码，并用于基于Flux的LoRA渲染器，生成逼真的蓝图风格家具布置图像。",
+      "findings": "实验表明，Architect-Ant能够生成几何有效且功能合理的家具布局，为更大规模的无家具平面图数据集提供了可扩展的解决方案。"
+    }
+  },
+  {
+    "id": "2606.10617",
+    "title": "SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models",
+    "abstract": "Low-Rank Adaptation (LoRA) merging can efficiently combine diverse generative capabilities from multiple trained LoRAs for a diffusion model. However, existing LoRA merging techniques often suffer from severe parameter interference, causing destructive collisions in the shared parameter space. To address this, we propose Subspace Signal Routing (SSR), which resolves interference by routing internal signals instead of performing parameter-space merge. Specifically, SSR first constructs a unified subspace by concatenating candidate LoRAs along the rank dimension. Next, SSR employs an inverse correlation matrix to decorrelate mixed signals within this space. Finally, a directional guide matrix steers these purified signals into their respective task-specific subspaces. We provide a rigorous theoretical analysis proving that SSR aligns with the Ordinary Least Squares (OLS) solution, thereby ensuring mathematical optimality. We utilize the additivity of sufficient statistics to design a streaming algorithm. This enables on-the-fly updates that significantly reduce memory overhead and computation time. Extensive experiments validate that SSR significantly outperforms state-of-the-art methods while maintaining comparable efficiency. Code is available at https://github.com/nagara214/SSR-Merge.",
+    "authors": [
+      "Zhengxuan Wei",
+      "Yi Dong",
+      "Zonghui Li",
+      "Xianhui Lin",
+      "Xing Liu",
+      "Hong Gu",
+      "Shaofeng Zhang",
+      "Wenbin Li",
+      "Qi Fan"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.10617.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.10617",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "SSR-Merge：扩散模型中基于子空间信号路由的无训练LoRA合并方法",
+      "core_contribution": "提出子空间信号路由（SSR）方法，通过信号路由而非参数空间合并解决LoRA合并中的参数干扰问题，实现高效且无训练的多样化生成能力整合。",
+      "method": "1. 通过沿秩维度拼接候选LoRA构建统一子空间；2. 使用逆相关矩阵对混合信号进行去相关；3. 通过方向引导矩阵将净化后的信号定向至任务特定子空间。理论分析表明SSR与普通最小二乘法（OLS）解一致，确保数学最优性。",
+      "findings": "实验表明SSR在显著减少内存开销和计算时间的同时，性能大幅优于现有方法，且保持了可比的效率。"
+    }
+  },
+  {
+    "id": "2606.10492",
+    "title": "PathRelax: Parallel-Path Relaxed Speculative Jacobi Decoding for Accelerating Auto-Regressive Text-to-Image Generation",
+    "abstract": "The growing need for high-resolution image generation in autoregressive text-to-image models has resulted in extended token sequences, significantly increasing computational costs and inference times. However, existing state-of-the-art methods for accelerating autoregressive text-to-image models rely on chain-structured draft token sequences, leading to inefficient draft token search and limited acceptance lengths. To address this, we propose parallel-path cross-relaxed speculative Jacobi decoding (\\textbf{PathSpec}), a novel framework that enhances efficiency through a multi-sequence draft tree structure. Our parallel-path speculative Jacobi decoding (\\textbf{PathExplore}) expands the token search space, achieving a higher speedup ratio without sacrificing image quality. Additionally, we introduce cross-path relaxed verification (\\textbf{PathRelax}) that exploits semantic similarities across sequences to further boost token acceptance rates. Evaluated on the Parti-Prompts, MSCOCO2017, and T2ICompBench datasets, our method achieves a speedup ratio of 4.14 $\\times$, 3.95$\\times$, and 4.18$\\times$, respectively. Remarkably, PathExplore, without any relaxed sampling, outperforms relaxed sampling methods in the speedup ratio, such as GSD and LANTERN. Moreover, PathRelax's relaxation mechanism can be seamlessly integrated with other relaxation techniques, enabling further acceleration and providing an efficient solution for real-time text-to-image generation. Our code is available at https://github.com/Haodong-Lei-Ray/PathSpec.",
+    "authors": [
+      "Haodong Lei",
+      "Hongsong Wang",
+      "Bingxuan Dai",
+      "Pan Zhou"
+    ],
+    "published": "2026-06-09",
+    "updated": "2026-06-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.10492.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.10492",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "PathRelax：并行路径松弛推测雅可比解码加速自回归文本到图像生成",
+      "core_contribution": "提出并行路径交叉松弛推测雅可比解码框架（PathSpec），通过多序列草稿树结构提升效率，显著加速自回归文本到图像生成。",
+      "method": "1. 设计并行路径推测雅可比解码（PathExplore），扩展令牌搜索空间以提升加速比；2. 引入跨路径松弛验证（PathRelax），利用序列间语义相似性提高令牌接受率；3. 结合多序列草稿树结构优化搜索效率。",
+      "findings": "在Parti-Prompts、MSCOCO2017和T2ICompBench数据集上分别实现4.14×、3.95×和4.18×加速比，PathExplore无需松弛采样即超越GSD等方法，且PathRelax可与其他松弛技术兼容进一步加速。"
+    }
+  },
+  {
+    "id": "2606.13288",
+    "title": "Cross-Modal Masked Compositional Concept Modeling for Enhancing Visio-Linguistic Compositionality",
+    "abstract": "Contrastively trained vision-language models like CLIP, have made remarkable progress in learning joint image-text representations, but still face challenges in compositional understanding. They often exhibit a \"bag-of-words\" behavior--struggling to capture the object relations, attribute-object bindings, and word order dependencies. This limitation arises not only from the reliance on global, single-vector representations for optimization, but also from the insufficient exploitation and modeling of the rich compositional information inherently present in paired image text data. In this work, we propose MACCO (MAsked Compositional Concept MOdeling), a framework that masks compositional concepts in one modality and reconstructs them conditioned on the full contextual information from the other, enabling the model to capture and align cross-modal compositional structures more effectively. To facilitate this process, we introduce two auxiliary objectives that jointly align and regularize masked features both inter-modally and intra-modally. Extensive experiments on five compositional benchmarks, along with in-depth analyses, demonstrate that our approach not only significantly enhances compositionality in VLMs but also improves their ability to capture syntactic structure and linguistic information. Additionally, the improved compositionality also benefits text-to-image generation and multimodal large language model. Code is available at https://github.com/hiker-lw/MACCO.",
+    "authors": [
+      "Wei Li",
+      "Zhen Huang",
+      "Xinmei Tian"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13288.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13288",
+    "primary_category": "cs.CV",
+    "score": 70,
+    "summary": {
+      "title_zh": "跨模态掩码组合概念建模增强视觉语言组合性",
+      "core_contribution": "提出MACCO框架，通过跨模态掩码重建组合概念，显著提升视觉语言模型的组合理解能力。",
+      "method": "MACCO框架通过掩码一个模态的组合概念，并基于另一模态的完整上下文信息进行重建，从而更有效地捕捉和对齐跨模态组合结构。同时引入两个辅助目标，分别在模态间和模态内对齐和正则化掩码特征。",
+      "findings": "在五个组合性基准测试上的实验表明，MACCO不仅显著提升了视觉语言模型的组合性，还增强了其捕捉句法结构和语言信息的能力。此外，改进的组合性也有益于文本到图像生成和多模态大语言模型。"
+    }
+  }
+]
