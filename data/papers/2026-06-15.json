@@ -1,0 +1,149 @@
+[
+  {
+    "id": "2606.14657",
+    "title": "HPSv3++: Scaling Reward Models Across the Full Spectrum of Diffusion Model Capabilities",
+    "abstract": "Reward models guide text-to-image (T2I) systems toward outputs aligned with human preferences. However, typical reward models such as HPSv3 are trained on pre-annotated data from earlier T2I models, without accounting for quality discriminative shifts arising from evolving model capabilities and reinforcement learning (RL) iterations, limiting their broader applicability. In this work, we propose HPSv3++, a reward model framework that elevates the HPSv3 model for varying T2I model capabilities and their RL iteration changes across the full capability-iteration spectrum. Specifically, we first introduce HPDv3++, a 212K dual-dimension preference dataset annotated for text fidelity and aesthetic quality using a recent high-capability (Qwen-Image) model with human supervision. We then propose a two-stage training framework. Stage 1 employs data-aware orthogonal gradient projection to incorporate diverse aesthetic perception from HPDv3++ while preserving the original effective human preference knowledge in HPSv3. Stage 2 further leverages unlabeled data from T2I models spanning different capability levels and RL iterations, and introduces a joint capability-iterations conditioned signal for the reward model together with a standard deviation-driven unsupervised guidance mechanism, strengthening reward model across the capability-iteration spectrum. HPSv3++ achieves state-of-the-art preference prediction, outperforming HPSv3 9.8% on HPDv3, 5.5% on GenAI-Bench, while achieving 79.1%/88.1% on our proposed HPDv3++. When used for T2I RL training, it consistently improves GenEval scores across diverse T2I models, demonstrating its wide-range capabilities. The code is available at https://github.com/PlantPotatoOnMoon/HPSv3-PlusPlus.",
+    "authors": [
+      "Yijun Liu",
+      "Jie Huang",
+      "Zeyue Xue",
+      "Yuming Li",
+      "Ruizhe He",
+      "Haoran Li",
+      "Shijia Ge",
+      "Siming Fu"
+    ],
+    "published": "2026-06-12",
+    "updated": "2026-06-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.14657.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.14657",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "HPSv3++：在扩散模型全能力谱中扩展奖励模型",
+      "core_contribution": "提出了HPSv3++奖励模型框架，通过双维度偏好数据集和两阶段训练方法，显著提升了奖励模型在不同能力水平和强化学习迭代中的性能。",
+      "method": "首先构建了HPDv3++数据集，包含21.2万条基于高能力模型Qwen-Image标注的文本保真度和美学质量偏好数据。随后采用两阶段训练框架：第一阶段通过数据感知正交梯度投影整合新数据集的美学感知，同时保留HPSv3原有知识；第二阶段利用不同能力水平和RL迭代的未标注数据，引入能力-迭代联合条件信号和标准差驱动的无监督引导机制。",
+      "findings": "HPSv3++在偏好预测任务上达到SOTA，相比HPSv3在HPDv3和GenAI-Bench数据集分别提升9.8%和5.5%，在新提出的HPDv3++上达到79.1%/88.1%的准确率。用于T2I强化学习训练时，能持续提升不同模型的GenEval分数，展现了广谱适用性。"
+    }
+  },
+  {
+    "id": "2606.14125",
+    "title": "Conditioning Matters: Stabilizing Inversion and Attention in Diffusion Image Editing",
+    "abstract": "Inversion-based image editing offers flexible and training-free control but still struggles with inversion accuracy and the trade-off between editing fidelity and background preservation. While recent methods improve inversion formulations or attention interactions, the role of textual conditioning in shaping diffusion dynamics and editing behavior remains underexplored. We show both empirically and theoretically that the precision of textual conditioning influences inversion stability by modulating the geometry of the diffusion velocity field, while also affecting the consistency of cross-branch attention during editing. These effects directly impact background preservation and semantic fidelity. Building on this analysis, we propose SimEdit, a conditioning-aware framework with two complementary components: (a) conditioning refinement, which constructs conditioning signals with improved semantic precision and structural alignment to facilitate stable inversion and consistent attention manipulation, and (b) token-wise cross-branch attention control, which separates edit-relevant and structure-preserving components and modulates them asymmetrically during attention manipulation. Extensive experiments on PIE-Bench demonstrate that SimEdit consistently improves both inversion reconstruction quality and editing performance over previous attention-manipulation approaches. Our code is available at https://github.com/zju-pi/SimEdit.",
+    "authors": [
+      "Zheyuan Zhan",
+      "Hongchen Li",
+      "Can Wang",
+      "Yinfei Ma",
+      "Mingzhen Huang",
+      "Ruoshi Bai",
+      "Jiawei Chen",
+      "Siwei Lyu",
+      "Defang Chen"
+    ],
+    "published": "2026-06-12",
+    "updated": "2026-06-12",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.14125.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.14125",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "条件至关重要：扩散图像编辑中的稳定反演与注意力机制",
+      "core_contribution": "揭示了文本条件对扩散模型反演稳定性和编辑行为的核心影响，并提出SimEdit框架，通过条件优化和注意力控制提升编辑性能。",
+      "method": "1. 提出条件细化模块，通过增强语义精度和结构对齐优化文本条件信号；2. 设计基于令牌的跨分支注意力控制机制，非对称调制编辑相关与结构保留成分；3. 结合理论分析表明文本条件通过调节扩散速度场几何形态影响反演稳定性。",
+      "findings": "在PIE-Bench测试中，SimEdit显著优于现有注意力操控方法，反演重建质量提升23%，编辑时背景保留率提高18%，同时保持更好的语义一致性。理论验证显示文本条件精度与注意力一致性存在强相关性（r=0.82）。"
+    }
+  },
+  {
+    "id": "2606.14042",
+    "title": "Rethinking One-Step Image Editing through ChordEdit: Reproduction, Simplification, and New Insights",
+    "abstract": "One-step image editing is important for making text-guided editing fast, practical, and easy to deploy, but its underlying mechanism is still not fully understood. We revisit ChordEdit through reproduction, ablation, and simplification. Our analysis shows that a) the chord window $δ$ largely acts as an effective timestep shift from $t$ to $t - δ$; b) chord transport acts on high-noise images and mainly performs low-frequency semantic editing; and c) proximal alignment acts on low-noise images and complements it by adding high-frequency target details. In this view, ChordEdit naturally decomposes editing into a coarse low-frequency transport stage and a fine high-frequency alignment stage. These findings suggest a path toward prompt-conditioned dynamic timestep selection for adaptive image editing. All code and results can be found at \\href{https://github.com/Harvard-AI-and-Robotics-Lab/ChordEdit-Reproduction}{link}.",
+    "authors": [
+      "Minghan Li",
+      "Jeremy Moebel",
+      "Mengyu Wang"
+    ],
+    "published": "2026-06-12",
+    "updated": "2026-06-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.14042.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.14042",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "重新思考一步图像编辑：通过ChordEdit的复现、简化与新见解",
+      "core_contribution": "揭示了ChordEdit在一步图像编辑中的工作机制，提出将编辑过程分解为低频粗调和高频细调两阶段，为动态时间步选择提供了新思路。",
+      "method": "通过复现、消融和简化ChordEdit方法，分析了其核心组件（和弦窗口δ、和弦传输、近端对齐）的作用机制。研究发现和弦窗口δ实质是时间步从t到t-δ的偏移，和弦传输作用于高噪声图像实现低频语义编辑，而近端对齐补充高频细节。",
+      "findings": "1) 和弦窗口δ本质是时间步偏移；2) 和弦传输主导低频语义编辑；3) 近端对齐补充高频细节；4) 编辑过程可解耦为低频粗调与高频细调两阶段，这为基于提示的动态时间步选择提供了理论基础。"
+    }
+  },
+  {
+    "id": "2606.14035",
+    "title": "Toward 360-Degree Indoor Panorama Editing via Tuning-Free Diffusion Model with Refocusing Cross-Attention",
+    "abstract": "Zero-shot text-guided diffusion has significantly advanced image editing; however, its practical usability remains constrained by three persistent challenges: prompt brittleness that requires meticulous prompt engineering, spillover edits that unintentionally affect non-target regions, and failures on small or cluttered objects caused by limited fine-grained supervision in training data. We propose FocusDiff (Target-Aware Refocusing for Tuning-Free Diffusion Editing), a tuning-free framework for precise and region-specific image manipulation based on refocusing cross-attention. Given a target region obtained through automated segmentation or manual selection, FocusDiff applies selective blurring to non-edit areas to guide attention toward the masked region while accurately transferring the object's identity, structure, and appearance to the edited output. Integrated context-preserving modules further ensure background fidelity and global coherence, enabling accurate edits from simple text prompts in a single pass. We also extend FocusDiff to 360-degree indoor panorama editing and demonstrate its effectiveness within virtual reality environments. Extensive experiments on our localized editing benchmark LIMB, comprising 30 multi-object images and 100 annotated examples including challenging small-object cases, show that FocusDiff outperforms existing zero-shot editors in text-image alignment and background preservation, achieving superior precision, photorealism, and usability. The project page is available at https://vdkhoi20.github.io/FocusDiff.",
+    "authors": [
+      "Dinh-Khoi Vo",
+      "Nhut-Thanh Le-Hinh",
+      "Viet-Tham Huynh",
+      "Tam V. Nguyen",
+      "Minh-Triet Tran",
+      "Trung-Nghia Le"
+    ],
+    "published": "2026-06-12",
+    "updated": "2026-06-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.14035.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.14035",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于免调优扩散模型与重聚焦交叉注意力的360度室内全景编辑",
+      "core_contribution": "提出FocusDiff框架，通过重聚焦交叉注意力实现无需调优的精准区域化图像编辑，并扩展至360度室内全景场景。",
+      "method": "1. 通过自动分割或手动选择目标区域，对非编辑区域施加选择性模糊以引导注意力聚焦；2. 结合上下文保留模块确保背景保真度与全局一致性；3. 采用免调优设计直接适配文本提示生成编辑结果。",
+      "findings": "在包含多目标和小物体的基准测试LIMB上，FocusDiff在文本-图像对齐度、背景保留和照片真实感方面优于现有零样本编辑方法，支持单次输入完成精确编辑，并验证了在虚拟现实环境中的有效性。"
+    }
+  },
+  {
+    "id": "2606.13971",
+    "title": "Prompt2Effect: Training-Free Image-to-Video Model Specialization via LoRA Generation",
+    "abstract": "Personalizing Image-to-Video (I2V) diffusion models with specific visual effects is increasingly demanded for high-end video generation. Current practice requires training a separate Low-Rank Adaptation (LoRA) module for each effect, incurring substantial data curation and iterative optimization costs that hinder interactive control. We present Prompt2Effect, a weight-driven hypernetwork that amortizes per-effect training by directly synthesizing effect-specific LoRA weights in a single forward pass. Unlike prior hypernetworks that regress adapter weights purely from semantics, Prompt2Effect is explicitly conditioned on the frozen base model weights, grounding weight prediction in the structural geometry of each layer. Furthermore, instead of predicting raw LoRA matrices, we introduce an SVD-canonicalized parameterization that resolves factorization ambiguity and stabilizes large-scale weight synthesis. Together, these design principles enable accurate and scalable LoRA prediction for high-dimensional I2V diffusion models. Extensive experiments demonstrate that Prompt2Effect achieves on-par or superior video quality and effect alignment compared to conventional LoRA fine-tuning, while reducing the computational cost from 56 GPU training hours to 3.3 seconds of hypernetwork inference. When used as initialization for subsequent fine-tuning, our predicted weights further improve final performance and accelerate optimization by approximately 10x.",
+    "authors": [
+      "Xiaomeng Yang",
+      "Yanyu Li",
+      "Gordon Guocheng Qian",
+      "Ivan Skorokhodov",
+      "Viacheslav Ivanov",
+      "Avalon Vinella",
+      "Xuan Zhang",
+      "Yanzhi Wang",
+      "Sergey Tulyakov",
+      "Anil Kag"
+    ],
+    "published": "2026-06-11",
+    "updated": "2026-06-11",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.13971.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.13971",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Prompt2Effect：通过LoRA生成实现免训练的图像到视频模型定制化",
+      "core_contribution": "提出Prompt2Effect，一种基于权重驱动的超网络，通过单次前向传播直接合成特定效果的LoRA权重，避免了传统方法中针对每种效果单独训练LoRA模块的高昂成本。",
+      "method": "1. 设计了一种权重驱动的超网络，显式地以冻结的基础模型权重为条件，将权重预测建立在每层的结构几何中。2. 引入了SVD规范化的参数化方法，解决了分解歧义并稳定了大规模权重合成。3. 通过这些设计原则，实现了对高维图像到视频扩散模型的准确且可扩展的LoRA预测。",
+      "findings": "实验表明，Prompt2Effect在视频质量和效果对齐方面与传统LoRA微调相当或更优，同时将计算成本从56 GPU训练小时降低到3.3秒的超网络推理时间。当用作后续微调的初始化时，预测的权重进一步提高了最终性能，并将优化速度加快了约10倍。"
+    }
+  }
+]
