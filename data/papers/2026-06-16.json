@@ -1,0 +1,130 @@
+[
+  {
+    "id": "2606.16502",
+    "title": "Active Reference Acquisition in Few-Shot Font Generation",
+    "abstract": "Few-shot font generation aims to synthesize the remaining glyphs of a font given one or a few reference glyphs while preserving stylistic consistency, thereby supporting font designers in efficiently completing a typeface. Existing methods primarily focus on improving generation quality given a fixed reference set. However, when the current reference glyphs are insufficient to represent the target style, few-shot font generation may fail to produce satisfactory results. In practical scenarios, additional reference glyphs can often be obtained from the designer when necessary. Accordingly, we propose a new framework, Active Reference Acquisition in Few-Shot Font Generation, in which the model sequentially decides which character to acquire next as an additional reference. Furthermore, we propose a reference part-coverage-based acquisition function to efficiently query the designer. Motivated by the observation that font styles are well characterized by local structural parts, we represent each glyph using a histogram of local features and select query characters that maximize the expected part coverage of the reference set. By prioritizing characters that contain parts not yet covered by the current references, the proposed method progressively expands the diversity of visual parts in the reference set. As a result, generation quality is improved with fewer queries. Experiments on the Google Fonts dataset demonstrate that the proposed method achieves higher generation quality than random querying and reference-agnostic baselines. The code is available at https://github.com/matsuo-shinnosuke/ActiveRef-FontGen.",
+    "authors": [
+      "Shinnosuke Matsuo"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-06-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.16502.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.16502",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "少样本字体生成中的主动参考获取",
+      "core_contribution": "提出了一种主动获取参考字符的框架，通过优化参考集的局部结构覆盖度，显著提升少样本字体生成质量。",
+      "method": "1. 提出序列化决策模型，动态选择需补充的参考字符；2. 基于局部特征直方图表示字形，设计参考部件覆盖度的获取函数；3. 优先选择包含未覆盖部件的字符，逐步扩展参考集的视觉多样性。",
+      "findings": "在Google Fonts数据集上的实验表明，该方法比随机查询和无关参考基线获得更高生成质量，且能以更少查询次数实现风格一致性提升。"
+    }
+  },
+  {
+    "id": "2606.16866",
+    "title": "Redirecting the Flow: Image Customization through Attention Distribution Shift",
+    "abstract": "Subject-driven image customization aims to generate images that not only follow textual instructions but also preserve the identity of a given reference subject. Existing approaches, including test-time fine-tuning, encoder-based methods, and token competition in shared attention spaces, suffer from limited efficiency, misalignment between extracted reference features and the generative process, and interference from irrelevant information. To address these limitations, we formulate the customization task as a distribution shift induced by incorporating reference images into text-to-image generation, and derive a Conditional Attention Distribution Shift formulation grounded in maximum entropy theory. Building on this formulation, we propose CustomShift, a dual-branch architecture based on Stable Diffusion 3. The Reference-Alignment Branch leverages self-attention between reference images and subject names to achieve layer-wise alignment with latent representations, while the Cross-Guidance Branch integrates textual and reference cues to guide generation. Experiments on the DreamBooth and Custom101 benchmarks demonstrate that our method consistently outperforms state-of-the-art approaches, achieving a better balance between semantic fidelity and subject consistency.",
+    "authors": [
+      "Jie Li",
+      "Suorong Yang",
+      "Jian Zhao",
+      "Furao Shen"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-06-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.16866.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.16866",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "重定向流：通过注意力分布偏移实现图像定制",
+      "core_contribution": "提出基于最大熵理论的条件注意力分布偏移（CustomShift）方法，解决现有主题驱动图像定制中效率低、特征错位及无关信息干扰的问题。",
+      "method": "1. 将定制任务建模为参考图像引入文本到图像生成时的分布偏移问题；2. 设计双分支架构（Reference-Alignment Branch和Cross-Guidance Branch），分别通过自注意力实现参考图像与潜在表征的层级对齐，并融合文本与参考信息引导生成；3. 基于Stable Diffusion 3实现高效定制。",
+      "findings": "在DreamBooth和Custom101基准测试中，CustomShift在语义保真度和主题一致性上均优于现有方法，实现了更优的平衡。"
+    }
+  },
+  {
+    "id": "2606.16767",
+    "title": "Text-Vision Co-Instructed Image Editing",
+    "abstract": "Existing image editing methods can be generally categorized into textual instruction-based and visual prompt-based ones. Textual instructions are semantically expressive, but are limited by the coarse granularity of spatial control of the editing results. In contrast, visual prompts such as drag and point can provide precise spatial guidance, but are limited by the inherent ambiguity in semantic intent. To unify the strength of textual and visual prompts, we present Text-Vision Co-Instructed Image Editing, which jointly models textual instructions as semantic intent and sparse visual instructions as spatial guidance, aiming to achieve precise and intent-faithful image manipulation. To this end, we first construct a textual-visual instruction paired dataset with more than 23K samples derived from dynamic videos, enabling aligned supervision for cross-modal instruction. We then propose TV-Edit, a Textual-Visual instruction unified Editing framework to contextualize drag or point-based visual instructions with image-text semantics and lift them into semantic-aware control representations for pretrained editing backbones. By integrating semantic intent and spatial constraints, TV-Edit leads to more precise spatial control, less instruction ambiguity, and stronger structural consistency than text-only or drag-based alternatives. Finally, we establish TV-Edit-Bench, a deliberately designed benchmark to evaluate semantic faithfulness, spatial alignment, and visual consistency with ground-truth references and controlled textual-visual variations for reliable assessment. Our experiments across multiple editing backbones demonstrate that TV-Edit consistently yields more precise and intent-faithful edits, significantly outperforming state-of-the-art instruction-based and drag-based baselines.",
+    "authors": [
+      "Chenxi Xie",
+      "Yuhui Wu",
+      "Qiaosi Yi",
+      "Lei Zhang"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-06-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.16767.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.16767",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "文本-视觉协同指导的图像编辑",
+      "core_contribution": "提出了一种统一文本指令与稀疏视觉指令（如拖拽或点选）的图像编辑框架TV-Edit，实现了语义意图与空间约束的协同建模，从而在编辑中同时达到精确的空间控制和意图忠实性。",
+      "method": "首先，从动态视频中构建了包含超过23K样本的文本-视觉指令配对数据集，为跨模态指令提供对齐监督。然后，提出TV-Edit框架，将拖拽或点选等视觉指令与图像-文本语义进行上下文融合，并将其提升为语义感知的控制表示，以适配预训练的编辑骨干网络。该方法通过整合语义意图和空间约束，实现了比纯文本或纯拖拽方法更精确的空间控制、更少的指令歧义和更强的结构一致性。",
+      "findings": "在多个编辑骨干网络上的实验表明，TV-Edit始终能生成更精确且意图忠实的编辑结果，显著优于当前最先进的基于指令和基于拖拽的基线方法。此外，还建立了TV-Edit-Bench基准，用于评估语义忠实性、空间对齐和视觉一致性，验证了方法的可靠性。"
+    }
+  },
+  {
+    "id": "2606.16673",
+    "title": "MMDiff: Extending Diffusion Transformers for Multi-Modal Generation",
+    "abstract": "Diffusion transformers have demonstrated remarkable generative capabilities, yet the rich perceptual representations computed across their denoising trajectory are discarded once the content is rendered. We present MMDiff, a framework that transforms a frozen diffusion transformer into a multi-modal generative system that jointly produces images alongside any combination of dense perceptual modalities using lightweight decoder heads. Our central finding is that perceptual information is temporally distributed along the denoising trajectory, and that multi-timestep feature fusion with spatially varying aggregation weights is essential, improving semantic segmentation results by up to 28.7% mIoU over single-timestep extraction. We further adopt concept-driven attention extraction for interpretable spatial guidance, and show that frozen diffusion features are competitive with and complementary to state-of-the-art encoders such as DINOv3. By training only lightweight decoder heads on a frozen backbone, we achieve strong performance in semantic segmentation, salient object detection, and depth estimation, and demonstrate that this framework enables effective synthetic data generation at scale.",
+    "authors": [
+      "Yagmur Akarken",
+      "Orest Kupyn",
+      "Christian Rupprecht"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-06-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.16673.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.16673",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "MMDiff：扩展扩散变换器以实现多模态生成",
+      "core_contribution": "MMDiff将冻结的扩散变换器转化为多模态生成系统，能够同时生成图像和任意密集感知模态，并通过轻量级解码器头实现高效的多模态生成。",
+      "method": "MMDiff利用扩散变换器在去噪过程中产生的丰富感知表示，通过多时间步特征融合和空间变化聚合权重来提取信息。此外，采用概念驱动的注意力提取以实现可解释的空间引导，并仅训练轻量级解码器头在冻结的主干网络上。",
+      "findings": "多时间步特征融合显著提升了语义分割性能（最高提升28.7% mIoU），冻结的扩散特征与DINOv3等先进编码器性能相当且互补。该方法在语义分割、显著目标检测和深度估计中表现优异，并支持大规模合成数据生成。"
+    }
+  },
+  {
+    "id": "2606.16255",
+    "title": "UniDDT: Unifying Multimodal Understanding and Generation with Decoupled Diffusion Transformer",
+    "abstract": "Unified Multimodal Models (UMMs) have emerged as a critical direction for general-purpose multimodal intelligence, integrating understanding and generation into a single framework. However, existing UMMs face prominent challenges: (1) the inherent learning conflicts between visual understanding and generation tasks, leading to suboptimal modeling in both tasks; (2) different understanding and generation visual spaces impeding scalability; (3) over-reliance on task-specific data that neglects the duality of text-image understanding and generation. To address these challenges, we propose UniDDT, which leverages a Noisy ViT encoder along with an LLM to unify semantic encoding for visual generation and understanding tasks, while employing a separate diffusion decoder to decouple diffusion decoding from text decoding. With this Noisy ViT encoder, UniDDT is able to leverage the latent space as a unified visual representation, enabling seamless compatibility between understanding and generation tasks. Thus, the scalability within the generation tasks and the semantic expressiveness within understanding tasks can be balanced. Also, we construct dual data structures from the same image-text pairs, fostering interdependence between the generation and understanding data to exploit their inherent duality. Extensive experiments demonstrate that UniDDT achieves effective unification of multimodal understanding and generation with enhanced semantic consistency and scalability. For visual generation tasks, our UniDDT achieves 0.87 GenEval score and 86.9 DPG overall score. For multimodal understanding tasks, our UniDDT achieves 1699.5 score on MME benchmark and 76.5 overall score on SEEDbench.",
+    "authors": [
+      "Shuai Wang",
+      "Liang Li",
+      "Yang Chen",
+      "Ruopeng Gao",
+      "Yao Teng",
+      "Limin Wang"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-06-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.16255.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.16255",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "UniDDT：基于解耦扩散Transformer的多模态理解与生成统一框架",
+      "core_contribution": "提出UniDDT框架，通过噪声ViT编码器和LLM统一视觉生成与理解任务的语义编码，并利用解耦扩散解码器平衡生成任务的可扩展性与理解任务的语义表达能力。",
+      "method": "1. 采用噪声ViT编码器与LLM联合建模，统一视觉生成与理解的潜在空间表示；2. 设计独立的扩散解码器，将扩散解码与文本解码解耦；3. 构建图像-文本对的双重数据结构，利用理解与生成任务的内在关联性。",
+      "findings": "1. 视觉生成任务达到0.87 GenEval分数和86.9 DPG总分；2. 多模态理解任务在MME基准上获得1699.5分，SEEDbench上总体得分76.5；3. 实验证明该方法能有效统一多模态理解与生成，提升语义一致性和可扩展性。"
+    }
+  }
+]
