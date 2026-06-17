@@ -1,0 +1,138 @@
+[
+  {
+    "id": "2606.18249",
+    "title": "Unified Multimodal Autoregressive Modeling with Shared Context-Visual Tokenizer is Key to Unification",
+    "abstract": "Unified Multimodal Modeling aims to integrate visual understanding and generation within a single system. However, existing approaches typically rely on two disparate visual tokenizers, which splits the representation space and hinders truly unified modeling. We propose UniAR, a unified autoregressive framework where a single discrete visual tokenizer serves as the key bridge between understanding and generation, enabling a shared context in which the model can directly interpret its own generated visual tokens without additional re-encoding. UniAR adapts a pretrained vision encoder with multi-level feature fusion and a lookup-free bitwise quantization scheme, preserving both high-level semantics and low-level details while scaling the effective visual vocabulary at minimal cost. Building on this, the unified autoregressive model adopts parallel-bitwise-prediction to jointly predict spatially grouped, multi-level visual codes, substantially reducing visual sequence length and accelerating generation. Finally, a diffusion-based visual decoder operates on discrete visual tokens to decode high-fidelity images. Through large-scale pre-training, followed by supervised fine-tuning and reinforcement learning, UniAR achieves state-of-the-art performance on image generation and image editing while remaining competitive on multimodal understanding benchmarks. The project page is available at https://sharelab-sii.github.io/uniar-web.",
+    "authors": [
+      "Wujian Peng",
+      "Lingchen Meng",
+      "Yuxuan Cai",
+      "Xianwei Zhuang",
+      "Yuhuan Yang",
+      "Rongyao Fang",
+      "Chenfei Wu",
+      "Junyang Lin",
+      "Zuxuan Wu",
+      "Shuai Bai"
+    ],
+    "published": "2026-06-16",
+    "updated": "2026-06-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.18249.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.18249",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "统一多模态自回归建模：共享上下文-视觉分词器是实现统一的关键",
+      "core_contribution": "提出UniAR框架，通过单一离散视觉分词器桥接视觉理解与生成，实现共享上下文，避免传统方法中两个分离分词器导致的表示空间分裂问题。",
+      "method": "UniAR采用预训练视觉编码器结合多级特征融合与无查找逐位量化方案，在保留高层语义和低层细节的同时以最小代价扩展有效视觉词汇量。统一自回归模型使用并行逐位预测联合预测空间分组的多级视觉编码，大幅缩短视觉序列长度并加速生成。最后，基于扩散的视觉解码器对离散视觉令牌进行解码以生成高保真图像。",
+      "findings": "通过大规模预训练、监督微调和强化学习，UniAR在图像生成和图像编辑任务上达到最先进性能，同时在多模态理解基准上保持竞争力。"
+    }
+  },
+  {
+    "id": "2606.17296",
+    "title": "Pareto LoRA: Mitigating Modality Imbalance in Unified Multimodal Models via Pareto-Optimal Gradient Integration",
+    "abstract": "Unified multimodal models (UMMs) have recently emerged as a promising paradigm for integrating multimodal understanding and generation within a single autoregressive transformer. However, during multimodal instruction tuning, these models often exhibit pronounced modality imbalance: language gradients dominate optimization, thus leading to lower image generation quality, especially under parameter-efficient fine-tuning such as LoRA. In this work, we systematically analyze modality imbalance in LoRA-based fine-tuning of UMMs for interleaved text-image generation. We show that vision modality performance degrades substantially more than text modality performance when compared to unimodal counterparts, and that modality-specific gradients can differ by orders of magnitude across various tasks and layers. Motivated by this observation, we reformulate the multimodal instruction tuning as a bi-objective optimization problem and propose Pareto LoRA, a Pareto-optimal gradient integration strategy that balances the text and image objectives by modulating the gradient direction and strength. Experiments on the CoMM benchmark with Emu2 demonstrate that Pareto LoRA consistently improves multimodal generation balance, achieving up to 44.9% gains in perceptual image quality over vanilla LoRA while maintaining comparable text performance.",
+    "authors": [
+      "Xiwen Wei",
+      "Mark Nutter",
+      "Madhusudhanan Srinivasan",
+      "Radu Marculescu"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-06-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.17296.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.17296",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "帕累托LoRA：通过帕累托最优梯度整合缓解统一多模态模型中的模态不平衡",
+      "core_contribution": "提出Pareto LoRA方法，通过将多模态指令微调重构为双目标优化问题，并采用帕累托最优梯度整合策略，有效缓解了统一多模态模型在LoRA微调中语言梯度主导优化导致的模态不平衡问题。",
+      "method": "首先系统分析了LoRA微调中视觉模态性能显著下降的现象，发现不同任务和层中模态特定梯度差异可达数量级。基于此，将多模态指令微调形式化为双目标优化问题，设计帕累托最优梯度整合策略，通过动态调整文本和图像目标的梯度方向与强度来平衡两个模态的学习。",
+      "findings": "在CoMM基准测试和Emu2模型上的实验表明，Pareto LoRA持续改善了多模态生成的平衡性，在保持文本性能相当的同时，感知图像质量相比原始LoRA提升了高达44.9%。"
+    }
+  },
+  {
+    "id": "2606.16241",
+    "title": "Structure-Semantic Co-optimized Latent Diffusion Model for Fast Visual Anagram Synthesis",
+    "abstract": "Visual anagram is an intriguing form of art creation wherein a single image presents different conceptual interpretations under transformations such as flipping or rotation. Recent work has achieved visual anagram synthesis by leveraging pretrained text-to-image (T2I) diffusion models, yet still suffers from several key limitations including computational inefficiency, suboptimal aesthetic quality, and weak semantic fidelity and expressiveness. This work focuses on generating visual anagrams with substantially improved visual quality at minimal computational cost, thereby advancing intelligent creation of illusionary digital art. To increase image resolution while reducing time overhead, we adapt the cutting-edge parallel denoising algorithm from pixel-based T2I model to the adversarially distilled latent-based one, and accordingly propose a structure-semantic co-optimization (S2CO) framework to counteract the consequent visual degradation. As the core of our approach, S2CO framework comprises three key innovations: (\\romannumeral1) null-text structure alignment optimization; (\\romannumeral2) semantic enhancement optimization; (\\romannumeral3) attention-guided noise fusion. Building upon these components, our method dubbed \\textbf{S2CO-Anagram} is able to generate higher-resolution anagram images with noticeably superior visual harmony and semantic faithfulness than related SOTA approaches, all while achieving substantially faster inference speed. Code will be publicly available.",
+    "authors": [
+      "Xiang Gao",
+      "Yunpeng Jia"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-06-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.16241.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.16241",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "结构-语义协同优化的潜在扩散模型用于快速视觉字谜合成",
+      "core_contribution": "提出了一种结构-语义协同优化（S2CO）框架，在极低计算成本下生成高分辨率、高视觉和谐度与语义保真度的视觉字谜图像，显著优于现有最先进方法。",
+      "method": "该方法基于对抗性蒸馏的潜在扩散模型，并引入并行去噪算法以提升分辨率并减少时间开销。核心S2CO框架包含三个创新组件：空文本结构对齐优化、语义增强优化以及注意力引导的噪声融合，共同对抗视觉质量下降。",
+      "findings": "实验表明，S2CO-Anagram能够生成比现有最先进方法视觉更和谐、语义更忠实的高分辨率字谜图像，同时推理速度大幅提升。"
+    }
+  },
+  {
+    "id": "2606.16103",
+    "title": "SceneCraft: Interactive System for Image Editing via Scene Graph",
+    "abstract": "Recent advances in generative AI have enabled natural language-driven image editing, yet existing systems often fail in complex scenes with multiple interacting objects because they rely heavily on users crafting precise text prompts. To address the absence of structured control, we propose SceneCraft, a novel interactive framework that bridges user intent and model execution by representing images as editable scene graphs. Instead of guessing text prompts through trial and error, users interact directly with a visual graph to perform complex spatial and relational operations. These graph modifications are automatically translated into precise, context-aware editing prompts, effectively eliminating linguistic ambiguity. To ensure robust and diverse results, structured prompts are dispatched to multiple state-of-the-art generative models. Evaluations across diverse editing scenarios show that SceneCraft provides a more intuitive control mechanism, significantly reducing the cognitive burden of manual prompt engineering while generating outputs that users consistently rate as higher in quality and fidelity.",
+    "authors": [
+      "Duc-Manh Phan",
+      "Ngoc-Dai Tran",
+      "Duy-Khang Do",
+      "Tam V. Nguyen",
+      "Minh-Triet Tran",
+      "Trung-Nghia Le"
+    ],
+    "published": "2026-06-15",
+    "updated": "2026-06-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.16103.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.16103",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SceneCraft：基于场景图的交互式图像编辑系统",
+      "core_contribution": "提出一种通过场景图表示图像并支持用户直接编辑图结构来实现复杂图像编辑的交互框架，消除了对精确文本提示的依赖，降低了用户认知负担。",
+      "method": "首先将图像表示为可编辑的场景图，用户通过可视化图形界面直接进行空间和关系操作；系统自动将图修改转化为精确、上下文感知的编辑提示；最后将结构化提示分发给多个最先进的生成模型，以生成鲁棒且多样化的编辑结果。",
+      "findings": "在多种编辑场景下的评估表明，SceneCraft提供了更直观的控制机制，显著减少了手动设计提示的认知负担，且用户一致评价其输出在质量和保真度上更高。"
+    }
+  },
+  {
+    "id": "2606.15796",
+    "title": "DifFRACT: Diffusion Feature Reconstruction and Attribution for Circuit Tracing",
+    "abstract": "Mechanistic interpretability seeks to explain neural network behavior by decomposing model computations into interpretable features and circuits. While transcoder-based circuit tracing has recently enabled detailed causal analyses of large language models, multimodal diffusion transformers for image generation remain comparatively opaque. We still lack tools for understanding how semantic information propagates across denoising steps and how text and image representations interact within double-stream MM-DiT architectures. Existing methods provide only partial insight: attention maps expose a limited view of token interactions, while sparse autoencoders can discover interpretable features but do not directly reveal how these features are transformed and composed through nonlinear MLP layers. In this work, we extend transcoder-based circuit tracing to multimodal diffusion transformers. We train timestep-conditioned transcoders that faithfully approximate the input-output behavior of MLP sublayers in FLUX.1[schnell]. By replacing MLPs with transcoders and linearizing the remaining computation, we obtain exact feature-to-feature attribution and recover compact, interpretable circuits. Empirically, our transcoders match or slightly outperform sparse autoencoders on the sparsity-faithfulness tradeoff. The resulting circuits reveal mechanisms underlying attribute binding and cross-stream semantic propagation, and provide causal explanations for systematic generation errors. Moreover, circuit-guided interventions are substantially more precise and effective than standard SAE-based steering. Our results demonstrate that transcoder-based circuit analysis is feasible for state-of-the-art diffusion transformers and provides a powerful framework for understanding and controlling multimodal generative models. The code is available at https://github.com/Artalmaz31/DifFRACT",
+    "authors": [
+      "Artyom Mazur",
+      "Nina Konovalova",
+      "Aibek Alanov"
+    ],
+    "published": "2026-06-14",
+    "updated": "2026-06-14",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.15796.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.15796",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "DifFRACT：面向电路追踪的扩散特征重建与归因",
+      "core_contribution": "本文首次将基于转码器的电路追踪方法扩展到多模态扩散Transformer中，通过训练时间步条件转码器来近似MLP子层的输入-输出行为，从而实现对扩散模型中语义信息传播机制的精确因果分析。",
+      "method": "作者在FLUX.1[schnell]模型上训练了时间步条件转码器，这些转码器能够忠实近似MLP子层的输入-输出映射。通过用转码器替换MLP层并线性化其余计算，实现了精确的特征到特征归因，从而提取出紧凑且可解释的电路。该方法在稀疏性与忠实性之间的权衡上匹配或略优于稀疏自编码器。",
+      "findings": "实验揭示的电路展示了属性绑定和跨流语义传播的机制，并为系统性生成错误提供了因果解释。此外，基于电路的干预比标准SAE引导方法更精确、更有效，证明了转码器电路分析在先进扩散Transformer中的可行性和强大能力。"
+    }
+  }
+]
