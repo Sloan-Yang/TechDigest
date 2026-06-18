@@ -1,0 +1,140 @@
+[
+  {
+    "id": "2606.19195",
+    "title": "Moebius: 0.2B Lightweight Image Inpainting Framework with 10B-Level Performance",
+    "abstract": "While 10B-level industrial foundation models have pushed the boundaries of image inpainting, their prohibitive computational costs severely hinder practical deployment. Constructing a highly optimized task-specific specialist offers a promising solution; however, extreme structural compression inevitably triggers a severe representation bottleneck. To conquer this, we propose Moebius, a highly efficient lightweight inpainting framework. We systematically reconstruct the diffusion backbone by introducing the Local-$λ$ Mix Interaction ($LλMI$) block. Comprising Local-$λ$ and Interactive-$λ$ modules, it elegantly summarizes spatial contexts and global semantic priors into fixed-size linear matrices, preserving complex latent interactions while drastically shedding parameters. Furthermore, to unlock the full representational capacity of this highly compact architecture, we synergistically pair it with an adaptive multi-granularity distillation strategy. Operating strictly within the latent space to avoid expensive pixel-space decoding, this strategy dynamically balances multiple gradient-based losses to achieve high-fidelity alignment. Extensive experiments across natural and portrait benchmarks demonstrate that this optimal synergy enables Moebius to rival or even surpass the generation quality of the 10B-level industrial generalist FLUX.1-Fill-Dev. Remarkably, Moebius achieves this using less than 2\\% of the parameters (0.22B vs. 11.9B) while delivering a $>15\\times$ acceleration in total inference time, setting a new efficiency standard for high-fidelity inpainting. Project page at https://hustvl.github.io/Moebius.",
+    "authors": [
+      "Kangsheng Duan",
+      "Ziyang Xu",
+      "Wenyu Liu",
+      "Xiaohu Ruan",
+      "Xiaoxin Chen",
+      "Xinggang Wang"
+    ],
+    "published": "2026-06-17",
+    "updated": "2026-06-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19195.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19195",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Moebius：0.2B轻量级图像修复框架，性能媲美10B级模型",
+      "core_contribution": "提出了一种超轻量级图像修复框架Moebius，仅用0.22B参数（不到10B级模型的2%）即可达到甚至超越FLUX.1-Fill-Dev等10B级工业模型的生成质量，同时实现超过15倍的推理加速。",
+      "method": "该方法通过引入Local-λ Mix Interaction (LλMI)模块重构扩散模型骨干，该模块包含Local-λ和Interactive-λ子模块，将空间上下文和全局语义先验压缩为固定大小的线性矩阵，在大幅减少参数的同时保留复杂的潜在交互。此外，配合一种自适应多粒度蒸馏策略，在潜在空间内动态平衡多种基于梯度的损失，实现高保真对齐，避免昂贵的像素空间解码。",
+      "findings": "在自然图像和人像基准测试中，Moebius以0.22B参数（仅为FLUX.1-Fill-Dev的11.9B参数的2%）实现了与之相当甚至更优的生成质量，同时总推理时间加速超过15倍，树立了高保真图像修复的新效率标准。"
+    }
+  },
+  {
+    "id": "2606.19103",
+    "title": "ProductConsistency: Improving Product Identity Preservation in Instruction-Based Image Editing via SFT and RL",
+    "abstract": "Recent advances in instruction-based image editing have enabled models to perform complex visual edits from natural language instructions. However, in product-centric scenarios where preserving product features, branding, and textual elements are critical, current open and closed source models often struggle to maintain this fine-grained object identity. This issue is further compounded by the lack of datasets for instruction-based product image editing with text fidelity constraints, leaving it largely treated as an implicit capability of instruction-based image editing models. In this work, we introduce the ProductConsistency dataset which is designed to improve product-centric image editing. Our approach includes a supervised fine-tuning (SFT) dataset of 87k samples for product editing, a reinforcement learning (RL) dataset with 869 unique product images, and a new benchmark dataset, the ProductConsistency Benchmark, to allow rigorous and standardized evaluation of editing models. To guide RL training, we propose a Cyclic Consistency reward that enforces semantic preservation of product identity by using caption similarity between the original product description and captions generated from the edited image. We fine-tune both Qwen-Image-Edit-2511 and Flux.1-Kontext-dev using our dataset and demonstrate consistent improvements over baseline models in OCR and Perceptual metrics, and MLLM-based evaluations as well, indicating stronger product consistency, text rendering, and overall visual quality; with the Qwen-Image-Edit-2511 model achieving a 5x reduction in the character error rate. The code and pipeline is available at https://anonymous.4open.science/r/ProductConsistency-6FCC/README.md",
+    "authors": [
+      "Mukund Khanna",
+      "Raj Singh Yadav",
+      "Kunal Singh"
+    ],
+    "published": "2026-06-17",
+    "updated": "2026-06-17",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19103.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19103",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "产品一致性：通过监督微调和强化学习提升基于指令的图像编辑中的产品身份保持",
+      "core_contribution": "本文提出了ProductConsistency数据集和一种结合监督微调与强化学习的方法，显著提升了基于指令的图像编辑模型在产品图像编辑中对产品身份（如特征、品牌和文字元素）的保持能力。",
+      "method": "首先构建了一个包含87k样本的监督微调数据集用于产品编辑，以及一个包含869张独特产品图像的强化学习数据集。然后提出了一种循环一致性奖励函数，通过计算原始产品描述与编辑后图像生成描述之间的语义相似度，来强制模型保持产品身份。最后使用该数据集对Qwen-Image-Edit-2511和Flux.1-Kontext-dev模型进行微调，并在新提出的ProductConsistency基准上进行评估。",
+      "findings": "实验表明，所提方法在OCR指标、感知质量指标以及多模态大模型评估上均优于基线模型，其中Qwen-Image-Edit-2511模型的字符错误率降低了5倍，证明了更强的产品一致性、文本渲染能力和整体视觉质量。"
+    }
+  },
+  {
+    "id": "2606.18906",
+    "title": "BindEdit: Taming Attention Leakage for Precise Multi-Object Image Editing",
+    "abstract": "Real image editing enables precise manipulation of visual content, yet existing methods often fail in complex multi-object scenarios, causing semantic blending, object duplication, or incomplete edits. We attribute these failures to attention leakage, where signals across spatial regions and text tokens become entangled during the denoising process. Specifically, we identify two distinct forms of leakage: Edit-Token Leakage, where ambiguous token-region alignment leads to object blending, and Source Dominance Leakage, where tokens of unchanged source objects overwhelm the attention intended for target entities. To resolve these leakages, we propose \\textbf{BindEdit}, which enforces attention-level constraints within a single diffusion trajectory. To suppress Edit-Token Leakage, BindEdit jointly regularizes cross- and self-attention so that each target token group is bound to its corresponding spatial region while maintaining instance-level separation. To suppress Source Dominance Leakage, a cross-attention re-balancing mechanism amplifies target token influence and attenuates residual source semantics within editable regions. Moreover, a region fidelity term ensures that each target concept is expressed coherently across the entire editing mask. Additionally, we propose a comprehensive multi-object benchmark encompassing diverse object counts and categories. Extensive experiments demonstrate that BindEdit consistently outperforms existing methods within a single diffusion trajectory, maintaining robust performance across both single- and multi-object editing scenarios.",
+    "authors": [
+      "Chaewon Park",
+      "Soyoon Lee",
+      "Naeun Lee",
+      "Minjung Shin",
+      "Seogkyu Jeon",
+      "Kibeom Hong"
+    ],
+    "published": "2026-06-17",
+    "updated": "2026-06-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.18906.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.18906",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "BindEdit：驯服注意力泄漏以实现精确的多对象图像编辑",
+      "core_contribution": "提出了一种名为BindEdit的方法，通过解决两种注意力泄漏问题（编辑-令牌泄漏和源主导泄漏），在单次扩散轨迹中实现了精确的多对象图像编辑，并构建了首个涵盖多种对象数量和类别的多对象编辑基准。",
+      "method": "BindEdit在扩散模型的去噪过程中施加注意力级别的约束。针对编辑-令牌泄漏，它联合正则化交叉注意力和自注意力，使每个目标令牌组绑定到其对应的空间区域，同时保持实例级别的分离。针对源主导泄漏，它引入交叉注意力重平衡机制，增强目标令牌的影响并衰减可编辑区域内残留的源语义。此外，还使用区域保真度项确保每个目标概念在整个编辑掩码内连贯表达。",
+      "findings": "在单对象和多对象编辑场景中，BindEdit均一致优于现有方法，有效避免了语义混合、对象重复或不完整编辑等问题，并在新提出的多对象基准上展现出鲁棒性能。"
+    }
+  },
+  {
+    "id": "2606.18788",
+    "title": "HandwritingAgent: Language-Driven Handwriting Synthesis in Scalable Vector Space",
+    "abstract": "Teaching machines to emulate natural handwriting styles remains an open challenge, as it requires synthesizing stroke sequences that dynamically vary in shape, texture, pressure and script - not only across individuals, but also within a single person's handwriting. Attempts at this challenge have largely explored deep learning methods in both online and offline settings. However, these approaches are often constrained by style-specific architectural choices, heavy reliance on large datasets, high compute costs, and a lack of flexible control over writing styles through natural language. To this end, we introduce HandwritingAgent, a language-driven agent that can synthesize natural handwriting sequences directly in Scalable Vector Graphics (SVG) format with no need for style-specific training. The agent leverages a large reasoning model to geometrically analyse and autoregressively generate target handwritten glyphs as stroke sequences in a discrete grid canvas environment. Generation is conditioned on texts provided in either conversational or non-conversational mode, along with a reference handwriting-style image. Experiments on diverse handwriting tasks spanning imitation, recognition, multi-lingual handwriting synthesis, and generation of complex handwritten maths and science expressions indicate substantial improvement in performance, with HandwritingAgent matching or surpassing state-of-the-art generative handwriting models, while providing a more efficient, controllable, and generalizable synthesis method.",
+    "authors": [
+      "Jaward Sesay",
+      "Yue Yu",
+      "Börje F. Karlsson"
+    ],
+    "published": "2026-06-17",
+    "updated": "2026-06-17",
+    "categories": [
+      "cs.CV",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.18788.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.18788",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "手写智能体：语言驱动的可缩放矢量空间手写合成",
+      "core_contribution": "提出了一种无需风格特定训练、基于语言驱动的手写合成智能体HandwritingAgent，能够直接在SVG格式中生成自然手写序列，并在多种手写任务上达到或超越现有最先进模型。",
+      "method": "该方法利用大型推理模型，在离散网格画布环境中对手写字形进行几何分析，并以自回归方式生成笔画序列。生成过程由对话或非对话模式提供的文本以及参考手写风格图像共同条件化，最终直接输出可缩放矢量图形（SVG）格式的手写序列。",
+      "findings": "在模仿、识别、多语言手写合成以及复杂手写数学与科学表达式生成等多样化任务上，HandwritingAgent均表现出显著性能提升，匹配或超越了最先进的生成式手写模型，同时提供了更高效、可控且泛化能力更强的合成方法。"
+    }
+  },
+  {
+    "id": "2606.19162",
+    "title": "The Reward Was in Your Data All Along: Correcting Flow Matching with Discriminator-Guided RL",
+    "abstract": "Score- and flow-matching models often rely on preference-based reinforcement learning for two purposes: aligning with subjective preferences and, surprisingly, recovering properties such as visual realism and coherent object structure that matching-based training is intended to learn from the data itself. We argue that this reflects a structural mismatch. Matching losses measure $\\ell_2$ regression error on the velocity or score field under training-time marginals, a proxy poorly aligned with the visual and semantic properties that determine sample quality at inference. Given a reward aligned with these properties, RL sidesteps the mismatch by evaluating the model on its own samples and following the reward landscape directly. The challenge is to obtain such a reward without relying on human preferences, which are expensive and conflate data realism with annotator inclinations. We propose Discriminator-Guided RL (DRL). DRL trains a discriminator to separate data from base-model samples in a pretrained representation space and uses its logit as the reward in KL-regularized RL. The pretrained space restricts the discriminator to perceptually meaningful directions, and the logit estimates the log-likelihood ratio between data and model, which is the optimal reward for targeting the data distribution. Across SiT, JiT, REPA, and RAE, DRL reduces guidance-free FID (e.g., $9.38 \\to 2.62$ on SiT) and semantic-space FD (e.g., $88.2 \\to 19.3$ on DINOv3 for SiT), with consistent gains across all backbones, and improves human-preference rewards without training on them. It also yields a better Pareto frontier between preference reward and image fidelity under subsequent preference-based post-training, increasing alignment while reducing low-level artifacts such as oversaturation and excessive brightness.",
+    "authors": [
+      "Nicolas Beltran-Velez",
+      "Felix Friedrich",
+      "Zhang Xiaofeng",
+      "Reyhane Askari-Hemmat",
+      "Xiaochuang Han",
+      "Adriana Romero-Soriano",
+      "Michal Drozdzal"
+    ],
+    "published": "2026-06-17",
+    "updated": "2026-06-17",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19162.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19162",
+    "primary_category": "cs.LG",
+    "score": 75,
+    "summary": {
+      "title_zh": "奖励一直就在你的数据中：用判别器引导的强化学习纠正流匹配",
+      "core_contribution": "本文提出判别器引导的强化学习（DRL），通过训练一个在预训练表示空间中区分真实数据与模型样本的判别器，将其logit作为奖励信号，从而在不依赖人类偏好标注的情况下，显著提升流匹配模型的生成质量和语义保真度。",
+      "method": "DRL首先利用预训练的特征空间（如DINOv2）训练一个判别器，使其区分真实数据与当前流匹配模型生成的样本；然后将判别器的logit作为KL正则化强化学习中的奖励信号，该logit近似于数据与模型分布的对数似然比，是引导模型逼近真实数据分布的最优奖励。通过这种方式，DRL绕过了传统匹配损失（如L2回归误差）与生成质量之间的结构性不匹配，直接优化与视觉真实感和语义一致性相关的目标。",
+      "findings": "在SiT、JiT、REPA和RAE等多种流匹配骨干网络上，DRL显著降低了无引导FID（例如SiT从9.38降至2.62）和语义空间FD（例如SiT在DINOv3上从88.2降至19.3），且在所有骨干网络上表现一致；同时，DRL在不使用人类偏好数据的情况下提升了人类偏好奖励，并在后续基于偏好的后训练中实现了更好的偏好奖励与图像保真度之间的帕累托前沿，减少了过饱和、过亮等低级伪影。"
+    }
+  }
+]
