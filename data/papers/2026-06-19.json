@@ -1,0 +1,149 @@
+[
+  {
+    "id": "2606.20543",
+    "title": "SSD: Spatially Speculative Decoding Accelerates Autoregressive Image Generation",
+    "abstract": "Autoregressive models excel in visual generation by treating images as 1D sequences of discrete tokens, mirroring language modeling. However, this flattening discards the intrinsic 2D spatial locality of visual signals, creating severe computational bottlenecks during inference. We introduce Spatially Speculative Decoding (SSD), a framework that aligns the predictive objective with the natural geometry of images. Rather than predicting only the immediate next token in a 1D sequence, our model simultaneously predicts the adjacent horizontal token and the token directly below it. By capitalizing on this 2D spatial correlation, spatially speculative decoding overcomes the memory wall in visual inference. Our approach accelerates autoregressive image generation by up to 13.3x while maintaining high fidelity on DPG-Bench and GenEval. Our results suggest that respecting the underlying geometry of vision unlocks massive computational efficiencies, paving the way for real-time, high-resolution autoregressive generative models.",
+    "authors": [
+      "Shilong Xiang",
+      "Zirui Zhang",
+      "Lijun Yu",
+      "Chengzhi Mao"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20543.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20543",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SSD：空间推测解码加速自回归图像生成",
+      "core_contribution": "提出了一种名为空间推测解码（SSD）的框架，通过利用图像的二维空间局部性来加速自回归图像生成，克服了传统一维序列预测中的内存瓶颈。",
+      "method": "该方法不再仅预测一维序列中的下一个令牌，而是同时预测相邻的水平令牌和正下方的令牌，从而利用二维空间相关性进行并行推测。通过这种空间对齐的预测目标，SSD能够在保持生成质量的同时大幅减少推理步骤。",
+      "findings": "在DPG-Bench和GenEval基准测试上，SSD将自回归图像生成速度提升了高达13.3倍，同时保持了高保真度，表明尊重视觉信号的几何结构可以显著提升计算效率。"
+    }
+  },
+  {
+    "id": "2606.20506",
+    "title": "FreeStyle: Free Control of Style-Content Dual-Reference Generation from Community LoRA Mining",
+    "abstract": "Style-content dual-reference generation aims to synthesize an image that preserves the structure and semantics of a content reference while adopting the style of a separate style reference.Despite recent progress, this setting remains challenging because models must balance content fidelity, style alignment, and instruction following avoiding semantic leakage from the style reference.A key bottleneck is the lack of large-scale triplet data with clean content-style separation and broad long-tail style coverage.In this work, we propose FreeStyle, a scalable dual-reference generation framework based on community LoRA mining.We treat community LoRAs as compositional anchors for style and content, and design a rigorous generation and filtering pipeline to construct large-scale Style-Reference and Content-Reference triplets across multiple base models.To address content leakage, we adopt a two-stage curriculum with stage-specific disentanglement mechanisms: an attention-level enrichment constraint that suppresses style-reference leakage in the style-transfer stage, and a frequency-aware RoPE modulation strategy that targets positional-correspondence-based leakage in the harder dual-reference stage.We also introduce a benchmark covering both style-reference and dual-reference generation, with evaluations on style similarity, content preservation, aesthetics, instruction following, and leakage rejection. The benchmark incorporates a style-invariant Content Alignment Score (CAS) and introduces a calibrated VLM-based Rejection Score for evaluating generation reliability and leakage suppression.Extensive experiments show that our model achieves a strong balance among style alignment, content preservation, and leakage suppression.",
+    "authors": [
+      "Jinghong Lan",
+      "Wei Cheng",
+      "Yunuo Chen",
+      "Ziqi Ye",
+      "Peng Xing",
+      "Yixiao Fang",
+      "Rui Wang",
+      "Yufeng Yang",
+      "Xuanyang Zhang",
+      "Xianfang Zeng",
+      "Difan Zou",
+      "Gang Yu",
+      "Chi Zhang"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20506.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20506",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "FreeStyle：基于社区LoRA挖掘的风格-内容双参考生成自由控制",
+      "core_contribution": "提出了一种可扩展的双参考图像生成框架FreeStyle，通过挖掘社区LoRA并构建大规模三元组数据，有效解决了风格-内容双参考生成中内容泄漏和风格覆盖不足的问题。",
+      "method": "该方法将社区LoRA视为风格和内容的组合锚点，设计了一套严格的生成与过滤流程，构建了覆盖多种基础模型的大规模风格参考和内容参考三元组数据。为应对内容泄漏，采用两阶段课程学习：在风格迁移阶段引入注意力层富集约束抑制风格参考泄漏，在更困难的双参考阶段采用频率感知的RoPE调制策略处理基于位置对应的泄漏。同时，引入了一个包含风格不变内容对齐分数和基于VLM的校准拒绝分数的基准测试，用于评估生成可靠性。",
+      "findings": "大量实验表明，FreeStyle在风格对齐、内容保留和泄漏抑制之间取得了强平衡，验证了其在大规模社区LoRA挖掘和两阶段解耦机制下的有效性。"
+    }
+  },
+  {
+    "id": "2606.20100",
+    "title": "WeGenBench: A Multidimensional Diagnostic Benchmark towards Text-to-Image Model Optimization",
+    "abstract": "Recent text-to-image generation models have demonstrated remarkable capabilities in synthesizing highly realistic images from text inputs alone. Although existing benchmarks can evaluate the generation capabilities of various models to some extent, they struggle to comprehensively and accurately measure performance across multiple dimensions, often failing to reveal the inherent deficiencies of models in specific categories. To address these limitations, we propose WeGenBench, a novel benchmark designed for the comprehensive, multi-perspective evaluation of text-to-image generation capabilities. Our benchmark comprises a total of 4,000 test prompts across two primary categories, meticulously balanced between Chinese and English to evaluate bilingual and cross-cultural generation capabilities. Beyond macroscopic scene classification, we annotate each prompt with multi-dimensional tags tailored to the distinct content and challenges of each language, thereby refining the generation tasks into more specific sub-categories. Through a cross-dimensional evaluation mechanism leveraging both scene classifications and multi-dimensional tags, WeGenBench can precisely pinpoint model shortcomings in specific generation categories. Furthermore, to measure generation quality more accurately, we design and validate several novel evaluation metrics by integrating Vision-Language Models (VLMs), which assess model performance on domain-specific tasks from three core aspects. Crucially, our approach yields both the assessment outcomes and the detailed reasoning trajectories, facilitating a rigorous verification of the accuracy and soundness of the evaluation results. Finally, we conduct systematic benchmarking on current state-of-the-art methods and provide an in-depth analysis of the limitations present in existing models.",
+    "authors": [
+      "Qian Liang",
+      "Xiaomin Li",
+      "Ying Zhang",
+      "Jia Xu",
+      "Lihao Ni",
+      "Hongrui Li",
+      "Jingjing Li",
+      "Jing Lyu",
+      "Chen Li"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20100.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20100",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "WeGenBench：面向文本到图像模型优化的多维诊断基准",
+      "core_contribution": "提出了一个名为WeGenBench的新型基准，能够从多维度、多视角全面评估文本到图像生成模型，并通过跨维度评估机制精准定位模型在特定生成类别中的缺陷。",
+      "method": "该基准包含4000个测试提示，分为两大类别，并平衡中英文以评估双语和跨文化生成能力。每个提示被标注了多维标签，将生成任务细化为更具体的子类别。通过场景分类与多维标签的交叉评估机制，结合基于视觉语言模型（VLM）设计的新颖评估指标，从三个核心方面衡量模型在特定领域任务上的表现，同时输出评估结果与详细推理轨迹以验证准确性。",
+      "findings": "对当前最先进的文本到图像生成模型进行了系统基准测试，深入分析了现有模型的局限性，并验证了所提评估指标在精准识别模型缺陷方面的有效性。"
+    }
+  },
+  {
+    "id": "2606.20076",
+    "title": "Variable-Length Tokenization via Learnable Global Merging for Diffusion Transformers",
+    "abstract": "Latent Diffusion Models (LDMs) have become dominant in visual synthesis, but their quality-compute trade-off is largely constrained by the tokenizer's fixed compression ratio. Variable-length tokenizers (VLTs) promise adaptive compression by varying token counts, allowing diffusion models to flexibly balance quality and compute. However, conventional VLTs modulate length by truncating ordered token sequences, which makes token semantics depend on token position and breaks representational alignment across lengths. This leads to a cross-length shift in the latent distribution that hinders a single variable-length diffusion model from operating effectively. To address this, we propose a novel variable-length tokenizer that modulates length by merging tokens. We show that encouraging similar tokens to merge enables direct cross-length representation alignment when the diffusion transformer operates according to the merging pattern. Since conventional merging methods are data-dependent, making the merging pattern inaccessible during generation, we introduce learnable global merging, which is data-independent, to ensure compatibility with diffusion transformers. On ImageNet 256$\\times$256 generation, our merging-based variable-length tokenizer integrated with a diffusion transformer achieves a superior gFID-compute trade-off compared to prior VLT methods. Code is available at [this https URL](https://github.com/movinghoon/lgm)",
+    "authors": [
+      "Dong Hoon Lee",
+      "Seunghoon Hong"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20076.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20076",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于可学习全局合并的可变长度分词方法用于扩散变换器",
+      "core_contribution": "提出了一种基于合并操作的可变长度分词器，通过鼓励相似令牌合并实现跨长度表示对齐，解决了传统截断式可变长度分词导致的潜在分布偏移问题，从而让单个扩散变换器模型在不同长度下均能有效工作。",
+      "method": "该方法通过合并相似令牌来调节令牌数量，而非截断有序序列。为了在生成过程中保持合并模式的可复现性，作者引入了可学习的全局合并机制，该机制是数据无关的，使得扩散变换器能够根据固定的合并模式进行操作，从而实现跨长度的表示对齐。",
+      "findings": "在ImageNet 256×256图像生成任务上，基于合并的可变长度分词器与扩散变换器集成后，在gFID与计算量的权衡上显著优于以往的可变长度分词方法。"
+    }
+  },
+  {
+    "id": "2606.19970",
+    "title": "CrossFlow: One-Step Generation Across Latent and Pixel Spaces",
+    "abstract": "Most diffusion and flow-matching generators define the prior, probability path, and prediction target in the same representation space. Latent diffusion improves efficiency by moving this path into an autoencoder latent space, but the final sample is still produced by a separately trained decoder. This separation creates a mismatch: the generator is optimized for latent-space prediction, while final quality depends on how the decoder handles generated latents that may differ from clean encoder outputs. We introduce CrossFlow, a cross-space flow formulation that maps noisy latent inputs directly to pixel-space images. The key technical step is a velocity-free one-step objective: the latent trajectory defines the training path, but the supervised prediction is an image rather than a latent displacement. This lets one model act both as a one-step latent-to-pixel generator and as a decoder replacement for latent diffusion pipelines. On class-conditional ImageNet-1k at $256\\times256$, CrossFlow-XL achieves 1.62 FID with one function evaluation. Ablations show that the latent encoder and pixel-space perceptual and adversarial losses are important for fidelity. These results indicate that cross-space flow objectives can combine the efficiency of latent representations with direct pixel-space supervision, without requiring a separate decoder at inference.",
+    "authors": [
+      "Xiyuan Wang",
+      "Xiao Zhang",
+      "Yang Li",
+      "Ruoxi Jiang",
+      "Zhao Zhong",
+      "Liefeng Bo",
+      "Muhan Zhang"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19970.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19970",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "CrossFlow：跨潜在空间与像素空间的单步生成",
+      "core_contribution": "提出了一种跨空间流（CrossFlow）生成框架，将噪声潜在表示直接映射到像素空间图像，无需单独的解码器，实现了单步生成并解决了传统潜在扩散中生成器与解码器之间的不匹配问题。",
+      "method": "该方法定义了一个跨空间的流模型，其中训练路径基于潜在空间轨迹，但监督预测目标为像素空间图像，而非潜在位移。通过一个无速度项的单步目标函数，模型同时充当潜在到像素的单步生成器和潜在扩散管道的解码器替代。训练中结合了潜在编码器以及像素空间的感知损失和对抗损失以提升保真度。",
+      "findings": "在类别条件ImageNet-1k 256×256数据集上，CrossFlow-XL模型仅需一次函数评估即可达到1.62的FID分数。消融实验表明，潜在编码器以及像素空间的感知损失和对抗损失对生成保真度至关重要。结果表明，跨空间流目标能够结合潜在表示的效率与像素空间直接监督的优势，推理时无需单独的解码器。"
+    }
+  }
+]
