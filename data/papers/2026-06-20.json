@@ -1,0 +1,142 @@
+[
+  {
+    "id": "2606.20404",
+    "title": "FlowBender: Feedback-Aware Training for Self-Correcting Conditional Flows",
+    "abstract": "Conditional diffusion and flow models routinely fail to satisfy the very constraints that define their task. For instance, a depth-conditioned model often produces images whose re-extracted depth disagrees with the input, even though the forward operator--the depth predictor defining the constraint--is available during both training and inference. Existing approaches generally fall into two categories: supervised models that treat the conditioning signal as a static cue and ignore alignment information at inference, and guidance-based methods that consult it through hand-tuned linear updates, typically trading fidelity to the condition against the plausibility of the generated sample. We argue that the fundamental gap in both paradigms is that the model is never trained to utilize its own alignment error. We introduce FlowBender, a closed-loop framework that treats this error as a first-class input, training the network to learn a correction policy conditioned on inference-time feedback. At each step, an unguided look-ahead pass estimates the clean signal, a task-specific deviation is computed via the forward operator, and a refinement pass consumes this signal to produce a corrected velocity. We propose several variants of FlowBender, including a gradient-based formulation for differentiable operators and a zero-order variant for non-differentiable settings such as JPEG compression. For efficient sampling, we introduce a prior-step shortcut that enables closed-loop correction at a minimal additional computational cost. Across image-to-image translation, restoration, and 3D mesh texturing, FlowBender consistently outperforms standard supervised baselines, alignment-loss-augmented training, and state-of-the-art inference-time guidance, improving fidelity and plausibility simultaneously rather than trading them against each other. Project page: https://flow-bender.github.io/",
+    "authors": [
+      "Daniel Gilo",
+      "Sven Elflein",
+      "Ido Sobol",
+      "Or Litany"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20404.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20404",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "FlowBender：面向自纠正条件流的反馈感知训练",
+      "core_contribution": "提出了一种闭环训练框架FlowBender，将推理时的对齐误差作为模型输入，使条件生成模型学会自我纠正，从而同时提升生成结果对条件的忠实度和样本的合理性，打破了传统方法中两者不可兼得的权衡。",
+      "method": "FlowBender在每一步生成中执行一个无引导的前瞻步骤以估计干净信号，然后通过前向算子计算任务特定的偏差（即对齐误差），再将此偏差作为反馈信号输入模型，生成一个修正后的速度场。该方法支持基于梯度的变体（适用于可微算子）和零阶变体（适用于不可微场景如JPEG压缩），并引入了一种“前一步捷径”技术，以极小的额外计算代价实现闭环修正。",
+      "findings": "在图像到图像翻译、图像恢复和3D网格纹理化等多个任务上，FlowBender一致优于标准监督基线、对齐损失增强训练以及最先进的推理时引导方法，能够同时提升忠实度和合理性，而非在两者之间进行权衡。"
+    }
+  },
+  {
+    "id": "2606.19944",
+    "title": "Timage: A Generative Text-in-Image Paradigm for Fine-Tuning Vision-Language Models",
+    "abstract": "Multimodal Large Language Models (MLLMs) often lose track of the right image regions during fine-grained spatial reasoning, because a textual query rarely carries any explicit geometric anchor into the pixel domain. Prevailing remedies either rewire the model's weights or pad the prompt with verbose instructions, yet neither reliably pins the language to the correct visual coordinates without eroding the backbone's general competence. We introduce Timage, a paradigm that recasts multimodal understanding as an alignment problem solved at the input: the query is drawn, as a typeset overlay, onto the image itself. The placement and appearance of this overlay are produced by a Constrained Schrödinger Bridge (cSB), an entropic optimal-transport sampler that factorizes layout synthesis into two coupled stochastic stages. The first stage, Region Search, transports noise toward query-aligned image zones while obeying a hard occlusion barrier that protects salient foreground content; the second stage, Appearance Shaping, sizes the glyphs through an ``ink-budget'' regularizer so that the rendered text stays legible and visually balanced. The resulting overlay behaves as an explicit attention beacon that channels the model's focus along spatial semantics. On the VMCBench suite, Timage paired with a modest 7B backbone clearly overtakes far larger proprietary systems as well as parameter-tuned baselines. The study positions deliberate input reconstruction as a powerful, architecture-neutral lever for strengthening multimodal reasoning.",
+    "authors": [
+      "Yifeng Wu",
+      "Huimin Huang",
+      "Ruiluo Wu",
+      "Chunyi Lin",
+      "Guanhua Chen",
+      "Xian Wu",
+      "Wang Song",
+      "Ruize Han"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19944.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19944",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "Timage：一种用于微调视觉语言模型的文本-图像生成范式",
+      "core_contribution": "提出了一种名为Timage的新范式，通过在输入图像上直接绘制文本覆盖层，将多模态理解转化为输入层面的对齐问题，从而在不修改模型架构或损害骨干网络通用能力的前提下，显著提升细粒度空间推理的准确性。",
+      "method": "Timage利用约束薛定谔桥（cSB）生成文本覆盖层，该过程分解为两个耦合的随机阶段：第一阶段（区域搜索）在保护前景显著内容的硬遮挡约束下，将噪声向与查询对齐的图像区域传输；第二阶段（外观塑造）通过“墨水预算”正则化器调整字形大小，确保渲染文本清晰且视觉平衡。最终生成的覆盖层作为显式注意力信标，引导模型聚焦于空间语义相关的区域。",
+      "findings": "在VMCBench基准测试中，Timage搭配一个较小的7B骨干模型，不仅显著超越了参数微调的基线方法，还优于规模大得多的专有系统，证明了输入重构作为一种架构无关的手段，能够有效增强多模态推理能力。"
+    }
+  },
+  {
+    "id": "2606.19495",
+    "title": "LooseControlVideo: Directorial Video Control using Spatial Blocking",
+    "abstract": "Precise 3D spatial orchestration in text-to-video generation remains a significant challenge, particularly for multi-object scenes where semantic layout and temporal dynamics are often entangled. While existing depth-conditioned models achieve good structural fidelity, they necessitate dense, frame-accurate guidance that is labor-intensive to author for dynamic events involving deformable objects. We present LooseControlVideo, a framework that enables intuitive and expressive control by using sparse, oriented 3D boxes as a \"blocking\" proxy. This allows users to author high-level layout and trajectory while leveraging a video generative model to generate realistic occlusions, dynamics and interactions. We achieve this by fine-tuning a Wan 2.2 backbone on a video dataset annotated with DNOCS, a novel encoding for 3D size, orientation and depth-ordered occlusions. Furthermore, our method allows for localized refinement, such as adjusting a jump trajectory or adding an interaction, with minimal disruption to the global scene context. Extensive evaluations on the nuScenes, HO-3D, and BEHAVE benchmarks demonstrate that LooseControlVideo significantly outperforms existing 2D-box and flow-based baselines. Our findings indicate a 1.2x to 3x improvement in Trajectory Error; 2x improvement in Rigid Motion Consistency; and a 1.5x to 2x increase in Occlusion Accuracy over current state-of-the-art layout-conditioned models, demonstrating that oriented 3D primitives provide good geometric prior for complex, multi-agent video authoring.",
+    "authors": [
+      "Shariq Farooq Bhat",
+      "Niloy J. Mitra",
+      "Kalyan Sunkavalli"
+    ],
+    "published": "2026-06-17",
+    "updated": "2026-06-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19495.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19495",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "LooseControlVideo：使用空间分块实现导演级视频控制",
+      "core_contribution": "提出了一种基于稀疏、有向3D框作为“分块”代理的视频生成框架，使用户能够以直观方式控制多对象场景的高层布局与轨迹，同时让生成模型自动处理遮挡、动态和交互，显著优于现有2D框和光流方法。",
+      "method": "该方法在Wan 2.2骨干网络上进行微调，使用带有DNOCS编码的视频数据集——DNOCS是一种新颖的编码方式，用于表示3D尺寸、方向和深度排序的遮挡信息。用户只需提供稀疏的3D有向框作为布局和轨迹的粗略指导，模型即可生成逼真的遮挡、动态和交互。此外，该方法支持局部细化（如调整跳跃轨迹或添加交互），且对全局场景影响极小。",
+      "findings": "在nuScenes、HO-3D和BEHAVE基准上的评估表明，LooseControlVideo在轨迹误差上比现有最先进的布局条件模型提升1.2至3倍，刚体运动一致性提升2倍，遮挡精度提升1.5至2倍，证明有向3D基元为复杂多智能体视频创作提供了良好的几何先验。"
+    }
+  },
+  {
+    "id": "2606.19939",
+    "title": "DiffMath: Symbol- and Graph-Aware Latent Diffusion Transformer for Handwritten Mathematical Expression Generation",
+    "abstract": "Handwritten Mathematical Expression Generation (HMEG) is challenging due to the complex two-dimensional layouts and long-range structural dependencies of mathematical expressions. Existing methods typically rely on explicit spatial supervision, such as symbol-level bounding boxes, which incurs high annotation costs and limits scalability. In this work, we propose DiffMath, a symbol- and graph-aware latent diffusion framework that leverages the hierarchical structure inherent in LaTeX as a structural prior, eliminating the need for positional supervision. First, we design a Relational Abstract Syntax Tree (RelAST), a generation-oriented representation that distills MathML trees into compact triplet sequences [S, R, D], where each token directly encodes a symbol identity, spatial relation, or nesting depth. Second, we introduce MathVAE, which learns structure-preserving latent representations through symbol-aware and relation-aware perceptual regularization, ensuring that the latent space captures both character semantics and spatial topology. Third, MathDiT performs conditional denoising in this structured latent space, further guided by a global symbol-count prior via Adaptive Layer Normalization (AdaLN) to improve structural coherence. Experiments show that DiffMath produces structurally consistent handwritten expressions, achieves superior performance over existing methods, and improves the accuracy of downstream OCR models through synthetic data augmentation.",
+    "authors": [
+      "Wei Pan",
+      "Xuhan Zheng",
+      "Yilin Shi",
+      "Huiguo He",
+      "Hiuyi Cheng",
+      "Dezhi Peng",
+      "Minghui Liao",
+      "Lianwen Jin"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19939.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19939",
+    "primary_category": "cs.CV",
+    "score": 70,
+    "summary": {
+      "title_zh": "DiffMath：面向手写数学表达式生成的符号与图感知潜在扩散Transformer",
+      "core_contribution": "提出了一种无需符号级位置标注的手写数学表达式生成框架DiffMath，通过利用LaTeX的层次结构作为先验，结合关系抽象语法树、结构保持的潜在编码和条件扩散去噪，实现了高质量的结构化表达式生成。",
+      "method": "首先，设计了一种生成导向的关系抽象语法树（RelAST），将MathML树蒸馏为紧凑的三元组序列[S, R, D]，每个token直接编码符号身份、空间关系或嵌套深度。其次，引入MathVAE，通过符号感知和关系感知的感知正则化学习保持结构的潜在表示，确保潜在空间同时捕捉字符语义和空间拓扑。最后，MathDiT在该结构化潜在空间中进行条件去噪，并利用自适应层归一化（AdaLAN）引入全局符号计数先验，以增强结构一致性。",
+      "findings": "实验表明，DiffMath能够生成结构一致的手写数学表达式，在性能上优于现有方法，并且通过合成数据增强可提升下游OCR模型的识别准确率。"
+    }
+  },
+  {
+    "id": "2606.17644",
+    "title": "Bounding Box Label Propagation for Re-Annotation of Document Layout Analysis Datasets",
+    "abstract": "Datasets in practical document processing scenarios typically grow over time, and their class annotations undergo continuous refinement. This creates significant re-annotation efforts, which are time-consuming and costly. A promising remedy is to re-annotate only a small subset of available documents manually and apply semi-supervised learning techniques that leverage both labelled and unlabelled data. Although there are numerous approaches to tackle this problem for classification, there exists no adaptation for the problem of re-classifying object detection instances, e.g. for document layout analysis. To this end, we propose Bounding Box Label Propagation (BBLP), a pseudo-labelling framework for object detection. An object encoder integrates visual, textual, and positional embeddings from object detection samples to come up with a joint embedding that can be used for Label Propagation on partially annotated datasets in a plug-and-play fashion. Evaluation results indicate that the proposed approach produces high-quality class annotations of bounding boxes. In the D4LA layout analysis dataset, it achieves a mAP of 54.0%, corresponding to 81.6% of fully supervised performance, while using only 10% labelled data. Our work demonstrates the potential of Label Propagation for object detection and lays the groundwork for reducing manual annotation efforts in real-world document processing applications.",
+    "authors": [
+      "Nick Jochum",
+      "Tobias Alt-Veit",
+      "Christian Schön",
+      "Alexander Lück",
+      "René Schuster",
+      "Didier Stricker"
+    ],
+    "published": "2026-06-16",
+    "updated": "2026-06-16",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.17644.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.17644",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "用于文档布局分析数据集重新标注的边界框标签传播方法",
+      "core_contribution": "提出了一种名为BBLP（边界框标签传播）的伪标注框架，首次将标签传播技术应用于目标检测中的类别重新标注问题，显著减少了文档布局分析数据集的人工重新标注成本。",
+      "method": "该方法首先利用目标检测样本的视觉、文本和位置嵌入，通过一个对象编码器生成联合嵌入表示。然后，基于这些联合嵌入，在部分标注的数据集上采用标签传播算法，以半监督方式为未标注的边界框分配类别标签。整个过程以即插即用的方式集成，无需对检测模型进行额外训练。",
+      "findings": "在D4LA布局分析数据集上，仅使用10%的标注数据，BBLP即可达到54.0%的mAP，相当于全监督性能的81.6%，证明了标签传播在目标检测中生成高质量边界框类别标注的有效性。"
+    }
+  }
+]
