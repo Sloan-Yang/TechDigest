@@ -1,0 +1,136 @@
+[
+  {
+    "id": "2606.17619",
+    "title": "RAVA: Retrieval-Augmented Viewpoint Alignment for Subject-Driven Image Generation",
+    "abstract": "Reference-driven image generation has made rapid progress on identity preservation, but reliable viewpoint control across different subjects remains poorly understood. The difficulty is not merely generating a new image of the target subject: the model must infer the implicit viewpoint of one subject and transfer it to another subject using only image-level evidence, without camera poses, depth, or ray-based conditions. In this setting, existing generators conditioned on multiple image references often rely on spurious semantic correlations, which lead to viewpoint drift, part-level structural mismatches, and missing or unsupported target-specific content. We formulate this challenge as cross-subject viewpoint alignment and propose RAVA, a retrieval-augmented framework that supplies explicit geometric evidence before generation. RAVA first learns a cross-instance viewpoint embedding that retrieves target-subject images aligned with the anchor viewpoint, then applies a LogDet-based subset selection strategy to retain a compact reference set that is both view-consistent and structurally complementary. The selected references are finally consumed by a fine-tuned multi-reference image generator. Experiments show that generic semantic embeddings are nearly random for this task, while the proposed retriever substantially improves viewpoint retrieval quality. On cross-subject generation, RAVA consistently outperforms zero-shot baselines and stronger retrieval alternatives under the same generation backbone. These results indicate that cross-subject viewpoint alignment benefits from retrieval-augmented geometric grounding rather than relying on end-to-end generation alone.",
+    "authors": [
+      "Qiwei Yan",
+      "Zhiqiang Yuan",
+      "Chongyang Li",
+      "Jiapei Zhang",
+      "Ying Deng",
+      "Jinchao Zhang",
+      "Jie Zhou"
+    ],
+    "published": "2026-06-16",
+    "updated": "2026-06-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.17619.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.17619",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "RAVA：面向主题驱动图像生成的检索增强视角对齐方法",
+      "core_contribution": "提出了一种检索增强框架RAVA，通过显式几何证据的检索与选择，解决了跨主体视角对齐中因语义相关性导致的视角漂移和结构不匹配问题。",
+      "method": "首先学习跨实例视角嵌入，用于检索与锚定主体视角对齐的目标主体图像；然后采用基于LogDet的子集选择策略，保留既视角一致又结构互补的紧凑参考集；最后将选中的参考图像输入微调后的多参考图像生成器进行生成。",
+      "findings": "通用语义嵌入在该任务中几乎无效，而提出的检索器显著提升了视角检索质量；在跨主体生成任务中，RAVA在相同生成骨干下持续优于零样本基线和更强的检索替代方案，表明跨主体视角对齐受益于检索增强的几何基础而非仅依赖端到端生成。"
+    }
+  },
+  {
+    "id": "2606.20094",
+    "title": "MakeupMirror: Improving Facial Attribute Preservation in Diffusion Models for Makeup Transfer",
+    "abstract": "Makeup transfer models enable fun augmented reality (AR) experiences as well as virtual try-on (VTO) for online makeup shopping. While recent state-of-the-art diffusion based solutions such as Stable-Makeup dramatically improve the accuracy and realism of makeup transfer, they still face limitations in identity and skin color preservation, making production-level VTO for makeup shopping unrealistic. In this work, we propose MakeupMirror, a diffusion-based approach to makeup transfer that makes significant progress towards preserving facial features and skin tone. We introduce several technical innovations over Stable-Makeup: (1) integration of facial geometry conditioning with ControlNets to maintain facial fidelity; (2) region-specific makeup transfer control to enable precise makeup application across facial regions such as skin, eyes and lips; (3) skin tone-based makeup transfer modulation that prevent skin tone alteration in cross-subject transfer scenarios; and (4) integration of a Levenberg-Marquardt Langevin sampler to speed up inference while maintaining generation quality. Our experiments on CPM-Real, Makeup Wild, and (herein newly collected, more diverse) MakeupSelfies datasets show that MakeupMirror improves relative facial recognition similarity by +60%, reduces relative skin tone difference by -50% over Stable-Makeup, with a latency of 0.7s, while achieving expert acceptance rate of 94% across core facial identity preservation criteria.",
+    "authors": [
+      "Nefeli Andreou",
+      "Angel Martínez-González",
+      "Sabine Sternig",
+      "Matthieu Guillaumin",
+      "Epameinondas Antonakos",
+      "Michael Opitz"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR",
+      "cs.LG",
+      "cs.MM"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20094.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20094",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "化妆镜：提升扩散模型中面部属性保持的妆容迁移方法",
+      "core_contribution": "提出了一种基于扩散模型的妆容迁移方法MakeupMirror，通过多项技术创新显著提升了面部特征和肤色的保持能力，使生产级虚拟试妆成为可能。",
+      "method": "在Stable-Makeup基础上引入四项创新：1) 使用ControlNets集成面部几何条件以维持面部保真度；2) 实现区域特定的妆容迁移控制，精确应用于皮肤、眼睛和嘴唇等区域；3) 基于肤色的妆容迁移调制，防止跨主体迁移时肤色改变；4) 集成Levenberg-Marquardt Langevin采样器以加速推理并保持生成质量。",
+      "findings": "在CPM-Real、Makeup Wild和新收集的MakeupSelfies数据集上，相比Stable-Makeup，面部识别相似度相对提升60%，肤色差异相对降低50%，推理延迟仅0.7秒，核心面部身份保持标准下的专家接受率达94%。"
+    }
+  },
+  {
+    "id": "2606.19958",
+    "title": "SketchKeyAnime: Reference-anchored Sparse Key-Sketch Animation Synthesis",
+    "abstract": "Traditional animation production relies heavily on manual drawing and iterative refinement, particularly for key-pose design, in-betweening, and character coloring. While existing animation and video generation methods have made notable progress, they typically depend on RGB boundary frames, dense frame-wise conditions, or complete sketch sequences, limiting their applicability under low-cost input conditions. We present SketchKeyAnime, a video diffusion framework for generating structurally controllable, appearance-consistent, and temporally coherent animations from sparse key-sketch inputs. Given a single reference RGB image and a few temporally indexed key sketches, SketchKeyAnime introduces a dual-branch conditioning mechanism to encode local geometric constraints alongside semantic-temporal context. It leverages Sketch Cross Attention to fuse reference image and sketch conditions with learnable gating, and incorporates an Adaptive Weighted Loss to strengthen supervision on key-sketch frames and line-art regions. Experimental results on the Aesthetic subset of Sakuga-42M show that our approach consistently outperforms representative animation interpolation and sketch-guided generation baselines. Compared to the best-performing baseline, SketchKeyAnime reduces EDMD by 31.9\\% and FVD by 9.5\\%, demonstrating superior sketch fidelity and temporal coherence, while achieving the best overall performance across most quantitative metrics. These results validate the proposed framework and highlight its potential for low-cost, highly controllable animation creation.",
+    "authors": [
+      "Meixi Li",
+      "Xianlin Zhang",
+      "Yue Zhang",
+      "Xueming Li"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19958.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19958",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "SketchKeyAnime：基于参考锚点的稀疏关键草图动画合成",
+      "core_contribution": "提出了一种基于视频扩散框架的动画合成方法，能够在仅需单张参考RGB图像和少量稀疏关键草图输入的条件下，生成结构可控、外观一致且时间连贯的动画，显著降低了动画制作对密集输入条件的依赖。",
+      "method": "该方法采用双分支条件编码机制，分别提取局部几何约束和语义-时间上下文信息；通过引入可学习门控的草图交叉注意力（Sketch Cross Attention）融合参考图像与草图条件；并设计了自适应加权损失（Adaptive Weighted Loss），加强对关键草图帧和线稿区域的监督，从而提升生成质量。",
+      "findings": "在Sakuga-42M数据集的美学子集上，SketchKeyAnime在多项指标上优于代表性动画插值和草图引导生成基线，其中EDMD降低31.9%，FVD降低9.5%，在草图保真度和时间连贯性上表现最佳，验证了其在低成本、高可控动画创作中的潜力。"
+    }
+  },
+  {
+    "id": "2606.19662",
+    "title": "Learning When to Denoise: Optimizing Asynchronous Schedules for Latent Diffusion",
+    "abstract": "Multi-representation diffusion models can improve visual synthesis by denoising complementary views of an image, but their performance depends critically on the asynchronous schedule that determines when each representation is denoised. We propose to learn this schedule. Our method formulates asynchronous flow matching over multiple representation spaces and uses a schedule-corrected objective that keeps each representation's local noising-time weights fixed as the schedule changes. We instantiate the schedule with a flexible parametric class that is convex and monotone by construction, and learn it using a fast joint probe with less than 1% additional training compute. On ImageNet 256x256, the learned schedule substantially improves both convergence speed and final quality under a matched 675M-parameter XL backbone. With AutoGuidance, our 200-epoch model reaches FID 1.05, matching the 800-epoch SFD-XL baseline with 4x less training. Training to 600 epochs further improves to FID 1.02, outperforming the 1B-parameter SFD-XXL result of FID 1.04 while using a smaller model. In the unguided setting, our 200-epoch model reaches FID 2.37, already below the best 800-epoch SFD-XL result (2.54) at 4x less training, and improves to FID 2.14 at 600 epochs. Code is available at https://github.com/bsq532087/LWD",
+    "authors": [
+      "Bingshuo Qian",
+      "Xiang Cheng"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19662.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19662",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "学习何时去噪：优化潜在扩散的异步调度",
+      "core_contribution": "提出了一种学习异步调度的方法，通过可学习的调度策略显著提升多表示扩散模型的训练效率和生成质量，在ImageNet 256x256上以更少的训练步数达到或超越更大模型的性能。",
+      "method": "该方法将异步流匹配扩展到多个表示空间，并引入调度校正目标函数，使得在调度变化时每个表示的局部噪声时间权重保持固定。调度函数采用凸且单调的参数化形式，通过快速联合探测进行学习，额外训练计算量不到1%。",
+      "findings": "在ImageNet 256x256上，学习到的调度显著提升了收敛速度和最终质量：使用675M参数的XL骨干网络，200轮训练的模型在AutoGuidance下达到FID 1.05，与800轮训练的SFD-XL基线相当（训练量减少4倍）；600轮训练进一步将FID提升至1.02，超越了1B参数的SFD-XXL结果（FID 1.04）。在无引导设置下，200轮训练的模型FID为2.37，已低于800轮训练的SFD-XL最佳结果（2.54），600轮训练后FID进一步降至2.14。"
+    }
+  },
+  {
+    "id": "2606.18765",
+    "title": "SpectralDiT: Timestep-Conditioned Spectral Residual Correction for Flow-Matching DiTs",
+    "abstract": "We propose SpectralDiT, a lightweight modification to flow-matching Diffusion Transformers that adds timestep-conditioned spectral correction to the MLP residual branch. The module decomposes each residual update into low- and high-frequency components on the patch-token grid, then learns a zero-initialized additive gate so the model initially matches the baseline DiT. On CIFAR-10 pixel-space generation, SpectralDiT improves FID from 20.78 to 19.71 at patch size 1 and reduces the radial Fourier spectrum gap. Furthermore, we scale our method to latent diffusion on ImageNet-100. With 0.6% additional theoretical FLOPs and 1.36% additional parameters, SpectralDiT improves latent flow-matching, achieving an 8.7% relative FID reduction under classifier-free guidance (CFG 2.0). All reported results are averaged over five seeds. Ablations and gate visualizations on CIFAR-10 reveal stable block-specific spectral correction patterns.",
+    "authors": [
+      "Jiayu Tian"
+    ],
+    "published": "2026-06-17",
+    "updated": "2026-06-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.18765.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.18765",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "SpectralDiT：面向流匹配DiT的时间步条件化频谱残差校正",
+      "core_contribution": "提出一种轻量级模块SpectralDiT，通过时间步条件化的频谱残差校正，在不显著增加计算量和参数量的前提下，显著提升流匹配扩散Transformer（DiT）的图像生成质量。",
+      "method": "该方法在DiT的MLP残差分支中引入时间步条件化的频谱校正模块，将每个残差更新在patch-token网格上分解为低频和高频分量，并学习一个零初始化的加法门控，使模型初始状态与基线DiT一致。通过这种频谱分解与门控机制，模型能够自适应地调整不同频率成分的残差更新。",
+      "findings": "在CIFAR-10像素空间生成任务中，patch size为1时FID从20.78降至19.71，并缩小了径向傅里叶频谱差距。在ImageNet-100潜空间扩散任务中，仅增加0.6%理论FLOPs和1.36%参数，在无分类器引导（CFG 2.0）下实现8.7%的相对FID降低。CIFAR-10上的消融实验和门控可视化揭示了稳定的块特定频谱校正模式。"
+    }
+  }
+]
