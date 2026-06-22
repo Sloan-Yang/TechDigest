@@ -1,0 +1,129 @@
+[
+  {
+    "id": "2606.17584",
+    "title": "Root-Selecting Fixed-Point Inversion for Rectified Flows via Trajectory Straightness",
+    "abstract": "Finding the initial noise that generates a given data sample, known as inversion, is a key component for downstream applications such as training-free image editing. Existing fixed-point inversion methods improve inversion accuracy by formulating each inversion step as a fixed-point problem, but they lack a principled mechanism for selecting among multiple fixed-point solutions that can arise in practice. We observe that different selections induce different inversion trajectories, leading to substantial variation in reconstruction and editing quality. For rectified flows, we further find that this variation is closely associated with trajectory straightness, motivating straightness as a principled selection criterion. We propose SelFix, a fixed-point inversion method that selects fixed-point solutions inducing straighter inverse trajectories while retaining convergence to an exact inverse root under standard local assumptions. Experiments on FLUX.1-dev and PIE-Bench show that SelFix improves fixed-point inversion, achieving stronger real-image reconstruction and better source-preserving prompt-based editing than prior inversion baselines. The code is available at https://github.com/seminkim/selfix.",
+    "authors": [
+      "Semin Kim",
+      "Jihwan Yoon",
+      "Seunghoon Hong"
+    ],
+    "published": "2026-06-16",
+    "updated": "2026-06-16",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.17584.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.17584",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "基于轨迹直线度的整流流不动点反演中的根选择方法",
+      "core_contribution": "提出了一种名为SelFix的固定点反演方法，通过选择能诱导更直逆轨迹的固定点解，在保持收敛到精确反演根的同时，显著提升了整流流模型在图像重建和编辑任务中的性能。",
+      "method": "该方法将每个反演步骤建模为固定点问题，并观察到不同固定点解会导致不同的逆轨迹，进而影响重建和编辑质量。针对整流流，发现轨迹直线度与反演质量密切相关，因此将直线度作为选择固定点解的原则性标准。SelFix在标准局部假设下确保收敛到精确反演根，同时优先选择使逆轨迹更直的固定点解。",
+      "findings": "在FLUX.1-dev和PIE-Bench上的实验表明，SelFix相比现有反演基线方法，在真实图像重建和基于提示的源保持编辑任务中均取得了更优的性能，验证了轨迹直线度作为固定点选择标准的有效性。"
+    }
+  },
+  {
+    "id": "2606.20241",
+    "title": "BAFIS: Dataset + Framework to assess occupational Bias and Human Preference in modern Text-to-image Models",
+    "abstract": "Generative artificial intelligence has the potential to improve productivity and transform the production of creative content. However, existing research indicates that image generation models are significantly influenced by biases. This work investigates the inherent biases and language-induced biases present in text-to-image models within the context of occupation-related image generation, complementing established metrics with human preference feedback. We present a comprehensive evaluation of five current text-to-image models: Midjourney v6.1, Stable Diffusion 3 Medium, DALL-E 3, Playground v2.5, and FLUX.1-dev , focusing on gender and ethnicity bias, image quality, and prompt alignment. To facilitate this evaluation, we developed the \"Battle-Arena for Fair Image Synthesis\" (BAFIS), a platform designed to collect human feedback on bias in generated images. Furthermore, we created a dataset comprising 21,140 synthetic images generated using multilingual prompts, which serves as a basis for our analysis. We further place our results within a broader social context by comparing them to official statistics from the German Federal Employment Agency. Our findings reveal systematic biases in text-to-image models, with established evaluation metrics in partial correlation with subjective user ratings. Thus, our research emphasizes the need for including human preferences to develop fairer and more inclusive text-to-image models.",
+    "authors": [
+      "Thomas Klassert",
+      "Adrian Ulges",
+      "Biying Fu"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20241.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20241",
+    "primary_category": "cs.CV",
+    "score": 55,
+    "summary": {
+      "title_zh": "BAFIS：评估现代文本到图像模型中职业偏见与人类偏好的数据集与框架",
+      "core_contribution": "本文提出了一个名为BAFIS的评估平台和包含21,140张合成图像的数据集，系统性地评估了五种主流文本到图像模型在职业生成中的性别与种族偏见，并首次将人类偏好反馈与传统指标相结合。",
+      "method": "研究选取了Midjourney v6.1、Stable Diffusion 3 Medium、DALL-E 3、Playground v2.5和FLUX.1-dev五种模型，使用多语言提示生成职业相关图像。通过BAFIS平台收集人类对图像偏见、质量和提示对齐的反馈，并将结果与德国联邦就业局的官方统计数据进行比较。",
+      "findings": "研究发现所有模型均存在系统性偏见，且传统评估指标与用户主观评分仅部分相关，表明仅依赖自动指标不足以全面衡量偏见，必须纳入人类偏好反馈以开发更公平、包容的文本到图像模型。"
+    }
+  },
+  {
+    "id": "2606.20416",
+    "title": "On the Redundancy of Timestep Embeddings in Diffusion Models",
+    "abstract": "Diffusion models rely heavily on explicit timestep embeddings to modulate the denoising process across various noise scales. In this work, we challenge the necessity of these temporal signals by analyzing their impact on U-Net and Diffusion Transformer architectures. Beyond empirical evidence, we provide a theoretical framework demonstrating that, under certain conditions, the global minimizer of the diffusion training objective can be achieved without explicit timestep conditioning. Our findings reveal a surprising robustness when timestep embeddings are completely removed. Extensive ablation studies on the CelebA and CIFAR-10 datasets show that these time-agnostic models can maintain high structural fidelity and even surpass their conditioned counterparts in competitive metrics, including FID, precision, and recall. Our analysis suggests these architectures can implicitly infer noise scales from the corrupted input under specific assumptions, rendering explicit temporal conditioning redundant. This study challenges long-standing temporal conditioning paradigms and paves the way for more efficient and structurally focused generative architectures.",
+    "authors": [
+      "José A. Chávez"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20416.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20416",
+    "primary_category": "cs.LG",
+    "score": 45,
+    "summary": {
+      "title_zh": "扩散模型中时间步嵌入的冗余性研究",
+      "core_contribution": "本文通过理论和实验证明，在特定条件下扩散模型可以完全移除显式的时间步嵌入而不影响性能，甚至在某些指标上超越传统条件模型，挑战了时间条件在扩散模型中的必要性。",
+      "method": "首先，作者从理论上证明，在特定假设下，扩散训练目标的全局最优解可以在没有显式时间步条件的情况下实现。然后，在U-Net和Diffusion Transformer两种架构上，通过完全移除时间步嵌入进行消融实验，并在CelebA和CIFAR-10数据集上评估模型性能。",
+      "findings": "实验表明，无时间步嵌入的模型能够保持高结构保真度，并在FID、精确率和召回率等竞争性指标上甚至超越有条件的对应模型。分析指出，这些架构可以从被破坏的输入中隐式推断噪声尺度，从而使显式时间条件变得冗余。"
+    }
+  },
+  {
+    "id": "2606.20563",
+    "title": "JanusMesh: Fast and Zero-Shot 3D Visual Illusion Generation via Cross-Space Denoising",
+    "abstract": "Creating 3D visual illusions, a single 3D mesh that reveals entirely different semantics from various viewing angles, is a fascinating but tough challenge. Existing optimization-based methods are slow and can produce oversaturated colors. In contrast, naive stitching approaches fail to produce geometrically coherent objects. This results in visible unnatural seams and semantic leaks. In this paper, we present a fast and training-free framework for generating text-driven 3D visual illusions. Our approach decouples the generation into two stages. First, we propose a cross-space dual-branch denoising process. This process dynamically decodes 3D latents into voxel space for CLIP-guided orientation alignment and Signed Distance Field (SDF) blending, which ensures seamless geometric fusion. Second, we introduce a view-conditioned texture synthesis module that projects and aggregates view-specific 2D diffusion priors onto the fused geometry. Extensive experiments demonstrate that our method generates highly realistic, dual-semantic 3D illusions in just 3-5 minutes. It significantly outperforms existing methods in geometric integrity, semantic recognizability, and efficiency. Project page: https://siang1105.github.io/JanusMesh.github.io/",
+    "authors": [
+      "Siang-Ling Zhang",
+      "Huai-Hsun Cheng",
+      "Tsung-Ju Yang",
+      "Yu-Lun Liu"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.20563.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.20563",
+    "primary_category": "cs.CV",
+    "score": 35,
+    "summary": {
+      "title_zh": "JanusMesh：通过跨空间去噪实现快速且零样本的3D视觉错觉生成",
+      "core_contribution": "提出了一种无需训练、快速生成文本驱动的3D视觉错觉框架，能够在3-5分钟内生成具有双语义的高真实感3D网格，显著优于现有方法在几何完整性、语义可识别性和效率方面的表现。",
+      "method": "该方法将生成过程解耦为两个阶段。首先，提出跨空间双分支去噪过程，动态地将3D潜在表示解码到体素空间，进行CLIP引导的方向对齐和有符号距离场（SDF）融合，确保无缝几何融合。其次，引入视图条件纹理合成模块，将视图特定的2D扩散先验投影并聚合到融合后的几何体上。",
+      "findings": "实验表明，该方法在3-5分钟内生成高度真实、双语义的3D视觉错觉，在几何完整性、语义可识别性和效率上显著优于现有基于优化的方法（如过饱和颜色问题）和朴素拼接方法（如几何不连贯、可见接缝和语义泄露）。"
+    }
+  },
+  {
+    "id": "2606.19802",
+    "title": "Flow Map Denoisers: Traversing the Distortion-Perception Plane for Inverse Problems",
+    "abstract": "Image restoration faces a fundamental tradeoff: methods that minimize error produce blurry reconstructions, while those that maximize perceptual quality yield sharp but less faithful images. Existing approaches either commit to a single operating point on this distortion perception (DP) frontier or require paired-data supervision, auxiliary models, or hyperparameter tuning of the sampler to access different points. We show that flow map models, a recent extension of flow matching for few-step sampling that learns an average field, implicitly define a one-parameter family of denoisers that continuously spans the DP frontier. The lookahead parameter t acts as a control knob between the MMSE and perceptual regimes. For Gaussian targets, we prove that varying t exactly recovers the optimal DP frontier; for natural images, we observe similar behavior empirically. Within a Plug-and-Play solver, the same mechanism extends to general inverse problems, where it controls a tradeoff between perceptual alignment and data consistency. Despite the lack of exact optimality guarantees in this setting, a single trained flow map spans the DP tradeoff, matching or exceeding specialized baselines at both extremes. Extensive experiments on CelebA ($128\\times 128$) and AFHQ ($256\\times 256$) across several linear and nonlinear inverse tasks validate our findings.",
+    "authors": [
+      "Nicolas Zilberstein",
+      "Morteza Mardani",
+      "Santiago Segarra"
+    ],
+    "published": "2026-06-18",
+    "updated": "2026-06-18",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.19802.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.19802",
+    "primary_category": "cs.LG",
+    "score": 35,
+    "summary": {
+      "title_zh": "流图去噪器：遍历逆问题的失真-感知平面",
+      "core_contribution": "本文提出流图模型（flow map）通过单一训练模型即可连续遍历失真-感知前沿（DP frontier），无需配对数据、辅助模型或超参数调优，从而在图像恢复中灵活平衡重建误差与感知质量。",
+      "method": "基于流匹配的少步采样扩展，流图模型学习一个平均场，并隐含定义了一个由前瞻参数t控制的单参数去噪器族。t作为控制旋钮，可在MMSE（最小均方误差）与感知最优之间连续调节。对于高斯目标，理论证明t变化可精确恢复最优DP前沿；对于自然图像，通过Plug-and-Play求解器将该机制推广到一般逆问题，实现感知对齐与数据一致性之间的权衡。",
+      "findings": "在CelebA（128×128）和AFHQ（256×256）数据集上的多个线性和非线性逆任务实验中，单一训练的流图模型能够跨越整个DP权衡区间，在两端均达到或超越专门设计的基线方法，验证了其有效性和通用性。"
+    }
+  }
+]
