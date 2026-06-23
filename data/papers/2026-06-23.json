@@ -1,0 +1,143 @@
+[
+  {
+    "id": "2606.22568",
+    "title": "SeFi-Image: A Text-to-Image Foundation Model with Semantic-First Diffusion",
+    "abstract": "Training image generation foundation models consumes substantial resources. Previous methods have attempted to leverage semantic guidance to accelerate the training process, yet their experiments were only conducted on simple datasets such as ImageNet, at low resolutions, and with small-scale models. In this paper, we propose SeFi-Image, a text-to-image foundation model built upon semantic-first diffusion, a novel latent diffusion modeling paradigm. We instantiate SeFi-Image at three model scales, 1B, 2B, and 5B parameters, enabling systematic study of scaling behavior and flexible deployment under varying compute budgets. Notably, our largest 5B model was trained with merely 125K A800 GPU hours, corresponding to roughly 10-20% of the training compute used by Z-Image. However, it achieves results comparable to or even superior to Qwen-Image and Z-Image. Despite this modest training compute, SeFi-Image achieves strong performance on a wide range of benchmarks, including GenEval, DPG, LongTextBench, OneIG, and CVTG-2K. Moreover, we provide DMD2-distilled few-step turbo variants for each model scale to accommodate diverse hardware constraints and latency requirements. We publicly release our code, weights and hope this work offers the community useful insights into semantic-guided diffusion modeling for T2I generation, while also providing practical and readily deployable model options.",
+    "authors": [
+      " SeFi-Team"
+    ],
+    "published": "2026-06-21",
+    "updated": "2026-06-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.22568.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.22568",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "SeFi-Image：一种基于语义优先扩散的文本到图像基础模型",
+      "core_contribution": "提出了一种名为SeFi-Image的文本到图像基础模型，采用语义优先扩散这一新型潜在扩散建模范式，在仅使用Z-Image约10-20%训练计算量的情况下，实现了与之相当甚至更优的性能，并提供了从1B到5B参数规模的模型及蒸馏加速变体。",
+      "method": "SeFi-Image基于语义优先扩散（Semantic-First Diffusion）范式，该范式在潜在扩散模型中优先利用语义信息引导生成过程，从而加速训练并提升效率。作者在1B、2B和5B三种参数规模上实例化该模型，以系统研究缩放行为并适应不同计算预算。此外，还通过DMD2蒸馏技术为每个规模提供了少步数（few-step）的Turbo变体，以满足不同硬件和延迟需求。",
+      "findings": "最大5B参数的SeFi-Image模型仅使用125K A800 GPU小时（约为Z-Image训练计算量的10-20%）进行训练，但在GenEval、DPG、LongTextBench、OneIG和CVTG-2K等多个基准测试上取得了与Qwen-Image和Z-Image相当甚至更优的结果，证明了语义优先扩散在降低训练成本的同时保持高性能的有效性。"
+    }
+  },
+  {
+    "id": "2606.23679",
+    "title": "Semantic Browsing: Controllable Diversity for Image Generation",
+    "abstract": "Modern text-to-image models excel in visual fidelity and prompt adherence. However, this strict adherence comes at the cost of diversity: generated samples tend to collapse into a single visual interpretation. Existing methods to improve diversity produce outputs driven by incidental variations rather than meaningful design choices. This motivates a new variant of the diversity task where structure is enforced on the generated samples. We introduce a method for controlled diversity that enables Semantic Browsing, where users can navigate structured image galleries and experience creative exploration through a systematic traversal of meaningful, interpretable axes of variation. Achieving this level of semantic control requires a deep understanding of the scene. We exploit the fact that recent text-to-image models are trained on elaborated captions, effectively decoupling semantic decision-making from pixel generation. This enables a paradigm shift: instead of relying on stochastic variation within the text-to-image model, we induce diversity directly at the text level. By leveraging rich textual representations, we allow a Vision Language Model (VLM) to operate on the full scene context. To overcome the generic outputs typical of standard VLMs, we employ an agentic workflow that explicitly enforces structured variation attuned to the original prompt. We demonstrate that our method produces diverse and navigable design spaces where every variation corresponds to a specific, user-understandable semantic decision.",
+    "authors": [
+      "Sara Dorfman",
+      "Maya Vishnevsky",
+      "Omer Dahary",
+      "Or Patashnik",
+      "Daniel Cohen-Or"
+    ],
+    "published": "2026-06-22",
+    "updated": "2026-06-22",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.23679.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.23679",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "语义浏览：图像生成的可控多样性",
+      "core_contribution": "提出了一种在文本到图像生成中实现可控多样性的方法，使用户能够通过语义轴系统性地浏览结构化的图像集合，从而获得有意义的创意探索体验。",
+      "method": "利用现代文本到图像模型在详细描述上训练的特性，将语义决策与像素生成解耦，直接在文本层面引入多样性。通过视觉语言模型（VLM）处理完整场景上下文，并采用代理工作流强制生成与原始提示相符的结构化变化，从而避免标准VLM的通用输出。",
+      "findings": "该方法能够生成多样且可导航的设计空间，其中每个变化都对应一个用户可理解的具体语义决策，显著优于现有依赖随机变化的多样性方法。"
+    }
+  },
+  {
+    "id": "2606.23254",
+    "title": "SteerVTE: Seamless Video Text Editing with Style and Glyph Control",
+    "abstract": "Visual text editing aims to precisely modify text in images and videos while preserving stylistic consistency and visual realism. Despite significant advances in the image domain, video text editing remains largely unexplored: it is a localized task demanding stroke-level precision within small text regions, which compounds the challenges of cross-frame accuracy, temporal coherence, and stylistic fidelity. We introduce SteerVTE, a unified framework that \\underline{\\textbf{steer}}s a frozen video diffusion model to perform precise \\underline{\\textbf{V}}ideo \\underline{\\textbf{T}}ext \\underline{\\textbf{E}}diting through style and glyph control. Built on a frozen diffusion transformer, SteerVTE attaches a lightweight text context adapter with two complementary modules: a style encoder capturing the original text's visual attributes, and dual-granularity glyph encoders encoding the target text at both the line and character levels. To overcome the inherently weak text rendering priors of video foundation models, we further propose a glyph-aware spatial-focal loss and a three-stage progressive training curriculum that scales from image to video data. To support large-scale training, we also develop an automatic synthesis pipeline and construct SteerVTE-1M, a dataset of one million triplets spanning diverse scenes, fonts, and stylistic effects. Extensive experiments demonstrate that SteerVTE substantially outperforms existing video editing baselines across text accuracy, style consistency, and temporal coherence.",
+    "authors": [
+      "Kai Zeng",
+      "Moran Li",
+      "Zhengwei Wang",
+      "Yingchen Yu",
+      "Yiheng Lin",
+      "Ruichuan An",
+      "Ming Lu",
+      "Qi She",
+      "Wentao Zhang"
+    ],
+    "published": "2026-06-22",
+    "updated": "2026-06-22",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.23254.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.23254",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SteerVTE：具有风格和字形控制的无缝视频文本编辑",
+      "core_contribution": "提出了一种统一的视频文本编辑框架SteerVTE，通过轻量级适配器在冻结的视频扩散模型上实现精确的文本修改，同时保持风格一致性和时间连贯性，并构建了包含百万级三元组的大规模数据集SteerVTE-1M。",
+      "method": "SteerVTE基于冻结的扩散变换器，附加了一个轻量级文本上下文适配器，包含两个互补模块：风格编码器捕获原始文本的视觉属性，以及双粒度字形编码器在行和字符级别编码目标文本。为克服视频基础模型文本渲染先验弱的问题，提出了字形感知空间-焦点损失和三阶段渐进式训练课程（从图像扩展到视频数据），并开发了自动合成流水线以构建大规模训练数据集。",
+      "findings": "大量实验表明，SteerVTE在文本准确性、风格一致性和时间连贯性方面显著优于现有的视频编辑基线方法。"
+    }
+  },
+  {
+    "id": "2606.23221",
+    "title": "RS-Gen: A Multi-Stage Agentic Framework for Reasoning and Search-Augmented Image Generation",
+    "abstract": "Recent years have witnessed remarkable progress in image generation and editing, particularly regarding instruction following and visual fidelity. However, when handling ambiguous intentions, logical reasoning, and Out-of-Distribution (OOD) knowledge, existing image models often yield sub-optimal results due to a lack of deep reasoning capabilities and real-time external information. Although emerging unified understanding-and-generation models attempt to bridge this gap, they remain constrained by their intrinsic parameter scales and static knowledge gaps. Inspired by agentic paradigms, we propose RS-Gen: a plug-and-play, training-free, multi-stage image agentic framework. RS-Gen innovatively introduces a \"Questioning-and-Solving\" closed-loop mechanism to accurately identify logical issues and knowledge gaps, autonomously planning actions to bridge information deficits and execute deep logical reasoning. Extensive experiments demonstrate that RS-Gen significantly expands the capability boundaries of foundational image generation and editing models. Specifically, on the WISE Verified and RISEBench benchmarks, RS-Gen yields substantial absolute performance gains of 0.313 for Qwen-Image and 19.70 for Qwen-Image-Edit-2511, respectively, successfully elevating both to the state-of-the-art (SOTA) level among open-source models.",
+    "authors": [
+      "Feifei Bian",
+      "Zhimin Zheng",
+      "Wei Deng",
+      "Daiguo Zhou",
+      "Jian Luan"
+    ],
+    "published": "2026-06-22",
+    "updated": "2026-06-22",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.23221.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.23221",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "RS-Gen：一种用于推理与搜索增强图像生成的多阶段智能体框架",
+      "core_contribution": "提出了一种即插即用、无需训练的多阶段图像智能体框架RS-Gen，通过引入“提问-求解”闭环机制，显著提升了现有图像生成与编辑模型在逻辑推理、模糊意图处理和外部知识获取方面的能力。",
+      "method": "RS-Gen采用多阶段智能体架构，首先通过“提问”阶段识别输入中的逻辑缺陷和知识缺失，然后利用外部搜索工具获取实时信息，最后通过“求解”阶段进行深度推理并生成或编辑图像。整个过程无需模型微调，以插件方式集成到现有基础模型中。",
+      "findings": "在WISE Verified和RISEBench基准测试上，RS-Gen分别使Qwen-Image和Qwen-Image-Edit-2511模型取得了0.313和19.70的绝对性能提升，将两者提升至开源模型的最高水平。"
+    }
+  },
+  {
+    "id": "2606.22945",
+    "title": "Controllable Texture Tiling with Transformed RoPE-Enhanced Diffusion Models",
+    "abstract": "Realistic integration of user-specified textures into scene images is a fundamental task in computer graphics and image editing. While existing material transfer and reference-guided inpainting methods can edit surface appearances, they often fail to address the specific requirements of texture tiling. This task necessitates precisely repeating a reference pattern according to user-defined parameters such as frequency, orientation, and scale. Furthermore, current generative approaches often struggle to maintain the structural fidelity of the reference texture, limited by either destructive pixel-level resampling or the lack of fine-grained spatial information in semantic image encoders, and they frequently fail to preserve the coherent lighting and geometry of the original scene. In this paper, we propose a novel framework for controllable and high-fidelity texture tiling based on Diffusion Transformers. Our approach introduces two key technical innovations to decouple spatial manipulation from content generation. First, we propose a Coordinate-Transformed Rotary Embedding mechanism. By applying 2D affine transformations directly to the relative positional embeddings between the target latent and the image condition, we achieve precise control over tiling patterns without explicit pixel warping, thereby utilizing the full information of the reference condition without degradation. Second, a Disjoint Attention Mask is employed to shield reference features from semantic leakage. This preserves structural integrity while seamlessly blending the synthesized texture with the scene's original lighting and geometry. Extensive experiments demonstrate that our method outperforms state-of-the-art baselines in both control accuracy and texture fidelity.",
+    "authors": [
+      "Junrong Huang",
+      "Zhiyuan Zhang",
+      "Rui Tang",
+      "Hongbo Fu",
+      "Jnig Liao"
+    ],
+    "published": "2026-06-22",
+    "updated": "2026-06-22",
+    "categories": [
+      "cs.GR",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.22945.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.22945",
+    "primary_category": "cs.GR",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于变换旋转位置编码增强扩散模型的可控纹理平铺",
+      "core_contribution": "提出了一种基于扩散变换器的可控纹理平铺框架，通过坐标变换旋转位置编码和分离注意力掩码两项技术创新，实现了对平铺模式（频率、方向、尺度）的精确控制，同时保持了参考纹理的结构保真度和场景光照几何的一致性。",
+      "method": "该方法基于扩散变换器架构，首先引入坐标变换旋转位置编码机制，将二维仿射变换直接应用于目标潜变量与图像条件之间的相对位置嵌入，从而在不进行显式像素扭曲的情况下精确控制平铺模式，充分利用参考条件的完整信息。其次，采用分离注意力掩码来屏蔽参考特征中的语义泄漏，保护结构完整性，同时使合成纹理与场景原始光照和几何无缝融合。",
+      "findings": "大量实验表明，该方法在控制精度和纹理保真度方面均优于现有最先进的基线方法，能够有效解决现有方法在像素级重采样破坏结构或缺乏细粒度空间信息等问题，并成功保持场景的连贯光照与几何结构。"
+    }
+  }
+]
