@@ -1,0 +1,152 @@
+[
+  {
+    "id": "2606.27192",
+    "title": "LISA: Likelihood Score Alignment for Visual-condition Controllable Generation",
+    "abstract": "The prevalent dual-branch paradigm, i.e., training a side network to encode visual conditions and fusing its intermediate-layer features to a frozen pretrained main network, has shown remarkable success in visual-condition controllable generation. Despite its widespread adoption, the role of the side branch and its training efficiency remain underexplored. In this paper, we first revisit this mainstream paradigm through the lens of score-based generative modeling: 1) The main network preserves visual perceptual quality by providing a prior unconditional score. 2) The side network steers conditional control by implicitly contributing a likelihood score. Guided by this perspective, we propose LIkelihood Score Alignment (LISA), an effective regularization method that explicitly aligns the intermediate feature of the side network with an approximated likelihood score. Specifically, we first hook features from a designated layer of the side network and project them into the score latent space by a lightweight decoder. Then, we construct an approximated likelihood score target and calculate the distance between the decoder's output and this target as an additional regularization loss. Finally, we jointly optimize the side network and decoder with both standard diffusion loss and our regularization loss. Experiments across various image/video tasks, architectures, and diffusion/flow models demonstrated that LISA can not only consistently accelerate the training convergence and improve final synthetic results, but also encourage the side network's features to be more disentangled for conditional modeling with negligible additional training cost and zero extra inference cost.",
+    "authors": [
+      "Yanghao Wang",
+      "Hongxu Chen",
+      "Jiazhen Liu",
+      "Zhenqi He",
+      "Rui Liu",
+      "Zhen Wang",
+      "Long Chen"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27192.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27192",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "LISA：面向视觉条件可控生成的似然分数对齐方法",
+      "core_contribution": "提出了一种名为LISA的正则化方法，通过显式对齐侧网络的中间特征与近似似然分数，显著加速了视觉条件可控生成模型的训练收敛，并提升了生成质量，且几乎不增加训练和推理成本。",
+      "method": "首先，从基于分数的生成模型视角重新审视主流双分支范式，将主网络视为提供无条件先验分数，侧网络视为隐式贡献似然分数。然后，从侧网络指定层提取特征，通过轻量级解码器将其投影到分数潜空间；接着构造一个近似的似然分数目标，计算解码器输出与该目标之间的距离作为额外正则化损失。最后，联合优化侧网络和解码器，同时使用标准扩散损失和正则化损失。",
+      "findings": "在多种图像/视频任务、不同架构以及扩散/流模型上的实验表明，LISA不仅能一致地加速训练收敛并改善最终合成结果，还能促使侧网络的特征在条件建模中更加解耦，且几乎不增加额外训练成本，零额外推理成本。"
+    }
+  },
+  {
+    "id": "2606.26947",
+    "title": "Scaling Multi-Reference Image Generation with Dynamic Reward Optimization",
+    "abstract": "While personalized image generation has achieved remarkable progress, multi-reference image generation (MRIG) remains a challenging task. Most existing benchmarks fail to adequately evaluate complex MRIG scenarios, hindering further progress in this area. To better assess model performance on complex MRIG tasks, we introduce OmniRef-Bench, a benchmark that covers complex combinations of reference image types and a large number of reference images. Evaluations on OmniRef-Bench show that mainstream open-source models struggle in complex MRIG scenarios, and their performance deteriorates significantly as the number of mixed-type reference images increases. To address this issue, we propose DyRef, a two-stage training framework. In the first stage, supervised fine-tuning equips the model with the basic capability to handle complex MRIG tasks. In the second stage, we introduce Difficulty-aware Advantage Reweighting (DAR) and Discriminative Reward Scaling (DRS). DAR dynamically adjusts the optimization objective to improve performance when handling a large number of mixed-type reference images. DRS enlarges intra-group reward differences for more effective policy optimization. Experiments demonstrate that DyRef significantly improves the performance of open-source models on OmniRef-Bench and single-image editing benchmarks, demonstrating the effectiveness and generalization capability of our approach.",
+    "authors": [
+      "Wenwang Huang",
+      "Yusen Fu",
+      "Junjie Wang",
+      "Mengfei Huang",
+      "Yulin Li",
+      "Gan Liu",
+      "Jing Cai",
+      "Yancheng He",
+      "Zhuotao Tian"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26947.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.26947",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "基于动态奖励优化的多参考图像生成扩展方法",
+      "core_contribution": "提出了一个覆盖复杂多参考图像场景的基准OmniRef-Bench，并设计了一种两阶段训练框架DyRef，通过动态奖励优化显著提升了开源模型在多参考图像生成任务上的性能。",
+      "method": "首先，通过监督微调使模型具备处理复杂多参考图像生成任务的基础能力。其次，引入难度感知优势重加权（DAR）和判别性奖励缩放（DRS）两个机制：DAR根据任务难度动态调整优化目标，以提升处理大量混合类型参考图像时的性能；DRS则放大组内奖励差异，从而实现更有效的策略优化。",
+      "findings": "在OmniRef-Bench上的评估显示，主流开源模型在复杂多参考图像生成场景中表现不佳，且性能随混合类型参考图像数量增加而显著下降。DyRef在OmniRef-Bench和单图像编辑基准上均显著提升了开源模型的性能，验证了其有效性和泛化能力。"
+    }
+  },
+  {
+    "id": "2606.26938",
+    "title": "Focusing on What Matters: Saliency-Harnessing Accurate Routing for Diffusion MoE",
+    "abstract": "Mixture-of-Experts (MoE) architectures have emerged as a powerful paradigm for scaling diffusion models in visual generation. Recent advancements have focused on adaptively allocating computational resources across diverse tokens to improve efficiency and performance. However, we identify a routing assignment problem in existing diffusion MoE frameworks: the router fails to accurately allocate more computational resources to salient tokens. Our analysis attributes this failure to the router's reliance on noise-corrupted latent features throughout the denoising process. Such stochastic noise obscures the critical structural and textural information, thereby preventing the router from effectively distinguishing salient tokens. To address this, we propose SharpMoE, a post-training framework with a saliency-harnessing accurate routing mechanism, which utilizes clean latent features as a noise-free guidance signal for routing. By bypassing the noise-distorted inputs, SharpMoE provides the router with clear saliency guidance, enabling the identification of salient tokens even in high-noise stages. Furthermore, we introduce a trajectory routing loss to constrain the compute allocation throughout the multi-step denoising trajectory, ensuring precise resource allocation along the generation rollout. Extensive experiments demonstrate that SharpMoE serves as a versatile, plug-and-play solution that further enhances the pretrained, converged MoE models, achieving state-of-the-art performance in visual generation.",
+    "authors": [
+      "Haoyou Deng",
+      "Keyu Yan",
+      "Chaojie Mao",
+      "Xiang Wang",
+      "Yu Liu",
+      "Changxin Gao",
+      "Nong Sang"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26938.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.26938",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "聚焦关键：面向扩散MoE的显著性引导精确路由机制",
+      "core_contribution": "提出SharpMoE框架，通过利用干净潜在特征作为无噪声引导信号，解决了扩散MoE模型中路由器无法准确为显著token分配更多计算资源的问题，实现了后训练阶段即插即用的性能提升。",
+      "method": "SharpMoE采用后训练框架，引入显著性引导精确路由机制，使用干净潜在特征替代噪声干扰的潜在特征作为路由器的输入，从而在去噪过程中提供清晰的显著性指导。同时，设计轨迹路由损失函数，约束多步去噪轨迹中的计算资源分配，确保生成过程中资源的精确分配。",
+      "findings": "实验表明，SharpMoE作为通用即插即用解决方案，能够进一步增强预训练且已收敛的MoE模型，在视觉生成任务中达到最先进性能，尤其在噪声较高的阶段仍能有效识别显著token并分配更多计算资源。"
+    }
+  },
+  {
+    "id": "2606.26930",
+    "title": "PortraitGen: Exemplar-Driven GRPO with Dual-Reward Guidance for Photorealistic Portrait Generation",
+    "abstract": "Reinforcement Learning like Group Relative Policy Optimization (GRPO) has significantly advanced text-to-image post-training. However, current methods often favor superficial aesthetics, such as over-saturated colors, leaving critical flaws like AI artifacts and biological implausibilities unresolved. We attribute these limitations to two primary factors: (1) The absence of real images during post-training confines GRPO sampling to the original distribution, failing to break inherent generative boundaries; (2) the optimization process lacks specific rewards targeting fine-grained artifacts like overly oily skin and other AI artifacts. To address this, we propose PortraitGen, a novel framework tailored for photorealistic portrait generation. First, we break inherent generative boundaries by directly introducing real images into the GRPO sampling groups, where image inversion is employed to obtain their transition probabilities and latents. Second, to explicitly steer the model toward photorealism, we introduce a complementary dual-reward mechanism: OmniReward for general quality and AI-Portrait for human-centric fidelity. Furthermore, we curate PortraitBench, a comprehensive portrait-centric benchmark. Extensive experiments demonstrate that PortraitGen significantly outperforms existing baselines, effectively suppressing AI artifacts and achieving unprecedented photorealism.",
+    "authors": [
+      "Xiaomin Li",
+      "Qian Liang",
+      "Yinan Li",
+      "Ying Zhang",
+      "Chen Li",
+      "Jing Lyu",
+      "Huchuan Lu",
+      "Xu Jia"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26930.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.26930",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "PortraitGen：基于示例驱动的GRPO与双奖励引导的逼真人像生成",
+      "core_contribution": "提出了一种名为PortraitGen的新框架，通过将真实图像引入GRPO采样组并设计双奖励机制，有效抑制了AI伪影和生物不合理性，显著提升了人像生成的逼真度。",
+      "method": "首先，在GRPO采样组中直接引入真实图像，并利用图像反演技术获取其过渡概率和潜在表示，从而打破生成模型的固有边界。其次，设计了一个互补的双奖励机制：OmniReward用于评估整体图像质量，AI-Portrait专门针对人像的逼真度进行优化。此外，还构建了PortraitBench基准数据集用于评估。",
+      "findings": "大量实验表明，PortraitGen在抑制AI伪影和实现前所未有的逼真度方面显著优于现有基线方法，有效解决了过度油光等细粒度伪影问题。"
+    }
+  },
+  {
+    "id": "2606.24888",
+    "title": "DiffusionBench: On Holistic Evaluation of Diffusion Transformers",
+    "abstract": "Diffusion transformer (DiT) research on image generation has converged to a single evaluation setup: class-conditional generation on ImageNet. While methods improve the FID and related metrics, it is increasingly unclear whether they reflect real progress in generative modeling. The natural alternative, i.e., text-to-image (T2I) generation, is perceived as too costly or inconvenient to train and evaluate and is often skipped. We argue that this perception no longer holds. We introduce NanoGen, a unified DiT training and evaluation framework. NanoGen matches state-of-the-art DiT baselines on ImageNet and, with 12 lines of configuration change, also trains competitive text-to-image models. It currently supports RAE, VAE, pixel-space, and MeanFlow diffusion methods under both ImageNet and T2I setups. Under NanoGen, training T2I requires comparable compute to ImageNet. After training 21 latent diffusion models with NanoGen, we observe that method ranking shows no strong correlation between ImageNet and T2I generation: Pearson correlation is between -0.377 and -0.580 across three metrics. This suggests that a method which improves class-conditional ImageNet FID may show no corresponding improvement on T2I, clearly indicating the necessity of evaluating DiTs on both tasks. To this end, we summarize ImageNet and text-to-image results, which yields DiffusionBench, a holistic benchmark for DiT research. We recommend reporting DiffusionBench in place of ImageNet alone: methods that improve DiffusionBench are more likely to reflect broader progress.",
+    "authors": [
+      "Xingjian Leng",
+      "Jaskirat Singh",
+      "Zhanhao Liang",
+      "Ethan Smith",
+      "Martin Bell",
+      "Aninda Saha",
+      "Yuhui Yuan",
+      "Liang Zheng"
+    ],
+    "published": "2026-06-23",
+    "updated": "2026-06-23",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.24888.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.24888",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "DiffusionBench：扩散变换器的全面评估",
+      "core_contribution": "本文提出了一个统一的扩散变换器（DiT）训练与评估框架NanoGen，并构建了涵盖ImageNet和文本到图像（T2I）任务的全面基准DiffusionBench，揭示了仅依赖ImageNet评估无法反映模型在T2I任务上的真实进展。",
+      "method": "作者开发了NanoGen框架，支持RAE、VAE、像素空间和MeanFlow等多种扩散方法，在ImageNet上匹配现有最优DiT基线，仅需修改12行配置即可训练T2I模型。通过训练21个潜在扩散模型，该框架统一了两种任务的训练和评估流程，并基于结果构建了DiffusionBench基准。",
+      "findings": "实验发现，ImageNet类条件生成与T2I生成之间的方法排名相关性极弱（Pearson相关系数在-0.377到-0.580之间），表明在ImageNet上提升FID的方法未必能改善T2I性能，因此必须同时评估两种任务。DiffusionBench作为综合基准，能更可靠地反映扩散变换器的整体进步。"
+    }
+  }
+]
