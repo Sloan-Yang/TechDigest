@@ -1,0 +1,143 @@
+[
+  {
+    "id": "2606.27371",
+    "title": "Don't Settle at the Mode! Mitigating Diversity Collapse in Pretrained Flow Models via Feature Self-Guidance",
+    "abstract": "State-of-the-art flow models generate stunning images from text or image prompts. However, they suffer from diversity collapse when generating multiple samples under the same conditioning. Existing methods address this issue via either latent guidance, which has limited effectiveness, or sample selection, which relies on external reward models that incur significant inference-time overhead. In this work, we introduce an efficient, training-free self-guidance mechanism to mitigate diversity collapse without requiring additional reward models. Specifically, we disperse the internal features of the flow model during batch generation with feature self-guidance. Further, to keep the features close to the manifold, we introduce a manifold regularization step that projects these dispersed features back onto the data manifold, ensuring diverse generation without sacrificing alignment with the input conditions. Our method integrates seamlessly as a plug-and-play module into pretrained flow models, adding only a marginal inference cost. Experiments demonstrate significant improvements in diversity while preserving fidelity across several conditional flow models, including multi-step and few-step text-to-image, depth-to-image, and reference image generation.",
+    "authors": [
+      "Pradhaan S Bhat",
+      "Rishubh Parihar",
+      "Abhijnya Bhat",
+      "R. Venkatesh Babu"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27371.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27371",
+    "primary_category": "cs.CV",
+    "score": 70,
+    "summary": {
+      "title_zh": "不要停留在模式上！通过特征自引导缓解预训练流模型中的多样性崩溃",
+      "core_contribution": "提出了一种无需训练、无需额外奖励模型的自引导机制，有效缓解了条件流模型在生成多个样本时的多样性崩溃问题，同时保持生成质量与输入条件的一致性。",
+      "method": "该方法在批量生成过程中，通过特征自引导分散流模型的内部特征，以增加生成样本的多样性。同时引入流形正则化步骤，将分散后的特征投影回数据流形，确保生成结果不偏离输入条件。该方法作为即插即用模块集成到预训练流模型中，仅增加极小的推理成本。",
+      "findings": "实验表明，该方法在多种条件流模型（包括多步和少步文本到图像、深度到图像以及参考图像生成）中显著提升了生成多样性，同时保持了生成保真度，且无需额外推理开销或外部奖励模型。"
+    }
+  },
+  {
+    "id": "2606.26872",
+    "title": "SpatialFlow-GRPO: Where Spatial Credit Drives Image Editing",
+    "abstract": "Recent online reinforcement learning has substantially improved image editing quality. However, existing Flow-GRPO-style methods usually rely on a single whole-image reward, which makes fine-grained editing optimization difficult. We observe that a key obstacle in image editing is this spatial uniformity assumption: a whole-image reward cannot distinguish how different spatial regions contribute to image quality. To address this issue, we propose SpatialFlow-GRPO, a training framework that introduces spatially fine-grained reward feedback. The framework converts region-aware rewards into semantic-region-level optimization signals and aligns region advantages with the corresponding latent positions during policy updates. We also train a region-aware reward model, SFReward, construct SFReward-14K with region-annotated editing samples, and introduce MultiEditBench to evaluate multi-region editing ability. On OmniGen2 and FLUX.2-klein-4B, SpatialFlow-GRPO outperforms Flow-GRPO on GEdit-Bench, ImgEdit-Bench, and MultiEditBench. The results show that SpatialFlow-GRPO converts local feedback into spatially aligned update signals and improves editing quality.",
+    "authors": [
+      "Yankai Yang",
+      "Yancheng Long",
+      "Wei Chen",
+      "Xingyu Lu",
+      "Hongyang Wei",
+      "Bin Wen",
+      "Fan Yang",
+      "Tingting Gao",
+      "Han Li",
+      "Shuo Yang"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.26872.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.26872",
+    "primary_category": "cs.CV",
+    "score": 70,
+    "summary": {
+      "title_zh": "SpatialFlow-GRPO：空间信用驱动图像编辑",
+      "core_contribution": "提出SpatialFlow-GRPO框架，通过引入空间细粒度奖励反馈解决现有Flow-GRPO方法中整图奖励无法区分不同区域贡献的问题，显著提升图像编辑质量。",
+      "method": "该方法将区域感知奖励转化为语义区域级别的优化信号，并在策略更新时将区域优势与对应的潜在空间位置对齐。同时训练了区域感知奖励模型SFReward，构建了带区域标注的编辑样本数据集SFReward-14K，并引入MultiEditBench评估多区域编辑能力。",
+      "findings": "在OmniGen2和FLUX.2-klein-4B模型上，SpatialFlow-GRPO在GEdit-Bench、ImgEdit-Bench和MultiEditBench三个基准上均优于Flow-GRPO，表明将局部反馈转化为空间对齐的更新信号能有效提升编辑质量。"
+    }
+  },
+  {
+    "id": "2606.27376",
+    "title": "Ask, Solve, Generate: Self-Evolving Unified Multimodal Understanding and Generation via Self-Consistency Rewards",
+    "abstract": "Most unified large multimodal models (LMMs) that support both visual understanding and image generation still rely on curated post-training supervision, such as human annotations, preference labels, or external reward models. We ask whether a unified LMM can improve both abilities autonomously using only unlabeled images. We propose a self-evolving training framework with three internal roles: a Proposer that generates visual questions, a Solver that answers and evaluates them, and a Generator that synthesizes images. Training uses only self-derived consistency signals, without human annotations, preference labels, or task-trained external reward/judge models. To stabilize learning, we introduce Solver Token Entropy (STE), a continuous difficulty signal based on token-level prediction uncertainty that remains useful even when sample-level consistency becomes unreliable. For image generation, we design a multi-scale internal evaluation scheme that combines question-answer fidelity scoring with cycle-consistent captioning. This creates a solver-mediated coupling, where better visual understanding enables more reliable generation assessment and stronger internal training signals. The framework preserves the same role decomposition, reward logic, and training schedule across diffusion-based BLIP3o, rectified-flow BAGEL, and autoregressive VARGPT-v1.1 architectures, requiring only each backbone's native prompting and generation interface. Across eight understanding metrics, our method consistently improves over the corresponding base models. On BAGEL, it achieves a $+3.5\\%$ absolute gain on MMMU and improves GenEval image generation performance from $82\\%$ to $85\\%$. Code and models are publicly released.",
+    "authors": [
+      "Ritesh Thawkar",
+      "Shravan Venkatraman",
+      "Omkar Thawakar",
+      "Abdelrahman Shaker",
+      "Fahad Khan",
+      "Hisham Cholakkal",
+      "Salman Khan",
+      "Rao Muhammad Anwer"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27376.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27376",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "提问、求解、生成：通过自一致性奖励实现自我进化的统一多模态理解与生成",
+      "core_contribution": "提出一种无需人工标注、偏好标签或外部奖励模型的自我进化训练框架，使统一多模态大模型能够仅利用未标注图像自主提升视觉理解与图像生成能力。",
+      "method": "框架内部包含三个角色：Proposer生成视觉问题，Solver回答问题并评估一致性，Generator合成图像。训练仅依赖自导出的一致性信号，并引入Solver Token Entropy（STE）作为基于词级预测不确定性的连续难度信号，以稳定学习。对于图像生成，采用多尺度内部评估方案，结合问答保真度评分与循环一致性描述，通过求解器中介耦合实现理解与生成的协同进化。该框架适用于扩散模型、整流流模型和自回归模型等多种架构。",
+      "findings": "在八项理解指标上，该方法一致优于对应基础模型。在BAGEL模型上，MMMU指标绝对提升3.5%，GenEval图像生成性能从82%提升至85%。"
+    }
+  },
+  {
+    "id": "2606.27332",
+    "title": "RoPEMover: Depth-Aware Object Relocation via Positional Embeddings",
+    "abstract": "Moving an object in a single image requires geometry-consistent spatial rearrangement, including handling occlusions, revealing previously unseen regions, and maintaining coherent shadows and reflections. Existing approaches are not well suited to this setting and often fail to preserve such scene-level consistency. We address this problem by introducing a geometry-aware object motion method that operates directly on the positional representations of diffusion transformers. Our key insight is that rotary positional embeddings (RoPE) define a structured spatial field that can be explicitly manipulated to induce controlled motion. We extend 2D RoPE into a depth-aware formulation that encodes 3D spatial structure, enabling consistent object displacement and scene-aware updates. Our model is trained using synthetic data combined with a small set of real images via parameter-efficient fine-tuning. Despite minimal real supervision, it preserves object identity under large spatial displacements, generates plausible content in newly revealed regions, and consistently updates scene-dependent effects such as shadows and illumination. Experimental results on standard object motion benchmarks demonstrate state-of-the-art performance across all evaluation metrics.",
+    "authors": [
+      "Ipek Oztas",
+      "Duygu Ceylan",
+      "Aybars Bugra Aksoy",
+      "Aysegul Dundar"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27332.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27332",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "RoPEMover：基于位置嵌入的深度感知物体重定位",
+      "core_contribution": "提出了一种基于扩散Transformer位置表示进行几何感知物体运动的方法，通过显式操控旋转位置嵌入（RoPE）实现单图像中物体的空间重排，并保持场景级一致性（如阴影、光照和遮挡处理）。",
+      "method": "该方法将2D RoPE扩展为深度感知的3D空间编码形式，从而在扩散Transformer中显式操控位置嵌入以诱导可控的物体位移。模型通过合成数据与少量真实图像的参数高效微调进行训练，无需大量真实标注即可实现物体身份保持、新区域内容生成以及场景依赖效果（如阴影和光照）的一致性更新。",
+      "findings": "在标准物体运动基准测试中，该方法在所有评估指标上均达到最先进性能，能够在大位移下保持物体身份，生成合理的遮挡区域内容，并一致地更新阴影和光照等场景级效果。"
+    }
+  },
+  {
+    "id": "2606.27147",
+    "title": "Safe Autoregressive Image Generation with Iterative Self-Improving Codebooks",
+    "abstract": "Unlike diffusion-based models that operate in continuous latent spaces, autoregressive unified multimodal models produce images by sequentially predicting discretized visual tokens. These tokens are derived from a codebook that maps embeddings to quantized visual patterns. The language-like architecture enables unified multimodal models to effectively capture text conditional information for generation, making them promising for text-to-image tasks. This also raises an interesting question: how safe are the images generated in such an autoregressive way? In this work, we propose iterative self-improving codebooks for safe autoregressive generation. We leverage the understanding and judgment capabilities of the unified multimodal model itself to identify unsafe generated images without human annotation. Subsequently, the inherent representations in the codebook are fixed to eliminate harmful mappings. Our method comprises two steps: first, we use the unified model to identify unsafe generations and construct corresponding harmful and safe image-text pairs. These pairs are used to construct the Harmful Space and guide updates to the codebook, thereby eliminating harmful outputs. Second, we perform adaptive fine-tuning on the codebook within the harmless space using safe image-text pairs to ensure the quality of generated images. These two steps are repeated until no further improvement is observed, producing a safety-enhanced model codebook. Without additional external feedback, the safety of models is improved iteratively.",
+    "authors": [
+      "Yunqi Xue",
+      "Zhijiang Li",
+      "Philip Torr",
+      "Jindong Gu"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27147.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27147",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "基于迭代自改进码本的安全自回归图像生成",
+      "core_contribution": "提出了一种无需人工标注的迭代自改进码本方法，利用统一多模态模型自身的理解与判断能力，自动识别并消除不安全图像生成，从而提升自回归图像生成模型的安全性。",
+      "method": "该方法分为两步：首先，利用统一多模态模型识别不安全生成结果，构建有害与安全图像-文本对，并基于这些对构建有害空间，指导码本更新以消除有害映射；其次，在无害空间中使用安全图像-文本对自适应微调码本，以保证生成图像质量。这两步迭代进行，直到模型安全性不再提升，最终得到安全性增强的码本。",
+      "findings": "实验表明，该方法无需外部反馈即可迭代提升模型安全性，有效消除有害图像生成，同时保持生成图像的质量。"
+    }
+  }
+]
