@@ -1,0 +1,179 @@
+[
+  {
+    "id": "2606.27608",
+    "title": "Qwen-Image-2.0-RL Technical Report",
+    "abstract": "We present Qwen-Image-2.0-RL, a post-training pipeline that applies reinforcement learning from human feedback (RLHF) and on-policy distillation (OPD) to improve both the visual quality and instruction-following capability of the Qwen-Image-2.0 diffusion model. To provide reliable reward signals, we construct task-specific composite reward models by fine-tuning vision-language models with a pointwise scoring paradigm and chain-of-thought reasoning. For text-to-image generation, the reward models cover alignment, aesthetics, and portrait fidelity dimensions. For image editing tasks, the reward system addresses instruction-following accuracy and face identity preservation. Building on this reward system, we develop a scalable GRPO-based RL training framework, incorporating a hybrid classifier-free guidance (CFG) strategy to preserve pre-trained knowledge, prompt curation via intra-group reward range filtering, and per-category reward weight calibration. To merge the task-specialized RL policies for T2I and editing, we propose on-policy distillation as the final training stage, which consolidates multiple teachers into a single student model through trajectory-level velocity matching. Extensive evaluation shows that Qwen-Image-2.0-RL achieves 57.84 overall score on Qwen-Image-Bench (+2.61 over the base model), Elo ratings of 1193 in text-to-image arena (+78) and 1349 in image edit arena (+93), demonstrating consistent gains in aesthetic quality, prompt adherence, and editing accuracy.",
+    "authors": [
+      "Yixian Xu",
+      "Kaiyuan Gao",
+      "Yuxiang Chen",
+      "Yilei Chen",
+      "Zecheng Tang",
+      "Zihao Liu",
+      "Zikai Zhou",
+      "Deqing Li",
+      "Hao Meng",
+      "Kuan Cao",
+      "Jiahao Li",
+      "Jie Zhang",
+      "Liang Peng",
+      "Lihan Jiang",
+      "Ningyuan Tang",
+      "Shengming Yin",
+      "Tianhe Wu",
+      "Xiaoyue Chen",
+      "Yan Shu",
+      "Yanran Zhang",
+      "Yi Wang",
+      "Yu Wu",
+      "Yujia Wu",
+      "Zekai Zhang",
+      "Zhendong Wang",
+      "Xiao Xu",
+      "Kun Yan",
+      "Chenfei Wu"
+    ],
+    "published": "2026-06-25",
+    "updated": "2026-06-25",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27608.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27608",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Qwen-Image-2.0-RL 技术报告",
+      "core_contribution": "提出一种基于强化学习人类反馈（RLHF）和在线策略蒸馏（OPD）的后训练管道，显著提升了Qwen-Image-2.0扩散模型的视觉质量和指令跟随能力。",
+      "method": "首先构建任务特定的复合奖励模型，通过逐点评分范式和思维链推理对视觉语言模型进行微调，为文本生成图像和图像编辑任务提供可靠奖励信号。随后开发了基于GRPO的可扩展强化学习训练框架，结合混合无分类器引导策略以保留预训练知识，并通过奖励范围过滤和权重校准优化训练。最后采用在线策略蒸馏将多个任务专用策略融合为单一学生模型。",
+      "findings": "实验表明，Qwen-Image-2.0-RL在Qwen-Image-Bench上获得57.84总分（较基础模型提升2.61），在文本生成图像竞技场和图像编辑竞技场的Elo评分分别达到1193（+78）和1349（+93），在美学质量、提示遵循和编辑准确性方面均取得显著提升。"
+    }
+  },
+  {
+    "id": "2606.28094",
+    "title": "OSOR: One-Step Diffusion Inpainting for Effect-Aware Object Removal",
+    "abstract": "Real-world object removal is challenging due to two key difficulties: the target object's non-local effects, such as shadows and reflections, which are difficult to model, and the fact that user-provided masks are often inaccurate or incomplete. With billions of parameters and tens of denoising steps, diffusion-based models achieve strong removal performance at the expense of substantial computational cost, limiting their use in interactive applications and on edge devices. To address these challenges, we present OSOR (One-Step Object Removal), which simultaneously achieves efficient, effect-aware, and mask-robust object removal. Concretely, OSOR introduces: (1) an occupancy-guided discriminator for precise boundary supervision, enabling stable single-step diffusion training; (2) an alpha head that leverages knowledge from pretrained diffusion models to predict appropriate removal regions with minimal overhead, thereby handling imperfect masks; and (3) a semantic-anchored verification pipeline (SAVP) that filters noisy instruction-based triplets to produce effect-aware supervision at scale. Using SAVP, we curate CORNE, which contains 280K verified removal pairs, and further annotate AnimeEraseBench and TextEraseBench to evaluate performance on more complex removal tasks. Experiments show that OSOR surpasses strong multi-step diffusion baselines in perceptual quality while achieving $4\\times$ to $30\\times$ faster inference.",
+    "authors": [
+      "Qinming Zhou",
+      "Chenxi Sun",
+      "Deyang Kong",
+      "Junhao He",
+      "Xiangheng Tang",
+      "Peike Yu",
+      "Haotian Wu",
+      "Leilei Cao",
+      "Linfeng Zhang"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-26",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.28094.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.28094",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "OSOR：面向效果感知物体移除的一步扩散修复方法",
+      "core_contribution": "提出了一种高效、效果感知且对掩码不敏感的一步扩散物体移除方法，通过单步推理在保持高质量的同时大幅提升速度，并构建了大规模验证数据集。",
+      "method": "方法包含三个核心设计：1）采用占用引导判别器进行精确边界监督，实现稳定的单步扩散训练；2）引入轻量化的alpha头部，利用预训练扩散模型知识预测合适的移除区域以处理不完整掩码；3）提出语义锚定验证流程，通过过滤噪声指令三元组生成大规模效果感知监督数据。",
+      "findings": "实验表明，OSOR在感知质量上优于强大多步扩散基线，同时推理速度提升4至30倍；构建的CORNE数据集包含28万对验证移除样本，并在AnimeEraseBench和TextEraseBench复杂任务上验证了其有效性。"
+    }
+  },
+  {
+    "id": "2606.27923",
+    "title": "Home3D 1.0: A High-Fidelity Image-to-3D Asset Generation System for Interior Design",
+    "abstract": "We present Home3D 1.0, a modular image-to-3D generation system that produces high-quality 3D assets from a single reference image, targeting interior design and e-commerce applications. Given a photograph of a furniture or decor item, the system outputs a mesh with physically-based rendering (PBR) materials, and the mesh can be decomposed into material-specific components. The pipeline is organized into four tightly coupled modules: Geometry reconstructs a watertight mesh through latent SDF modelling with a geometry VAE and a coarse-to-fine flow-matching DiT; Texture predicts multiview albedo observations, reprojects them onto the mesh, and completes unseen surface regions with a 3D texture field; Material uses MatWeaver to obtain component masks through video-based segmentation and UV-space voting, then retrieves and bakes PBR maps from a curated material library through hierarchical multi-modal matching; and Parts generates material-editable semantic part meshes with a PartVAE and PartDiT, decoding multi-head part-specific SDF fields in one pass. Each module is evaluated independently with dedicated metrics, highlighting both the current system capability and the remaining gaps toward broader deployment.",
+    "authors": [
+      "Yiyun Fei",
+      "Guoqiu Li",
+      "Jin Song",
+      "Chuqiao Wu",
+      "Delong Wu",
+      "Hong Wu",
+      "Ziru Zeng",
+      "Haohui Chen",
+      "YinDong Kong",
+      "Jing Li",
+      "Qi Wu",
+      "Feng Zhang"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-26",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27923.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27923",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "Home3D 1.0：面向室内设计的高保真图像到3D资产生成系统",
+      "core_contribution": "提出了一个模块化的图像到3D生成系统，能够从单张参考图像生成具有物理渲染（PBR）材质的高质量3D资产，并支持按材质分解和编辑，主要面向室内设计和电子商务应用。",
+      "method": "系统采用四模块耦合流水线：1）几何模块通过几何VAE和粗到精流匹配DiT，基于隐式SDF建模重建水密网格；2）纹理模块预测多视角反照率观测，将其重投影到网格上，并用3D纹理场补全不可见面；3）材质模块通过视频分割和UV空间投票获取组件掩码，再通过分层多模态匹配从材料库检索并烘焙PBR贴图；4）部件模块使用PartVAE和PartDiT，一次性解码多头部件特定SDF场，生成可材质编辑的语义部件网格。",
+      "findings": "各模块均通过专用指标独立评估，验证了系统当前的高质量生成能力，同时也揭示了在更广泛部署前仍需解决的技术差距。系统能够从单张家具或装饰品照片生成具备真实感材质和可分解结构的3D资产，为室内设计数字化提供了有效工具。"
+    }
+  },
+  {
+    "id": "2606.27829",
+    "title": "CSD: Content-aware Speculative Decoding for Efficient Image Generation",
+    "abstract": "Speculative decoding (SD) has emerged as a key solution to accelerate the inference of autoregressive models. However, in the field of image generation, it faces the challenge of low acceptance rates, and directly relaxing its criteria leads to degradation in image quality. In this paper, we propose a novel content-aware speculative decoding algorithm, termed CSD, which integrates an entropy-based probability relaxation mechanism with an optimal resampling strategy to enhance the inference efficiency for autoregressive image generation. By leveraging the informational uncertainty inherent in different regions of an image, CSD dynamically adjusts the acceptance probability of candidate tokens, increasing the acceptance rate in low-detail areas to accelerate generation. Moreover, a distribution alignment filter is introduced to ensure the output distribution to be aligned with the target model, which significantly improves the generative quality. Experiments conducted on Lumina-mGPT and Janus-Pro demonstrate that the superiority of the proposed CSD. Our source code is available at https://github.com/aderfebr/CSD.",
+    "authors": [
+      "Mingcheng Wang",
+      "Junbo Qiao",
+      "Yunchen Li",
+      "Lingfu Jiang",
+      "Wei Li",
+      "Jie Hu",
+      "Jiao Xie",
+      "Zhou Yu",
+      "Xinghao Chen",
+      "Guixu Zhang",
+      "Shaohui Lin"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-26",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27829.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27829",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "CSD：面向高效图像生成的内容感知推测解码",
+      "core_contribution": "提出了一种内容感知推测解码算法（CSD），通过结合基于熵的概率松弛机制与最优重采样策略，在保持图像质量的同时显著提升了自回归图像生成的推理效率。",
+      "method": "该方法利用图像不同区域固有的信息不确定性，动态调整候选标记的接受概率，在低细节区域提高接受率以加速生成；同时引入分布对齐滤波器，确保输出分布与目标模型对齐，从而保障生成质量。",
+      "findings": "在Lumina-mGPT和Janus-Pro模型上的实验表明，CSD在提升推理效率的同时，有效避免了图像质量下降，验证了其优越性。"
+    }
+  },
+  {
+    "id": "2606.27978",
+    "title": "Parallel Rollout Approximation for Pixel-Space Autoregressive Image Generation",
+    "abstract": "Pixel-space continuous-token autoregressive (AR) generation directly models images as sequences of raw pixel patches, avoiding discrete tokenization or a separately pretrained tokenizer. However, it faces coupled challenges: high-dimensional patch generation causes large single-step errors, and teacher-forced training creates a train--inference gap that makes these errors accumulate across AR steps. Existing fixes such as $x$-prediction and input noise injection only partially mitigate these issues. Exact rollout training better matches inference-time conditions, but is impractical due to prohibitively slow sequential sampling. We propose \\emph{Parallel Rollout Approximation} (PRA), a scalable framework that addresses both challenges jointly. PRA generates low-dimensional intermediate states instead of high-dimensional pixel patches, then maps them back to pixel-space tokens with a pixel decoder, preserving a pixel-in, pixel-out AR interface. It also constructs inference-like pixel inputs through the same intermediate-state-to-pixel path used at inference, independently across positions, approximating the pixel-feedback interface encountered during inference-time rollout while retaining parallel teacher-forced training. On class-conditional ImageNet-1K generation at $256\\times256$ resolution, PRA-S with 135M parameters achieves an FID of 2.58, surpassing the previous billion-scale pixel-space AR result of 3.60. Scaling to PRA-L with 511M parameters further improves FID to 1.94, establishing a new state of the art among pixel-space AR models. Beyond generation, PRA achieves higher ImageNet classification probing accuracy than other AR and diffusion baselines, suggesting its potential for unified pixel-space image generation and understanding.",
+    "authors": [
+      "Jiayi Xu",
+      "Di He",
+      "Guolin Ke"
+    ],
+    "published": "2026-06-26",
+    "updated": "2026-06-26",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.27978.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.27978",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "用于像素空间自回归图像生成的并行展开近似方法",
+      "core_contribution": "提出了并行展开近似（PRA）框架，通过生成低维中间状态再解码回像素空间，联合解决了像素空间自回归生成中高维误差累积与训练-推断不匹配的核心挑战。",
+      "method": "该方法首先生成低维中间状态而非高维像素块，再通过像素解码器将其映射回像素空间，保持了像素输入-输出的自回归接口；同时利用中间状态到像素的路径独立构建近似推断时反馈的像素输入，实现了并行化教师强制训练。",
+      "findings": "在256×256分辨率ImageNet-1K类别条件生成任务中，1.35亿参数的PRA-S模型获得2.58的FID，超越此前十亿级像素空间自回归模型（3.60）；5.11亿参数的PRA-L进一步将FID提升至1.94，创下像素空间自回归模型新纪录。此外，PRA在ImageNet分类探测任务中表现优于其他自回归与扩散基线，展示了其在统一像素空间图像生成与理解方面的潜力。"
+    }
+  }
+]
