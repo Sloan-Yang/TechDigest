@@ -1,0 +1,148 @@
+[
+  {
+    "id": "2606.30262",
+    "title": "Intermediate Text Representation Guided Text-to-Image Generation for Enhancing One-and-Only Alignment",
+    "abstract": "Text-to-image (T2I) diffusion models often fail to faithfully render explicit textual descriptions, instead defaulting to strongly learned visual priors due to a phenomenon referred to as concept association bias. We show that such bias is particularly strong for one-and-only (OAO) objects, entities that exist in a single canonical form, such as celestial bodies, landmarks, and artworks. The deeply ingrained visual identity for these concepts often resists modification through prompting alone. Addressing this challenge, we first identify through an information-theoretic analysis that the final text embedding discards concept-level information present in the intermediate-layer text representations, reducing the mutual information available to the subsequent denoising process. We then propose Intermediate Text Representation (IR)-guided diffusion, which injects intermediate hidden states of the text encoder into the conditioning signal during early denoising steps, recovering suppressed concepts without any additional training, optimization, or external models. To systematically evaluate the challenging task of aligning generative outputs with unusual prompts for OAO objects, we introduce OAO-AttackBench, a benchmark comprising counterfactual prompts that directly conflict with the core visual identity of OAO objects. Experiments on four benchmarks, including OAO-AttackBench, show that our method achieves up to a 19.1 percentage-point improvement in VQAScore while preserving generation fidelity and human preference. Project page: https://soyoun-won.github.io/one-and-only-ir-guidance/.",
+    "authors": [
+      "Soyoun Won",
+      "Aryan Yazdan Parast",
+      "Basim Azam",
+      "Jean Honorio",
+      "Naveed Akhtar"
+    ],
+    "published": "2026-06-29",
+    "updated": "2026-06-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.30262.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.30262",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过中间文本表征引导的文本到图像生成以增强唯一性对齐",
+      "core_contribution": "本文提出了一种无需额外训练或外部模型的中间文本表征引导扩散方法，有效缓解了文本到图像生成中针对“唯一性对象”的概念关联偏差问题，并为此任务构建了专门的评测基准OAO-AttackBench。",
+      "method": "该方法首先通过信息论分析发现，最终文本嵌入会丢弃中间层文本表征中的概念级信息。基于此，提出在去噪早期阶段将文本编码器的中间隐状态注入条件信号中，从而在不增加训练或优化成本的情况下恢复被抑制的概念表达。",
+      "findings": "在包括OAO-AttackBench在内的四个基准测试上，该方法在VQAScore指标上最高提升了19.1个百分点，同时保持了生成质量和人类偏好。实验表明，中间表征引导能有效增强生成图像与非常规文本描述的对齐能力。"
+    }
+  },
+  {
+    "id": "2606.30054",
+    "title": "Illuminating Unified Multimodal Model for Free-form Interleaved Text-Image Generation",
+    "abstract": "The advancement of generative AI models capable of producing text and image marks a critical step forward in the realm of multimodal intelligence, particularly for tasks involving the interleaving of both modalities. To advance this intelligence to the next stage, it is crucial for models to autonomously generate free-form interleaved text-image sequences. In this paper, we introduce ILLUME-X, an advanced unified multimodal paradigm that enables high-quality, free-form interleaved text-image generation by improving multimodal data efficiency and stabilizing the multimodal training process. ILLUME-X comprises three key components: (i) an expanded training data pipeline optimized for interleaved text-image generation, (ii) a progressive training strategy with self-adaptive objectives for free-length multimodal token sequences, and (iii) an objective and comprehensive evaluation method ILScore for interleaved text-image sequences. Notably, our ILLUME-X outperforms previous unified models across multiple interleaved text-image generation tasks like style transfer, image decomposition and storytelling.",
+    "authors": [
+      "Chonghuinan Wang",
+      "Zhikai Chen",
+      "Chunwei Wang",
+      "Yecong Wan",
+      "Junwei Yang",
+      "Zhixin Wang",
+      "Wei Zhang",
+      "Jiaqi Xu",
+      "Renjing Pei",
+      "Xiaohe Wu",
+      "Fan Li",
+      "Wangmeng Zuo"
+    ],
+    "published": "2026-06-29",
+    "updated": "2026-06-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.30054.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.30054",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "面向自由形式交错文本-图像生成的统一多模态模型研究",
+      "core_contribution": "提出了ILLUME-X模型，通过提升多模态数据效率和稳定训练过程，实现了高质量、自由形式的交错文本-图像序列生成；并设计了专门评估方法ILScore。",
+      "method": "构建了针对交错文本-图像生成的扩展训练数据管道；采用渐进式训练策略，结合自适应目标处理可变长度的多模态标记序列；开发了客观全面的交错序列评估方法ILScore。",
+      "findings": "ILLUME-X在风格迁移、图像解构和故事叙述等多个交错文本-图像生成任务上，性能均优于以往的统一多模态模型。"
+    }
+  },
+  {
+    "id": "2606.30003",
+    "title": "GeoEdit: Geometry-Aware Object Editing via Dual-Branch Denoising",
+    "abstract": "Precisely manipulating objects in a single photograph (translation, rotation, scaling) while obeying 3D physical constraints remains unsolved for diffusion-based editors. Current 2D methods lack spatial awareness and produce perspective violations. Forcing structural proxies into the latent space also disrupts variance homogeneity, and the resulting self-attention leakage leads to ghosting and background blur. The core difficulty is asymmetric: the relocated object must follow a rigid geometry, yet the uncovered background needs freedom to synthesize plausible content. We present GeoEdit, a training-free Lift-Manipulate-Render-Denoise pipeline that satisfies both constraints. We decouple scene and object in 3D, align them through point correspondence, and render a geometry-aligned proxy with a structural depth map. A Dual-Branch Denoising stage then refines this proxy: a video diffusion backbone preserves object identity, while 3D constraints are injected into the foreground within a narrow denoising window at matching noise variance (variance-homogeneous injection). The background denoises freely. Because the injected signal matches the native latent statistics, self-attention stays undisturbed. We also introduce GeoEditBench, a pose-aware benchmark covering object translation, object rotation, and camera movement with pose-aware evaluation metrics. Experiments confirm consistent gains in geometric accuracy, identity fidelity, and background quality. Our codes are available at https://github.com/Heey731/GeoEdit.",
+    "authors": [
+      "Yi He",
+      "Jiangming Wang",
+      "Xinyu Wang",
+      "Mark Fong",
+      "Songchun Zhang",
+      "Yuxuan Xue",
+      "Hai-Tao Zheng",
+      "Yue Ma"
+    ],
+    "published": "2026-06-29",
+    "updated": "2026-06-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.30003.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.30003",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "GeoEdit：通过双分支去噪实现几何感知的对象编辑",
+      "core_contribution": "提出了一个无需训练的几何感知对象编辑框架，通过解耦三维场景与对象并引入方差同质化注入，在保持对象身份和背景质量的同时，实现了对单张图像中对象的精确几何操控（如平移、旋转、缩放）。",
+      "method": "方法采用“提升-操控-渲染-去噪”流程：首先在三维空间中解耦场景和对象并进行点对齐，生成带有结构深度图的几何对齐代理；随后通过双分支去噪阶段进行细化，其中视频扩散主干保持对象身份，而三维约束仅在匹配噪声方差的小窗口内注入前景，背景则自由去噪。",
+      "findings": "实验表明，该方法在几何准确性、对象身份保真度和背景质量上均取得显著提升，并通过新构建的GeoEditBench基准验证了其在对象平移、旋转和相机运动等任务上的优越性能。"
+    }
+  },
+  {
+    "id": "2606.29814",
+    "title": "Nemotron-Labs-Diffusion-Image: Advancing Masked Discrete Diffusion for High-Resolution Image Synthesis",
+    "abstract": "We propose Nemotron-Labs-Diffusion-Image, a state-of-the-art masked discrete diffusion model (MDM) for high-resolution text-to-image synthesis. Compared with prior work on masked image generation, Nemotron-Labs-Diffusion-Image addresses two key challenges. First, unlike continuous diffusion models which progressively refine latent representations across the entire image, standard MDMs lack self-correcting capability because discrete tokens cannot be modified once they are unmasked. Second, although increasing the vocabulary size of discrete image tokenizers improves reconstruction fidelity, it introduces optimization difficulties for generative modeling as the per-token training signal becomes increasingly sparse. To address the first challenge, Nemotron-Labs-Diffusion-Image incorporates a token-editing mechanism that enables the model to dynamically revise already-unmasked tokens during inference, similar to how a sculptor iteratively refines their work. To tackle the second challenge, we propose a Grouped Cross-Entropy (GCE) objective that assigns positive learning signals to tokens neighboring the ground truth in embedding space, thereby alleviating signal sparsity. To further improve training efficiency, we implement a custom fused operator for GCE that significantly reduces VRAM usage in large-vocabulary settings. Experimental results demonstrate that these innovations substantially improve both training efficiency and image fidelity of masked discrete image generators, achieving a score of 0.90 on GenEval, 86.9 on DPG and 10.76 of HPSv3.",
+    "authors": [
+      "Shufan Li",
+      "Greg Heinrich",
+      "Hanrong Ye",
+      "Yonggan Fu",
+      "Aditya Grover",
+      "Jan Kautz",
+      "Pavlo Molchanov"
+    ],
+    "published": "2026-06-29",
+    "updated": "2026-06-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.29814.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.29814",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Nemotron-Labs-Diffusion-Image: 推进掩码离散扩散模型用于高分辨率图像生成",
+      "core_contribution": "提出了一种先进的掩码离散扩散模型，通过引入令牌编辑机制和分组交叉熵目标，解决了标准掩码离散扩散模型缺乏自校正能力以及大词汇量图像分词器导致训练信号稀疏的难题。",
+      "method": "模型采用掩码离散扩散框架，在推理时引入令牌编辑机制，允许动态修正已解掩码的令牌以提升生成质量。针对大词汇量带来的训练困难，提出了分组交叉熵目标，为嵌入空间邻近真实令牌的预测分配正学习信号，并实现了自定义融合算子以显著降低显存占用。",
+      "findings": "实验表明，所提方法显著提升了掩码离散图像生成器的训练效率和图像保真度，在GenEval上达到0.90分，DPG上达到86.9分，HPSv3上达到10.76分。"
+    }
+  },
+  {
+    "id": "2606.29013",
+    "title": "Mural: Transferring LLM knowledge to image generation via Mixture-of-Transformers",
+    "abstract": "Leveraging capabilities of large language models (LLMs) in text-to-image (T2I) synthesis is an important research direction. In this work we investigate whether the knowledge of a frozen LLM can be effectively utilized in T2I generation when trained exclusively on standard text-image pairs. We integrate a frozen, reasoning-capable LLM with a diffusion-based image generator via shared attention within the Mixture-of-Transformers (MoT) architecture. Our experiments span two critical questions: (1) what degree of the LLM's intrinsic knowledge remains accessible during T2I training, and (2) what novel capabilities emerge in the resulting system. Across established benchmarks, our models achieve strong performance among unified understanding-generation systems: 0.85 on GenEval, 86.75 on DPG-Bench, and 0.66 on WISE with inference-time reasoning, using only text-image data. Remarkably, we uncover emergent behaviors absent from training data, including cross-lingual image generation, color-guided composition, emoji / ASCII scene construction, and generation directed by world knowledge. These results demonstrate that pretrained LLM knowledge can guide image synthesis under standard text-to-image training paradigms, without interleaved multimodal signals or explicit reasoning supervision. Our findings open new avenues for harnessing frozen model capabilities in resource-constrained multimodal learning.",
+    "authors": [
+      "Achin Jain",
+      "Jie An",
+      "Siddharth Chaudhary",
+      "Davide Modolo"
+    ],
+    "published": "2026-06-27",
+    "updated": "2026-06-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.29013.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.29013",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Mural：通过混合变换器将大语言模型知识迁移至图像生成",
+      "core_contribution": "本文提出了一种通过混合变换器架构，将冻结的大语言模型知识有效迁移到文本到图像生成任务中的方法，仅使用标准文本-图像对训练即可实现知识引导的图像合成。",
+      "method": "该方法将冻结的、具备推理能力的大语言模型与基于扩散的图像生成器结合，通过共享注意力机制构建混合变换器架构；训练过程仅使用常规文本-图像对数据，无需多模态交错数据或显式推理监督。",
+      "findings": "实验表明，模型在多个基准测试中表现优异（如GenEval 0.85分），并涌现出训练数据中未见的跨语言图像生成、颜色引导构图、表情符号/ASCII场景构建等能力，证明预训练LLM知识可在标准训练范式下有效指导图像合成。"
+    }
+  }
+]
