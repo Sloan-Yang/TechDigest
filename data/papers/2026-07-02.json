@@ -1,0 +1,153 @@
+[
+  {
+    "id": "2607.00766",
+    "title": "Decoupled Guidance: Disentangling Subject and Context Pathways in Text-to-Image Personalization",
+    "abstract": "Text-to-image personalization aims to generate a user-provided subject in novel scenes described by text. However, most existing methods encode subject identity (fidelity) and context (editability) through the same conditioning pathway, forcing the two to compete for attention-map resources. We refer to this phenomenon as conditioning entanglement and show that it induces a fidelity-editability trade-off. We further provide causal evidence by replacing the target subject token with a generic subject token, which produces shifts in attention allocation and corresponding changes in context adherence. To this end, we propose Decoupled Guidance (DeGu), a plug-and-play framework that routes subject identity and scene context through two independent guidance streams. We further introduce a spatial mixing mechanism that dynamically fuses these streams, ensuring each operates within its semantically relevant region without interference. Furthermore, DeGu can be readily applied to existing personalization methods without modifying the underlying backbone models, consistently improving the overall personalization performance while enabling inference-time control over the fidelity-editability balance, across diverse methods and backbones, including flow-matching Diffusion Transformers (DiTs).",
+    "authors": [
+      "Seongmin Kim",
+      "Kyucheol Shin",
+      "Heesun Jung",
+      "Jinseo Kim",
+      "Sungyong Baik"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.00766.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.00766",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "解耦引导：在文本到图像个性化中分离主体与上下文路径",
+      "core_contribution": "提出了一个即插即用的解耦引导框架，通过分离主体身份和场景上下文的引导路径，解决了现有方法中两者因共享条件路径而导致的竞争与权衡问题。",
+      "method": "该方法设计了两条独立的引导流，分别处理主体身份和场景上下文信息，并通过空间混合机制动态融合两者，确保各自在语义相关区域内操作而不相互干扰，无需修改底层主干模型即可应用。",
+      "findings": "实验表明，该框架能显著提升个性化生成的整体性能，并在推理时实现对保真度与可编辑性平衡的灵活控制，适用于包括扩散Transformer在内的多种方法与主干模型。"
+    }
+  },
+  {
+    "id": "2607.00535",
+    "title": "Flow-Map GRPO: Reinforcement Learning for Few-Step Flow-Map Generators via Anchored Stochastic Composition",
+    "abstract": "Few-step flow-map generators, such as consistency models and MeanFlow, accelerate sampling by directly learning long-range transport maps between noise and data. However, these models are typically deterministic, which makes them difficult to optimize with reinforcement learning (RL) post-training methods that require stochastic trajectories and well-defined likelihood ratios. Existing SDE-based stochasticization techniques are designed for velocity-based samplers with infinitesimal or finely discretized transitions, and therefore do not directly apply to long-range flow maps. In this work, we propose Flow-Map GRPO, an online RL post-training framework for deterministic few-step flow-map generators. The key component is Anchored Stochastic Flow Map Composition (ASFMC), a path-preserving stochasticization mechanism that introduces randomness through anchor-based conditional resampling while preserving the original marginal probability path of the deterministic flow map. We derive GRPO objectives for both single-time and two-time flow-map parameterizations. Experiments on few-step FLUX-based text-to-image generators, including MeanFlow and sCM, show that Flow-Map GRPO improves pretrained deterministic flow-map models across reward-based, perceptual, and task-level evaluation metrics. Our results demonstrate that deterministic few-step flow-map generators can be effectively aligned with RL post-training without modifying their original model parameterization or retraining them as native stochastic models.",
+    "authors": [
+      "Zhiqi Li",
+      "Wen Zhang",
+      "Bo Zhu"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.00535.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.00535",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "Flow-Map GRPO：通过锚定随机组合实现少步流图生成器的强化学习",
+      "core_contribution": "提出了Flow-Map GRPO，一种针对确定性少步流图生成器的在线强化学习后训练框架，通过锚定随机流图组合（ASFMC）机制，在不改变原模型参数化或重新训练为随机模型的前提下，实现了对确定性流图的有效强化学习对齐。",
+      "method": "该方法的核心是锚定随机流图组合（ASFMC），这是一种路径保持的随机化机制，通过基于锚点的条件重采样引入随机性，同时保留确定性流图的原始边缘概率路径。在此基础上，推导了适用于单时间和双时间流图参数化的GRPO（梯度奖励策略优化）目标。",
+      "findings": "实验基于少步FLUX文本到图像生成器（如MeanFlow和sCM）进行，结果表明Flow-Map GRPO在奖励指标、感知质量和任务级评估指标上均提升了预训练确定性流图模型的性能，证明了无需修改原模型即可通过强化学习后训练有效对齐确定性少步流图生成器。"
+    }
+  },
+  {
+    "id": "2606.32039",
+    "title": "GEAR: Guided End-to-End AutoRegression for Image Synthesis",
+    "abstract": "Visual generative models are typically trained in two stages. A tokenizer is first trained for reconstruction and then frozen, after which a generator is trained on its discrete indices or continuous latents. This decoupling leaves the tokenizer unaware of what the generator finds easy to model. We present GEAR (Guided End-to-end AutoRegression), which trains a vector-quantized (VQ) tokenizer and an autoregressive (AR) generator jointly and end-to-end, guided by representation alignment. The key obstacle is that the VQ index fed to the AR model is non-differentiable, so gradients cannot reach the tokenizer, and a straight-through estimator collapses. GEAR resolves this with a dual read-out of the codebook assignment. A hard, one-hot branch trains the AR with next-token prediction, while a differentiable soft branch carries a representation-alignment loss that flows back to guide only the tokenizer. The AR model thereby steers its tokenizer toward an index distribution it can predict more easily. This shifts the alignment burden from the tokenizer to the AR: the tokenizer's own features become less DINOv2-like while the AR's become more so, the opposite of diffusion-side recipes that make the latent itself semantic. GEAR speeds up ImageNet gFID convergence by up to 10x relative to the strong LlamaGen-REPA baseline, learns markedly better patch-level and spatially-coherent features, and generalizes across quantizers (VQVAE, LFQ, IBQ) and to text-to-image generation.",
+    "authors": [
+      "Bin Lin",
+      "Zheyuan Liu",
+      "Chenguo Lin",
+      "Sixiang Chen",
+      "Yunyang Ge",
+      "Yunlong Lin",
+      "Jianwei Zhang",
+      "Miles Yang",
+      "Zhao Zhong",
+      "Liefeng Bo",
+      "Li Yuan"
+    ],
+    "published": "2026-06-30",
+    "updated": "2026-06-30",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.32039.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.32039",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "GEAR：用于图像合成的引导式端到端自回归模型",
+      "core_contribution": "提出了一种端到端联合训练向量量化（VQ）分词器和自回归（AR）生成器的方法，通过表示对齐引导，使分词器能够根据生成器的建模需求进行优化，从而解决了传统两阶段训练中分词器与生成器解耦的问题。",
+      "method": "GEAR采用双分支读取码本分配的策略：一个硬分配（one-hot）分支用于训练自回归模型进行下一标记预测，另一个可微分的软分配分支则承载表示对齐损失，该损失仅反向传播以引导分词器。这种方法使得自回归模型能够引导分词器产生更易于预测的索引分布，从而实现端到端的联合训练。",
+      "findings": "实验表明，GEAR在ImageNet上显著加速了gFID收敛（比LlamaGen-REPA基线快达10倍），学习了明显更好的块级和空间连贯特征，并且能够泛化到不同的量化器（如VQVAE、LFQ、IBQ）以及文本到图像生成任务中。"
+    }
+  },
+  {
+    "id": "2606.32033",
+    "title": "SpheRoPE: Zero-Shot Optimization-Free 360 Panorama Generation with Spherical RoPE",
+    "abstract": "We present a zero-shot, training-free and optimization-free framework for generating 360 panoramic images and videos by directly injecting spherical priors into pre-trained diffusion transformers. Existing methods either rely on costly fine-tuning on scarce panoramic data that limits generalization, or leverage multi-step optimization that incurs prohibitive inference latency. We observe that contemporary generative models natively exhibit some panoramic priors from large-scale training. However, these emergent capabilities are insufficient, as the models fundamentally fail to satisfy the rigorous topological constraints imposed by equirectangular projection (ERP). We introduce a zero-shot and optimization-free approach that resolves these constraints at inference time. Spherical RoPE replaces standard rotary position embeddings: low-frequency channels are re-parameterized as 3D Cartesian coordinates to natively encode the spherical manifold, while high-frequency channels are harmonically quantized to enforce exact periodicity. Coupled with complementary Semantic Distortion classifier-free guidance (CFG) that explicitly steers geometry, we avoid retraining and inherit the full creative breadth of state-of-the-art models. Our approach generalizes across diverse backbones and 360 generation modalities. We demonstrate this across text-to-panorama using Flux.1, Flux.2, and LTX-Video backbones, achieving competitive performance against baselines, all while remaining training-free. Project page: https://orhir.github.io/SpheRoPE",
+    "authors": [
+      "Or Hirschorn",
+      "Aaron Olender",
+      "Eli Alshan",
+      "Ianir Ideses",
+      "Lior Fritz",
+      "Sagie Benaim"
+    ],
+    "published": "2026-06-30",
+    "updated": "2026-06-30",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.32033.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.32033",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SpheRoPE：利用球形RoPE实现无需优化、零样本的360度全景生成",
+      "core_contribution": "提出了一种零样本、无需训练和优化的框架，通过将球形先验直接注入预训练的扩散Transformer模型，实现了高质量的360度全景图像和视频生成。",
+      "method": "该方法用球形旋转位置编码（Spherical RoPE）替换标准旋转位置编码，将低频通道重新参数化为3D笛卡尔坐标以编码球形流形，并对高频通道进行谐波量化以强制周期性。同时，结合语义扭曲分类器引导（CFG）来显式引导几何结构。",
+      "findings": "该框架在多种骨干模型（如Flux.1、Flux.2和LTX-Video）上均有效，在文本到全景生成任务中取得了与基线方法竞争的性能，且完全无需训练或优化。"
+    }
+  },
+  {
+    "id": "2606.32020",
+    "title": "Cross-Space Distillation: Teaching One-Step Students with Modern Diffusion Teachers",
+    "abstract": "Modern one-step diffusion models achieve impressive quality through distribution-based timestep distillation. Yet, they rely on a critical assumption: Teacher and Student must inhabit the same latent space. This Shared-Space constraint prevents knowledge transfer from modern high-capacity Teachers (e.g., SD 3.5 and Flux) into compact, deployment-friendly Students such as SD 1.5, whose latent resolution and VAE parameterization differ from the Teacher. We formalize this overlooked regime as Cross-Space Distillation, where Teacher and Student differ in both latent resolution and VAE space. To enable distillation under this mismatch, we introduce the Bridge, a lightweight latent interface that maps Student latents into the Teacher space without modifying the Student backbone. Bridge combines a frozen Student VAE decoder as a spatial prior with a compact learnable projector, and is trained with latent reconstruction and attention fidelity objectives for stable Teacher-space alignment. Across diverse modern Teachers, Bridge enables substantial gains for compact one-step Students; for example, it improves SD 1.5 from 5.4 to 9.4 HPSv3 while preserving one-step inference, low latency, and broad ecosystem compatibility. These results show that heterogeneous large Teachers can be distilled into efficient, deployable backbones through a lightweight latent-space interface.",
+    "authors": [
+      "Anh Nguyen",
+      "Ngan Nguyen",
+      "Duc Vu",
+      "Trung Dao",
+      "Viet Nguyen",
+      "Quan Dao",
+      "Kien Nguyen",
+      "Chi Tran",
+      "Phong Nguyen",
+      "Khoi Nguyen",
+      "Cuong Pham",
+      "Dimitris Metaxas",
+      "Vishal M. Patel",
+      "Anh Tran"
+    ],
+    "published": "2026-06-30",
+    "updated": "2026-06-30",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2606.32020.pdf",
+    "abs_url": "https://arxiv.org/abs/2606.32020",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "跨空间蒸馏：用现代扩散模型教师指导一步式学生模型",
+      "core_contribution": "提出了“跨空间蒸馏”这一新范式，通过引入轻量级的“桥接”潜空间接口，首次实现了不同潜空间分辨率与VAE参数化的大规模教师模型（如SD 3.5、Flux）向紧凑型一步式学生模型（如SD 1.5）的知识迁移。",
+      "method": "方法设计了一个名为“桥接”的轻量级潜空间接口，该接口将学生模型的潜变量映射到教师模型空间，而不修改学生模型的主干网络。桥接模块结合了冻结的学生VAE解码器（作为空间先验）和一个紧凑的可学习投影器，并通过潜变量重建和注意力保真度目标进行训练，以实现稳定的教师空间对齐。",
+      "findings": "实验表明，桥接方法能显著提升紧凑型一步式学生模型的性能，例如将SD 1.5的HPSv3评分从5.4提升至9.4，同时保持一步推理、低延迟和广泛的生态系统兼容性。这证明了通过轻量级潜空间接口，可将异构的大型教师模型知识有效蒸馏到高效、可部署的骨干网络中。"
+    }
+  }
+]
