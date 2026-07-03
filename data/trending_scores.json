@@ -406,5 +406,12 @@
   "langflow-ai_langflow": 85,
   "pytorch_pytorch": 90,
   "harvard-edge_cs249r_book": 85,
-  "ryanmcdermott_clean-code-javascript": 65
+  "ryanmcdermott_clean-code-javascript": 65,
+  "elastic_elasticsearch": 20,
+  "ansible_ansible": 30,
+  "rommapp_romm": 30,
+  "apache_maven": 0,
+  "sponsors_safishamsi": 85,
+  "sponsors_supabase": 30,
+  "TencentCloud_CubeSandbox": 85
 }

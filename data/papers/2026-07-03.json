@@ -1,0 +1,163 @@
+[
+  {
+    "id": "2607.02375",
+    "title": "Representation Distribution Matching for One-Step Visual Generation",
+    "abstract": "We elucidate the design space of Representation Distribution Matching (RDM), our name for the paradigm that trains a one-step image generator by matching generated and reference feature distributions under frozen pretrained encoders. We identify two design axes, how the distributions are compared and the representations they are compared in, and controlled studies along them yield three findings. First, the classical MMD, which could not train convincing generators a decade ago, becomes a strong and scalable objective once estimated right. Second, the generated batch is then the operative variable, with an optimum above 2048, far beyond customary batch sizes. Third, any single representation can be gamed, driven below the real score while images stay visibly fake, so we match against a balanced battery of encoders and evaluate with SW_r14, a Sliced-Wasserstein distance over 14 encoders that is independent of the training loss and resists gaming. Combining the preferred choices yields improved RDM (iRDM): it sets the one-step state of the art on ImageNet at SW_r14 1.30, corroborated by PickScore, a human-preference proxy our objective never optimizes, which prefers it over the prior best one-step generator on 71.2% of matched samples. The same recipe post-trains the four-step FLUX.2 [klein] into a one-step generator, surpassing the four-step version on GenEval, 0.826 to 0.794, and on PickScore, 22.76 to 22.58, in 90 H200 GPU-hours. Project page: https://alan-lanfeng.github.io/rdm/.",
+    "authors": [
+      "Lan Feng",
+      "Wuyang Li",
+      "Eloi Zablocki",
+      "Matthieu Cord",
+      "Alexandre Alahi"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.02375.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.02375",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "表示分布匹配：用于一步视觉生成",
+      "core_contribution": "本文系统性地研究了表示分布匹配（RDM）这一训练一步图像生成器的范式，通过优化分布比较方式和表示空间的选择，提出了改进版iRDM，在ImageNet和FLUX.2模型上均取得了超越现有一步生成器的性能。",
+      "method": "该方法利用冻结的预训练编码器，通过匹配生成图像与参考图像在特征空间中的分布来训练一步生成器。研究比较了两种分布比较方式（MMD和Sliced-Wasserstein距离）以及多种编码器表示，发现正确估计的MMD是强且可扩展的目标，且生成批次大小需超过2048才能达到最优。为防止单一表示被“欺骗”，论文采用多个编码器的平衡组合，并使用SW_r14（基于14个编码器的Sliced-Wasserstein距离）作为独立于训练损失的评估指标。",
+      "findings": "实验表明，经典MMD在正确估计后能有效训练生成器；生成批次大小存在最优值（>2048）；单一表示易被“游戏化”，需多编码器平衡；iRDM在ImageNet上达到SW_r14 1.30的SOTA，且被人类偏好代理PickScore在71.2%的样本中优于先前最佳一步生成器；将四步FLUX.2后训练为一步生成器后，在GenEval（0.826 vs 0.794）和PickScore（22.76 vs 22.58）上均超越原四步版本，仅需90 H200 GPU小时。"
+    }
+  },
+  {
+    "id": "2607.02290",
+    "title": "DisciplineGen-1M: A Large-Scale Dataset for Multidisciplinary Visual Generation and Editing",
+    "abstract": "Recent image generation and editing models can produce visually appealing natural images, yet they remain unreliable when the target image is a knowledge-intensive diagram whose correctness depends on disciplinary concepts, symbolic structure, and precise spatial relations. We introduce DisciplineGen-1M, a million-scale multidisciplinary dataset that supports text-to-image generation and image editing. It contains 1.2M samples spanning mathematics, physics, chemistry, biology, geography, computer science, economics, history, music, and sports. To construct the dataset, we design a scalable framework that combines vector-graphics rendering, OCR-based editing, curated programmatic synthesis, and large-scale text-to-image filtering. These pipelines produce captions, editing instructions, structured annotations, and paired images with controllable semantic differences. Building on DisciplineGen-1M, we further introduce a discipline-informed reasoning-generation model for both text-to-image generation and image editing. Experiments on discipline-related benchmarks, GenExam and GRADE, show substantial improvements over open-source baselines, while evaluations on general reasoning-informed benchmarks, WISE and RISE, further indicate broader transfer. The results suggest that large-scale structured academic visual data is a key ingredient for moving image generation from aesthetic plausibility toward verifiable knowledge-grounded visual creation. We will publicly release our dataset, model, and source code of the data curation pipeline to ensure reproducibility and benefit future research.",
+    "authors": [
+      "Zhaokai Wang",
+      "Mingxin Liu",
+      "Zirun Zhu",
+      "Ziqian Fan",
+      "Yiguo He",
+      "Mohan Zhang",
+      "Leyao Gu",
+      "Xiangyu Zhao",
+      "Ning Liao",
+      "Shaofeng Zhang",
+      "Xuanhe Zhou",
+      "Zhihang Zhong",
+      "Junchi Yan",
+      "Xue Yang"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.02290.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.02290",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "DisciplineGen-1M：面向多学科视觉生成与编辑的大规模数据集",
+      "core_contribution": "提出了一个百万级的多学科图像生成与编辑数据集DisciplineGen-1M，覆盖10个学科，并基于该数据集构建了学科感知的推理-生成模型，显著提升了知识密集型图像的生成可靠性。",
+      "method": "采用可扩展的数据构建框架，结合矢量图形渲染、基于OCR的编辑、程序化合成以及大规模文本到图像过滤等管道，生成包含标题、编辑指令、结构化标注和可控语义差异的配对图像。在此基础上，训练了一个学科感知的推理-生成模型，用于文本到图像生成和图像编辑任务。",
+      "findings": "在学科相关基准GenExam和GRADE上，该方法显著优于开源基线；在通用推理基准WISE和RISE上也表现出良好的迁移能力，表明大规模结构化学术视觉数据是推动图像生成从美学合理性走向可验证知识驱动视觉创作的关键因素。"
+    }
+  },
+  {
+    "id": "2607.02220",
+    "title": "DetailAnywhere: Fashion Detail Generation via Cross-Modal Feature Alignment Distillation",
+    "abstract": "Diffusion-based generative AI has achieved remarkable success in e-commerce applications such as virtual try-on, poster generation, and product background synthesis. However, when making online purchasing decisions for apparel, consumers also desire the freedom to examine specific detail regions of interest, such as collars, cuffs, and fabric textures, yet existing methods have not explicitly studied this setting. We therefore formalize a new, non-template task: Fashion Detail Generation with focus conditioning, and release FDBench, the first benchmark comprising 40K+ human-verified reference-detail pairs across 41 different categories. This task poses a unique semantic gap challenge: the model must bridge the correspondence between a focus marker on a product reference image and a photorealistic close-up view of the indicated region, while faithfully preserving the garment's identity, without any precise prompt. To bridge this gap, we propose Cross-modal Feature Alignment Distillation (CFAD), which leverages a fine-tuned DINOv3 teacher to align both branches of a Multimodal Diffusion Transformer in a shared semantic space via dual-branch distillation. To further improve consistency between generated details and reference images, we introduce a consistency reward model that jointly scores image pairs along three quality axes and optimizes generation via reinforcement learning. Experiments show that our model DetailAnywhere significantly outperforms all state-of-the-art opensource methods across all metrics and human evaluations.",
+    "authors": [
+      "Zijun Li",
+      "Yimin Zhou",
+      "Jia Sun",
+      "Honglie Wang",
+      "Pengcheng Wei",
+      "Junlong Wu",
+      "Yongrui Heng",
+      "Jiyuan Wang",
+      "Huan Ouyang",
+      "Boheng Zhang",
+      "Huaiqing Wang",
+      "Dewen Fan",
+      "Qianqian Gan",
+      "Fan Yang",
+      "Tingting Gao"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.02220.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.02220",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "细节无处不在：通过跨模态特征对齐蒸馏实现时尚细节生成",
+      "core_contribution": "本文首次定义了“时尚细节生成”这一新任务，并构建了包含4万+人工验证参考-细节对的基准数据集FDBench；同时提出了跨模态特征对齐蒸馏（CFAD）方法，结合一致性奖励模型，显著提升了生成细节与参考图像之间的语义一致性和保真度。",
+      "method": "该方法基于多模态扩散Transformer架构，通过双分支蒸馏将微调后的DINOv3教师模型的特征对齐到共享语义空间，以弥合参考图像中焦点标记与特写细节之间的语义鸿沟。此外，引入一个一致性奖励模型，从三个质量维度联合评估图像对，并通过强化学习优化生成过程，进一步提升细节与参考图像的一致性。",
+      "findings": "实验结果表明，DetailAnywhere在所有评估指标和人工评测中均显著优于现有开源方法，能够根据参考图像上的焦点标记生成逼真且保持服装身份一致的细节区域（如领口、袖口和面料纹理）。"
+    }
+  },
+  {
+    "id": "2607.01642",
+    "title": "Multi-Resolution Flow Matching: Training-Free Diffusion Acceleration via Staged Sampling",
+    "abstract": "Hardware-agnostic strategies for accelerating text-to-image diffusion, such as timestep distillation and feature caching, can reduce inference time without custom kernels or system-level optimization. Among them, multi-resolution generation strategies have recently received broad attention, attaining more than 5x speedup without any training. However, the design of performing upsampling in the latent space, together with the selective modification of partial regions, causes these methods to exhibit noticeable blurring or artifacts. To this end, we propose MrFlow, a training-free multi-resolution acceleration strategy for pretrained flow-matching models built upon a staged low-to-high-resolution pipeline. MrFlow first rapidly generates the main structure at low resolution, then performs super-resolution in the pixel space using a lightweight pretrained GAN-based model, subsequently injects low-strength noise to enable high-frequency resampling, and finally refines the details at high resolution. Quantitative and qualitative results on FLUX.1-dev and Qwen-Image show that MrFlow exploits the quadratic token reduction and reduced step requirement of low-resolution sampling to achieve 10x end-to-end acceleration while keeping OneIG within a 1% gap relative to that before acceleration, significantly surpassing other training-free acceleration strategies, and requiring no training or runtime dynamic identification whatsoever. MrFlow can further be directly combined orthogonally with pre-trained timestep distillation strategies, achieving even higher generation acceleration of up to 25x.",
+    "authors": [
+      "Xingyu Zheng",
+      "Xianglong Liu",
+      "Yifu Ding",
+      "Weilun Feng",
+      "Junqing Lin",
+      "Jinyang Guo",
+      "Haotong Qin"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.01642.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.01642",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "多分辨率流匹配：通过分阶段采样实现无需训练的扩散加速",
+      "core_contribution": "提出了一种无需训练的多分辨率加速策略MrFlow，在保持生成质量的前提下，实现了高达10倍（与蒸馏结合可达25倍）的端到端文本到图像扩散加速。",
+      "method": "MrFlow采用分阶段低到高分辨率流水线：首先在低分辨率下快速生成主体结构，然后利用轻量级预训练GAN模型在像素空间进行超分辨率，接着注入低强度噪声以重新采样高频细节，最后在高分辨率下细化图像。该方法无需训练或运行时动态识别，直接适用于预训练流匹配模型。",
+      "findings": "在FLUX.1-dev和Qwen-Image上的定量与定性结果表明，MrFlow利用低分辨率采样的二次令牌减少和步数降低，实现了10倍端到端加速，同时将OneIG指标保持在加速前的1%差距内，显著优于其他无需训练的加速策略。此外，MrFlow可与预训练时间步蒸馏策略正交结合，实现高达25倍的生成加速。"
+    }
+  },
+  {
+    "id": "2607.02461",
+    "title": "OrbitQuant: Data-Agnostic Quantization for Image and Video Diffusion Transformers",
+    "abstract": "Diffusion transformers (DiTs) achieve state-of-the-art image and video generation, but their multi-step sampling and growing parameter count make inference expensive. Post-training quantization (PTQ) is the natural remedy, yet DiT activations shift across timesteps, prompts, and guidance branches, forcing prior methods to re-fit calibration data for every new checkpoint or modality. We present OrbitQuant, a data-agnostic weight-activation quantizer that bypasses range estimation by quantizing in a normalized, rotated basis. In this basis, a randomized permuted block-Hadamard (RPBH) rotation concentrates each coordinate around one fixed, known marginal regardless of the input, so a single Lloyd-Max codebook serves all timesteps, prompts, and layers of a given input dimension. We extend the same quantizer to weight rows offline, absorbing the rotation into the weights so that it cancels inside each linear layer and only a forward rotation on the activations remains at runtime. The same recipe transfers from image to video with no per-modality tuning. Across FLUX.1, Z-Image-Turbo, Wan 2.1, and CogVideoX, it sets the state of the art for PTQ at several low-bit settings. It also pushes PTQ of image diffusion transformers to W2A4 with usable generation quality.",
+    "authors": [
+      "Donghyun Lee",
+      "Jitesh Chavan",
+      "Duy Nguyen",
+      "Sam Huang",
+      "Liming Jiang",
+      "Priyadarshini Panda",
+      "Timo Mertens",
+      "Saurabh Shukla"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.02461.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.02461",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "OrbitQuant：面向图像与视频扩散Transformer的数据无关量化方法",
+      "core_contribution": "提出了一种无需校准数据、无需针对不同模态或检查点重新拟合的权值-激活量化方法OrbitQuant，首次将图像扩散Transformer的PTQ推进到W2A4位宽并保持可用生成质量。",
+      "method": "OrbitQuant通过在归一化旋转基中进行量化来规避范围估计问题：利用随机置换块哈达玛（RPBH）旋转，将每个坐标的分布集中到固定的已知边缘分布上，从而使用单一的Lloyd-Max码本即可服务于所有时间步、提示词和层。该方法将权值行的旋转吸收到线性层内部，运行时仅需对激活进行前向旋转，实现了从图像到视频的无缝迁移而无需逐模态调参。",
+      "findings": "在FLUX.1、Z-Image-Turbo、Wan 2.1和CogVideoX等多个模型上，OrbitQuant在多个低位宽设置下达到了PTQ的最优性能，并首次将图像扩散Transformer的PTQ推进到W2A4位宽且保持可用生成质量。"
+    }
+  }
+]
