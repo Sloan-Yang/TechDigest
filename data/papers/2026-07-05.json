@@ -1,0 +1,137 @@
+[
+  {
+    "id": "2607.01312",
+    "title": "KathaTrace: Diagnosing Semantic Trajectory Collapse in Generated Visual Narratives",
+    "abstract": "Visual narratives are central to storyboards, comics, children's media, and film previsualization, where viewers understand stories from images alone. Recent generators such as StoryDiffusion produce coherent sequences, but visual coherence does not guarantee that source-story transition meaning remains recoverable. Existing benchmarks assess visual quality, content faithfulness, and scene coherence, but miss a critical failure mode: storyboards where scenes appear visually coherent while the semantic link between scenes disappears. We introduce KathaTrace, a generator-agnostic protocol for diagnosing semantic trajectory collapse, defined as the loss of transition meaning needed to understand how one scene follows another. KathaTrace evaluates transitions under three evidence conditions: text-only, image-only, and text-plus-image, and filters ambiguous items. We contribute KathaBench-25K, with 5,000 narratives from classical collections including Aesop, Panchatantra, and Kathasaritasagara, 20,000 transitions, and 28,712 recoverability questions. We define Semantic Trajectory Gap, or STG, as text-only minus image-only recoverability, measuring transition meaning lost during visualization. Human validation yields Fleiss' kappa = 0.845. Experiments across state-of-the-art generators show substantial STG of 23.5 +/- 1.3. Semantic Compass, an actionability probe, uses KathaTrace signals for post-generation repair and improves storyboard selection.",
+    "authors": [
+      "Jamuna S. Murthy",
+      "Amin Karimi Monsefi",
+      "Rajiv Ramnath"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.01312.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.01312",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "KathaTrace：诊断生成视觉叙事中的语义轨迹崩溃",
+      "core_contribution": "提出了一种与生成器无关的诊断协议KathaTrace，用于检测视觉叙事中场景间语义链接丢失的故障模式（即语义轨迹崩溃），并构建了包含5000个叙事、20000个过渡和28712个可恢复性问题的基准数据集KathaBench-25K。",
+      "method": "KathaTrace通过三种证据条件（纯文本、纯图像、文本加图像）评估叙事过渡的可恢复性，并过滤歧义项。定义语义轨迹差距（STG）为纯文本与纯图像可恢复性之差，以量化可视化过程中丢失的过渡意义。同时引入Semantic Compass作为后生成修复工具，利用KathaTrace信号改进故事板选择。",
+      "findings": "人类验证的Fleiss' kappa值为0.845，表明协议可靠性高。在多个最先进生成器上的实验显示显著的STG（23.5 ± 1.3），说明当前模型在保持视觉连贯性的同时普遍丢失了语义过渡信息。Semantic Compass能够有效利用诊断信号进行后生成修复，提升故事板选择质量。"
+    }
+  },
+  {
+    "id": "2607.00861",
+    "title": "TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control",
+    "abstract": "Controlling the motion of multiple objects in image-to-video (I2V) generation requires preserving object identities while enforcing adherence to distinct target trajectories. This becomes particularly challenging as the number of objects increases and their paths intersect or occlude one another. Existing approaches entangle multiple trajectories within a shared, dense conditioning signal, making object-level correspondence difficult to preserve in crowded scenes. We depart from this paradigm and enforce a strict, per object spatial constraint that isolates instances independently. Our method, TrajLoc, achieves this directly within the attention layers by substituting the cross-attention weights of each object token with a Gaussian heatmap centered on its target location at every frame. The same per object token interface carries trajectory and depth through a learned embedding and preserves identity by encoding first frame appearance in place of an object token. Evaluations across six datasets, featuring up to 20 simultaneously controlled objects and out of distribution real world scenes, demonstrate that our method consistently improves both visual fidelity and trajectory adherence. Applied to two architecturally distinct backbones (CogVideoX 5B and WaN 2.1 14B), our approach achieves average gains of +4.3 dB PSNR and a 51% reduction in trajectory end point error compared to the strongest baselines. Project page: https://sela-omer.github.io/traj-loc/",
+    "authors": [
+      "Omer Sela",
+      "Inbar Huberman-Spiegelglas",
+      "Michael Rotman",
+      "Sagie Benaim",
+      "Avi Ben-Cohen"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.00861.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.00861",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "TrajLoc：面向多物体运动控制的轨迹注意力定位方法",
+      "core_contribution": "提出了一种基于逐对象空间约束的轨迹控制方法TrajLoc，通过将每个对象令牌的交叉注意力权重替换为以目标位置为中心的高斯热图，实现了在图像到视频生成中对多个物体独立、精确的轨迹控制，显著提升了视觉保真度和轨迹跟随精度。",
+      "method": "TrajLoc在注意力层内直接操作，为每个对象令牌独立施加空间约束：在每一帧中，将交叉注意力权重替换为以该对象目标位置为中心的高斯热图。同时，通过一个可学习的嵌入向量传递轨迹和深度信息，并用第一帧的外观编码替换对象令牌以保持身份一致性。该方法可应用于不同架构的骨干网络（如CogVideoX 5B和WaN 2.1 14B）。",
+      "findings": "在六个数据集上的实验表明，TrajLoc能够同时控制多达20个物体，并在真实世界场景中表现良好。相比最强基线方法，该方法平均PSNR提升4.3 dB，轨迹终点误差降低51%，在视觉质量和轨迹跟随两方面均取得一致改进。"
+    }
+  },
+  {
+    "id": "2607.00647",
+    "title": "Not All Prediction Targets Keep Training-Free Diffusion Guidance on the Manifold",
+    "abstract": "Training-free guidance (TFG) steers a pretrained diffusion model toward a desired attribute at inference. To be effective, this guidance must be applied from the earliest, high-noise steps of sampling. Because its objective (a classifier or energy) is defined on clean images, $ε$- and $v$-prediction models must first estimate the clean image $\\hat{x}$ from the noisy state at each step, and the accuracy of that estimate determines how easily guidance drifts off the data manifold. $x$-prediction, a recent alternative, outputs the clean image directly, removing this source of error even at high noise. This is our motivation. We provide a theoretical analysis of how each prediction target shapes this accuracy, and introduce guided-class FID (Child FID), a metric that exposes the manifold damage standard evaluation misses. Experiments on a new fine-grained bird benchmark and on style transfer confirm that $x$-prediction keeps guided samples on the manifold most reliably, making it the strongest foundation for training-free guidance. Code is available at https://github.com/ManLuML/on-manifold-tfg",
+    "authors": [
+      "Yunsung Lee",
+      "Hyeongmin Lee"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.00647.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.00647",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "并非所有预测目标都能在无训练引导中保持流形上的扩散",
+      "core_contribution": "本文理论分析了不同预测目标（ε-预测、v-预测和x-预测）对无训练引导中流形偏离的影响，并证明x-预测能最可靠地保持生成样本在数据流形上，从而为无训练引导提供了更优的基础。",
+      "method": "论文首先从理论上分析了在无训练引导过程中，不同预测目标（ε、v、x）在从噪声状态估计干净图像时的准确性差异，指出x-预测直接输出干净图像，避免了高噪声阶段的估计误差。接着，作者引入了引导类FID（Child FID）这一新指标，用于检测标准评估方法无法发现的流形损伤。最后，通过在细粒度鸟类基准和风格迁移任务上的实验，验证了x-预测在保持流形一致性上的优势。",
+      "findings": "实验结果表明，在无训练引导中，x-预测相比ε-预测和v-预测能更可靠地将生成样本保持在数据流形上，避免了因估计误差导致的流形偏离；同时，新提出的Child FID指标能有效揭示标准FID无法捕捉的流形损伤问题。"
+    }
+  },
+  {
+    "id": "2607.00293",
+    "title": "Rosetta: Composable Native Multimodal Pretraining",
+    "abstract": "Achieving true artificial general intelligence requires foundation models capable of integrating new modalities without forgetting prior knowledge. However, accommodating continuous generative objectives alongside discrete understanding tasks causes severe gradient conflicts. Existing architectures, including standard Mixture-of-Experts (MoE), are highly susceptible to representation overwriting. Even structurally partitioned paradigms like Mixture-of-Transformers (MoT) remain vulnerable to catastrophic forgetting, severely impeding multimodal scalability. In this work, we introduce Rosetta, a composable native multimodal pretraining framework designed for seamless and non-destructive modality expansion. Rosetta adopts a modular paradigm where core foundational knowledge is preserved within global shared experts, while modality-specific capabilities are distributed across plug-and-play experts. To guarantee non-destructive composition, we propose Momentum-Anchored Orthogonal Projection (MAOP). MAOP leverages the optimizer's momentum state as an implicit semantic anchor, selectively neutralizing conflicting gradient components from new modalities while preserving synergistic updates. Extensive evaluations demonstrate that, while standard MoE and MoT architectures suffer catastrophic forgetting of previously acquired knowledge, Rosetta robustly preserves established language and visual understanding. Furthermore, it delivers superior image generation and unlocks cross-modal synergy, paving the way for truly composable and unified multimodal foundation models. To facilitate further multimodal research, we release our code and checkpoints to the community. Project page at https://rosetta-lmm.github.io/.",
+    "authors": [
+      "Xiangyue Liu",
+      "Zijian Zhang",
+      "Miles Yang",
+      "Zhao Zhong",
+      "Liefeng Bo",
+      "Ping Tan"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "categories": [
+      "cs.CV",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.00293.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.00293",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "Rosetta：可组合的原生多模态预训练",
+      "core_contribution": "提出了一种名为Rosetta的可组合原生多模态预训练框架，通过模块化设计和动量锚定正交投影（MAOP）方法，实现了对新模态的无损扩展，同时避免了灾难性遗忘，为构建真正可组合的统一多模态基础模型奠定了基础。",
+      "method": "Rosetta采用模块化范式，将核心基础知识保存在全局共享专家中，而模态特定能力则分布在即插即用的专家模块中。为了确保无损组合，提出了动量锚定正交投影（MAOP），该方法利用优化器的动量状态作为隐式语义锚点，选择性地中和来自新模态的冲突梯度成分，同时保留协同更新。",
+      "findings": "实验表明，标准MoE和MoT架构在扩展新模态时会遭受灾难性遗忘，而Rosetta能够稳健地保留已习得的语言和视觉理解能力，同时实现更优的图像生成性能，并解锁跨模态协同效应，为可组合的统一多模态基础模型提供了可行路径。"
+    }
+  },
+  {
+    "id": "2607.02402",
+    "title": "Show Me Examples: Inferring Visual Concepts from Image Sets",
+    "abstract": "Vision-language models (VLMs) can follow complex textual instructions, yet they struggle to reason from purely visual context. In particular, current models fail to infer shared concepts from sets of example images and apply them to new inputs. We introduce Visual Concept Inference from Sets (VICIS), a task that evaluates this capability. Given a small context set of images sharing a concept and a query image, the model must generate new images that preserve the context-defined concept while remaining consistent with the query. We show that state-of-the-art VLMs perform poorly on this task, often ignoring the visual context or defaulting to biased generations. To address this gap, we propose a training framework and architecture that learn to infer visual concepts from image sets and extract concept-specific embeddings from queries. Experiments on synthetic data and large-scale ImageNet/WordNet data show that our model generates more accurate and diverse outputs and generalizes to unseen concepts and modalities such as sketches.",
+    "authors": [
+      "Nick Stracke",
+      "Kolja Bauer",
+      "Stefan Andreas Baumann",
+      "Miguel Angel Bautista",
+      "Josh Susskind",
+      "Björn Ommer"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.02402.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.02402",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "给我看示例：从图像集合中推断视觉概念",
+      "core_contribution": "本文提出了视觉概念推断（VICIS）任务，评估模型从图像集合中推断共享概念并应用于新图像的能力，并针对现有视觉-语言模型在此任务上的不足，提出了一种训练框架和架构来有效学习并泛化视觉概念。",
+      "method": "作者首先定义了VICIS任务：给定一组共享某一概念的图像（上下文集）和一张查询图像，模型需生成保留该概念且与查询一致的新图像。针对现有模型表现不佳的问题，他们设计了一个训练框架，使模型能够从图像集合中推断视觉概念，并从查询中提取概念特定的嵌入表示。该框架在合成数据和大规模ImageNet/WordNet数据上进行训练和评估。",
+      "findings": "实验表明，当前最先进的视觉-语言模型在VICIS任务上表现较差，常忽略视觉上下文或产生有偏见的生成结果。而作者提出的模型能够生成更准确、更多样的输出，并且能够泛化到未见过的概念以及不同模态（如素描）上。"
+    }
+  }
+]
