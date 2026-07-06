@@ -1,0 +1,146 @@
+[
+  {
+    "id": "2607.00402",
+    "title": "The Illusion of High Utility in Safety Alignment of Text-to-Image Diffusion Models",
+    "abstract": "Safety alignment of text-to-image (T2I) diffusion models aims to suppress harmful generations while preserving utility on benign prompts. Recent methods often appear to deliver high safety with high utility, but this conclusion rests largely on coarse global utility metrics (e.g., FID, CLIPScore) that are insensitive to fine-grained semantic correctness, creating an illusion of high utility. We show that when utility is measured with structured evaluation, this illusion breaks: on TIFA (Text-to-Image Faithfulness evaluation with Question Answering), safety-aligned models suffer substantial drops in semantic fidelity, including failures in object counts, attributes, and relationships. To diagnose the source of this gap, we analyze the text-encoder prompt embedding space and uncover semantic collapse, a contraction of embedding spread coupled with distortion of inter-prompt similarity structure, which strongly correlates with structured utility loss. Guided by this insight, we propose StructureAware Geometric Regularization (SAGE), a safety alignment objective that explicitly preserves embedding spread and inter-prompt relational structure during adaptation. Our method restores structured utility (TIFA +5.0% over prior state-of-the-art) while maintaining strong safety performance and competitive coarse-grained utility scores. Our source code and trained models are available at https://adeelyousaf.github.io/SAGE_ECCV26_Project_Page/.",
+    "authors": [
+      "Adeel Yousaf",
+      "Soumik Ghosh",
+      "James Beetham",
+      "Amrit Singh Bedi",
+      "Mubarak Shah"
+    ],
+    "published": "2026-07-01",
+    "updated": "2026-07-01",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.00402.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.00402",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "文本到图像扩散模型安全对齐中高实用性的幻觉",
+      "core_contribution": "本文揭示了当前文本到图像扩散模型的安全对齐方法在粗粒度指标下看似保持高实用性，实则存在语义保真度严重下降的“高实用性幻觉”，并提出了一种结构化感知的几何正则化方法（SAGE）来同时恢复语义保真度并保持安全性能。",
+      "method": "首先，作者通过结构化评估（如TIFA问答测试）发现安全对齐模型在对象计数、属性和关系等细粒度语义上存在显著下降。接着，分析文本编码器的提示嵌入空间，发现安全对齐导致嵌入分布收缩和提示间相似性结构扭曲的“语义坍缩”现象。基于此，提出结构化感知几何正则化（SAGE），在安全对齐过程中显式保留嵌入的分布范围和提示间的相对关系结构，从而在保持安全性的同时恢复结构化实用性。",
+      "findings": "实验表明，现有安全对齐方法在粗粒度指标（如FID、CLIPScore）上看似无损，但在结构化评估（TIFA）中语义保真度大幅下降。SAGE方法在保持强安全性能的同时，将TIFA分数比先前最优方法提升5.0%，且粗粒度指标仍具竞争力。"
+    }
+  },
+  {
+    "id": "2607.01728",
+    "title": "Beyond Pixel Diffs: Benchmarking Image Change Captioning for Web UI Visual Regression Testing",
+    "abstract": "Visual regression testing (VRT) is a standard quality assurance step in modern software release pipelines. On every change, it re-renders user interface (UI) screenshots, compares each one against an approved baseline image, and routes any detected difference to a human reviewer who decides whether it is an intended update or an unintended regression. A widely used approach, especially in open-source and continuous-integration pipelines, is pixel-level comparison, which is semantically blind and treats rendering noise and genuine defects identically, producing large volumes of false positives that force developers and testers to spend substantial time and effort manually reviewing flagged differences at every release cycle. Industry tools apply machine learning to VRT, but lack public evaluation. More critically, no dataset or benchmark exists to support natural language descriptions of UI changes, a capability that tells testers what changed in words instead of leaving them to interpret a binary flag or a highlighted region. To address the gap, we propose a new task, Web UI Image Change Captioning (WUICC), which sits at the intersection of VRT and image difference captioning (IDC), and release WUICC-bench, its first dataset and benchmark for the task. We evaluate eleven representative IDC methods, together with two zero-shot general-purpose LLMs. We find that: (1) these methods tend to struggle in the Web UI domain due to its layout diversity, dense text, and fine-grained changes, and (2) yet the trained methods already suppress non-meaningful visual noise far more selectively than the pixel-level comparison VRT relies on, providing a solid foundation for future domain-specific research.",
+    "authors": [
+      "Licheng Zhang",
+      "Bach Le",
+      "Pengtao Zhao",
+      "Naveed Akhtar"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV",
+      "cs.CL",
+      "cs.SE"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.01728.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.01728",
+    "primary_category": "cs.CV",
+    "score": 55,
+    "summary": {
+      "title_zh": "超越像素差异：面向Web UI视觉回归测试的图像变化描述基准",
+      "core_contribution": "本文提出了Web UI图像变化描述（WUICC）这一新任务，并发布了首个专用数据集和基准WUICC-bench，填补了该领域缺乏自然语言描述UI变化的空白。",
+      "method": "作者将WUICC任务定位为视觉回归测试与图像差异描述（IDC）的交叉领域，构建了包含Web UI截图变化对及其自然语言描述的数据集。在此基础上，评估了11种代表性IDC方法以及两种零样本通用大语言模型（LLMs），通过对比它们在Web UI领域的变化描述能力来检验现有方法的适用性。",
+      "findings": "实验发现：（1）现有IDC方法在Web UI领域表现不佳，主要受限于布局多样性、密集文本和细粒度变化；（2）尽管如此，训练后的方法在抑制非语义视觉噪声方面已显著优于传统像素级比较方法，为未来领域专用研究奠定了坚实基础。"
+    }
+  },
+  {
+    "id": "2607.02517",
+    "title": "WorldDirector: Building Controllable World Simulators with Persistent Dynamic Memory",
+    "abstract": "We present WorldDirector, a highly controllable video world model framework designed for persistent dynamic object memory and unrestricted viewpoint exploration. Unlike existing world models that entangle physical dynamics with pixel rendering and rely on continuous visual observation to sustain motion, our framework explicitly decouples semantic motion orchestration from visual generation. By leveraging an LLM to coordinate 3D trajectories with camera movements and subsequently employing these orchestrated trajectories as control signals for video generation, our approach ensures strict physical logic and appearance stability, successfully preserving the exact visual identities of dynamic entities even when they re-enter the scene after prolonged periods out of view. Experimental results demonstrate that our method supports the synthesis of complex and extended events with unprecedented controllability and persistent dynamic object memory. Project Page: https://worlddirector.github.io/",
+    "authors": [
+      "Hanlin Wang",
+      "Hao Ouyang",
+      "Qiuyu Wang",
+      "Wen Wang",
+      "Qingyan Bai",
+      "Ka Leong Cheng",
+      "Yue Yu",
+      "Yixuan Li",
+      "Yihao Meng",
+      "Zichen Liu",
+      "Yanhong Zeng",
+      "Yujun Shen",
+      "Qifeng Chen"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.02517.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.02517",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "世界导演：构建具有持久动态记忆的可控世界模拟器",
+      "core_contribution": "提出了一种名为WorldDirector的视频世界模型框架，通过显式解耦语义运动编排与视觉生成，实现了对动态对象的持久记忆和不受限制的视角探索，显著提升了视频生成的可控性和物理逻辑一致性。",
+      "method": "该方法利用大语言模型（LLM）协调3D轨迹与相机运动，将编排后的轨迹作为控制信号输入视频生成模型。通过将物理动态与像素渲染分离，框架确保动态实体在长时间离开视野后重新出现时仍能保持精确的视觉身份和外观稳定性。",
+      "findings": "实验结果表明，该方法能够以前所未有的可控性合成复杂且长时间的事件，并成功维持动态对象的持久记忆，即使对象长时间离开视野后重新出现，其视觉身份也能被准确保留。"
+    }
+  },
+  {
+    "id": "2607.02516",
+    "title": "Alignment Is All You Need For X-to-4D Generation",
+    "abstract": "Generative diffusion models excel at synthesizing high-quality images, videos, and 3D content under multimodal control. However, arbitrary user-defined modality-to-4D (X-to-4D) generation remains challenging due to the high cost of constructing diverse datasets and the limited scalability of existing methods. This paper presents Align4D, a flexible framework that translates any-modal input into coherent video-3D pairs, using video to guide 4D motion and 3D data to shape 4D geometry. Align4D introduces three key techniques: (1) Object Distance Alignment, which searches Video-Aligned and Multiview-Aligned Object Distances (VAOD/MAOD), respectively, to reconcile 4D renderings with video and the priors of multiview diffusion models; (2) Motion-Geometry Joint Alignment, which constrains known and unknown views through synchronized video and 3D inputs, ensuring consistent 4D generation; and (3) Asynchronous Optimization, which decouples Gaussian attribute and deformation network training to enhance motion and geometry fidelity. We further propose the X4D dataset, which integrates prompt, image, video, and 3D data for benchmarking. Experiments on X4D and Consistent4D demonstrate that Align4D achieves state-of-the-art quality and consistency in X-to-4D generation. Project page: https://miaoqiaowei.github.io/Align4D/.",
+    "authors": [
+      "Qiaowei Miao",
+      "Kehan Li",
+      "Yawei Luo",
+      "Yi Yang"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.02516.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.02516",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "对齐即一切：从任意模态到4D生成",
+      "core_contribution": "提出Align4D框架，首次实现从任意模态输入（如文本、图像、视频、3D）到高质量4D内容的灵活生成，克服了现有方法在数据集构建和可扩展性上的局限。",
+      "method": "Align4D通过三个关键技术实现任意模态到4D的转换：首先，利用对象距离对齐（Object Distance Alignment）分别搜索视频对齐和多视角对齐的对象距离，以协调4D渲染与视频及多视角扩散模型的先验；其次，采用运动-几何联合对齐（Motion-Geometry Joint Alignment），通过同步的视频和3D输入约束已知和未知视角，确保4D生成的一致性；最后，引入异步优化（Asynchronous Optimization），解耦高斯属性与形变网络的训练，提升运动与几何的保真度。",
+      "findings": "在X4D和Consistent4D数据集上的实验表明，Align4D在任意模态到4D生成任务中达到了最先进的质量和一致性，验证了其有效性和鲁棒性。"
+    }
+  },
+  {
+    "id": "2607.02508",
+    "title": "From SRA to Self-Flow: Data Augmentation or Self-Supervision?",
+    "abstract": "Representation alignment has become an effective way to accelerate diffusion transformer training and improve generation quality. Recent self-alignment methods, such as SRA and Self-Flow, further remove the dependency on external pretrained encoders by constructing alignment within the diffusion model itself. However, the mechanism behind the improvement from SRA to Self-Flow, dual-time scheduling, remains under-examined: Self-Flow attributes its gain to interactions between tokens at different noise levels, where cleaner tokens help infer noisier ones. In this work, we revisit this explanation and ask whether the gain instead comes from data augmentation along the noise dimension. To disentangle these factors, we introduce Attention Separation, which preserves the same dual-timestep input as Self-Flow while blocking attention between tokens assigned to different noise levels. Surprisingly, removing such interaction does not degrade performance and can even improve it, suggesting that the improvement from SRA to Self-Flow mainly comes from data augmentation. Furthermore,We show that Attention Separation itself provides an augmentation effect by splitting a single image into multiple effective training parts to expand the training data. Based on these observations, we combine self-representation alignment with dual-timestep and attention-separation augmentation, and demonstrate the effectiveness of this design on ImageNet.",
+    "authors": [
+      "Dengyang Jiang",
+      "Mengmeng Wang",
+      "Harry Yang",
+      "Jingdong Wang"
+    ],
+    "published": "2026-07-02",
+    "updated": "2026-07-02",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.02508.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.02508",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "从SRA到Self-Flow：数据增强还是自监督？",
+      "core_contribution": "本文通过引入注意力分离（Attention Separation）方法，揭示了从SRA到Self-Flow的性能提升主要来源于噪声维度的数据增强，而非Self-Flow所声称的跨噪声层级token交互。",
+      "method": "作者提出注意力分离（Attention Separation）方法，在保持与Self-Flow相同的双时间步输入的同时，阻断不同噪声层级token之间的注意力交互。通过对比实验，分离了数据增强与自监督交互对性能的影响。此外，该方法通过将单张图像分割为多个有效训练部分，进一步增强了数据扩充效果。",
+      "findings": "实验表明，阻断跨噪声层级的token交互不仅没有降低性能，甚至有所提升，说明Self-Flow的改进主要来自数据增强而非token交互。结合双时间步与注意力分离增强的自表示对齐方法在ImageNet上取得了有效结果。"
+    }
+  }
+]
