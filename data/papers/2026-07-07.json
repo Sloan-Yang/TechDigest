@@ -1,0 +1,140 @@
+[
+  {
+    "id": "2607.05382",
+    "title": "Search Beyond What Can Be Taught: Evolving the Knowledge Boundary in Agentic Visual Generation",
+    "abstract": "Visual generators excel at rendering, but they confidently fabricate what they do not know. User requests are unbounded, evolving, and deeply long-tailed: new characters, trending entities, post-cutoff events, and more. This world-knowledge bottleneck is structural: generators are trained on fixed corpora, but the visual world is open-ended. We construct SearchGen-20K and SearchGen-Bench, with 20,839 prompts spanning twelve failure categories and twenty-two domains, paired with a pre-executed multimodal SearchGen-Corpus-1M to support offline, reproducible research. On SearchGen-Bench, frontier open generators score only 21 to 28 out of 100, a 40-point collapse invisible to existing benchmarks. The natural remedy is to employ search tools, enabling agentic visual generation. However, we find that naive search fails: it retrieves indiscriminately, injecting noise into prompts the generator already handles. We trace the root cause to a generator-specific, evolving knowledge boundary: the divide between what a generator can internalize through training and what must remain in external context. Although this boundary is hard to specify in advance, we show that it is discoverable through a teach-then-search co-training framework. Even a minimal version of this co-training recipe produces monotonic improvement, laying the foundation for recursive self-improvement in visual generation that can meet world-knowledge-grounded requests. We release the full dataset, co-training corpus, and search corpus as a replayable harness for tool-augmented, world-knowledge-grounded visual generation.",
+    "authors": [
+      "Haozhe Wang",
+      "Weijia Feng",
+      "Jinpeng Yu",
+      "Che Liu",
+      "Ping Nie",
+      "Fangzhen Lin",
+      "Jiaming Liu",
+      "Ruihua Huang",
+      "Jimmy Lin",
+      "Wenhu Chen",
+      "Cong Wei"
+    ],
+    "published": "2026-07-06",
+    "updated": "2026-07-06",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05382.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.05382",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "超越可教之物的搜索：在自主视觉生成中演化知识边界",
+      "core_contribution": "本文揭示了视觉生成器因训练数据固定而存在的世界知识瓶颈，并提出了一个可复现的基准框架（SearchGen-Bench）以及一种通过‘教而后搜’协同训练来动态发现和扩展生成器知识边界的方法。",
+      "method": "作者构建了一个包含20,839个提示的大规模数据集（SearchGen-20K），涵盖多种知识失效类别。他们识别出生成器存在一个动态的知识边界，并设计了一个‘教而后搜’的协同训练框架，该框架通过判断生成器内部知识是否足够，来决定何时调用外部搜索工具获取必要信息，从而避免盲目检索引入噪声。",
+      "findings": "实验表明，前沿的开放视觉生成器在新基准上的得分极低（21-28/100），暴露了现有评测的盲区。单纯的搜索工具增强效果不佳，而所提出的协同训练方法即使是最小版本也能带来性能的持续提升，为视觉生成的递归自我改进奠定了基础。"
+    }
+  },
+  {
+    "id": "2607.05290",
+    "title": "ChatImage: Navigating Long-Form LLM Answers through Interactive Images",
+    "abstract": "Large Language Models (LLMs) can produce detailed answers to complex queries, but these answers are typically presented as dense linear text, which makes fine-grained inspection, navigation, and return visits difficult. We present ChatImage, a system that converts long-form LLM answers into interactive visual images. Given a textual answer, ChatImage first normalizes its content into structured visual modules, plans a visual layout, and renders a coherent image. It then applies a second grounding pass to the rendered image with vision grounding models such as LocateAnything and MiMo-Vision, with optional SAM-style mask refinement, to identify the visible regions that should support interaction. From these grounded regions, ChatImage overlays transparent clickable hotspots on the image. Each hotspot opens a detail panel and a region-scoped follow-up thread, allowing the user to inspect and query a specific part of the answer without re-reading the full response. Instead of treating planned coordinates as the final interaction geometry, ChatImage uses them as priors and grounds the interaction targets after rendering, which improves consistency between visual content and clickable regions. We release a reference implementation and introduce a 30-question benchmark covering infographic, map, and scene-based answer formats. Evaluation with configured external models reports interaction-loop completion, a strict visual-alignment gate, and a SAM-based mask-completeness diagnostic.",
+    "authors": [
+      "Wencan Jiang",
+      "Jiangning Zhang",
+      "Yong Liu"
+    ],
+    "published": "2026-07-06",
+    "updated": "2026-07-06",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05290.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.05290",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ChatImage：通过交互式图像导航长篇大语言模型答案",
+      "core_contribution": "提出了ChatImage系统，将长篇大语言模型生成的文本答案转换为交互式视觉图像，解决了纯文本答案难以细粒度浏览和导航的问题。",
+      "method": "ChatImage首先将文本答案内容规范化并分割为结构化视觉模块，然后规划视觉布局并渲染成连贯图像；接着使用视觉定位模型对渲染后的图像进行二次定位，识别可交互区域并叠加透明可点击热点。",
+      "findings": "系统通过渲染后定位而非直接使用预设坐标作为交互区域，提升了视觉内容与可点击区域的一致性；发布的基准测试覆盖信息图、地图和场景类答案格式，评估显示系统能有效支持用户对特定答案区域的检查和追问。"
+    }
+  },
+  {
+    "id": "2607.05274",
+    "title": "Erasing Without Collateral Damage: Precise Concept Removal in Diffusion Models",
+    "abstract": "Training-free concept erasure is an attractive mechanism for controlling text-to-image diffusion models, but precise erasure often comes at the cost of damaging semantically related non-target concepts. Existing value-space methods remove the component of each cross-attention value along the target concept direction, implicitly treating target identity and shared visual structure as the same signal. We argue that this is the source of much of the collateral damage in prior preservation. We introduce CARE, a closed-form concept erasure operator that replaces the raw target direction with a kept-subspace-aware direction computed from a small bank of retained concept anchors. The resulting edit is applied directly in cross-attention value space, requires no model fine-tuning, and adds only a negligible offline computation. A single shrinkage parameter controls the erase-preserve trade-off. We further show that the operator admits a minimum-disturbance interpretation and, in its projection form, leaves the kept subspace invariant. Experiments under the standard concept-erasure protocol show that our method preserves non-target concepts more faithfully while maintaining competitive erasure across instance, style, and celebrity concepts. Code: https://github.com/parthupman/care",
+    "authors": [
+      "Parth Upman",
+      "Nishita Jain",
+      "Shreyank N Gowda"
+    ],
+    "published": "2026-07-06",
+    "updated": "2026-07-06",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05274.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.05274",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "无附带损伤的擦除：扩散模型中的精确概念移除",
+      "core_contribution": "提出了一种无需训练的概念擦除方法CARE，能够在精确移除目标概念的同时，显著减少对语义相关非目标概念的损害。",
+      "method": "CARE通过分析交叉注意力值空间，将原始目标概念方向替换为基于保留概念锚点计算的子空间感知方向；该方法无需模型微调，仅需少量离线计算，并通过单一收缩参数控制擦除与保留的平衡。",
+      "findings": "实验表明，CARE在标准概念擦除任务中能更准确地保留非目标概念，同时在实例、风格和名人概念上保持竞争力的擦除效果，且对保留子空间具有不变性。"
+    }
+  },
+  {
+    "id": "2607.05088",
+    "title": "RADIANCE: Relative Adaptive Denoising with IP-Adapter for Novel Concept Enhancement",
+    "abstract": "Text-to-image (T2I) diffusion models have achieved striking progress but still struggle to synthesize rare concepts involving unusual attribute-object pairings, often resulting in concept omission or semantic drift where a dominant entity overwhelms the generation. Tracing these failures to a lack of compositional balance during the denoising trajectory, we propose RADIANCE, a training-free framework that treats inference as a closed-loop feedback process. RADIANCE augments pretrained backbones with three modular components: (1) a Compositional Similarity Monitor (CSM) that tracks the emergence of objects and attributes in intermediate latents via CLIP-based feedback; (2) a Bidirectional Scale Controller (BSC) that applies a reactive \"restoring force\" using positive and negative IP-Adapter scales to rebalance biased trajectories; and (3) a Feedback Guidance Scheduler (FGS) that coordinates these updates across timesteps without additional training. We further extend the framework to multi-object prompts via Delayed Adapter Activation (DAA) and Layer-wise Alternating Guidance (LAG) to prevent premature concept fusion. By overlapping monitoring and denoising through pipelined execution, RADIANCE maintains competitive latency while significantly enhancing the per-sample success rate and effective throughput. Experiments on RareBench and T2I-CompBench demonstrate that RADIANCE consistently enhances compositional alignment and perceptual quality over state-of-the-art baselines.",
+    "authors": [
+      "Zi-Xiang Ni",
+      "Bo-Lun Huang",
+      "Teng-Fang Hsiao",
+      "Bo-Kai Ruan",
+      "Hong-Han Shuai"
+    ],
+    "published": "2026-07-06",
+    "updated": "2026-07-06",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05088.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.05088",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "RADIANCE：基于IP-Adapter的相对自适应去噪用于新概念增强",
+      "core_contribution": "提出了RADIANCE，一种无需训练的推理框架，通过闭环反馈机制解决文本到图像生成中罕见概念组合的语义丢失或偏移问题；通过模块化组件动态调整去噪轨迹，显著提升组合对齐能力。",
+      "method": "方法包含三个核心模块：1）组合相似性监测器（CSM）利用CLIP反馈跟踪中间潜在空间中对象与属性的生成状态；2）双向尺度控制器（BSC）通过正负IP-Adapter尺度施加反向作用力，纠正偏差轨迹；3）反馈引导调度器（FGS）协调跨时间步的更新。此外，通过延迟适配器激活（DAA）和分层交替引导（LAG）支持多对象生成。",
+      "findings": "在RareBench和T2I-CompBench上的实验表明，RADIANCE在组合对齐度和感知质量上均优于现有先进方法，同时通过流水线执行保持较低延迟，显著提高了单样本成功率和有效生成效率。"
+    }
+  },
+  {
+    "id": "2607.04801",
+    "title": "LILAC: Layer-Wise Independent LoRAs and Cascaded Conditioning for Multi-Concept Customization of Diffusion Models",
+    "abstract": "Personalizing text-to-image diffusion models to render several specific subjects in a coherent image remains challenging: the model must preserve each subject's identity while keeping the scene spatially and visually coherent. Methods that fuse independently trained concept adapters in a shared weight space (via federated averaging, gradient fusion, or orthogonality constraints) suffer from identity confusion and style bleeding and require joint retraining. In this work, we show that composing concepts as separate image layers, instead of merging their adapters in a shared weight space, avoids parameter-level interference. We introduce LILAC, a framework that composes independently trained low-rank adapters at inference time: each subject is conditioned on the frozen composite of previously placed subjects, with exactly one adapter active at a time, therefore identities never interfere at the parameter level. LILAC composes the adapters without any joint training, scales linearly with the number of concepts, and is backbone-agnostic. Under the Orthogonal Adaptation protocol, LILAC applied on Qwen-Image-Edit reaches an ArcFace detection rate of 0.861, while Orthogonal Adaptation reports 0.745 in its original setting. Adaptation reports 0.745 in its original setting. Code is available at https://github.com/marianlupascu/LILAC.",
+    "authors": [
+      "Marian Lupascu",
+      "Sebastian Ripa",
+      "Mihai Trascau",
+      "Mariana-Iuliana Georgescu",
+      "Ionut Mironica"
+    ],
+    "published": "2026-07-06",
+    "updated": "2026-07-06",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.04801.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.04801",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "LILAC：用于扩散模型多概念定制的层间独立LoRA与级联条件化",
+      "core_contribution": "提出LILAC框架，通过层间独立组合低秩适配器（LoRA）实现多概念定制，无需联合训练即可避免参数干扰，显著提升多主体图像生成的身份保持与视觉一致性。",
+      "method": "该方法将不同概念视为独立图像层，在推理时动态组合独立训练的LoRA适配器；每个新主体以前置冻结主体组合为条件，仅激活单一适配器，确保参数层面无干扰；框架支持线性扩展且与骨干模型无关。",
+      "findings": "在正交适应协议下，LILAC在Qwen-Image-Edit模型上的ArcFace检测率达到0.861，显著优于原正交适应方法的0.745，有效解决了身份混淆和风格渗漏问题。"
+    }
+  }
+]
