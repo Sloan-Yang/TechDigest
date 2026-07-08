@@ -1,0 +1,156 @@
+[
+  {
+    "id": "2607.06560",
+    "title": "Vision as Unified Multimodal Generation",
+    "abstract": "We formulate computer vision as unified multimodal generation, where heterogeneous visual tasks are expressed in the native text and image generation spaces of a unified multimodal model, without task-specific architectures. Under this formulation, SenseNova-Vision uses natural-language instructions and optional visual prompts to specify tasks, target regions or views, and decoding conventions, and generates responses as text for symbolic outputs, images for dense spatial predictions, or mixed text-and-image outputs for compositional tasks. To support large-scale training, we convert diverse computer vision annotations into instruction-response examples compatible with these generation spaces, resulting in the SenseNova-Vision Corpus, a computer-vision instruction-response corpus spanning text, image, and mixed targets. Starting from an off-the-shelf pretrained unified multimodal model, SenseNova-Vision is trained primarily on this corpus, with auxiliary multimodal data used as a capability-preserving mixture, and requires no task-specific prediction heads or architectural modifications. The resulting model covers a broad range of vision tasks, including detection, OCR, keypoint estimation, segmentation, depth estimation, surface normal prediction, point maps, and camera pose estimation, while supporting language-defined variants that combine category, color, region, and other visual cues. Experiments show that a single unified model can match leading task-specialized systems across structured visual understanding, dense geometric prediction, segmentation, and multi-view visual geometry. These results suggest unified multimodal generation as a scalable route for integrating computer vision capabilities into general-purpose foundation models. The model and corpus are publicly available.",
+    "authors": [
+      "Xiaoyang Han",
+      "Jianhua Li",
+      "Kewang Deng",
+      "Zukai Chen",
+      "Xuanke Shi",
+      "Sihan Wang",
+      "Boxuan Li",
+      "Linyan Wang",
+      "Siyi Xie",
+      "Xin You",
+      "Jinsheng Quan",
+      "Zhongang Cai",
+      "Haiwen Diao",
+      "Ziwei Liu",
+      "Lei Yang",
+      "Dahua Lin",
+      "Quan Wang"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06560.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.06560",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "视觉作为统一的多模态生成",
+      "core_contribution": "提出将计算机视觉任务统一为多模态生成问题，通过单一模型处理多种异构视觉任务，无需针对不同任务设计特定架构。",
+      "method": "SenseNova-Vision模型利用自然语言指令和可选视觉提示来定义任务，生成文本、图像或图文混合输出。通过将多样化视觉标注数据转换为统一的指令-响应格式构建大规模训练语料，并基于预训练多模态模型进行训练，无需任务特定的预测头或架构修改。",
+      "findings": "实验表明，单一统一模型在结构化视觉理解、密集几何预测、分割和多视角几何等任务上，能够匹配领先的专用系统性能，证明了统一多模态生成作为整合视觉能力到通用基础模型的可扩展路径。"
+    }
+  },
+  {
+    "id": "2607.06553",
+    "title": "From RGB Generation to Dense Field Readout: Pixel-Space Dense Prediction with Text-to-Image Models",
+    "abstract": "Large-scale text-to-image models are attractive backbones for dense prediction because RGB generation pretraining learns rich semantic, structural, and geometric priors. Existing generative and editing approaches reuse these priors by casting dense prediction as target generation: annotations such as depth, normals, alpha mattes, masks, and heatmaps are encoded into an RGB-trained VAE latent space and decoded back as image-like targets. We argue this inherits more of the generative output interface than dense prediction requires: unlike RGB synthesis, dense prediction asks for pixel-correct, task-native fields on the same image plane, not new RGB content to be rendered. Our key observation is that a pretrained DiT already organizes RGB inputs through a patch-to-token-to-patch lattice on the image plane, so each token indexes a fixed output patch whose channels can carry task-native quantities instead of RGB appearance. We instantiate this as ReChannel: we keep the VAE encoder for the DiT's input distribution but drop the target-side decoder, adapt the frozen DiT with task LoRA, and map each token to its p x p x K_t pixel-space patch through a shared token-local linear head--about 33K parameters, no spatial mixing. Using FLUX-Klein, we evaluate on six dense prediction tasks and over a dozen benchmarks. This minimal interface sets new state-of-the-art on trimap-free matting, KITTI depth, and referring segmentation, and stays competitive on normals, saliency, and pose. In a matched 4B setting it is more accurate and 2.48x faster than an edit-plus-latent-decode counterpart--dense perception can benefit from generative pretraining without inheriting its output interface.",
+    "authors": [
+      "Zanyi Wang",
+      "Xin Lin",
+      "Haodong Li",
+      "Dengyang Jiang",
+      "Yijiang Li",
+      "Pengtao Xie"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06553.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.06553",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "从RGB生成到密集场读取：基于文本到图像模型的像素空间密集预测",
+      "core_contribution": "提出ReChannel方法，通过重新利用预训练扩散变换器（DiT）的令牌-补丁映射结构，将密集预测任务从传统的RGB生成接口中解耦，直接在像素空间输出任务原生字段。",
+      "method": "保留VAE编码器以适配DiT输入分布，但舍弃目标端解码器；通过任务特定的LoRA微调冻结的DiT模型；使用轻量级线性头将每个令牌映射到对应的像素块，输出任务原生字段（如深度、掩码等），避免空间混合且仅需约33K参数。",
+      "findings": "在六个密集预测任务和十余个基准测试中，ReChannel在无trimap抠图、KITTI深度和参考分割任务上达到新state-of-the-art，并在法线、显著性和姿态估计任务中保持竞争力；在同等4B参数设置下，比基于编辑和潜在解码的方法更准确且快2.48倍。"
+    }
+  },
+  {
+    "id": "2607.06432",
+    "title": "TILDE: TILt-based Distributional Erasure for Concept Unlearning",
+    "abstract": "Concept unlearning in text-to-image diffusion models is critical for safe and practical deployment: with rising privacy concerns, copyright disputes, trademark constraints, and safety regulations, deployed systems must be able to suppress unwanted concepts after training. Existing methods often remove the target concept effectively, but practical unlearning also requires an equally fundamental property: the unlearned model should retain quality, diversity, and semantic coverage on benign generation. The gold standard is a retain-only model trained from scratch without the unwanted data. However, common erasure objectives do not specify which post-unlearning distribution should approximate this reference, leaving retention as an implicit consequence of the update rule. We propose TILDE, TILt-based Distributional Erasure, which formulates concept unlearning as a distributional alignment problem: the desired target is the minimum-deviation conditional distribution from the pretrained model under a forgetting constraint. This energy-tilted, anchor-free target suppresses concept-expressing images while preserving benign relative mass for each prompt. We instantiate this principle with residual $\\nabla$-GFlowNet training, which learns the score correction induced by the forget energy relative to the pretrained diffusion model. Across objects, artistic styles, and characters, TILDE achieves strong forgetting while improving retention and distributional fidelity over prior baselines.",
+    "authors": [
+      "Naveen George",
+      "Naoki Murata",
+      "Yuhta Takida",
+      "Konda Reddy Mopuri",
+      "Yuki Mitsufuji"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-07",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06432.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.06432",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "TILDE：基于倾斜的分布式擦除用于概念遗忘",
+      "core_contribution": "提出TILDE方法，将概念遗忘建模为分布对齐问题，通过能量倾斜的目标分布实现在有效遗忘目标概念的同时，保持模型在良性生成上的质量、多样性和语义覆盖。",
+      "method": "TILDE将概念遗忘定义为一种分布对齐问题，目标是获得在遗忘约束下与预训练模型偏差最小的条件分布。该方法采用基于残差的∇-GFlowNet训练，学习由遗忘能量相对于预训练扩散模型引起的分数修正，从而实现对概念表达图像的抑制并保留良性生成内容。",
+      "findings": "在对象、艺术风格和角色等多种概念上的实验表明，TILDE在实现强遗忘效果的同时，相比现有基线方法显著提高了保留性能和分布保真度。"
+    }
+  },
+  {
+    "id": "2607.06335",
+    "title": "Bridging Diffusion Pruning and Step Distillation with Teacher-Aligned Repair",
+    "abstract": "Diffusion models generate high-quality images, but their inference cost comes from two sources: large denoising networks and repeated denoising steps. Existing compression pipelines usually attack these costs separately. Pruning reduces the network, but most pruning methods still rely on a long post-pruning retraining stage to recover a many-step sampler. Step distillation reduces the number of denoising steps, but it usually assumes a student that can already follow the teacher well enough to receive useful distillation gradients. This paper asks whether post-pruning retraining can be replaced by step distillation. We find that the direct replacement fails: after pruning an EDM2-XS teacher, starting SiDA from the pruned checkpoint produces unusable samples. We introduce a short teacher-alignment repair stage as a bridge between pruning and step distillation. The bridge matches the pruned generator to the teacher on noisy real-image latents, then hands the repaired checkpoint to one-step distillation. On ImageNet-512, the original EDM2-XS baseline uses 124.713M parameters and 63 network evaluations, reaching an FID of 3.53. With a suitable distillation objective, our 20% pruned one-step generator uses 98.826M parameters and one network evaluation, reaching an FID of 3.12. With 30% pruning, the model uses 88.029M parameters and one network evaluation, with an FID of 4.26.",
+    "authors": [
+      "Jincheng Ying",
+      "Li Wenlin",
+      "Minghui Xu",
+      "Yinhao Xiao"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06335.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.06335",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "连接扩散剪枝与步数蒸馏：通过教师对齐修复实现融合",
+      "core_contribution": "提出了一种名为“教师对齐修复”的桥梁阶段，将网络剪枝与步数蒸馏两个独立的压缩流程有效结合，从而在显著降低扩散模型计算成本的同时保持图像生成质量。",
+      "method": "首先对预训练扩散模型的生成网络进行剪枝以减少参数量；随后引入一个短暂的教师对齐修复阶段，通过在含噪真实图像潜在空间中对齐剪枝后模型与原始教师模型的输出，修复其生成能力；最后将修复后的检查点输入一步蒸馏流程，大幅减少去噪步数。",
+      "findings": "在ImageNet-512上，经过20%剪枝并蒸馏为一步的模型仅使用98.826M参数和一次网络评估，实现了FID 3.12，优于原始EDM2-XS基线（124.713M参数，63步，FID 3.53）；即使进行30%剪枝，模型仍能以88.029M参数和一步评估达到FID 4.26。"
+    }
+  },
+  {
+    "id": "2607.06306",
+    "title": "UI2App: Benchmarking Visual Interaction Inference in Executable Web Application Generation",
+    "abstract": "Large language models (LLMs) have demonstrated growing competence in web page generation. However, existing text-driven approaches rely on complex prompts that impose substantial demands on users and offer limited expressivity for page layout and cross-page visual coherence. Image-driven paradigms, which take UI screenshots as input, align more closely with real development workflows. However, current benchmarks focus primarily on visual fidelity and lack a systematic evaluation of the interaction capabilities in generated artifacts. To address this gap, we introduce UI2App, the first benchmark targeting interaction inference, the ability to recover application behavior from screenshots alone, without any textual or behavioral guidance. UI2App comprises 327 screenshots grouped into 45 state-coherent screenshot sets for runnable multi-route web applications. We design an end-to-end pipeline that evaluates each artifact along four dimensions: executability, navigation reachability, visual fidelity, and interaction inference. The interaction metric (IIS) assesses inferred interactions by functional correctness and state-management complexity, crediting any valid implementation rather than matching a single reference. Experiments on six frontier vision-language models reveal a marked capability mismatch between visual reconstruction and interaction realization: the visual-fidelity leader scores only 7.5 on IIS, ranking fourth and trailing the IIS leader by 5.2x. High-complexity interactions such as cross-page state remain a pervasive bottleneck, with half of the evaluated models scoring exactly zero on this dimension. Overall, the results indicate that inferring complete interaction behavior from static screenshots remains a key challenge for models.",
+    "authors": [
+      "Grace Man Chen",
+      "Litao Guo",
+      "Yifan Wu",
+      "Yiyu Chen",
+      "Yenchi Tseng",
+      "Sicheng Liu",
+      "Yuyu Luo",
+      "Ying-Cong Chen"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-07",
+    "categories": [
+      "cs.SE",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06306.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.06306",
+    "primary_category": "cs.SE",
+    "score": 85,
+    "summary": {
+      "title_zh": "UI2App：可执行Web应用生成中的视觉交互推理基准测试",
+      "core_contribution": "提出了首个专注于交互推理能力的基准测试UI2App，用于评估模型仅从静态截图推断完整应用行为的能力，并设计了一个端到端的评估流程来系统衡量生成应用的可执行性、导航可达性、视觉保真度和交互推理。",
+      "method": "研究构建了包含327张截图、分组为45个状态一致的截图集合的数据集，代表可运行的多路径Web应用。设计了一个端到端评估流程，通过四个维度（可执行性、导航可达性、视觉保真度、交互推理）对生成产物进行综合评价，其中交互度量（IIS）基于功能正确性和状态管理复杂性来评估推断的交互行为。",
+      "findings": "实验发现视觉重建与交互实现能力存在显著不匹配：视觉保真度领先的模型在交互推理指标（IIS）上仅得7.5分，排名第四，落后领先模型5.2倍。跨页面状态等高复杂性交互是普遍瓶颈，半数评估模型在该维度得分为零，表明从静态截图推断完整交互行为仍是关键挑战。"
+    }
+  }
+]
