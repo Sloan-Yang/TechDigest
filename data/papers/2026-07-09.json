@@ -1,0 +1,140 @@
+[
+  {
+    "id": "2607.07173",
+    "title": "Stage-Aware Adaptation and Distribution Calibration for Subject-Driven Personalized Text-to-Image Generation",
+    "abstract": "Subject-driven personalized text-to-image generation requires a pretrained diffusion model to acquire a specific subject from a few reference images while preserving subject identity, following novel text prompts, and maintaining sample diversity. Existing optimization-based methods instantiate subject adaptation through full fine-tuning, textual embedding optimization, or low-rank parameter updates; PaRa further constrains personalization from the perspective of parameter rank reduction. However, a uniform low-rank constraint or a uniform adapter strength cannot explicitly distinguish the capacity requirements of different denoising stages. Moreover, inference-time candidate selection driven mainly by identity similarity may compress the selected samples in the visual representation space. We decompose the problem into two complementary components: SPaRa denotes training-side stage-aware low-rank adaptation, DCAL denotes inference-side distribution-calibrated candidate selection, and SPaRa-DCAL denotes the combined framework. Theoretical analysis shows that timestep-dependent scaling controls the effective perturbation magnitude of a low-rank adapter, while identity-biased candidate selection restricts the radius of selected features around the reference center under explicit conditions. Auditable experiments under the SDXL and DreamBooth 30-subject protocol show that DCAL improves 1-LPIPS, CLIP-I, DINO-I, and CLIP-T on a fixed LoRA candidate pool, while revealing a clear trade-off with CLIP/DINO pairwise diversity and pairwise LPIPS. These results indicate that personalized generation should be evaluated through identity consistency, text alignment, and representation diversity rather than identity metrics alone.",
+    "authors": [
+      "Wenyan Xu",
+      "Alizer Wong"
+    ],
+    "published": "2026-07-08",
+    "updated": "2026-07-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.07173.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.07173",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "面向主体驱动个性化文本到图像生成的阶段感知适应与分布校准",
+      "core_contribution": "提出了SPaRa-DCAL框架，通过训练时的阶段感知低秩适应和推理时的分布校准候选选择，解决了现有方法在去噪阶段能力需求区分不足以及样本多样性受限的问题。",
+      "method": "SPaRa在训练侧采用阶段感知的低秩适应，通过时间步相关的缩放控制适配器的有效扰动幅度，显式区分不同去噪阶段的能力需求；DCAL在推理侧通过分布校准的候选选择机制，避免仅依赖身份相似性导致的特征空间压缩。",
+      "findings": "实验表明，DCAL在固定LoRA候选池上提升了身份一致性（1-LPIPS、CLIP-I、DINO-I）和文本对齐（CLIP-T），但会与样本多样性（CLIP/DINO pairwise diversity、pairwise LPIPS）形成权衡，证明个性化生成需综合评估身份一致性、文本对齐和表示多样性。"
+    }
+  },
+  {
+    "id": "2607.07119",
+    "title": "ColorFM: An Optimization-to-Learning Framework for Color Transfer via Flow Matching",
+    "abstract": "Color transfer aims to align the color distribution of a source image with that of a reference image while preserving structural and semantic consistency. However, existing methods often suffer from inaccurate global mapping, semantic misalignment, and visual artifacts. To address these issues, we propose ColorFM, an optimization-to-learning framework. ColorFM connects online optimization to offline inference by reformulating color transfer as the transport of pixel distributions along velocity fields via Flow Matching. Specifically, we introduce ColorFM-O, an instance-specific optimization scheme that fits the velocity field through hierarchical color coupling guided by semantic priors. By numerically integrating the induced flow trajectories, ColorFM-O produces precise and semantically consistent color transfer results, while generating high-quality paired data as pseudo-supervision. Building upon this, we design ColorFM-L, an efficient feed-forward model trained on the generated pairs. Through implicit state modeling, ColorFM-L extracts deep semantic features to predict flow parameters for bidirectional linearized transport, ensuring accurate color transfer. Extensive experiments demonstrate that ColorFM-L outperforms state-of-the-art methods in visual quality, structural fidelity, and semantic consistency, successfully combining the accuracy of optimization with the speed of feed-forward inference.",
+    "authors": [
+      "Yuhang He",
+      "Kai Zhang",
+      "Xiaoming Li",
+      "Du Chen",
+      "Jian Yang"
+    ],
+    "published": "2026-07-08",
+    "updated": "2026-07-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.07119.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.07119",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ColorFM：基于流匹配的颜色迁移优化到学习框架",
+      "core_contribution": "提出了ColorFM框架，将颜色迁移问题重新定义为通过流匹配进行像素分布传输，并设计了从优化到学习的流程，实现了高精度与高效率的结合。",
+      "method": "首先通过ColorFM-O进行实例优化，利用语义先验引导的层次颜色耦合拟合速度场，生成高质量伪监督数据；然后基于这些数据训练ColorFM-L前馈模型，通过隐式状态建模预测双向线性化传输的流参数。",
+      "findings": "实验表明，ColorFM-L在视觉质量、结构保真度和语义一致性方面优于现有先进方法，成功融合了优化的准确性和前馈推理的速度。"
+    }
+  },
+  {
+    "id": "2607.07117",
+    "title": "Tree-of-Thoughts Reasoning for Text-to-Image In-Context Learning",
+    "abstract": "In text-to-image in-context learning (T2I-ICL), a model has to infer a latent compositional pattern from fewshot demonstrations for generating a query image. Recent studies show that state-of-the-art multimodal large language models struggle with this setting, particularly due to limited compositional reasoning and sensitivity to prompt construction. In this work, we propose a Tree-of-Thoughts (ToT) reasoning framework for T2I-ICL that introduces a multi-stage reasoning and selection layer that generates, evaluates, and selects among multiple candidate hypotheses before constructing the final prompt for image synthesis. By exploring alternative reasoning branches and selecting a coherent interpretation, the proposed approach mitigates prompt ambiguity and compositional errors. We implement the proposed approach in a complete ToT-T2IICL inference pipeline and evaluate it on the CoBSAT benchmark. Both qualitative and quantitative results show that structured multi-branch reasoning leads to more consistent and semantically aligned image generation compared to baseline and Chain-of-Thought prompting strategies, without any additional training or fine-tuning.",
+    "authors": [
+      "Stepanida Alekseeva",
+      "Jenifer Kalafatovich",
+      "Seong-Whan Lee"
+    ],
+    "published": "2026-07-08",
+    "updated": "2026-07-08",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.07117.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.07117",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "文本到图像上下文学习中的思维树推理",
+      "core_contribution": "提出了一个思维树推理框架，通过多阶段假设生成与选择来解决文本到图像上下文学习中的组合推理难题，显著提升了图像生成的语义一致性和质量。",
+      "method": "该方法在图像生成前引入多阶段推理层，首先生成多个候选假设，然后对它们进行评估和筛选，最后选择最连贯的解释来构建最终提示。通过探索替代推理路径，减少了提示歧义和组合错误。整个流程无需额外训练或微调。",
+      "findings": "在CoBSAT基准测试上的定性和定量结果表明，该方法相比基线及链式思维提示策略，能生成更一致、语义更对齐的图像，有效提升了文本到图像上下文学习的性能。"
+    }
+  },
+  {
+    "id": "2607.06162",
+    "title": "High-Resolution Artwork Outpainting with Global Blueprint Guidance and Layout Control",
+    "abstract": "Image outpainting extends an image beyond its original borders, requiring seamless style integration and globally coherent scene completion. Building on the success of diffusion models, recent methods have achieved substantial improvements in visual quality. In practice, however, high-resolution outpainting is commonly performed via progressive expansion around a fixed source image, particularly in artwork scenarios. Despite this progress, existing approaches still suffer from three key limitations: (i) the absence of a reliable global planning mechanism, which leads to structural instability and error accumulation at high resolutions; (ii) limited spatial controllability beyond text prompts, making it difficult to place objects at user-specified locations; and (iii) high inference latency caused by inherently sequential patch generation. To address these issues, we propose a global blueprint-guided two-stage diffusion framework for layout-controllable high-resolution outpainting with efficient parallel synthesis. In Stage 1, we generate a low-resolution global blueprint using a layout adapter that injects bounding-box conditions into a Stable Diffusion inpainting backbone, producing a globally consistent structural plan while extracting global guidance features. In Stage 2, we synthesize high-resolution local patches in parallel by injecting the blueprint-derived global guidance and initializing each patch from the blueprint using the low-frequency preservation property of forward diffusion. This design eliminates sequential dependency while maintaining global coherence. Extensive experiments on large-scale artwork datasets demonstrate improved visual fidelity, stronger semantic consistency, and substantially reduced inference time compared to prior baselines, while uniquely supporting explicit layout control for artwork outpainting.",
+    "authors": [
+      "Junha Kim",
+      "Hyunjoon Park",
+      "Donghyeon Cho"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06162.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.06162",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "基于全局蓝图引导与布局控制的高分辨率艺术品外延绘制",
+      "core_contribution": "提出了一种全局蓝图引导的两阶段扩散框架，解决了高分辨率艺术品外延绘制中的结构不稳定、空间控制性差和推理延迟高的问题，实现了布局可控的高效并行合成。",
+      "method": "第一阶段通过布局适配器将边界框条件注入Stable Diffusion修复主干，生成低分辨率全局蓝图以提供结构规划；第二阶段利用前向扩散的低频保持特性，并行合成高分辨率局部补丁，并注入蓝图导出的全局引导特征，确保全局一致性。",
+      "findings": "实验表明，该方法在大型艺术品数据集上相比基线模型，视觉保真度更高、语义一致性更强，且推理时间显著减少，同时支持用户通过布局控制对象位置。"
+    }
+  },
+  {
+    "id": "2607.05750",
+    "title": "ArtisanCAD: An Industrial-Level CAD Agent with Expert-Grounded Knowledge Distillation",
+    "abstract": "Computer-aided design (CAD) for industrial components requires long-horizon procedural modeling, robust feature dependencies, editable parametric geometry, and production-grade B-Rep execution. Existing text-to-CAD methods have made promising progress in generating CAD programs from natural-language descriptions, but they still struggle when user prompts are ambiguous, underspecified, or only describe high-level design intent. They also rarely exploit expert procedural knowledge naturally available in industrial workflows, such as CATIA operation recordings, macro logs, drawing notes, and engineering descriptions. We present ArtisanCAD, a skill-guided industrial CAD agent with expert-grounded knowledge distillation. The core of ArtisanCAD is CAD intermediate representation (CAD-IR), an executable procedural representation that encodes parameters, ordered operations, MCP tool bindings, dependencies, generated entities, and verification rules. CAD-IR plays two key roles: it first serves as the carrier for distilling expert CAD procedures into reusable parameterized skills; then it provides a procedural scaffold that turns vague or intermediate-level prompts into complete executable CAD operations. ArtisanCAD retrieves expert-derived skills, instantiates and revises CAD-IR, executes the resulting procedure through a dedicated CATIA-MCP backend, and uses multi-view visual feedback for iterative refinement, and finally generates production-ready B-Rep models. On the Text2CAD benchmark, CAD-IR improves generation from intermediate prompts by reducing mean Chamfer Distance from $14.83$ to $9.88$, showing its ability to bridge ambiguous textual intent and executable CAD construction. On four complex automotive components, CAD-IR enables expert CATIA recordings to be distilled into reusable skills, allowing ArtisanCAD to generate editable CATIA-native B-Rep models for new variant requests.",
+    "authors": [
+      "Yunhan Xu",
+      "Qifeng Wu",
+      "Xunjin Li",
+      "Yuanwei Bin",
+      "Qingsong Yao",
+      "Jianghang Gu",
+      "Guan Wang",
+      "Weihao Lv",
+      "Huiyu Yang",
+      "Wenfa Luo",
+      "Jiao Xiang",
+      "Yuntian Chen",
+      "Shiyi Chen"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-08",
+    "categories": [
+      "cs.AI",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05750.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.05750",
+    "primary_category": "cs.AI",
+    "score": 85,
+    "summary": {
+      "title_zh": "ArtisanCAD：一种具有专家知识蒸馏的工业级CAD智能体",
+      "core_contribution": "提出了CAD中间表示（CAD-IR），作为蒸馏专家CAD程序为可重用参数化技能的载体，并构建了一个技能引导的工业CAD智能体，能够将模糊或中间层次的用户提示转化为完整可执行的CAD操作。",
+      "method": "ArtisanCAD的核心是CAD-IR，它是一种可执行的程序化表示，编码了参数、有序操作、工具绑定、依赖关系、生成实体和验证规则。该方法首先利用CAD-IR从专家CAD程序（如CATIA操作记录）中蒸馏出可重用的参数化技能；然后通过检索、实例化和修订CAD-IR，将模糊的用户提示转化为完整的CAD操作流程，并借助多视图视觉反馈进行迭代优化。",
+      "findings": "在Text2CAD基准测试中，CAD-IR将中间提示生成的平均倒角距离从14.83降低至9.88，显著提升了从模糊文本意图到可执行CAD构造的转换能力；在四个复杂汽车部件案例中，ArtisanCAD成功将专家CATIA记录蒸馏为可重用技能，并为新的变体需求生成了可编辑的CATIA原生B-Rep模型。"
+    }
+  }
+]
