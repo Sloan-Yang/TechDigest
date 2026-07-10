@@ -437,5 +437,16 @@
   "sponsors_huxingyi": 85,
   "SmartlyDressedGames_U3-SDK": 85,
   "vxcontrol_pentagi": 65,
-  "sponsors_unclecode": 70
+  "sponsors_unclecode": 70,
+  "abseil_abseil-cpp": 45,
+  "jbeder_yaml-cpp": 35,
+  "microsoft_TypeScript": 65,
+  "catchorg_Catch2": 65,
+  "chriskohlhoff_asio": 65,
+  "zeux_meshoptimizer": 85,
+  "tailscale_tailscale": 65,
+  "google-labs-code_stitch-skills": 85,
+  "hashicorp_terraform": 65,
+  "grpc_grpc": 85,
+  "vercel_next.js": 85
 }

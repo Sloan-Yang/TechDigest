@@ -1,0 +1,152 @@
+[
+  {
+    "id": "2607.08765",
+    "title": "Enhancing In-context Panoramic Generation via Geometric-aware Pretraining",
+    "abstract": "In this work, we present Canvas360, a two-stage framework for in-context panoramic generation that combines geometry-aware pretraining with downstream task-specific fine-tuning. To address the lack of large-scale, high-quality training data tailored to in-context panoramic tasks, we propose Canvas360Dataset, a collection of 1M high-quality paired panoramic samples for style transfer, inpainting, outpainting, and editing, enabling effective supervision across diverse in-context generation scenarios. On the modeling side, Canvas360 enhances text-to-panorama generation through parallel depth generation, velocity circular padding, and similarity loss regularization, enabling the model to learn geometry-aware representations, capture object distortion details, and improve geometric consistency and global coherence. Furthermore, empowered by strong panoramic priors, Canvas360 enables a unified in-context panoramic generation framework that supports diverse downstream tasks via token-level concatenation, surpassing prior methods in both task coverage and modeling flexibility. Extensive experiments show that Canvas360 improves panoramic image fidelity, achieving particularly strong performance on the panorama-specific FAED metric and competitive or leading results across the reported quantitative evaluations. More information can be found on our project page: https://zry000.github.io/Canvas360/",
+    "authors": [
+      "Haoran Feng",
+      "Ruiyang Zhang",
+      "Longyi Zhang",
+      "Dizhe Zhang",
+      "Lu Qi"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08765.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08765",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过几何感知预训练增强上下文全景生成",
+      "core_contribution": "提出了Canvas360两阶段框架，通过几何感知预训练与下游任务微调相结合，实现了统一的上下文全景生成；并构建了大规模高质量全景数据集Canvas360Dataset，支持多种生成任务。",
+      "method": "该方法首先通过并行深度生成、速度环形填充和相似性损失正则化等技术，使模型学习几何感知表示并捕捉物体畸变细节；随后利用令牌级拼接支持风格迁移、修复、扩展和编辑等多种下游任务，形成一个统一的生成框架。",
+      "findings": "实验表明，Canvas360显著提升了全景图像的保真度，在全景特定指标FAED上表现尤为突出，并在多项定量评估中达到领先或具有竞争力的结果。"
+    }
+  },
+  {
+    "id": "2607.08497",
+    "title": "Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing",
+    "abstract": "Recent unified multimodal models show a single architecture can jointly perform vision/language understanding and image generation/editing. However, they repeatedly feed all historical visual and textual inputs into a shared context window, limiting long-horizon multimodal dialogue due to visual token explosion and unreliable cross-turn referencing. We propose a Cognitive-structured Multimodal Agent that externalizes visual information into an Episodic Visual Memory and selectively reactivates relevant episodes during reasoning. The agent consists of a Perceptual Abstraction Engine for structured visual abstraction, a Cognitive Retrieval Engine for cross-turn memory retrieval, and a Multimodal Executive Controller for autonomous task inference and action planning. To address the lack of turn-level retrieval supervision in existing datasets, we develop a Unified Scenario Engine that programmatically generates structured multi-turn conversations with fine-grained retrieval annotations, enabling reinforcement learning to optimize abstraction and retrieval policies. We also construct a long-horizon visual-dialogue benchmark stratified by difficulty to evaluate episodic visual recall. Our 8B agent achieves 91.4% retrieval accuracy over 20-turn sessions, surpassing 32B baselines by +8.2% while nearly halving per-turn inference time (23.1s -> 12.7s). We further present the Cognitive-structured Multimodal Agent Harness (CMA-Harness), a tool-augmented deployment of the same cognitive structure integrating persistent multimodal memory, web access, image generation/editing/composition tools, and OpenAI-compatible serving. Structured memory and modular decision-making offer a more scalable, efficient paradigm for long-horizon multimodal agents than monolithic parameter scaling. Code: https://github.com/caseclose/cma-harness ; Project page: https://caseclose.github.io/cma-harness/",
+    "authors": [
+      "Feng Wang",
+      "Canmiao Fu",
+      "Zhipeng Huang",
+      "Chen Li",
+      "Jing Lyu",
+      "Ge Li"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08497.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08497",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "认知结构化的多模态代理：用于多模态理解、生成与编辑",
+      "core_contribution": "提出了一种认知结构化的多模态代理，通过外化视觉信息至情景视觉记忆并选择性激活相关片段，解决了长序列多模态对话中的视觉令牌爆炸和跨轮次引用不可靠问题。",
+      "method": "代理包含三个核心模块：感知抽象引擎用于结构化视觉抽象，认知检索引擎负责跨轮次记忆检索，多模态执行控制器进行自主任务推断与行动规划。利用程序化生成的结构化多轮对话数据和强化学习优化抽象与检索策略。",
+      "findings": "在20轮对话中，8B参数的代理实现了91.4%的检索准确率，较32B基线提升8.2%，同时每轮推理时间减少近一半（23.1秒降至12.7秒）。认知结构与模块化决策为长序列多模态代理提供了比单一参数扩展更可扩展、高效的范式。"
+    }
+  },
+  {
+    "id": "2607.08434",
+    "title": "DeltaV: Thinking with Visual State Updates in Unified Large Multimodal Models",
+    "abstract": "Current Unified Large Multimodal Models (ULMMs) support interleaved multimodal reasoning through textual reasoning and intermediate visual states, but typically generate each visual state as a full image. This full-image generation paradigm introduces substantial visual-token redundancy and dilutes supervision on sparse yet reasoning-critical state transitions. We propose DeltaV, a ULMM that replaces full-image generation with visual updates. Conditioned on historical visual states, DeltaV incrementally predicts compact update tokens that capture the visual changes across reasoning steps, avoiding repeated modeling of unchanged content. To align the token budget of each update with the magnitude of visual change, DeltaV introduces a temporal similarity (TSIM) Router, which stops allocating tokens once the marginal reconstruction gain falls below a threshold. To support more diverse and generalizable reasoning, we further construct StructCoT, a large-scale interleaved multimodal reasoning dataset with 1.05M samples spanning 44 task domains. Experiments show that the visual-update paradigm reduces newly generated visual tokens by 55.6\\% on average without compromising reconstruction fidelity, and improves multimodal reasoning by 3.3\\% over full-image generation. Trained with StructCoT and large-scale multimodal data, DeltaV-2B further outperforms substantially larger open-source models by 8.4\\% on in-domain multimodal reasoning evaluations and surpasses the comparable-scale Qwen3-VL-2B by 5.9\\% on external multimodal reasoning and understanding benchmarks. Code, models, and StructCoT will be released at https://github.com/Pengjie-W/DeltaV.",
+    "authors": [
+      "Pengjie Wang",
+      "Linger Deng",
+      "Zujia Zhang",
+      "Shaojie Zhang",
+      "Zhenbo Luo",
+      "Pei Fu",
+      "Jian Luan",
+      "Xiang Bai",
+      "Yuliang Liu"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08434.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08434",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "DeltaV：在统一大型多模态模型中利用视觉状态更新进行思考",
+      "core_contribution": "提出了DeltaV模型，用紧凑的视觉更新令牌替代传统的全图像生成范式，显著减少视觉令牌冗余并增强对关键状态转换的监督；同时构建了大规模多模态推理数据集StructCoT以支持更通用和多样化的推理任务。",
+      "method": "DeltaV基于历史视觉状态，增量式预测捕捉推理步骤间视觉变化的紧凑更新令牌，避免重复建模未改变内容；引入时序相似性路由机制，根据视觉变化幅度动态分配令牌预算；利用新构建的大规模StructCoT数据集（涵盖44个任务领域的105万样本）进行训练。",
+      "findings": "视觉更新范式平均减少55.6%的新生成视觉令牌，且不影响重建保真度；多模态推理性能比全图像生成提升3.3%；DeltaV-2B模型在领域内多模态推理评估中显著优于更大规模开源模型8.4%，并在外部基准上超越同等规模模型Qwen3-VL-2B达5.9%。"
+    }
+  },
+  {
+    "id": "2607.08086",
+    "title": "GRE-Diff: Gaussian Room Embeddings for Structured Layout Diffusion",
+    "abstract": "Designing functional and aesthetically coherent floor plans requires exploring a vast space of possible room arrangements, a task that quickly becomes overwhelming for human designers. In this paper, we propose GRE-Diff, a controllable and interactive diffusion-based framework that automates the creation and editing of apartment floor plans under user-specified constraints. By combining AI-generated suggestions with real-time, human-in-the-loop editing, the system enables users to specify room types, room counts, boundary shapes, and editing operations through LLM-parsed instructions or GUI-based interaction. It then generates a diverse set of plausible and well-structured designs for refinement. At the core of our approach is Gaussian Room Embedding (GRE), a continuous latent representation that models each room as a spatial Gaussian distribution capturing its location and extent. Extensive experiments on the RPLAN dataset show that GRE-Diff produces high-quality, constraint-aware, and editable polygonal layouts, offering a practical step toward bridging AI-driven automation and human creativity in spatial design.",
+    "authors": [
+      "Jing Wang",
+      "Haoran Xiong",
+      "Zihao Yan",
+      "Minglun Gong",
+      "Hui Huang"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08086.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08086",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "GRE-Diff：用于结构化布局扩散的高斯房间嵌入",
+      "core_contribution": "提出了GRE-Diff，一个可控、交互式的扩散框架，能够根据用户指定的约束自动生成和编辑公寓平面布局，并通过结合AI生成建议与实时人机交互编辑，支持用户通过LLM解析指令或图形界面进行设计约束与操作。",
+      "method": "该方法的核心是高斯房间嵌入（GRE），将每个房间建模为空间高斯分布，以连续潜在表示捕捉房间的位置和范围；采用扩散模型框架，在潜在空间中生成多样化的布局；支持通过用户输入（如房间类型、数量、边界形状）解析约束，并允许实时编辑操作。",
+      "findings": "在RPLAN数据集上的实验表明，GRE-Diff能够生成高质量、符合约束且可编辑的多边形布局，有效平衡了AI驱动的自动化与人类创造力在空间设计中的结合。"
+    }
+  },
+  {
+    "id": "2607.05711",
+    "title": "FourTune: Towards Fully 4-Bit Efficient Post-Training for Diffusion Models",
+    "abstract": "Diffusion models have become a dominant paradigm for high-quality generative modeling, while post-training is essential for adapting them to diverse downstream applications. However, post-training of large diffusion models is still challenging due to the prohibitive memory footprints and slow training speed, which existing parameter-efficient fine-tuning methods only partially address. To overcome these limitations, we propose FourTune, an efficient post-training framework for diffusion models based on an end-to-end W4A4G4 paradigm. FourTune introduces a triple-branch hybrid pipeline that augments the standard LoRA architecture with a frozen numerical stabilizer to isolate quantization-sensitive outliers, enabling stable training under native 4-bit computation. In addition, FourTune employs hardware-efficient block-wise quantization and customized fused kernels to support efficient quantized backpropagation and reduce memory bandwidth overhead. Across customization, reinforcement learning, and distillation tasks, FourTune matches the quality of full-precision fine-tuning. On FLUX.1-dev (12B), FourTune reduces memory overhead by 2.25$\\times$ and increases end-to-end training throughput by 2.27$\\times$ compared to BF16 LoRA.",
+    "authors": [
+      "Bowen Xue",
+      "Zihan Min",
+      "Xingyang Li",
+      "Zhekai Zhang",
+      "Haocheng Xi",
+      "Lvmin Zhang",
+      "Maneesh Agrawala",
+      "Jun-Yan Zhu",
+      "Song Han",
+      "Yujun Lin",
+      "Muyang Li"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-07",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05711.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.05711",
+    "primary_category": "cs.LG",
+    "score": 85,
+    "summary": {
+      "title_zh": "FourTune：面向扩散模型的高效全4比特训练后优化方法",
+      "core_contribution": "提出了FourTune，一种基于端到端W4A4G4范式的扩散模型高效训练后优化框架，在显著降低内存占用和提升训练速度的同时，保持了全精度微调的生成质量。",
+      "method": "FourTune采用三支路混合流水线，在标准LoRA架构基础上引入冻结数值稳定器以隔离量化敏感异常值，确保原生4比特计算的稳定性；同时结合硬件高效的块级量化和定制融合内核，支持高效量化反向传播并降低内存带宽开销。",
+      "findings": "在定制化、强化学习和蒸馏任务中，FourTune的生成质量与全精度微调相当；在FLUX.1-dev（12B参数）模型上，相比BF16 LoRA，内存开销降低2.25倍，端到端训练吞吐量提升2.27倍。"
+    }
+  }
+]
