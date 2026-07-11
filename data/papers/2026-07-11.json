@@ -1,0 +1,137 @@
+[
+  {
+    "id": "2607.05568",
+    "title": "Harnessing Generative Image Models for Training-Free Primitive Shape Abstraction",
+    "abstract": "Representing 3D shapes as compact sets of geometric primitives is fundamental to robotics, simulation, and scene understanding. Generative image models trained at scale have recently emerged as generalist visual learners that can identify and segment object parts directly in the image domain, across arbitrary categories and without task-specific training. Adapting such models to downstream tasks typically requires fine-tuning; we ask whether their pretrained capability can instead be harnessed directly, without any training, and answer affirmatively with a training-free harness. Our pipeline renders multi-view images of a 3D object, uses a vision-language model to analyze its semantic parts, prompts a generative image model to paint a color-coded part segmentation mask, reprojects it onto the geometry, and fits a superquadric primitive to each part via parameter optimization. The approach contains no learned parameters: it is category-agnostic and orientation-invariant, properties that previous learning-based models struggled with. Its accuracy ceiling rises with future generative-model improvements, which we confirm with a ground-truth segmentation study showing that part segmentation, not primitive fitting, is the current accuracy bottleneck. On HumanPrim and Toys4K, our method achieves the lowest Chamfer distance among all evaluated methods, using 5--9 primitives per object on average.",
+    "authors": [
+      "Gregor Kobsik",
+      "Tim Elsner",
+      "Leif Kobbelt"
+    ],
+    "published": "2026-07-06",
+    "updated": "2026-07-06",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.05568.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.05568",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "利用生成式图像模型实现免训练的几何基元形状抽象",
+      "core_contribution": "提出了一种完全免训练的流程，直接利用预训练的生成式视觉模型实现跨类别、方向无关的3D形状基元抽象，无需任何微调或学习参数。",
+      "method": "方法首先对3D物体进行多视角渲染，利用视觉语言模型识别语义部件；接着通过生成式图像模型生成颜色编码的部件分割掩码，并将其重投影至几何表面；最后通过参数优化为每个部件拟合超二次曲面基元。",
+      "findings": "在HumanPrim和Toys4K数据集上，本方法以平均每物体5-9个基元的数量取得了最低的Chamfer距离；研究表明当前精度瓶颈主要在于部件分割而非基元拟合，且其性能可随生成模型进步而提升。"
+    }
+  },
+  {
+    "id": "2607.06445",
+    "title": "Analysis-by-Proxy: Localization Signals in VLMs Operating as Condition Encoders",
+    "abstract": "Vision-Language Models (VLMs) are increasingly utilized as the conditioning backbone for diffusion-based image editing due to their remarkable multimodal reasoning capabilities. While standalone VLMs demonstrate strong localization capabilities, editing pipelines frequently struggle to maintain this accuracy, particularly in complex, multi-entity scenes. In this work, we investigate this performance gap, hypothesizing that it stems from treating the VLM as a condition encoder. In this role, the model is restricted to a single forward pass, preventing the autoregressive generation process for which it was optimized, thereby failing to fully expose its capabilities. To investigate whether this spatial understanding persists when the VLM is used as a condition encoder, we introduce Analysis-by-Proxy. In this framework, we train a lightweight, interpretable proxy model on the VLM's intermediate representations using an auxiliary localization task. By analyzing the VLM through this proxy, we uncover the specific VLM representations that encode localization information. Our findings expose a fundamental mismatch between how spatial knowledge is represented within a VLM condition encoder and how it is extracted by current editing pipelines. We reveal that under single-pass constraints, the localization signal does not reliably propagate to the predefined layer configurations commonly used for conditioning. Instead, this crucial signal remains hidden within intermediate representations, at locations that vary depending on the input prompt. Using our introduced Analysis-by-Proxy framework, we reveal the fundamental failures of existing condition extraction strategies in editing pipelines, opening the door to more principled design of conditioning architectures.",
+    "authors": [
+      "Yoav Baron",
+      "Sara Dorfman",
+      "Roni Paiss",
+      "Daniel Cohen-Or",
+      "Or Patashnik"
+    ],
+    "published": "2026-07-07",
+    "updated": "2026-07-07",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.06445.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.06445",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "代理分析：作为条件编码器的视觉语言模型中的定位信号",
+      "core_contribution": "本文揭示了视觉语言模型（VLM）在作为条件编码器时，其内部空间定位信号无法被现有图像编辑流程有效提取的根本问题，并提出了一个名为‘代理分析’的框架来识别这些隐藏的定位信息。",
+      "method": "作者提出了‘代理分析’框架，通过在一个辅助的定位任务上，训练一个轻量级、可解释的代理模型来分析VLM的中间表征。该方法旨在探测VLM在单次前向传播（作为条件编码器时）过程中，哪些内部表征编码了空间定位信息。",
+      "findings": "研究发现，在单次前向传播的限制下，VLM的空间定位信号并不会可靠地传播到编辑流程通常使用的预定义输出层。相反，这些关键的定位信号隐藏在中层表征中，并且其具体位置会因输入提示的不同而变化，这暴露了现有条件提取策略的根本性失败。"
+    }
+  },
+  {
+    "id": "2607.08605",
+    "title": "When Structured Sparse Autoencoders Learn Consistent Concepts Across Modalities",
+    "abstract": "Sparse autoencoders (SAEs) have emerged as a promising technique for mechanistic interpretability by learning a set of sparse latent features in large models, each of which encodes a distinct concept. However, in vision-language models (VLMs), vanilla SAEs struggle to learn modality-consistent concepts, with concepts often exhibiting fragmented coverage (i.e., disjoint regions) in the visual modality. To address this challenge, we propose a Structured Sparse AutoEncoder ($S^2AE$) that enforces concept consistency from both semantic and spatial perspectives in the visual modality. Specifically, we group image patches based on Transformer attention similarity and spatial proximity, and introduce a structured sparsity regularization when training the vanilla SAE. The regularization consists of exclusive sparsity for inter-group concept disentanglement and group sparsity for intra-group concept consistency, which drives the latent neurons by SAEs to specialize in distinct, semantically grounded concepts. Evaluated on the \\texttt{Qwen2.5-VL-7B-Instruct} model, the method achieves 6.06% average improvement in semantic alignment (mIoU) and 60.81 in representational efficiency (lower l0 norm) while maintaining near-perfect reconstruction fidelity with an Explained Variance above 99%. Cross-modal analysis further demonstrates that $S^2AE$ enhances neuronal monosemanticity by this visual structural prior, achieving a 3.08% average gain in semantic consistency and a 2.37% average gain in monosemanticity scores for both modalities of multimodal features, thereby fostering more coherent and disentangled representations.",
+    "authors": [
+      "Weiduo Liao",
+      "Yunqiao Yang",
+      "Ying Wei"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08605.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08605",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "当结构化稀疏自编码器跨模态学习一致概念时",
+      "core_contribution": "提出了一种结构化稀疏自编码器（S²AE），通过引入结构化稀疏正则化，解决了视觉语言模型中传统稀疏自编码器难以学习模态一致概念的问题，从而促进了跨模态的连贯和解缠表示。",
+      "method": "该方法基于Transformer注意力相似性和空间邻近性对图像块进行分组，并在训练传统稀疏自编码器时引入了结构化稀疏正则化。该正则化包括用于组间概念解缠的排他性稀疏和用于组内概念一致性的组稀疏，驱动潜在神经元专注于不同的、基于语义的概念。",
+      "findings": "在Qwen2.5-VL-7B-Instruct模型上的评估显示，该方法在语义对齐（mIoU）上平均提升了6.06%，表示效率（l0范数）提高了60.81，同时保持了接近完美的重建保真度（解释方差超过99%）。跨模态分析进一步表明，S²AE通过视觉结构先验增强了神经元单义性，在多模态特征的两个模态上，语义一致性和单义性得分分别平均提升了3.08%和2.37%。"
+    }
+  },
+  {
+    "id": "2607.08515",
+    "title": "Beyond wheelchairs and blindfolds: Investigating disability stereotypes in T2I models with INCLUDE-BENCH",
+    "abstract": "Text-to-image (T2I) models have been shown to exhibit social biases. Prior work has mainly focused on gender, skin tone, and cultural representation within restricted occupational associations, and emerging benchmarks increasingly incorporate these dimensions. However, disability remains systematically underexplored. Current evaluation practices often fail to align with sociologically grounded definitions of stereotyping, limiting principled assessment of representational harms toward people with disabilities (PWD). To address this, we introduce INCLUDE-BENCH, the first large-scale benchmark for evaluating disability-related bias in T2I models. INCLUDE-BENCH comprises 119K generated images based on prompt design across multiple bias dimensions and both static and dynamic contexts. We evaluate 15 open-source and 2 closed-source models. Our key findings reveal that: (1) mobility-impaired and default disability prompts predominantly yield wheelchair depictions across all models; (2) disability-conditioned generations consistently exhibit less diversity; (3) stereotypical portrayals demonstrate stronger disability-text alignment; and (4) we introduce the Stereotype Content Model (SCM) Score, demonstrating that T2I models reflect real-world stereotypical associations.",
+    "authors": [
+      "Sophia Lichtenberg",
+      "Albert Gatt",
+      "Judith Masthoff"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08515.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08515",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "超越轮椅与眼罩：使用INCLUDE-BENCH评估文本到图像模型中的残疾刻板印象",
+      "core_contribution": "提出了首个大规模评估文本到图像模型中残疾相关偏见的基准INCLUDE-BENCH，并系统揭示了模型在残疾表征上存在的刻板印象问题。",
+      "method": "研究构建了包含11.9万张生成图像的基准数据集，通过设计涵盖多维度偏见和静态/动态场景的提示词，对15个开源模型和2个闭源模型进行了评估，并引入了基于社会学理论的刻板印象内容模型（SCM）评分指标。",
+      "findings": "关键发现包括：(1) 所有模型对行动障碍相关提示均主要生成轮椅图像；(2) 残疾相关生成结果的多样性显著降低；(3) 刻板印象描绘与文本对齐度更高；(4) 模型输出的刻板印象内容与现实世界中的社会偏见高度一致。"
+    }
+  },
+  {
+    "id": "2607.08249",
+    "title": "HSA: Hierarchical Slot Attention for Multi-granularity Scene-Decomposition",
+    "abstract": "Slot attention is a powerful framework for object-centric learning, decomposing visual scenes into latent slots through iterative competitive attention. However, existing methods share two critical limitations: they decompose scenes into a flat set of slots at a single granularity, and this decomposition is based on appearance rather than semantics. Yet humans understand scenes through semantic hierarchies: separating foreground from background, recognizing object categories, and identifying individual instances. Crucially, such semantic hierarchies cannot emerge without supervision, because category names are human constructs, not visual patterns. We propose Hierarchical Slot Attention (HSA), which learns multi-granularity semantic scene decomposition from a single model. HSA decomposes scenes at three levels: holistic (foreground/background), semantic (object categories), and panoptic (individual instances). Using only 10\\% labeled data, combined with hierarchical alignment loss, HSA learns all three levels jointly. We further introduce grouping purity and containment to measure whether the hierarchy is encoded in representation space, not just output masks. Experiments on COCO and PASCAL VOC demonstrate that HSA outperforms the strongest flat baseline by up to \\textbf{$+$41.5} ARI at holistic, \\textbf{$+$14.6} at semantic, and \\textbf{$+$10.4} at panoptic level on COCO, with even larger gains on Pascal VOC, while requiring a single model instead of three. Code will be made available upon acceptance.",
+    "authors": [
+      "Neelu Madan",
+      "Rongzhen Zhao",
+      "Andreas Mogelmose",
+      "Juho Kannala",
+      "Joni Pajarinen",
+      "Graham W. Taylor",
+      "Thomas B. Moeslund"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08249.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08249",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "HSA：面向多粒度场景分解的层次化槽注意力机制",
+      "core_contribution": "提出了层次化槽注意力（HSA），首次在单一模型中实现了从整体到实例的多粒度语义场景分解，解决了现有方法仅基于外观进行单层分解的局限性。",
+      "method": "HSA通过迭代竞争注意力机制，将场景分解为三个层次：整体（前景/背景）、语义（物体类别）和全景（个体实例）。模型仅使用10%的标注数据，结合层次对齐损失联合学习所有层次。此外，引入了分组纯度和包含度指标，以验证层次结构在表示空间中的编码质量。",
+      "findings": "在COCO和PASCAL VOC数据集上的实验表明，HSA在整体、语义和全景层次上的ARI指标分别比最强基线提升41.5、14.6和10.4（COCO），且在PASCAL VOC上提升更显著，同时仅需单一模型而非三个独立模型。"
+    }
+  }
+]
