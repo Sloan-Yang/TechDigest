@@ -1,0 +1,142 @@
+[
+  {
+    "id": "2607.08246",
+    "title": "SkelGen4D: Weakly-Supervised Skeleton-Based 4D Generation for Text-Driven Mesh Animation",
+    "abstract": "We study 4D generation to synthesize temporally coherent sequences of 3D geometry for animation and content creation. In contrast to existing SDS-based optimization methods and video-driven animation approaches, we adopt a skeleton-driven animation framework aligned with standard industrial pipelines, which enables explicit control and editing. To this end, we propose SkelGen4D, a weakly supervised feed-forward framework for text-driven mesh animation that generates explicit skeleton motions without requiring per-frame skeleton annotations. SkelGen4D first recovers temporally consistent pseudo-skeletons from animated meshes via differentiable fitting, and then generates text-conditioned skeleton motion sequences in a feed-forward manner, further refined with Motion-GRPO to ensure temporally coherent, physically plausible, and articulated animation. We evaluate our method on two large-scale benchmarks, Truebones Zoo and Diffusion4D. Our results show that our weakly supervised skeleton modeling matches or surpasses fully supervised baselines while scaling to diverse object categories for high-quality text-driven mesh animation. Further, our method supports flexible motion editing and is aligned with standard animation production pipelines.",
+    "authors": [
+      "Hao Feng",
+      "Zhi Zuo",
+      "Jia-Hui Pan",
+      "Ka-Hei Hui",
+      "Zhengzhe Liu",
+      "Dian Zhang",
+      "Haoran Xie",
+      "Bin Sheng",
+      "Jingyu Hu"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08246.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08246",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "SkelGen4D：基于弱监督骨架的文本驱动网格动画四维生成方法",
+      "core_contribution": "提出了一个弱监督的前馈框架，能够从文本生成高质量的4D网格动画序列，无需逐帧骨架标注，同时支持显式运动控制和编辑。",
+      "method": "首先通过可微分拟合从动画网格中恢复时间一致的伪骨架；然后以前馈方式生成文本条件化的骨架运动序列；最后利用Motion-GRPO进行细化，确保时间连贯、物理合理且关节化的动画效果。",
+      "findings": "在Truebones Zoo和Diffusion4D基准测试中，本方法的弱监督骨架建模性能达到或超过全监督基线，能够扩展到多样对象类别，生成高质量的文本驱动网格动画，并支持灵活的运动编辑。"
+    }
+  },
+  {
+    "id": "2607.08241",
+    "title": "Closing the Null Space: Guidance-Aware Quantization for Classifier-Free Diffusion",
+    "abstract": "Deploying classifier-free guidance (CFG) diffusion models under real-world compute budgets requires quantization, yet existing post-training quantization (PTQ) methods treat CFG models as single-branch networks, ignoring the paired conditional/unconditional structure that CFG inference fundamentally relies on. This structural blind spot has two consequences. At the system level, the two-pass CFG execution pattern imposes a latency overhead that parameter-count and bit-operation metrics conceal entirely, and commodity INT8 inference stacks fail to realize the theoretical efficiency gains that BOPs calculations promise. At the algorithmic level, calibrating against the guidance gap alone admits an exact null space: a quantized model can achieve perfect gap-fidelity diagnostics while the unconditional branch drifts arbitrarily, corrupting every guided prediction at inference time. This paper terms this the branch-drift trap, proves its existence analytically, and confirms it empirically through a false-positive result in which the best-calibrated model by standard diagnostics simultaneously produces the worst sample quality. To close the trap, Guidance-Aware Mixed Precision (GAMP) is proposed, which calibrates directly on the guided prediction, derives per-layer activation-bit sensitivity from guided-output degradation, and allocates bits via a greedy knapsack -- provably preventing unconditional branch drift by construction.",
+    "authors": [
+      "Abdullah Al Shafi",
+      "Sumaiya Rahim Suma"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08241.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08241",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "关闭零空间：面向无分类器引导的扩散模型感知量化方法",
+      "core_contribution": "揭示了无分类器引导（CFG）扩散模型量化中的分支漂移陷阱，并提出了一种引导感知的混合精度量化方法（GAMP），从结构上避免了无条件分支的任意漂移。",
+      "method": "GAMP方法直接在校准过程中考虑引导预测，通过分析引导输出退化来确定每层激活的比特敏感度，并采用贪心背包算法进行比特分配，从而在结构上保证无条件分支的稳定性。",
+      "findings": "实验证明，传统量化方法虽能在诊断指标上表现完美，但因忽略分支结构导致样本质量严重下降；GAMP方法在保持高效推理的同时，显著提升了量化模型的生成质量，避免了分支漂移带来的性能损失。"
+    }
+  },
+  {
+    "id": "2607.08227",
+    "title": "Multimodal 3D LUT Generation via StatLUT with Statistical Features for Photorealistic Style Transfer",
+    "abstract": "Photorealistic Style Transfer (PST) aims to transfer the color and tonal style of a reference to a content image while strictly preserving its structural integrity. However, existing deep learning-based methods inherently suffer from semantic entanglement caused by pre-trained image encoders, leading to unnatural spatial distortions. Moreover, current pixel-level mapping paradigms often ignore color gamut topology, resulting in color banding, while also lacking the multimodal capability for intuitive text-driven control. To address these bottlenecks, we propose StatLUT, an innovative multimodal framework for 3D LUT generation. First, we bypass traditional encoders and introduce a Lab-Extractor to derive spatially-agnostic statistical features, fundamentally decoupling color distributions from structural semantics to ensure artifact-free rendering. Second, we formulate LUT generation as a Transformer-based Seq2Seq translation task, utilizing a Multi-dimensional Residual Mapper (MR-Mapper) to predict topologically smooth 3D LUTs. Finally, to break the single-modal barrier, we propose the H-Diffuser, a lightweight Diffusion Transformer that directly synthesizes statistical features from natural language prompts, enabling flexible text-driven color grading. Extensive experiments on standard benchmarks demonstrate that StatLUT significantly outperforms state-of-the-art methods in both visual quality and quantitative metrics, pioneering a highly robust and flexible paradigm for multimodal photorealistic style transfer.",
+    "authors": [
+      "Yifan Wang",
+      "Zhixiang Hao",
+      "Yu Wang",
+      "Congchao Zhu"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08227.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08227",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "基于StatLUT与统计特征的多模态3D LUT生成用于真实感风格迁移",
+      "core_contribution": "提出了StatLUT框架，通过解耦颜色分布与结构语义，从根本上避免了空间失真和色彩条带问题，并首次实现了基于文本提示的多模态真实感风格迁移。",
+      "method": "首先设计Lab-Extractor提取空间无关的统计特征，消除语义纠缠；其次采用Transformer序列到序列框架，通过多维残差映射器预测拓扑平滑的3D LUT；最后引入轻量级扩散Transformer，将文本提示直接转换为统计特征。",
+      "findings": "在标准基准测试中，StatLUT在视觉质量和量化指标上均显著优于现有最优方法，证明了其在生成无伪影、色彩平滑且支持多模态控制的风格迁移效果方面的优越性。"
+    }
+  },
+  {
+    "id": "2607.08201",
+    "title": "TMI: Text-to-Image Meets Image-to-Image for Complementary Data Synthesis to Boost Long-Tailed Instance Segmentation",
+    "abstract": "Large-vocabulary instance segmentation is constrained by long-tailed category distributions and fine-grained inter-class ambiguity. While data synthesis offers a promising alternative, current paradigms have complementary limitations: text-to-image (T2I) methods inherit noisy pseudo-labels and struggle on rare classes, whereas copy-paste methods compromise contextual realism. To address these issues, we propose a hybrid pipeline coupling T2I generation with context-aware image-to-image (I2I) editing. The T2I branch provides broad category and scene diversity, while a teacher-student scheme ensures label reliability by selectively retaining only prompt-specified categories. To strengthen supervision for rare classes, we introduce VRAIN (Verified Rare-class Augmentation via INstructed editing), a novel I2I editor. VRAIN inserts high-confidence instances at semantically appropriate locations within in-the-wild scenes, yielding semantically coherent and visually natural edits that reduce domain gaps and enable targeted augmentation. On the LVIS benchmark, our method surpasses existing baselines, improving overall AP by up to +4.0 points and rare-class AP by up to +9.5 points, while scaling effectively with backbone capacity. Our project page is available at https://seokhunchoi.github.io/TMI",
+    "authors": [
+      "Hyeonseop Song",
+      "Seokhun Choi",
+      "Hoseok Do"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08201.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08201",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "TMI：文本到图像与图像到图像融合实现互补数据合成，以提升长尾实例分割性能",
+      "core_contribution": "提出了一种结合文本到图像（T2I）生成与上下文感知图像到图像（I2I）编辑的混合流水线，解决了长尾类别分布下的数据合成问题；通过引入VRAIN模块，在自然场景中语义合理地插入高置信度的稀有类实例，显著提升了稀有类别的分割精度。",
+      "method": "采用T2I分支生成多样化的类别和场景，结合师生框架选择性保留提示指定类别以确保标签可靠性；设计VRAIN作为I2I编辑器，将高置信度实例插入语义合适的野外场景位置，生成语义连贯且视觉自然的编辑结果；通过耦合T2I的广泛多样性与I2I的上下文真实性，实现互补数据合成。",
+      "findings": "在LVIS基准测试中，整体AP提升最高达4.0点，稀有类AP提升最高达9.5点；方法能够有效缩小域差距，并随骨干网络容量扩展而持续提升性能。"
+    }
+  },
+  {
+    "id": "2607.08194",
+    "title": "Dive Into the Implicit Biases of Low-rank Vision-language Alignment",
+    "abstract": "Vision-language alignment, the stage that bridges pretrained vision encoders and large language models, is widely treated as a form of pretraining requiring full-parameter updates. We challenge this view and investigate what happens when low-rank adaptation is applied to the LLM during this stage instead. We find that low-rank alignment not only reduces computational costs but also outperforms full-parameter alignment on most benchmarks. To understand this phenomenon, we systematically characterize the implicit biases introduced by low-rank adaptation during alignment. Empirically, we find that low-rank alignment shifts model behavior from hallucinatory to conservative and preserves per-token linear separability of visual features that full-parameter alignment disrupts, a phenomenon we term LS-curse. Geometrically, low rank aligned models exhibit more homogeneous and structurally stable visual representations, maintaining modality-specific knowledge rather than prematurely fusing entity-level semantics. Theoretically, we establish two theorems showing that low-rank alignment induces preferences for parameter subspaces with flat gradients and feature subspaces robust to perturbations, providing a principled explanation for the observed structure-preserving behavior. Extensive experiments cover ablation over 100 alignment configurations, three families of low-rank operators, and various rank, encoder, and other settings.",
+    "authors": [
+      "Mingjia Shi",
+      "Shuo Wang",
+      "Xiaobo Wang",
+      "Sifan Zhou",
+      "Kai Wang",
+      "Tianyu Fu",
+      "Chenxu Zhao",
+      "Anyang Su",
+      "Ping Jiang",
+      "Minghui Wu"
+    ],
+    "published": "2026-07-09",
+    "updated": "2026-07-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.08194.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.08194",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "深入探究低秩视觉-语言对齐中的隐式偏好",
+      "core_contribution": "本文挑战了视觉-语言对齐阶段必须进行全参数更新的传统观点，揭示了低秩适配不仅降低计算成本，而且在多数基准测试中优于全参数对齐，并从理论角度解释了其结构保持行为的原理。",
+      "method": "研究采用低秩适配替代全参数更新进行视觉-语言对齐，系统分析了低秩操作引入的隐式偏好；通过超过100种对齐配置的消融实验，涵盖三类低秩算子家族，并结合几何分析和理论证明探讨其内在机制。",
+      "findings": "低秩对齐使模型从幻觉性行为转向保守性，并保持视觉特征的逐令牌线性可分性（避免LS-curse）；几何上表现为更均匀、结构稳定的视觉表示，保留模态特定知识而非过早融合实体级语义；理论证明低秩对齐偏好梯度平坦的参数子空间和对扰动鲁棒的特征子空间。"
+    }
+  }
+]
