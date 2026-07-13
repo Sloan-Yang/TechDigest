@@ -1,0 +1,154 @@
+[
+  {
+    "id": "2607.09362",
+    "title": "CtrlVTON: Controllable Virtual Try-On via Visual-Instance-Prompt Segmentation",
+    "abstract": "Virtual try-on (VTO) has made significant progress in realistically transferring garments onto a target person. Yet most systems give the user little control over how a garment should be worn -- its size (loose or fitted), style (e.g., tucked in or untucked, open or closed), and spatial placement on the body. We address this gap with two complementary contributions. First, we define and solve Visual-Instance-Prompt Segmentation via VIP-SAM: given a flatlay image of a garment, segment that specific instance in a photograph of a person wearing it. This is an instance-level task, distinct from the typically studied category-level segmentation. Second, we introduce CtrlVTON, a controllable VTO framework that recasts try-on as an image editing problem and adds segmentation masks as pixel-level control over garment layout, including style, size, and spatial placement on the body. VIP-SAM and CtrlVTON each achieve state-of-the-art results on their respective tasks. In particular, CtrlVTON generates images that follow user-provided layouts far more faithfully than the strongest proprietary editing systems while matching them on garment fidelity.",
+    "authors": [
+      "Seungyong Lee",
+      "Hyun Jun Jang",
+      "Sangoh Kim",
+      "Sungjoon Park"
+    ],
+    "published": "2026-07-10",
+    "updated": "2026-07-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.09362.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.09362",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "CtrlVTON：通过视觉实例提示分割实现可控虚拟试穿",
+      "core_contribution": "提出了VIP-SAM方法解决特定服装实例在穿着图像中的分割问题，并开发了CtrlVTON框架，使用户能够通过像素级掩码控制服装的尺寸、款式和空间位置。",
+      "method": "首先通过VIP-SAM对平铺服装图像进行实例级分割，定位人物穿着图中的具体服装实例；然后将虚拟试穿重构为图像编辑任务，利用分割掩码作为像素级控制信号；最后通过可控生成框架精确调整服装的布局和风格。",
+      "findings": "VIP-SAM和CtrlVTON在各自任务中均达到最先进性能；CtrlVTON生成图像在遵循用户布局方面显著优于现有最强商业编辑系统，同时保持同等服装保真度。"
+    }
+  },
+  {
+    "id": "2607.09133",
+    "title": "IB-Flow: Information Bottleneck-Guided CFG Distillation for Few-Step Text-to-Image Generation",
+    "abstract": "While large-scale text-to-image generative models have achieved unprecedented visual performance, their inherent reliance on multi-step iterative solvers incurs severe inference latency. Few-step distillation targeting the Classifier-Free Guidance (CFG) trajectory has emerged as the prevalent dual-dimensional compression paradigm. However, existing frameworks remain subjugated by a coarse-grained blind injection paradigm that perpetually enforces a globally static guidance strength while indiscriminately sampling the supervisor timestep. This state-agnostic design completely disregards the intrinsic nature of image generation as a dynamic evolutionary process characterized by progressive entropy reduction, which not only restricts the performance boundary of few-step compression but also precipitates severe CFG over-conditioning artifacts. To transcend these limitations, we re-examine the distillation procedure through the theoretical lens of Information Theory, formally modeling it as a dynamic mutual information game constrained by the Information Bottleneck (IB) principle. Specifically, we dismantle traditional blind assumptions via a dual-track adaptive framework. To determine the injection target, we propose an instance-aware selection mechanism that transmutes the intractable KL divergence constraint into a zero-overhead closed-form solution predicated on the local vector field norm. To regulate the injection strength, we introduce an entropy-aware schedule that dynamically decays alongside the SNR, applying maximal thrust for initial structural anchoring before smoothly reverting to the natural manifold to refine micro-details. Extensive empirical evaluations corroborate that our framework fundamentally eradicates over-conditioning artifacts, shattering the performance ceiling to achieve SOTA generative fidelity under extremely stringent 2-step configurations.",
+    "authors": [
+      "Yiting Wang",
+      "Jingyi Zhang",
+      "Wenhu Zhang",
+      "Ke Chao",
+      "Yves Liang",
+      "Kun Cheng",
+      "Kang Zhao"
+    ],
+    "published": "2026-07-10",
+    "updated": "2026-07-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.09133.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.09133",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "IB-Flow：基于信息瓶颈引导的CFG蒸馏用于少步文本到图像生成",
+      "core_contribution": "提出了一种基于信息瓶颈理论的双轨自适应蒸馏框架，通过实例感知的指导目标选择和熵感知的指导强度调度，从根本上解决了少步生成中的CFG过条件化伪影问题。",
+      "method": "该方法将蒸馏过程建模为受信息瓶颈约束的动态互信息博弈，使用基于局部向量场范数的闭式解实现实例感知的指导时间步选择，并设计随信噪比动态衰减的熵感知调度策略来调节指导强度。",
+      "findings": "实验证明该框架在极严格的2步配置下消除了过条件化伪影，突破了性能上限，达到了最先进的生成保真度。"
+    }
+  },
+  {
+    "id": "2607.09657",
+    "title": "Scalable Visual Pretraining for Language Intelligence",
+    "abstract": "The rapid progress of large foundation models has been driven predominantly by pretraining on large-scale text corpora. However, many forms of knowledge are conveyed through visual representations, where figures, typeset equations, and page layouts carry rich information that cannot be faithfully or completely captured by text alone. Yet current pretraining approaches discard these visual cues by converting visually rich sources, such as documents and web pages, into plain text for learning language intelligence. This paper challenges the default assumption that language models must be trained on text-only representations and shows that Visual Pretraining is a scalable learner for foundation model intelligence. To this end, we conduct a systematic study of unsupervised visual pretraining paradigms that directly leverage visual documents without text extraction. Across multiple backbones and benchmarks, visual pretraining on the same underlying corpora consistently outperforms text-only pretraining, offering an efficient pathway to scalable language intelligence.",
+    "authors": [
+      "Yiming Zhang",
+      "Zhonghan Zhao",
+      "Wenwei Zhang",
+      "Haiteng Zhao",
+      "Tianyang Lin",
+      "Yunhua Zhou",
+      "Demin Song",
+      "Kuikun Liu",
+      "Haochen Ye",
+      "Haian Huang",
+      "Yuzhe Gu",
+      "Haijun Lv",
+      "Qipeng Guo",
+      "Bin Liu",
+      "Gaoang Wang",
+      "Kai Chen"
+    ],
+    "published": "2026-07-10",
+    "updated": "2026-07-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.MM"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.09657.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.09657",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "面向语言智能的可扩展视觉预训练",
+      "core_contribution": "挑战了语言模型必须基于纯文本进行训练的默认假设，证明了视觉预训练是实现基础模型智能的可扩展学习路径。",
+      "method": "系统研究了无需文本提取、直接利用视觉文档的无监督视觉预训练范式；通过直接处理包含图表、排版公式和页面布局的视觉丰富文档，保留文本无法完整捕获的丰富信息。",
+      "findings": "在多种骨干网络和基准测试中，基于相同语料库的视觉预训练始终优于纯文本预训练，为扩展语言智能提供了更高效的途径。"
+    }
+  },
+  {
+    "id": "2607.09488",
+    "title": "SigLIP-HD by Fine-to-Coarse Supervision",
+    "abstract": "High-quality visual representation is a long-standing pursuit in computer vision. In the context of multimodal LLMs (MLLMs), feeding higher-resolution images can produce more fine-grained visual tokens. However, it introduces additional computational and design complexity, due to multiple forward passes and post-processing of increased tokens. Before simply adopting a higher resolution, have we truly unlocked the model's full perception capability at a standard resolution? Therefore, we study an interesting problem: how to achieve fine visual perception under lower cost without larger images. We present SigLIP-HD in this work. The core is a highly simple fine-to-coarse supervision design. We enforce the coarse feature of a mid-resolution image to mimic the fine-grained feature of its high-resolution version. We build this framework on the advanced SigLIP 2 model. Our final model produces better visual tokens at exactly the same inference budget. It is validated on extensive MLLM benchmarks and consistently delivers stronger results than our baseline model, especially on OCR-related tasks.",
+    "authors": [
+      "Lihe Yang",
+      "Zhen Zhao",
+      "Hengshuang Zhao"
+    ],
+    "published": "2026-07-10",
+    "updated": "2026-07-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.09488.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.09488",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "通过细粒度到粗粒度监督实现SigLIP-HD",
+      "core_contribution": "提出了一种无需更高分辨率图像即可在标准分辨率下实现精细视觉感知的方法，通过细粒度到粗粒度的监督设计，在相同推理成本下生成更优质的视觉token。",
+      "method": "该方法基于先进的SigLIP 2模型，采用一种简单而有效的细粒度到粗粒度监督策略，强制中分辨率图像的粗粒度特征模仿其高分辨率版本的细粒度特征，从而在不增加图像尺寸的情况下提升模型感知能力。",
+      "findings": "在广泛的多模态大语言模型基准测试中，该方法 consistently 表现优于基线模型，尤其在OCR相关任务上取得了显著更强的结果。"
+    }
+  },
+  {
+    "id": "2607.09450",
+    "title": "Robustifying Vision-Language Models via Test-Time Prompt Adaptation",
+    "abstract": "Pre-trained Vision-Language Models (VLMs) such as CLIP achieve strong zero-shot generalization, but their performance degrades sharply under adversarial perturbations. Existing test-time adaptation methods typically rely on sample-level confidence heuristics, overlooking the intrinsic distributional structure of the data. This sample-centric approach limits robustness, as it fails to distinguish confident adversarial mispredictions from true semantic consistency. In this work, we observe that adversarial distortion is structurally brittle: while holistic representations are corrupted, semantic integrity is often preserved in the distribution of augmented views. Motivated by this insight, we propose RITA, a Robust test-tIme prompt-TAdaptation framework that shifts from sample-level estimates to distribution-level alignment. Specifically, RITA employs optimal transport to align the distribution of augmented visual features with textual prototypes, mitigating adversarial outliers and rectifying cross-modal semantic misalignment. Furthermore, we introduce a dynamic cache to progressively accumulate reliable cues from the test stream for online refinement. Extensive experiments demonstrate that RITA significantly improves adversarial robustness without compromising clean accuracy.",
+    "authors": [
+      "Xingyu Zhu",
+      "Huanshen Wu",
+      "Shuo Wang",
+      "Beier Zhu",
+      "Jiannan Ge",
+      "Jiaheng Zhang",
+      "Long Chen"
+    ],
+    "published": "2026-07-10",
+    "updated": "2026-07-10",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.09450.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.09450",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "通过测试时提示适配增强视觉-语言模型的鲁棒性",
+      "core_contribution": "提出RITA框架，通过从样本级置信度估计转向分布级对齐，显著提升了视觉-语言模型在对抗扰动下的鲁棒性，同时保持干净样本的准确率。",
+      "method": "RITA利用最优传输理论，将增强后的视觉特征分布与文本原型进行对齐，以减轻对抗性异常值的影响；同时引入动态缓存机制，从测试流中逐步积累可靠线索进行在线优化。",
+      "findings": "大量实验表明，RITA在多种对抗攻击场景下显著提升了模型鲁棒性，且无需牺牲原始干净数据的分类精度。"
+    }
+  }
+]
