@@ -1,0 +1,142 @@
+[
+  {
+    "id": "2607.11886",
+    "title": "Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation",
+    "abstract": "In this paper, we propose SpectraReward, a training-free reward function that turns pretrained MLLMs into off-the-shelf reward models for image-generation reinforcement learning. Instead of asking the MLLM to judge a generated image or answer decomposed verification questions, SpectraReward measures how well the original prompt can be recovered from the generated image through a single image-conditioned, teacher-forced forward pass. We use the average image-conditioned prompt log-likelihood as the reward, directly reusing the MLLM's pretrained image-text alignment ability without preference labels, reward-model fine-tuning. We further introduce Self-SpectraReward, a special case for unified multimodal models where the policy's own understanding branch serves as the reward model for its generation branch, forming a closed-loop self-improving framework without external reward models or external knowledge. Extensive experiments validate SpectraReward through a broad image-generation RL study covering two diffusion models, three RL algorithms, nine reward MLLM backbones from four MLLM families spanning 4B to 235B parameters, and five out-of-distribution text-to-image benchmarks. Results show that both SpectraReward and Self-SpectraReward significantly and consistently improve generation performance and outperform prior MLLM-derived reward training methods. Further analysis reveals that larger reward MLLMs are not always better, while Self-SpectraReward can match or surpass much larger external reward models, suggesting that reward-policy alignment is a key factor for effective image-generation RL. Project Page: https://huangrh99.github.io/SpectraReward/",
+    "authors": [
+      "Runhui Huang",
+      "Qihui Zhang",
+      "Zhe Liu",
+      "Yu Gao",
+      "Jie Wu",
+      "Hengshuang Zhao"
+    ],
+    "published": "2026-07-13",
+    "updated": "2026-07-13",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11886.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.11886",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "回读：预训练多模态大模型是文本到图像生成的零样本奖励模型",
+      "core_contribution": "提出了无需训练的奖励函数SpectraReward，可将预训练多模态大模型直接用作图像生成强化学习的奖励模型；并进一步提出Self-SpectraReward，构建了无需外部奖励模型的自改进闭环框架。",
+      "method": "通过单次图像条件前向传播，测量从生成图像中恢复原始提示词的能力；使用图像条件提示词的平均对数似然作为奖励，直接复用预训练模型的图文对齐能力；对于统一多模态模型，使用其自身的理解分支作为生成分支的奖励模型。",
+      "findings": "SpectraReward和Self-SpectraReward能显著且持续提升生成性能，优于现有基于多模态大模型的奖励训练方法；更大的奖励模型并非总是更好，而Self-SpectraReward可匹配或超越更大的外部奖励模型，表明奖励与策略的对齐是图像生成强化学习的关键因素。"
+    }
+  },
+  {
+    "id": "2607.11885",
+    "title": "Latent-Identity Tuning in Text-to-Image Personalization Models",
+    "abstract": "Generating and editing a person's face demands high precision, as even minor modifications can significantly alter a subject's perceived identity. Current personalization and editing methods built on general-purpose text-to-image models, however, often lack the precision required for fine-grained facial edits. We present a method for fine-grained identity tuning in text-to-image personalization models. Unlike standard image editing, which operates on a given image, identity tuning modifies the latent representation of a specific identity, enabling the generation of diverse images that consistently depict the same edited identity. To enable fine-grained latent identity tuning, we explore the latent space of a pre-trained, frozen encoder for text-to-image personalization. Our approach requires no additional training. Instead, it leverages the existing architecture of a frozen encoder to uncover latent semantic directions. This space consists of a set of latent tokens that play distinct roles in capturing different aspects of an identity and often correspond to specific spatial or semantic facial regions. We show that meaningful directions can be identified within this space and within subspaces defined by selected tokens, enabling localized, fine-grained, and semantically coherent edits. We validate our approach through qualitative and quantitative experiments that demonstrate diverse localized facial edits while preserving cross-image identity consistency. Project page at: https://garibida.github.io/IdentityTuning/",
+    "authors": [
+      "Daniel Garibi",
+      "Ronen Kamenetsky",
+      "Hadar Averbuch-Elor",
+      "Daniel Cohen-Or",
+      "Or Patashnik"
+    ],
+    "published": "2026-07-13",
+    "updated": "2026-07-13",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11885.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.11885",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "文本到图像个性化模型中的潜在身份调优",
+      "core_contribution": "提出了一种无需额外训练的细粒度潜在身份调优方法，能够在文本到图像个性化模型中实现局部化、语义一致的面部编辑，同时保持跨图像的身份一致性。",
+      "method": "该方法探索了预训练冻结编码器的潜在空间，通过分析潜在令牌的角色来识别语义方向；这些令牌对应不同的身份特征和面部区域，从而支持局部化编辑；无需模型再训练，直接利用现有架构实现精细控制。",
+      "findings": "定性和定量实验表明，该方法能实现多样化的局部面部编辑（如修改特定区域），同时有效保持身份一致性；潜在空间中的语义方向与具体面部特征高度对应，编辑结果具有语义连贯性。"
+    }
+  },
+  {
+    "id": "2607.10853",
+    "title": "Diversify Diffusion with Temperature Sampling and Variance-Corrective Time Shifting",
+    "abstract": "Diffusion models faithfully reproduce their training distribution, but also inherit its imbalances and leave rare or under-represented modes hard to reach. A natural inference-time remedy is to sample from the high-temperature target $p^{(γ)}_0(x) \\propto p_0(x)^γ$ for $0 < γ< 1$, which flattens dominant modes and lifts rare ones. However, naive score scaling while correctly reweighting modes also inflates the per-mode variance, breaking the reverse diffusion process and degrading sample quality. We introduce variance-corrective time shifting, a training-free fix that queries the network at a shifted timestep and scales the resulting score by $γ$, canceling the variance inflation while preserving the mode reweighting. The correction turns simple temperature sampling into a practical diversity knob for pretrained diffusion and flow-matching backbones with no retraining, and we demonstrate consistent gains at minimal cost to sample quality and condition fidelity across DiT, Stable Diffusion and Motion Diffusion models. We further show that the timing of the temperature intervention enables coarse-to-fine control: high-noise stages drive compositional diversity across modes, while low-noise stages drive local appearance variation under a fixed composition.",
+    "authors": [
+      "Peizhuo Li",
+      "Emre Aksan",
+      "Alexandru-Eugen Ichim",
+      "Thabo Beeler",
+      "Olga Sorkine-Hornung"
+    ],
+    "published": "2026-07-12",
+    "updated": "2026-07-12",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.10853.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.10853",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过温度采样与方差校正时间偏移实现扩散模型多样化",
+      "core_contribution": "提出一种无需重新训练即可提升预训练扩散模型生成多样性的方法，通过温度采样结合方差校正时间偏移，在保持样本质量和条件保真度的同时有效增强罕见模式的生成概率。",
+      "method": "该方法首先通过温度采样（γ < 1）对目标分布进行重加权以提升罕见模式概率，但直接应用会导致方差膨胀；因此引入方差校正时间偏移，通过在偏移时间步查询网络并对分数进行γ缩放，抵消方差膨胀同时保留模式重加权效果。整个过程无需额外训练，适用于各类扩散与流匹配模型。",
+      "findings": "实验表明，该方法在DiT、Stable Diffusion和Motion Diffusion等模型上均能以极小质量损失显著提升生成多样性；进一步发现温度干预时机可实现粗细粒度控制：高噪声阶段驱动跨模式的组合多样性，低噪声阶段在固定组合下驱动局部外观变化。"
+    }
+  },
+  {
+    "id": "2607.10800",
+    "title": "h-Flow: Flexible Flow-based Image Editing via Doob's h-Transform",
+    "abstract": "Editing images with pre-trained text-to-image flow models typically requires carefully balancing target alignment with the desired prompt and source consistency with the original image. Existing approaches either rely on inversion-based pipelines or heuristic source-to-target trajectory constructions, which often depend on architecture-specific designs or are sensitive to hyperparameters. In this paper, we propose h-Flow, a training-free and theoretically grounded flow-based editing framework. Inspired by Doob's $h$-Transform, we reformulate image editing as conditional generation under multiple terminal events corresponding to source consistency and target alignment. We first extend the classical $h$-Transform from SDE-based models to the deterministic RF framework by constructing an equivalent SDE with identical marginals. Within this formulation, we design dedicated $h$-functions for source consistency and target alignment, yielding closed-form reconstruction guidance and velocity-based semantic editing signals. We further introduce a velocity orthogonal decomposition to decouple reconstruction and editing directions, enabling a controllable trade-off between the two objectives. Extensive experiments demonstrate that h-Flow achieves effective, robust, and flexible editing across diverse scenarios. The code will be released soon.",
+    "authors": [
+      "Zehui Guo",
+      "Zhen Wang",
+      "Junwei Shu",
+      "Yang Li",
+      "Changbo Wang",
+      "Long Chen"
+    ],
+    "published": "2026-07-12",
+    "updated": "2026-07-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.10800.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.10800",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "h-Flow：基于Doob h-变换的灵活流模型图像编辑",
+      "core_contribution": "提出了h-Flow，一种无需训练、理论严谨的流模型图像编辑框架，通过Doob的h-变换将图像编辑重新表述为多终端事件下的条件生成问题，实现了源图像一致性与目标语义对齐的可控权衡。",
+      "method": "首先将确定性流模型（RF）转化为具有相同边缘分布的等价随机微分方程（SDE），扩展了经典h-变换的适用范围；针对源一致性和目标对齐分别设计了专用的h-函数，生成闭式重建引导和基于速度的语义编辑信号；进一步引入速度正交分解，解耦重建与编辑方向。",
+      "findings": "大量实验表明，h-Flow在多种场景下均能实现有效、鲁棒且灵活的图像编辑，无需依赖架构特定的设计或敏感的超参数调整，显著提升了编辑的稳定性和可控性。"
+    }
+  },
+  {
+    "id": "2607.10538",
+    "title": "Navigating the Open-Source Model Ecosystem: An Empirical Study of Creator Practices in Artistic Image Generation",
+    "abstract": "The open-sourcing of powerful image generation models has created a vibrant ecosystem where creators curate and combine a vast array of community-contributed models. This practice stands in sharp contrast to using closed-source tools like Midjourney. Yet, little is known about these emerging creative workflows. To bridge this gap, this paper presents the first large-scale empirical study of creator model usage behavior within this open-source image generation ecosystem. We construct a novel dataset of 6 million images with their embedded generation metadata -- a detailed recipe of the creation process, including the models used and the prompts. By linking the usage of 22.4K base models and 154K LoRA models to the images, our findings underscore the ecosystem's unique strengths and its inherent obstacles. This provides valuable insights for making this ecosystem more sustainable and innovative. Moreover, we make our dataset publicly available, providing creators with practical references for producing better artworks and researchers to facilitate further studies.",
+    "authors": [
+      "Yiluo Wei",
+      "Yupeng He",
+      "Qiming Ye",
+      "Gareth Tyson"
+    ],
+    "published": "2026-07-12",
+    "updated": "2026-07-12",
+    "categories": [
+      "cs.HC",
+      "cs.CV",
+      "cs.CY"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.10538.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.10538",
+    "primary_category": "cs.HC",
+    "score": 85,
+    "summary": {
+      "title_zh": "探索开源模型生态系统：艺术图像生成中创作者实践的实证研究",
+      "core_contribution": "首次对开源图像生成生态系统中创作者模型使用行为进行大规模实证研究，揭示了该生态系统的独特优势与固有障碍，并为促进其可持续性与创新性提供了宝贵见解。",
+      "method": "研究构建了一个包含600万张图像及其生成元数据（如使用模型和提示词）的新型数据集；通过分析22.4K个基础模型和154K个LoRA模型的使用情况，系统追踪了创作者的模型组合与工作流程。",
+      "findings": "开源模型生态系统支持高度定制化的创作流程，但面临模型选择与管理复杂性等障碍；研究公开了数据集，为创作者优化艺术创作和学者进一步研究提供了实用参考。"
+    }
+  }
+]
