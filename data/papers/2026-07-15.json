@@ -1,0 +1,148 @@
+[
+  {
+    "id": "2607.12539",
+    "title": "DiTailed: Ensuring Visual Object Consistency in Text-Image-to-Image Flow Matching Models",
+    "abstract": "Despite remarkable progress in text-guided image editing, generative models frequently fail to preserve visual object consistency, defined as the preservation of a subject's key attributes throughout the editing process. We address this limitation through three contributions. First, we introduce ABO-Edit, a dataset specifically designed to study object consistency, comprising over 12,000 triplets of source images, editing prompts, and high-quality target images rendered from artist-designed 3D assets, with multi-view coverage and human-verified quality control. Second, we uncover an overlooked property of image-editing rectified flow models: the conditioning embedding space, not directly supervised during training, encodes a prediction of the final generated image even at high noise levels. Third, exploiting this finding, we propose FlowMirror, a parameter-free auxiliary loss that supervises this conditioning embedding space. Without architectural changes, our method improves generation quality across several metrics over baselines.",
+    "authors": [
+      "Francesco Taioli",
+      "Daniel Coelho",
+      "Iaroslav Melekhov",
+      "Roberto Alcover-Couso",
+      "Jose Miguel Grande Saiz",
+      "Virginia Fernandez Arguedas",
+      "Artur Bekasov"
+    ],
+    "published": "2026-07-14",
+    "updated": "2026-07-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.12539.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.12539",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "DiTailed：确保文本-图像到图像流匹配模型中的视觉对象一致性",
+      "core_contribution": "本文提出了ABO-Edit数据集以系统研究对象一致性问题，并发现图像编辑流模型的条件嵌入空间隐含编码了最终生成图像的预测信息，进而利用此发现设计了无需参数的FlowMirror辅助损失函数来提升对象一致性。",
+      "method": "首先构建了ABO-Edit数据集，包含超过1.2万个由艺术家设计的3D资产渲染的高质量图像三元组（源图像、编辑提示、目标图像），并进行了多视角覆盖和人工质量验证。其次，通过分析发现图像编辑校正流模型的条件嵌入空间在高噪声水平下仍能预测最终生成图像。基于此，提出了FlowMirror损失函数，直接对该条件嵌入空间进行监督，而无需修改模型架构。",
+      "findings": "实验表明，所提出的FlowMirror方法在多个评估指标上均优于基线模型，有效提升了生成图像的质量和对象关键属性在编辑过程中的一致性。"
+    }
+  },
+  {
+    "id": "2607.10535",
+    "title": "Improving Sample Diversity in Autoregressive Text-to-Image Generation via Cluster Truncation",
+    "abstract": "While diffusion models achieve state-of-the-art image quality for text-to-image (T2I) generation, recent work has demonstrated that they suffer from sample diversity collapse. In this work, we investigate whether autoregressive (AR) image generation models can push the Pareto frontier between image quality and sample diversity. With recent advances in quality and efficiency, AR models have emerged as a viable alternative to diffusion-based image generation. Beyond enabling new use cases such as interleaved image-text generation, their sequential generation process makes them compatible with a wide range of token-based decoding strategies originally developed to improve diversity in text generation. Motivated by the potential of a better diversity-quality tradeoff in the AR paradigm, we present the first systematic study of sample diversity in AR image generation models. We show that two key properties of AR image generation, persistently high token-level entropy and substantial redundancy in visual token spaces, limit the effectiveness of existing token-level decoding methods for diversity enhancement. We therefore propose $p$-less cluster, a new decoding strategy that performs entropy-based truncation sampling at cluster level rather than at token level. We evaluate our approach and baseline decoding methods across four autoregressive T2I models and two datasets using a comprehensive suite of metrics spanning image quality, prompt alignment, and diversity. Our results show that $p$-less cluster unlocks the greatest diversity across most evaluated autoregressive T2I models and datasets while maintaining image quality and prompt alignment.",
+    "authors": [
+      "Trang Nguyen",
+      "Shuang Wu",
+      "Runyan Tan",
+      "Phillip Howard"
+    ],
+    "published": "2026-07-12",
+    "updated": "2026-07-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.10535.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.10535",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过聚类截断改进自回归文本到图像生成中的样本多样性",
+      "core_contribution": "本文首次系统研究了自回归图像生成模型中的样本多样性问题，并提出了一种新的解码策略——p-less cluster，在保持图像质量和提示对齐的同时，显著提升了生成样本的多样性。",
+      "method": "研究指出，自回归图像生成的两个关键特性——持续高令牌级熵和视觉令牌空间中的大量冗余——限制了现有令牌级解码方法提升多样性的效果。为此，作者提出了p-less cluster解码策略，该方法在聚类级别而非令牌级别执行基于熵的截断采样，从而更有效地利用视觉令牌的冗余结构来增强多样性。",
+      "findings": "在四个自回归T2I模型和两个数据集上的综合评估表明，p-less cluster解码策略在大多数评估场景中实现了最高的样本多样性，同时保持了与基线方法相当的图像质量和提示对齐度，成功推动了图像质量与样本多样性之间的帕累托前沿。"
+    }
+  },
+  {
+    "id": "2607.10405",
+    "title": "Spatula: Exploring On-Demand In-Situ Interfaces and Interaction for Attribute Control",
+    "abstract": "Controlling attributes is a critical step toward achieving the final creative outcome, yet current approaches fall short in supporting users in the iterative refinement of generative content. We propose Spatula, a proof-of-concept system that generates on-demand, in-situ attribute control interfaces and interactions for creating motion graphics. Building on a technical probe that automatically analyzes animation context and generates corresponding attributes and UI, we frame attribute control as an explorable landscape and explore the attribute control space along four key dimensions: Discoverability, Resolution, Scope, and Expandability. Findings from a user study (N=12) show that our system provides intuitive and convenient interactions while supporting diverse needs for fine-grained parameter control. Furthermore, our applications demonstrate that the plug-and-play design generalizes to other domains, such as web design and 3D modeling.",
+    "authors": [
+      "Boyu Li",
+      "Linjie Qiu",
+      "Lin-Ping Yuan",
+      "Duotun Wang",
+      "Yue Jiang",
+      "Zeyu Wang",
+      "Hongbo Fu"
+    ],
+    "published": "2026-07-11",
+    "updated": "2026-07-11",
+    "categories": [
+      "cs.HC",
+      "cs.AI",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.10405.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.10405",
+    "primary_category": "cs.HC",
+    "score": 85,
+    "summary": {
+      "title_zh": "Spatula：探索用于属性控制的按需原位界面与交互",
+      "core_contribution": "提出了一个名为Spatula的概念验证系统，该系统能够为动态图形创作生成按需、原位的属性控制界面与交互，将属性控制框架化为一个可探索的“景观”。",
+      "method": "系统基于一个技术探针，能自动分析动画上下文并生成相应的属性参数与用户界面。研究围绕属性控制空间的四个关键维度（可发现性、分辨率、范围、可扩展性）展开探索，旨在支持用户对生成内容进行迭代式精细化调整。",
+      "findings": "用户研究（N=12）表明，该系统提供了直观便捷的交互，同时支持对细粒度参数控制的多样化需求。此外，应用案例证明其即插即用的设计可推广至网页设计和3D建模等其他领域。"
+    }
+  },
+  {
+    "id": "2607.10308",
+    "title": "Generalize LMMs to Versatile Visual Modalities via Fabricated Modality Synthesis",
+    "abstract": "Despite the advancements of Large Multimodal Models (LMMs) in RGB vision, their ability to generalize to unseen visual modalities remains a largely unexplored challenge. We argue that different visual modalities are merely distinct samplings of the same physical world. Therefore, effective generalization requires models to possess both modality-agnostic perception of scene semantics and the adaptability to modality-specific characteristics. To achieve this, we propose a training framework, VVM-Tuning, to equip LMMs with these capabilities through modality synthesis and modality contexts. Specifically, we synthesize diverse appearance-varied images from RGB scenes, training the model to disentangle invariant semantics from varying visual appearances, and align these appearances with language for visual concepts decoupled from modalities. We then introduce modality contexts in the prompt and use instruction tuning to assist the model in mapping these appearance variations back to modality-related attributes, enabling zero-shot adaptation to unseen modalities during inference. To facilitate research in this direction, we introduce VVM-Bench, a comprehensive benchmark featuring 6 real and synthetic modalities to evaluate semantic perception and modality understanding. Experiments demonstrate that, via our training on synthetic modalities, 5 tested models exhibit consistent improvements on both real-world and novel synthetic modalities without in-modality training. Source code and data will be publicly available at https://github.com/Hunter-Will/VVM-Tuning.",
+    "authors": [
+      "Shihao Yuan",
+      "Yuanze Li",
+      "Ruyi Zhang",
+      "Ming Liu",
+      "Wangmeng Zuo"
+    ],
+    "published": "2026-07-11",
+    "updated": "2026-07-11",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.10308.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.10308",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "通过合成模态泛化大型多模态模型至多样化视觉模态",
+      "core_contribution": "提出了VVM-Tuning训练框架，使大型多模态模型能够通过合成模态数据学习模态无关的场景语义感知和模态特定的适应性，实现对新视觉模态的零样本泛化；并构建了涵盖6种真实与合成模态的评估基准VVM-Bench。",
+      "method": "首先，通过从RGB场景合成外观多样化的图像，训练模型将不变的场景语义与变化的视觉外观解耦，并将这些外观与语言对齐以学习独立于模态的视觉概念。其次，在提示中引入模态上下文，并利用指令调优帮助模型将外观变化映射回与模态相关的属性，从而在推理时实现对新模态的零样本适应。",
+      "findings": "实验表明，仅使用合成模态数据进行训练后，5个测试模型在真实世界和新合成模态上均表现出一致的性能提升，且无需针对特定模态进行训练。这验证了所提方法在增强模型跨模态泛化能力方面的有效性。"
+    }
+  },
+  {
+    "id": "2607.10301",
+    "title": "ChartSync: A Benchmark for Visuo-Logical Cascading Chart Editing",
+    "abstract": "Generative image editing models struggle with structured statistical charts when data modifications require geometric synchronization. We formalize this task as Visuo-Logical Cascading Editing (VLCE). However, existing methods remain confined to localized text substitutions and struggle with dependency-aware cascading updates. To systematically evaluate this capability, we introduce ChartSync, an expert-validated benchmark constructed via a programmatic rendering pipeline that guarantees deterministic visuo-logical coupling for the ground truth. ChartSync comprises 870 triplets across 9 chart categories and 4 task types, including 235 geometry-coupled VLCE instances that specifically test cascading text-to-geometry synchronization. We further evaluate these instances via a two-tier framework combining objective visual metrics with a vision-language model judge paradigm to assess low-level fidelity alongside multimodal comprehension and reasoning. Evaluating 14 image editing models and one code-mediated pipeline reveals a nuanced capability gap: most open-source models suffer severe drops in geometric synchronization, while only two frontier proprietary models show emerging VLCE capability, with their residual errors mainly involving semantic isolation and background corruption. Our detailed error analysis deconstructs these failure paradigms to identify core meta-abilities for guiding future multimodal architectures. The ChartSync dataset and code are publicly released at https://github.com/kaka-yjk/ChartSyncCodebase.",
+    "authors": [
+      "Jiakang Yu",
+      "Yixuan Chai",
+      "Tianci Wang",
+      "Rihui Jin",
+      "Guangkai Xu",
+      "Hongtao Deng",
+      "Xun Zhu",
+      "Wang Gao",
+      "Xinrun Guo",
+      "Haipang Wu"
+    ],
+    "published": "2026-07-11",
+    "updated": "2026-07-11",
+    "categories": [
+      "cs.CV",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.10301.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.10301",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ChartSync：面向视觉-逻辑级联图表编辑的基准测试",
+      "core_contribution": "本文提出了Visuo-Logical Cascading Editing（VLCE）这一新任务，并构建了ChartSync基准数据集，用于系统评估生成式图像编辑模型在数据修改时保持几何同步的能力。",
+      "method": "研究通过程序化渲染流程构建了专家验证的ChartSync基准，包含870个三元组，涵盖9种图表类型和4种任务类型，其中235个实例专门测试级联的文本到几何同步。评估采用双层框架，结合客观视觉指标和视觉-语言模型评判范式，以同时评估低层保真度和多模态理解推理能力。",
+      "findings": "评估14个图像编辑模型和一个代码介导流程发现：大多数开源模型在几何同步方面表现严重下降；仅有两个前沿专有模型展现出初步的VLCE能力，其残留错误主要涉及语义隔离和背景破坏。详细的错误分析揭示了当前模型在依赖感知的级联更新方面存在核心能力缺口。"
+    }
+  }
+]
