@@ -316,7 +316,7 @@
         <div class="page-date">📅 2026-07-17</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 5
+            计算机视觉: 4 | 机器学习: 1
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,30 +328,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2607.13639</span>
+          <span class="paper-id">2607.15273</span>
         </div>
         <span class="score-badge">相关性 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2607.13639" target="_blank">OvisOCR2 Technical Report</a>
+        <a href="https://arxiv.org/abs/2607.15273" target="_blank">MeanFlowNFT: Bringing Forward-Process RL to Average-Velocity Generators</a>
       </h3>
-      <p class="paper-title-zh">OvisOCR2技术报告</p>
-      <p class="paper-authors">Shiyin Lu, Yinglun Li, Yu Xia, Yuhui Chen, An-Yang Ji 等 (13 位作者)</p>
+      <p class="paper-title-zh">MeanFlowNFT：将前向过程强化学习引入平均速度生成器</p>
+      <p class="paper-authors">Yushi Huang, Xiangxin Zhou, Jun Zhang, Liefeng Bo, Tianyu Pang</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种0.8B参数规模的端到端文档解析模型OvisOCR2，在OmniDocBench v1.6上以96.58的总分达到当前最优性能，首次使端到端模型在该榜单上超越传统流水线方法。</div>
-        <div class="summary-section"><strong>方法:</strong> 构建了一个数据引擎，结合经过筛选的真实文档标注和从同一HTML源生成渲染图像与Markdown目标的合成页面。训练流程包括监督微调、在4B分支上使用多组件奖励设计进行强化学习、将策略蒸馏到0.8B模型以及模型融合。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在OmniDocBench v1.6上取得96.58的总体最优分数，在PureDocBench上获得75.06的最高Avg3分数，并在涵盖更多长尾和挑战场景的内部基准测试中取得最佳整体性能，验证了模型的泛化能力和鲁棒性。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了MeanFlowNFT，首次将前向过程强化学习框架成功应用于平均速度生成器（MeanFlow），在保持其快速少步采样的同时实现了奖励优化，并严格证明了策略改进保证。</div>
+        <div class="summary-section"><strong>方法:</strong> 利用MeanFlow恒等式建立平均速度与瞬时速度之间的桥梁，构造一个诱导的瞬时速度预测器；然后将DiffusionNFT的强化学习目标应用于该预测器，使得奖励优化在MeanFlow上定义明确；采样时仍使用原始的平均速度，从而保留MeanFlow的快速少步生成特性。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在图像和视频生成实验中，MeanFlowNFT一致性地提升了基线性能；在SD3.5-M上，它在8项指标中的6项上超越了先前的少步强化学习调优生成器；在Wan 2.1上，4步MeanFlowNFT的VBench得分达到84.33，超过了50步LongCat-Video RL的82.57，表明仅用少量采样步数即可超越多步强化学习调优的扩散模型。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>We introduce OvisOCR2, a 0.8B document parsing model. OvisOCR2 is designed as an end-to-end parser: given a document page image, it generates a Markdown representation in natural reading order, covering text, formulas, tables, and visual regions. We build a data engine that combines filtered real-document annotations with synthetic pages whose rendered images and Markdown targets are derived from the same HTML source. The training recipe includes supervised fine-tuning, reinforcement learning on a 4B branch with a multi-component reward design, on-policy distillation into the 0.8B model, and model fusion. On OmniDocBench v1.6, OvisOCR2 achieves a state-of-the-art overall score of 96.58, placing an end-to-end model at the top of this leaderboard previously dominated by pipeline methods and highlighting the potential of end-to-end document parsing. On PureDocBench, OvisOCR2 also achieves the highest Avg3 score of 75.06. Beyond these two public benchmarks, we evaluate OvisOCR2 on an in-house benchmark designed to cover a broader set of long-tail and challenging scenarios. OvisOCR2 obtains the best overall performance among the compared methods, providing further evidence of its generalization and robustness. OvisOCR2 is available at https://huggingface.co/ATH-MaaS/OvisOCR2.</p>
+        <p>MeanFlow generators achieve fast few-step sampling by predicting average velocities over time intervals, making them attractive for efficient generation. Reinforcement learning (RL) has become a powerful way to align diffusion and flow models with human preferences and task-specific objectives. In particular, DiffusionNFT offers an efficient forward-process RL framework that does not require reverse-process trajectories or likelihood estimation. However, applying such RL methods to MeanFlow remains underexplored. DiffusionNFT optimizes instantaneous velocities, whereas MeanFlow samples with average velocities. To bridge this gap, we introduce MeanFlowNFT. Inspired by the MeanFlow identity, which bridges average and instantaneous velocities, we construct an induced instantaneous-velocity predictor. We apply the DiffusionNFT objective to this predictor, making reward optimization well-defined for MeanFlow. Sampling remains based on the average velocity, preserving MeanFlow's fast few-step generation. We further prove that MeanFlowNFT inherits DiffusionNFT's strict policy-improvement guarantee. Experiments on image and video generation show that MeanFlowNFT consistently improves baselines. Moreover, it outperforms prior state-of-the-art RL-tuned few-step generators on most metrics ($6$ of $8$ on SD3.5-M), and can even surpass multi-step RL-tuned diffusion while using only a few sampling steps. For instance, on Wan 2.1, $4$-step MeanFlowNFT reaches a VBench score of $84.33$, surpassing $50$-step LongCat-Video RL ($82.57$).</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2607.13639" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2607.13639.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2607.15273" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.15273.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,94 +360,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2607.13539</span>
-        </div>
-        <span class="score-badge">相关性 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2607.13539" target="_blank">ThinkBLOX: 3D Indoor Scene Generation with Progressive Reasoning</a>
-      </h3>
-      <p class="paper-title-zh">ThinkBLOX：基于渐进推理的三维室内场景生成</p>
-      <p class="paper-authors">Yuan Xiao, Can Wang, Xiangyu Kong, Jing Liao</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种基于视觉语言模型（VLM）的渐进式推理框架ThinkBLOX，将三维场景布局生成建模为状态依赖的逐步推理与行动过程，并引入分层去耦的强化学习策略，显著提升了生成场景的物理合理性、语义一致性和交互编辑能力。</div>
-        <div class="summary-section"><strong>方法:</strong> 首先构建了包含224,757个程序化放置对的大规模数据集ThinkBLOX-Data-200K，每个样本附带多视角场景上下文、显式思维链推理过程和结构化JSON布局。然后通过监督微调使VLM学会在增量更新下弥合推理与行动之间的差距。针对场景生成的多解性导致监督微调存在奖励冲突的问题，提出了分层去耦的GDPO强化学习方案，将异构奖励分为不同层级，稳定了物理有效性、语义合理性和推理-行动一致性三个维度的策略优化。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 实验表明，ThinkBLOX在物理合理性、语义对齐和交互可编辑性上显著优于现有的一次性生成和迭代生成基线方法。此外，该方法支持多种应用场景，包括全局生成、局部生成以及三维场景的重排布。</div>
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>While traditional graphics methods often synthesize 3D indoor scenes autoregressively or hierarchically, recent vision-language model (VLM)-based generators predominantly adopt a one-shot paradigm where the full layout is planned at once. This one-shot approach often requires global re-optimization or complete reconstruction during interactive editing (e.g., inserting or moving objects) and can lead to physically or semantically poorly organized arrangements. To address these challenges, we propose ThinkBLOX, a VLM-based progressive reasoning framework that iteratively designs and refines 3D scenes. ThinkBLOX treats layout generation as a state-conditioned, step-by-step reasoningand-action process. To power this, we construct the ThinkBLOX-Data-200K dataset, containing 224,757 procedural placement pairs annotated with multi-view scene context, explicit Chain-of-Thought (CoT) rationales, and structured JSON layouts. Through supervised fine-tuning (SFT) on this dataset, the VLM learns to bridge the reasoning-action gap under incremental updates. Furthermore, recognizing that scene synthesis is inherently a multisolution task where SFT suffers from reward conflict, we introduce Tier-Decoupled GDPO. This reinforcement learning scheme organizes heterogeneous rewards into distinct tiers, stabilizing policy optimization across physical validity, semantic plausibility, and reasoning-action consistency. Extensive experiments show that ThinkBLOX significantly outperforms recent one-shot and iterative baselines in physical plausibility, semantic alignment, and interactive editability. Additionally, we show that it supports diverse applications, including both global and local generation and rearrangement of 3D scenes.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2607.13539" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2607.13539.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2607.13125</span>
-        </div>
-        <span class="score-badge">相关性 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2607.13125" target="_blank">Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation</a>
-      </h3>
-      <p class="paper-title-zh">Boogu-Image-0.1：推动开源统一多模态理解与生成</p>
-      <p class="paper-authors">Guoxuan Chen, Chufeng Xiao, Haoran Yang, Siyue Xie, Binxiao Huang 等 (33 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了一个开源统一多模态理解与生成模型家族Boogu-Image-0.1，在有限计算预算下，通过改进模型理解、数据质量和训练流程，结合推理时缩放策略，实现了与领先闭源系统相媲美的性能。</div>
-        <div class="summary-section"><strong>方法:</strong> 该模型家族包含Base、Turbo、Edit和Edit-Turbo四种变体，分别针对高质量文本到图像生成、快速推理、指令式编辑和中英双语文本渲染。研究通过提升模型理解能力、优化数据质量与训练管线，并引入智能体推理时缩放技术，在仅使用2.0862亿张独特图像和约40万美元理论训练成本的情况下，显著增强了生成与编辑性能。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在标准基准测试中，Boogu-Image-0.1持续匹配或超越其他开源模型，并接近领先闭源系统（如Nano-Banana-Pro和GPT-Image-2）的表现。所有权重、代码和配方均以Apache 2.0许可证开源发布。</div>
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>We introduce Boogu-Image-0.1, an open-source unified multimodal understanding and generation model family, comprising Base, Turbo, Edit, and Edit-Turbo variants. It delivers competitive performance in high-quality text-to-image generation, fast inference, instruction-based editing, and bilingual (Chinese-English) text rendering. Closed-source multimodal systems like Nano-Banana-Pro and GPT-Image-2 achieve strong performance through system-level integration rather than a single model, yet their internal practices remain largely undisclosed. In this work, we demonstrate that targeted improvements in model understanding, data quality, and training pipelines, coupled with agentic inference-time scaling, can substantially enhance generation and editing performance even under highly constrained compute budgets. Comprehensive evaluations show that Boogu-Image-0.1 consistently matches or surpasses other open-source models across standard benchmarks, and achieves results approaching leading closed-source systems. Notably, this is accomplished with only 208.62 million unique images. The base model's theoretical training cost is only approximately \$400K. We share practical discussions that we believe are valuable to the broader research community, and release weights, code, and recipes under Apache 2.0 to advance the open ecosystem for unified multimodal understanding and generation. Our code is available here: https://github.com/Boogu-Project/Boogu-Image.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2607.13125" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2607.13125.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2607.12404</span>
+          <span class="paper-id">2607.14945</span>
         </div>
         <span class="score-badge">相关性 75/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2607.12404" target="_blank">Contrastive-Augmented Flow Matching for Style-Content Disentanglement</a>
+        <a href="https://arxiv.org/abs/2607.14945" target="_blank">Introspective Attention Modulation for Safe Text-to-Image Generation</a>
       </h3>
-      <p class="paper-title-zh">对比增强流匹配用于风格-内容解耦</p>
-      <p class="paper-authors">Yusong Li, Pingchuan Ma, Ming Gui, Vincent Tao Hu, Björn Ommer</p>
+      <p class="paper-title-zh">内省注意力调制：面向安全的文本到图像生成</p>
+      <p class="paper-authors">Basim Azam, Hossein Rahmani, Naveed Akhtar</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出一种名为对比增强流匹配（CAtFM）的框架，通过将对比正则化集成到可逆流匹配中，在无需假设内容与风格完全分离的前提下，隐式地促进结构化内容-风格表征的解耦，从而提升可控生成与组合泛化能力。</div>
-        <div class="summary-section"><strong>方法:</strong> 该方法在可逆流匹配的训练过程中，对预测的端点施加对比监督，而非约束中间潜变量或速度场，从而在传输分布间强制执行语义一致性，使解耦自然涌现。主要实验在CLIP嵌入空间中进行，并额外使用冻结的DINO和ALIGN编码器进行验证。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在合成数据、域内风格以及真实世界基准（ImageNet、WikiArt、DomainNet、DTD）上，CAtFM相比生成式和判别式基线方法，在内容与风格检索、嵌入聚类分离度以及开放集鲁棒性方面均取得更优结果，表明该方法能有效提升分布偏移下的解耦能力与鲁棒性。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种通过推理时内省调节注意力动态来实现安全文本到图像生成的新方法，在不牺牲语义对齐和图像质量的前提下，显著提升模型对不安全内容的鲁棒性。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法在图像合成过程中实时分析并重新平衡注意力激活，通过内省机制引导生成远离不安全概念，同时保持语义一致性。它不依赖参数微调或外部分类器，而是直接在注意力空间进行调控，从而实现对部署模型的内在安全控制。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在标准与对抗性安全基准测试中，该方法在实现卓越安全评分的同时，保持甚至提升了语义对齐与感知质量。实验表明，注意力空间调控相比现有概念擦除机制，为基于扩散变换器的图像生成提供了更可靠的安全路径。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Learning representations that separate content and style is crucial for controllable generation and compositional generalization. However, diffusion and flow-based models trained primarily with generative objectives often produce entangled or misaligned factors. To address this gap, we introduce Contrastive Augmented Flow Matching (CAtFM), a framework that integrates contrastive regularization into an invertible flow matching formulation to promote structured content-style representations. Rather than constraining intermediate latents or velocity fields, we apply contrastive supervision to predicted endpoints during training, enforcing semantic consistency across transported distributions while allowing disentanglement to emerge implicitly, without assuming strictly pure or fully factorized content and style representations. Our main experiments operate in the CLIP embedding space, with additional validation using frozen DINO and ALIGN encoders. Across synthetic data, in-domain styles, and real-world benchmarks (ImageNet, WikiArt, DomainNet, and DTD), CAtFM improves content and style retrieval, enhances embedding cluster separation, and achieves stronger open-set robustness compared to generative and discriminative baselines. Overall, CAtFM provides a simple way to couple discriminative constraints with deterministic transport, improving disentanglement and robustness under distribution shift.</p>
+        <p>State-of-the-art flow based text-to-image (T2I) models exhibit remarkable generative abilities but remain vulnerable to producing unsafe content. Prior safety efforts range from concept erasure and prompt filtering to classifier-based gating. However, simple techniques like parameter efficient adaptations of the models easily bypass such guardrails. We introduce a unique principled approach that achieves safety by regulating the model's attention dynamics through inference-time introspection, exhibiting intrinsic robustness. Our method analyzes and rebalances attention activations throughout image synthesis, steering generations away from unsafe concepts while preserving semantic alignment. This introspective control ensures safety of deployed models. Across standard and adversarial safety benchmarks, our approach achieves remarkable safety scores while maintaining or even improving alignment and perceptual quality. Our results reveal that attention-space regulation offers a considerably more promising path to safer diffusion transformer based image generation than the existing concept erasing mechanism.Our code can be accessed at https://basim-azam.github.io/iam/</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2607.12404" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2607.12404.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2607.14945" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.14945.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,30 +392,94 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2607.11199</span>
+          <span class="paper-id">2607.15082</span>
         </div>
-        <span class="score-badge">相关性 75/100</span>
+        <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2607.11199" target="_blank">DynEval: Holistic Evaluations of T2I Generative Models in the Wild</a>
+        <a href="https://arxiv.org/abs/2607.15082" target="_blank">Towards Hierarchical Structure Understanding of Newspaper Images</a>
       </h3>
-      <p class="paper-title-zh">DynEval：野外文本到图像生成模型的整体评估</p>
-      <p class="paper-authors">Shyam Marjit, Dheeraj Baiju, Anuj Shikarkhane, Akhil Sakthieswaran, Sayak Paul 等 (6 位作者)</p>
+      <p class="paper-title-zh">面向报纸图像的分层结构理解</p>
+      <p class="paper-authors">William Mocaër, Solène Tarride, Thomas Constum, Merveilles Agbeti-Messan, Tom Simon 等 (10 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种动态评估框架DynEval，能够联合评估文本-图像对齐和图像质量，并通过构建大规模数据集和课程学习策略，训练出与人类判断高度一致的紧凑型评估器。</div>
-        <div class="summary-section"><strong>方法:</strong> 首先构建了包含50万对提示-图像的GenDB数据集，以及25万条指令数据的DynEvalInstruct，后者通过将评估分解为文本-图像对齐和视觉质量推理的结构化流程生成。然后利用课程学习策略，对紧凑型评估器进行全参数微调，以蒸馏大型视觉语言模型的评估能力，最终得到DynEval-2B和DynEval-4B两个版本。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在11个基准测试上的广泛比较中，DynEval与人类判断的整体相关性优于现有评估器。此外，它能够对36个T2I模型在42个子类别和9个语义维度上进行细粒度的能力与失败模式分析。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了两种互补的报纸结构理解方法，并发布了专门用于评估历史报纸分层信息检索的新数据集Finlam La Liberté，为复杂文档数字化提供了可扩展的解决方案。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先，构建了一个模块化的自底向上流水线，结合YOLO进行版面检测、LayoutReader进行阅读顺序预测以及自定义文章分割算法。其次，提出了Tiramisu，一种新颖的端到端基于Transformer的架构，通过迭代分层过程显式建模文档层次结构，并行执行章节与文章分离、区块定位、语义分类和阅读顺序预测。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验结果表明，两种方法均能有效重建复杂的报纸层次结构，对比分析揭示了它们在大规模文档数字化中的各自优势。Tiramisu的训练代码（包括合成报纸生成器）已开源。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Recent advances in text-to-image (T2I) generation have led to models capable of producing highly realistic images. Yet, reliably evaluating their outputs remains challenging, especially at scale. Existing automatic evaluators, often relying on a static prompt set, struggle to capture subtle failure modes such as partial prompt misalignment, compositional errors, or visually plausible but semantically incorrect generations. In this work, we introduce DynEval, a Dynamic Evaluation framework designed to jointly assess text-to-image alignment and image quality of T2I models. To support scalable training beyond limited human-annotated data, we construct two large datasets. First, we build GenDB, a collection of 500K prompt-image pairs generated from human-written prompts drawn from DiffusionDB using a tiered prompt-model generation strategy. Second, building upon GenDB, we construct DynEvalInstruct, a 250K instruction dataset comprising prompt-image-response triplets distilled from a structured evaluation pipeline that decomposes evaluation into text-image alignment and visual quality reasoning. Using this dataset, we perform full fine-tuning of a compact evaluator through a curriculum learning strategy to effectively distill the superior evaluation capabilities of a larger teacher vision-language model, resulting in DynEval-2B and DynEval-4B. In extensive comparisons against existing evaluators across 11 benchmarks, our evaluator achieves a higher overall correlation with human judgments. Furthermore, it provides fine-grained analysis of the capabilities and failure modes of 36 T2I models across 42 subcategories and 9 semantic dimensions.</p>
+        <p>Understanding newspaper images remains a challenging task due to their complex, nested hierarchical structures and dense, heterogeneous layouts. In this paper, we explore two complementary approaches for newspaper structure understanding. First, we present a modular bottom-up pipeline that combines state-of-the-art open-source models: YOLO for layout detection, LayoutReader for reading order prediction, and a custom algorithm for article segmentation. This approach leverages existing robust components while maintaining flexibility and interpretability. Second, we introduce Tiramisu (Tiered Transformers for Hierarchical Structure Understanding), a novel end-to-end transformer-based architecture that explicitly models document hierarchy through an iterative tiered process. Tiramisu performs section and article separation, block localization, semantic categorization, and reading order prediction using highly parallelized attention mechanisms. Finally, we release Finlam La Liberté, a new dataset designed specifically for evaluating hierarchical information retrieval in historical newspapers. Experimental results demonstrate the effectiveness of both approaches in reconstructing complex newspaper hierarchies, with comparative analysis highlighting their respective strengths for scalable document digitization. The Tiramisu training code, including the synthetic newspaper generator, is available at https://git.litislab.fr/tiramisu/tiramisu-newspaper-articles-extractor.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2607.11199" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2607.11199.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2607.15082" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.15082.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器学习</span>
+          <span class="paper-id">2607.14962</span>
+        </div>
+        <span class="score-badge">相关性 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2607.14962" target="_blank">Multi-Axis Max@K Reinforcement Learning for Representative Diversity in Text-to-Image Generation</a>
+      </h3>
+      <p class="paper-title-zh">面向文本到图像生成中代表性多样性的多轴Max@K强化学习</p>
+      <p class="paper-authors">Ku Onoda, Paavo Parmas, Hiroki Furuta, Soichiro Nishimori, Yuta Oshima 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种基于组的强化学习目标——多轴max@K，用于提升扩散式文本到图像模型在预定义语义模式上的覆盖多样性，并有效缓解人口统计偏差。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先将多样性问题形式化为对一组语义指定模式的目标模式覆盖。然后提出多轴max@K目标：对一组样本，先对每个类别取样本间的最大得分，再对各类别最大值求和；在信用分配中，仅当样本能提升某类别的组内最大值时才赋予正权重，从而鼓励不同样本贡献于不同类别。该方法在合成数据和SD3.5模型上通过确定性像素颜色奖励验证了信用分配机制，并进一步应用于感知外观公平性评估。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在三个自动评估器上，多轴max@K相比基础模型将公平性得分提升了0.23-0.36，同时保持了图像质量和文本对齐性能。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Text-to-image (T2I) models can synthesize realistic, prompt-aligned images, yet samples generated for the same prompt often cover only a small subset of visually distinct modes. This limits the diversity of images, and for person-centric prompts, can reflect or amplify demographic skew. We formalize this problem as coverage of a predefined set of semantically specified modes, which we call target-mode coverage. We then propose multi-axis max@K, a group-based reinforcement learning objective for improving such coverage in diffusion-based T2I models. Given a group of samples and one score per target category, multi-axis max@K first takes the maximum score across samples for each category and then sums these category-wise maxima. The resulting credit assignment gives a sample positive weight on a category only when it increases that category's group-wise maximum, allowing different samples to contribute to different categories. We first validate the credit-assignment mechanism on a synthetic mixture and on SD3.5-M using deterministic pixel-based color rewards. We then evaluate the same objective on perceived-appearance fairness. Across three automatic evaluators on held-out prompts, multi-axis max@K improves the Fairness Score by 0.23-0.36 relative to the base model, while maintaining image quality and text alignment.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.14962" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.14962.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2607.14807</span>
+        </div>
+        <span class="score-badge">相关性 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2607.14807" target="_blank">TAMF-VTON: Texture-Aware Mask-Free Virtual Try-On via High-Fidelity Image Synthesis</a>
+      </h3>
+      <p class="paper-title-zh">TAMF-VTON：通过高保真图像合成实现纹理感知的无遮罩虚拟试穿</p>
+      <p class="paper-authors">Jie Wang, Qian He, Gaofeng He, Xiaogang Jin, Huamin Wang</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种无需分割遮罩、支持多衣物组合且能高保真保留纹理细节的虚拟试穿框架，解决了现有方法依赖遮罩、纹理丢失和组合受限的问题，为实际电商部署提供了可扩展的商业化方案。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法通过统一生成管道实现，包含三个关键组件：一是轻量级混合专家（MoE）适配方案，在不破坏基础模型编辑能力的前提下高效微调；二是频域监督机制，显式优化高频频谱一致性以保留高保真纹理；三是自适应修复策略的数据处理管道，通过模拟逆虚拟试穿过程生成高质量训练对。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，该方法在定量指标和感知质量上均优于现有最先进方法；在NVIDIA RTX 4090上通过INT4量化，每张图像推理时间低于15秒；支持无遮罩操作、灵活的多衣物组合、忠实纹理保留，并在消费级硬件上实现高效推理，具备商业可行性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent diffusion-based virtual try-on (VTON) methods remain limited by their reliance on segmentation masks, insufficient preservation of fine-grained textures, and limited support for arbitrary multi-garment compositions. Consequently, existing approaches still face significant challenges in real-world e-commerce deployment. We present TAMF-VTON, a texture-aware, mask-free framework that enables high-fidelity image synthesis under practical unconstrained conditions. Our method requires no human parsing or inpainting masks at inference time and supports diverse garment styles, categories, and quantities, enabling the simultaneous transfer of multiple items while preserving body structure and intricate texture details. This is achieved through a unified generative pipeline with three key components: (1) a lightweight Mixture-of-Experts (MoE) adaptation scheme that enables efficient fine-tuning without compromising the base model's general editing capabilities; (2) a frequency-domain supervision mechanism that explicitly optimizes high-frequency spectral consistency to preserve high-fidelity textures; and (3) a robust data curation pipeline employing an adaptive inpainting strategy to simulate the inverse VTON process for high-quality training pair generation. Extensive experiments demonstrate that our approach outperforms state-of-the-art methods in both quantitative metrics and perceptual quality. Optimized for efficiency, the model achieves inference in under 15 seconds per image on an NVIDIA RTX 4090 with INT4 quantization. By combining mask-free operation, flexible multi-garment composition, faithful texture preservation, and efficient inference on consumer hardware, TAMF-VTON demonstrates a commercially viable solution for scalable deployment in real-world digital fashion scenarios. The project is available at https://www.style3d.ai/ai-photoshoot/virtual-clothing-try-on.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2607.14807" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2607.14807.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 125 &nbsp;💬 28</span>
+          <span class="paper-id">▲ 238 &nbsp;💬 133</span>
         </div>
-        <span class="score-badge">推荐度 90/100</span>
+        <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=48937756" target="_blank">German AI consortium releases Soofi S, an open 30B model that tops benchmarks</a>
+        <a href="https://news.ycombinator.com/item?id=48947717" target="_blank">Kimi K3, and what we can still learn from the pelican benchmark</a>
       </h3>
-      <p class="paper-authors">by amai</p>
-      <div class="paper-summary"><div class="summary-section">德国AI联盟发布了开源30B参数模型Soofi S，在英德双语基准测试中均取得领先成绩，看点在于其开源性质与跨语言性能的突破。</div></div>
+      <p class="paper-authors">by droidjj</p>
+      <div class="paper-summary"><div class="summary-section">Kimi K3模型在pelican基准测试中表现突出，文章探讨了从该基准测试中能学到的关于模型评估的深层教训。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=48937756" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://the-decoder.com/german-ai-consortium-releases-soofi-s-an-open-30b-model-that-tops-benchmarks-in-both-english-and-german/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=48947717" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://simonwillison.net/2026/Jul/16/kimi-k3/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,7 +507,102 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 1234 &nbsp;💬 767</span>
+          <span class="paper-id">▲ 348 &nbsp;💬 245</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=48947825" target="_blank">The state of open source AI</a>
+      </h3>
+      <p class="paper-authors">by rellem</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍了一个评估开源AI现状的网站，看点在于它系统梳理了开源模型、工具与闭源方案的对比及发展趋势。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=48947825" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://stateofopensource.ai/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 7 &nbsp;💬 2</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=48924855" target="_blank">Show HN: Tarit – a hypervisor which is 2x faster than firecracker</a>
+      </h3>
+      <p class="paper-authors">by mkagenius</p>
+      <div class="paper-summary"><div class="summary-section">Tarit 是一款比 Firecracker 快两倍的轻量级虚拟机监控器，看点在于其极致的性能优化和简洁的设计。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=48924855" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/instavm/tarit" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 8 &nbsp;💬 1</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=48952067" target="_blank">Topcoat: The full full-stack framework for Rust</a>
+      </h3>
+      <p class="paper-authors">by wertyk</p>
+      <div class="paper-summary"><div class="summary-section">Topcoat 是 Tokio 团队为 Rust 开发的全栈框架，看点在于它整合了前后端开发，并基于 Tokio 生态提供高性能异步支持。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=48952067" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/tokio-rs/topcoat" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 34 &nbsp;💬 8</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=48910579" target="_blank">MoonBASIC: A modern BASIC for building 2D and 3D games</a>
+      </h3>
+      <p class="paper-authors">by klaussilveira</p>
+      <div class="paper-summary"><div class="summary-section">MoonBASIC 是一个专为2D和3D游戏开发设计的现代BASIC语言，亮点在于它让复古编程风格与现代游戏开发需求相结合。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=48910579" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/CharmingBlaze/moonbasic" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 76 &nbsp;💬 24</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=48896513" target="_blank">Latent Space as a New Medium</a>
+      </h3>
+      <p class="paper-authors">by thm</p>
+      <div class="paper-summary"><div class="summary-section">凯文·凯利探讨将AI的“潜在空间”作为一种全新的创意媒介，看点在于它如何像摄影或互联网一样，开启前所未有的艺术与表达形式。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=48896513" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://kevinkelly.substack.com/p/latent-space-as-a-new-medium" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 1987 &nbsp;💬 1155</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -515,7 +610,7 @@
         <a href="https://news.ycombinator.com/item?id=48935342" target="_blank">Kimi K3: Open Frontier Intelligence</a>
       </h3>
       <p class="paper-authors">by vincent_s</p>
-      <div class="paper-summary"><div class="summary-section">Kimi K3 是一款宣称具备前沿智能水平的开放模型，其性能与价格分析显示在同类产品中具有竞争力。</div></div>
+      <div class="paper-summary"><div class="summary-section">Kimi K3 是一款号称“开放前沿智能”的模型，看点在于其性能与价格分析，可能对标国际顶尖模型。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=48935342" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://www.kimi.com/blog/kimi-k3" target="_blank" class="link-btn">🔗 原文</a>
@@ -526,45 +621,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 174 &nbsp;💬 65</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=48939662" target="_blank">LM Studio Bionic: the AI agent for open models</a>
-      </h3>
-      <p class="paper-authors">by minimaxir</p>
-      <div class="paper-summary"><div class="summary-section">LM Studio Bionic 是一个面向开源模型的AI智能体工具，看点在于它让用户能像使用商业AI助手一样，在本地灵活调用和组合多种开放模型。</div></div>
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=48939662" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://lmstudio.ai/blog/introducing-lm-studio-bionic" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 430 &nbsp;💬 103</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=48936584" target="_blank">Decoy Font</a>
-      </h3>
-      <p class="paper-authors">by ray__</p>
-      <div class="paper-summary"><div class="summary-section">该帖子介绍了一种名为“诱饵字体”的创意工具，它能生成看似正常但实际字符被替换的字体，用于迷惑爬虫和机器人。</div></div>
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=48936584" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.mixfont.com/experiments/decoy-font" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 155 &nbsp;💬 155</span>
+          <span class="paper-id">▲ 381 &nbsp;💬 511</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -572,67 +629,10 @@
         <a href="https://news.ycombinator.com/item?id=48939524" target="_blank">$100 AI Music Video: Claude Fable 5 vs. GPT-5.6 Sol</a>
       </h3>
       <p class="paper-authors">by hershyb_</p>
-      <div class="paper-summary"><div class="summary-section">该帖子对比了使用Claude和GPT生成AI音乐视频的效果，看点在于用100美元预算测试两大模型在创意与执行上的差异。</div></div>
+      <div class="paper-summary"><div class="summary-section">该帖子对比了使用Claude和GPT生成AI音乐视频的效果，看点在于仅用100美元成本测试两大模型在创意与执行上的差异。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=48939524" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://www.tryai.dev/blog/ai-music-video-arena-claude-vs-gpt-5.6" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 256 &nbsp;💬 129</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=48936451" target="_blank">NotebookLM is now Gemini Notebook</a>
-      </h3>
-      <p class="paper-authors">by xnx</p>
-      <div class="paper-summary"><div class="summary-section">谷歌将NotebookLM更名为Gemini Notebook，看点在于其AI笔记工具与Gemini生态的深度整合及功能升级。</div></div>
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=48936451" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 163 &nbsp;💬 110</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=48936880" target="_blank">Detecting LLM-Generated Texts with “Classical” Machine Learning</a>
-      </h3>
-      <p class="paper-authors">by uneven9434</p>
-      <div class="paper-summary"><div class="summary-section">该帖子介绍了一种使用传统机器学习方法（如TF-IDF与逻辑回归）检测LLM生成文本的方案，看点在于其以较低成本实现了接近深度模型的检测效果。</div></div>
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=48936880" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.lyc8503.net/en/post/llm-classifier/" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 38 &nbsp;💬 14</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=48940603" target="_blank">Ring-Zero: Scaling Zero RL to a Trillion Parameters for Emergent Reasoning</a>
-      </h3>
-      <p class="paper-authors">by binyu</p>
-      <div class="paper-summary"><div class="summary-section">这篇帖子介绍了一篇论文，探讨如何将强化学习（Zero RL）扩展到万亿参数规模，以实现大模型涌现出的推理能力，看点在于其规模化方法对提升AI推理性能的潜在突破。</div></div>
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=48940603" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://arxiv.org/abs/2607.12395" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -640,115 +640,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">CSS</span>
-          <span class="paper-id">⭐ 11,043 &nbsp;+3372 today</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/Nutlope/hallmark" target="_blank">Nutlope/hallmark</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        Nutlope /
-
-      hallmark  
-
-    
-      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.</p>
-      <div class="paper-summary"><div class="summary-section">Hallmark 是一个为 Claude Code、Cursor 和 Codex 等 AI 编程工具提供反“AI 味”设计风格的 CSS 项目，值得关注是因为它能帮助开发者生成更自然、更少机器感的代码界面。</div></div>
-      <div class="paper-links">
-        <a href="https://github.com/Nutlope/hallmark" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 66,020 &nbsp;+661 today</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/openinterpreter/openinterpreter" target="_blank">openinterpreter/openinterpreter</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        openinterpreter /
-
-      openinterpreter  
-
-    
-      A coding agent for open models like Kimi K3</p>
-      <div class="paper-summary"><div class="summary-section">Open Interpreter 是一个基于 Rust 构建的、面向 Kimi K3 等开放模型的编码代理，能让你用自然语言直接控制计算机执行代码和任务；它因支持本地运行、隐私安全且能替代 OpenAI Code Interpreter 的封闭功能而备受关注。</div></div>
-      <div class="paper-links">
-        <a href="https://github.com/openinterpreter/openinterpreter" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 122,988 &nbsp;+923 today</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank">Shubhamsaboo/awesome-llm-apps</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        Shubhamsaboo /
-
-      awesome-llm-apps  
-
-    
-      100+ AI Agent &amp; RAG apps you can actually run — clone, customize, ship.</p>
-      <div class="paper-summary"><div class="summary-section">该项目汇集了100多个可直接运行的开源AI代理与RAG应用，便于开发者快速克隆、定制和部署，是学习与实践大模型应用开发的优质资源库。</div></div>
-      <div class="paper-links">
-        <a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 80,213 &nbsp;+71 today</span>
+          <span class="paper-id">⭐ 6,591 &nbsp;+248 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/lobehub" target="_blank">sponsors/lobehub</a>
+        <a href="https://github.com/sponsors/HenryNdubuaku" target="_blank">sponsors/HenryNdubuaku</a>
       </h3>
       <p class="paper-authors">Sponsor
     
@@ -774,28 +672,28 @@
 
 
       
-        lobehub /
+        HenryNdubuaku /
 
-      lobehub  
+      maths-cs-ai-compendium  
 
     
-      🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team.</p>
-      <div class="paper-summary"><div class="summary-section">LobeHub 是一个 AI 代理运营平台，能帮你招聘、调度和管理整个 AI 团队，实现 7×24 小时自动化运作，值得关注因为它将多个 AI 代理整合为可协作的智能工作流，极大提升效率。</div></div>
+      Become a cracked AI/ML Research Engineer</p>
+      <div class="paper-summary"><div class="summary-section">该项目是一个面向AI/ML研究工程师的数学、计算机科学与人工智能综合知识库，因其系统化的学习路径和实用内容而值得关注。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/sponsors/lobehub" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/HenryNdubuaku" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 89,197 &nbsp;+1107 today</span>
+          <span class="category-badge gh-badge">CSS</span>
+          <span class="paper-id">⭐ 11,962 &nbsp;+1486 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify-Labs/graphify</a>
+        <a href="https://github.com/Nutlope/hallmark" target="_blank">Nutlope/hallmark</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -808,15 +706,15 @@
 
 
       
-        Graphify-Labs /
+        Nutlope /
 
-      graphify  
+      hallmark  
 
     
-      AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.</p>
-      <div class="paper-summary"><div class="summary-section">Graphify 是一个AI编程助手技能，能将任意代码、SQL、文档等文件夹转化为可查询的知识图谱，值得关注因为它统一了应用代码、数据库和基础设施，大幅提升代码理解和跨文件检索效率。</div></div>
+      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.</p>
+      <div class="paper-summary"><div class="summary-section">Hallmark 是一个为 Claude Code、Cursor 和 Codex 等 AI 编程工具提供反“AI 味”设计技巧的 CSS 项目，值得关注是因为它能帮助开发者避免生成千篇一律的“AI 风格”代码，提升代码的个性与可读性。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/Nutlope/hallmark" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -824,7 +722,88 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 26,928 &nbsp;+656 today</span>
+          <span class="paper-id">⭐ 19,721 &nbsp;+57 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/tirth8205" target="_blank">sponsors/tirth8205</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        tirth8205 /
+
+      code-review-graph  
+
+    
+      Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.</p>
+      <div class="paper-summary"><div class="summary-section">该项目是一个本地优先的代码智能图谱工具，能为MCP和CLI构建持久化的代码库地图，让AI编码工具只读取关键上下文，显著减少代码审查和大型仓库工作流中的信息量。值得关注是因为它通过实测的上下文缩减优化，提升了AI辅助开发在复杂项目中的效率。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/tirth8205" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 66,327 &nbsp;+431 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/openinterpreter/openinterpreter" target="_blank">openinterpreter/openinterpreter</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        openinterpreter /
+
+      openinterpreter  
+
+    
+      A coding agent for open models like Kimi K3</p>
+      <div class="paper-summary"><div class="summary-section">Open Interpreter 是一个基于 Rust 构建的、针对 Kimi K3 等开放模型的编码代理，它让自然语言直接操控计算机成为可能，因其高效、开源且能替代传统命令行交互而备受关注。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/openinterpreter/openinterpreter" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 27,326 &nbsp;+528 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -848,7 +827,7 @@
 
     
       DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.</p>
-      <div class="paper-summary"><div class="summary-section">DeepTutor 是一个基于终身学习理念的个性化智能辅导系统，值得关注因为它能根据学习者长期表现动态调整教学策略，实现真正的因材施教。</div></div>
+      <div class="paper-summary"><div class="summary-section">DeepTutor 是一个基于知识图谱的终身个性化辅导系统，通过动态追踪学习者的知识状态并自适应调整教学策略，实现真正的因材施教，其创新性的终身学习机制和开源框架为智能教育领域提供了重要参考。</div></div>
       <div class="paper-links">
         <a href="https://github.com/HKUDS/DeepTutor" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -858,7 +837,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 74,106 &nbsp;+3537 today</span>
+          <span class="paper-id">⭐ 74,811 &nbsp;+1077 today</span>
         </div>
         <span class="score-badge">推荐度 65/100</span>
       </div>
@@ -895,7 +874,7 @@
 
     
       The open-source CapCut alternative</p>
-      <div class="paper-summary"><div class="summary-section">OpenCut-app 是一个开源的 CapCut 替代品，提供视频编辑功能，因其开源、免费且可自部署的特性，值得关注。</div></div>
+      <div class="paper-summary"><div class="summary-section">OpenCut-app 是一个开源的 CapCut 替代品，基于 TypeScript 构建，值得关注因为它提供了免费、可自托管的视频编辑功能，且社区活跃。</div></div>
       <div class="paper-links">
         <a href="https://github.com/sponsors/OpenCut-app" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -904,13 +883,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 1,514 &nbsp;+128 today</span>
+          <span class="category-badge gh-badge">Markdown</span>
+          <span class="paper-id">⭐ 527,276 &nbsp;+1070 today</span>
         </div>
-        <span class="score-badge">推荐度 65/100</span>
+        <span class="score-badge">推荐度 60/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/YimMenu/YimMenuV2" target="_blank">YimMenu/YimMenuV2</a>
+        <a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank">codecrafters-io/build-your-own-x</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -923,15 +902,49 @@
 
 
       
-        YimMenu /
+        codecrafters-io /
 
-      YimMenuV2  
+      build-your-own-x  
 
     
-      Experimental menu for GTA 5: Enhanced</p>
-      <div class="paper-summary"><div class="summary-section">YimMenuV2 是一个针对《GTA 5：增强版》的实验性菜单工具，基于 C++ 开发，因其持续更新和高度可定制性而受到游戏模组社区的广泛关注。</div></div>
+      Master programming by recreating your favorite technologies from scratch.</p>
+      <div class="paper-summary"><div class="summary-section">该项目收录了大量从零开始复刻流行技术（如数据库、Git、Docker等）的教程，因其开源、实战性强且覆盖领域广，成为程序员深入理解底层原理的经典资源。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/YimMenu/YimMenuV2" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Java</span>
+          <span class="paper-id">⭐ 9,785 &nbsp;+234 today</span>
+        </div>
+        <span class="score-badge">推荐度 60/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/github/copilot-sdk" target="_blank">github/copilot-sdk</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        github /
+
+      copilot-sdk  
+
+    
+      Multi-platform SDK for integrating GitHub Copilot Agent into apps and services</p>
+      <div class="paper-summary"><div class="summary-section">GitHub Copilot SDK 是一个多平台工具包，用于将 GitHub Copilot Agent 集成到各类应用和服务中；它值得关注是因为能让开发者轻松扩展 Copilot 的 AI 编程能力到自定义工作流和产品中。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/github/copilot-sdk" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
