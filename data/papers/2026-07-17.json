@@ -1,0 +1,176 @@
+[
+  {
+    "id": "2607.13639",
+    "title": "OvisOCR2 Technical Report",
+    "abstract": "We introduce OvisOCR2, a 0.8B document parsing model. OvisOCR2 is designed as an end-to-end parser: given a document page image, it generates a Markdown representation in natural reading order, covering text, formulas, tables, and visual regions. We build a data engine that combines filtered real-document annotations with synthetic pages whose rendered images and Markdown targets are derived from the same HTML source. The training recipe includes supervised fine-tuning, reinforcement learning on a 4B branch with a multi-component reward design, on-policy distillation into the 0.8B model, and model fusion. On OmniDocBench v1.6, OvisOCR2 achieves a state-of-the-art overall score of 96.58, placing an end-to-end model at the top of this leaderboard previously dominated by pipeline methods and highlighting the potential of end-to-end document parsing. On PureDocBench, OvisOCR2 also achieves the highest Avg3 score of 75.06. Beyond these two public benchmarks, we evaluate OvisOCR2 on an in-house benchmark designed to cover a broader set of long-tail and challenging scenarios. OvisOCR2 obtains the best overall performance among the compared methods, providing further evidence of its generalization and robustness. OvisOCR2 is available at https://huggingface.co/ATH-MaaS/OvisOCR2.",
+    "authors": [
+      "Shiyin Lu",
+      "Yinglun Li",
+      "Yu Xia",
+      "Yuhui Chen",
+      "An-Yang Ji",
+      "Jun-Peng Jiang",
+      "Qing-Guo Chen",
+      "Jianshan Zhao",
+      "En Lin",
+      "Haijun Li",
+      "Cheng Qin",
+      "Zhao Xu",
+      "Weihua Luo"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13639.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13639",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "OvisOCR2技术报告",
+      "core_contribution": "提出了一种0.8B参数规模的端到端文档解析模型OvisOCR2，在OmniDocBench v1.6上以96.58的总分达到当前最优性能，首次使端到端模型在该榜单上超越传统流水线方法。",
+      "method": "构建了一个数据引擎，结合经过筛选的真实文档标注和从同一HTML源生成渲染图像与Markdown目标的合成页面。训练流程包括监督微调、在4B分支上使用多组件奖励设计进行强化学习、将策略蒸馏到0.8B模型以及模型融合。",
+      "findings": "在OmniDocBench v1.6上取得96.58的总体最优分数，在PureDocBench上获得75.06的最高Avg3分数，并在涵盖更多长尾和挑战场景的内部基准测试中取得最佳整体性能，验证了模型的泛化能力和鲁棒性。"
+    }
+  },
+  {
+    "id": "2607.13539",
+    "title": "ThinkBLOX: 3D Indoor Scene Generation with Progressive Reasoning",
+    "abstract": "While traditional graphics methods often synthesize 3D indoor scenes autoregressively or hierarchically, recent vision-language model (VLM)-based generators predominantly adopt a one-shot paradigm where the full layout is planned at once. This one-shot approach often requires global re-optimization or complete reconstruction during interactive editing (e.g., inserting or moving objects) and can lead to physically or semantically poorly organized arrangements. To address these challenges, we propose ThinkBLOX, a VLM-based progressive reasoning framework that iteratively designs and refines 3D scenes. ThinkBLOX treats layout generation as a state-conditioned, step-by-step reasoningand-action process. To power this, we construct the ThinkBLOX-Data-200K dataset, containing 224,757 procedural placement pairs annotated with multi-view scene context, explicit Chain-of-Thought (CoT) rationales, and structured JSON layouts. Through supervised fine-tuning (SFT) on this dataset, the VLM learns to bridge the reasoning-action gap under incremental updates. Furthermore, recognizing that scene synthesis is inherently a multisolution task where SFT suffers from reward conflict, we introduce Tier-Decoupled GDPO. This reinforcement learning scheme organizes heterogeneous rewards into distinct tiers, stabilizing policy optimization across physical validity, semantic plausibility, and reasoning-action consistency. Extensive experiments show that ThinkBLOX significantly outperforms recent one-shot and iterative baselines in physical plausibility, semantic alignment, and interactive editability. Additionally, we show that it supports diverse applications, including both global and local generation and rearrangement of 3D scenes.",
+    "authors": [
+      "Yuan Xiao",
+      "Can Wang",
+      "Xiangyu Kong",
+      "Jing Liao"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13539.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13539",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ThinkBLOX：基于渐进推理的三维室内场景生成",
+      "core_contribution": "提出了一种基于视觉语言模型（VLM）的渐进式推理框架ThinkBLOX，将三维场景布局生成建模为状态依赖的逐步推理与行动过程，并引入分层去耦的强化学习策略，显著提升了生成场景的物理合理性、语义一致性和交互编辑能力。",
+      "method": "首先构建了包含224,757个程序化放置对的大规模数据集ThinkBLOX-Data-200K，每个样本附带多视角场景上下文、显式思维链推理过程和结构化JSON布局。然后通过监督微调使VLM学会在增量更新下弥合推理与行动之间的差距。针对场景生成的多解性导致监督微调存在奖励冲突的问题，提出了分层去耦的GDPO强化学习方案，将异构奖励分为不同层级，稳定了物理有效性、语义合理性和推理-行动一致性三个维度的策略优化。",
+      "findings": "实验表明，ThinkBLOX在物理合理性、语义对齐和交互可编辑性上显著优于现有的一次性生成和迭代生成基线方法。此外，该方法支持多种应用场景，包括全局生成、局部生成以及三维场景的重排布。"
+    }
+  },
+  {
+    "id": "2607.13125",
+    "title": "Boogu-Image-0.1: Boosting Open-Source Unified Multimodal Understanding and Generation",
+    "abstract": "We introduce Boogu-Image-0.1, an open-source unified multimodal understanding and generation model family, comprising Base, Turbo, Edit, and Edit-Turbo variants. It delivers competitive performance in high-quality text-to-image generation, fast inference, instruction-based editing, and bilingual (Chinese-English) text rendering. Closed-source multimodal systems like Nano-Banana-Pro and GPT-Image-2 achieve strong performance through system-level integration rather than a single model, yet their internal practices remain largely undisclosed. In this work, we demonstrate that targeted improvements in model understanding, data quality, and training pipelines, coupled with agentic inference-time scaling, can substantially enhance generation and editing performance even under highly constrained compute budgets. Comprehensive evaluations show that Boogu-Image-0.1 consistently matches or surpasses other open-source models across standard benchmarks, and achieves results approaching leading closed-source systems. Notably, this is accomplished with only 208.62 million unique images. The base model's theoretical training cost is only approximately \\$400K. We share practical discussions that we believe are valuable to the broader research community, and release weights, code, and recipes under Apache 2.0 to advance the open ecosystem for unified multimodal understanding and generation. Our code is available here: https://github.com/Boogu-Project/Boogu-Image.",
+    "authors": [
+      "Guoxuan Chen",
+      "Chufeng Xiao",
+      "Haoran Yang",
+      "Siyue Xie",
+      "Binxiao Huang",
+      "Ming Zhang",
+      "Cheuk Him Chau",
+      "Xinyu Fu",
+      "Yingzhao Lian",
+      "Tom S. Y. Li",
+      "Jintao Lin",
+      "Bowen Dong",
+      "Zian Qian",
+      "Yuhao Liu",
+      "Yuxuan Hu",
+      "Weikang Shi",
+      "Bin Zou",
+      "Bowen Zheng",
+      "Haoxuan Che",
+      "Chang Chen",
+      "Yuyang He",
+      "Heyang Sun",
+      "Tianyu Huang",
+      "Chong Hou Choi",
+      "Cheng Gong",
+      "Han Shi",
+      "Haoli Bai",
+      "Xihui Liu",
+      "Hongsheng Li",
+      "Qifeng Chen",
+      "Chao Huang",
+      "Rui Liu",
+      "Chenyang Lei"
+    ],
+    "published": "2026-07-14",
+    "updated": "2026-07-14",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13125.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13125",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Boogu-Image-0.1：推动开源统一多模态理解与生成",
+      "core_contribution": "本文提出了一个开源统一多模态理解与生成模型家族Boogu-Image-0.1，在有限计算预算下，通过改进模型理解、数据质量和训练流程，结合推理时缩放策略，实现了与领先闭源系统相媲美的性能。",
+      "method": "该模型家族包含Base、Turbo、Edit和Edit-Turbo四种变体，分别针对高质量文本到图像生成、快速推理、指令式编辑和中英双语文本渲染。研究通过提升模型理解能力、优化数据质量与训练管线，并引入智能体推理时缩放技术，在仅使用2.0862亿张独特图像和约40万美元理论训练成本的情况下，显著增强了生成与编辑性能。",
+      "findings": "在标准基准测试中，Boogu-Image-0.1持续匹配或超越其他开源模型，并接近领先闭源系统（如Nano-Banana-Pro和GPT-Image-2）的表现。所有权重、代码和配方均以Apache 2.0许可证开源发布。"
+    }
+  },
+  {
+    "id": "2607.12404",
+    "title": "Contrastive-Augmented Flow Matching for Style-Content Disentanglement",
+    "abstract": "Learning representations that separate content and style is crucial for controllable generation and compositional generalization. However, diffusion and flow-based models trained primarily with generative objectives often produce entangled or misaligned factors. To address this gap, we introduce Contrastive Augmented Flow Matching (CAtFM), a framework that integrates contrastive regularization into an invertible flow matching formulation to promote structured content-style representations. Rather than constraining intermediate latents or velocity fields, we apply contrastive supervision to predicted endpoints during training, enforcing semantic consistency across transported distributions while allowing disentanglement to emerge implicitly, without assuming strictly pure or fully factorized content and style representations. Our main experiments operate in the CLIP embedding space, with additional validation using frozen DINO and ALIGN encoders. Across synthetic data, in-domain styles, and real-world benchmarks (ImageNet, WikiArt, DomainNet, and DTD), CAtFM improves content and style retrieval, enhances embedding cluster separation, and achieves stronger open-set robustness compared to generative and discriminative baselines. Overall, CAtFM provides a simple way to couple discriminative constraints with deterministic transport, improving disentanglement and robustness under distribution shift.",
+    "authors": [
+      "Yusong Li",
+      "Pingchuan Ma",
+      "Ming Gui",
+      "Vincent Tao Hu",
+      "Björn Ommer"
+    ],
+    "published": "2026-07-14",
+    "updated": "2026-07-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.12404.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.12404",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "对比增强流匹配用于风格-内容解耦",
+      "core_contribution": "提出一种名为对比增强流匹配（CAtFM）的框架，通过将对比正则化集成到可逆流匹配中，在无需假设内容与风格完全分离的前提下，隐式地促进结构化内容-风格表征的解耦，从而提升可控生成与组合泛化能力。",
+      "method": "该方法在可逆流匹配的训练过程中，对预测的端点施加对比监督，而非约束中间潜变量或速度场，从而在传输分布间强制执行语义一致性，使解耦自然涌现。主要实验在CLIP嵌入空间中进行，并额外使用冻结的DINO和ALIGN编码器进行验证。",
+      "findings": "在合成数据、域内风格以及真实世界基准（ImageNet、WikiArt、DomainNet、DTD）上，CAtFM相比生成式和判别式基线方法，在内容与风格检索、嵌入聚类分离度以及开放集鲁棒性方面均取得更优结果，表明该方法能有效提升分布偏移下的解耦能力与鲁棒性。"
+    }
+  },
+  {
+    "id": "2607.11199",
+    "title": "DynEval: Holistic Evaluations of T2I Generative Models in the Wild",
+    "abstract": "Recent advances in text-to-image (T2I) generation have led to models capable of producing highly realistic images. Yet, reliably evaluating their outputs remains challenging, especially at scale. Existing automatic evaluators, often relying on a static prompt set, struggle to capture subtle failure modes such as partial prompt misalignment, compositional errors, or visually plausible but semantically incorrect generations. In this work, we introduce DynEval, a Dynamic Evaluation framework designed to jointly assess text-to-image alignment and image quality of T2I models. To support scalable training beyond limited human-annotated data, we construct two large datasets. First, we build GenDB, a collection of 500K prompt-image pairs generated from human-written prompts drawn from DiffusionDB using a tiered prompt-model generation strategy. Second, building upon GenDB, we construct DynEvalInstruct, a 250K instruction dataset comprising prompt-image-response triplets distilled from a structured evaluation pipeline that decomposes evaluation into text-image alignment and visual quality reasoning. Using this dataset, we perform full fine-tuning of a compact evaluator through a curriculum learning strategy to effectively distill the superior evaluation capabilities of a larger teacher vision-language model, resulting in DynEval-2B and DynEval-4B. In extensive comparisons against existing evaluators across 11 benchmarks, our evaluator achieves a higher overall correlation with human judgments. Furthermore, it provides fine-grained analysis of the capabilities and failure modes of 36 T2I models across 42 subcategories and 9 semantic dimensions.",
+    "authors": [
+      "Shyam Marjit",
+      "Dheeraj Baiju",
+      "Anuj Shikarkhane",
+      "Akhil Sakthieswaran",
+      "Sayak Paul",
+      "Anirban Chakraborty"
+    ],
+    "published": "2026-07-13",
+    "updated": "2026-07-13",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.11199.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.11199",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "DynEval：野外文本到图像生成模型的整体评估",
+      "core_contribution": "提出了一种动态评估框架DynEval，能够联合评估文本-图像对齐和图像质量，并通过构建大规模数据集和课程学习策略，训练出与人类判断高度一致的紧凑型评估器。",
+      "method": "首先构建了包含50万对提示-图像的GenDB数据集，以及25万条指令数据的DynEvalInstruct，后者通过将评估分解为文本-图像对齐和视觉质量推理的结构化流程生成。然后利用课程学习策略，对紧凑型评估器进行全参数微调，以蒸馏大型视觉语言模型的评估能力，最终得到DynEval-2B和DynEval-4B两个版本。",
+      "findings": "在11个基准测试上的广泛比较中，DynEval与人类判断的整体相关性优于现有评估器。此外，它能够对36个T2I模型在42个子类别和9个语义维度上进行细粒度的能力与失败模式分析。"
+    }
+  }
+]
