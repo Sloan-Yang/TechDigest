@@ -1,0 +1,142 @@
+[
+  {
+    "id": "2607.14765",
+    "title": "Rare Concept Generation via Counterfactual Inference in Diffusion Models",
+    "abstract": "Rare concept generation focuses on synthesizing customized images conditioned on text prompts that describe objects with unusual attributes. Previous works failed to align the generated images with rare concepts, resulting in incorrect attribute rendering or inconsistent composition of concepts. Such failures, as we observed, stem from the inherent common knowledge bias in the training stage of diffusion models, where objects are strongly associated with their common attributes, making it difficult to break these associations when generating rare concepts. To address such challenges, in this paper, we propose a novel Counterfactual Inference-based Diffusion approach, dubbed CI-Diff. CI-Diff blocks the interference of the model's inherent common knowledge bias and utilizes the Natural Direct Effect to capture the independent influence of the text prompt of rare concepts on image generation so that decoupling the unusual attributes from the rare concepts. To this end, we reformulate the classifier-free guidance mechanism to highlight the atypical attributes. To the best of our knowledge, we are the first to introduce causal inference into the rare concept generation task. Extensive experiments on the RareBench benchmark validate the superiority of CI-Diff over state-of-the-art diffusion models. Our code can be accessed from https://github.com/200204jzy/CI-Diff.",
+    "authors": [
+      "Zhengyuan Jiang",
+      "Haipeng Liu",
+      "Meng Wang",
+      "Yang Wang"
+    ],
+    "published": "2026-07-16",
+    "updated": "2026-07-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.14765.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.14765",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "扩散模型中的反事实推理实现罕见概念生成",
+      "core_contribution": "首次将因果推理引入罕见概念生成任务，提出CI-Diff方法，通过阻断模型固有常识偏见的干扰，有效解耦罕见概念中的非典型属性，显著提升了罕见概念图像生成的准确性和一致性。",
+      "method": "该方法基于反事实推理框架，利用自然直接效应（Natural Direct Effect）来捕捉文本提示对图像生成的独立影响，从而剥离模型训练阶段形成的常见属性关联。具体地，通过重新表述无分类器引导机制（Classifier-Free Guidance），突出罕见概念中的非典型属性，抑制常识偏见的干扰，实现罕见概念的准确生成。",
+      "findings": "在RareBench基准上的大量实验表明，CI-Diff在罕见概念生成任务上显著优于当前最先进的扩散模型，能够正确渲染罕见属性并保持概念组成的一致性，验证了因果推理在解决扩散模型常识偏见问题上的有效性。"
+    }
+  },
+  {
+    "id": "2607.13805",
+    "title": "AspectCLIP: Optimizing CLIP Representation Space via Aspect-Guided Consistency Regularization",
+    "abstract": "Contrastive Language-Image Pretraining learns a shared representation space through large-scale contrastive learning. However, existing methods that enforce global consistency regularization overlook a key challenge: the inherent information asymmetry between images and text: captions typically describe only one specific aspect of an image, thus images with similar visual content can be paired with completely divergent textual content and semantic information. Consequently, global regularizers inadvertently impose constraints between visually similar images whose captions describe divergent aspects, introducing semantic distortion into the representation space. We propose AspectCLIP, a framework that reformulates consistency regularization to respect this one-to-many structure. AspectCLIP first partitions training samples into attribute clusters based on textual similarity to identify aspect-coherent groups, then applies full cyclic consistency within each cluster while restricting cross-cluster regularization to prototype-level comparisons. This aspect-guided regularization enforces strict geometric alignment only when images and texts describe a consistent facet, while allowing flexibility across divergent aspects. Extensive experiments on downstream tasks demonstrate that AspectCLIP consistently outperforms traditional methods and achieves a more structured representation space.",
+    "authors": [
+      "Yiyang Yao",
+      "Shanglin Liu",
+      "Jianming Lv",
+      "Chengjun Wang",
+      "Jinyi Li",
+      "Yuchan Jie",
+      "Zhihua Jin"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13805.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13805",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "AspectCLIP：通过方面引导的一致性正则化优化CLIP表示空间",
+      "core_contribution": "提出AspectCLIP框架，通过方面引导的一致性正则化解决图像与文本之间信息不对称导致的语义失真问题，从而优化CLIP的表示空间结构。",
+      "method": "首先根据文本相似性将训练样本划分为属性聚类，识别出方面一致的组；然后在每个聚类内部施加完整的循环一致性约束，而在跨聚类之间仅进行原型级别的比较。这种方面引导的正则化仅在图像和文本描述一致方面时强制执行严格的几何对齐，而在不同方面之间允许灵活性。",
+      "findings": "在下游任务的广泛实验中，AspectCLIP一致优于传统方法，并获得了更加结构化的表示空间。"
+    }
+  },
+  {
+    "id": "2607.13685",
+    "title": "DNA: Dual-stage Native Attribution for Generated Image Source Tracing",
+    "abstract": "The rapid evolution of image generation has produced numerous within-family variants, making source-model attribution of suspect images increasingly important for digital forensics. Existing proactive methods rely on watermark embedding or model modification, which may degrade visual quality and limit deployment flexibility. Passive methods often rely on large-scale supervised training or a single reconstruction signal, limiting their ability to handle unknown sources and distinguish highly similar within-family variants. We observe that attribution signals in latent generative models are naturally stratified across architectural levels: VAE-level cues reflect family-shared information, whereas backbone-level cues capture variant-specific behaviors. Motivated by this insight, we propose Dual-stage Native Attribution (DNA), a coarse-to-fine framework that follows this hierarchy without additional neural-network training. The coarse-grained stage uses Autoencoder Double-Reconstruction (AEDR) for efficient open-set family-level screening. The fine-grained stage performs closed-set model-level attribution with Native Prediction Consistency (NPC), which compares native prediction errors of within-family variants across multiple noise levels under semantic conditioning and attributes the source via normalized calibrated scores. To enable systematic evaluation, we construct DNA-30K, a benchmark for within-family variant attribution under open-set family-level evaluation. It comprises 30,000 images generated by 24 candidate models across six families spanning both denoising diffusion and flow matching, plus non-candidate generated and natural images as unknown sources. Experiments show that DNA achieves 89.11% end-to-end attribution accuracy on a task where random guessing accuracy is below 1% and outperforms the strongest baseline by 33.81% even when AEDR is used as the coarse-grained stage.",
+    "authors": [
+      "Chao Wang",
+      "Kejiang Chen",
+      "Zijin Yang",
+      "Yaofei Wang",
+      "Yuang Qi",
+      "Weiming Zhang",
+      "Nenghai Yu"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13685.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13685",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "DNA：面向生成图像来源追踪的双阶段原生归因方法",
+      "core_contribution": "提出了一种无需额外神经网络训练的双阶段原生归因框架（DNA），能够有效区分高度相似的同一家族内变体生成模型，并在开放集场景下实现高精度来源追踪。",
+      "method": "该方法基于潜在生成模型中归因信号的自然分层特性，设计粗到细的两阶段流程。粗粒度阶段采用自编码器双重重建（AEDR）进行高效的开放集家族级筛选；细粒度阶段则利用原生预测一致性（NPC），在语义条件下比较不同噪声水平下家族内变体的原生预测误差，并通过归一化校准分数进行模型级归因。",
+      "findings": "在包含6个家族、24个候选模型及未知来源图像的DNA-30K基准测试中，DNA实现了89.11%的端到端归因准确率（随机猜测准确率低于1%），且在使用AEDR作为粗粒度阶段时，比最强基线方法高出33.81%。"
+    }
+  },
+  {
+    "id": "2607.13661",
+    "title": "Fine-grained CLIP fine-tuning with self-annotated region alignment",
+    "abstract": "Contrastive Language-Image Pre-training (CLIP) has been shown to have limitations in its fine-grained dense feature representation, due to its pre-training focusing on matching the whole image to a text description. Considering the large data and computational burden in pre-training a vision-language model from scratch, a series of works aim to enhance the fine-grained ability of CLIP through a fine-tuning scheme. However, existing works suffer from a variety of limitations: additional region annotations are usually required, which limits the semantic diversity due to the predefined categories and leads to a large effort to process the training data; and they usually sacrifice CLIP's original ability for global visual representation. To bypass these limitations, we propose SFF-CLIP (Self-annotated Fine-grained Fine-tuning for CLIP), which only uses image-text pairs as input to boost the fine-grained representation ability in the CLIP fine-tuning, while maintaining the global visual-semantic consistency. Concretely, a run-time region-phrase alignment scheme is designed, which obtains concept phrases from the input sentence, and aligns them with corresponding extracted region-based features using text-specific heat maps. Extensive experiments demonstrate that SFF-CLIP leads to significant performance improvements on fine-grained dense feature representation, as well as maintaining the performance of the original CLIP on image-level tasks. Code will be released later.",
+    "authors": [
+      "Chenyang Zhao",
+      "Wei Lin",
+      "Antoni B. Chan",
+      "Janet H. Hsiao"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13661.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13661",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "基于自标注区域对齐的细粒度CLIP微调",
+      "core_contribution": "提出了一种仅使用图像-文本对作为输入、无需额外区域标注的CLIP微调方法SFF-CLIP，在提升细粒度密集特征表示能力的同时，保持全局视觉-语义一致性。",
+      "method": "设计了一种运行时区域-短语对齐方案：首先从输入句子中提取概念短语，然后利用文本特定的热力图将短语与对应的基于区域的图像特征进行对齐。该方法在微调过程中不依赖预定义类别或人工标注，仅利用图像-文本对进行自监督学习。",
+      "findings": "实验表明，SFF-CLIP在细粒度密集特征表示任务上取得了显著性能提升，同时在图像级任务上保持了原始CLIP的性能，证明了该方法在增强细粒度能力的同时不牺牲全局表示能力。"
+    }
+  },
+  {
+    "id": "2607.13563",
+    "title": "Nexus: Native Mesh Generation with Diffusion",
+    "abstract": "Generating high-quality triangle meshes is essential for film, gaming, and interactive 3D applications. Mainstream methods rely on mesh serialization and autoregressive processes, which stuggles in effective inference and is sensitive to error accumulation. In this paper, we present Nexus, a diffusion method that achieves holistic mesh generation via decoupled vertex and topology generation. First, we view mesh vertices as sparse voxels organized as an octree and adopt a diffusion model to generate the vertices in a coarse-to-fine manner. Second, for topology modeling, we propose Spacetime Interval, as an extension of Spacetime Distance to encode arbitrary edge and face topology into continuous per-vertex embeddings. It allows for a global and efficient recovery of complex topology. We then employ a diffusion model to generate the continuous embeddings on the generated vertices. Extensive experiments on the Objaverse and Toys4K datasets and in-the-wild images demonstrate that our method outperforms state-of-the-art autoregressive and two-stage baselines, effectively circumventing the inherent limitations of sequential mesh modeling. A blind user study from 3D practitioners confirms strong perceptual preference for our results.",
+    "authors": [
+      "Hanxiao Wang",
+      "Ying-Tian Liu",
+      "Yuan-Chen Guo",
+      "Qi-Yuan Feng",
+      "Zi-Xin Zou",
+      "Ding Liang",
+      "Biao Zhang",
+      "Yan-Pei Cao"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13563.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13563",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "Nexus：基于扩散的原生网格生成",
+      "core_contribution": "提出了一种基于扩散模型的三角网格生成方法Nexus，通过解耦顶点生成与拓扑建模，克服了传统自回归方法在推理效率低和误差累积方面的局限性。",
+      "method": "首先将网格顶点视为以八叉树组织的稀疏体素，采用扩散模型以由粗到细的方式生成顶点；其次提出时空间隔（Spacetime Interval）作为时空距离的扩展，将任意边和面拓扑编码为连续的逐顶点嵌入，从而支持全局且高效地恢复复杂拓扑；最后在生成的顶点上使用另一个扩散模型生成连续嵌入，完成拓扑建模。",
+      "findings": "在Objaverse和Toys4K数据集以及真实图像上的实验表明，Nexus在性能上优于当前最先进的自回归和两阶段基线方法，有效规避了序列网格建模的固有缺陷；3D从业者的盲测用户研究也证实了对其生成结果有强烈的感知偏好。"
+    }
+  }
+]
