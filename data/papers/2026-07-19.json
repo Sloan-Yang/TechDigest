@@ -1,0 +1,149 @@
+[
+  {
+    "id": "2607.13527",
+    "title": "VGIF-Score: Interpretable and Diagnostic Evaluation of Spatio-Temporal Instruction Following in Video Generation",
+    "abstract": "Recent video generation models (VGMs) have made substantial progress in visual fidelity, yet their ability to follow long, compositional instructions remains insufficiently evaluated. Existing evaluation protocols often rely on prompts that are short and semantically shallow, with limited atomic constraints and weak spatio-temporal dependencies. They also frequently depend on costly human evaluation or handcrafted vision pipelines, while providing little diagnostic insight into which instruction constraints succeed or fail. To address this gap, we propose VGIF-Score, a highly automated and interpretable framework for evaluating instruction following in video generation. VGIF-Score consists of two complementary components: an objective completion branch that parses prompts into a Spatio-Temporal Directed Acyclic Graph (ST-DAG) and performs dependency-aware QA with short-circuit diagnostics, and a subjective satisfaction branch that uses instruction-conditioned AutoRubric to assess cinematography, visual purity, motion smoothness, and physics adherence. Together, these components produce a unified score that captures both objective completion and perceptual satisfaction. We instantiate this framework on VGIF-Bench, a benchmark of 223 long, structurally entangled prompts paired with approximately 4.3K fine-grained evaluation items. Experiments on 14 proprietary and open-source VGMs across more than 3K generated videos show that VGIF-Score provides reliable, interpretable, and diagnostically useful evaluation of video generation instruction following. The code will be available at https://github.com/PRIS-CV/VGIF-SCORE.",
+    "authors": [
+      "Songyu Xu",
+      "Xin Wang",
+      "Qiang Chen",
+      "Xinran Wang",
+      "Muxi Diao",
+      "Yuxuan Zhang",
+      "Kongming Liang",
+      "Rui Lin",
+      "Zhanyu Ma"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13527.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13527",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "VGIF-Score：视频生成中时空指令遵循的可解释与诊断性评估",
+      "core_contribution": "提出了一种高度自动化且可解释的评估框架VGIF-Score，用于全面诊断视频生成模型对复杂、长序列指令的遵循能力，并构建了包含223条结构化提示和约4300个细粒度评估项的基准VGIF-Bench。",
+      "method": "VGIF-Score包含两个互补分支：客观完成分支将提示解析为时空有向无环图（ST-DAG），并执行依赖感知的问答与短路诊断；主观满意度分支使用指令条件化的AutoRubric评估电影感、视觉纯净度、运动平滑性和物理合理性。两个分支共同生成一个统一分数，同时反映客观完成度和主观满意度。",
+      "findings": "在14个商业和开源视频生成模型、超过3000个生成视频上的实验表明，VGIF-Score能够提供可靠、可解释且具有诊断价值的评估，有效揭示模型在哪些指令约束上成功或失败。"
+    }
+  },
+  {
+    "id": "2607.13500",
+    "title": "Attention-Free and Lightweight Token Reduction for Efficient Vision-Language Models",
+    "abstract": "Vision-Language Models (VLMs) have achieved strong performance in multimodal understanding, yet remain challenging to deploy on resource-constrained edge devices due to the substantial computational overhead of processing numerous visual tokens. Token reduction is a promising direction for accelerating VLMs inference, but existing approaches either rely on attention maps that are incompatible with modern acceleration frameworks or depend on computationally intensive pairwise similarity comparisons, which undermine scalability and negate their practical benefits in deployment. In this paper, we propose an attention-free and lightweight token reduction framework as a plug-and-play module for VLMs, which preserves both important and diverse tokens to produce a compact visual representation. First, to enable attention-free importance estimation, we adopt an information-theoretic perspective and quantify token information using a novel entropy-based criterion, retaining those with more expressive and less degenerate feature representations. Second, to ensure diverse visual coverage in a lightweight manner, we introduce a transformation-induced consistency signal where similar tokens yield similar signals, such that sorting by this signal places similar tokens close to each other and enables stride-based selection to produce a diverse token set. Extensive experiments across multiple VLMs benchmarks demonstrate that our framework achieves a favorable accuracy-efficiency trade-off, maintaining competitive performance under aggressive compression.",
+    "authors": [
+      "Xuanyi Hao",
+      "Zuoyuan Zhang",
+      "Zhibo Wang",
+      "Xiaoyi Pang",
+      "Jiahui Hu",
+      "Jiacheng Du",
+      "Shuguo Zhuo"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13500.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13500",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "面向高效视觉语言模型的无注意力轻量级令牌缩减方法",
+      "core_contribution": "提出了一种无需注意力机制且计算轻量的令牌缩减框架，作为即插即用模块，在保持重要和多样性令牌的同时，显著加速视觉语言模型推理，并兼容现代加速框架。",
+      "method": "首先，从信息论角度出发，采用基于熵的新准则量化令牌信息，保留表达力更强、退化更少的令牌，实现无需注意力的重要性估计。其次，引入变换诱导的一致性信号，使相似令牌产生相似信号，通过排序和步长选择获得多样性令牌集，确保视觉覆盖的同时保持轻量。",
+      "findings": "在多个视觉语言模型基准上的实验表明，该框架在激进压缩下仍能保持有竞争力的性能，实现了良好的准确率与效率权衡。"
+    }
+  },
+  {
+    "id": "2607.13471",
+    "title": "Bring Music The Horizon: Music-Driven 360$^\\circ$ Video Generation",
+    "abstract": "Music visualization offers a powerful way to enhance listeners' understanding and experience of music by translating auditory signals into visual forms. However, most existing approaches either rely heavily on lyrics or generate flat, non-immersive videos similar to conventional music videos, which limits their ability to convey the emotional dynamics of music and provide an immersive listening experience. We propose Bring Music The Horizon, an emotion-aware pipeline for music-driven 360$^\\circ$ video generation. Given an input song, our work first estimates its emotional trajectory by predicting valence-arousal values at the level of every four bars. These values are then converted into emotion-aware visual guidance using EmotiCrafter, and these guidance vectors can be manipulated by the SEGA framework, which provides fine-grained semantic control for keyframe generation. Finally, image-to-video models are applied to the generated keyframes to synthesize temporally continuous 360$^\\circ$ videos for immersive music visualization. Our pipeline generates 360$^\\circ$ music visualization videos that reflect the emotional progression and temporal structure of the input song. We demonstrate its capability using songs from different genres and provide qualitative comparisons with From-Sound-To-Sight, a representative audio-to-visual generation baseline, on our project page at https://etoile-et-toi-mp3.github.io/BMTH_Project_Page/.",
+    "authors": [
+      "Kai Hsu Tsai",
+      "Yong Wei Fu",
+      "Hung I Yang",
+      "Yu-Chih Chen"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV",
+      "cs.MM",
+      "cs.SD",
+      "eess.AS",
+      "eess.IV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13471.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13471",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "将音乐带入地平线：音乐驱动的360度视频生成",
+      "core_contribution": "提出了一种情感感知的360度音乐可视化视频生成流水线，能够根据音乐的情感轨迹生成沉浸式、无歌词依赖的全景视频，突破了传统方法在情感表达和沉浸感上的局限。",
+      "method": "首先，对输入歌曲每四个小节预测其效价-唤醒度值，以估计情感轨迹；然后，利用EmotiCrafter将这些值转换为情感感知的视觉引导向量，并通过SEGA框架对关键帧生成进行细粒度语义控制；最后，使用图像到视频模型将生成的关键帧合成为时间连续的360度视频，实现沉浸式音乐可视化。",
+      "findings": "该流水线能够生成反映输入歌曲情感进程和时间结构的360度音乐可视化视频，并在不同音乐风格上展示了其能力，通过与基线方法From-Sound-To-Sight的定性比较，证明了其在情感表达和沉浸感上的优势。"
+    }
+  },
+  {
+    "id": "2607.13468",
+    "title": "HIVE-3D: Hierarchical Voxel Enhancement for High-Quality 3D Scene Generation",
+    "abstract": "Recently, a line of works can generate impressive 3D objects from a single image, but they are limited by restricted representation resolution, making them unsuitable for 3D scene generation. In this work, we introduce HIVE-3D, a novel method for high-quality 3D scene generation based on hierarchical voxel enhancement framework. Specifically, given a single scene image as input, we first produce a coarse initial scene, then introduce image segmentation and attention-based retrieval to align 2D image components with 3D scene components. Subsequently, we organize these scene relations into a hierarchical component tree, where nodes closer to the leaves denote finer-grained components. Finally, we propose a voxel super-resolution model that generates refined voxels for the target instance while maintaining strong consistency with the coarse voxels. Equipped with this model, we perform coarse-to-fine hierarchical super-resolution on images and voxels for each component, producing a high-resolution and high-quality 3D scene. Extensive experiments demonstrate that our method significantly outperforms previous approaches, achieving state-of-the-art performance.",
+    "authors": [
+      "Bin Zang",
+      "Wenting Zheng",
+      "Xiaoliang Luo",
+      "Zhiyuan Fang",
+      "Shi Li",
+      "Lvchun Wang",
+      "Wei Yu",
+      "Yi Zhao",
+      "Tian Xie",
+      "Yuchi Huo",
+      "Rengan Xie"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13468.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13468",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "HIVE-3D：用于高质量3D场景生成的分层体素增强方法",
+      "core_contribution": "提出了一种基于分层体素增强框架的HIVE-3D方法，能够从单张场景图像生成高质量、高分辨率的3D场景，显著优于现有方法。",
+      "method": "首先，输入单张场景图像并生成粗糙的初始场景；然后，通过图像分割和基于注意力的检索将2D图像组件与3D场景组件对齐，并将这些关系组织成分层组件树（叶子节点表示更细粒度的组件）。最后，提出一个体素超分辨率模型，在保持与粗糙体素一致性的同时生成精细体素，并采用从粗到细的分层超分辨率策略对每个组件的图像和体素进行增强，从而输出高分辨率、高质量的3D场景。",
+      "findings": "大量实验表明，该方法在3D场景生成质量上显著优于先前方法，达到了最先进的性能。"
+    }
+  },
+  {
+    "id": "2607.13458",
+    "title": "2D Rotary Position Embedding for Scene Text Recognition with Transformers",
+    "abstract": "Scene Text Recognition (STR) remains challenging due to the diversity of text appearances, including curvature, rotation, and perspective distortion. Recent Transformer-based approaches perform well but usually rely on one-dimensional positional encodings that ignore the 2D spatial structure of text images. Axial 2D extensions of Rotary Position Embedding (RoPE) exist for vision Transformers, but they assume roughly square, isotropic image content and apply the rotation only within encoder self-attention. Scene text violates both assumptions: crops are markedly anisotropic, and STR models are encoder-decoder, so the decoder must relate its queries to the encoder's 2D layout through cross-attention. We introduce 2D-RoPE-STR, which adapts axial 2D-RoPE to this setting through (1) an anisotropic row/column dimension allocation matched to the aspect ratio of text, and (2) an extension of the rotary coupling into encoder-decoder cross-attention, letting autoregressive decoding steps attend to encoder tokens by their 2D layout, a setting not addressed by prior encoder-only formulations. Both changes are essentially parameter-free and require no architectural redesign beyond the positional-encoding module. We further introduce a diagnostic protocol (a controlled ablation pair isolating only the positional encoding, an image-level net-win disagreement analysis, and encoder attention visualization) that identifies where and why relative 2D position helps: curved, rotated, and perspective-distorted layouts where reading order departs from a straight horizontal line. On six standard benchmarks (IIIT5K, SVT, ICDAR 2013, ICDAR 2015, CUTE80, SVTP), gains concentrate on exactly these irregular layouts, with ablations isolating each design choice against 1D RoPE and 2D sinusoidal and learnable alternatives.",
+    "authors": [
+      "Zobeir Raisi"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13458.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13458",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "面向场景文本识别的二维旋转位置编码",
+      "core_contribution": "提出了一种针对场景文本识别（STR）中编码器-解码器Transformer架构的二维旋转位置编码（2D-RoPE），通过各向异性的行列维度分配和将旋转耦合扩展到交叉注意力机制，在不增加参数或改变网络结构的前提下，显著提升了模型对弯曲、旋转和透视失真文本的识别能力。",
+      "method": "该方法在标准一维RoPE基础上进行两项关键改进：一是根据文本图像的长宽比，为行和列维度分配不同的旋转频率，以适应文本区域各向异性的特点；二是将原本仅用于编码器自注意力的旋转位置编码扩展到编码器-解码器交叉注意力中，使解码器在自回归生成时能感知编码器输出的二维空间布局。这些改动无需额外参数，仅需修改位置编码模块。",
+      "findings": "在六个标准基准（IIIT5K、SVT、ICDAR 2013、ICDAR 2015、CUTE80、SVTP）上的实验表明，性能提升主要集中在弯曲、旋转和透视失真的不规则文本布局上。通过消融实验（对比1D RoPE、2D正弦和可学习位置编码）和诊断协议（图像级净胜差异分析和编码器注意力可视化）证实，相对二维位置信息在阅读顺序偏离水平直线的场景中发挥关键作用。"
+    }
+  }
+]
