@@ -1,0 +1,144 @@
+[
+  {
+    "id": "2607.16060",
+    "title": "ArtChart: A Benchmark for Faithful Artistic Chart Generation with Integrated Text Rendering",
+    "abstract": "Artistic charts make data memorable and visually engaging, but generating them faithfully demands simultaneously preserving numerical geometry, rendering exact in-image text, binding labels to correct marks, and maintaining coherent artistic style. Current text-to-image and image editing models frequently fail on these coupled constraints, producing distorted geometries, hallucinated text, misbound labels, or over-stylized marks that undermine readability and mathematical integrity. This paper introduces ArtChart, a framework for artistic chart generation with integrated text rendering, encompassing a task definition, benchmark, and evaluation protocol. This is the first work to simultaneously address mathematically faithful chart synthesis, accurate in-image text rendering, and artistic stylization of chart elements. ArtChart features a chart-specific plug-and-play module conditioned on text-free grayscale chart layouts, ensuring mathematical and logical fidelity. A RL learning strategy with OCR accuracy, layout quality, and aesthetic rewards refines generation, while a multi-expert distillation framework resolves inter-reward conflicts through specialized expert optimization. We construct ArtChart-Bench, a bilingual 2K-prompt benchmark spanning four chart types and diverse label formats. We further design ArtChart-Eval, a six-axis evaluation suite covering mathematical logic, text accuracy, text layout, aesthetics, instruction following, and readability, supporting comparison across T2I, image-editing, controllable-generation, and closed-source API models. Extensive experiments demonstrate that ArtChart consistently outperforms open-source baselines, producing charts that are both visually appealing and math faithful.",
+    "authors": [
+      "Meijia Huang",
+      "Yingjie Yin",
+      "Shihao Wang",
+      "Chenguang Ma"
+    ],
+    "published": "2026-07-17",
+    "updated": "2026-07-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.16060.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.16060",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "ArtChart：一种融合文本渲染的忠实艺术图表生成基准",
+      "core_contribution": "本文首次提出了一个同时保证数学忠实性、精确文本渲染和艺术风格化的图表生成框架ArtChart，并构建了相应的基准测试与评估协议，填补了该领域的研究空白。",
+      "method": "ArtChart框架采用基于无文本灰度图表布局的即插即用模块，确保数学与逻辑忠实性；通过强化学习策略，结合OCR准确率、布局质量和美学奖励来优化生成效果；并引入多专家蒸馏框架，通过专门化专家优化解决不同奖励之间的冲突。",
+      "findings": "在包含双语2000条提示的ArtChart-Bench基准上，覆盖四种图表类型和多种标签格式，通过六轴评估套件（数学逻辑、文本准确率、文本布局、美学、指令遵循和可读性）的实验表明，ArtChart在生成视觉美观且数学忠实的图表方面持续优于开源基线模型。"
+    }
+  },
+  {
+    "id": "2607.15619",
+    "title": "StructGen: Disambiguating Multi-Reference Image Generation via Structured Context Modeling",
+    "abstract": "Multi-reference image generation aims to synthesize images by integrating attributes from multiple reference images under textual instructions. As the number of references increases, the task necessitates complex semantic comprehension, such as correctly associating attributes with the intended subjects and planing out coherent spatial arrangement between subjects and their environments. Existing approaches, which rely solely on natural language instruction, often fail to capture these complex intentions precisely, leading to semantic misalignment and inconsistent generation. We identify two key factors behind these limitations: natural language instructions are often verbose and ambiguous, and high-quality multi-reference data is scarce. To address these issues, we propose StructGen, which employs a structured, dictionary-like format to encode multiple reference images, thereby enabling explicit and unambiguous specification of generation intentions. To support this design, we construct a structured dataset based on high-quality real images and develop a corresponding training framework, along with a dedicated benchmark for challenging multi-reference scenarios. Extensive experiments on both public benchmarks and our proposed benchmark demonstrate that StructGen consistently outperforms existing methods on both semantic alignment and detailed reference-generation consistency, especially under complex instructions with multiple references. The code is available at \\href{https://jianingpeng0382.github.io/StructGen/}{https://jianingpeng0382.github.io/StructGen/}.",
+    "authors": [
+      "Jianing Peng",
+      "Mengyu Wang",
+      "Henghui Ding",
+      "Zixiang Li",
+      "Ting Liu",
+      "Xiaochao Qu",
+      "Luoqi Liu",
+      "Yao Zhao",
+      "Yunchao Wei"
+    ],
+    "published": "2026-07-17",
+    "updated": "2026-07-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.15619.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.15619",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "StructGen：通过结构化上下文建模实现多参考图像生成的消歧",
+      "core_contribution": "提出了一种结构化上下文建模方法（StructGen），通过字典式格式编码多个参考图像，解决了多参考图像生成中自然语言指令模糊、语义错位和生成不一致的问题。",
+      "method": "首先，设计了一种结构化、字典式的输入格式，将多个参考图像与显式的属性-主体关联和空间布局描述结合，替代纯自然语言指令。其次，基于高质量真实图像构建了结构化数据集，并开发了相应的训练框架。最后，针对多参考复杂场景构建了专用基准测试，以评估模型在语义对齐和细节一致性上的表现。",
+      "findings": "在公开基准和所提基准上的实验表明，StructGen在语义对齐和参考-生成一致性上持续优于现有方法，尤其在涉及多个参考的复杂指令下表现显著提升。"
+    }
+  },
+  {
+    "id": "2607.13415",
+    "title": "MultiAnimate: A Unified Framework for Controllable Multi-Character Animation",
+    "abstract": "Recent advances in generative models and technological innovations have significantly addressed the fundamental challenges of character image animation. However, existing approaches predominantly focus on character animation from a single reference image, substantially limiting their applicability in scenarios such as multiple character interaction animation. To fill this gap, this paper introduces MultiAnimate, a comprehensive framework that enables concurrent animation of multiple characters within a shared environment while preserving both identity consistency and spatial relationships. The framework achieves these objectives through multiple well-designed mechanisms. First, we incorporate an identity-specific reference net that enables appearance extraction from multiple reference images, distinguishing MultiAnimate from existing approaches constrained to single reference inputs. Second, we implement an identity-aware pose encoder to address the character-pose binding challenge, wherein an attention mechanism enables the network to accurately differentiate and process multiple pose sequences during generation. Third, we introduce an interaction guider module that enhances the framework's capability to handle complex inter-character interactions by leveraging character-specific mask information, serving as an optional component that refines the pose sequences. Extensive experiments and ablation analyses demonstrate our framework's superiority in multiple character animation, particularly in scenarios involving complex motion sequences.",
+    "authors": [
+      "Zhongyi Zhang",
+      "Guangyuan Wang",
+      "Li Hu",
+      "Wenbo Zhou",
+      "Peng Zhang",
+      "Tianyi Wei",
+      "Weiming Zhang",
+      "Bang Zhang",
+      "Nenghai Yu"
+    ],
+    "published": "2026-07-15",
+    "updated": "2026-07-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13415.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13415",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "MultiAnimate：一个可控多角色动画的统一框架",
+      "core_contribution": "提出了MultiAnimate框架，首次实现了在共享环境中同时驱动多个角色动画，同时保持每个角色的身份一致性和空间关系，填补了现有方法仅支持单角色动画的空白。",
+      "method": "该框架包含三个关键模块：1）身份特定参考网络，从多个参考图像中提取各自的外观特征；2）身份感知姿态编码器，通过注意力机制将多个姿态序列与对应角色绑定，实现多角色姿态的准确区分与处理；3）交互引导器模块，利用角色特定的掩码信息增强复杂交互场景下的动画质量，作为可选组件优化姿态序列。",
+      "findings": "大量实验和消融分析表明，MultiAnimate在多角色动画任务上表现优越，尤其在涉及复杂运动序列的场景中，能够有效保持角色身份一致性并正确处理角色间的空间交互关系。"
+    }
+  },
+  {
+    "id": "2607.13318",
+    "title": "Reflecting Process Expertise in Procedural Material Generation",
+    "abstract": "Procedural material creation underpins applications in digital content creation, visual effects, and 3D asset design. Achieving high-quality results requires more than reproducing node graphs -- it demands understanding the process by which experts construct materials. We formulate procedural material generation as retrieval-time process reasoning over expert demonstrations, elevating process to a first-class representation beyond graph-only synthesis. Concretely, we represent expert workflows as process traces: textual records of construction steps, parameters, and design intent. To instantiate this idea, we use a pretrained LLM-based ProcessSynthesizer to synthesize a process trace aligned with a user's intent and a pretrained LLM-based Compiler to ground the process trace into an executable Blender material graph. Because procedural expertise is most naturally conveyed through demonstrations, we leverage tutorial videos as a source of process knowledge and extract textual, LLM-compatible traces using automated video analysis tools. In an expert study with five Blender artists (avg. 7.5 years of experience), materials generated by reflecting expert demonstrations were found to produce workflows requiring fewer edits, and more closely match professional design strategies than methods operating solely on static artifacts. A user study with 150 participants further shows that our approach achieves superior generation and editing performance compared to prior procedural systems. All code, models, and data will be available at https://materialapprentice.github.io",
+    "authors": [
+      "Kunal Gupta",
+      "Gaurav Joshi",
+      "Yen-Ru Chen",
+      "Seemandhar Jain",
+      "Ishit Mehta",
+      "Manmohan Chandraker"
+    ],
+    "published": "2026-07-14",
+    "updated": "2026-07-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.13318.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.13318",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "在程序化材质生成中反映过程专长",
+      "core_contribution": "本文提出将程序化材质生成从仅依赖节点图的合成提升为基于专家演示过程推理的方法，通过将工作流程作为一等表示来捕捉专家的构建步骤、参数和设计意图，从而生成更符合专业实践的高质量材质。",
+      "method": "该方法使用两个基于预训练大语言模型的组件：ProcessSynthesizer根据用户意图合成过程轨迹（文本记录），Compiler将轨迹编译为可执行的Blender材质图。过程知识来源于教程视频，通过自动视频分析工具提取文本轨迹，使模型能够从专家演示中学习。",
+      "findings": "在5位平均7.5年经验的Blender艺术家专家研究中，基于专家演示生成的材质所需编辑次数更少，且更符合专业设计策略。150名参与者的用户研究进一步表明，该方法在生成和编辑性能上优于先前的程序化系统。"
+    }
+  },
+  {
+    "id": "2607.14580",
+    "title": "Advanced Image Generation: Negative Prompt Optimization and Latent Classifier Guidance",
+    "abstract": "We present a novel system that integrates negative prompt optimization via a fine-tuned sequence-to-sequence LLM and latent-space classifier guidance to improve the quality of images generated by Stable Diffusion. Our approach automatically generates optimized negative prompts, and employs a CNN-RNN hybrid classifier to evaluate and guide diffusion steps, rolling back low-quality latent updates. Experimental results demonstrate that our dual-guidance framework reduces artifacts and improves semantic fidelity compared to baseline diffusion.",
+    "authors": [
+      "Vaddi Charan Sai Nandan Reddy",
+      "Harini B",
+      "Chandana M S"
+    ],
+    "published": "2026-07-16",
+    "updated": "2026-07-16",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.14580.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.14580",
+    "primary_category": "cs.CV",
+    "score": 60,
+    "summary": {
+      "title_zh": "高级图像生成：负提示优化与潜在分类器引导",
+      "core_contribution": "提出了一种结合微调序列到序列大语言模型进行负提示优化与潜在空间分类器引导的双重引导框架，显著提升了Stable Diffusion生成图像的质量。",
+      "method": "首先，通过微调序列到序列大语言模型自动生成优化的负提示，以抑制不良生成特征。其次，设计了一个CNN-RNN混合分类器，在扩散过程中对潜在空间表示进行评估和引导，对低质量的潜在更新进行回滚操作。最终，将负提示优化与分类器引导相结合，形成双重引导机制。",
+      "findings": "实验结果表明，与基线扩散模型相比，该双重引导框架有效减少了生成图像中的伪影，并显著提高了语义保真度。"
+    }
+  }
+]
