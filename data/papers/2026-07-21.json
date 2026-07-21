@@ -1,0 +1,148 @@
+[
+  {
+    "id": "2607.18091",
+    "title": "SciForma: Structure-Faithful Generation of Scientific Diagrams",
+    "abstract": "Structural fidelity is essential to scientific methodology diagrams. To communicate research logic, these diagrams must faithfully render components, directional relations, and textual annotations. Since a single error, such as a reversed arrow or an unreadable equation, can invalidate the entire figure, structural fidelity is inherently conjunctive: correctness on one axis cannot compensate for failure on another. Current open-source models fail to satisfy this criterion. Supervised fine-tuning (SFT) learns plausible layouts but cannot reliably ensure structural correctness, while scalar reward-based post-training obscures which structural dimension has failed. To address this, we introduce SciForma, a framework for the structure faithful generation of scientific methodology diagrams. Specifically, SciForma decomposes diagram quality into three structural axes: Component, Arrow, and Text, guided by a structural inventory. Built on this foundation, we curate SciFormaData-700K for structured training and SciFormaBench-2K for logic-verified evaluation. To close the gap left by SFT, we develop Multi-Dimensional Conjunctive Preference Optimization (M-DPO), which enforces simultaneous correctness across all axes and adaptively routes gradients to the most deficient dimension in post-training. The same structural inventory also enables iterative editing at inference time to correct residual errors. This combination allows SciForma-9B to exceed all open-source baselines and GPT-Image-1.5 on both SciFormaBench-2K and AIBench, bringing open scientific diagram generation close to proprietary-level structural fidelity. Our code and data will be available at: https://github.com/microsoft/SciForma.",
+    "authors": [
+      "Yuxuan Luo",
+      "Peng Zhang",
+      "Xinjie Zhang",
+      "Xun Guo",
+      "Zhouhui Lian",
+      "Yan Lu"
+    ],
+    "published": "2026-07-20",
+    "updated": "2026-07-20",
+    "categories": [
+      "cs.CV",
+      "cs.GR",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.18091.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.18091",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "SciForma：结构保真的科学图表生成",
+      "core_contribution": "提出了一种面向科学方法论图表的结构保真生成框架SciForma，通过多维度结构分解与联合偏好优化，首次使开源模型在结构正确性上超越闭源模型GPT-Image-1.5。",
+      "method": "首先将图表质量分解为组件、箭头和文本三个结构维度，并构建结构清单指导训练与评估。基于此，收集了70万条结构化训练数据SciFormaData-700K和2000条逻辑验证基准SciFormaBench-2K。提出多维度联合偏好优化（M-DPO），在训练后阶段强制所有维度同时正确，并自适应地将梯度导向最薄弱的维度。推理时还利用结构清单进行迭代编辑以修正残余错误。",
+      "findings": "SciForma-9B在SciFormaBench-2K和AIBench两个基准上均超过了所有开源基线模型以及GPT-Image-1.5，使开源科学图表生成达到了接近闭源模型的结构保真水平。"
+    }
+  },
+  {
+    "id": "2607.17634",
+    "title": "MixDiffusion: Mixing Diffusion-based Uni-condition Text-to-Image Generation Models for Multi-condition Image Synthesis",
+    "abstract": "Recent advances in text-to-image (T2I) generation have enabled controllable image synthesis by incorporating conditions beyond text. However, most existing diffusion-based methods are limited to a single type of control condition (e.g., bounding boxes or keypoints), which restricts their flexibility. To address this limitation, we propose MixDiffusion, a training-free diffusion framework for multi-condition T2I generation. MixDiffusion theoretically supports an arbitrary number of control conditions, including bounding boxes, keypoints, sketches, depth maps, reference images, and text, by collaboratively integrating multiple pre-trained uni-condition diffusion models. The key insight of the proposed approach is to derive the predicted noise distribution in each denoising step of the diffusion-based multi-condition image generation model from the predicted noise distributions of multiple diffusion-based uni-condition models with a derived integration formula, which is supported by rigorous theory proof. Owing to its training-free nature, MixDiffusion is easy to deploy and readily extensible to new control modalities.",
+    "authors": [
+      "Pengcheng Wan",
+      "Liang Han",
+      "Lin Xu",
+      "Bowen Xiao",
+      "Liqiang Nie"
+    ],
+    "published": "2026-07-20",
+    "updated": "2026-07-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.17634.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.17634",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "混合扩散：融合基于扩散的单条件文本到图像生成模型以实现多条件图像合成",
+      "core_contribution": "提出了一种无需训练的扩散框架MixDiffusion，能够通过整合多个预训练的单条件扩散模型，灵活支持任意数量的控制条件（如边界框、关键点、草图、深度图、参考图像和文本）进行多条件文本到图像生成。",
+      "method": "MixDiffusion的核心方法是在扩散模型的每个去噪步骤中，通过一个经过严格理论证明的积分公式，从多个单条件扩散模型的预测噪声分布中推导出多条件图像生成模型的预测噪声分布。该方法无需额外训练，因此易于部署，并能方便地扩展到新的控制模态。",
+      "findings": "实验表明，MixDiffusion能够有效融合多种控制条件，生成符合多条件约束的高质量图像，且由于其无需训练的特性，在灵活性和可扩展性上优于现有方法。"
+    }
+  },
+  {
+    "id": "2607.17585",
+    "title": "Pixel-Space Diffusion Transformers",
+    "abstract": "Latent diffusion models (LDMs) enable efficient high-resolution image synthesis by denoising in a VAE-compressed latent space. However, fixed visual tokenizers can discard fine textures and structural details, while separate representation and diffusion training creates a mismatch between reconstruction and generation objectives. These limitations have renewed interest in pixel-space diffusion, which models raw pixels directly, removes the VAE bottleneck, and supports end-to-end optimization. This formulation better matches the demands of high-fidelity generation but introduces challenges in high-dimensional modeling, including noise scheduling, loss weighting, token efficiency, and scalable architecture design. Pixel-space modeling also offers a promising basis for unified multimodal systems: raw pixels, text, and task conditions can be represented in a shared token space and jointly processed by a single Transformer, narrowing the gap between visual understanding and generation. This paper reviews Pixel-Space Diffusion Transformers (pDiTs) from the perspectives of model architecture, continuous generative mechanisms, and unified multimodal modeling. We summarize representative methods, identify key technical challenges, and discuss future directions toward high-fidelity, end-to-end vision foundation models that integrate generation and understanding.",
+    "authors": [
+      "Renye Yan",
+      "Jikang Cheng",
+      "You Wu",
+      "Ling Liang",
+      "Wei Peng",
+      "Athanasios V. Vasilakos",
+      "Qingyu Zhao",
+      "Yu Zhang",
+      "Ehsan Adeli",
+      "Kilian M. Pohl",
+      "Guoying Zhao"
+    ],
+    "published": "2026-07-20",
+    "updated": "2026-07-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.17585.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.17585",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "像素空间扩散变换器",
+      "core_contribution": "本文系统综述了像素空间扩散变换器（pDiTs）在模型架构、连续生成机制和统一多模态建模方面的进展，指出其通过直接建模原始像素、消除VAE瓶颈并支持端到端优化，为高保真视觉基础模型提供了新路径。",
+      "method": "论文首先对比了潜在扩散模型与像素空间扩散的差异，指出后者在噪声调度、损失加权、令牌效率和可扩展架构设计上的挑战。随后从三个维度展开综述：模型架构方面，聚焦Transformer在像素空间中的适配设计；连续生成机制方面，探讨去噪过程的优化策略；统一多模态建模方面，分析如何将像素、文本和任务条件映射到共享令牌空间并由单一Transformer联合处理。最后总结了代表性方法、关键技术挑战及未来方向。",
+      "findings": "像素空间扩散变换器能够保留精细纹理和结构细节，消除重建与生成目标之间的不匹配，并支持端到端优化；其统一多模态建模能力有望缩小视觉理解与生成之间的差距，但高维建模带来的噪声调度、令牌效率等问题仍是主要技术挑战。"
+    }
+  },
+  {
+    "id": "2607.17251",
+    "title": "VecFontLLM: Anchor-Guided Direct Synthesis of Chinese Vector Fonts",
+    "abstract": "Direct generation of Chinese vector fonts is a challenging and ongoing problem. A Chinese vector glyph contains complex component structure, anchor layout, and Bézier curve details, which work at different scales, but a standard vector sequence writes them together in one long sequence, making the task of vector font synthesis challenging. Existing direct vector generators often fail on complex characters, while raster-domain methods must vectorize the synthesized glyph images afterward. To address the above-mentioned problem, this paper proposes VecFontLLM, an anchor-guided multimodal large language model for direct few-shot synthesis of Chinese vector fonts. Our key idea is to generate vector glyphs through anchors rather than a standard vector sequence. Specifically, the proposed VecFontLLM first predicts and refines an anchor scaffold that fixes the coarse layout of components and contours, and then completes Bézier control points to recover local curvature and style. At test time, a confidence-guided generation chain samples multiple component candidates and continues synthesis from the highest-confidence one, improving stability for complex glyphs. This work demonstrates, for the first time, high-quality few-shot synthesis of complex Chinese vector glyphs directly in the vector domain, without raster generation or vectorization. Experiments on several Chinese font datasets show substantial improvements over existing vector font synthesis methods, competitive glyph rendering quality against raster-domain baselines, and vector command distributions close to real fonts.",
+    "authors": [
+      "Hao Yuan",
+      "Yuxuan Luo",
+      "Xing Chen",
+      "Zhouhui Lian"
+    ],
+    "published": "2026-07-19",
+    "updated": "2026-07-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.17251.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.17251",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "VecFontLLM：基于锚点引导的中文矢量字体直接合成",
+      "core_contribution": "首次实现直接在矢量域中高质量地少样本合成复杂中文矢量字形，无需经过光栅生成或矢量化步骤。",
+      "method": "提出一种锚点引导的多模态大语言模型VecFontLLM，首先生成并细化锚点骨架以固定组件和轮廓的粗略布局，然后补全贝塞尔曲线控制点以恢复局部曲率和风格。在测试时，采用置信度引导的生成链，从多个候选组件中选择置信度最高的继续合成，从而提高复杂字形的稳定性。",
+      "findings": "在多个中文字体数据集上的实验表明，VecFontLLM在矢量字体合成性能上显著优于现有方法，其字形渲染质量可与光栅域基线方法竞争，且生成的矢量命令分布接近真实字体。"
+    }
+  },
+  {
+    "id": "2607.16409",
+    "title": "Think, Plan, Paint: Layout-Aware Reasoning for Controllable Image Generation in Unified Models",
+    "abstract": "Unified Multimodal Large Language Models (MLLMs) offer a promising paradigm for unifying visual understanding and generation, yet they still struggle to follow complex spatial instructions and logical constraints in controllable image generation. To address this gap, we present ATLAS, a unified framework that equips MLLMs with a human-like \"Think, Plan, and Paint\" paradigm. We adopt layout as the shared representation that connects the three stages, enabling the model to reason about spatial requirements, plan explicit object arrangements, and render the final image. We further improve plan-to-image fidelity with reinforcement-learning-based layout alignment. We instantiate ATLAS at 7B and 80B scales, achieving state-of-the-art performance among MLLMs on image generation benchmarks and an average 65.31% improvement over existing layout-based unified MLLMs. On spatially related tasks, ATLAS obtains an average 23.06% gain over the base models. Through the same layout interface, ATLAS also supports instruction-guided editing and multimodal grounding. We further introduce ATLAS-Reasoning, a benchmark for evaluating generation under complex spatial instructions.",
+    "authors": [
+      "Junhao Liu",
+      "Jian-Wei Zhang",
+      "Tao Huang",
+      "Miles Yang",
+      "Zhao Zhong",
+      "Liefeng Bo"
+    ],
+    "published": "2026-07-17",
+    "updated": "2026-07-17",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.16409.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.16409",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "思考、规划、绘制：统一模型中基于布局推理的可控图像生成",
+      "core_contribution": "提出ATLAS统一框架，通过引入“思考-规划-绘制”的人性化范式，使多模态大语言模型能够遵循复杂空间指令和逻辑约束进行可控图像生成，并在布局引导的图像生成任务上取得显著性能提升。",
+      "method": "ATLAS采用布局作为连接三个阶段的共享表示：首先让模型推理空间需求（思考），然后规划显式的对象排列（规划），最后渲染最终图像（绘制）。为进一步提升规划到图像的保真度，引入基于强化学习的布局对齐方法。该框架在7B和80B两种规模上实现，并支持指令引导编辑和多模态定位。",
+      "findings": "在图像生成基准测试中，ATLAS在统一多模态大语言模型中达到最先进性能，相比现有基于布局的统一模型平均提升65.31%；在空间相关任务上，相比基础模型平均提升23.06%。此外，通过同一布局接口，ATLAS还支持指令引导编辑和多模态定位，并引入了用于评估复杂空间指令下生成能力的ATLAS-Reasoning基准。"
+    }
+  }
+]
