@@ -1,0 +1,168 @@
+[
+  {
+    "id": "2607.19064",
+    "title": "Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing",
+    "abstract": "Large-scale visual generators are increasingly capable but costly to train, fine-tune, and deploy. We introduce Mage-Flow, a compact 4B-scale generative stack for efficient text-to-image generation and instruction-based image editing. The stack is built from two co-designed components: Mage-VAE, a lightweight high-fidelity latent tokenizer, and a Native-Resolution Multimodal Diffusion Transformer trained with rectified flow matching. Mage-VAE uses one-step diffusion-style encoding and decoding with anchor-latent regularization, preserving the reconstruction quality of strong public VAEs while reducing tokenization cost by more than an order of magnitude. Together with native-resolution packing and stack-level CUDA kernel fusion, the stack supports flexible-resolution training and improves end-to-end training throughput by about $2.5\\times$. Built on this foundation, we develop a complete model family with Base, RL-aligned, and Turbo variants for both generation and editing. Diffusion-NFT improves prompt following, text rendering, aesthetic quality, and editing fidelity, while few-step distillation with adversarial perceptual guidance produces 4-step Turbo models for low-latency inference. Despite its compact scale, Mage-Flow and Mage-Flow-Edit achieves competitive performance across standard generation and editing benchmarks. More importantly, the Turbo variants make high-resolution generation and editing practical for interactive use: at $1024^2$ resolution on a single NVIDIA A100 GPU, Mage-Flow-Turbo generates an image in 0.59s, and Mage-Flow-Edit-Turbo edits an image in 1.02s, while maintaining a small memory footprint. These results show that careful tokenizer--backbone--system co-design can deliver strong high-resolution generation and editing within an efficient 4B model family.",
+    "authors": [
+      "Xinjie Zhang",
+      "Peng Zhang",
+      "Shicheng Zheng",
+      "Jinghao Guo",
+      "Zhaoyang Jia",
+      "Yifei Shen",
+      "Xun Guo",
+      "Yuxuan Luo",
+      "Jiahao Li",
+      "Wenxuan Xie",
+      "Fanyi Pu",
+      "Xiaoyi Zhang",
+      "Kaichen Zhang",
+      "Zongyu Guo",
+      "Tianci Bi",
+      "Dongnan Gui",
+      "Zhening Liu",
+      "Zimo Wen",
+      "Zihan Zheng",
+      "Senqiao Yang",
+      "Xiao Li",
+      "Jinglu Wang",
+      "Bin Li",
+      "Yan Lu"
+    ],
+    "published": "2026-07-21",
+    "updated": "2026-07-21",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "cs.MM",
+      "eess.IV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19064.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.19064",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "Mage-Flow：一种用于图像生成与编辑的高效原生分辨率基础模型",
+      "core_contribution": "提出了一种紧凑的4B参数规模生成模型家族Mage-Flow，通过轻量级高保真潜在分词器（Mage-VAE）与原生分辨率多模态扩散Transformer的协同设计，在保持竞争力的同时大幅提升训练和推理效率，并支持图像生成与指令式编辑。",
+      "method": "该方法由两个协同设计的组件构成：一是Mage-VAE，采用单步扩散式编码/解码与锚点潜在正则化，在保持重建质量的同时将分词成本降低一个数量级以上；二是原生分辨率多模态扩散Transformer，结合原生分辨率打包和CUDA内核融合，支持灵活分辨率训练并提升约2.5倍端到端吞吐量。此外，通过扩散式NFT改进提示遵循和文本渲染，并利用对抗感知引导的少步蒸馏得到4步Turbo模型，实现低延迟推理。",
+      "findings": "Mage-Flow及其编辑变体在标准生成与编辑基准上达到竞争性能；Turbo变体在单张NVIDIA A100 GPU上，1024²分辨率下生成图像仅需0.59秒，编辑图像仅需1.02秒，且内存占用小，证明了通过分词器-骨干-系统协同设计可在高效4B模型家族中实现强大的高分辨率生成与编辑。"
+    }
+  },
+  {
+    "id": "2607.19344",
+    "title": "Appearance Pointers -- Multimodal Region Control of Diffusion Transformers",
+    "abstract": "Controllable image generation remains challenging for creative professionals, who often require precise regional control over materials, object identities, and spatial arrangements that cannot be reliably achieved through text prompting alone. Diffusion Transformers (DiTs) can natively ingest heterogeneous tokens stemming from texts and images, but they lack mechanisms for determining where and how these tokens should influence the output. We introduce appearance pointers, compact tokens that guide DiTs toward the correct appearance cues at the correct spatial locations by aligning text or image inputs with user-specified masks. Appearance pointers are produced by a region correspondence network and refined through a spatial aggregation mechanism, enabling the model to handle multiple regional descriptions without significantly increasing token load. Our approach introduces the first modality-agnostic interface for localized multimodal control in a DiT without retraining the base model from scratch. Across a range of metrics, our single model reaches or surpasses the performance of modality-specific state of the art methods, offering a simple and extensible path toward precise, region-aware, multimodal guidance in generative image synthesis.",
+    "authors": [
+      "Rahul Sajnani",
+      "Yulia Gryaditskaya",
+      "Radomír Měch",
+      "Srinath Sridhar",
+      "Matheus Gadelha"
+    ],
+    "published": "2026-07-21",
+    "updated": "2026-07-21",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19344.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.19344",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "外观指针——扩散变换器的多模态区域控制",
+      "core_contribution": "提出了一种无需重新训练基础模型、与模态无关的局部多模态控制接口，通过紧凑的外观指针实现扩散变换器（DiT）在指定空间区域上的精确外观引导。",
+      "method": "该方法通过一个区域对应网络生成外观指针，这些指针将文本或图像输入与用户指定的掩码对齐，从而引导DiT在正确的空间位置使用正确的外观线索。随后，通过空间聚合机制对指针进行精炼，使模型能够处理多个区域描述而不显著增加令牌负载。整个方法无需从头重新训练基础DiT模型。",
+      "findings": "在多项指标上，该单模型方法达到或超越了现有模态特定的最先进方法，证明了其在精确、区域感知的多模态生成图像合成中的有效性和可扩展性。"
+    }
+  },
+  {
+    "id": "2607.19139",
+    "title": "Text Template Tokens Are Implicit Semantic Registers in Diffusion Transformers",
+    "abstract": "Text-to-image diffusion transformers (DiTs) jointly process text and image tokens, yet their internal computation during denoising remains poorly understood. We introduce a causal interpretability framework for modern large-scale DiTs that combines attention decomposition with targeted interventions across token spans, heads, and layers. Using it to separate prompt-content tokens from structural template tokens, we find that the structural tokens carry little prompt-specific information at the encoder output. Yet surprisingly, they emerge as dominant image-to-text attention sinks and causally maintain object identity inside the DiT, acting as implicit semantic registers. We show that they acquire this identity indirectly, with prompt semantics first injected into the image latents and then read back into the template tokens rather than transferred directly from the prompt tokens. Inspired by the above findings, we design a training-free pruning rule for DiTs. Heads that attend most strongly to prompt tokens are dispensable, and pruning them removes $20\\%$ of attention FLOPs with only a $1.4$-point drop on GenEval. We further reveal how generative computation in DiTs is organized across heads and depth, separating semantic routing from visual synthesis and progressing from identity formation to propagation and refinement. Our work not only reveals that the tokens encoding semantics at input need not be those that maintain it during generation, but also provides a causal view of internal mechanisms in DiTs.",
+    "authors": [
+      "Maohua Li",
+      "Qirui Li",
+      "Yanke Zhou",
+      "Yiduo Li",
+      "Zhaosheng Chi",
+      "Chao Xu",
+      "Cuifeng Shen",
+      "Yixuan Xu",
+      "Hanlin Tang",
+      "Kan Liu",
+      "Tao Lan",
+      "Lin Qu",
+      "Shao-Qun Zhang"
+    ],
+    "published": "2026-07-21",
+    "updated": "2026-07-21",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19139.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.19139",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "文本模板标记是扩散Transformer中的隐式语义寄存器",
+      "core_contribution": "本文揭示了扩散Transformer中文本模板标记（如标点、连接词等）虽不携带具体提示信息，却作为隐式语义寄存器在去噪过程中维持对象身份，并据此提出一种无需训练的注意力头剪枝方法，可减少20%的注意力计算量而性能仅下降1.4个GenEval点。",
+      "method": "作者提出了一种因果可解释性框架，结合注意力分解与针对标记跨度、注意力头和层的定向干预，将提示内容标记与结构模板标记分离。通过分析编码器输出、注意力模式及因果干预，追踪语义信息在DiT内部的流动路径，并基于发现设计剪枝规则：移除对提示标记注意力最强的头。",
+      "findings": "1) 结构模板标记在编码器输出中几乎不含提示特定信息，但成为图像到文本注意力的“注意力汇”，并因果性地维持对象身份；2) 提示语义先注入图像潜在表示，再被模板标记读取，而非直接从提示标记传递；3) 对提示标记注意力最强的头是可去除的，剪枝后FLOPs减少20%，GenEval仅下降1.4点；4) DiT中的生成计算按头和深度组织，语义路由与视觉合成分离，经历身份形成、传播和精化阶段。"
+    }
+  },
+  {
+    "id": "2607.18516",
+    "title": "Signed Rectified Flow: Negativity-Controlled Generation",
+    "abstract": "We introduce Signed Rectified Flow (Signed RF), a generalization of Rectified Flow that targets the signed measure $π^{sign} = (1+α)π^+ - απ^-$, where $α>0$, $π^+$ is the distribution to promote, and $π^-$ is the distribution to suppress. Although direct sampling from a signed measure is not well-defined, Signed RF induces a valid generative process that concentrates probability in regions where the signed measure is positive while provably excluding regions dominated by its negative component. It therefore provides a principled framework for incorporating negative information and exclusion constraints into generative modeling. We analyze the signed continuity equation underlying Signed RF and use a charged-particle interpretation to explain how negative mass forms exclusion barriers. This theory further motivates practical adaptive guidance algorithms. Across several applications, Signed RF improves the fidelity-diversity trade-off on ImageNet, reduces nearest-neighbor similarity in anti-memorization experiments, and reduces nudity induced by adversarial prompts in Stable Diffusion 3.5 while preserving CLIP and aesthetic scores.",
+    "authors": [
+      "Runlong Liao",
+      "Baiyu Su",
+      "Lizhang Chen",
+      "Qiang Liu"
+    ],
+    "published": "2026-07-20",
+    "updated": "2026-07-20",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.18516.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.18516",
+    "primary_category": "cs.LG",
+    "score": 75,
+    "summary": {
+      "title_zh": "符号整流流：负性受控生成",
+      "core_contribution": "提出了一种名为符号整流流（Signed RF）的生成模型框架，通过引入带符号测度，首次实现了在生成过程中显式抑制负样本分布，从而将负信息与排除约束融入生成建模。",
+      "method": "该方法将传统整流流推广至带符号测度，定义目标测度为正分布与负分布的加权差。通过分析符号连续性方程，并利用带电粒子类比解释负质量如何形成排斥屏障，从而推导出有效的自适应引导算法，使得生成过程在正测度区域集中概率，同时排除负测度主导区域。",
+      "findings": "实验表明，Signed RF在ImageNet上改善了保真度-多样性权衡；在反记忆实验中降低了最近邻相似度；在Stable Diffusion 3.5中有效减少了对抗性提示引发的裸体内容，同时保持了CLIP分数和美学评分。"
+    }
+  },
+  {
+    "id": "2607.18510",
+    "title": "DuSPiT: Dual-Branch Sub-Patch Pixel Diffusion Transformer",
+    "abstract": "Diffusion Transformers achieve strong image generation performance, but most operate in compressed latent spaces. Pixel-space diffusion avoids this information loss, yet existing approaches map each raw image patch to a single token, forcing one representation to handle both global communication and fine-grained details. We address this issue by proposing a new architecture, \\textbf{DuSPiT}, a \\textbf{Du}al-branch \\textbf{S}ub\\textbf{P}atch \\textbf{Pi}xel \\textbf{T}ransformer. This model separates global structural reasoning from local appearance modeling. DuSPiT uses a compact base branch for efficient global reasoning and a parallel, high-capacity pixel branch, organized into subpatch groups, to preserve detailed appearance, with the two branches interacting through cross-attention. Our results show that DuSPiT generates images with richer details and stronger fine-grained structures, while also achieving a better quality--efficiency trade-off than prior pixel-space diffusion transformers.",
+    "authors": [
+      "Yunpeng Bai",
+      "Yossi Gandelsman",
+      "Michaël Gharbi"
+    ],
+    "published": "2026-07-20",
+    "updated": "2026-07-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.18510.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.18510",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "DuSPiT：双分支子补丁像素扩散Transformer",
+      "core_contribution": "提出了一种新型双分支像素空间扩散Transformer架构，通过分离全局结构推理与局部外观建模，解决了现有像素空间扩散模型在单个token中同时处理全局通信和细粒度细节的局限性。",
+      "method": "DuSPiT采用双分支设计：一个紧凑的基础分支负责高效的全局推理，另一个并行的、高容量的像素分支通过子补丁分组来保留详细的外观信息。两个分支通过交叉注意力机制进行交互，从而在保持计算效率的同时增强图像细节生成能力。",
+      "findings": "实验结果表明，DuSPiT能够生成具有更丰富细节和更强细粒度结构的图像，并且在质量与效率的权衡上优于先前的像素空间扩散Transformer模型。"
+    }
+  }
+]
