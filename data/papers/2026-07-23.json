@@ -1,0 +1,147 @@
+[
+  {
+    "id": "2607.20048",
+    "title": "Importance-Aware OBS Pruning for Diffusion Models",
+    "abstract": "We propose importance-aware pruning for diffusion models, a training-free framework that prioritizes preserving parameters critical to semantically salient image regions. To do so, we incorporate spatial importance maps -- derived from conditioning signals or model attention -- into the pruning objective. This produces parameter rankings aligned with perceptual relevance rather than uniform reconstruction error. On MS-COCO dataset, our proposed approach consistently retains subject fidelity and structural correctness at high compression ratios where conventional pruning causes visible degradation. These results demonstrate that content-aware objectives are key to perceptually faithful compression of generative models.",
+    "authors": [
+      "Ba-Thinh Lam",
+      "Srijan Das",
+      "Hieu Le"
+    ],
+    "published": "2026-07-22",
+    "updated": "2026-07-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.20048.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.20048",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "面向扩散模型的重要性感知OBS剪枝方法",
+      "core_contribution": "提出了一种无需重新训练的重要性感知剪枝框架，通过引入空间重要性图来优先保留对语义显著区域至关重要的参数，从而在高压缩比下保持生成图像的主体保真度和结构正确性。",
+      "method": "该方法基于OBS（Optimal Brain Surgeon）剪枝框架，将空间重要性图（来源于条件信号或模型注意力）融入剪枝目标函数，使得参数排序依据感知相关性而非均匀重建误差。剪枝时优先保留对图像中语义重要区域贡献大的参数，而牺牲对非关键区域影响较小的参数。整个过程无需重新训练或微调模型。",
+      "findings": "在MS-COCO数据集上的实验表明，该方法在高压缩比下能够持续保持主体保真度和结构正确性，而传统剪枝方法会导致明显的视觉退化。结果证明，内容感知的目标函数是实现生成模型感知保真压缩的关键。"
+    }
+  },
+  {
+    "id": "2607.19947",
+    "title": "ETPDesigner: Multi-Agent Orchestration for Interactive Multimodal Electronic Theater Program",
+    "abstract": "Electronic Theater Programs (ETPs) serve as critical promotional media in the performing arts, comprising a multi-page collection of heterogeneous visual assets such as theatrical posters, performance details, and character portraits. However, existing text-to-image paradigms struggle with such complex design tasks due to their inability to comprehend long-context narratives and maintain visual consistency across multiple distinct pages. To address this, we introduce ETPDesigner, a collaborative Multi-Agent framework that directly synthesizes high-quality ETPs from raw dramatic scripts. Emulating a professional design pipeline, our framework orchestrates specialized agents for semantic script analysis, core poster synthesis, functional background generation, and the stratified composition of character assets. Central to ETPDesigner is a global style anchor mechanism that extracts visual priors from the core poster to enforce strict aesthetic uniformity across all generated components. Furthermore, we elevate the ETP from a static publication to an immersive interactive companion. By integrating portrait animation, customized speech synthesis, and persona-grounded Large Language Models (LLMs), our system enables users to engage in real-time, voice-enabled conversations with the generated virtual characters. To rigorously benchmark this task, we construct ETP-Pro, a domain-specific benchmark of professional theater posters and high-quality character portraits. Extensive evaluations demonstrate our method's superiority in producing semantically faithful, aesthetically consistent, and highly interactive program sets.",
+    "authors": [
+      "Mengtian Li",
+      "Xinru Guo",
+      "Xiaoru Lin",
+      "Xiao Rong",
+      "Zhifeng Xie",
+      "Chaofeng Chen"
+    ],
+    "published": "2026-07-22",
+    "updated": "2026-07-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19947.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.19947",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "ETPDesigner：面向交互式多模态电子剧场节目的多智能体编排系统",
+      "core_contribution": "提出了一种名为ETPDesigner的多智能体协作框架，能够从原始戏剧剧本直接生成高质量、视觉一致且可交互的电子剧场节目（ETP），解决了现有文本到图像模型在处理长文本叙事和多页视觉一致性方面的不足。",
+      "method": "该方法模拟专业设计流程，编排了多个专用智能体，分别负责语义脚本分析、核心海报合成、功能性背景生成以及角色资产的分层组合。核心机制是全局风格锚点，从核心海报中提取视觉先验，确保所有生成组件的美学统一。此外，通过集成肖像动画、定制语音合成和基于角色的大语言模型，将静态节目升级为支持实时语音对话的交互式体验。",
+      "findings": "在自建的领域专用基准数据集ETP-Pro上的大量评估表明，该方法在生成语义忠实、美学一致且高度交互的节目集方面具有优越性，显著优于现有文本到图像范式。"
+    }
+  },
+  {
+    "id": "2607.19923",
+    "title": "WearWow: Native 2K Multi-Garment Virtual Try-On via Adaptive Token Packing and Preference Alignment",
+    "abstract": "Synthesizing native 2K multi-garment virtual try-on is a formidable frontier in digital fashion, critically bottlenecked by two fundamental limitations: the O(N^2) memory explosion induced by 2k conditions, and the spectral bias of diffusion models that over-smooths high-frequency fabric details. We present WearWow, an end-to-end, mask-free generative framework that pioneers ultra-high-resolution multi-garment synthesis. To mitigate the memory explosion , we propose Adaptive 2D Token Packing (ATP). ATP leverages inherent garment sparsity to algorithmically pack heterogeneous items onto a unified 2D canvas and prune uninformative background tokens, minimizing the effective sequence length and subsequent memory overhead while rigorously preserving 2D spatial priors. To rectify texture degradation, we introduce the Multi-dimensional Try-on Reward (MTR) system. MTR synergizes a Semantic Guidance Reward to explicitly drive tactile restoration with a Cloth Distribution Reward to implicitly anchor the physical distribution, a joint formulation that effectively mitigates the severe reward hacking. Furthermore, we curate WearWow-2K, an extreme-quality dataset comprising native 2K triplets, providing physically correct spatial interactions that naturally empower the model's mask-free generation. Extensive experiments demonstrate that WearWow establishes a new state-of-the-art, exceeding existing commercial baselines in native 2K multi-garment synthesis.",
+    "authors": [
+      "Xujie Zhang",
+      "Runyan Du",
+      "Song Chang",
+      "Jiang Li",
+      "Dongliang Shao",
+      "Liping Wu",
+      "Wei Luo",
+      "Xiaochao Qu",
+      "Luoqi Liu",
+      "Xiaodan Liang"
+    ],
+    "published": "2026-07-22",
+    "updated": "2026-07-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.19923.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.19923",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "WearWow：通过自适应令牌打包与偏好对齐实现原生2K多服装虚拟试穿",
+      "core_contribution": "WearWow提出了一个端到端、无掩码的生成框架，首次实现了原生2K分辨率下的多服装虚拟试穿，解决了高分辨率条件下内存爆炸和纹理细节过度平滑两大瓶颈。",
+      "method": "该方法包含两个核心创新：一是自适应2D令牌打包（ATP），利用服装的稀疏性将不同衣物算法性地打包到统一2D画布上，并修剪无信息背景令牌，从而在保留2D空间先验的同时减少序列长度和内存开销；二是多维试穿奖励系统（MTR），结合语义引导奖励和布料分布奖励，分别显式驱动触觉恢复和隐式锚定物理分布，以缓解奖励破解问题。此外，作者还构建了WearWow-2K数据集，包含原生2K三元组，提供物理正确的空间交互，支持无掩码生成。",
+      "findings": "大量实验表明，WearWow在原生2K多服装合成任务上超越了现有商业基线，达到了新的最先进水平，有效生成了高分辨率、纹理细节丰富的多服装试穿效果。"
+    }
+  },
+  {
+    "id": "2607.18237",
+    "title": "The Many Senses of Visual Similarity: A Text-Prompted Image Perceptual Metric",
+    "abstract": "Human visual similarity judgments are context-dependent. For example, two images may be similar in shape but distinct in color. Existing perceptual similarity metrics, however, collapse these nuances into a single scalar value, offering no mechanism to condition on specific aspects. To bridge this gap, we introduce a large-scale dataset of human similarity judgments over image triplets, where each triplet is annotated across multiple, free-form semantic aspects of similarity. Benchmarking a broad range of frontier vision-language models (VLMs) reveals a considerable performance gap compared to human annotators' consensus. Leveraging our data, we fine-tune a VLM to produce our Text-Prompted Image Perceptual Similarity (TPIPS) metric, capturing multiple senses of visual similarity depending on the specified text prompt. We demonstrate that TPIPS aligns more closely with human perception and generalizes reliably beyond the training distribution. Finally, we show that TPIPS unlocks new capabilities in text-guided retrieval, compositional search, and the fine-grained evaluation of generative models. Our code, data, and trained models are at https://peterwang512.github.io/TPIPS",
+    "authors": [
+      "Sheng-Yu Wang",
+      "Yotam Nitzan",
+      "Aaron Hertzmann",
+      "Jun-Yan Zhu",
+      "Eli Shechtman",
+      "Alexei A. Efros",
+      "Richard Zhang"
+    ],
+    "published": "2026-07-20",
+    "updated": "2026-07-20",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.18237.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.18237",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "视觉相似性的多重含义：一种文本提示的图像感知度量",
+      "core_contribution": "提出了一种基于文本提示的图像感知相似性度量（TPIPS），能够根据不同的语义方面（如形状、颜色）灵活评估图像相似性，填补了现有感知度量无法针对特定方面进行条件化判断的空白。",
+      "method": "首先构建了一个大规模图像三元组数据集，每个三元组包含多个自由形式的语义相似性标注。然后基于该数据集微调视觉-语言模型（VLM），使其能够根据给定的文本提示输出相应的感知相似性分数。最终得到TPIPS度量，可针对不同语义方面输出与人类判断更一致的相似性结果。",
+      "findings": "实验表明，现有前沿VLM在图像相似性判断上与人类共识存在显著差距；TPIPS不仅与人类感知更一致，还能可靠地泛化到训练分布之外的数据；此外，TPIPS在文本引导检索、组合搜索以及生成模型的细粒度评估中展现出新的能力。"
+    }
+  },
+  {
+    "id": "2607.17572",
+    "title": "JAGG: Jacobian-Aggregated Group Gradient for Efficient GRPO Training of Diffusion Models",
+    "abstract": "Group Relative Policy Optimization (GRPO) is a powerful reinforcement learning algorithm for aligning generative models with human preferences. While successful in large language models~\\cite{shao2024deepseekmathpushinglimitsmathematical}, its extension to diffusion and flow matching models introduces a severe computational bottleneck: gradients must be back-propagated through the high-capacity DiT backbone at \\emph{every} timestep of the sampling trajectory, making high-resolution text-to-image (T2I) training prohibitively expensive. Training-free DiT inference acceleration methods (e.g., $Δ$-DiT, ScalingCache) exploit the fact that DiT hidden states and velocity predictions vary \\emph{smoothly and nearly linearly} along the trajectory. We ask whether the same linearity can reduce the backward-pass cost of DiT RL training, and answer affirmatively with \\textbf{JAGG} (\\textbf{J}acobian-\\textbf{A}ggregated \\textbf{G}roup \\textbf{G}radient), which reduces full transformer backward passes from $W$ to $2$ per group of $W$ consecutive steps. JAGG approximates intermediate-step Jacobians via $t$-weighted interpolation of the endpoint Jacobians, then aggregates per-step upstream signals into two composite gradients applied through a single joint backward pass. We prove this interpolation is \\emph{exact} when the velocity is linear in $(z,t)$, and a cosine-similarity routing rule (\\texttt{jagg\\_frac}) deploys JAGG only where the assumption holds. Experiments on T2I benchmarks show JAGG delivers $\\sim$2$\\times$ backward speedup with negligible quality degradation.",
+    "authors": [
+      "Ruiyi Ding",
+      "Jie Li",
+      "He Kang",
+      "Ziyan Liu",
+      "Chengru Song",
+      "Yuan chen"
+    ],
+    "published": "2026-07-20",
+    "updated": "2026-07-22",
+    "categories": [
+      "cs.LG",
+      "cs.CV",
+      "eess.SY"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2607.17572.pdf",
+    "abs_url": "https://arxiv.org/abs/2607.17572",
+    "primary_category": "cs.LG",
+    "score": 75,
+    "summary": {
+      "title_zh": "JAGG：用于扩散模型高效GRPO训练的雅可比聚合组梯度",
+      "core_contribution": "提出JAGG方法，将扩散模型强化学习训练中每个采样步的完整Transformer反向传播次数从W步减少到仅2步，实现约2倍反向传播加速且几乎不损失生成质量。",
+      "method": "JAGG利用扩散Transformer（DiT）隐状态和速度预测沿采样轨迹平滑且近似线性变化的特性，通过端点雅可比矩阵的t加权插值近似中间步的雅可比矩阵，然后将各步的上游信号聚合成两个复合梯度，通过一次联合反向传播完成计算。此外，引入余弦相似度路由规则（jagg_frac）仅在假设成立时启用JAGG，确保近似精度。",
+      "findings": "在文本到图像（T2I）基准测试上，JAGG实现了约2倍的反向传播加速，同时生成质量下降可忽略不计。理论证明当速度在(z,t)上线性时该插值是精确的。"
+    }
+  }
+]
