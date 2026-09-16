@@ -1,0 +1,202 @@
+[
+  {
+    "id": "2609.11929",
+    "title": "SenseNova-U1.5: Towards Native Unified Visual Intelligence",
+    "abstract": "We launch SenseNova-U1.5, an 8B-MoT native unified multimodal model that understands, reasons about, and generates visual content within an encoder-free and VAE-free architecture. We strengthen its visual interface through spatially coherent patch reconstruction and scale its training with carefully curated generation and editing data, improved task formulation, structural prompt enhancement, and native resolutions of up to 4K. For post-training, we optimize specialized experts for visual aesthetics, bilingual text rendering, infographic generation, and image editing, and consolidate their capabilities through multi-expert on-policy distillation. Across extensive evaluations, SenseNova-U1.5 largely advances image fidelity, text rendering, complex composition, multi-reference editing, and interleaved generation, while improving instruction following and preserving subject identity, geometry, and unmodified regions. Despite limited exposure to structured formats in its generation data, SenseNova-U1.5 generalizes effectively to long, complex, and structured visual instructions, further proving that multimodal understanding can transfer to visual planning and creation. Together, these findings position native unified modelling as a promising path towards systems that perceive, reason and create within a fully end-to-end framework. We will open-source training code, including supervised fine-tuning, reinforcement learning, and on-policy distillation.",
+    "authors": [
+      "Haiwen Diao",
+      "Jiahao Wang",
+      "Chenjing Ding",
+      "Hanming Deng",
+      "Jiangnan Chen",
+      "Ruixi Zhang",
+      "Ruohui Wang",
+      "Wenwen Tong",
+      "Xiangyu Fan",
+      "Yubo Wang",
+      "Yue Zhu",
+      "Yuwei Niu",
+      "Zhengqi Bai",
+      "Zhiqian Lin",
+      "Zhitao Yang",
+      "Zhongang Cai",
+      "Bo Yang",
+      "Chen Feng",
+      "Chengguang Lv",
+      "Guangjia Liu",
+      "Guanlin Wang",
+      "Hanyu Zhang",
+      "Haojia Yu",
+      "Hongcan Xiao",
+      "Hongli Wang",
+      "Huan Wu",
+      "Huaping Zhong",
+      "Jian Fang",
+      "Jianan Fan",
+      "Jiaqi Li",
+      "Jiefan Lu",
+      "Jing Zuo",
+      "Jingcheng Ni",
+      "Junxiang Xu",
+      "Linjun Dai",
+      "Mutian Xu",
+      "Peishen Yan",
+      "Penghao Wu",
+      "Ruijie Mao",
+      "Ruisi Wang",
+      "Shihao Bai",
+      "Shuang Yang",
+      "Shuya Yang",
+      "Shuyan Zheng",
+      "Silei Wu",
+      "Siying Li",
+      "Tao Chu",
+      "Tianbo Zhong",
+      "Tongxi Zhou",
+      "Weichao Luo",
+      "Weichen Fan",
+      "Wenhao Jia",
+      "Wenjie Gao",
+      "Xiangli Kong",
+      "Yan Li",
+      "Yang Yong",
+      "Zimo Wen",
+      "Zixuan Qian",
+      "Wenxiu Sun",
+      "Ruihao Gong",
+      "Quan Wang",
+      "Lewei Lu",
+      "Lei Yang",
+      "Ziwei Liu",
+      "Dahua Lin"
+    ],
+    "published": "2026-09-10",
+    "updated": "2026-09-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.11929.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.11929",
+    "primary_category": "cs.CV",
+    "score": 90,
+    "summary": {
+      "title_zh": "SenseNova-U1.5：迈向原生统一视觉智能",
+      "core_contribution": "提出了一种8B参数的MoT原生统一多模态模型SenseNova-U1.5，在无编码器、无VAE的架构中实现视觉内容的理解、推理与生成，并通过多专家在线策略蒸馏显著提升了图像保真度、文本渲染和复杂组合生成能力。",
+      "method": "模型采用无编码器和无VAE的架构，通过空间连贯的补丁重建增强视觉接口，并利用精心策划的生成与编辑数据、改进的任务公式、结构提示增强以及高达4K的原生分辨率进行训练。后训练阶段，针对视觉美学、双语文本渲染、信息图生成和图像编辑优化了专门专家，并通过多专家在线策略蒸馏整合其能力。",
+      "findings": "实验表明，SenseNova-U1.5在图像保真度、文本渲染、复杂构图、多参考编辑和交错生成方面取得显著进步，同时改进了指令遵循能力并保持了主体身份、几何形状和未修改区域的一致性。尽管生成数据中结构化格式有限，模型仍能有效泛化到长、复杂和结构化的视觉指令，证明多模态理解可以迁移到视觉规划与创作中。"
+    }
+  },
+  {
+    "id": "2609.14657",
+    "title": "Compositional SVG Generation via VLM-Driven Hierarchical Semantic Parsing",
+    "abstract": "While Vision-Language Models (VLMs) excel at visual reasoning, generating structured, editable Scalable Vector Graphics (SVG) remains a fundamental challenge. Existing pipelines predominantly yield flat, semantically agnostic collections of paths, where editing a single object requires manually identifying its constituent paths. To address this, we propose a VLM-driven agentic framework for semantic compositional SVG generation. Our pipeline recursively parses visual scenes into semantic and geometric hierarchies via top-down decomposition, visual grounding, and prompt-driven amodal occlusion recovery, ensuring each component is geometrically complete. Furthermore, we introduce the Semantic SVG Benchmark with human-annotated semantic groups and novel sub-component metrics (Semantic Recall/Precision, PERE) to explicitly evaluate structural compositionality and functional editability. Experiments show that our natively predicted structures surpass the upper bounds of existing flat-generation methods in both grouping quality and editability, while maintaining state-of-the-art visual fidelity.",
+    "authors": [
+      "Sehwan Park",
+      "Taehoon Kim",
+      "Geonhee Han",
+      "Dohyun Kim",
+      "Seung Wook Kim",
+      "Paul Hongsuck Seo"
+    ],
+    "published": "2026-09-13",
+    "updated": "2026-09-13",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.14657.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.14657",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "基于VLM驱动的层次化语义解析的组合式SVG生成",
+      "core_contribution": "提出了一种VLM驱动的智能体框架，能够递归地将视觉场景解析为语义和几何层次结构，生成具有语义分组和可编辑性的组合式SVG，并引入了新的语义SVG基准和子组件评估指标。",
+      "method": "该方法通过自上而下的分解、视觉定位和提示驱动的非模态遮挡恢复，递归地将视觉场景解析为语义和几何层次结构，确保每个组件在几何上完整。框架利用VLM进行视觉推理，生成结构化的SVG，而非传统的扁平化路径集合。",
+      "findings": "实验表明，该方法原生预测的结构在分组质量和可编辑性上超越了现有扁平化生成方法的上限，同时保持了最先进的视觉保真度。"
+    }
+  },
+  {
+    "id": "2609.15863",
+    "title": "LynnReal-Omni: Native multi-modal Video Generation for Agentic Visual Workflows",
+    "abstract": "Video diffusion models are stochastic and hard to control: precise content often requires repeated sampling without guaranteed success, and long-horizon scenes drift in appearance, interactions, and temporal coherence. Agentic visual creation provides explicit references, editable 3D scenes, or executable game states for stable control, but does not by itself guarantee high object or character fidelity. Combining the two can enable stable, high-quality generation. To realize this combination, we present LynnReal-Omni, a native multimodal video generation framework built on a 32B shared multimodal diffusion transformer that unifies text-to-video, image-conditioned generation, reference-guided generation, structural control, editing, degraded video restoration, and long-video generation. It accepts heterogeneous visual inputs, including appearance references, editable 3D renders, and game recordings, allowing agents to compose visual conditions within a unified model. We also train a dedicated 27B Flash shared multimodal diffusion transformer for real-time rendering. We build a systematic data pipeline for video cleaning, subject association, multimodal annotation, and aligned control construction, yielding a curated corpus of multi-shot audiovisual segments, and introduce MSAVP, a 100-prompt, 20-metric evaluation design that separates instruction following, generating plausibility, visual quality, temporal behavior, and audio coordination. LynnReal-Omni-Flash further reduces inference cost through model and decoding acceleration, including a lightweight VAE decoder; on one H100, warm generation and decoding of a 22-frame 540p video take 843 ms with LynnReal-Omni and 377 ms with Flash. These results provide a foundation for real-time streaming video generation, making LynnReal-Omni a unified, controllable, and efficient basis for agentic visual creation.",
+    "authors": [
+      "Xiaofeng Mao",
+      "Peijia Lin",
+      "Shaohao Rui",
+      "Yibo Zhang",
+      "Haibin Wan",
+      "Weijie Ma"
+    ],
+    "published": "2026-09-14",
+    "updated": "2026-09-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.15863.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.15863",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "LynnReal-Omni：面向智能体视觉工作流的原生多模态视频生成",
+      "core_contribution": "提出一个统一的多模态视频生成框架LynnReal-Omni，能够同时支持文本到视频、图像条件生成、参考引导生成、结构控制、编辑、退化视频修复和长视频生成，为智能体视觉创作提供可控、高效的基础。",
+      "method": "基于一个32B共享多模态扩散Transformer，统一处理多种视觉输入（如外观参考、可编辑3D渲染和游戏录制），并训练了一个27B的Flash版本用于实时渲染。构建了系统化的数据管道，包括视频清洗、主体关联、多模态标注和对齐控制构建，并设计了包含100个提示和20个指标的评估体系MSAVP。通过模型和解码加速（包括轻量级VAE解码器）降低推理成本。",
+      "findings": "在单块H100上，生成并解码22帧540p视频，LynnReal-Omni耗时843毫秒，Flash版本仅需377毫秒，为实时流式视频生成奠定了基础。实验表明该框架在指令遵循、生成合理性、视觉质量、时间行为和音频协调方面均表现良好。"
+    }
+  },
+  {
+    "id": "2609.11804",
+    "title": "Logit Refiner: Improving Visual Autoregressive Models via Intra-Scale Dependency Modeling",
+    "abstract": "Visual Autoregressive Models (VAR) generate images through next-scale prediction, producing all tokens within each scale in parallel. We show that this parallel decoding constitutes a mean-field-style approximation that discards spatial dependencies among same-scale tokens, causing locally incoherent samples regardless of backbone capacity -- a limitation of the decoding rule. Addressing this limitation, we introduce the Logit Refiner, a lightweight autoregressive module that restores intra-scale dependencies by sequentially sampling tokens conditioned on frozen backbone features. Adding only ~10% parameters and less than 5% of the base model's training compute, it plugs into any pretrained VAR checkpoint without retraining. Controlled ablations isolate joint intra-scale sampling -- rather than additional capacity or training -- as the critical ingredient. Across backbones from 310M to 2B parameters on class-conditional ImageNet 256x256, the refiner consistently improves generation quality, enabling a 1.1B-parameter model to surpass one twice its size. The approach further generalizes to text-to-image generation, confirming that the mean-field bottleneck persists across VAR variants and is effectively alleviated by our method. Project page: https://compvis.github.io/logit-refiner/",
+    "authors": [
+      "Meimingwei Li",
+      "Stefan Andreas Baumann",
+      "Felix Krause",
+      "Björn Ommer"
+    ],
+    "published": "2026-09-10",
+    "updated": "2026-09-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.11804.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.11804",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "Logit Refiner：通过尺度内依赖建模改进视觉自回归模型",
+      "core_contribution": "本文揭示了视觉自回归模型（VAR）在并行解码时因忽略同尺度内空间依赖而导致的局部不连贯问题，并提出了一种轻量级的Logit Refiner模块，通过顺序采样恢复尺度内依赖，无需重新训练即可提升任意预训练VAR模型的生成质量。",
+      "method": "Logit Refiner是一个轻量级的自回归模块，它利用冻结的骨干网络特征，以顺序采样的方式逐token生成同尺度内的图像块，从而恢复被并行解码忽略的尺度内空间依赖。该模块仅增加约10%的参数和不到5%的训练计算量，可直接插入任何预训练的VAR检查点。通过控制消融实验，作者验证了联合尺度内采样（而非额外容量或训练）是性能提升的关键。",
+      "findings": "在类条件ImageNet 256x256数据集上，Logit Refiner在310M到2B参数的多个骨干网络上一致提升了生成质量，使1.1B参数的模型超越了2B参数的模型。该方法还推广到文本到图像生成任务，证实了平均场瓶颈在VAR变体中的普遍存在性，且被所提方法有效缓解。"
+    }
+  },
+  {
+    "id": "2609.12830",
+    "title": "Balancing Emotional Alignment and Semantic Consistency in Image Generation via Reinforcement Learning with Valence-Arousal Anchoring",
+    "abstract": "Continuous emotion control in text-to-image generation requires a model to improve affective alignment without changing the objects, layout, or scene described by the prompt. Existing supervised emotion-injection methods often optimize feature-space proxies and may therefore exhibit emotion-semantic drift, in which stronger emotional conditioning is accompanied by unintended content changes. We address this problem with a flow-matching image-generation framework that combines continuous valence-arousal (VA) conditioning, Group Relative Policy Optimization (GRPO), and a neutral semantic anchor. The deterministic probability-flow ODE is converted into a marginal-preserving SDE, yielding non-degenerate transition densities for trajectory sampling and policy-ratio estimation. A frozen CLIP-based VA regressor supplies a terminal reward measuring the distance between the predicted and target VA coordinates, while an image generated from the same prompt under zero VA conditioning provides a feature-space reference for semantic preservation. A reduced denoising schedule is used for online RL sampling, whereas the original schedule is retained at inference. Experiments on 3,300 prompt-emotion combinations show substantially lower valence and arousal errors than the VA-conditioned baseline and an improved CLIPScore relative to EmotiCrafter, with a measurable trade-off in reference-free image quality. The results support anchor-regularized Flow-GRPO as a practical approach to balancing emotional alignment and semantic consistency in continuous-affect image synthesis.",
+    "authors": [
+      "Jisheng Dang",
+      "Zhenxuan Wang",
+      "Bin Li",
+      "Ronghao Lin",
+      "Bin Hu",
+      "Tat-Seng Chua"
+    ],
+    "published": "2026-09-11",
+    "updated": "2026-09-11",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.12830.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.12830",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "基于效价-唤醒锚定的强化学习在图像生成中平衡情感对齐与语义一致性",
+      "core_contribution": "提出了一种结合连续效价-唤醒条件、组相对策略优化（GRPO）和中性语义锚定的流匹配图像生成框架，有效解决了情感注入中的情感-语义漂移问题，实现了情感对齐与语义保持的平衡。",
+      "method": "该方法将确定性概率流ODE转换为保持边际分布的SDE，以获得非退化转移密度用于轨迹采样和策略比估计。使用冻结的CLIP-based VA回归器提供终端奖励，衡量生成图像与目标VA坐标的距离；同时，在零VA条件下从相同提示生成的图像作为特征空间参考以保持语义。在线强化学习采样采用简化去噪调度，推理时保留原始调度。",
+      "findings": "在3,300个提示-情感组合上的实验表明，该方法相比VA条件基线显著降低了效价和唤醒误差，相对于EmotiCrafter提升了CLIPScore，但在无参考图像质量上存在可衡量的权衡。结果支持锚定正则化的Flow-GRPO作为在连续情感图像合成中平衡情感对齐与语义一致性的实用方法。"
+    }
+  }
+]
