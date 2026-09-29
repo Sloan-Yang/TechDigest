@@ -1,0 +1,143 @@
+[
+  {
+    "id": "2609.32415",
+    "title": "RefAdapt-DiT: Adaptive Joint Attention for Reference-Conditioned Diffusion Transformers",
+    "abstract": "Diffusion Transformers (DiTs) have become the standard backbone for high-quality generative modeling, yet deploying them in conditional generation tasks remains computationally prohibitive because bidirectional joint attention repeatedly processes large reference streams. While existing optimization schemes mitigate generic temporal redundancy, they typically rely on coarse-grained static reuse and overlook the distinct dynamics of references and targets. Specifically, we observe that reference representations often evolve slowly along the generation trajectory, while the target often assigns little attention mass to them; reference drift and this target-to-reference exposure jointly shape how strongly stale reference states affect the target. To exploit these patterns, we introduce \\RefAdapt, a training-free framework for adaptive control of joint attention between references and targets. Instead of rigid static strategies, \\RefAdapt combines consecutive target-Q change with previously observed target-to-reference attention mass to control reference computation adaptively at block granularity. Under ultra-few-step settings, \\RefAdapt enables speedups of up to $2.097\\times$ on 4-step MiniMax H3 and $3.54\\times$ on 8-step Qwen Image Edit, while maintaining comparable visual quality.",
+    "authors": [
+      "Jian Tang",
+      "Jiawei Fan",
+      "Qiannan Zhou",
+      "Qingbin Liu",
+      "Jiang Bian",
+      "Zang Li"
+    ],
+    "published": "2026-09-26",
+    "updated": "2026-09-26",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.32415.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.32415",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "RefAdapt-DiT：面向参考条件扩散Transformer的自适应联合注意力机制",
+      "core_contribution": "提出了一种无需训练的自适应框架RefAdapt，通过动态控制参考与目标之间的联合注意力计算，在极低步数生成条件下显著加速参考条件扩散Transformer模型，同时保持视觉质量。",
+      "method": "首先观察到参考表征在生成轨迹中演化缓慢，且目标对参考的注意力权重较低，导致参考状态过时对目标影响有限。基于此，RefAdapt结合连续目标查询（target-Q）的变化量与先前观测到的目标-参考注意力权重，在块粒度上自适应地控制参考计算频率。该方法无需重新训练，通过动态跳过冗余的参考处理步骤实现加速。",
+      "findings": "在极低步数设置下，RefAdapt在4步MiniMax H3上实现最高2.097倍加速，在8步Qwen Image Edit上实现最高3.54倍加速，同时保持与原始模型相当的视觉质量。"
+    }
+  },
+  {
+    "id": "2609.32389",
+    "title": "RefCompose: Multi-Reference Image Generation via LoRA-Conditioned Diffusion",
+    "abstract": "Filmmakers and visual artists routinely need to compose multiple references, actors, locations, props, cultural elements, into a single coherent shot, but existing tools either fail to scale past a handful of references or destroy fine grained subject identity in the process, since per reference tokenization scales memory linearly with reference count $N$ and generated content often departs from the given references rather than reproducing them. We propose \\textbf{RefCompose}, a pixel space compositional conditioning framework that decouples \\emph{where} things go from \\emph{what} they look like, via a single fixed resolution reference canvas that keeps conditioning size constant regardless of reference count. Spatial layout is induced at inference time from a frozen diffusion transformer and extracted via Grounding DINO, requiring no LLM or dedicated layout model, while dual stream LoRA adapters inject a layout derived depth map and the encoded canvas through separate low rank streams, disentangling geometric scaffolding from localized appearance. On the Dense Layout protocol, RefCompose consistently outperforms layout based and state of the art multi reference baselines on color, texture, shape, spatial accuracy, and identity/content preservation at higher reference counts, all with constant inference memory, making it a practical building block for multi subject cinematic composition at production scale.",
+    "authors": [
+      "Sai Sri Teja Kuppa",
+      "Parth Shinde",
+      "Priyadharsan Balaji S",
+      "Jinka Harshavardhan",
+      "Sriprabha Ramanarayanan"
+    ],
+    "published": "2026-09-26",
+    "updated": "2026-09-26",
+    "categories": [
+      "cs.CV",
+      "eess.IV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.32389.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.32389",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "RefCompose：基于LoRA条件扩散的多参考图像生成",
+      "core_contribution": "提出了一种像素空间组合条件框架RefCompose，通过固定分辨率的参考画布和双流LoRA适配器，在保持恒定推理内存的同时，实现了对任意数量参考图像的高保真组合生成，显著优于现有方法。",
+      "method": "RefCompose将空间布局（位置）与外观（内容）解耦：首先利用冻结的扩散Transformer在推理时生成空间布局，并通过Grounding DINO提取；然后使用双流LoRA适配器，分别注入布局导出的深度图和编码后的参考画布，通过低秩流分离几何骨架与局部外观。整个框架采用固定分辨率的参考画布，使条件大小不随参考数量增加而变化。",
+      "findings": "在密集布局协议上，RefCompose在颜色、纹理、形状、空间准确性以及高参考数量下的身份/内容保持方面，持续优于基于布局的方法和当前最先进的多参考基线，且推理内存恒定，适合生产级多主体电影级组合生成。"
+    }
+  },
+  {
+    "id": "2609.31451",
+    "title": "TemplateCraft: Agentic Visual Template Generation",
+    "abstract": "The growing popularity of short videos has driven demand for one-click content creation. Visual templates turn uploaded images into personalized content with preset effects, but reusable template generation still requires substantial manual effort in asset preparation and tool orchestration. We propose TemplateCraft, a multi-agent system that converts natural-language instructions into client-executable templates through planning, material generation, effect-workflow generation, and protocol compilation. Its Planner-Evaluator loop uses execution feedback for targeted rollback, while stage-level and long-term memory support revision without parameter updates. We evaluate TemplateCraft on TemplateBench, derived from 60 real-world templates. With the same Qwen3-VL backbone, TemplateCraft raises image/video generation success rates from 56.7%/30.0% to 66.7%/50.0% over Planner-only (best-of-three) and improves template adherence and style consistency. With additional evaluation and revision, it matches or exceeds a GPT-4o Planner-only baseline on selected metrics. Persistent assets further improve cross-input style consistency.",
+    "authors": [
+      "Hongjie Yu",
+      "Zhiyuan Fan",
+      "Yuzhe Zhang",
+      "Jiangcun Du",
+      "Zhicheng Gao",
+      "Yuhong Zhang",
+      "Xiaokai Zhan",
+      "Zongshi Xie"
+    ],
+    "published": "2026-09-25",
+    "updated": "2026-09-25",
+    "categories": [
+      "cs.MM",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.31451.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.31451",
+    "primary_category": "cs.MM",
+    "score": 85,
+    "summary": {
+      "title_zh": "TemplateCraft：智能体驱动的视觉模板生成",
+      "core_contribution": "提出了一种名为TemplateCraft的多智能体系统，能够将自然语言指令自动转化为可直接执行的视觉模板，显著降低了模板生成中的人工成本。",
+      "method": "TemplateCraft通过规划、素材生成、效果工作流生成和协议编译四个模块协同工作。系统采用规划器-评估器循环，利用执行反馈进行定向回滚，并引入阶段级记忆和长期记忆支持修订，无需更新模型参数即可优化生成结果。",
+      "findings": "在基于60个真实模板构建的TemplateBench上，使用相同的Qwen3-VL骨干网络，TemplateCraft将图像/视频生成成功率从仅规划器（最佳三次）的56.7%/30.0%提升至66.7%/50.0%，并改善了模板遵循度和风格一致性。加入额外评估与修订后，在部分指标上达到或超过了GPT-4o规划器基线，持久化素材进一步提升了跨输入的风格一致性。"
+    }
+  },
+  {
+    "id": "2609.31364",
+    "title": "OpenVAM: Open-World Visual Attention Modeling with VLMs",
+    "abstract": "Predicting human gaze is a core capability for applications ranging from web/UI design analysis to robotics and human-computer interaction. Yet, most visual attention modeling methods output only a dense saliency map, which is often insufficient for action: practitioners need to connect attention peaks to discrete elements in the scene (what) and understand the drivers of those peaks in context (why), while remaining robust to domain shift across natural images, commercial content, and UI/web layouts. We, therefore, introduce OpenVAM (Open-world Visual Attention Modeling with VLMs), a unified framework that jointly addresses universality and explainability across heterogeneous domains (natural scenes, commercial imagery, and UI/web layouts) and supervision modalities. OpenVAM adopts a decoupled-but-aligned design: a dedicated dense visual pathway provides stable, spatially precise localization, while an instruction-following vision--language semantic head generates grounded what/why explanations conditioned on the same image and data-type prompts. A three-stage training strategy preserves strong localization priors while progressively introducing language grounding and improving explanation alignment via parameter-efficient adaptation without perturbing the saliency branch. We further propose a scalable pipeline to generate multi-domain saliency-reason annotations for training and systematic evaluation. Experiments across diverse datasets show that OpenVAM improves robustness under domain shift while producing image-grounded explanations that make saliency predictions more interpretable.",
+    "authors": [
+      "Kiana Hooshanfar",
+      "Amirhossein Kazerouni",
+      "Alireza Hosseini",
+      "Michael Brudno",
+      "Babak Taati"
+    ],
+    "published": "2026-09-25",
+    "updated": "2026-09-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.31364.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.31364",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "开放世界视觉注意力建模：基于视觉语言模型的统一框架",
+      "core_contribution": "提出了OpenVAM，一个能够跨自然图像、商业内容和UI/网页布局等多种异构领域，同时输出密集显著性图与可解释的“是什么/为什么”文本解释的统一框架，解决了现有方法在领域迁移下的鲁棒性不足和缺乏可解释性的问题。",
+      "method": "OpenVAM采用解耦但对齐的双分支设计：一个专用的密集视觉通路提供稳定、空间精确的定位，另一个基于指令的视觉-语言语义头根据同一图像和数据类型提示生成基于图像的“是什么/为什么”解释。通过三阶段训练策略，在保持强定位先验的同时，逐步引入语言基础并利用参数高效微调改善解释对齐，而不干扰显著性分支。此外，还构建了一个可扩展的流水线，用于生成多领域显著性-推理标注数据以支持训练和系统评估。",
+      "findings": "在多个不同数据集上的实验表明，OpenVAM在领域迁移下具有更好的鲁棒性，同时能够生成基于图像的解释，使显著性预测更具可解释性。"
+    }
+  },
+  {
+    "id": "2609.30733",
+    "title": "Amplify What You Gaze At: Target Saliency Boosting in Text-to-Image Generation",
+    "abstract": "Text-to-image generation has advanced in controlling what, where, and how objects appear, yet how visual attention is distributed among objects remains largely unexplored. In this paper, we introduce Target Saliency Boosting, a new task aimed at boosting the visual saliency of a specific object during text-to-image generation without requiring any visual priors. Our key insight is that visual saliency is inherently relative: boosting the saliency of a target object also depends on the global saliency distribution across all objects in the scene. Based on this insight, we propose GazeME, a lightweight framework that uses saliency-marked prompts, inserting learnable marker tokens around object descriptions to indicate which objects to visually emphasize or suppress. To learn these markers, we construct a saliency-semantics dataset that associates objects in image--prompt pairs with object-level saliency scores, and propose Saliency Prior Marker Activation (SPMA), a saliency-aware stochastic marker activation strategy that exploits relative saliency relationships for robust training. During inference, GazeME automatically inserts appropriate markers into the prompt, thereby directly enhancing the visual saliency of the target object. Extensive experiments demonstrate that GazeME effectively boosts target saliency while preserving both semantic alignment and image quality.",
+    "authors": [
+      "Shengqi Dang",
+      "Zhengxi Yu",
+      "Feilin Han",
+      "Xingyu Lan",
+      "Nan Cao"
+    ],
+    "published": "2026-09-25",
+    "updated": "2026-09-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2609.30733.pdf",
+    "abs_url": "https://arxiv.org/abs/2609.30733",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "凝视即增强：文本到图像生成中的目标显著性提升",
+      "core_contribution": "提出目标显著性提升（Target Saliency Boosting）这一新任务，并设计轻量级框架GazeME，无需任何视觉先验即可在文本到图像生成过程中增强特定对象的视觉显著性。",
+      "method": "首先构建一个显著性-语义数据集，将图像-文本对中的对象与对象级显著性分数关联。然后提出显著性先验标记激活（SPMA）策略，利用相对显著性关系进行鲁棒训练，学习可插入到对象描述前后的可学习标记（marker tokens）。在推理时，GazeME自动在提示词中插入合适的标记，从而直接提升目标对象的视觉显著性。",
+      "findings": "实验表明，GazeME能有效提升目标对象的视觉显著性，同时保持语义对齐和图像质量，验证了通过相对显著性关系学习标记来调控视觉注意力的可行性。"
+    }
+  }
+]
