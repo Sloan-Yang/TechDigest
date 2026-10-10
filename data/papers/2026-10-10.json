@@ -1,0 +1,161 @@
+[
+  {
+    "id": "2610.12230",
+    "title": "From Prompting to Composing: A Spatial Canvas Interface for Poster Generation",
+    "abstract": "Text prompting is an indirect interface for poster generation, requiring users to encode inherently two-dimensional composition intent into a one-dimensional sequence of words. We introduce a Spatial Canvas Interface that enables users to directly compose generation intent in space through four complementary binding types: semantic, identity, text, and pixel, together with Text Specifications for individual elements and global appearance. Based on this interface, we develop Compo, a poster generation model adapted from a pretrained image editing model to understand Spatial Canvas inputs and Text Specifications. Compo supports both direct inference, where users explicitly construct the canvas, and agentic mode, where a high-level request is automatically translated into a planned Spatial Canvas. To train Compo, we develop a scalable pipeline that automatically constructs supervision data for different binding types and their combinations, enabling efficient adaptation without training a specialized poster generator from scratch. We further introduce a benchmark that evaluates adherence to individual binding types and their joint composition. Experiments show that Compo achieves stronger compositional controllability than both general-purpose image generation models and dedicated poster generation systems while maintaining high visual quality. By decoupling intent specification from visual generation, our work shifts poster generation from prompting toward composing.",
+    "authors": [
+      "Yitong Wang",
+      "Fangyun Wei",
+      "Jinjing Zhao",
+      "Sirui Zhang",
+      "Hongyang Zhang",
+      "Dong Chen",
+      "Bo Dai",
+      "Yan Lu"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.12230.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.12230",
+    "primary_category": "cs.CV",
+    "score": 95,
+    "summary": {
+      "title_zh": "从提示到构图：用于海报生成的空间画布界面",
+      "core_contribution": "提出了一种空间画布界面，通过四种绑定类型（语义、身份、文本和像素）及文本规格，将海报生成从一维提示词输入转变为二维空间构图，实现了更强的组合可控性。",
+      "method": "基于预训练图像编辑模型，开发了Compo模型以理解空间画布输入和文本规格。支持直接推理（用户显式构建画布）和代理模式（高级请求自动转化为规划画布）。通过可扩展管道自动构建不同绑定类型及其组合的监督数据，无需从头训练专用海报生成器。",
+      "findings": "实验表明，Compo在组合可控性上优于通用图像生成模型和专用海报生成系统，同时保持高视觉质量。通过将意图规格与视觉生成解耦，将海报生成从提示转向构图。"
+    }
+  },
+  {
+    "id": "2610.12343",
+    "title": "Reasoning-Informed Visual Editing",
+    "abstract": "Large Multi-modality Models (LMMs) have made significant progress in visual understanding and generation, but still face challenges in visual editing, particularly in following complex instructions, preserving appearance consistency, and supporting flexible input formats. To study this gap, we introduce RISEBench, the first benchmark for evaluating Reasoning-Informed viSual Editing (RISE), and extend it to RISEBench++, a more comprehensive and fine-grained benchmark for this emerging task. RISEBench++ extends the taxonomy into a hierarchical scheme spanning six reasoning dimensions: Temporal, Causal, Spatial, Logical, and Counterfactual Reasoning, together with Hybrid Reasoning integrating multiple reasoning types across multi-turn edits. These dimensions are further decomposed into 12 subcategories and 65 fine-grained task types. We expand input formats to include multi-image conditioning and scale the benchmark to 1000 human-annotated test cases, released in English and Chinese. We also improve our evaluation framework, assessing Instruction Reasoning, Appearance Consistency, and Visual Plausibility with human judges and an LMM-as-a-judge approach for more reliable and calibrated judgements. Beyond benchmarking, we introduce RISE-Agent, a training-free agentic framework integrating reasoning-driven planning, tool-augmented execution, and verifier-guided refinement, outperforming most strong existing approaches across diverse RISE tasks. We evaluate 58 visual editing approaches, including 34 open-source models, 19 closed-source models, and 5 agentic methods. The results reveal substantial challenges in reasoning-based visual editing, with even the strongest evaluated approach, GPT-Image-2.5 Sunburst, achieving only 56.6% accuracy. RISEBench++ highlights the limitations of contemporary editing models, provides insights, and indicates future directions for reasoning-aware visual editing.",
+    "authors": [
+      "Xue Yang",
+      "Peiyuan Zhang",
+      "Yilun Zhu",
+      "Qihao Yang",
+      "Mingxin Liu",
+      "Xiangyu Zhao",
+      "Ziqian Fan",
+      "Zhaokai Wang",
+      "Yan Li",
+      "Yifan Yang",
+      "Xu Yang",
+      "Xiaosong Jia",
+      "Yue Zhou",
+      "Zhihang Zhong",
+      "Junchi Yan"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.12343.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.12343",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "推理驱动的视觉编辑",
+      "core_contribution": "本文提出了首个用于评估推理驱动视觉编辑（RISE）的基准RISEBench及其扩展版本RISEBench++，并引入了一种无需训练的智能体框架RISE-Agent，显著提升了复杂指令下的视觉编辑性能。",
+      "method": "首先，论文构建了RISEBench++基准，将推理维度划分为时间、因果、空间、逻辑、反事实及混合推理六大类，并细分为12个子类别和65种任务类型，包含1000个人工标注的测试用例（中英文）。其次，采用人类评估与LMM-as-a-judge方法对指令推理、外观一致性和视觉合理性进行评价。最后，提出了RISE-Agent框架，通过推理驱动的规划、工具增强的执行和验证器引导的细化三个模块实现无需训练的视觉编辑。",
+      "findings": "在58种视觉编辑方法（包括34个开源模型、19个闭源模型和5种智能体方法）上的评估显示，即使最强的GPT-Image-2.5 Sunburst也仅达到56.6%的准确率，表明当前模型在推理驱动的视觉编辑任务中仍面临重大挑战，并揭示了未来研究方向。"
+    }
+  },
+  {
+    "id": "2610.12307",
+    "title": "BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion",
+    "abstract": "Most image generation models rely on uniform tokenization, allocating the exact same computational budget to equally-sized image patches. This static paradigm cannot adapt to different resource constraints at inference time, and yields suboptimal quality-cost tradeoff by devoting the same effort to both plain backgrounds and intricate details. We propose BudgetPix, an adaptive tokenization framework that dynamically allocates compute based on visual complexity and spatial layout, enabling flexible computational budgeting at inference time. BudgetPix comprises three key components: (1) an adaptive encoder that maps a fixed-size image to a variable-length token sequence using an entropy-guided quadtree alongside a multi-scale patch embedder; (2) a scale-aware decoder reconstructs fixed-resolution images from multi-scale token sets; and (3) a flexible training and sampling schedule that enables pixel-space denoisers to operate across variable token counts. BudgetPix seamlessly integrates with existing pixel-space diffusion architectures, enabling a single checkpoint to be operated at a wide range of compute budgets. Evaluated on text-to-image generation, BudgetPix matches the fidelity of MiniT2I-L at $512^2$ and PixelDiT at $1024^2$ using just 25% of the original compute budget. In class-conditional generation using a MeanFlow backbone, BudgetPix requires merely 60% of the full compute budget to produce images with near-zero quality degradation, observing a marginal 0.8-point increase in FID. Comprehensive assessments by human and VLM judges confirm that BudgetPix establishes a significantly improved quality-efficiency tradeoff over prior budget-adaptive baselines. More details are available at our project page: https://karaozgur.com/BudgetPix",
+    "authors": [
+      "Ozgur Kara",
+      "Yujia Chen",
+      "Daniel Watson",
+      "David Forsyth",
+      "James Matthew Rehg",
+      "Wen-Sheng Chu",
+      "Du Tran"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.12307.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.12307",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "BudgetPix：面向像素空间图像扩散的计算自适应分词方法",
+      "core_contribution": "提出了一种自适应分词框架BudgetPix，能够根据视觉复杂度和空间布局动态分配计算资源，在推理时灵活调整计算预算，显著提升图像生成的质量-效率权衡。",
+      "method": "BudgetPix包含三个关键组件：1）自适应编码器，利用熵引导的四叉树和多尺度补丁嵌入器将固定尺寸图像映射为可变长度的令牌序列；2）尺度感知解码器，从多尺度令牌集合重建固定分辨率图像；3）灵活的训练与采样调度，使像素空间去噪器能够处理可变数量的令牌。该方法可无缝集成到现有像素空间扩散架构中，单个检查点即可支持多种计算预算。",
+      "findings": "在文本到图像生成任务中，BudgetPix仅使用原始计算预算的25%即可达到MiniT2I-L在512²分辨率下和PixelDiT在1024²分辨率下的保真度。在基于MeanFlow骨干的类别条件生成中，仅需60%的计算预算即可生成质量几乎无下降的图像（FID仅增加0.8点）。人类和VLM评估一致表明，BudgetPix在质量-效率权衡上显著优于先前的预算自适应基线方法。"
+    }
+  },
+  {
+    "id": "2610.12229",
+    "title": "VibeEdit: Image Editing with Canvas Instructions",
+    "abstract": "In text-guided image editing, describing the desired change is often straightforward, but identifying the intended object or region can be cumbersome, especially when several objects look alike. We introduce a new image editing interface that lets users place spatial marks and optional short notes directly on the image. Together, these annotations form a canvas instruction that specifies where to edit and what to change. Our editor, VibeEdit, follows these instructions to perform object addition, removal, replacement, attribute modification, and movement without a separate text prompt. We construct 1.55 million source-target edit pairs with object masks and structured edit descriptions, from which we render canvas instructions during training. We adapt Qwen-Image-Edit with layer-decoupled conditioning that separately encodes source images and canvas instructions for image editing. We train the model with region-weighted supervised fine-tuning, followed by rubric-guided reinforcement learning to improve edit completion, local edit quality, and preservation of unedited regions. We evaluate VibeEdit on an independently constructed, human-curated benchmark of 419 cases emphasizing target selection among similar objects. VibeEdit achieves a VLM rubric score of 79.9 and an outside-region PSNR of 32.8 dB, compared with 67.4 and 24.0 dB for FireRed, the highest-scoring text-instructed baseline in our evaluation.",
+    "authors": [
+      "Jinjing Zhao",
+      "Fangyun Wei",
+      "Yitong Wang",
+      "Xiuyu Wu",
+      "Yunuo Chen",
+      "Yang Yue",
+      "Sirui Zhang",
+      "Wenbo Wang",
+      "Hongyang Zhang",
+      "Dong Chen",
+      "Yan Lu",
+      "Chang Xu"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.12229.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.12229",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "VibeEdit：基于画布指令的图像编辑",
+      "core_contribution": "提出了一种新的图像编辑界面，用户可通过在图像上直接放置空间标记和简短注释（即画布指令）来指定编辑区域和内容，无需单独文本提示，并构建了大规模训练数据集和强化学习优化方法，显著提升了在相似对象中精准选择目标区域的编辑效果。",
+      "method": "首先构建了155万对源-目标编辑样本，包含对象掩码和结构化编辑描述，并在训练时动态渲染画布指令。然后基于Qwen-Image-Edit模型，采用层解耦条件编码，分别对源图像和画布指令进行编码。训练分为两步：先进行区域加权监督微调，再通过基于评分标准的强化学习优化，以提升编辑完成度、局部编辑质量及未编辑区域的保持效果。",
+      "findings": "在独立构建、人工筛选的419个案例基准上（重点考察相似对象间的目标选择），VibeEdit的VLM评分达到79.9分，未编辑区域PSNR为32.8 dB，显著优于文本指令基线方法FireRed（67.4分和24.0 dB），证明了画布指令在复杂场景下编辑的准确性和保真度优势。"
+    }
+  },
+  {
+    "id": "2610.12421",
+    "title": "Beyond Spatio-Temporal Priors: A Generalizable Approach for Dense Correspondence Matching",
+    "abstract": "Dense correspondence matching has historically been bounded by simplifying spatio-temporal priors, such as smooth motion and rigid geometry. While effective for classical tasks, these assumptions break down in image editing and reference-guided generation (IEG), where transformations can preserve visual identity while breaking physical continuity. To establish identity-preserving correspondence across such transformations, we introduce FreeMatching, a generalizable framework combining generative and semantic foundation representations with heterogeneous supervision from classical datasets, tracked videos, and synthetic scenes. Teacher-guided iterative refinement further improves correspondence in IEG without dense correspondence annotations. Experimentally, a single FreeMatching model substantially improves correspondence quality on challenging IEG image pairs while retaining competitive performance on classical benchmarks. Furthermore, we demonstrate its utility as a quantitative metric for evaluating identity preservation, with scores that correlate with human judgment. The code is available at https://github.com/luping-liu/FreeMatching.",
+    "authors": [
+      "Luping Liu",
+      "Bingyi Kang",
+      "Yifan Wang",
+      "Dong Xu"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.12421.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.12421",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "超越时空先验：一种用于密集对应匹配的通用方法",
+      "core_contribution": "提出FreeMatching框架，通过结合生成式与语义基础表示以及异构监督，突破了传统时空先验假设的限制，实现了在图像编辑和参考引导生成等复杂变换下的身份保持密集对应匹配。",
+      "method": "FreeMatching融合了来自经典数据集、跟踪视频和合成场景的异构监督信号，并利用生成式和语义基础表示来学习跨变换的对应关系。针对缺乏密集对应标注的图像编辑与生成任务，采用教师引导的迭代精化策略进一步提升匹配质量。",
+      "findings": "单个FreeMatching模型在具有挑战性的图像编辑与生成图像对上显著提升了对应匹配质量，同时在经典基准上保持竞争力。此外，该模型可作为评估身份保持的量化指标，其得分与人类判断高度相关。"
+    }
+  }
+]
