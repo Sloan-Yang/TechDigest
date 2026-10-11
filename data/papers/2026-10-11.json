@@ -1,0 +1,139 @@
+[
+  {
+    "id": "2610.12102",
+    "title": "Few-Step Generation via Data-Space Iteration",
+    "abstract": "Flow matching has emerged as a scalable paradigm for training high-quality generative models, but sampling from the learned probability flow requires many network evaluations. Distillation can reduce this cost to one or a few evaluations; however, one-step generation often sacrifices quality, making few-step generation the practical operating regime. Existing few-step methods perform their iterative computation along the probability flow and therefore require a fixed, manually chosen timestep discretization. This discretization is often chosen heuristically and is expensive to tune; it may also be restrictive when refinement difficulty differs across samples or spatial locations. We introduce data-space iteration, a few-step generation framework that removes flow discretization altogether. Starting from noise, a shared generator directly refines its prediction in data space, with every iteration trained to produce the best sample permitted by its capacity. Our formulation integrates with distribution matching distillation (DMD) with minimal changes, enabling a controlled comparison between iteration methods under matched training settings. On class-conditional ImageNet 256x256, data-space iteration outperforms standard discretization baselines and matches or improves upon variants selected through schedule search, without requiring schedule-specific training. These results show that data-space iteration provides a simple and effective alternative to discretized flow-space iteration for fast generation.",
+    "authors": [
+      "Shanchuan Lin",
+      "Yansong Peng",
+      "Fu-Yun Wang",
+      "Haoqi Fan"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.12102.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.12102",
+    "primary_category": "cs.LG",
+    "score": 75,
+    "summary": {
+      "title_zh": "通过数据空间迭代实现少步生成",
+      "core_contribution": "本文提出了一种名为数据空间迭代的少步生成框架，完全去除流匹配中的时间步离散化，使共享生成器直接在数据空间进行迭代优化，从而简化了少步生成的流程并提升了生成质量。",
+      "method": "该方法从噪声开始，使用一个共享生成器在数据空间中直接迭代细化预测，每一步训练都旨在生成该容量下最优的样本。该框架与分布匹配蒸馏（DMD）集成，仅需最小改动，即可在匹配训练设置下对比不同迭代方法。",
+      "findings": "在类条件ImageNet 256x256上，数据空间迭代优于标准离散化基线，并匹配或超越通过调度搜索选择的变体，且无需特定调度的训练，表明其是快速生成中离散化流空间迭代的简单有效替代方案。"
+    }
+  },
+  {
+    "id": "2610.10400",
+    "title": "Self-correction Optimization for Interleaved Multimodal Generation",
+    "abstract": "Multimodal large language models (MLLMs) have made significant progress in visual understanding and generation. However, generating interleaved image--text content remains challenging, as it requires tightly integrated multimodal understanding and generation capabilities. Although existing MLLMs provide promising solutions, most rely on additional training with augmented data, which is computationally expensive and remains limited in preserving visual subjects, temporal consistency, and physical plausibility. In this work, we propose self-correction optimization (SCO), an effective training-free method for consistent interleaved generation. SCO treats the classifier-free guidance update as a reference and performs minimal self-correction under two complementary constraints, including new-event and state-preserving constraints. Specifically, the new-event constraint promotes temporal consistency across image--text sequences, while the state-preserving constraint maintains the coherence of visual subjects throughout subsequent generation steps. Experiments on challenging interleaved multimodal generation benchmarks demonstrate significant improvements in temporal coherence and visual-subject preservation. Furthermore, SCO can be extended to video generation and improves the modeling of physically grounded processes, including robot manipulation and long-horizon handcrafting.",
+    "authors": [
+      "Xin You",
+      "Zhiwei Ning",
+      "Zukai Chen",
+      "Minghui Zhang",
+      "Xuanke Shi",
+      "Hanxiao Zhang",
+      "Jingsong Liu",
+      "Jie Yang",
+      "Quan Wang",
+      "Yun Gu"
+    ],
+    "published": "2026-10-07",
+    "updated": "2026-10-07",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.10400.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.10400",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "交错多模态生成的自校正优化",
+      "core_contribution": "提出了一种无需训练的自我校正优化方法（SCO），用于改善多模态大语言模型在交错图像-文本生成中的时间一致性和视觉主体保持能力。",
+      "method": "SCO将分类器自由引导的更新作为参考，在两种互补约束（新事件约束和状态保持约束）下进行最小程度的自我校正。新事件约束促进图像-文本序列间的时间一致性，状态保持约束维持后续生成步骤中视觉主体的连贯性。该方法无需额外训练，可扩展至视频生成。",
+      "findings": "在交错多模态生成基准上，SCO显著提升了时间连贯性和视觉主体保持效果；同时，该方法可扩展至视频生成，并改善了物理过程建模（如机器人操作和长时手工制作）的合理性。"
+    }
+  },
+  {
+    "id": "2610.12469",
+    "title": "Rubric-CEPR: Self-Evolving Image Editing via Reward-Verified Self-Distillation",
+    "abstract": "Instruction-guided image editors have become highly capable, yet improving them further still depends on human-edited training pairs or external reward models. Such supervision is costly to obtain and can reward plausible failures: a realistic output may leave the requested change undone or alter content that should be preserved. In this work, we strive to improve a pretrained image editor using only its own generations, without human-edited targets or an external training-time reward model. To this end, we propose a self-evolving framework, named Rubric-CEPR, that verifies the editor's own samples with its internal representations through a rubric-augmented Contrastive Edit-Preservation Reward (CEPR). A Planner proposes structured edit instructions from unlabeled images, the Editor samples multiple candidate edits, and a frozen Critic scores each candidate with decomposed rubric checks for edit realization, removal of the old state, and content preservation, using features already exposed by the editor. Non-compensatory gates reject infeasible candidates, and the best verified candidate is distilled into the editor through lightweight adapter training. On Qwen-Image-Edit, Rubric-CEPR improves ImgEdit from 4.36 to 4.60 (+5.5%), with a +24.9% gain on object isolation, and transfers to GEdit-Bench and Complex-Edit. The same procedure also improves Step1X-Edit by +7.8% on ImgEdit. We hope our approach will serve as a solid baseline for image editors that improve themselves from their own verified samples. Our code is publicly available at $\\href{https://riteshthawkar.github.io/Rubric-CEPR/}{\\text{this URL}}$",
+    "authors": [
+      "Ritesh Thawkar",
+      "Shubham Patle",
+      "Shravan Venkatraman",
+      "Rao Muhammad Anwer"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.12469.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.12469",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "Rubric-CEPR：通过奖励验证的自蒸馏实现图像编辑器的自我进化",
+      "core_contribution": "提出了一种无需人工标注或外部奖励模型的自我进化框架，利用编辑器自身的内部表征和结构化评分标准来验证并改进预训练图像编辑器的性能。",
+      "method": "该方法包含三个组件：规划器（Planner）从无标签图像生成结构化编辑指令，编辑器（Editor）采样多个候选编辑结果，冻结的评判器（Critic）使用分解的评分标准（如编辑实现、旧状态移除和内容保留）对每个候选进行评分，这些评分基于编辑器已暴露的特征。通过非补偿性门控拒绝不可行候选，并将最佳验证结果通过轻量适配器训练蒸馏回编辑器。",
+      "findings": "在Qwen-Image-Edit上，Rubric-CEPR将ImgEdit分数从4.36提升至4.60（+5.5%），其中对象隔离任务提升24.9%，并成功迁移到GEdit-Bench和Complex-Edit基准；同时，该方法在Step1X-Edit上实现了+7.8%的ImgEdit提升。"
+    }
+  },
+  {
+    "id": "2610.11751",
+    "title": "Dino Forcing Flow Models: Do not denoise what you can predict",
+    "abstract": "Co-denoising pretrained representations such as DINO can substantially improve the training speed and quality of flow matching models, but it introduces a second denoising trajectory and requires carefully designed schedules. We propose a simpler alternative: predict the pretrained representation directly, then condition the model on its own prediction. This removes the need for a second ODE and any representation-specific denoising schedules, while retaining the benefits of representation guidance. Our approach converges substantially faster and achieves better generation quality as measured by FID score. On ImageNet, it outperforms the state of the art in latent space at 2x fewer epochs than prior methods; in pixel space, it improves FID over comparable prior methods by more than 20%. These results support a simple principle: do not denoise what you can predict. Our code is openly available at https://github.com/arijit-hub/dino_forcing.",
+    "authors": [
+      "Arijit Ghosh",
+      "Lucas Degeorge",
+      "Paul Couairon",
+      "Alexei A Efros",
+      "Vicky Kalogeiton",
+      "David Picard"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.11751.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.11751",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "DINO强制流模型：不要对可预测的内容进行去噪",
+      "core_contribution": "提出一种更简单的流匹配训练方法，直接预测预训练表示（如DINO）并以此为条件，替代原有的协同去噪过程，从而消除第二ODE轨迹和特定表示的去噪调度，同时保持表示引导的优势。",
+      "method": "该方法在训练流匹配模型时，直接让模型预测预训练表示（如DINO特征），并将该预测作为条件输入，而不是像传统方法那样对表示进行去噪。这样避免了额外的去噪轨迹和复杂的调度设计，简化了训练流程，同时保留了表示引导带来的加速和质量提升。",
+      "findings": "在ImageNet上，该方法在潜在空间中仅用先前方法一半的epoch数即可超越现有最优结果；在像素空间中，FID分数比同类先前方法改善超过20%。实验表明，该方法收敛更快且生成质量更高，验证了“不要对可预测的内容去噪”这一原则。"
+    }
+  },
+  {
+    "id": "2610.11320",
+    "title": "It's Always 10:10: Reference Images Break a Bias That Prompts Only Dent",
+    "abstract": "Text-to-image models appear to reproduce the habits of the photographs they learned from. Analog clocks are an extreme case: in advertising, watches almost always show 10:10, and generated clocks return to 10:10 even when another time is requested. We measure this bias and test three ways of overcoming it on 52 models available on the Magnific platform, with a replication on Higgsfield. Every image shows three identical clocks that must show 2:35, 6:50 and 11:20. The description of the object is fixed and only the request about the time changes: no time (A), the time in digits (B), the hand positions described by construction relative to the dial numerals (C), or the same description plus a drawn reference dial (D). Two AI readers read all 1,799 images blind from coded copies, with a third reader and the author settling disagreements (dial-level agreement 96.0% and 97.3%). With no time requested, 67% of the images have all three clocks at 10:10. On the 20 current models, all three clocks are correct in 34% of the images with digits, 30% with the hands described in words and 75% with the reference dial (D-B: +37 points, 95% CI +28 to +45); we found no evidence that describing the hands in words beats the digits (C-B: -4 points, CI -10 to +1). The replication on the 12 models shared by both platforms gives the same picture (B 54%, C 50%, D 81%). Writing the time reduces the bias but leaves two thirds of the images of the 20 current models with at least one wrong clock; adding a drawn reference raises full accuracy to three quarters and almost eliminates images entirely at 10:10. We release all images, prompts, raw readings and a script that recomputes every result.",
+    "authors": [
+      "Luca Cazzaniga"
+    ],
+    "published": "2026-10-08",
+    "updated": "2026-10-08",
+    "categories": [
+      "cs.CV",
+      "cs.HC"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.11320.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.11320",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "永远是10:10：参考图像打破了仅靠提示词难以克服的偏见",
+      "core_contribution": "本文量化了文本到图像模型在生成时钟时倾向于显示10:10的固有偏见，并证明添加手绘参考图像能显著提高指定时间生成的准确性，优于仅用文字描述时间或指针位置的方法。",
+      "method": "作者在52个模型（Magnific平台）及Higgsfield平台上的12个共享模型上进行了对照实验，每个图像包含三个必须显示不同时间（2:35、6:50、11:20）的相同时钟。实验设置四种条件：A（不指定时间）、B（用数字指定时间）、C（用文字描述指针相对表盘数字的位置）、D（在C的基础上添加手绘参考表盘）。所有1,799张图像由两位AI读者盲评，第三位读者和作者解决分歧，最终计算各条件下的正确率。",
+      "findings": "在20个当前模型中，不指定时间时67%的图像所有时钟均为10:10；指定数字时全正确率为34%，文字描述指针为30%，而添加参考图像后提升至75%（相比数字条件提高37个百分点，95%置信区间+28至+45）。文字描述指针并不优于数字（差异-4个百分点，置信区间-10至+1）。Higgsfield平台的复制实验（B 54%，C 50%，D 81%）验证了相同结论。添加参考图像几乎消除了完全10:10的图像，但数字条件仍导致三分之二的图像至少有一个时钟错误。"
+    }
+  }
+]

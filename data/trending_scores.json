@@ -699,5 +699,8 @@
   "sponsors_DuarteSantos8": 0,
   "storytold_artcraft": 85,
   "sponsors_BerriAI": 85,
-  "twostraws_SwiftUI-Agent-Skill": 75
+  "twostraws_SwiftUI-Agent-Skill": 75,
+  "flutter_flutter": 40,
+  "tensorflow_tensorflow": 75,
+  "huggingface_transformers": 95
 }
