@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDigest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdf9ed;
+            --card-bg: #ffffff;
+            --card-border: #e8ecf0;
+            --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            --text: #1e2128;
+            --text-muted: #6b7385;
+            --accent: #4f6ef7;
+            --accent-light: #eef1fe;
+            --hn-color: #e8600a;
+            --hn-light: #fff4ed;
+            --gh-color: #1a7f37;
+            --gh-light: #edfbf0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .site-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .site-name span {
+            color: var(--accent);
+        }
+
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover { color: var(--accent); }
+
+        .page-hero {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .page-date {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .page-stats {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .page-stats a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-heading {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .paper-card:hover {
+            box-shadow: 0 4px 20px rgba(79,110,247,0.1);
+            border-color: #c5cef7;
+        }
+
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .hn-badge {
+            background: var(--hn-light) !important;
+            color: var(--hn-color) !important;
+        }
+
+        .gh-badge {
+            background: var(--gh-light) !important;
+            color: var(--gh-color) !important;
+        }
+
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 0.15rem 0.6rem;
+        }
+
+        .paper-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .paper-title a:hover { color: var(--accent); }
+
+        .paper-title-zh {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            font-weight: 300;
+        }
+
+        .paper-authors {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+
+        .paper-summary {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .hn-card .paper-summary {
+            background: var(--hn-light);
+            border-left-color: var(--hn-color);
+        }
+
+        .gh-card .paper-summary {
+            background: var(--gh-light);
+            border-left-color: var(--gh-color);
+        }
+
+        .summary-section { margin-bottom: 0.35rem; }
+        .summary-section:last-child { margin-bottom: 0; }
+        .summary-section strong { color: var(--accent); }
+
+        .paper-abstract {
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .paper-abstract p {
+            margin-top: 0.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--bg);
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.15s;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .site-header { padding: 1rem; }
+            .content { padding: 1rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-name" href="index.html">Tech<span>Digest</span></a>
+        <nav class="header-nav">
+            <a href="archive.html">归档</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-date">📅 2026-10-12</div>
+        <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
+        <p class="page-stats">
+            计算机视觉: 5
+            <a href="archive.html">归档 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+        <div class="section-heading">📄 arXiv 论文</div>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.11286</span>
+        </div>
+        <span class="score-badge">相关性 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.11286" target="_blank">When Scene Text Hijacks the Scene: Uncovering, Exploiting, and Mitigating Rendered-Text Semantic Leakage in Image Generation Models</a>
+      </h3>
+      <p class="paper-title-zh">当场景文本劫持场景：揭示、利用并缓解图像生成模型中的渲染文本语义泄露</p>
+      <p class="paper-authors">Feifei Li, Runjie Wang, Xiaohan Zhang, Zhenxing Qian, Mi Wen 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文首次系统性地研究了图像生成模型（IGMs）中渲染文本的语义泄露现象，证明场景文本不仅作为视觉约束，还可能被模型解读为输入指令的一部分，从而成为潜在的安全控制通道，并提出了初步的缓解方法。</div>
+        <div class="summary-section"><strong>方法:</strong> 作者通过将主要视觉提示与渲染文本解耦，分别测量它们对生成图像的单独及组合影响，以量化语义泄露和渲染保真度。同时，分析了泄露如何从模型中间证据中产生，并测试了有害语义通过LLM提示增强管道的传播。最后，在FLUX-2-dev上提出了一种缓解策略，旨在减少渲染文本到非文本区域的不安全语义迁移，同时保持文本渲染行为。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，渲染文本中的有害语义可以持续存在并通过LLM增强管道传播，即使主要视觉提示是良性的，也能引导非文本图像区域的内容。这揭示了渲染文本作为可见数据和潜在语义的双重用途，暴露了现代IGMs中文本中心的多模态攻击面。初步缓解方法能有效降低不安全语义转移，同时保留预期的文本渲染功能。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>The reliability and accountability of image generative models (IGMs) are essential for building responsible and trustworthy AI systems. Recent IGMs, such as Nano Banana and GPT-Image, now support complex instruction following, realistic image synthesis, and controllable scene-text rendering. As these capabilities expand, safety analysis must also account for new control channels introduced by complex prompts. In this work, we study rendered-text semantic leakage, a largely overlooked phenomenon in open-domain text rendering. Although rendered text is intended to serve as a local visual constraint that should be reproduced verbatim in the generated image, it also carries linguistic semantics that may be interpreted by the model as part of the input instruction. This makes rendered text a potential semantic control channel whose safety implications remain insufficiently understood. We systematically characterize this phenomenon by decoupling the main visual prompt from the rendered text and measuring their individual and compositional effects on generated images. We quantify semantic leakage and rendering fidelity, and further analyze how leakage emerges from intermediate model evidence. We then show that harmful semantics embedded in scene text can persist through LLM-based prompt enhancement pipelines and steer non-text image regions, even when the main visual prompt remains benign. Finally, we propose a preliminary mitigation approach that reduces unsafe semantic transfer from rendered text to non-text regions while preserving the intended text-rendering behavior on FLUX-2-dev. Our findings reveal rendered text as a dual-use carrier of visible data and latent semantics, exposing a text-centric cross-modal attack surface in modern IGMs.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.11286" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.11286.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.10047</span>
+        </div>
+        <span class="score-badge">相关性 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.10047" target="_blank">AdSpark: A Large-Scale Dataset and Benchmark for Product-Centric Advertisement Video Generation</a>
+      </h3>
+      <p class="paper-title-zh">AdSpark：面向产品中心广告视频生成的大规模数据集与基准</p>
+      <p class="paper-authors">Zhifei Yang, Zhao Jiang, Keyang Lu, Honghe Zhu, Zheng Zhang 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了AdSpark，首个大规模产品中心广告视频生成数据集（AdSpark-300K）及配套诊断基准（AdSpark-Bench），填补了该领域缺乏广告专用数据和全面评估框架的空白。</div>
+        <div class="summary-section"><strong>方法:</strong> AdSpark-300K包含约30万个参考图像-提示-视频三元组，分为真实世界子集和合成子集，每个样本提供结构化广告标注（如产品身份、卖点描述、创意方案和对齐音频脚本）。AdSpark-Bench从视觉质量、产品保真度、指令遵循、时间连贯性、音频对齐和广告效果六个维度评估生成视频，并基于该基准测试代表性模型及微调后的模型。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验揭示了现有模型在产品保真、多镜头叙事和卖点可视化方面的关键挑战；使用AdSpark-300K微调后的模型在多个维度上表现提升，验证了数据集的有效性，为后续研究提供了统一基准。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Product-centric advertisement video generation aims to create promotional videos that preserve fine-grained product identity while presenting selling points through coherent multi-shot narratives. However, this emerging task remains underexplored due to the lack of large-scale advertisement-specific datasets and comprehensive evaluation frameworks. To address this gap, we introduce \textbf{AdSpark}, a large-scale dataset and benchmark for product-centric advertisement video generation, based on data from a major e-commerce platform. \textit{AdSpark-300K} contains approximately 300K reference image--prompt--video triplets, comprising a real-world subset and a synthetic subset. Each sample provides structured advertisement annotations, including product identity annotations, selling-point descriptions, creative plans, and aligned audio scripts, enabling models to learn product preservation and advertisement-oriented visual storytelling. We further propose \textit{AdSpark-Bench}, a diagnostic benchmark that evaluates generated advertisements across six dimensions, including visual quality, product fidelity, instruction adherence, temporal coherence, audio alignment, and advertisement effectiveness. Based on AdSpark-Bench, we evaluate representative models, revealing key challenges in product preservation, multi-shot storytelling, and selling-point visualization. Experiments with AdSpark-300K-finetuned models further validate the effectiveness of our dataset. AdSpark provides a unified dataset and benchmark for future research, and we will release the dataset upon acceptance.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.10047" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.10047.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.10003</span>
+        </div>
+        <span class="score-badge">相关性 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.10003" target="_blank">Perceptually Aligned Evaluation of Style Transfer</a>
+      </h3>
+      <p class="paper-title-zh">风格迁移的感知对齐评估</p>
+      <p class="paper-authors">Yang Deng, Eleftherios Ioannou, David Mould, Steve Maddock, Paul L. Rosin 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种名为ASTRA的自动评估框架，用于解决风格迁移中缺乏可靠评估标准的问题，通过构建基准数据集和训练评估器，实现了与人类偏好高度对齐的自动评估。</div>
+        <div class="summary-section"><strong>方法:</strong> ASTRA包含两个部分：ASTRA-Data和ASTRA-Score。ASTRA-Data构建了一个包含内容参考、风格参考和多种风格迁移结果的基准图像集，并通过两阶段成对比较协议收集用户研究数据，从而得到基于排序的内容保留、风格保真度和整体偏好的真实标注。基于这些数据，ASTRA-Score训练了一个评估器，从内容-风格-风格化图像三元组中预测与人类偏好对齐的分数，从而实现对新模型在基准集上的自动和可扩展评估。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验结果表明，ASTRA-Score与人类排序的相关性显著高于现有评估指标，验证了其作为风格迁移标准化评估机制的有效性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Style transfer lacks a reliable evaluation standard: ground truth is inherently ill-defined, and existing automatic metrics often fail to reflect human preference. This paper introduces ASTRA (Assessment of Style TRansfer Algorithms), an approach for automatic evaluation of style transfer algorithms; it contains two components, ASTRA-Data and ASTRA-Score. ASTRA-Data consists of a benchmark image set of content and style references, a collection of style transfer results generated on the benchmark set, and user study data capturing human judgements through a two-stage pairwise comparison protocol. From these annotations, we derive ranking-based ground truth for content preservation, style fidelity, and overall preference. Based on ASTRA-Data, we construct ASTRA-Score, a learnt evaluator that predicts preference-aligned scores from content-style-stylization image triplets, enabling automatic and scalable evaluation of new models applied to the benchmark set. Experimental results demonstrate that ASTRA-Score achieves substantially higher correlation with human rankings compared to prior metrics. Overall, ASTRA establishes a robust mechanism for standardised evaluation of style transfer methods.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.10003" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.10003.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.09780</span>
+        </div>
+        <span class="score-badge">相关性 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.09780" target="_blank">Relational Abstractions for Spatial Reasoning with Diffusion Models</a>
+      </h3>
+      <p class="paper-title-zh">用于扩散模型空间推理的关系抽象</p>
+      <p class="paper-authors">Ana Ezquerro, Ozan Özdenizci</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种利用无监督对象发现和对象关系抽象来增强扩散模型空间推理能力的新框架，并引入了一个大规模生成式空间推理基准，显著提升了模型在复杂推理任务上的表现和分布外泛化能力。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法首先通过无监督对象发现从图像中提取对象级表示，然后学习对象之间的关系抽象（如相对位置、距离等），并将这些关系知识作为结构先验注入扩散模型的训练和推理过程，以引导生成表示空间满足推理约束。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在四个基于人类可解谜题的数据集上，关系抽象显著提高了扩散模型在多种复杂空间推理任务上的准确性，并在分布外设置下展现出稳健的泛化能力，而基线模型则难以学习隐含的逻辑规则。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion models excel at image synthesis, but they remain limited in their ability to reliably satisfy structured spatial reasoning constraints. In conditional data distribution modeling tasks with implicit logical structure, such as puzzles defined by visible clues paired with consistent solutions, state-of-the-art generative models tend to approximate pixel-space distributions without learning the underlying logical rules required for inference. To address this limitation, we present a novel framework for spatial reasoning with diffusion models that leverages unsupervised object discovery and abstractions of object relations. We show that the relational knowledge derived from object-centric representations enriches diffusion models with structural primitives, allowing them to effectively guide the generative representation space during both training and inference, and enabling conditional image generation that satisfies reasoning constraints. Additionally, we introduce a large-scale generative spatial reasoning benchmark with four datasets inspired by human-solvable puzzles. Our results show that relational abstractions significantly improve reasoning capabilities of diffusion models on a variety of complex reasoning tasks, while enabling robust generalization in out-of-distribution settings.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.09780" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.09780.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.11037</span>
+        </div>
+        <span class="score-badge">相关性 60/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.11037" target="_blank">Transforming Image Editors into Video Editors</a>
+      </h3>
+      <p class="paper-title-zh">将图像编辑器转化为视频编辑器</p>
+      <p class="paper-authors">Feng Wang, Zijie Li, Ceyuan Yang, Alan Yuille, Peng Wang</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出一种无需端到端训练视频编辑器的替代方案，通过锚点生成将强大的图像编辑器转化为视频编辑器，实现高质量的视频编辑。</div>
+        <div class="summary-section"><strong>方法:</strong> AVE框架采用两阶段方法：首先利用强大的图像编辑器对选定的关键帧进行组合编辑，然后使用运动引导的图像到视频扩散模型，将编辑后的关键帧作为固定锚点生成最终视频。该方法将视频编辑分解为关键帧编辑和时间传播两个子问题，从而继承图像编辑器的优势并避免昂贵的端到端训练。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在IVEBench和VIE-Bench上，AVE在指令跟随、时间一致性和内容保真度方面表现优异。消融实验表明，最终视频编辑质量与图像编辑器的质量强相关，暗示未来视频编辑的进步可能来自更强的图像编辑基础和轻量级迁移。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent image editing systems have achieved impressive semantic understanding, visual fidelity, and instruction-following ability, while video editing remains substantially more difficult and costly. In this paper, we present a simple alternative to end-to-end video editing: instead of training a monolithic video editor, we transform a strong image editor into a video editor through anchor-based generation. Our key insight is that video editing can be decomposed into two subproblems: editing a sparse set of keyframes and propagating those edits across time. Based on this observation, we propose Anchor-based Video Editing (AVE), a two-stage framework in which a powerful image editor first performs composed editing on selected keyframes, and a motion-guided image-to-video diffusion model then generates the final video by treating the edited keyframes as fixed anchors. This design directly inherits the strengths of modern image editors while avoiding expensive end-to-end video editing training. Experiments on IVEBench and VIE-Bench show that AVE achieves strong performance in instruction following, temporal consistency, and content fidelity. Further ablations reveal that final video editing quality is strongly correlated with the quality of the image editor, suggesting that future progress in video editing may come from stronger image editing foundations and lightweight transfer to video. Code is available at https://github.com/wangf3014/AVE.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.11037" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.11037.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🔥 Hacker News</div>
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 47 &nbsp;💬 16</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50048522" target="_blank">Recursive self-improvement through collective intelligence</a>
+      </h3>
+      <p class="paper-authors">by hardmaru</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍了Sakana AI提出的“大规模集体智能”方法，通过多个AI模型相互协作和竞争实现递归自我改进，看点在于其新颖的群体进化式AI训练范式。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50048522" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://pub.sakana.ai/mass/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 218 &nbsp;💬 354</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50047422" target="_blank">The gap in shared understanding of LLM capability is widening</a>
+      </h3>
+      <p class="paper-authors">by albertzeyer</p>
+      <div class="paper-summary"><div class="summary-section">AI专家Karpathy指出，人们对大语言模型能力的共同理解差距正在扩大，提醒业界警惕过度炒作与真实能力间的认知鸿沟。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50047422" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://twitter.com/karpathy/status/2109361546505966046" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 310 &nbsp;💬 366</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50043026" target="_blank">Terence Tao: Math 2.0 [pdf]</a>
+      </h3>
+      <p class="paper-authors">by Anon84</p>
+      <div class="paper-summary"><div class="summary-section">陶哲轩在加州理工的演讲幻灯片，探讨数学研究在AI辅助下的范式转变，看点在于他如何展望“数学2.0”时代的人机协作与证明自动化。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50043026" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 26 &nbsp;💬 1</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50033601" target="_blank">Safe SIMD in Rust, even on the inside</a>
+      </h3>
+      <p class="paper-authors">by ravenical</p>
+      <div class="paper-summary"><div class="summary-section">这篇帖子探讨了如何在Rust中安全地使用SIMD指令，即使在不安全的内部代码中也能保证内存安全，重点介绍了避免未定义行为的方法和实用技巧。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50033601" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://shnatsel.github.io/safe-simd-in-rust-even-on-the-inside/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 148 &nbsp;💬 107</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50039092" target="_blank">500B tokens later: Letting AI agents decompile a first-person shooter</a>
+      </h3>
+      <p class="paper-authors">by davikr</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍作者用5000亿个token训练AI代理，成功逆向反编译了一款第一人称射击游戏，展示了AI在代码逆向工程中的突破性能力。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50039092" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://momo5502.com/posts/2026-10-09-game-decompilation/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 5 &nbsp;💬 1</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50049388" target="_blank">Show HN: Plimsoll, a self-hosted sandbox for code your AI agent writes</a>
+      </h3>
+      <p class="paper-authors">by cagster</p>
+      <div class="paper-summary"><div class="summary-section">Plimsoll 是一个自托管的代码沙箱，用于安全运行 AI 代理生成的代码，其看点在于为 AI 编程提供隔离环境，防止恶意或错误操作影响宿主系统。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50049388" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/plimsollmark/plimsoll" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 146 &nbsp;💬 92</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50042333" target="_blank">Show HN: BetterWispr – Free, open-source dictation for Mac</a>
+      </h3>
+      <p class="paper-authors">by kartik017</p>
+      <div class="paper-summary"><div class="summary-section">BetterWispr 是一款免费开源的 Mac 听写工具，主打高效语音输入，亮点在于完全开源且无需付费，适合追求隐私和可定制性的用户。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50042333" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://betterwispr.com/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 134 &nbsp;💬 80</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50042362" target="_blank">Valen's Memory Safety: A New Kind of Borrow Checking</a>
+      </h3>
+      <p class="paper-authors">by verdagon</p>
+      <div class="paper-summary"><div class="summary-section">Valen 提出了一种新型借用检查机制，通过“分组借用”在保证内存安全的同时简化了 Rust 的借用规则，降低了开发者的心智负担。看点在于其设计思路可能为系统级语言的内存安全提供更易用的替代方案。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50042362" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://verdagon.dev/blog/valen-group-borrowing" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🐙 GitHub Trending</div>
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 104,497 &nbsp;+315 today</span>
+        </div>
+        <span class="score-badge">推荐度 90/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/pytorch/pytorch" target="_blank">pytorch/pytorch</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        pytorch /
+
+      pytorch  
+
+    
+      Tensors and Dynamic neural networks in Python with strong GPU acceleration</p>
+      <div class="paper-summary"><div class="summary-section">PyTorch 是一个基于 Python 的深度学习框架，提供动态计算图和强大的 GPU 加速能力；它是学术界和工业界最主流的 AI 开发工具之一，生态丰富且持续引领前沿模型研究。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/pytorch/pytorch" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 105,132 &nbsp;+25599 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/morluto/rea" target="_blank">morluto/rea</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        morluto /
+
+      rea  
+
+    
+      Reverse engineer anything with agents, from app behavior down to native binaries.</p>
+      <div class="paper-summary"><div class="summary-section">rea 是一个用 TypeScript 构建的逆向工程代理工具，能自动化分析应用行为直至原生二进制，值得关注因为它大幅降低了逆向分析的门槛。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/morluto/rea" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 17,943 &nbsp;+2957 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/storytold/artcraft" target="_blank">storytold/artcraft</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        storytold /
+
+      artcraft  
+
+    
+      ArtCraft is an intentional crafting engine for artists, designers, and filmmakers</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/storytold/artcraft" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">HTML</span>
+          <span class="paper-id">⭐ 50,371 &nbsp;+1083 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/cathrynlavery" target="_blank">sponsors/cathrynlavery</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        cathrynlavery /
+
+      diagram-design  
+
+    
+      Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.</p>
+      <div class="paper-summary"><div class="summary-section">这是一个为Claude Code、Codex、GitHub Copilot等AI编程工具设计的图表设计项目，提供44种自包含的HTML+SVG图表类型，风格简洁无阴影，避免常见的Mermaid图表杂乱问题。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/cathrynlavery" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 51,703 &nbsp;+886 today</span>
+        </div>
+        <span class="score-badge">推荐度 70/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank">bilawalsidhu/gods-eye-view</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        bilawalsidhu /
+
+      gods-eye-view  
+
+    
+      A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.</p>
+      <div class="paper-summary"><div class="summary-section">这是一个在浏览器中运行的“间谍卫星模拟器”，基于真实数据在逼真3D地球上展示实时开源空间情报，值得关注因为它将卫星视觉与地理空间分析结合，带来沉浸式全球监控体验。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Jupyter Notebook</span>
+          <span class="paper-id">⭐ 36,496 &nbsp;+548 today</span>
+        </div>
+        <span class="score-badge">推荐度 70/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/lyogavin" target="_blank">sponsors/lyogavin</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        lyogavin /
+
+      airllm  
+
+    
+      AirLLM 70B inference with single 4GB GPU</p>
+      <div class="paper-summary"><div class="summary-section">AirLLM 是一个让70B级大模型在单张4GB显存GPU上运行的推理框架，通过分层卸载和内存优化大幅降低显存需求，值得关注是因为它让普通显卡也能跑超大模型，极大降低了AI大模型的使用门槛。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/lyogavin" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">C++</span>
+          <span class="paper-id">⭐ 30,156 &nbsp;+3952 today</span>
+        </div>
+        <span class="score-badge">推荐度 30/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/boykopovar/AnyPS5" target="_blank">boykopovar/AnyPS5</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        boykopovar /
+
+      AnyPS5  
+
+    
+      Tool for automatic PS5 executables porting to Linux and Windows</p>
+      <div class="paper-summary"><div class="summary-section">AnyPS5 是一款自动将 PS5 可执行文件移植到 Linux 和 Windows 的工具，基于 C++ 开发。它值得关注，因为能大幅简化 PS5 游戏或应用的跨平台适配流程，为开发者节省大量手动逆向和移植时间。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/boykopovar/AnyPS5" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Assembly</span>
+          <span class="paper-id">⭐ 74,260 &nbsp;+466 today</span>
+        </div>
+        <span class="score-badge">推荐度 20/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/chrislgarry" target="_blank">sponsors/chrislgarry</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        chrislgarry /
+
+      Apollo-11  
+
+    
+      Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.</p>
+      <div class="paper-summary"><div class="summary-section">Apollo-11 项目是阿波罗11号制导计算机（AGC）的原始源代码，包含指令舱和登月模块的程序，因历史意义和汇编语言编程的经典价值而备受关注。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/chrislgarry" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    </div>
+
+    <footer>
+        <p>由 <a href="https://github.com/Sloan-Yang/TechDigest">TechDigest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> · <a href="https://news.ycombinator.com">Hacker News</a> · <a href="https://github.com/trending">GitHub Trending</a></p>
+    </footer>
+</body>
+</html>

@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-10-11</div>
+        <div class="page-date">📅 2026-10-12</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 4 | 机器学习: 1
+            计算机视觉: 5
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -327,95 +327,31 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">机器学习</span>
-          <span class="paper-id">2610.12102</span>
-        </div>
-        <span class="score-badge">相关性 75/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.12102" target="_blank">Few-Step Generation via Data-Space Iteration</a>
-      </h3>
-      <p class="paper-title-zh">通过数据空间迭代实现少步生成</p>
-      <p class="paper-authors">Shanchuan Lin, Yansong Peng, Fu-Yun Wang, Haoqi Fan</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了一种名为数据空间迭代的少步生成框架，完全去除流匹配中的时间步离散化，使共享生成器直接在数据空间进行迭代优化，从而简化了少步生成的流程并提升了生成质量。</div>
-        <div class="summary-section"><strong>方法:</strong> 该方法从噪声开始，使用一个共享生成器在数据空间中直接迭代细化预测，每一步训练都旨在生成该容量下最优的样本。该框架与分布匹配蒸馏（DMD）集成，仅需最小改动，即可在匹配训练设置下对比不同迭代方法。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在类条件ImageNet 256x256上，数据空间迭代优于标准离散化基线，并匹配或超越通过调度搜索选择的变体，且无需特定调度的训练，表明其是快速生成中离散化流空间迭代的简单有效替代方案。</div>
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Flow matching has emerged as a scalable paradigm for training high-quality generative models, but sampling from the learned probability flow requires many network evaluations. Distillation can reduce this cost to one or a few evaluations; however, one-step generation often sacrifices quality, making few-step generation the practical operating regime. Existing few-step methods perform their iterative computation along the probability flow and therefore require a fixed, manually chosen timestep discretization. This discretization is often chosen heuristically and is expensive to tune; it may also be restrictive when refinement difficulty differs across samples or spatial locations. We introduce data-space iteration, a few-step generation framework that removes flow discretization altogether. Starting from noise, a shared generator directly refines its prediction in data space, with every iteration trained to produce the best sample permitted by its capacity. Our formulation integrates with distribution matching distillation (DMD) with minimal changes, enabling a controlled comparison between iteration methods under matched training settings. On class-conditional ImageNet 256x256, data-space iteration outperforms standard discretization baselines and matches or improves upon variants selected through schedule search, without requiring schedule-specific training. These results show that data-space iteration provides a simple and effective alternative to discretized flow-space iteration for fast generation.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.12102" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.12102.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.10400</span>
-        </div>
-        <span class="score-badge">相关性 75/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.10400" target="_blank">Self-correction Optimization for Interleaved Multimodal Generation</a>
-      </h3>
-      <p class="paper-title-zh">交错多模态生成的自校正优化</p>
-      <p class="paper-authors">Xin You, Zhiwei Ning, Zukai Chen, Minghui Zhang, Xuanke Shi 等 (10 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种无需训练的自我校正优化方法（SCO），用于改善多模态大语言模型在交错图像-文本生成中的时间一致性和视觉主体保持能力。</div>
-        <div class="summary-section"><strong>方法:</strong> SCO将分类器自由引导的更新作为参考，在两种互补约束（新事件约束和状态保持约束）下进行最小程度的自我校正。新事件约束促进图像-文本序列间的时间一致性，状态保持约束维持后续生成步骤中视觉主体的连贯性。该方法无需额外训练，可扩展至视频生成。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在交错多模态生成基准上，SCO显著提升了时间连贯性和视觉主体保持效果；同时，该方法可扩展至视频生成，并改善了物理过程建模（如机器人操作和长时手工制作）的合理性。</div>
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Multimodal large language models (MLLMs) have made significant progress in visual understanding and generation. However, generating interleaved image--text content remains challenging, as it requires tightly integrated multimodal understanding and generation capabilities. Although existing MLLMs provide promising solutions, most rely on additional training with augmented data, which is computationally expensive and remains limited in preserving visual subjects, temporal consistency, and physical plausibility. In this work, we propose self-correction optimization (SCO), an effective training-free method for consistent interleaved generation. SCO treats the classifier-free guidance update as a reference and performs minimal self-correction under two complementary constraints, including new-event and state-preserving constraints. Specifically, the new-event constraint promotes temporal consistency across image--text sequences, while the state-preserving constraint maintains the coherence of visual subjects throughout subsequent generation steps. Experiments on challenging interleaved multimodal generation benchmarks demonstrate significant improvements in temporal coherence and visual-subject preservation. Furthermore, SCO can be extended to video generation and improves the modeling of physically grounded processes, including robot manipulation and long-horizon handcrafting.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.10400" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.10400.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.12469</span>
+          <span class="paper-id">2610.11286</span>
         </div>
         <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.12469" target="_blank">Rubric-CEPR: Self-Evolving Image Editing via Reward-Verified Self-Distillation</a>
+        <a href="https://arxiv.org/abs/2610.11286" target="_blank">When Scene Text Hijacks the Scene: Uncovering, Exploiting, and Mitigating Rendered-Text Semantic Leakage in Image Generation Models</a>
       </h3>
-      <p class="paper-title-zh">Rubric-CEPR：通过奖励验证的自蒸馏实现图像编辑器的自我进化</p>
-      <p class="paper-authors">Ritesh Thawkar, Shubham Patle, Shravan Venkatraman, Rao Muhammad Anwer</p>
+      <p class="paper-title-zh">当场景文本劫持场景：揭示、利用并缓解图像生成模型中的渲染文本语义泄露</p>
+      <p class="paper-authors">Feifei Li, Runjie Wang, Xiaohan Zhang, Zhenxing Qian, Mi Wen 等 (6 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种无需人工标注或外部奖励模型的自我进化框架，利用编辑器自身的内部表征和结构化评分标准来验证并改进预训练图像编辑器的性能。</div>
-        <div class="summary-section"><strong>方法:</strong> 该方法包含三个组件：规划器（Planner）从无标签图像生成结构化编辑指令，编辑器（Editor）采样多个候选编辑结果，冻结的评判器（Critic）使用分解的评分标准（如编辑实现、旧状态移除和内容保留）对每个候选进行评分，这些评分基于编辑器已暴露的特征。通过非补偿性门控拒绝不可行候选，并将最佳验证结果通过轻量适配器训练蒸馏回编辑器。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在Qwen-Image-Edit上，Rubric-CEPR将ImgEdit分数从4.36提升至4.60（+5.5%），其中对象隔离任务提升24.9%，并成功迁移到GEdit-Bench和Complex-Edit基准；同时，该方法在Step1X-Edit上实现了+7.8%的ImgEdit提升。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 本文首次系统性地研究了图像生成模型（IGMs）中渲染文本的语义泄露现象，证明场景文本不仅作为视觉约束，还可能被模型解读为输入指令的一部分，从而成为潜在的安全控制通道，并提出了初步的缓解方法。</div>
+        <div class="summary-section"><strong>方法:</strong> 作者通过将主要视觉提示与渲染文本解耦，分别测量它们对生成图像的单独及组合影响，以量化语义泄露和渲染保真度。同时，分析了泄露如何从模型中间证据中产生，并测试了有害语义通过LLM提示增强管道的传播。最后，在FLUX-2-dev上提出了一种缓解策略，旨在减少渲染文本到非文本区域的不安全语义迁移，同时保持文本渲染行为。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，渲染文本中的有害语义可以持续存在并通过LLM增强管道传播，即使主要视觉提示是良性的，也能引导非文本图像区域的内容。这揭示了渲染文本作为可见数据和潜在语义的双重用途，暴露了现代IGMs中文本中心的多模态攻击面。初步缓解方法能有效降低不安全语义转移，同时保留预期的文本渲染功能。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Instruction-guided image editors have become highly capable, yet improving them further still depends on human-edited training pairs or external reward models. Such supervision is costly to obtain and can reward plausible failures: a realistic output may leave the requested change undone or alter content that should be preserved. In this work, we strive to improve a pretrained image editor using only its own generations, without human-edited targets or an external training-time reward model. To this end, we propose a self-evolving framework, named Rubric-CEPR, that verifies the editor's own samples with its internal representations through a rubric-augmented Contrastive Edit-Preservation Reward (CEPR). A Planner proposes structured edit instructions from unlabeled images, the Editor samples multiple candidate edits, and a frozen Critic scores each candidate with decomposed rubric checks for edit realization, removal of the old state, and content preservation, using features already exposed by the editor. Non-compensatory gates reject infeasible candidates, and the best verified candidate is distilled into the editor through lightweight adapter training. On Qwen-Image-Edit, Rubric-CEPR improves ImgEdit from 4.36 to 4.60 (+5.5%), with a +24.9% gain on object isolation, and transfers to GEdit-Bench and Complex-Edit. The same procedure also improves Step1X-Edit by +7.8% on ImgEdit. We hope our approach will serve as a solid baseline for image editors that improve themselves from their own verified samples. Our code is publicly available at $\href{https://riteshthawkar.github.io/Rubric-CEPR/}{\text{this URL}}$</p>
+        <p>The reliability and accountability of image generative models (IGMs) are essential for building responsible and trustworthy AI systems. Recent IGMs, such as Nano Banana and GPT-Image, now support complex instruction following, realistic image synthesis, and controllable scene-text rendering. As these capabilities expand, safety analysis must also account for new control channels introduced by complex prompts. In this work, we study rendered-text semantic leakage, a largely overlooked phenomenon in open-domain text rendering. Although rendered text is intended to serve as a local visual constraint that should be reproduced verbatim in the generated image, it also carries linguistic semantics that may be interpreted by the model as part of the input instruction. This makes rendered text a potential semantic control channel whose safety implications remain insufficiently understood. We systematically characterize this phenomenon by decoupling the main visual prompt from the rendered text and measuring their individual and compositional effects on generated images. We quantify semantic leakage and rendering fidelity, and further analyze how leakage emerges from intermediate model evidence. We then show that harmful semantics embedded in scene text can persist through LLM-based prompt enhancement pipelines and steer non-text image regions, even when the main visual prompt remains benign. Finally, we propose a preliminary mitigation approach that reduces unsafe semantic transfer from rendered text to non-text regions while preserving the intended text-rendering behavior on FLUX-2-dev. Our findings reveal rendered text as a dual-use carrier of visible data and latent semantics, exposing a text-centric cross-modal attack surface in modern IGMs.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.12469" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.12469.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.11286" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.11286.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,30 +360,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.11751</span>
+          <span class="paper-id">2610.10047</span>
         </div>
         <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.11751" target="_blank">Dino Forcing Flow Models: Do not denoise what you can predict</a>
+        <a href="https://arxiv.org/abs/2610.10047" target="_blank">AdSpark: A Large-Scale Dataset and Benchmark for Product-Centric Advertisement Video Generation</a>
       </h3>
-      <p class="paper-title-zh">DINO强制流模型：不要对可预测的内容进行去噪</p>
-      <p class="paper-authors">Arijit Ghosh, Lucas Degeorge, Paul Couairon, Alexei A Efros, Vicky Kalogeiton 等 (6 位作者)</p>
+      <p class="paper-title-zh">AdSpark：面向产品中心广告视频生成的大规模数据集与基准</p>
+      <p class="paper-authors">Zhifei Yang, Zhao Jiang, Keyang Lu, Honghe Zhu, Zheng Zhang 等 (9 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出一种更简单的流匹配训练方法，直接预测预训练表示（如DINO）并以此为条件，替代原有的协同去噪过程，从而消除第二ODE轨迹和特定表示的去噪调度，同时保持表示引导的优势。</div>
-        <div class="summary-section"><strong>方法:</strong> 该方法在训练流匹配模型时，直接让模型预测预训练表示（如DINO特征），并将该预测作为条件输入，而不是像传统方法那样对表示进行去噪。这样避免了额外的去噪轨迹和复杂的调度设计，简化了训练流程，同时保留了表示引导带来的加速和质量提升。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在ImageNet上，该方法在潜在空间中仅用先前方法一半的epoch数即可超越现有最优结果；在像素空间中，FID分数比同类先前方法改善超过20%。实验表明，该方法收敛更快且生成质量更高，验证了“不要对可预测的内容去噪”这一原则。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了AdSpark，首个大规模产品中心广告视频生成数据集（AdSpark-300K）及配套诊断基准（AdSpark-Bench），填补了该领域缺乏广告专用数据和全面评估框架的空白。</div>
+        <div class="summary-section"><strong>方法:</strong> AdSpark-300K包含约30万个参考图像-提示-视频三元组，分为真实世界子集和合成子集，每个样本提供结构化广告标注（如产品身份、卖点描述、创意方案和对齐音频脚本）。AdSpark-Bench从视觉质量、产品保真度、指令遵循、时间连贯性、音频对齐和广告效果六个维度评估生成视频，并基于该基准测试代表性模型及微调后的模型。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验揭示了现有模型在产品保真、多镜头叙事和卖点可视化方面的关键挑战；使用AdSpark-300K微调后的模型在多个维度上表现提升，验证了数据集的有效性，为后续研究提供了统一基准。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Co-denoising pretrained representations such as DINO can substantially improve the training speed and quality of flow matching models, but it introduces a second denoising trajectory and requires carefully designed schedules. We propose a simpler alternative: predict the pretrained representation directly, then condition the model on its own prediction. This removes the need for a second ODE and any representation-specific denoising schedules, while retaining the benefits of representation guidance. Our approach converges substantially faster and achieves better generation quality as measured by FID score. On ImageNet, it outperforms the state of the art in latent space at 2x fewer epochs than prior methods; in pixel space, it improves FID over comparable prior methods by more than 20%. These results support a simple principle: do not denoise what you can predict. Our code is openly available at https://github.com/arijit-hub/dino_forcing.</p>
+        <p>Product-centric advertisement video generation aims to create promotional videos that preserve fine-grained product identity while presenting selling points through coherent multi-shot narratives. However, this emerging task remains underexplored due to the lack of large-scale advertisement-specific datasets and comprehensive evaluation frameworks. To address this gap, we introduce \textbf{AdSpark}, a large-scale dataset and benchmark for product-centric advertisement video generation, based on data from a major e-commerce platform. \textit{AdSpark-300K} contains approximately 300K reference image--prompt--video triplets, comprising a real-world subset and a synthetic subset. Each sample provides structured advertisement annotations, including product identity annotations, selling-point descriptions, creative plans, and aligned audio scripts, enabling models to learn product preservation and advertisement-oriented visual storytelling. We further propose \textit{AdSpark-Bench}, a diagnostic benchmark that evaluates generated advertisements across six dimensions, including visual quality, product fidelity, instruction adherence, temporal coherence, audio alignment, and advertisement effectiveness. Based on AdSpark-Bench, we evaluate representative models, revealing key challenges in product preservation, multi-shot storytelling, and selling-point visualization. Experiments with AdSpark-300K-finetuned models further validate the effectiveness of our dataset. AdSpark provides a unified dataset and benchmark for future research, and we will release the dataset upon acceptance.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.11751" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.11751.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.10047" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.10047.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,30 +392,94 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.11320</span>
+          <span class="paper-id">2610.10003</span>
         </div>
         <span class="score-badge">相关性 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.11320" target="_blank">It's Always 10:10: Reference Images Break a Bias That Prompts Only Dent</a>
+        <a href="https://arxiv.org/abs/2610.10003" target="_blank">Perceptually Aligned Evaluation of Style Transfer</a>
       </h3>
-      <p class="paper-title-zh">永远是10:10：参考图像打破了仅靠提示词难以克服的偏见</p>
-      <p class="paper-authors">Luca Cazzaniga</p>
+      <p class="paper-title-zh">风格迁移的感知对齐评估</p>
+      <p class="paper-authors">Yang Deng, Eleftherios Ioannou, David Mould, Steve Maddock, Paul L. Rosin 等 (6 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 本文量化了文本到图像模型在生成时钟时倾向于显示10:10的固有偏见，并证明添加手绘参考图像能显著提高指定时间生成的准确性，优于仅用文字描述时间或指针位置的方法。</div>
-        <div class="summary-section"><strong>方法:</strong> 作者在52个模型（Magnific平台）及Higgsfield平台上的12个共享模型上进行了对照实验，每个图像包含三个必须显示不同时间（2:35、6:50、11:20）的相同时钟。实验设置四种条件：A（不指定时间）、B（用数字指定时间）、C（用文字描述指针相对表盘数字的位置）、D（在C的基础上添加手绘参考表盘）。所有1,799张图像由两位AI读者盲评，第三位读者和作者解决分歧，最终计算各条件下的正确率。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在20个当前模型中，不指定时间时67%的图像所有时钟均为10:10；指定数字时全正确率为34%，文字描述指针为30%，而添加参考图像后提升至75%（相比数字条件提高37个百分点，95%置信区间+28至+45）。文字描述指针并不优于数字（差异-4个百分点，置信区间-10至+1）。Higgsfield平台的复制实验（B 54%，C 50%，D 81%）验证了相同结论。添加参考图像几乎消除了完全10:10的图像，但数字条件仍导致三分之二的图像至少有一个时钟错误。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种名为ASTRA的自动评估框架，用于解决风格迁移中缺乏可靠评估标准的问题，通过构建基准数据集和训练评估器，实现了与人类偏好高度对齐的自动评估。</div>
+        <div class="summary-section"><strong>方法:</strong> ASTRA包含两个部分：ASTRA-Data和ASTRA-Score。ASTRA-Data构建了一个包含内容参考、风格参考和多种风格迁移结果的基准图像集，并通过两阶段成对比较协议收集用户研究数据，从而得到基于排序的内容保留、风格保真度和整体偏好的真实标注。基于这些数据，ASTRA-Score训练了一个评估器，从内容-风格-风格化图像三元组中预测与人类偏好对齐的分数，从而实现对新模型在基准集上的自动和可扩展评估。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验结果表明，ASTRA-Score与人类排序的相关性显著高于现有评估指标，验证了其作为风格迁移标准化评估机制的有效性。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Text-to-image models appear to reproduce the habits of the photographs they learned from. Analog clocks are an extreme case: in advertising, watches almost always show 10:10, and generated clocks return to 10:10 even when another time is requested. We measure this bias and test three ways of overcoming it on 52 models available on the Magnific platform, with a replication on Higgsfield. Every image shows three identical clocks that must show 2:35, 6:50 and 11:20. The description of the object is fixed and only the request about the time changes: no time (A), the time in digits (B), the hand positions described by construction relative to the dial numerals (C), or the same description plus a drawn reference dial (D). Two AI readers read all 1,799 images blind from coded copies, with a third reader and the author settling disagreements (dial-level agreement 96.0% and 97.3%). With no time requested, 67% of the images have all three clocks at 10:10. On the 20 current models, all three clocks are correct in 34% of the images with digits, 30% with the hands described in words and 75% with the reference dial (D-B: +37 points, 95% CI +28 to +45); we found no evidence that describing the hands in words beats the digits (C-B: -4 points, CI -10 to +1). The replication on the 12 models shared by both platforms gives the same picture (B 54%, C 50%, D 81%). Writing the time reduces the bias but leaves two thirds of the images of the 20 current models with at least one wrong clock; adding a drawn reference raises full accuracy to three quarters and almost eliminates images entirely at 10:10. We release all images, prompts, raw readings and a script that recomputes every result.</p>
+        <p>Style transfer lacks a reliable evaluation standard: ground truth is inherently ill-defined, and existing automatic metrics often fail to reflect human preference. This paper introduces ASTRA (Assessment of Style TRansfer Algorithms), an approach for automatic evaluation of style transfer algorithms; it contains two components, ASTRA-Data and ASTRA-Score. ASTRA-Data consists of a benchmark image set of content and style references, a collection of style transfer results generated on the benchmark set, and user study data capturing human judgements through a two-stage pairwise comparison protocol. From these annotations, we derive ranking-based ground truth for content preservation, style fidelity, and overall preference. Based on ASTRA-Data, we construct ASTRA-Score, a learnt evaluator that predicts preference-aligned scores from content-style-stylization image triplets, enabling automatic and scalable evaluation of new models applied to the benchmark set. Experimental results demonstrate that ASTRA-Score achieves substantially higher correlation with human rankings compared to prior metrics. Overall, ASTRA establishes a robust mechanism for standardised evaluation of style transfer methods.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.11320" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.11320.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.10003" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.10003.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.09780</span>
+        </div>
+        <span class="score-badge">相关性 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.09780" target="_blank">Relational Abstractions for Spatial Reasoning with Diffusion Models</a>
+      </h3>
+      <p class="paper-title-zh">用于扩散模型空间推理的关系抽象</p>
+      <p class="paper-authors">Ana Ezquerro, Ozan Özdenizci</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种利用无监督对象发现和对象关系抽象来增强扩散模型空间推理能力的新框架，并引入了一个大规模生成式空间推理基准，显著提升了模型在复杂推理任务上的表现和分布外泛化能力。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法首先通过无监督对象发现从图像中提取对象级表示，然后学习对象之间的关系抽象（如相对位置、距离等），并将这些关系知识作为结构先验注入扩散模型的训练和推理过程，以引导生成表示空间满足推理约束。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在四个基于人类可解谜题的数据集上，关系抽象显著提高了扩散模型在多种复杂空间推理任务上的准确性，并在分布外设置下展现出稳健的泛化能力，而基线模型则难以学习隐含的逻辑规则。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion models excel at image synthesis, but they remain limited in their ability to reliably satisfy structured spatial reasoning constraints. In conditional data distribution modeling tasks with implicit logical structure, such as puzzles defined by visible clues paired with consistent solutions, state-of-the-art generative models tend to approximate pixel-space distributions without learning the underlying logical rules required for inference. To address this limitation, we present a novel framework for spatial reasoning with diffusion models that leverages unsupervised object discovery and abstractions of object relations. We show that the relational knowledge derived from object-centric representations enriches diffusion models with structural primitives, allowing them to effectively guide the generative representation space during both training and inference, and enabling conditional image generation that satisfies reasoning constraints. Additionally, we introduce a large-scale generative spatial reasoning benchmark with four datasets inspired by human-solvable puzzles. Our results show that relational abstractions significantly improve reasoning capabilities of diffusion models on a variety of complex reasoning tasks, while enabling robust generalization in out-of-distribution settings.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.09780" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.09780.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.11037</span>
+        </div>
+        <span class="score-badge">相关性 60/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.11037" target="_blank">Transforming Image Editors into Video Editors</a>
+      </h3>
+      <p class="paper-title-zh">将图像编辑器转化为视频编辑器</p>
+      <p class="paper-authors">Feng Wang, Zijie Li, Ceyuan Yang, Alan Yuille, Peng Wang</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出一种无需端到端训练视频编辑器的替代方案，通过锚点生成将强大的图像编辑器转化为视频编辑器，实现高质量的视频编辑。</div>
+        <div class="summary-section"><strong>方法:</strong> AVE框架采用两阶段方法：首先利用强大的图像编辑器对选定的关键帧进行组合编辑，然后使用运动引导的图像到视频扩散模型，将编辑后的关键帧作为固定锚点生成最终视频。该方法将视频编辑分解为关键帧编辑和时间传播两个子问题，从而继承图像编辑器的优势并避免昂贵的端到端训练。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在IVEBench和VIE-Bench上，AVE在指令跟随、时间一致性和内容保真度方面表现优异。消融实验表明，最终视频编辑质量与图像编辑器的质量强相关，暗示未来视频编辑的进步可能来自更强的图像编辑基础和轻量级迁移。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent image editing systems have achieved impressive semantic understanding, visual fidelity, and instruction-following ability, while video editing remains substantially more difficult and costly. In this paper, we present a simple alternative to end-to-end video editing: instead of training a monolithic video editor, we transform a strong image editor into a video editor through anchor-based generation. Our key insight is that video editing can be decomposed into two subproblems: editing a sparse set of keyframes and propagating those edits across time. Based on this observation, we propose Anchor-based Video Editing (AVE), a two-stage framework in which a powerful image editor first performs composed editing on selected keyframes, and a motion-guided image-to-video diffusion model then generates the final video by treating the edited keyframes as fixed anchors. This design directly inherits the strengths of modern image editors while avoiding expensive end-to-end video editing training. Experiments on IVEBench and VIE-Bench show that AVE achieves strong performance in instruction following, temporal consistency, and content fidelity. Further ablations reveal that final video editing quality is strongly correlated with the quality of the image editor, suggesting that future progress in video editing may come from stronger image editing foundations and lightweight transfer to video. Code is available at https://github.com/wangf3014/AVE.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.11037" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.11037.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 204 &nbsp;💬 41</span>
+          <span class="paper-id">▲ 47 &nbsp;💬 16</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50029487" target="_blank">The Lightbulb Computer</a>
+        <a href="https://news.ycombinator.com/item?id=50048522" target="_blank">Recursive self-improvement through collective intelligence</a>
       </h3>
-      <p class="paper-authors">by oskarth</p>
-      <div class="paper-summary"><div class="summary-section">用灯泡和光敏电阻组成的模拟计算机，通过光线传递信号实现逻辑运算，展示了无需电子芯片的另类计算方式。看点在于其纯物理、低科技的计算实现，以及视觉上直观有趣的演示效果。</div></div>
+      <p class="paper-authors">by hardmaru</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍了Sakana AI提出的“大规模集体智能”方法，通过多个AI模型相互协作和竞争实现递归自我改进，看点在于其新颖的群体进化式AI训练范式。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50029487" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://lightbulbcomputer.com/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50048522" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://pub.sakana.ai/mass/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 239 &nbsp;💬 120</span>
+          <span class="paper-id">▲ 218 &nbsp;💬 354</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50031614" target="_blank">Talorys – A self-hosted personal AI agent on Cloudflare's free tier</a>
+        <a href="https://news.ycombinator.com/item?id=50047422" target="_blank">The gap in shared understanding of LLM capability is widening</a>
       </h3>
-      <p class="paper-authors">by rociiu</p>
-      <div class="paper-summary"><div class="summary-section">Talorys 是一个部署在 Cloudflare 免费层上的自托管个人 AI 代理，利用边缘计算实现零成本运行。其看点是无需付费服务器即可拥有私有 AI 助手，兼顾数据隐私与部署便捷性。</div></div>
+      <p class="paper-authors">by albertzeyer</p>
+      <div class="paper-summary"><div class="summary-section">AI专家Karpathy指出，人们对大语言模型能力的共同理解差距正在扩大，提醒业界警惕过度炒作与真实能力间的认知鸿沟。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50031614" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/rociiu/talorys" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50047422" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://twitter.com/karpathy/status/2109361546505966046" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 71 &nbsp;💬 54</span>
+          <span class="paper-id">▲ 310 &nbsp;💬 366</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50027257" target="_blank">Recent AI models struggled to match a human algorithmic innovation</a>
+        <a href="https://news.ycombinator.com/item?id=50043026" target="_blank">Terence Tao: Math 2.0 [pdf]</a>
       </h3>
-      <p class="paper-authors">by merksittich</p>
-      <div class="paper-summary"><div class="summary-section">该帖子介绍了一项名为InnovationEval的评估，发现近期AI模型在算法创新任务上难以匹敌人类水平，凸显了AI在原创性推理上的短板。</div></div>
+      <p class="paper-authors">by Anon84</p>
+      <div class="paper-summary"><div class="summary-section">陶哲轩在加州理工的演讲幻灯片，探讨数学研究在AI辅助下的范式转变，看点在于他如何展望“数学2.0”时代的人机协作与证明自动化。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50027257" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://epoch.ai/publications/innovationeval" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50043026" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 691 &nbsp;💬 302</span>
+          <span class="paper-id">▲ 26 &nbsp;💬 1</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50028275" target="_blank">REA Reverse – Engineer Anything</a>
+        <a href="https://news.ycombinator.com/item?id=50033601" target="_blank">Safe SIMD in Rust, even on the inside</a>
       </h3>
-      <p class="paper-authors">by modinfo</p>
-      <div class="paper-summary"><div class="summary-section">REA Reverse 是一个逆向工程工具，能自动分析并还原任何软件或硬件的内部逻辑。看点在于它号称“逆向一切”，适合安全研究和硬件破解爱好者快速上手。</div></div>
+      <p class="paper-authors">by ravenical</p>
+      <div class="paper-summary"><div class="summary-section">这篇帖子探讨了如何在Rust中安全地使用SIMD指令，即使在不安全的内部代码中也能保证内存安全，重点介绍了避免未定义行为的方法和实用技巧。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50028275" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://rea.tools/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50033601" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://shnatsel.github.io/safe-simd-in-rust-even-on-the-inside/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 94 &nbsp;💬 81</span>
+          <span class="paper-id">▲ 148 &nbsp;💬 107</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=49984349" target="_blank">OpenSCAD the Programmers Solid 3D CAD Modeller</a>
+        <a href="https://news.ycombinator.com/item?id=50039092" target="_blank">500B tokens later: Letting AI agents decompile a first-person shooter</a>
       </h3>
-      <p class="paper-authors">by b-man</p>
-      <div class="paper-summary"><div class="summary-section">OpenSCAD是一款面向程序员的3D建模工具，通过代码而非鼠标操作来生成实体模型，适合参数化设计和自动化建模。其看点在于用编程思维替代传统CAD交互，尤其适合创客、工程师和喜欢脚本化设计的用户。</div></div>
+      <p class="paper-authors">by davikr</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍作者用5000亿个token训练AI代理，成功逆向反编译了一款第一人称射击游戏，展示了AI在代码逆向工程中的突破性能力。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=49984349" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://openscad.org/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50039092" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://momo5502.com/posts/2026-10-09-game-decompilation/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 92 &nbsp;💬 96</span>
+          <span class="paper-id">▲ 5 &nbsp;💬 1</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50005743" target="_blank">C for Rust programmers</a>
+        <a href="https://news.ycombinator.com/item?id=50049388" target="_blank">Show HN: Plimsoll, a self-hosted sandbox for code your AI agent writes</a>
       </h3>
-      <p class="paper-authors">by xyproto</p>
-      <div class="paper-summary"><div class="summary-section">这篇博客面向Rust开发者讲解C语言的核心差异，涵盖内存管理、类型系统、错误处理等关键概念，并对比两者在底层控制与安全设计上的取舍，帮助读者快速跨越语言思维鸿沟。</div></div>
+      <p class="paper-authors">by cagster</p>
+      <div class="paper-summary"><div class="summary-section">Plimsoll 是一个自托管的代码沙箱，用于安全运行 AI 代理生成的代码，其看点在于为 AI 编程提供隔离环境，防止恶意或错误操作影响宿主系统。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50005743" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://bd103.dev/blog/2026-10-07-c-for-rust-programmers/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50049388" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/plimsollmark/plimsoll" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 1358 &nbsp;💬 271</span>
+          <span class="paper-id">▲ 146 &nbsp;💬 92</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50022292" target="_blank">Triple-A Minesweeper</a>
+        <a href="https://news.ycombinator.com/item?id=50042333" target="_blank">Show HN: BetterWispr – Free, open-source dictation for Mac</a>
       </h3>
-      <p class="paper-authors">by robin_reala</p>
-      <div class="paper-summary"><div class="summary-section">一款3A级画质的扫雷游戏，将经典玩法与电影级视觉和音效结合，带来沉浸式体验。</div></div>
+      <p class="paper-authors">by kartik017</p>
+      <div class="paper-summary"><div class="summary-section">BetterWispr 是一款免费开源的 Mac 听写工具，主打高效语音输入，亮点在于完全开源且无需付费，适合追求隐私和可定制性的用户。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50022292" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://minesweeper.mikelacher.com/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50042333" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://betterwispr.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 132 &nbsp;💬 39</span>
+          <span class="paper-id">▲ 134 &nbsp;💬 80</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50027853" target="_blank">Compiling Rust to readable C with Eurydice</a>
+        <a href="https://news.ycombinator.com/item?id=50042362" target="_blank">Valen's Memory Safety: A New Kind of Borrow Checking</a>
       </h3>
-      <p class="paper-authors">by peter_d_sherman</p>
-      <div class="paper-summary"><div class="summary-section">Eurydice 是一个将 Rust 编译为可读 C 代码的工具，旨在提升代码可移植性并便于审查；其看点在于它保留了 Rust 的安全语义，同时生成接近手写风格的 C 代码。</div></div>
+      <p class="paper-authors">by verdagon</p>
+      <div class="paper-summary"><div class="summary-section">Valen 提出了一种新型借用检查机制，通过“分组借用”在保证内存安全的同时简化了 Rust 的借用规则，降低了开发者的心智负担。看点在于其设计思路可能为系统级语言的内存安全提供更易用的替代方案。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50027853" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://lwn.net/Articles/1055211/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50042362" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://verdagon.dev/blog/valen-group-borrowing" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,41 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 167,259 &nbsp;+96 today</span>
-        </div>
-        <span class="score-badge">推荐度 95/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/huggingface/transformers" target="_blank">huggingface/transformers</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        huggingface /
-
-      transformers  
-
-    
-      🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.</p>
-      <div class="paper-summary"><div class="summary-section">🤗 Transformers 是一个提供顶尖文本、视觉、音频及多模态模型统一定义与训练/推理框架的库，支持数千种预训练模型，是当前最流行的深度学习模型工具之一。</div></div>
-      <div class="paper-links">
-        <a href="https://github.com/huggingface/transformers" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 104,140 &nbsp;+84 today</span>
+          <span class="paper-id">⭐ 104,497 &nbsp;+315 today</span>
         </div>
         <span class="score-badge">推荐度 90/100</span>
       </div>
@@ -699,7 +665,7 @@
 
     
       Tensors and Dynamic neural networks in Python with strong GPU acceleration</p>
-      <div class="paper-summary"><div class="summary-section">PyTorch 是一个基于 Python 的深度学习框架，提供张量计算和动态神经网络，并支持强大的 GPU 加速；它因灵活的动态计算图和庞大的社区生态，成为研究和工业界最主流的深度学习工具之一。</div></div>
+      <div class="paper-summary"><div class="summary-section">PyTorch 是一个基于 Python 的深度学习框架，提供动态计算图和强大的 GPU 加速能力；它是学术界和工业界最主流的 AI 开发工具之一，生态丰富且持续引领前沿模型研究。</div></div>
       <div class="paper-links">
         <a href="https://github.com/pytorch/pytorch" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -709,7 +675,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 72,535 &nbsp;+25793 today</span>
+          <span class="paper-id">⭐ 105,132 &nbsp;+25599 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -733,7 +699,7 @@
 
     
       Reverse engineer anything with agents, from app behavior down to native binaries.</p>
-      <div class="paper-summary"><div class="summary-section">rea 是一个用 TypeScript 编写的智能逆向工程工具，通过代理自动分析应用行为乃至原生二进制代码。它值得关注，因为将 AI 代理与逆向工程结合，能大幅提升安全分析和漏洞研究的效率。</div></div>
+      <div class="paper-summary"><div class="summary-section">rea 是一个用 TypeScript 构建的逆向工程代理工具，能自动化分析应用行为直至原生二进制，值得关注因为它大幅降低了逆向分析的门槛。</div></div>
       <div class="paper-links">
         <a href="https://github.com/morluto/rea" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -743,7 +709,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 14,499 &nbsp;+3222 today</span>
+          <span class="paper-id">⭐ 17,943 &nbsp;+2957 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -767,7 +733,7 @@
 
     
       ArtCraft is an intentional crafting engine for artists, designers, and filmmakers</p>
-      <div class="paper-summary"><div class="summary-section">ArtCraft 是一个面向艺术家、设计师和电影制作人的意图驱动型创作引擎，用 Rust 编写，值得关注是因为它将程序化生成与艺术表达深度结合，为创意工作流提供了高效且可定制的新工具。</div></div>
+      
       <div class="paper-links">
         <a href="https://github.com/storytold/artcraft" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -777,7 +743,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">HTML</span>
-          <span class="paper-id">⭐ 48,950 &nbsp;+1190 today</span>
+          <span class="paper-id">⭐ 50,371 &nbsp;+1083 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -814,7 +780,7 @@
 
     
       Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.</p>
-      <div class="paper-summary"><div class="summary-section">这是一个为Claude Code、Codex、GitHub Copilot等AI编程工具提供44种编辑级图表设计的项目，采用自包含的HTML+SVG实现，无阴影、无Mermaid冗余代码，值得关注是因为它提供了高质量、可直接嵌入的AI交互图表方案。</div></div>
+      <div class="paper-summary"><div class="summary-section">这是一个为Claude Code、Codex、GitHub Copilot等AI编程工具设计的图表设计项目，提供44种自包含的HTML+SVG图表类型，风格简洁无阴影，避免常见的Mermaid图表杂乱问题。</div></div>
       <div class="paper-links">
         <a href="https://github.com/sponsors/cathrynlavery" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -823,13 +789,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 59,443 &nbsp;+461 today</span>
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 51,703 &nbsp;+886 today</span>
         </div>
-        <span class="score-badge">推荐度 85/100</span>
+        <span class="score-badge">推荐度 70/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/hugohe3/ppt-master" target="_blank">hugohe3/ppt-master</a>
+        <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank">bilawalsidhu/gods-eye-view</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -842,15 +808,62 @@
 
 
       
-        hugohe3 /
+        bilawalsidhu /
 
-      ppt-master  
+      gods-eye-view  
 
     
-      AI turns documents or topics into real, native PowerPoint decks—with native shapes, transitions and animations, data-backed charts and tables on demand, audio narration from speaker notes, and support for your own .pptx templates. · by Hugo He</p>
-      <div class="paper-summary"><div class="summary-section">ppt-master 是一个用 AI 将文档或主题自动生成原生 PowerPoint 演示文稿的工具，支持原生形状、动画、数据图表、音频旁白以及自定义 .pptx 模板。它值得关注，因为能大幅提升 PPT 制作效率，并产出可直接编辑的高质量演示文件。</div></div>
+      A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.</p>
+      <div class="paper-summary"><div class="summary-section">这是一个在浏览器中运行的“间谍卫星模拟器”，基于真实数据在逼真3D地球上展示实时开源空间情报，值得关注因为它将卫星视觉与地理空间分析结合，带来沉浸式全球监控体验。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/hugohe3/ppt-master" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Jupyter Notebook</span>
+          <span class="paper-id">⭐ 36,496 &nbsp;+548 today</span>
+        </div>
+        <span class="score-badge">推荐度 70/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/lyogavin" target="_blank">sponsors/lyogavin</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        lyogavin /
+
+      airllm  
+
+    
+      AirLLM 70B inference with single 4GB GPU</p>
+      <div class="paper-summary"><div class="summary-section">AirLLM 是一个让70B级大模型在单张4GB显存GPU上运行的推理框架，通过分层卸载和内存优化大幅降低显存需求，值得关注是因为它让普通显卡也能跑超大模型，极大降低了AI大模型的使用门槛。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/lyogavin" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -858,12 +871,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 200,726 &nbsp;+26 today</span>
+          <span class="paper-id">⭐ 30,156 &nbsp;+3952 today</span>
         </div>
-        <span class="score-badge">推荐度 75/100</span>
+        <span class="score-badge">推荐度 30/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/tensorflow/tensorflow" target="_blank">tensorflow/tensorflow</a>
+        <a href="https://github.com/boykopovar/AnyPS5" target="_blank">boykopovar/AnyPS5</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -876,30 +889,43 @@
 
 
       
-        tensorflow /
+        boykopovar /
 
-      tensorflow  
+      AnyPS5  
 
     
-      An Open Source Machine Learning Framework for Everyone</p>
-      <div class="paper-summary"><div class="summary-section">TensorFlow 是一个面向所有人的开源机器学习框架，提供从研究到生产部署的完整工具链。它值得关注，因为它是全球最流行的深度学习框架之一，拥有庞大的社区、丰富的预训练模型和跨平台支持。</div></div>
+      Tool for automatic PS5 executables porting to Linux and Windows</p>
+      <div class="paper-summary"><div class="summary-section">AnyPS5 是一款自动将 PS5 可执行文件移植到 Linux 和 Windows 的工具，基于 C++ 开发。它值得关注，因为能大幅简化 PS5 游戏或应用的跨平台适配流程，为开发者节省大量手动逆向和移植时间。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/tensorflow/tensorflow" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/boykopovar/AnyPS5" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Dart</span>
-          <span class="paper-id">⭐ 179,519 &nbsp;+88 today</span>
+          <span class="category-badge gh-badge">Assembly</span>
+          <span class="paper-id">⭐ 74,260 &nbsp;+466 today</span>
         </div>
-        <span class="score-badge">推荐度 40/100</span>
+        <span class="score-badge">推荐度 20/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/flutter/flutter" target="_blank">flutter/flutter</a>
+        <a href="https://github.com/sponsors/chrislgarry" target="_blank">sponsors/chrislgarry</a>
       </h3>
-      <p class="paper-authors">Star
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
 
 
   
@@ -910,15 +936,15 @@
 
 
       
-        flutter /
+        chrislgarry /
 
-      flutter  
+      Apollo-11  
 
     
-      Flutter makes it easy and fast to build beautiful apps for mobile and beyond</p>
-      <div class="paper-summary"><div class="summary-section">Flutter 是 Google 开源的跨平台 UI 框架，用 Dart 语言快速构建美观的移动、Web 和桌面应用。它因高性能渲染、丰富的组件和“一套代码多端运行”的能力而备受关注，是当前最流行的跨平台开发工具之一。</div></div>
+      Original Apollo 11 Guidance Computer (AGC) source code for the command and lunar modules.</p>
+      <div class="paper-summary"><div class="summary-section">Apollo-11 项目是阿波罗11号制导计算机（AGC）的原始源代码，包含指令舱和登月模块的程序，因历史意义和汇编语言编程的经典价值而备受关注。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/flutter/flutter" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/chrislgarry" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
