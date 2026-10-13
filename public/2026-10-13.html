@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDigest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdf9ed;
+            --card-bg: #ffffff;
+            --card-border: #e8ecf0;
+            --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            --text: #1e2128;
+            --text-muted: #6b7385;
+            --accent: #4f6ef7;
+            --accent-light: #eef1fe;
+            --hn-color: #e8600a;
+            --hn-light: #fff4ed;
+            --gh-color: #1a7f37;
+            --gh-light: #edfbf0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .site-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .site-name span {
+            color: var(--accent);
+        }
+
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover { color: var(--accent); }
+
+        .page-hero {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .page-date {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .page-stats {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .page-stats a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-heading {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .paper-card:hover {
+            box-shadow: 0 4px 20px rgba(79,110,247,0.1);
+            border-color: #c5cef7;
+        }
+
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .hn-badge {
+            background: var(--hn-light) !important;
+            color: var(--hn-color) !important;
+        }
+
+        .gh-badge {
+            background: var(--gh-light) !important;
+            color: var(--gh-color) !important;
+        }
+
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 0.15rem 0.6rem;
+        }
+
+        .paper-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .paper-title a:hover { color: var(--accent); }
+
+        .paper-title-zh {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            font-weight: 300;
+        }
+
+        .paper-authors {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+
+        .paper-summary {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .hn-card .paper-summary {
+            background: var(--hn-light);
+            border-left-color: var(--hn-color);
+        }
+
+        .gh-card .paper-summary {
+            background: var(--gh-light);
+            border-left-color: var(--gh-color);
+        }
+
+        .summary-section { margin-bottom: 0.35rem; }
+        .summary-section:last-child { margin-bottom: 0; }
+        .summary-section strong { color: var(--accent); }
+
+        .paper-abstract {
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .paper-abstract p {
+            margin-top: 0.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--bg);
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.15s;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .site-header { padding: 1rem; }
+            .content { padding: 1rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-name" href="index.html">Tech<span>Digest</span></a>
+        <nav class="header-nav">
+            <a href="archive.html">归档</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-date">📅 2026-10-13</div>
+        <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
+        <p class="page-stats">
+            计算机视觉: 5
+            <a href="archive.html">归档 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+        <div class="section-heading">📄 arXiv 论文</div>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.13502</span>
+        </div>
+        <span class="score-badge">相关性 90/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.13502" target="_blank">Stride: Scale-Aware Multi-Agent Evolutionary Refinement for Infographic Generation</a>
+      </h3>
+      <p class="paper-title-zh">Stride：面向信息图生成的尺度感知多智能体进化式精炼方法</p>
+      <p class="paper-authors">Yan Zhou, Yang Yang</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种基于约束的多智能体框架Stride，通过尺度感知的路由策略（全局修订与局部修正分离）和单调接受机制，在任意冻结生成器上实现稳定迭代改进，显著提升了信息图生成质量，并超越了多个专有系统。</div>
+        <div class="summary-section"><strong>方法:</strong> Stride将约束评估（需求是否满足）与视觉定位（违规位置和方式）分离，并据此将全局修订任务分配给作曲家子智能体，局部修正任务分配给修图师子智能体。每个子智能体进行内部规划并生成多个候选方案，Stride仅在候选方案能提高验证器分数时接受，从而减少迭代中的性能回退。这种结合尺度感知路由、每步冗余和单调接受策略，确保了跨迭代的稳定改进。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在完全开源生成器-验证器系统下，Stride在BizGenEval上优于Nano-Banana-2.0和Seedream-5.0-Pro，在IGenBench上与GPT-Image-2.0持平并超越Seedream-5.0-Pro，在WISE上取得新的最优分数，同时在所有评估基准上显著优于现有智能体方法。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Infographic generation challenges text-to-image models because a single image must satisfy numerous visual, textual, and semantic constraints. Iterative agentic refinement with a multimodal verifier is a natural remedy, but existing methods face a scale mismatch: local edits cannot correct global composition errors, while full regeneration may destroy already-correct regions. We introduce Stride, a constraint-grounded multi-agent framework that treats refinement over any frozen generator as a history-aware evolution strategy. Stride separates constraint evaluation - whether each requirement is satisfied - from visual grounding - where and how it is violated. It then routes global revisions to a composer subagent and local corrections to a retoucher subagent. Each subagent conducts internal planning and generates multiple candidates, while Stride accepts a candidate only when it improves the verifier score, reducing regression across iterations. Because stochastic generators and imperfect verifiers make any single step unreliable, it is this combination of scale-aware routing, per-step redundancy, and monotonic acceptance that yields stable improvement across iterations. With fully open-weight generator-verifier systems, Stride outperforms proprietary systems including Nano-Banana-2.0 and Seedream-5.0-Pro on BizGenEval, matches GPT-Image-2.0 and surpasses Seedream-5.0-Pro on IGenBench, and achieves a new state-of-the-art score on WISE, while substantially outperforming existing agentic methods across all evaluated benchmarks.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.13502" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13502.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.13944</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.13944" target="_blank">InstantFusion: A Shared Latent Interface for Heterogeneous Image Generators</a>
+      </h3>
+      <p class="paper-title-zh">即时融合：异构图像生成器的共享潜在接口</p>
+      <p class="paper-authors">Xuanlang Dai, Jiazi Bu, Yujie Zhou, Yuhong Liu, Beichen Zhang 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出一种轻量级共享潜在接口（InstantFusion），无需为每对模型单独训练映射，即可实现不同架构和表示的图像生成器之间的无缝状态转换，支持加速、多偏好组合、跨架构策略蒸馏和跨模型组合等多种应用。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法引入模型特定的潜在自编码器（LAEs），将不同生成器的中间状态投影到共享潜在空间，并解码为目标生成器的潜在空间。共享空间通过两个互补目标约束：对齐来自同一图像在匹配噪声水平下的中间状态，以及同步对应的局部去噪速度。训练完成后，InstantFusion允许在冻结的生成器之间无缝切换去噪过程，无需为每对模型设计专用映射。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，独立训练的生成器具有相似的潜在空间组织，直接传递中间状态可保留粗略视觉内容；InstantFusion在加速、多偏好组合、跨架构策略蒸馏和跨模型组合等任务中均达到竞争性性能，验证了其通用性和有效性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion/flow models have emerged as the de facto paradigms for image generation, giving rise to a diverse family of modern generators with increasingly heterogeneous architectures and representations. Despite their remarkable generation capabilities, the cross-model alignment of latent representations and the consistency of their underlying denoising dynamics remain underexplored. In this work, we uncover an intriguing cross-model compatibility: independently trained generators exhibit similar latent spatial organization, while directly handing off intermediate states between unaligned models can still preserve coarse visual content. Motivated by these observations, we propose InstantFusion, a lightweight shared latent interface that connects the denoising trajectories of heterogeneous image generators. Specifically, to enable flexible cross-model state translation, model-specific Latent AutoEncoders (LAEs) are introduced to project intermediate states from different generators into a shared latent space and decode them into the latent space of a target generator. This shared space is constrained by two complementary objectives: aligning intermediate states derived from the same image at matched noise levels and synchronizing their corresponding local denoising velocities. Once trained, InstantFusion allows denoising to seamlessly transition across frozen generators without requiring a dedicated mapping for every model pair. The versatility of InstantFusion is demonstrated across acceleration, multi-preference composition, cross-architecture on-policy distillation, and cross-model composition, achieving competitive performance across these diverse settings.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.13944" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13944.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.13941</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.13941" target="_blank">Images Talk Back: Guiding MMDiTs by Suppressing Image-to-Text Feedback</a>
+      </h3>
+      <p class="paper-title-zh">Images Talk Back: Guiding MMDiTs by Suppressing Image-to-Text Feedback</p>
+      <p class="paper-authors">Yucheng Yang, Xiaoxiao Sun, Shusheng Yang, Jiakang Chen, Serena Yeung-Levy</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Multimodal diffusion transformers (MMDiTs) allow the evolving image to update internal text representations through joint attention. These representations then guide subsequent image updates, raising a question: does this feedback help correct deviations from the prompt, or preserve them? We find that image-to-text (I2T) feedback can preserve the objects and attributes already represented in the evolving image, including errors. Transplanting I2T messages can rescue failures or disrupt successes. At matched intervention strengths, suppressing the influence of I2T feedback improves generation, whereas opposite controls degrade it. These findings motivate Semantic Feedback Guidance (SFG), which suppresses the influence of I2T feedback by guiding away from an auxiliary branch that strengthens this feedback and weakens text-to-image conditioning. The in-place variant, iSFG, directly suppresses I2T feedback and strengthens text-to-image conditioning, requiring no extra model evaluations. Temporal interventions motivate running the SFG branch during the first 20% of image sampling steps, requiring about $1.2\times$ the base NFE without classifier-free guidance (CFG). Experiments across three image-generation backbones show gains in alignment and preference-model scores. On FLUX, adding SFG to CFG raises GenEval from $0.6661$ to $0.7479$; on SD3.5M, iSFG adds $+1.33$ HPSv2.1 over CFG at zero extra NFE. The control also transfers to text-to-video and image-to-video generation, improving VBench scores. Code is available at https://github.com/yyc1215lll-creator/SFG.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.13941" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13941.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.13412</span>
+        </div>
+        <span class="score-badge">相关性 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.13412" target="_blank">TextVBench: Evaluating Text Rendering and Preservation in Video Generation</a>
+      </h3>
+      <p class="paper-title-zh">TextVBench：评估视频生成中的文本渲染与保持</p>
+      <p class="paper-authors">Ruiqiang Zhang, Hengyi Wang, Chang Liu, Guanjie Wang, Zehua Ma 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个名为TextVBench的基准和评估框架，将视频生成中的视觉文本评估形式化为多目标、多实例的时空对应问题，以解决现有方法无法准确衡量文本渲染错误和跨帧不一致的问题。</div>
+        <div class="summary-section"><strong>方法:</strong> TextVBench包含两个互补的评估轨道：T2V（文本到视频）和Ref2V（参考图像到视频），分别衡量提示指定文本的创建与保持以及参考图像中文本的保持。评估采用目标条件候选选择而非无约束的VLM转录，支持一个目标映射到多个OCR区域，并分离帧级空间保真度和跨帧时间保真度。最终使用长度加权调和分数汇总这些因素，并通过额外文本诊断揭示单一OCR分数掩盖的失败模式。基准围绕受控的文本、布局、载体和运动属性组织，使聚合分数可追溯到具体能力限制。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在评估的模型运行中，MiniMax-H3在T2V轨道上达到68.32的TextVScore，而最强的Ref2V分数为56.51；属性切片显示，随着同时参考文本区域数量的增加，性能显著下降。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Modern video generators can synthesize convincing scenes while rendering a few characters incorrectly, omitting requested text, or changing it across frames. Measuring these failures is harder than applying OCR independently to each frame: when a scene contains multiple text targets and multiple noisy OCR regions, the evaluator must first determine which observation belongs to which intended text. We introduce TextVBench, a benchmark and evaluation framework that formulates visual-text evaluation as a multi-target, multi-instance spatiotemporal correspondence problem. TextVBench contains two complementary tracks: TextVBench-T2V measures the creation and maintenance of prompt-specified text, while TextVBench-Ref2V measures preservation of text from reference images. Both tracks use target-conditioned candidate selection rather than unconstrained VLM transcription, support one target mapping to multiple OCR regions, and separate frame-level spatial fidelity from cross-frame temporal fidelity. A length-weighted harmonic score summarizes these factors, while extra-text diagnostics expose failure modes hidden by a single OCR score. The benchmark is organized around controlled text, layout, carrier, and motion attributes so that aggregate scores can be traced back to specific capability limits. Across the evaluated model runs, MiniMax-H3 reaches a T2V TextVScore of 68.32, while the strongest Ref2V score is 56.51; attribute slices reveal a pronounced drop as the number of simultaneous reference text regions increases.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.13412" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13412.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.13316</span>
+        </div>
+        <span class="score-badge">相关性 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.13316" target="_blank">ThinkDrag: Semantic Drag-Based Image Editing with Visual Reasoning</a>
+      </h3>
+      <p class="paper-title-zh">ThinkDrag：基于视觉推理的语义拖拽图像编辑</p>
+      <p class="paper-authors">Armando Fortes, Tianyi Wei, Chindanai Trakantannarong, Shangchen Zhou, Xingang Pan</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出一个统一的多模态框架ThinkDrag，将拖拽编辑从单纯的几何位移提升到语义层面，通过显式推理轨迹和拖拽端点标记实现更符合内容理解的图像编辑，并构建了监督数据集和基准DragBench++。</div>
+        <div class="summary-section"><strong>方法:</strong> ThinkDrag结合多模态输入（图像、点约束和可选文本），训练模型将点约束映射到对象或场景级别的语义变换，并生成显式推理轨迹以解释编辑意图。通过分析交叉图像注意力引入拖拽端点标记，提供点约束在图像空间中的对应信号，增强编辑的准确性。模型采用监督学习，使用包含推理轨迹的语义拖拽变换数据集进行训练。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在DragBench++基准上，ThinkDrag达到最先进性能，生成质量和合理性显著提升，同时保持与现有方法相当的点跟随精度，尤其在模糊或语义复杂的拖拽场景中表现优越。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Drag-based image editing provides an intuitive interface for spatially controlled image manipulation by allowing users to specify handle and target points. Existing methods have made substantial progress through optimization-based, one-step, and feed-forward formulations, but they often interpret drag instructions as geometric displacements. This limits their effectiveness when the desired edit depends on interpreting image content and inferring a plausible semantic transformation from sparse point constraints. We introduce ThinkDrag, a unified multimodal framework for drag-based image editing with visual reasoning. ThinkDrag is trained to associate point constraints with meaningful object- and scene-level transformations, and can optionally produce an explicit reasoning trace that interprets the intended edit before image generation. This reasoning trace improves interpretability, particularly for ambiguous drags. Drag Endpoint Markers, motivated by an analysis of cross-image attention, provide an explicit correspondence signal that grounds each drag in image space. To support this framework, we construct a supervised dataset of semantic drag transformations paired with reasoning traces and introduce DragBench++, a benchmark targeting challenging drag-based editing scenarios with reference edit solutions. Experiments show that ThinkDrag achieves state-of-the-art performance, improving generation quality and plausibility while maintaining competitive point-following precision.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.13316" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13316.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🔥 Hacker News</div>
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 543 &nbsp;💬 301</span>
+        </div>
+        <span class="score-badge">推荐度 90/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50059115" target="_blank">Muse Wonder</a>
+      </h3>
+      <p class="paper-authors">by meetpateltech</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50059115" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://research.meta.ai/blog/muse-wonder" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 459 &nbsp;💬 258</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50058507" target="_blank">GLM-Legal</a>
+      </h3>
+      <p class="paper-authors">by ilreb</p>
+      <div class="paper-summary"><div class="summary-section">GLM-Legal 是智谱AI推出的法律领域大模型，具备法律条文解析、案例检索和文书生成能力，看点在于其针对中文法律场景的深度优化与专业评测表现。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50058507" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://z.ai/blog/glm-legal" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 418 &nbsp;💬 171</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50058528" target="_blank">A Modern Web App in C</a>
+      </h3>
+      <p class="paper-authors">by prophittcorey</p>
+      <div class="paper-summary"><div class="summary-section">这篇帖子展示了作者用纯C语言构建一个现代Web应用的完整实践，重点在于如何在不依赖框架的情况下处理HTTP、路由和模板，看点是对底层实现和性能控制的深入探讨。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50058528" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://prophitt.me/writing/a-modern-web-app-in-c" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 47 &nbsp;💬 20</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50063717" target="_blank">Janas: Run LLMs larger than RAM by streaming experts from SSD</a>
+      </h3>
+      <p class="paper-authors">by khalidkhair</p>
+      <div class="paper-summary"><div class="summary-section">Janas 通过从 SSD 流式加载专家模型，让大型语言模型能在内存不足时运行，突破了 RAM 限制，看点在于其高效利用存储带宽实现超大模型推理。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50063717" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/prabanta-dev/janas" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 112 &nbsp;💬 72</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50059096" target="_blank">Launch HN: Agent37 (YC F26) – Low-cost agent sandboxes for running agents</a>
+      </h3>
+      <p class="paper-authors">by vishnukool</p>
+      <div class="paper-summary"><div class="summary-section">Agent37是YC孵化的低成本AI代理沙盒服务，主打比主流供应商便宜90%以上，月均每个沙盒仅需0.37美元，并附有产品演示视频。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50059096" target="_blank" class="link-btn">💬 HN 讨论</a>
+        
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 84 &nbsp;💬 27</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50063417" target="_blank">Phreak.ing – Internet Phone Switch</a>
+      </h3>
+      <p class="paper-authors">by rickcarlino</p>
+      <div class="paper-summary"><div class="summary-section">这是一个展示如何用软件定义无线电（SDR）和开源工具搭建“互联网电话交换机”的项目，核心看点在于用极低成本复现经典电话盗用（Phreaking）技术，并演示现代VoIP与老式电话网络的互通实验。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50063417" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://phreak.ing/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 6 &nbsp;💬 6</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50065553" target="_blank">Strengthening our defenses against distillation attacks</a>
+      </h3>
+      <p class="paper-authors">by porridgeraisin</p>
+      <div class="paper-summary"><div class="summary-section">Anthropic 发布研究文章，介绍其针对模型蒸馏攻击的防御策略，旨在防止对手通过API提取模型能力。看点在于其提出的技术方案和AI安全防护的实践进展。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50065553" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.anthropic.com/research/distillation-defenses" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 38 &nbsp;💬 11</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50063042" target="_blank">Show HN: Brickbrag – A multiplayer brick-building world in the browser</a>
+      </h3>
+      <p class="paper-authors">by neuling</p>
+      <div class="paper-summary"><div class="summary-section">Brickbrag 是一个在浏览器中运行的多人积木搭建世界，用户可实时协作或竞争建造。其看点在于无需安装即可体验多人沙盒创造，并考验玩家的空间想象力与协作策略。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50063042" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://brickbrag.com/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🐙 GitHub Trending</div>
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 163,696 &nbsp;+45327 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/morluto/rea" target="_blank">morluto/rea</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        morluto /
+
+      rea  
+
+    
+      Reverse engineer anything with agents, from app behavior down to native binaries.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/morluto/rea" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 22,409 &nbsp;+4095 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/storytold/artcraft" target="_blank">storytold/artcraft</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        storytold /
+
+      artcraft  
+
+    
+      ArtCraft is an intentional crafting engine for artists, designers, and filmmakers</p>
+      <div class="paper-summary"><div class="summary-section">ArtCraft 是一个面向艺术家、设计师和电影制作人的意图驱动型创作引擎，用 Rust 构建，通过精准控制生成过程来替代随机性。它值得关注，因为它将程序化生成与艺术表达深度结合，为创意工作流提供了可复现且高度定制化的工具。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/storytold/artcraft" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 155,127 &nbsp;+157 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/open-webui" target="_blank">sponsors/open-webui</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        open-webui /
+
+      open-webui  
+
+    
+      User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</p>
+      <div class="paper-summary"><div class="summary-section">这是一个用户友好的AI交互界面，支持Ollama和OpenAI API等多种后端，因其开箱即用、功能丰富且部署简单而备受关注。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/open-webui" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">HTML</span>
+          <span class="paper-id">⭐ 52,790 &nbsp;+2081 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/cathrynlavery" target="_blank">sponsors/cathrynlavery</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        cathrynlavery /
+
+      diagram-design  
+
+    
+      Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/cathrynlavery" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">C++</span>
+          <span class="paper-id">⭐ 40,944 &nbsp;+97 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/microsoft/BitNet" target="_blank">microsoft/BitNet</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        microsoft /
+
+      BitNet  
+
+    
+      Official inference framework for 1-bit LLMs</p>
+      <div class="paper-summary"><div class="summary-section">BitNet 是微软推出的1-bit大模型官方推理框架，能以极低算力和能耗运行超大规模语言模型，值得关注因为它大幅降低LLM部署门槛，推动高效边缘AI落地。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/microsoft/BitNet" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 53,848 &nbsp;+1895 today</span>
+        </div>
+        <span class="score-badge">推荐度 70/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank">bilawalsidhu/gods-eye-view</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        bilawalsidhu /
+
+      gods-eye-view  
+
+    
+      A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.</p>
+      <div class="paper-summary"><div class="summary-section">“gods-eye-view”是一个在浏览器中运行的间谍卫星模拟器，基于真实数据在逼真的3D地球上提供实时开源空间情报。它值得关注，因为将卫星视角与真实地理信息结合，让普通人也能体验“上帝视角”的全球监控与分析。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Jupyter Notebook</span>
+          <span class="paper-id">⭐ 37,618 &nbsp;+879 today</span>
+        </div>
+        <span class="score-badge">推荐度 70/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/lyogavin" target="_blank">sponsors/lyogavin</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        lyogavin /
+
+      airllm  
+
+    
+      AirLLM 2.8T LLM inference with single 4GB GPU</p>
+      <div class="paper-summary"><div class="summary-section">AirLLM 是一个让单个4GB显存GPU即可运行高达2.8T参数大模型的推理框架，通过极致的内存优化和分层加载技术大幅降低硬件门槛，值得关注因为它让普通消费级显卡也能体验前沿大模型能力。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/lyogavin" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 59,244 &nbsp;+626 today</span>
+        </div>
+        <span class="score-badge">推荐度 40/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        Alishahryar1 /
+
+      free-claude-code  
+
+    
+      Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)</p>
+      <div class="paper-summary"><div class="summary-section">这是一个提供免费使用Claude Code、Codex等10种AI编程工具（含浏览器端）的项目，内置超13亿免费令牌，支持多模型和语音交互，且兼容多种终端与IDE。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/Alishahryar1/free-claude-code" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    </div>
+
+    <footer>
+        <p>由 <a href="https://github.com/Sloan-Yang/TechDigest">TechDigest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> · <a href="https://news.ycombinator.com">Hacker News</a> · <a href="https://github.com/trending">GitHub Trending</a></p>
+    </footer>
+</body>
+</html>

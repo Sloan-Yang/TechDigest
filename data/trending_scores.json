@@ -702,5 +702,7 @@
   "twostraws_SwiftUI-Agent-Skill": 75,
   "flutter_flutter": 40,
   "tensorflow_tensorflow": 75,
-  "huggingface_transformers": 95
+  "huggingface_transformers": 95,
+  "sponsors_open-webui": 85,
+  "microsoft_BitNet": 85
 }
