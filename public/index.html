@@ -313,7 +313,7 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-10-13</div>
+        <div class="page-date">📅 2026-10-14</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
             计算机视觉: 5
@@ -328,30 +328,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.13502</span>
+          <span class="paper-id">2610.12899</span>
         </div>
-        <span class="score-badge">相关性 90/100</span>
+        <span class="score-badge">相关性 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.13502" target="_blank">Stride: Scale-Aware Multi-Agent Evolutionary Refinement for Infographic Generation</a>
+        <a href="https://arxiv.org/abs/2610.12899" target="_blank">A Lightweight Velocity Correction Framework for Improving Instruction Following in Few-Step Text-to-Image Generation</a>
       </h3>
-      <p class="paper-title-zh">Stride：面向信息图生成的尺度感知多智能体进化式精炼方法</p>
-      <p class="paper-authors">Yan Zhou, Yang Yang</p>
+      <p class="paper-title-zh">一种轻量级速度校正框架，用于改进少步文本到图像生成中的指令遵循能力</p>
+      <p class="paper-authors">Yating Gao, Zhenlong Zhu, Wen Zihao, Lenan Zhang, Jiexiong Wang 等 (9 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种基于约束的多智能体框架Stride，通过尺度感知的路由策略（全局修订与局部修正分离）和单调接受机制，在任意冻结生成器上实现稳定迭代改进，显著提升了信息图生成质量，并超越了多个专有系统。</div>
-        <div class="summary-section"><strong>方法:</strong> Stride将约束评估（需求是否满足）与视觉定位（违规位置和方式）分离，并据此将全局修订任务分配给作曲家子智能体，局部修正任务分配给修图师子智能体。每个子智能体进行内部规划并生成多个候选方案，Stride仅在候选方案能提高验证器分数时接受，从而减少迭代中的性能回退。这种结合尺度感知路由、每步冗余和单调接受策略，确保了跨迭代的稳定改进。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在完全开源生成器-验证器系统下，Stride在BizGenEval上优于Nano-Banana-2.0和Seedream-5.0-Pro，在IGenBench上与GPT-Image-2.0持平并超越Seedream-5.0-Pro，在WISE上取得新的最优分数，同时在所有评估基准上显著优于现有智能体方法。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出首个针对完全冻结的少步文本到图像生成器的轻量级速度残差校正框架，在不改变生成器参数或增加前向传播次数的情况下，显著提升复杂提示的指令遵循能力。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法在冻结的6B参数生成器基础上，引入一个少于2000万参数的速度校正器，在选定的采样步骤并行运行，学习残差调整。校正器通过在线轨迹流桥监督（On-Trajectory Flow-Bridge Supervision）在真实校正轨迹上获取残差目标，从而适应后续步骤状态变化。仅训练校正器，无需奖励优化或重新蒸馏，且保持原始采样调度和前向次数不变。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在目标复杂场景分布上，该方法在成对指令遵循评估中，相比冻结的Z-Image-Turbo实现了+17.60百分点的净胜率（NetWin），每张图像仅增加26.9毫秒（0.84%）的端到端延迟，且不增加骨干网络评估次数。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Infographic generation challenges text-to-image models because a single image must satisfy numerous visual, textual, and semantic constraints. Iterative agentic refinement with a multimodal verifier is a natural remedy, but existing methods face a scale mismatch: local edits cannot correct global composition errors, while full regeneration may destroy already-correct regions. We introduce Stride, a constraint-grounded multi-agent framework that treats refinement over any frozen generator as a history-aware evolution strategy. Stride separates constraint evaluation - whether each requirement is satisfied - from visual grounding - where and how it is violated. It then routes global revisions to a composer subagent and local corrections to a retoucher subagent. Each subagent conducts internal planning and generates multiple candidates, while Stride accepts a candidate only when it improves the verifier score, reducing regression across iterations. Because stochastic generators and imperfect verifiers make any single step unreliable, it is this combination of scale-aware routing, per-step redundancy, and monotonic acceptance that yields stable improvement across iterations. With fully open-weight generator-verifier systems, Stride outperforms proprietary systems including Nano-Banana-2.0 and Seedream-5.0-Pro on BizGenEval, matches GPT-Image-2.0 and surpasses Seedream-5.0-Pro on IGenBench, and achieves a new state-of-the-art score on WISE, while substantially outperforming existing agentic methods across all evaluated benchmarks.</p>
+        <p>Few-step text-to-image generators produce high-quality images with few network forward passes, yet struggle with complex prompts involving multiple subjects, interactions, spatial relations, counting, and attribute binding. Can these errors be reduced without changing the generator's parameters or increasing its forward-pass count? We propose a lightweight correction framework for a frozen 6B-parameter generator. The generator predicts velocities that determine how its intermediate image representation is updated; a corrector with fewer than 20M parameters learns residual adjustments at selected sampling steps. Because earlier corrections change the states encountered at later steps, our On-Trajectory Flow-Bridge Supervision derives residual targets at the states actually reached during corrected generation. A single corrector is shared across selected steps and runs in parallel with the generator. Only the corrector is trained, requiring neither reward optimization nor re-distillation. To our knowledge, this is the first framework for lightweight velocity-residual adaptation of fully frozen few-step text-to-image generators that preserves their original sampling schedule and forward-pass count. On our target complex-scene distribution, the framework achieves a +17.60-percentage-point NetWin over frozen Z-Image-Turbo in pairwise instruction-following evaluation, with only 26.9 ms (0.84%) additional end-to-end latency per image and no increase in backbone evaluations.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.13502" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.13502.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.12899" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.12899.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,47 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.13944</span>
+          <span class="paper-id">2610.13337</span>
         </div>
-        <span class="score-badge">相关性 85/100</span>
+        <span class="score-badge">相关性 75/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.13944" target="_blank">InstantFusion: A Shared Latent Interface for Heterogeneous Image Generators</a>
+        <a href="https://arxiv.org/abs/2610.13337" target="_blank">Exploring Attention Sinks in Text-to-Image Transformers from Diffusion and Autoregressive Models</a>
       </h3>
-      <p class="paper-title-zh">即时融合：异构图像生成器的共享潜在接口</p>
-      <p class="paper-authors">Xuanlang Dai, Jiazi Bu, Yujie Zhou, Yuhong Liu, Beichen Zhang 等 (8 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出一种轻量级共享潜在接口（InstantFusion），无需为每对模型单独训练映射，即可实现不同架构和表示的图像生成器之间的无缝状态转换，支持加速、多偏好组合、跨架构策略蒸馏和跨模型组合等多种应用。</div>
-        <div class="summary-section"><strong>方法:</strong> 该方法引入模型特定的潜在自编码器（LAEs），将不同生成器的中间状态投影到共享潜在空间，并解码为目标生成器的潜在空间。共享空间通过两个互补目标约束：对齐来自同一图像在匹配噪声水平下的中间状态，以及同步对应的局部去噪速度。训练完成后，InstantFusion允许在冻结的生成器之间无缝切换去噪过程，无需为每对模型设计专用映射。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 实验表明，独立训练的生成器具有相似的潜在空间组织，直接传递中间状态可保留粗略视觉内容；InstantFusion在加速、多偏好组合、跨架构策略蒸馏和跨模型组合等任务中均达到竞争性性能，验证了其通用性和有效性。</div>
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Diffusion/flow models have emerged as the de facto paradigms for image generation, giving rise to a diverse family of modern generators with increasingly heterogeneous architectures and representations. Despite their remarkable generation capabilities, the cross-model alignment of latent representations and the consistency of their underlying denoising dynamics remain underexplored. In this work, we uncover an intriguing cross-model compatibility: independently trained generators exhibit similar latent spatial organization, while directly handing off intermediate states between unaligned models can still preserve coarse visual content. Motivated by these observations, we propose InstantFusion, a lightweight shared latent interface that connects the denoising trajectories of heterogeneous image generators. Specifically, to enable flexible cross-model state translation, model-specific Latent AutoEncoders (LAEs) are introduced to project intermediate states from different generators into a shared latent space and decode them into the latent space of a target generator. This shared space is constrained by two complementary objectives: aligning intermediate states derived from the same image at matched noise levels and synchronizing their corresponding local denoising velocities. Once trained, InstantFusion allows denoising to seamlessly transition across frozen generators without requiring a dedicated mapping for every model pair. The versatility of InstantFusion is demonstrated across acceleration, multi-preference composition, cross-architecture on-policy distillation, and cross-model composition, achieving competitive performance across these diverse settings.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.13944" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.13944.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.13941</span>
-        </div>
-        <span class="score-badge">相关性 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.13941" target="_blank">Images Talk Back: Guiding MMDiTs by Suppressing Image-to-Text Feedback</a>
-      </h3>
-      <p class="paper-title-zh">Images Talk Back: Guiding MMDiTs by Suppressing Image-to-Text Feedback</p>
-      <p class="paper-authors">Yucheng Yang, Xiaoxiao Sun, Shusheng Yang, Jiakang Chen, Serena Yeung-Levy</p>
+      <p class="paper-title-zh">Exploring Attention Sinks in Text-to-Image Transformers from Diffusion and Autoregressive Models</p>
+      <p class="paper-authors">Binglei Li, Mengping Yang, Zhiyu Tan, Wenxu Qian, Junping Zhang 等 (6 位作者)</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -410,12 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Multimodal diffusion transformers (MMDiTs) allow the evolving image to update internal text representations through joint attention. These representations then guide subsequent image updates, raising a question: does this feedback help correct deviations from the prompt, or preserve them? We find that image-to-text (I2T) feedback can preserve the objects and attributes already represented in the evolving image, including errors. Transplanting I2T messages can rescue failures or disrupt successes. At matched intervention strengths, suppressing the influence of I2T feedback improves generation, whereas opposite controls degrade it. These findings motivate Semantic Feedback Guidance (SFG), which suppresses the influence of I2T feedback by guiding away from an auxiliary branch that strengthens this feedback and weakens text-to-image conditioning. The in-place variant, iSFG, directly suppresses I2T feedback and strengthens text-to-image conditioning, requiring no extra model evaluations. Temporal interventions motivate running the SFG branch during the first 20% of image sampling steps, requiring about $1.2\times$ the base NFE without classifier-free guidance (CFG). Experiments across three image-generation backbones show gains in alignment and preference-model scores. On FLUX, adding SFG to CFG raises GenEval from $0.6661$ to $0.7479$; on SD3.5M, iSFG adds $+1.33$ HPSv2.1 over CFG at zero extra NFE. The control also transfers to text-to-video and image-to-video generation, improving VBench scores. Code is available at https://github.com/yyc1215lll-creator/SFG.</p>
+        <p>Attention sinks are tokens or positions that consistently receive disproportionate attention mass, often beyond what their semantic content would suggest. Despite extensive study in large language models, their behavior and functional relevance in text-to-image (T2I) Transformers remain largely unexplored. To fill this gap and better understand how text-to-image Transformers allocate and route attention, we explore this phenomenon of text-to-image transformers across bidirectional diffusion models and causal autoregressive models. Specifically, we explore whether attention sinks exist, where they emerge, and how they functionally influence generation. Through systematic attention analysis and targeted interventions, we identify that attention sinks emerge in both bidirectional diffusion and autoregressive models but exhibit distinct patterns. The autoregressive model concentrates attention on the first and global-scale tokens, whereas the bidirectional models develop sinks near modality boundaries, within text regions, and at spatial corners. Moreover, these patterns vary across generation stages and are localized to a sparse subset of layers and heads. To assess their functional relevance, we perturb sink-related heads and token positions. It turns out that perturbing sink-ranked heads produces larger average changes than non-sink comparisons, while some sink-position perturbations have limited effects on bidirectional model scores. We further introduce register tokens to redistribute attention sinks and find that several configurations preserve or modestly improve generation performance. Overall, attention sinks are architecture-, inference-stage-, and component-dependent phenomena, providing a basis for mechanistic analysis and principled attention design in text-to-image transformers.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.13941" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.13941.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.13337" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13337.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,30 +392,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.13412</span>
+          <span class="paper-id">2610.13217</span>
         </div>
         <span class="score-badge">相关性 75/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.13412" target="_blank">TextVBench: Evaluating Text Rendering and Preservation in Video Generation</a>
+        <a href="https://arxiv.org/abs/2610.13217" target="_blank">Golden Anchor for Video Generation</a>
       </h3>
-      <p class="paper-title-zh">TextVBench：评估视频生成中的文本渲染与保持</p>
-      <p class="paper-authors">Ruiqiang Zhang, Hengyi Wang, Chang Liu, Guanjie Wang, Zehua Ma 等 (6 位作者)</p>
+      <p class="paper-title-zh">视频生成的金色锚点</p>
+      <p class="paper-authors">Jinyuan Xu, Shitong Shao, Lichen Bai, Zikai Zhou, Guoxi Huang 等 (7 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个名为TextVBench的基准和评估框架，将视频生成中的视觉文本评估形式化为多目标、多实例的时空对应问题，以解决现有方法无法准确衡量文本渲染错误和跨帧不一致的问题。</div>
-        <div class="summary-section"><strong>方法:</strong> TextVBench包含两个互补的评估轨道：T2V（文本到视频）和Ref2V（参考图像到视频），分别衡量提示指定文本的创建与保持以及参考图像中文本的保持。评估采用目标条件候选选择而非无约束的VLM转录，支持一个目标映射到多个OCR区域，并分离帧级空间保真度和跨帧时间保真度。最终使用长度加权调和分数汇总这些因素，并通过额外文本诊断揭示单一OCR分数掩盖的失败模式。基准围绕受控的文本、布局、载体和运动属性组织，使聚合分数可追溯到具体能力限制。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在评估的模型运行中，MiniMax-H3在T2V轨道上达到68.32的TextVScore，而最强的Ref2V分数为56.51；属性切片显示，随着同时参考文本区域数量的增加，性能显著下降。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 本文首次提出金色锚点学习（GAL）框架，通过下游视频反馈优化文本到图像（T2I）生成器，以生成更适合视频模型的锚点图像，从而提升视频生成质量。</div>
+        <div class="summary-section"><strong>方法:</strong> GAL方法利用冻结的图像到视频（I2V）模型评估候选锚点图像，将生成的视频奖励转化为图像级别的偏好信号，用于对T2I生成器进行DPO（直接偏好优化）微调。该方法不改变I2V模型，仅优化T2I生成器，使其生成的锚点图像在视频生成中表现更优。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在四个I2V模型上，GAL将VBench平均分提升2.97%–8.46%，动态程度提升5.62%–38.24%，同时视频奖励（VideoReward-Overall）和提取帧的评分（HPSv3、UniPercept）也更高。尽管仅在HunyuanVideo-1.5上训练，GAL的增益可迁移至其他三个I2V模型，且运动一致性显著改善。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Modern video generators can synthesize convincing scenes while rendering a few characters incorrectly, omitting requested text, or changing it across frames. Measuring these failures is harder than applying OCR independently to each frame: when a scene contains multiple text targets and multiple noisy OCR regions, the evaluator must first determine which observation belongs to which intended text. We introduce TextVBench, a benchmark and evaluation framework that formulates visual-text evaluation as a multi-target, multi-instance spatiotemporal correspondence problem. TextVBench contains two complementary tracks: TextVBench-T2V measures the creation and maintenance of prompt-specified text, while TextVBench-Ref2V measures preservation of text from reference images. Both tracks use target-conditioned candidate selection rather than unconstrained VLM transcription, support one target mapping to multiple OCR regions, and separate frame-level spatial fidelity from cross-frame temporal fidelity. A length-weighted harmonic score summarizes these factors, while extra-text diagnostics expose failure modes hidden by a single OCR score. The benchmark is organized around controlled text, layout, carrier, and motion attributes so that aggregate scores can be traced back to specific capability limits. Across the evaluated model runs, MiniMax-H3 reaches a T2V TextVScore of 68.32, while the strongest Ref2V score is 56.51; attribute slices reveal a pronounced drop as the number of simultaneous reference text regions increases.</p>
+        <p>Video generation supports digital content creation, with applications in virtual avatars, AI-driven filmmaking, interactive game engines, and world models. State-of-the-art systems achieve controllability primarily through image-to-video (I2V) generation, in which an injected anchor image determines the identity, composition, and style of the resulting video. In modern pipelines, this anchor is synthesized by a text-to-image (T2I) generator. This raises a largely overlooked question: Are images obtained directly from the T2I model truly suitable for current video models? Our analysis shows that anchor aesthetic and quality scores are weakly correlated with downstream video quality. The structure-and-texture score is negatively correlated with I2V video quality in both the visual and motion dimensions. Fine-tuning the T2I model on an image reward accordingly yields anchors with visibly denser structural and character detail: they score higher on image metrics, yet lower the video reward on every I2V model we test and change downstream motion unpredictably. We therefore introduce Golden Anchor Learning (GAL), to our knowledge the first framework for learning golden anchors by optimizing a T2I generator with downstream video feedback. GAL evaluates candidate anchors through the videos they induce under a frozen I2V model and converts video rewards into image-level preferences for DPO fine-tuning of the T2I generator. On all four I2V models, GAL raises the VBench average by $2.97\%$--$8.46\%$ over the untuned generator. The rendered clips also score higher under VideoReward-Overall, and their extracted frames under HPSv3 and UniPercept. GAL yields consistent motion gains across all four I2V models, as measured by a $5.62\%$--$38.24\%$ increase in VBench dynamic degree. Although GAL is trained only on HunyuanVideo-1.5 renders, these gains extend to the other three I2V models.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.13412" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.13412.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.13217" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13217.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,30 +424,62 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.13316</span>
+          <span class="paper-id">2610.13181</span>
         </div>
         <span class="score-badge">相关性 75/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.13316" target="_blank">ThinkDrag: Semantic Drag-Based Image Editing with Visual Reasoning</a>
+        <a href="https://arxiv.org/abs/2610.13181" target="_blank">MixTok: Adaptive Visual Tokenization with Global 1D Tokens and Sparse 2D Refinement</a>
       </h3>
-      <p class="paper-title-zh">ThinkDrag：基于视觉推理的语义拖拽图像编辑</p>
-      <p class="paper-authors">Armando Fortes, Tianyi Wei, Chindanai Trakantannarong, Shangchen Zhou, Xingang Pan</p>
+      <p class="paper-title-zh">MixTok：基于全局1D令牌与稀疏2D细化的自适应视觉令牌化</p>
+      <p class="paper-authors">Chenge Li, Yefei He, Xinyu Liu, Feng Chen, Hong Zhou 等 (6 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出一个统一的多模态框架ThinkDrag，将拖拽编辑从单纯的几何位移提升到语义层面，通过显式推理轨迹和拖拽端点标记实现更符合内容理解的图像编辑，并构建了监督数据集和基准DragBench++。</div>
-        <div class="summary-section"><strong>方法:</strong> ThinkDrag结合多模态输入（图像、点约束和可选文本），训练模型将点约束映射到对象或场景级别的语义变换，并生成显式推理轨迹以解释编辑意图。通过分析交叉图像注意力引入拖拽端点标记，提供点约束在图像空间中的对应信号，增强编辑的准确性。模型采用监督学习，使用包含推理轨迹的语义拖拽变换数据集进行训练。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在DragBench++基准上，ThinkDrag达到最先进性能，生成质量和合理性显著提升，同时保持与现有方法相当的点跟随精度，尤其在模糊或语义复杂的拖拽场景中表现优越。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种混合视觉令牌化方法MixTok，结合紧凑的1D全局表示与稀疏的2D局部细化令牌，在保持高压缩率的同时有效保留图像细节，实现了重建与生成性能的显著提升。</div>
+        <div class="summary-section"><strong>方法:</strong> MixTok首先使用1D令牌编码器生成全局紧凑表示，然后通过内容自适应路由器对候选位置进行细化优先级排序，并根据目标平均令牌预算动态决定每个图像的2D令牌数量。在得分最高的位置，用2D令牌特征替换从1D表示恢复的空间特征，最后通过共享解码器从混合特征重建图像。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在ImageNet 256×256上，MixTok在平均约128个内容令牌下达到rFID 1.195，在约131个令牌下达到gFID 1.95，重建和生成性能均具有高度竞争力，验证了混合令牌化策略的有效性。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Drag-based image editing provides an intuitive interface for spatially controlled image manipulation by allowing users to specify handle and target points. Existing methods have made substantial progress through optimization-based, one-step, and feed-forward formulations, but they often interpret drag instructions as geometric displacements. This limits their effectiveness when the desired edit depends on interpreting image content and inferring a plausible semantic transformation from sparse point constraints. We introduce ThinkDrag, a unified multimodal framework for drag-based image editing with visual reasoning. ThinkDrag is trained to associate point constraints with meaningful object- and scene-level transformations, and can optionally produce an explicit reasoning trace that interprets the intended edit before image generation. This reasoning trace improves interpretability, particularly for ambiguous drags. Drag Endpoint Markers, motivated by an analysis of cross-image attention, provide an explicit correspondence signal that grounds each drag in image space. To support this framework, we construct a supervised dataset of semantic drag transformations paired with reasoning traces and introduce DragBench++, a benchmark targeting challenging drag-based editing scenarios with reference edit solutions. Experiments show that ThinkDrag achieves state-of-the-art performance, improving generation quality and plausibility while maintaining competitive point-following precision.</p>
+        <p>Efficient visual tokenization requires balancing representation compactness with the preservation of fine-grained image content. Conventional grid-based tokenizers allocate tokens uniformly across spatial locations despite non-uniform visual complexity, whereas compact 1D tokenizers aggregate global information but can struggle to preserve local details. We introduce MixTok, a hybrid visual tokenizer that combines a compact 1D global representation with sparse 2D tokens for local refinement. A content-adaptive router ranks candidate locations by refinement priority and determines the number of 2D tokens for each image under a target average token budget. At the highest-scoring locations, 2D token features replace the spatial features recovered from the 1D representation, and a shared decoder reconstructs the image from the resulting mixed features. On ImageNet 256 x 256, MixTok achieves highly competitive reconstruction and generation performance, with an rFID of 1.195 and a gFID of 1.95 at respective average budgets of approximately 128 and 131 content tokens per image.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.13316" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.13316.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.13181" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13181.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.13066</span>
+        </div>
+        <span class="score-badge">相关性 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.13066" target="_blank">Evolving Creatives with Clicks: CTR-Driven Advertising image Editing via Attribute Disentanglement and Preference Alignment</a>
+      </h3>
+      <p class="paper-title-zh">通过点击驱动的创意演化：基于属性解耦与偏好对齐的CTR导向广告图像编辑</p>
+      <p class="paper-authors">Xu Zhang, Haohan Wang, Zheng Zhang, Yingjie Xia, Wei Feng 等 (12 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种新的广告创意优化框架ECC，将创意优化从从头生成转变为细粒度编辑，通过选择性改进对点击率有害的属性而保留有益属性，显著提升广告图像的CTR表现。</div>
+        <div class="summary-section"><strong>方法:</strong> ECC首先利用ANOVA和随机森林回归从大量图像中识别出28个与CTR显著相关的属性。然后，基于不同CTR图像之间的属性对比，对提示模型进行指令微调以生成编辑建议，并利用真实点击偏好进一步优化该模型。此外，引入一致性偏好优化（CPO）策略，通过对语义等价的打乱建议施加一致性约束，缓解DPO过拟合并提升偏好泛化能力。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明，ECC在提升广告图像CTR方面显著优于现有最先进模型，验证了其细粒度编辑和偏好对齐方法的有效性。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>The optimization objective for e-commerce advertising creatives has shifted from aesthetic quality to online business metrics like click-through rate (CTR). Recent methods generate appealing ad images from product images by constructing CTR-based reward signals and refining prompt generation via Reinforcement Learning. Such paradigms equally penalize all attributes within an underperforming image, even though some are actually beneficial to clicks. In this work, we propose Evolving Creatives with Clicks (ECC), which reformulates creative optimization as fine-grained editing rather than generation from scratch. ECC selectively refines attributes that hurt CTR while preserving those that contribute positively. Specifically, faced with a rich attribute space across massive images, ECC first identifies 28 attributes significantly correlated with CTR via ANOVA and Random Forest regression. Based on attribute contrasts between images with disparate CTRs, we instruction-tune a prompt model to generate editing suggestions, then refine it with real click preferences since reference-derived suggestions are not uniformly beneficial. Furthermore, we introduce Consistent Preference Optimization (CPO) as ECC's preference optimization strategy, which enforces consistency across semantically equivalent shuffled suggestions to mitigate DPO overfitting and improve preference generalization. Extensive experiments demonstrate that ECC significantly improves the CTR of ad images, outperforming state-of-the-art models by a substantial margin. The complete data pipeline, including attribute extraction and analysis, the resulting dataset, and source code will be released upon acceptance.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.13066" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.13066.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,7 +488,26 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 543 &nbsp;💬 301</span>
+          <span class="paper-id">▲ 133 &nbsp;💬 45</span>
+        </div>
+        <span class="score-badge">推荐度 90/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50064840" target="_blank">Show HN: SolidCraft – Open-Source Parametric CAD in Rust (With MCP Support)</a>
+      </h3>
+      <p class="paper-authors">by bherbruck</p>
+      <div class="paper-summary"><div class="summary-section">SolidCraft 是一个用 Rust 开发的开源参数化 CAD 工具，支持 MCP（模型上下文协议），看点在于将编程式建模与 AI 辅助集成，为开发者提供可扩展的轻量级设计替代方案。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50064840" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/bherbruck/solidcraft" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 658 &nbsp;💬 373</span>
         </div>
         <span class="score-badge">推荐度 90/100</span>
       </div>
@@ -496,7 +515,7 @@
         <a href="https://news.ycombinator.com/item?id=50059115" target="_blank">Muse Wonder</a>
       </h3>
       <p class="paper-authors">by meetpateltech</p>
-      
+      <div class="paper-summary"><div class="summary-section">Meta AI发布Muse Wonder，一个用于生成音乐和音效的AI模型，可基于文本和音频提示创作连贯的音频。看点在于其高质量、可扩展的音频生成能力，以及开源潜力。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=50059115" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://research.meta.ai/blog/muse-wonder" target="_blank" class="link-btn">🔗 原文</a>
@@ -507,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 459 &nbsp;💬 258</span>
+          <span class="paper-id">▲ 957 &nbsp;💬 737</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50058507" target="_blank">GLM-Legal</a>
+        <a href="https://news.ycombinator.com/item?id=50073879" target="_blank">Gemini 4 Argon</a>
       </h3>
-      <p class="paper-authors">by ilreb</p>
-      <div class="paper-summary"><div class="summary-section">GLM-Legal 是智谱AI推出的法律领域大模型，具备法律条文解析、案例检索和文书生成能力，看点在于其针对中文法律场景的深度优化与专业评测表现。</div></div>
+      <p class="paper-authors">by 737max</p>
+      <div class="paper-summary"><div class="summary-section">谷歌发布Gemini 4 Argon模型，主打性能与效率提升，并衍生出面向机器人领域的专用版本，看点在于其多模态能力与硬件集成潜力。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50058507" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://z.ai/blog/glm-legal" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50073879" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://deepmind.google/models/gemini/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 418 &nbsp;💬 171</span>
+          <span class="paper-id">▲ 239 &nbsp;💬 78</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50058528" target="_blank">A Modern Web App in C</a>
+        <a href="https://news.ycombinator.com/item?id=50077020" target="_blank">Show HN: Guitoro, a virtual guitar you strum with your keyboard</a>
       </h3>
-      <p class="paper-authors">by prophittcorey</p>
-      <div class="paper-summary"><div class="summary-section">这篇帖子展示了作者用纯C语言构建一个现代Web应用的完整实践，重点在于如何在不依赖框架的情况下处理HTTP、路由和模板，看点是对底层实现和性能控制的深入探讨。</div></div>
+      <p class="paper-authors">by talccc</p>
+      <div class="paper-summary"><div class="summary-section">Guitoro是一款免费浏览器虚拟吉他，可用键盘、鼠标或触屏弹奏真实乐器录音，支持多种吉他类型、和弦指法显示及慢速练习功能。亮点是无需注册下载，且提供和弦工具和调音器，适合快速上手体验弹奏手感。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50058528" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://prophitt.me/writing/a-modern-web-app-in-c" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50077020" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://guitoro.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 47 &nbsp;💬 20</span>
+          <span class="paper-id">▲ 509 &nbsp;💬 506</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50063717" target="_blank">Janas: Run LLMs larger than RAM by streaming experts from SSD</a>
+        <a href="https://news.ycombinator.com/item?id=50073633" target="_blank">Redesigning source control at Anthropic</a>
       </h3>
-      <p class="paper-authors">by khalidkhair</p>
-      <div class="paper-summary"><div class="summary-section">Janas 通过从 SSD 流式加载专家模型，让大型语言模型能在内存不足时运行，突破了 RAM 限制，看点在于其高效利用存储带宽实现超大模型推理。</div></div>
+      <p class="paper-authors">by Philpax</p>
+      <div class="paper-summary"><div class="summary-section">Anthropic 分享了其内部重构源代码管理系统的工程实践，重点在于应对大规模AI模型开发中的协作与版本控制挑战，看点在于其针对传统工具局限性的创新设计思路。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50063717" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/prabanta-dev/janas" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50073633" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.anthropic.com/engineering/redesigning-source-control" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 112 &nbsp;💬 72</span>
+          <span class="paper-id">▲ 667 &nbsp;💬 373</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50059096" target="_blank">Launch HN: Agent37 (YC F26) – Low-cost agent sandboxes for running agents</a>
+        <a href="https://news.ycombinator.com/item?id=50069499" target="_blank">11 year old unsoundness bugs found in Rust borrow checker</a>
       </h3>
-      <p class="paper-authors">by vishnukool</p>
-      <div class="paper-summary"><div class="summary-section">Agent37是YC孵化的低成本AI代理沙盒服务，主打比主流供应商便宜90%以上，月均每个沙盒仅需0.37美元，并附有产品演示视频。</div></div>
+      <p class="paper-authors">by formerly_proven</p>
+      <div class="paper-summary"><div class="summary-section">该帖子报告了Rust借用检查器中存在长达11年的内存安全漏洞，可能导致未定义行为，对Rust语言的安全性承诺构成重大挑战。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50059096" target="_blank" class="link-btn">💬 HN 讨论</a>
-        
+        <a href="https://news.ycombinator.com/item?id=50069499" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/rust-lang/rust/issues/164250" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 84 &nbsp;💬 27</span>
+          <span class="paper-id">▲ 390 &nbsp;💬 85</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50063417" target="_blank">Phreak.ing – Internet Phone Switch</a>
+        <a href="https://news.ycombinator.com/item?id=50069971" target="_blank">We turned EmbeddingGemma 2 into a speech-to-text model</a>
       </h3>
-      <p class="paper-authors">by rickcarlino</p>
-      <div class="paper-summary"><div class="summary-section">这是一个展示如何用软件定义无线电（SDR）和开源工具搭建“互联网电话交换机”的项目，核心看点在于用极低成本复现经典电话盗用（Phreaking）技术，并演示现代VoIP与老式电话网络的互通实验。</div></div>
+      <p class="paper-authors">by amrrs</p>
+      
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50063417" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://phreak.ing/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50069971" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://eg2.haku.sh/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,37 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 6 &nbsp;💬 6</span>
+          <span class="paper-id">▲ 22 &nbsp;💬 0</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50065553" target="_blank">Strengthening our defenses against distillation attacks</a>
+        <a href="https://news.ycombinator.com/item?id=50079437" target="_blank">Physical Intelligence API Beta: Frontier Models for Every Robot</a>
       </h3>
-      <p class="paper-authors">by porridgeraisin</p>
-      <div class="paper-summary"><div class="summary-section">Anthropic 发布研究文章，介绍其针对模型蒸馏攻击的防御策略，旨在防止对手通过API提取模型能力。看点在于其提出的技术方案和AI安全防护的实践进展。</div></div>
+      <p class="paper-authors">by modeless</p>
+      <div class="paper-summary"><div class="summary-section">Physical Intelligence 发布机器人基础模型 API 测试版，让各类机器人接入前沿 AI 能力。看点在于将通用智能模型开放给所有机器人，降低开发门槛，推动具身智能规模化应用。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50065553" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.anthropic.com/research/distillation-defenses" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 38 &nbsp;💬 11</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50063042" target="_blank">Show HN: Brickbrag – A multiplayer brick-building world in the browser</a>
-      </h3>
-      <p class="paper-authors">by neuling</p>
-      <div class="paper-summary"><div class="summary-section">Brickbrag 是一个在浏览器中运行的多人积木搭建世界，用户可实时协作或竞争建造。其看点在于无需安装即可体验多人沙盒创造，并考验玩家的空间想象力与协作策略。</div></div>
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50063042" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://brickbrag.com/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50079437" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.pi.website/blog/api-beta" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 163,696 &nbsp;+45327 today</span>
+          <span class="paper-id">⭐ 207,473 &nbsp;+54679 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -665,7 +665,7 @@
 
     
       Reverse engineer anything with agents, from app behavior down to native binaries.</p>
-      
+      <div class="paper-summary"><div class="summary-section">rea 是一个用 TypeScript 编写的智能逆向工程工具，能通过代理自动分析应用行为直至原生二进制代码，值得关注是因为它大幅降低了逆向分析的门槛，让开发者能高效探索和破解复杂软件。</div></div>
       <div class="paper-links">
         <a href="https://github.com/morluto/rea" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -674,13 +674,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 22,409 &nbsp;+4095 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 63,293 &nbsp;+1748 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/storytold/artcraft" target="_blank">storytold/artcraft</a>
+        <a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -693,62 +693,15 @@
 
 
       
-        storytold /
+        debpalash /
 
-      artcraft  
+      VoiceStudio  
 
     
-      ArtCraft is an intentional crafting engine for artists, designers, and filmmakers</p>
-      <div class="paper-summary"><div class="summary-section">ArtCraft 是一个面向艺术家、设计师和电影制作人的意图驱动型创作引擎，用 Rust 构建，通过精准控制生成过程来替代随机性。它值得关注，因为它将程序化生成与艺术表达深度结合，为创意工作流提供了可复现且高度定制化的工具。</div></div>
+      VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription &amp; audiobook creation in 646 languages.</p>
+      <div class="paper-summary"><div class="summary-section">VoiceStudio 是一个开源的、完全本地化的 ElevenLabs 替代品，支持 646 种语言的语音克隆、声音设计、视频配音、听写、转录和有声书制作。它因无需联网、功能全面且覆盖极多语言而值得关注。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/storytold/artcraft" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 155,127 &nbsp;+157 today</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/open-webui" target="_blank">sponsors/open-webui</a>
-      </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        open-webui /
-
-      open-webui  
-
-    
-      User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</p>
-      <div class="paper-summary"><div class="summary-section">这是一个用户友好的AI交互界面，支持Ollama和OpenAI API等多种后端，因其开箱即用、功能丰富且部署简单而备受关注。</div></div>
-      <div class="paper-links">
-        <a href="https://github.com/sponsors/open-webui" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/debpalash/VoiceStudio" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -756,7 +709,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">HTML</span>
-          <span class="paper-id">⭐ 52,790 &nbsp;+2081 today</span>
+          <span class="paper-id">⭐ 54,126 &nbsp;+1815 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -793,7 +746,7 @@
 
     
       Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.</p>
-      
+      <div class="paper-summary"><div class="summary-section">这是一个为Claude Code、Codex、GitHub Copilot等AI编程工具设计的编辑级图表库，包含44种自包含的HTML+SVG图表类型，以简洁无阴影的纯代码风格替代了常见的Mermaid图表。</div></div>
       <div class="paper-links">
         <a href="https://github.com/sponsors/cathrynlavery" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -802,13 +755,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 40,944 &nbsp;+97 today</span>
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 25,678 &nbsp;+4081 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/microsoft/BitNet" target="_blank">microsoft/BitNet</a>
+        <a href="https://github.com/storytold/artcraft" target="_blank">storytold/artcraft</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -821,15 +774,49 @@
 
 
       
-        microsoft /
+        storytold /
 
-      BitNet  
+      artcraft  
 
     
-      Official inference framework for 1-bit LLMs</p>
-      <div class="paper-summary"><div class="summary-section">BitNet 是微软推出的1-bit大模型官方推理框架，能以极低算力和能耗运行超大规模语言模型，值得关注因为它大幅降低LLM部署门槛，推动高效边缘AI落地。</div></div>
+      ArtCraft is an intentional crafting engine for artists, designers, and filmmakers</p>
+      <div class="paper-summary"><div class="summary-section">ArtCraft 是一个面向艺术家、设计师和电影制作人的意图驱动创作引擎，用 Rust 编写，专注于将创意构思转化为可控的视觉生成流程。它值得关注，因为其“意图优先”的设计理念和 Rust 的高性能特性，为专业创意工作流提供了更精确、更高效的自动化工具。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/microsoft/BitNet" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/storytold/artcraft" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Swift</span>
+          <span class="paper-id">⭐ 9,367 &nbsp;+1198 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/xtool-org/xtool" target="_blank">xtool-org/xtool</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        xtool-org /
+
+      xtool  
+
+    
+      Cross-platform Xcode replacement. Build and deploy iOS apps with SwiftPM on Linux, Windows, macOS.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/xtool-org/xtool" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -837,7 +824,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 53,848 &nbsp;+1895 today</span>
+          <span class="paper-id">⭐ 55,397 &nbsp;+1961 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -861,7 +848,7 @@
 
     
       A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photorealistic 3D globe.</p>
-      <div class="paper-summary"><div class="summary-section">“gods-eye-view”是一个在浏览器中运行的间谍卫星模拟器，基于真实数据在逼真的3D地球上提供实时开源空间情报。它值得关注，因为将卫星视角与真实地理信息结合，让普通人也能体验“上帝视角”的全球监控与分析。</div></div>
+      <div class="paper-summary"><div class="summary-section">这是一个浏览器中的“间谍卫星”模拟器，但数据是真实的——在逼真的3D地球上实时展示开源空间情报，让你像卫星一样俯瞰全球动态。它融合了真实地理数据与高拟真渲染，极具视觉冲击力和探索价值。</div></div>
       <div class="paper-links">
         <a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -871,7 +858,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Jupyter Notebook</span>
-          <span class="paper-id">⭐ 37,618 &nbsp;+879 today</span>
+          <span class="paper-id">⭐ 38,330 &nbsp;+1001 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -908,7 +895,7 @@
 
     
       AirLLM 2.8T LLM inference with single 4GB GPU</p>
-      <div class="paper-summary"><div class="summary-section">AirLLM 是一个让单个4GB显存GPU即可运行高达2.8T参数大模型的推理框架，通过极致的内存优化和分层加载技术大幅降低硬件门槛，值得关注因为它让普通消费级显卡也能体验前沿大模型能力。</div></div>
+      <div class="paper-summary"><div class="summary-section">AirLLM 是一个让超大规模语言模型（如2.8T参数）能在单张4GB显存显卡上高效推理的开源项目，通过创新的内存优化和分块计算技术大幅降低硬件门槛，值得关注因为它让个人开发者也能运行顶级大模型。</div></div>
       <div class="paper-links">
         <a href="https://github.com/sponsors/lyogavin" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -917,13 +904,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 59,244 &nbsp;+626 today</span>
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 34,508 &nbsp;+190 today</span>
         </div>
-        <span class="score-badge">推荐度 40/100</span>
+        <span class="score-badge">推荐度 50/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a>
+        <a href="https://github.com/vercel-labs/skills" target="_blank">vercel-labs/skills</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -936,15 +923,15 @@
 
 
       
-        Alishahryar1 /
+        vercel-labs /
 
-      free-claude-code  
+      skills  
 
     
-      Use Claude Code, Codex, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)</p>
-      <div class="paper-summary"><div class="summary-section">这是一个提供免费使用Claude Code、Codex等10种AI编程工具（含浏览器端）的项目，内置超13亿免费令牌，支持多模型和语音交互，且兼容多种终端与IDE。</div></div>
+      The open agent skills tool - npx skills</p>
+      <div class="paper-summary"><div class="summary-section">这是一个开放代理技能工具，通过 `npx skills` 即可快速调用，用于构建和共享可复用的 AI 代理技能，值得关注因为它简化了技能分发与集成流程。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/Alishahryar1/free-claude-code" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/vercel-labs/skills" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     

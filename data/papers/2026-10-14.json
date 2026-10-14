@@ -1,0 +1,155 @@
+[
+  {
+    "id": "2610.12899",
+    "title": "A Lightweight Velocity Correction Framework for Improving Instruction Following in Few-Step Text-to-Image Generation",
+    "abstract": "Few-step text-to-image generators produce high-quality images with few network forward passes, yet struggle with complex prompts involving multiple subjects, interactions, spatial relations, counting, and attribute binding. Can these errors be reduced without changing the generator's parameters or increasing its forward-pass count? We propose a lightweight correction framework for a frozen 6B-parameter generator. The generator predicts velocities that determine how its intermediate image representation is updated; a corrector with fewer than 20M parameters learns residual adjustments at selected sampling steps. Because earlier corrections change the states encountered at later steps, our On-Trajectory Flow-Bridge Supervision derives residual targets at the states actually reached during corrected generation. A single corrector is shared across selected steps and runs in parallel with the generator. Only the corrector is trained, requiring neither reward optimization nor re-distillation. To our knowledge, this is the first framework for lightweight velocity-residual adaptation of fully frozen few-step text-to-image generators that preserves their original sampling schedule and forward-pass count. On our target complex-scene distribution, the framework achieves a +17.60-percentage-point NetWin over frozen Z-Image-Turbo in pairwise instruction-following evaluation, with only 26.9 ms (0.84%) additional end-to-end latency per image and no increase in backbone evaluations.",
+    "authors": [
+      "Yating Gao",
+      "Zhenlong Zhu",
+      "Wen Zihao",
+      "Lenan Zhang",
+      "Jiexiong Wang",
+      "Yang Yang",
+      "Guanjun Jiang",
+      "Yixiong Zou",
+      "Takuya Maekawa"
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.12899.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.12899",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "一种轻量级速度校正框架，用于改进少步文本到图像生成中的指令遵循能力",
+      "core_contribution": "本文提出首个针对完全冻结的少步文本到图像生成器的轻量级速度残差校正框架，在不改变生成器参数或增加前向传播次数的情况下，显著提升复杂提示的指令遵循能力。",
+      "method": "该方法在冻结的6B参数生成器基础上，引入一个少于2000万参数的速度校正器，在选定的采样步骤并行运行，学习残差调整。校正器通过在线轨迹流桥监督（On-Trajectory Flow-Bridge Supervision）在真实校正轨迹上获取残差目标，从而适应后续步骤状态变化。仅训练校正器，无需奖励优化或重新蒸馏，且保持原始采样调度和前向次数不变。",
+      "findings": "在目标复杂场景分布上，该方法在成对指令遵循评估中，相比冻结的Z-Image-Turbo实现了+17.60百分点的净胜率（NetWin），每张图像仅增加26.9毫秒（0.84%）的端到端延迟，且不增加骨干网络评估次数。"
+    }
+  },
+  {
+    "id": "2610.13337",
+    "title": "Exploring Attention Sinks in Text-to-Image Transformers from Diffusion and Autoregressive Models",
+    "abstract": "Attention sinks are tokens or positions that consistently receive disproportionate attention mass, often beyond what their semantic content would suggest. Despite extensive study in large language models, their behavior and functional relevance in text-to-image (T2I) Transformers remain largely unexplored. To fill this gap and better understand how text-to-image Transformers allocate and route attention, we explore this phenomenon of text-to-image transformers across bidirectional diffusion models and causal autoregressive models. Specifically, we explore whether attention sinks exist, where they emerge, and how they functionally influence generation. Through systematic attention analysis and targeted interventions, we identify that attention sinks emerge in both bidirectional diffusion and autoregressive models but exhibit distinct patterns. The autoregressive model concentrates attention on the first and global-scale tokens, whereas the bidirectional models develop sinks near modality boundaries, within text regions, and at spatial corners. Moreover, these patterns vary across generation stages and are localized to a sparse subset of layers and heads. To assess their functional relevance, we perturb sink-related heads and token positions. It turns out that perturbing sink-ranked heads produces larger average changes than non-sink comparisons, while some sink-position perturbations have limited effects on bidirectional model scores. We further introduce register tokens to redistribute attention sinks and find that several configurations preserve or modestly improve generation performance. Overall, attention sinks are architecture-, inference-stage-, and component-dependent phenomena, providing a basis for mechanistic analysis and principled attention design in text-to-image transformers.",
+    "authors": [
+      "Binglei Li",
+      "Mengping Yang",
+      "Zhiyu Tan",
+      "Wenxu Qian",
+      "Junping Zhang",
+      "Hao Li"
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-09",
+    "categories": [
+      "cs.CV",
+      "cs.CL"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.13337.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.13337",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "Exploring Attention Sinks in Text-to-Image Transformers from Diffusion and Autoregressive Models",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.13217",
+    "title": "Golden Anchor for Video Generation",
+    "abstract": "Video generation supports digital content creation, with applications in virtual avatars, AI-driven filmmaking, interactive game engines, and world models. State-of-the-art systems achieve controllability primarily through image-to-video (I2V) generation, in which an injected anchor image determines the identity, composition, and style of the resulting video. In modern pipelines, this anchor is synthesized by a text-to-image (T2I) generator. This raises a largely overlooked question: Are images obtained directly from the T2I model truly suitable for current video models? Our analysis shows that anchor aesthetic and quality scores are weakly correlated with downstream video quality. The structure-and-texture score is negatively correlated with I2V video quality in both the visual and motion dimensions. Fine-tuning the T2I model on an image reward accordingly yields anchors with visibly denser structural and character detail: they score higher on image metrics, yet lower the video reward on every I2V model we test and change downstream motion unpredictably. We therefore introduce Golden Anchor Learning (GAL), to our knowledge the first framework for learning golden anchors by optimizing a T2I generator with downstream video feedback. GAL evaluates candidate anchors through the videos they induce under a frozen I2V model and converts video rewards into image-level preferences for DPO fine-tuning of the T2I generator. On all four I2V models, GAL raises the VBench average by $2.97\\%$--$8.46\\%$ over the untuned generator. The rendered clips also score higher under VideoReward-Overall, and their extracted frames under HPSv3 and UniPercept. GAL yields consistent motion gains across all four I2V models, as measured by a $5.62\\%$--$38.24\\%$ increase in VBench dynamic degree. Although GAL is trained only on HunyuanVideo-1.5 renders, these gains extend to the other three I2V models.",
+    "authors": [
+      "Jinyuan Xu",
+      "Shitong Shao",
+      "Lichen Bai",
+      "Zikai Zhou",
+      "Guoxi Huang",
+      "Nantheera Anantrasirichai",
+      "Zeke Xie"
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-09",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.13217.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.13217",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "视频生成的金色锚点",
+      "core_contribution": "本文首次提出金色锚点学习（GAL）框架，通过下游视频反馈优化文本到图像（T2I）生成器，以生成更适合视频模型的锚点图像，从而提升视频生成质量。",
+      "method": "GAL方法利用冻结的图像到视频（I2V）模型评估候选锚点图像，将生成的视频奖励转化为图像级别的偏好信号，用于对T2I生成器进行DPO（直接偏好优化）微调。该方法不改变I2V模型，仅优化T2I生成器，使其生成的锚点图像在视频生成中表现更优。",
+      "findings": "在四个I2V模型上，GAL将VBench平均分提升2.97%–8.46%，动态程度提升5.62%–38.24%，同时视频奖励（VideoReward-Overall）和提取帧的评分（HPSv3、UniPercept）也更高。尽管仅在HunyuanVideo-1.5上训练，GAL的增益可迁移至其他三个I2V模型，且运动一致性显著改善。"
+    }
+  },
+  {
+    "id": "2610.13181",
+    "title": "MixTok: Adaptive Visual Tokenization with Global 1D Tokens and Sparse 2D Refinement",
+    "abstract": "Efficient visual tokenization requires balancing representation compactness with the preservation of fine-grained image content. Conventional grid-based tokenizers allocate tokens uniformly across spatial locations despite non-uniform visual complexity, whereas compact 1D tokenizers aggregate global information but can struggle to preserve local details. We introduce MixTok, a hybrid visual tokenizer that combines a compact 1D global representation with sparse 2D tokens for local refinement. A content-adaptive router ranks candidate locations by refinement priority and determines the number of 2D tokens for each image under a target average token budget. At the highest-scoring locations, 2D token features replace the spatial features recovered from the 1D representation, and a shared decoder reconstructs the image from the resulting mixed features. On ImageNet 256 x 256, MixTok achieves highly competitive reconstruction and generation performance, with an rFID of 1.195 and a gFID of 1.95 at respective average budgets of approximately 128 and 131 content tokens per image.",
+    "authors": [
+      "Chenge Li",
+      "Yefei He",
+      "Xinyu Liu",
+      "Feng Chen",
+      "Hong Zhou",
+      "Bohan Zhuang"
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.13181.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.13181",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "MixTok：基于全局1D令牌与稀疏2D细化的自适应视觉令牌化",
+      "core_contribution": "提出了一种混合视觉令牌化方法MixTok，结合紧凑的1D全局表示与稀疏的2D局部细化令牌，在保持高压缩率的同时有效保留图像细节，实现了重建与生成性能的显著提升。",
+      "method": "MixTok首先使用1D令牌编码器生成全局紧凑表示，然后通过内容自适应路由器对候选位置进行细化优先级排序，并根据目标平均令牌预算动态决定每个图像的2D令牌数量。在得分最高的位置，用2D令牌特征替换从1D表示恢复的空间特征，最后通过共享解码器从混合特征重建图像。",
+      "findings": "在ImageNet 256×256上，MixTok在平均约128个内容令牌下达到rFID 1.195，在约131个令牌下达到gFID 1.95，重建和生成性能均具有高度竞争力，验证了混合令牌化策略的有效性。"
+    }
+  },
+  {
+    "id": "2610.13066",
+    "title": "Evolving Creatives with Clicks: CTR-Driven Advertising image Editing via Attribute Disentanglement and Preference Alignment",
+    "abstract": "The optimization objective for e-commerce advertising creatives has shifted from aesthetic quality to online business metrics like click-through rate (CTR). Recent methods generate appealing ad images from product images by constructing CTR-based reward signals and refining prompt generation via Reinforcement Learning. Such paradigms equally penalize all attributes within an underperforming image, even though some are actually beneficial to clicks. In this work, we propose Evolving Creatives with Clicks (ECC), which reformulates creative optimization as fine-grained editing rather than generation from scratch. ECC selectively refines attributes that hurt CTR while preserving those that contribute positively. Specifically, faced with a rich attribute space across massive images, ECC first identifies 28 attributes significantly correlated with CTR via ANOVA and Random Forest regression. Based on attribute contrasts between images with disparate CTRs, we instruction-tune a prompt model to generate editing suggestions, then refine it with real click preferences since reference-derived suggestions are not uniformly beneficial. Furthermore, we introduce Consistent Preference Optimization (CPO) as ECC's preference optimization strategy, which enforces consistency across semantically equivalent shuffled suggestions to mitigate DPO overfitting and improve preference generalization. Extensive experiments demonstrate that ECC significantly improves the CTR of ad images, outperforming state-of-the-art models by a substantial margin. The complete data pipeline, including attribute extraction and analysis, the resulting dataset, and source code will be released upon acceptance.",
+    "authors": [
+      "Xu Zhang",
+      "Haohan Wang",
+      "Zheng Zhang",
+      "Yingjie Xia",
+      "Wei Feng",
+      "Honghe Zhu",
+      "Jingjing Lv",
+      "Changping Peng",
+      "Xuheng Qin",
+      "Zehua Zhang",
+      "Zheng Luo",
+      "Qicheng Li"
+    ],
+    "published": "2026-10-09",
+    "updated": "2026-10-09",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.13066.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.13066",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "通过点击驱动的创意演化：基于属性解耦与偏好对齐的CTR导向广告图像编辑",
+      "core_contribution": "提出了一种新的广告创意优化框架ECC，将创意优化从从头生成转变为细粒度编辑，通过选择性改进对点击率有害的属性而保留有益属性，显著提升广告图像的CTR表现。",
+      "method": "ECC首先利用ANOVA和随机森林回归从大量图像中识别出28个与CTR显著相关的属性。然后，基于不同CTR图像之间的属性对比，对提示模型进行指令微调以生成编辑建议，并利用真实点击偏好进一步优化该模型。此外，引入一致性偏好优化（CPO）策略，通过对语义等价的打乱建议施加一致性约束，缓解DPO过拟合并提升偏好泛化能力。",
+      "findings": "实验表明，ECC在提升广告图像CTR方面显著优于现有最先进模型，验证了其细粒度编辑和偏好对齐方法的有效性。"
+    }
+  }
+]
