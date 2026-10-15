@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50073879,
+    "title": "Gemini 4 Argon",
+    "url": "https://deepmind.google/models/gemini/",
+    "text": "See also: <i>Gemini 4 Argon for Robotics</i> - <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50074869\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50074869</a>",
+    "score": 1443,
+    "comments": 1027,
+    "by": "737max",
+    "time": 1791907396,
+    "hn_url": "https://news.ycombinator.com/item?id=50073879",
+    "relevance_score": 85
+  },
+  {
+    "id": 50073633,
+    "title": "Redesigning source control at Anthropic",
+    "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+    "text": "",
+    "score": 873,
+    "comments": 972,
+    "by": "Philpax",
+    "time": 1791906596,
+    "hn_url": "https://news.ycombinator.com/item?id=50073633",
+    "relevance_score": 85
+  },
+  {
+    "id": 50069499,
+    "title": "11 year old unsoundness bugs found in Rust borrow checker",
+    "url": "https://github.com/rust-lang/rust/issues/164250",
+    "text": "",
+    "score": 742,
+    "comments": 425,
+    "by": "formerly_proven",
+    "time": 1791887220,
+    "hn_url": "https://news.ycombinator.com/item?id=50069499",
+    "relevance_score": 85
+  },
+  {
+    "id": 50077020,
+    "title": "Show HN: Guitoro, a virtual guitar you strum with your keyboard",
+    "url": "https://guitoro.com/",
+    "text": "Guitoro is a free browser guitar using recordings of real instruments. You can strum with your keyboard, mouse, or touchscreen, choose acoustic, classical, electric guitar or bass, and see chord fingering and each stroke. Song practice can be slowed to 20%, and there are free chord tools and tuners. No signup or download.<p>1 minute video demo: <a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;DtcluMLdSgs\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;DtcluMLdSgs</a><p>I would love feedback on how the strumming feels and sounds.",
+    "score": 553,
+    "comments": 155,
+    "by": "talccc",
+    "time": 1791918708,
+    "hn_url": "https://news.ycombinator.com/item?id=50077020",
+    "relevance_score": 85
+  },
+  {
+    "id": 50063427,
+    "title": "AI is a tool and using it well takes skill",
+    "url": "https://yyhh.org/blog/2026/10/ai-is-a-tool/",
+    "text": "",
+    "score": 765,
+    "comments": 592,
+    "by": "layer8",
+    "time": 1791841218,
+    "hn_url": "https://news.ycombinator.com/item?id=50063427",
+    "relevance_score": 75
+  },
+  {
+    "id": 50053487,
+    "title": "900-Page Pre-Pantone Guide to Color from 1692 (With Complete High-Res Scan)",
+    "url": "https://www.openculture.com/2026/10/a-900-page-pre-pantone-guide-to-color-from-1692.html",
+    "text": "",
+    "score": 261,
+    "comments": 45,
+    "by": "mdp2021",
+    "time": 1791795902,
+    "hn_url": "https://news.ycombinator.com/item?id=50053487",
+    "relevance_score": 75
+  },
+  {
+    "id": 50079464,
+    "title": "AlphaNIST",
+    "url": "https://alpha-nist.github.io/",
+    "text": "",
+    "score": 94,
+    "comments": 36,
+    "by": "jasonjmcghee",
+    "time": 1791928649,
+    "hn_url": "https://news.ycombinator.com/item?id=50079464",
+    "relevance_score": 60
+  },
+  {
+    "id": 50072913,
+    "title": "Thunderbird for iOS",
+    "url": "https://blog.thunderbird.net/2026/10/thunderbird-for-ios-a-first-look-at-the-native-iphone-email-app-in-development/",
+    "text": "",
+    "score": 457,
+    "comments": 207,
+    "by": "mjorgers",
+    "time": 1791904057,
+    "hn_url": "https://news.ycombinator.com/item?id=50072913",
+    "relevance_score": 60
+  }
+]

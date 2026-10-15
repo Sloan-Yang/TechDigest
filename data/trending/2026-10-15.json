@@ -1,0 +1,98 @@
+[
+  {
+    "id": "rust-lang_rust",
+    "full_name": "rust-lang/rust",
+    "owner": "rust-lang",
+    "name": "rust",
+    "url": "https://github.com/rust-lang/rust",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        rust-lang /\n\n      rust  \n\n    \n      Empowering everyone to build reliable and efficient software.",
+    "language": "Rust",
+    "stars": 120128,
+    "stars_today": 207,
+    "relevance_score": 88
+  },
+  {
+    "id": "morluto_rea",
+    "full_name": "morluto/rea",
+    "owner": "morluto",
+    "name": "rea",
+    "url": "https://github.com/morluto/rea",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        morluto /\n\n      rea  \n\n    \n      Reverse engineer anything with agents, from app behavior down to native binaries.",
+    "language": "TypeScript",
+    "stars": 248548,
+    "stars_today": 41034,
+    "relevance_score": 85
+  },
+  {
+    "id": "debpalash_VoiceStudio",
+    "full_name": "debpalash/VoiceStudio",
+    "owner": "debpalash",
+    "name": "VoiceStudio",
+    "url": "https://github.com/debpalash/VoiceStudio",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        debpalash /\n\n      VoiceStudio  \n\n    \n      VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription &amp; audiobook creation in 646 languages.",
+    "language": "Python",
+    "stars": 66948,
+    "stars_today": 3538,
+    "relevance_score": 85
+  },
+  {
+    "id": "xtool-org_xtool",
+    "full_name": "xtool-org/xtool",
+    "owner": "xtool-org",
+    "name": "xtool",
+    "url": "https://github.com/xtool-org/xtool",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        xtool-org /\n\n      xtool  \n\n    \n      Cross-platform Xcode replacement. Build and deploy iOS apps with SwiftPM on Linux, Windows, macOS.",
+    "language": "Swift",
+    "stars": 11066,
+    "stars_today": 1502,
+    "relevance_score": 85
+  },
+  {
+    "id": "HKUDS_CLI-Anything",
+    "full_name": "HKUDS/CLI-Anything",
+    "owner": "HKUDS",
+    "name": "CLI-Anything",
+    "url": "https://github.com/HKUDS/CLI-Anything",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        HKUDS /\n\n      CLI-Anything  \n\n    \n      \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+    "language": "Python",
+    "stars": 52664,
+    "stars_today": 103,
+    "relevance_score": 70
+  },
+  {
+    "id": "nvm-sh_nvm",
+    "full_name": "nvm-sh/nvm",
+    "owner": "nvm-sh",
+    "name": "nvm",
+    "url": "https://github.com/nvm-sh/nvm",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        nvm-sh /\n\n      nvm  \n\n    \n      Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+    "language": "Shell",
+    "stars": 95491,
+    "stars_today": 52,
+    "relevance_score": 65
+  },
+  {
+    "id": "vxcontrol_pentagi",
+    "full_name": "vxcontrol/pentagi",
+    "owner": "vxcontrol",
+    "name": "pentagi",
+    "url": "https://github.com/vxcontrol/pentagi",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        vxcontrol /\n\n      pentagi  \n\n    \n      Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
+    "language": "Go",
+    "stars": 29788,
+    "stars_today": 1025,
+    "relevance_score": 65
+  },
+  {
+    "id": "K-Dense-AI_scientific-agent-skills",
+    "full_name": "K-Dense-AI/scientific-agent-skills",
+    "owner": "K-Dense-AI",
+    "name": "scientific-agent-skills",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        K-Dense-AI /\n\n      scientific-agent-skills  \n\n    \n      Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+    "language": "Python",
+    "stars": 49565,
+    "stars_today": 163,
+    "relevance_score": 60
+  }
+]

@@ -705,5 +705,6 @@
   "huggingface_transformers": 95,
   "sponsors_open-webui": 85,
   "microsoft_BitNet": 85,
-  "xtool-org_xtool": 85
+  "xtool-org_xtool": 85,
+  "rust-lang_rust": 88
 }
