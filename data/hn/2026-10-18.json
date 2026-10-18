@@ -1,0 +1,99 @@
+[
+  {
+    "id": 50123580,
+    "title": "FLUX 3 Image Klein",
+    "url": "https://bfl.ai/blog/flux-3-image-klein",
+    "text": "",
+    "score": 206,
+    "comments": 57,
+    "by": "gmays",
+    "time": 1792180033,
+    "hn_url": "https://news.ycombinator.com/item?id=50123580",
+    "relevance_score": 95
+  },
+  {
+    "id": 50127979,
+    "title": "Show HN: Llmspeed – feel how fast a local LLM runs before you buy the hardware",
+    "url": "https://llmspeed.dev/",
+    "text": "",
+    "score": 237,
+    "comments": 76,
+    "by": "albinstman",
+    "time": 1792211813,
+    "hn_url": "https://news.ycombinator.com/item?id=50127979",
+    "relevance_score": 88
+  },
+  {
+    "id": 50118320,
+    "title": "Apple ML Research: Muse Spark Open with MLX on Mac Studio",
+    "url": "https://machinelearning.apple.com/research/mlx-distributed-inference",
+    "text": "",
+    "score": 360,
+    "comments": 193,
+    "by": "antipaul",
+    "time": 1792158228,
+    "hn_url": "https://news.ycombinator.com/item?id=50118320",
+    "relevance_score": 88
+  },
+  {
+    "id": 50100994,
+    "title": "Furifont, a Japanese font that shows furigana",
+    "url": "https://furifont.antfu.me/",
+    "text": "",
+    "score": 234,
+    "comments": 48,
+    "by": "plaguna",
+    "time": 1792054110,
+    "hn_url": "https://news.ycombinator.com/item?id=50100994",
+    "relevance_score": 85
+  },
+  {
+    "id": 50119315,
+    "title": "Rendering pretty sky in Around The World game",
+    "url": "https://frozenfractal.com/blog/2026/10/12/around-the-world-34-a-pretty-sky/",
+    "text": "",
+    "score": 120,
+    "comments": 8,
+    "by": "ibobev",
+    "time": 1792163203,
+    "hn_url": "https://news.ycombinator.com/item?id=50119315",
+    "relevance_score": 85
+  },
+  {
+    "id": 50131189,
+    "title": "Show HN: Esp32sim – Run ESP32 firmware in the browser",
+    "url": "https://github.com/mikroverk/esp32sim",
+    "text": "Hi HN,<p>I’ve been working on esp32sim, an open-source ESP32 emulator that runs in the browser.<p>The fun part of the demo is that there is no ESP32 involved — the firmware is executing in the emulator.<p>The goal is to make ESP32 software easier to experiment with, test and simulate without always needing physical hardware connected.<p>Source:\n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;mikroverk&#x2F;esp32sim\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;mikroverk&#x2F;esp32sim</a><p>I made a short video showing it in action:\n<a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;waoWFilTWEc\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;waoWFilTWEc</a><p>I’m particularly interested in feedback from embedded developers: what would an emulator like this need to support before you’d actually use it for development, testing or CI?",
+    "score": 110,
+    "comments": 11,
+    "by": "joakimeriksson",
+    "time": 1792245068,
+    "hn_url": "https://news.ycombinator.com/item?id=50131189",
+    "relevance_score": 68,
+    "summary": "这是一个开源的 ESP32 模拟器项目，能在浏览器中直接运行 ESP32 固件，无需真实硬件。它的看点是，为嵌入式开发者提供了一种无需物理设备就能实验、测试和模拟 ESP32 软件的方式，作者也特别希望获得嵌入式开发者的反馈。"
+  },
+  {
+    "id": 50133231,
+    "title": "Codex Desktop continuously generates Crashpad pending dumps",
+    "url": "https://github.com/openai/codex/issues/25921",
+    "text": "",
+    "score": 47,
+    "comments": 25,
+    "by": "AIorNot",
+    "time": 1792259108,
+    "hn_url": "https://news.ycombinator.com/item?id=50133231",
+    "relevance_score": 65
+  },
+  {
+    "id": 50133559,
+    "title": "Show HN: Pay-per-Crawl – make AI crawlers pay per page in USDC, for 10 stacks",
+    "url": "https://forgemesh.io/blog/pay-per-crawl-every-stack",
+    "text": "",
+    "score": 5,
+    "comments": 1,
+    "by": "agenticbotbot",
+    "time": 1792260963,
+    "hn_url": "https://news.ycombinator.com/item?id=50133559",
+    "relevance_score": 62
+  }
+]
