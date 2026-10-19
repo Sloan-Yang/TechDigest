@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-10-15</div>
+        <div class="page-date">📅 2026-10-19</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 2 | 机器人: 3
+            人工智能: 2 | 计算机视觉: 2 | 机器学习: 1
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,47 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.18133</span>
+          <span class="paper-id">2610.22370</span>
         </div>
-        <span class="score-badge">相关性 5/100</span>
+        <span class="score-badge">相关性 68/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.18133" target="_blank">Human-Inspired Asymmetric Collaboration for Dual-Student Semi-Supervised Medical Image Segmentation</a>
+        <a href="https://arxiv.org/abs/2610.22370" target="_blank">Which Tokens to Merge? Diffusion Dynamics for Efficient Image Generation</a>
       </h3>
-      <p class="paper-title-zh">Human-Inspired Asymmetric Collaboration for Dual-Student Semi-Supervised Medical Image Segmentation</p>
-      <p class="paper-authors">Huiyi Ren, Ziming Fang, Jiaming Cai, Rui Xu, Haojie Li</p>
+      <p class="paper-title-zh">哪些 Token 应被合并？用于高效图像生成的扩散动力学</p>
+      <p class="paper-authors">SeungJu Cha, Ye-Chan Kim, HyunGee Kim, Sungho Koh, Dong-Jin Kim</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 论文提出免训练的 Dynamics-aware Token Merging（DaTMe）框架，将 token 合并决策建立在扩散模型的去噪动力学之上，从而在加速生成的同时更好保持整图视觉保真度。</div>
+        <div class="summary-section"><strong>方法:</strong> DaTMe 从 Tweedie 去噪估计中构建动力学感知的重要性图，该图结合衡量相邻步预测干净图像变化的时间信号与捕捉边界和细节等局部高频内容的结构信号。基于该重要性图，方法在给定压缩率下自适应地为 token 分配合并角色：重要 token 作为锚点保留，而时间上已稳定且结构上同质的 token 被选为安全合并候选。该框架无需额外训练，可直接用于扩散模型的 token 合并加速。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在 PixArt-α 和 FLUX 上的实验表明，DaTMe 能在整个图像范围内保持视觉保真度，并改善现有仅依赖文本相关性方法对背景对象和未显式提及局部细节的忽视。结果说明扩散动力学可作为高效生成中 token 级合并决策的有效依据。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Token merging has emerged as an effective training-free strategy for accelerating diffusion models by reducing redundant token computation while minimizing generation degradation. A key challenge is determining which tokens can be safely merged and which should be preserved for subsequent computation. Existing method addresses this by preserving prompt-aligned foreground regions, thereby protecting semantically relevant structures. However, this text-relevance criterion overlooks background objects, local details that are not explicitly mentioned in the prompt, leading to degraded structural coherence. In this work, we propose Dynamics-aware Token Merging (DaTMe), a training-free framework that grounds token merging in the underlying diffusion dynamics. Our key insight is that token importance should reflect whether a token remains unresolved during denoising and whether it carries structural information. To this end, DaTMe constructs a dynamics- aware importance map from the Tweedie denoised estimate. The map combines a temporal signal, measuring inter-step changes in the predicted clean image, with a structural signal, capturing local high-frequency content such as boundaries and fine details. Using this map, DaTMe adaptively assigns tokens into merging roles under a given compression ratio: important tokens are preserved as anchors, while tokens that are both temporally stabilized and structurally homogeneous are selected as safe merge candidates. Experiments on PixArt-a and FLUX demonstrate that DaTMe maintains visual fidelity across the entire image, highlighting diffusion dynamics as an effective token-level merging decision in efficient generation. Our code is available at https://github.com/SeungJuCha/DaTMe.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.22370" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.22370.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器学习</span>
+          <span class="paper-id">2610.21979</span>
+        </div>
+        <span class="score-badge">相关性 68/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.21979" target="_blank">P2TPO: Structure-Aligned Page-to-Token Credit Assignment for Full-Page Document Parsing</a>
+      </h3>
+      <p class="paper-title-zh">P2TPO: Structure-Aligned Page-to-Token Credit Assignment for Full-Page Document Parsing</p>
+      <p class="paper-authors">Yong Zu, Ninghua Yang, Zezhong Tan, Xinhong Ma, Ziqiang Dong 等 (6 位作者)</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -346,12 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Dual-student learning enriches predictive diversity in SSMIS by introducing a strongly augmented view alongside a weakly augmented view. Insufficient strong augmentation may homogenize the students, whereas excessive augmentation can corrupt anatomical evidence and destabilize collaboration. This challenge echoes feedback-regulated human instruction, where learners receive differentiated tasks and the task difficulty is continually adjusted according to their evolving responses. Inspired by these, we propose Human-Inspired Asymmetric Collaboration (HAC), a closed-loop dual-student framework that maintains weak--strong learning through adaptive difficulty calibration and geometry preservation. Specifically, Reinforcement-guided Difficulty Calibration (RDC) formulates strong-augmentation control as a window-level reinforcement learning process, using augmentation history, realized perturbations, and training responses to dynamically adjust the augmentation magnitude, operation number, and magnitude range. Meanwhile, the Gramian Geometry Preservation Constraint (G2PC) preserves the early-stage three-branch geometry through global volume and pairwise area constraints, preventing shared supervision from homogenizing the two students. Comprehensive evaluations across LA, Pancreas, and BraTS-2019 validate both the segmentation effectiveness and capability-aware difficulty calibration of HAC.</p>
+        <p>End-to-end full-page document parsing must preserve the content and structure of heterogeneous elements, yet otherwise accurate outputs can contain local errors and omissions. A single page-level advantage does not explicitly identify which elements differ in quality across sampled outputs or where their errors occur. We introduce Page-to-Token Policy Optimization (P2TPO), a structure-aligned credit-assignment framework that operates on full-page policy trajectories. Reference-element alignment first associates block-level quality contrasts with generated spans. Unified Anchor Pricing (UAP) incorporates matched and missing element outcomes and provides feedback relative to a fixed quality ceiling when sampled outputs receive identical but imperfect scores for a reference element. Within matched blocks, Span Credit Redistribution (SCR) redistributes existing block credit according to aligned correct and erroneous spans, using boundary proxies for within-block omissions while preserving the total block-derived advantage across its tokens. Under a fixed-weight additive page utility, we show that element-indexed contrasts retain local quality differences that page-level aggregation can cancel out. In the main experimental comparison, P2TPO outperforms all evaluated policy optimization baselines in seed-averaged scores on each of the six document parsing benchmarks. Additional experiments demonstrate gains across model scales and initializations.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.18133" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.18133.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.21979" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.21979.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,30 +392,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.17233</span>
+          <span class="paper-id">2610.20608</span>
         </div>
-        <span class="score-badge">相关性 5/100</span>
+        <span class="score-badge">相关性 62/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.17233" target="_blank">Beyond Sparse Captions: Aligning Slide-Level Text and Patch-Level Vision in Pathology</a>
+        <a href="https://arxiv.org/abs/2610.20608" target="_blank">Representation Conditioning for Generation</a>
       </h3>
-      <p class="paper-title-zh">Beyond Sparse Captions: Aligning Slide-Level Text and Patch-Level Vision in Pathology</p>
-      <p class="paper-authors">Daniel Shao, Dongmin Bang, Luca L. Weishaupt, Sophia J. Wagner, Nic G. Reitsam 等 (9 位作者)</p>
+      <p class="paper-title-zh">面向生成的表示条件化</p>
+      <p class="paper-authors">Saeed Razavi, Xingjian Leng, Liang Zheng</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
+        <div class="summary-section"><strong>核心贡献:</strong> 论文提出表示条件化（RECON）方法，解决了表示对齐方法（如REPA）只能通过反向传播影响浅层、深层难以获得视觉编码器语义的问题，在不增加任何参数的前提下显著加速扩散Transformer的训练收敛。</div>
+        <div class="summary-section"><strong>方法:</strong> REPA类方法用预训练视觉编码器通过MLP投影头监督扩散主干网络的中间层，但训练后MLP头被丢弃，且仅有速度预测损失监督的深层无法保证获得这些语义。RECON在训练时直接把预训练视觉编码器的token输入到较深层作为条件信号；推理时由于不再有干净图像，改为复用原本要丢弃的MLP头作为视觉编码器的代理，将其输出token投影后送入深层。该方法不引入额外参数，也不改变推理时的网络结构。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验表明RECON能显著加快收敛：相比SiT快63倍，相比REPA快25倍，同时保持或提升生成质量，且实现简单、无额外参数开销。代码已开源。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Contrastive vision-language (VL) pretraining in computational pathology has generally relied on curated image-caption datasets sourced from social media, educational videos, and research publications. These corpora are sparse relative to the diversity of tissue morphology and difficult to scale further, as pathologists do not routinely produce descriptive captions in clinical practice. We propose to instead leverage slide-level pathology reports which can be generated during routine diagnostic workflows in a scalable manner. A key challenge in this weakly-supervised setting is that pathology reports describe macroscopic, diagnostic findings while patch-level visual features describe microscopic findings. We introduce Locked Image Multiple Instance PreTraining (LIMIT), which addresses this gap by freezing a pretrained vision encoder and fine-tuning only the text encoder: report embeddings serve as cross-attention queries over bags of patch features, producing report-conditioned slide representations optimized via InfoNCE. Using LIMIT, we establish CONCH-Z, which aligns the text encoder of CONCH v1.5 to 335k clinical reports. Evaluated across 22 tasks spanning patch-level classification, tumor detection, and slide-level subtyping, CONCH-Z establishes state-of-the-art zero-shot performance over VL encoders trained on curated caption datasets, while simultaneously closing the gap with slide-level foundation models trained with substantially more parameters and compute. The code and model is available at https://github.com/mahmoodlab/LIMIT.</p>
+        <p>Representation-alignment methods effectively accelerate the diffusion transformer training. REPA, for example, uses a pretrained vision encoder to supervise an intermediate layer through an MLP projection head which is discarded after training. It aims to import semantics from the vision encoder to the diffusion backbone. While this objective is achieved at early layers by back-propagating the alignment loss, there is no guarantee that later layers, supervised by the velocity prediction loss alone, can well access such semantics. We propose a simple solution, representation conditioning (RECON), to improve semantics in later layers. During training, we feed the pretrained vision encoder tokens into later layers; during inference, because we no longer have the clean image, we reuse the MLP head (as a proxy to the vision encoder) and project its output tokens to the later layers. Our method adds no parameters and leads to much faster convergence: RECON is $63\times$ faster than SiT and $25\times$ faster than REPA. Code is available at https://github.com/saeidrazavi/RECON</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.17233" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.17233.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.20608" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.20608.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -391,31 +423,31 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">机器人</span>
-          <span class="paper-id">2610.18874</span>
+          <span class="category-badge">人工智能</span>
+          <span class="paper-id">2610.21327</span>
         </div>
-        
+        <span class="score-badge">相关性 58/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.18874" target="_blank">ChunkAct: Action Chunking for Agentic Robotics</a>
+        <a href="https://arxiv.org/abs/2610.21327" target="_blank">DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding</a>
       </h3>
-      <p class="paper-title-zh">ChunkAct: Action Chunking for Agentic Robotics</p>
-      <p class="paper-authors">Bingxin Xu, Wenrui Bao, Xinxin Liu, Jiawei Zhou, Yuzhang Shang 等 (6 位作者)</p>
+      <p class="paper-title-zh">DocPilot：面向长视觉文档理解的交互式智能体编排与训练</p>
+      <p class="paper-authors">Zhuowen Liang, Xiaotian Lin, Yuyu Luo, Haixun Wang, Nan Tang</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
+        <div class="summary-section"><strong>核心贡献:</strong> 论文提出 DocPilot 这一智能体式文档理解框架，通过表达力强的多步编排（页面级导航、细粒度证据定位及多模态推理工具）解决长文档中证据稀疏与跨模态推理难题，并提出基于课程学习的智能体训练方法，使小语言模型（SLM）也能学会复杂的文档求解流程。</div>
+        <div class="summary-section"><strong>方法:</strong> DocPilot 将长文档问答拆解为可编排的交互流程：先用页面级导航定位相关页面，再做细粒度证据定位，并集成局部视觉检查、基于代码的数值计算和跨模态推理等工具来理解异构文档内容。为把这种能力迁移到小模型，作者设计了课程式智能体训练，从单一能力学习逐步过渡到自适应编排，训练监督信号来自有数据支撑的推理轨迹和可执行的交互轨迹。最终得到 DocPilot-4B 这一小模型智能体，可与前沿 VLM 骨干配合使用。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在 MMLongBench-Doc、DocBench、FinRAGBench-V 和 MADQA 四个长文档基准上，DocPilot 搭配前沿 VLM 骨干取得显著性能提升；DocPilot-4B 以 40 亿参数规模达到与远大于自身的模型相当的性能，表明该方法在多样长文档推理场景下具有良好的有效性与泛化能力。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Agentic robotics places a large language model (LLM) agent in the robot control loop, where it composes perception, motion, and vision-language-action (VLA) tools under the guidance of a memory and thereby generalizes to new tasks without retraining. This generality comes at a steep price in efficiency. Every primitive requires a round of LLM reasoning over the full interaction history, so the cost of an episode grows with the number of primitives. We find this reasoning largely redundant: once a sub-goal is chosen, its primitives follow a routine already prescribed by memory. We present ChunkAct, which introduces action chunking to agentic robotics. Online, a single call launches a chunk of chained primitives, which executes autonomously and returns control only upon failure. Offline, ChunkAct compiles the memory into these chunks, so execution is memory-free at test time and the planner is reserved for decisions that require reasoning. LLM computation therefore scales with the number of decisions rather than the number of primitives. On LIBERO-Pro, ChunkAct improves task success by 5.0 points over the state of the art in agentic robotics while requiring 2.9x fewer LLM calls, 4.4x fewer input tokens, and 2.3x fewer output tokens.</p>
+        <p>Multimodal long-document question answering requires models to seek sparse evidence across pages and modalities, understand heterogeneous document content, and reason over the collected evidence. Even advanced vision-language models (VLMs) can overlook sparse evidence and struggle with cross-modal reasoning in a single pass. Existing document agents further introduce multi-step interaction, but some still rely on predefined workflows or coarse-grained actions, limiting the flexibility and granularity of document reasoning. We introduce DocPilot, an agentic document framework that supports expressive orchestration and makes complex document solving learnable by small language models (SLMs). DocPilot orchestrates evidence seeking through page-level navigation and fine-grained evidence localization, and integrates local visual inspection, code-based numerical reasoning, and cross-modal reasoning for multimodal understanding. To transfer these capabilities to small models, we propose curriculum-based agentic training that progresses from single-ability learning to adaptive orchestration through supervision from data-grounded reasoning traces and executable interaction trajectories. Across MMLongBench-Doc, DocBench, FinRAGBench-V, and MADQA, DocPilot achieves strong gains with frontier VLM backbones, while DocPilot-4B delivers competitive performance against substantially larger models, demonstrating strong effectiveness and generalization across diverse long-document reasoning settings. The code is available at https://github.com/HKUSTDial/DocPilot.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.18874" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.18874.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.21327" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.21327.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -423,16 +455,16 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">机器人</span>
-          <span class="paper-id">2610.18873</span>
+          <span class="category-badge">人工智能</span>
+          <span class="paper-id">2610.21283</span>
         </div>
-        
+        <span class="score-badge">相关性 55/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.18873" target="_blank">LoopWAM: Closed-Loop Generalist Policy Improvement from Deployment Rollouts</a>
+        <a href="https://arxiv.org/abs/2610.21283" target="_blank">Mallea: Building, Steering, and Memorizing Worlds with Coding Agent</a>
       </h3>
-      <p class="paper-title-zh">LoopWAM: Closed-Loop Generalist Policy Improvement from Deployment Rollouts</p>
-      <p class="paper-authors">Wenxuan Guo, Yingping Liang, Zhaoguo Wang, Ziyuan Li, Angyuan Ma 等 (14 位作者)</p>
+      <p class="paper-title-zh">Mallea: Building, Steering, and Memorizing Worlds with Coding Agent</p>
+      <p class="paper-authors">Xuanyi Liu, Ruiqi Li, Siwei Ma</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -442,44 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Scaling expert demonstrations alone does not enable generalist robot policies to improve from deployment. Real-world rollouts contain successes, suboptimal behavior, and failures: imitating every recorded action can reinforce poor behavior, while filtering out failures discards evidence of physical interactions and their consequences. We introduce \textbf{LoopWAM}, a closed-loop world-action model that learns directly from this full quality spectrum, using rollouts from both itself and other deployed policies. Source-dependent noise sampling unifies behavior learning and action-conditioned world modeling, while quality steering and quality-weighted supervision retain full video supervision across qualities and regulate action imitation. Video and action tokens interact throughout parallel denoising, allowing learned consequences to inform action generation directly. On RoboChallenge Table30-V2, three deployment-and-training rounds raise success from 23.67\% to 43.33\%, a 19.7-percentage-point gain, with a final score of 56.80. LoopWAM also achieves 94.5\% average success on RoboTwin~2.0 and 49.5\% overall success on RoboCasa365 without additional embodied pretraining, obtaining the best overall results among the compared methods across all three benchmarks. On challenging shirt folding task, two rounds of deployment-driven improvement after single-task post-training raise success from 13.20\% to 55.56\%. These results demonstrate closed-loop improvement from mixed-quality experience under both multi-task learning and single-task post-training. \href{https://loop-wam.github.io/}{\textcolor{orange}{Project Page}}</p>
+        <p>Code world models represent world dynamics through explicit state and executable rules. We investigate how to coordinate object representations, behavioral revisions, and visual memory within this formulation. We present Mallea, a system for building, steering, and memorizing worlds from text. A coding agent infers object interaction requirements from the prompt and jointly plans object structure, properties, and rules, favoring compact representations that support those requirements. The world evolves under the planned rules; optional user actions steer it, while text requests can edit properties or extend capabilities with unaffected state preserved. Object texture memory retains reusable appearance only for whitebox-defined objects and adapts it as those objects change. The program advances world state, while a generative renderer combines current structure with remembered appearance. By organizing construction, intervention, and memory around the same objects, Mallea conditions subsequent observations on the latest state and compatible appearance. Project page: https://lxycopper.github.io/Mallea.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.18873" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.18873.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">机器人</span>
-          <span class="paper-id">2610.18872</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.18872" target="_blank">EgoExplorer: A Vision-Motion-Touch Observatory for Human Loco-Manipulation In Situ</a>
-      </h3>
-      <p class="paper-title-zh">EgoExplorer: A Vision-Motion-Touch Observatory for Human Loco-Manipulation In Situ</p>
-      <p class="paper-authors">Yunsong Zhou, Xuekun Jiang, Haiqi Shen, Hangxu Liu, Chaojian Shi 等 (14 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Learning humanoid loco-manipulation from human demonstrations rests on observing how locomotion, posture, and object interaction evolve together as tasks unfold. Scaling collection across diverse environments, in turn, favors lightweight, portable capture systems. Yet, existing datasets provide only partial views of this coordination. Thus, we introduce EgoExplorer, a 100-hour vision-motion-touch observatory of human loco-manipulation built with a wearable system. With an emphasis on professional activities, its continuous recordings align egocentric video with reconstructed whole-body motion, fine-grained finger articulation, and tactile observations, accompanied by step-level descriptions. To achieve this coverage with sparse body sensing, we develop the Calibrate-Complete-Constrain pipeline. Concretely, reusable calibration fixes participant geometry and sensor attachments before motion inference to disentangle mounting offsets from articulation. A temporal prior then completes unobserved joint motion, while layered constraints promote measurement agreement, temporal continuity, and geometric consistency, properties that motion plausibility alone does not guarantee. Against tracker-fitted references, the method reduces body-point error by 71.9% relative to the strongest baseline; matched evaluations also show gains in hand stability and contact estimation. Preliminary studies explore multimodal generation and conditioning alongside humanoid retargeting with whole-body control in simulation.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.18872" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.18872.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.21283" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.21283.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,75 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 1443 &nbsp;💬 1027</span>
+          <span class="paper-id">▲ 935 &nbsp;💬 704</span>
+        </div>
+        <span class="score-badge">推荐度 93/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50129045" target="_blank">DeepSeek-v4.1-Flash-1017</a>
+      </h3>
+      <p class="paper-authors">by theykk</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50129045" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 621 &nbsp;💬 141</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50122878" target="_blank">You could have invented transformers from memory</a>
+      </h3>
+      <p class="paper-authors">by speckx</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50122878" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://alexwang.ai/posts/associative-memory/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 28 &nbsp;💬 0</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50137257" target="_blank">August in Servo: CSS Grid, text selection, and more</a>
+      </h3>
+      <p class="paper-authors">by msub2</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50137257" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://servo.org/blog/2026/10/09/august-in-servo/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 392 &nbsp;💬 83</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50073879" target="_blank">Gemini 4 Argon</a>
+        <a href="https://news.ycombinator.com/item?id=50100994" target="_blank">Furifont, a Japanese font that shows furigana</a>
       </h3>
-      <p class="paper-authors">by 737max</p>
+      <p class="paper-authors">by plaguna</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50073879" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://deepmind.google/models/gemini/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50100994" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://furifont.antfu.me/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 873 &nbsp;💬 972</span>
+          <span class="paper-id">▲ 158 &nbsp;💬 13</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50073633" target="_blank">Redesigning source control at Anthropic</a>
+        <a href="https://news.ycombinator.com/item?id=50119315" target="_blank">Rendering pretty sky in Around The World game</a>
       </h3>
-      <p class="paper-authors">by Philpax</p>
+      <p class="paper-authors">by ibobev</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50073633" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.anthropic.com/engineering/redesigning-source-control" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50119315" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://frozenfractal.com/blog/2026/10/12/around-the-world-34-a-pretty-sky/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 742 &nbsp;💬 425</span>
+          <span class="paper-id">▲ 191 &nbsp;💬 41</span>
         </div>
-        <span class="score-badge">推荐度 85/100</span>
+        <span class="score-badge">推荐度 68/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50069499" target="_blank">11 year old unsoundness bugs found in Rust borrow checker</a>
+        <a href="https://news.ycombinator.com/item?id=50131189" target="_blank">Show HN: Esp32sim – Run ESP32 firmware in the browser</a>
       </h3>
-      <p class="paper-authors">by formerly_proven</p>
-      
+      <p class="paper-authors">by joakimeriksson</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍开源项目 esp32sim——一个可在浏览器中直接</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50069499" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/rust-lang/rust/issues/164250" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50131189" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/mikroverk/esp32sim" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 553 &nbsp;💬 155</span>
+          <span class="paper-id">▲ 167 &nbsp;💬 81</span>
         </div>
-        <span class="score-badge">推荐度 85/100</span>
+        <span class="score-badge">推荐度 65/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50077020" target="_blank">Show HN: Guitoro, a virtual guitar you strum with your keyboard</a>
+        <a href="https://news.ycombinator.com/item?id=50133231" target="_blank">Codex Desktop continuously generates Crashpad pending dumps</a>
       </h3>
-      <p class="paper-authors">by talccc</p>
+      <p class="paper-authors">by AIorNot</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50077020" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://guitoro.com/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50133231" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/openai/codex/issues/25921" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,75 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 765 &nbsp;💬 592</span>
+          <span class="paper-id">▲ 540 &nbsp;💬 115</span>
         </div>
-        <span class="score-badge">推荐度 75/100</span>
+        <span class="score-badge">推荐度 15/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50063427" target="_blank">AI is a tool and using it well takes skill</a>
+        <a href="https://news.ycombinator.com/item?id=50126253" target="_blank">Bleached corals thrive within days when touching healthy neighbour</a>
       </h3>
-      <p class="paper-authors">by layer8</p>
-      
+      <p class="paper-authors">by alkyon</p>
+      <div class="paper-summary"><div class="summary-section">这篇帖子介绍了一项发现：白化的珊瑚只要接触到健康的</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50063427" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://yyhh.org/blog/2026/10/ai-is-a-tool/" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 261 &nbsp;💬 45</span>
-        </div>
-        <span class="score-badge">推荐度 75/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50053487" target="_blank">900-Page Pre-Pantone Guide to Color from 1692 (With Complete High-Res Scan)</a>
-      </h3>
-      <p class="paper-authors">by mdp2021</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50053487" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.openculture.com/2026/10/a-900-page-pre-pantone-guide-to-color-from-1692.html" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 94 &nbsp;💬 36</span>
-        </div>
-        <span class="score-badge">推荐度 60/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50079464" target="_blank">AlphaNIST</a>
-      </h3>
-      <p class="paper-authors">by jasonjmcghee</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50079464" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://alpha-nist.github.io/" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 457 &nbsp;💬 207</span>
-        </div>
-        <span class="score-badge">推荐度 60/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50072913" target="_blank">Thunderbird for iOS</a>
-      </h3>
-      <p class="paper-authors">by mjorgers</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50072913" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.thunderbird.net/2026/10/thunderbird-for-ios-a-first-look-at-the-native-iphone-email-app-in-development/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50126253" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.nature.com/articles/d41586-026-03266-x" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -640,13 +640,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 120,128 &nbsp;+207 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 138,597 &nbsp;+154 today</span>
         </div>
-        <span class="score-badge">推荐度 88/100</span>
+        <span class="score-badge">推荐度 95/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/rust-lang/rust" target="_blank">rust-lang/rust</a>
+        <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">Comfy-Org/ComfyUI</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -659,15 +659,15 @@
 
 
       
-        rust-lang /
+        Comfy-Org /
 
-      rust  
+      ComfyUI  
 
     
-      Empowering everyone to build reliable and efficient software.</p>
-      
+      The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.</p>
+      <div class="paper-summary"><div class="summary-section">ComfyUI 是一个基于图/节点界面的模块化扩散模型 GUI、API 与后端，号称全球最快的本地推理引擎。它值得关注，因为它把复杂的生成流程拆成可自由组合的节点，既方便可视化搭建工作流，又提供 API 供程序调用，是本地运行 Stable Diffusion 等扩散模型的主流工具之一。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/rust-lang/rust" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -675,12 +675,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 248,548 &nbsp;+41034 today</span>
+          <span class="paper-id">⭐ 76,509 &nbsp;+513 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/morluto/rea" target="_blank">morluto/rea</a>
+        <a href="https://github.com/ruvnet/ruflo" target="_blank">ruvnet/ruflo</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -693,15 +693,49 @@
 
 
       
-        morluto /
+        ruvnet /
 
-      rea  
+      ruflo  
 
     
-      Reverse engineer anything with agents, from app behavior down to native binaries.</p>
+      🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated</p>
       
       <div class="paper-links">
-        <a href="https://github.com/morluto/rea" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/ruvnet/ruflo" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 10,467 &nbsp;+512 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/akitaonrails/ai-memory" target="_blank">akitaonrails/ai-memory</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        akitaonrails /
+
+      ai-memory  
+
+    
+      Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors</p>
+      <div class="paper-summary"><div class="summary-section">ai-memory 是一个用 Rust 编写的长期记忆方案，为各类 AI 编程 CLI 代理提供持久化记忆，并支持在不同代理厂商之间无缝交接上下文。它值得关注，因为它能解决 AI 编程助手跨会话、跨工具“失</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/akitaonrails/ai-memory" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -709,14 +743,27 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 66,948 &nbsp;+3538 today</span>
+          <span class="paper-id">⭐ 53,110 &nbsp;+2232 today</span>
         </div>
-        <span class="score-badge">推荐度 85/100</span>
+        <span class="score-badge">推荐度 75/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a>
+        <a href="https://github.com/sponsors/MadsLorentzen" target="_blank">sponsors/MadsLorentzen</a>
       </h3>
-      <p class="paper-authors">Star
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
 
 
   
@@ -727,49 +774,15 @@
 
 
       
-        debpalash /
+        MadsLorentzen /
 
-      VoiceStudio  
+      ai-job-search  
 
     
-      VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription &amp; audiobook creation in 646 languages.</p>
+      The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/debpalash/VoiceStudio" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Swift</span>
-          <span class="paper-id">⭐ 11,066 &nbsp;+1502 today</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/xtool-org/xtool" target="_blank">xtool-org/xtool</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        xtool-org /
-
-      xtool  
-
-    
-      Cross-platform Xcode replacement. Build and deploy iOS apps with SwiftPM on Linux, Windows, macOS.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/xtool-org/xtool" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/MadsLorentzen" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -777,7 +790,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 52,664 &nbsp;+103 today</span>
+          <span class="paper-id">⭐ 54,584 &nbsp;+589 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -810,13 +823,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Shell</span>
-          <span class="paper-id">⭐ 95,491 &nbsp;+52 today</span>
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 12,736 &nbsp;+350 today</span>
         </div>
-        <span class="score-badge">推荐度 65/100</span>
+        <span class="score-badge">推荐度 40/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/nvm-sh/nvm" target="_blank">nvm-sh/nvm</a>
+        <a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -829,49 +842,15 @@
 
 
       
-        nvm-sh /
+        cursor /
 
-      nvm  
+      plugins  
 
     
-      Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.</p>
-      
+      Cursor plugin specification and official plugins</p>
+      <div class="paper-summary"><div class="summary-section">这是 Cursor 官方维护的插件规范与官方插件仓库，使用 TypeScript 编写，</div></div>
       <div class="paper-links">
-        <a href="https://github.com/nvm-sh/nvm" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Go</span>
-          <span class="paper-id">⭐ 29,788 &nbsp;+1025 today</span>
-        </div>
-        <span class="score-badge">推荐度 65/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/vxcontrol/pentagi" target="_blank">vxcontrol/pentagi</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        vxcontrol /
-
-      pentagi  
-
-    
-      Fully autonomous AI Agents system capable of performing complex penetration testing tasks</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/vxcontrol/pentagi" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/cursor/plugins" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -879,12 +858,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 49,565 &nbsp;+163 today</span>
+          <span class="paper-id">⭐ 42,671 &nbsp;+1175 today</span>
         </div>
-        <span class="score-badge">推荐度 60/100</span>
+        <span class="score-badge">推荐度 30/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank">K-Dense-AI/scientific-agent-skills</a>
+        <a href="https://github.com/anthropics/claude-plugins-official" target="_blank">anthropics/claude-plugins-official</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -897,15 +876,62 @@
 
 
       
-        K-Dense-AI /
+        anthropics /
 
-      scientific-agent-skills  
+      claude-plugins-official  
 
     
-      Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.</p>
+      Official, Anthropic-managed directory of high quality Claude Code Plugins.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/anthropics/claude-plugins-official" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 216,561 &nbsp;+1414 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/anomalyco" target="_blank">sponsors/anomalyco</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        anomalyco /
+
+      opencode  
+
+    
+      The open source coding agent.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/anomalyco" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     

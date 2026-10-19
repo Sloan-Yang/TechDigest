@@ -1,0 +1,139 @@
+[
+  {
+    "id": "2610.22370",
+    "title": "Which Tokens to Merge? Diffusion Dynamics for Efficient Image Generation",
+    "abstract": "Token merging has emerged as an effective training-free strategy for accelerating diffusion models by reducing redundant token computation while minimizing generation degradation. A key challenge is determining which tokens can be safely merged and which should be preserved for subsequent computation. Existing method addresses this by preserving prompt-aligned foreground regions, thereby protecting semantically relevant structures. However, this text-relevance criterion overlooks background objects, local details that are not explicitly mentioned in the prompt, leading to degraded structural coherence. In this work, we propose Dynamics-aware Token Merging (DaTMe), a training-free framework that grounds token merging in the underlying diffusion dynamics. Our key insight is that token importance should reflect whether a token remains unresolved during denoising and whether it carries structural information. To this end, DaTMe constructs a dynamics- aware importance map from the Tweedie denoised estimate. The map combines a temporal signal, measuring inter-step changes in the predicted clean image, with a structural signal, capturing local high-frequency content such as boundaries and fine details. Using this map, DaTMe adaptively assigns tokens into merging roles under a given compression ratio: important tokens are preserved as anchors, while tokens that are both temporally stabilized and structurally homogeneous are selected as safe merge candidates. Experiments on PixArt-a and FLUX demonstrate that DaTMe maintains visual fidelity across the entire image, highlighting diffusion dynamics as an effective token-level merging decision in efficient generation. Our code is available at https://github.com/SeungJuCha/DaTMe.",
+    "authors": [
+      "SeungJu Cha",
+      "Ye-Chan Kim",
+      "HyunGee Kim",
+      "Sungho Koh",
+      "Dong-Jin Kim"
+    ],
+    "published": "2026-10-15",
+    "updated": "2026-10-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.22370.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.22370",
+    "primary_category": "cs.CV",
+    "score": 68,
+    "summary": {
+      "title_zh": "哪些 Token 应被合并？用于高效图像生成的扩散动力学",
+      "core_contribution": "论文提出免训练的 Dynamics-aware Token Merging（DaTMe）框架，将 token 合并决策建立在扩散模型的去噪动力学之上，从而在加速生成的同时更好保持整图视觉保真度。",
+      "method": "DaTMe 从 Tweedie 去噪估计中构建动力学感知的重要性图，该图结合衡量相邻步预测干净图像变化的时间信号与捕捉边界和细节等局部高频内容的结构信号。基于该重要性图，方法在给定压缩率下自适应地为 token 分配合并角色：重要 token 作为锚点保留，而时间上已稳定且结构上同质的 token 被选为安全合并候选。该框架无需额外训练，可直接用于扩散模型的 token 合并加速。",
+      "findings": "在 PixArt-α 和 FLUX 上的实验表明，DaTMe 能在整个图像范围内保持视觉保真度，并改善现有仅依赖文本相关性方法对背景对象和未显式提及局部细节的忽视。结果说明扩散动力学可作为高效生成中 token 级合并决策的有效依据。"
+    }
+  },
+  {
+    "id": "2610.21979",
+    "title": "P2TPO: Structure-Aligned Page-to-Token Credit Assignment for Full-Page Document Parsing",
+    "abstract": "End-to-end full-page document parsing must preserve the content and structure of heterogeneous elements, yet otherwise accurate outputs can contain local errors and omissions. A single page-level advantage does not explicitly identify which elements differ in quality across sampled outputs or where their errors occur. We introduce Page-to-Token Policy Optimization (P2TPO), a structure-aligned credit-assignment framework that operates on full-page policy trajectories. Reference-element alignment first associates block-level quality contrasts with generated spans. Unified Anchor Pricing (UAP) incorporates matched and missing element outcomes and provides feedback relative to a fixed quality ceiling when sampled outputs receive identical but imperfect scores for a reference element. Within matched blocks, Span Credit Redistribution (SCR) redistributes existing block credit according to aligned correct and erroneous spans, using boundary proxies for within-block omissions while preserving the total block-derived advantage across its tokens. Under a fixed-weight additive page utility, we show that element-indexed contrasts retain local quality differences that page-level aggregation can cancel out. In the main experimental comparison, P2TPO outperforms all evaluated policy optimization baselines in seed-averaged scores on each of the six document parsing benchmarks. Additional experiments demonstrate gains across model scales and initializations.",
+    "authors": [
+      "Yong Zu",
+      "Ninghua Yang",
+      "Zezhong Tan",
+      "Xinhong Ma",
+      "Ziqiang Dong",
+      "Yang Yang"
+    ],
+    "published": "2026-10-15",
+    "updated": "2026-10-15",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.21979.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.21979",
+    "primary_category": "cs.LG",
+    "score": 68,
+    "summary": {
+      "title_zh": "P2TPO: Structure-Aligned Page-to-Token Credit Assignment for Full-Page Document Parsing",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.20608",
+    "title": "Representation Conditioning for Generation",
+    "abstract": "Representation-alignment methods effectively accelerate the diffusion transformer training. REPA, for example, uses a pretrained vision encoder to supervise an intermediate layer through an MLP projection head which is discarded after training. It aims to import semantics from the vision encoder to the diffusion backbone. While this objective is achieved at early layers by back-propagating the alignment loss, there is no guarantee that later layers, supervised by the velocity prediction loss alone, can well access such semantics. We propose a simple solution, representation conditioning (RECON), to improve semantics in later layers. During training, we feed the pretrained vision encoder tokens into later layers; during inference, because we no longer have the clean image, we reuse the MLP head (as a proxy to the vision encoder) and project its output tokens to the later layers. Our method adds no parameters and leads to much faster convergence: RECON is $63\\times$ faster than SiT and $25\\times$ faster than REPA. Code is available at https://github.com/saeidrazavi/RECON",
+    "authors": [
+      "Saeed Razavi",
+      "Xingjian Leng",
+      "Liang Zheng"
+    ],
+    "published": "2026-10-14",
+    "updated": "2026-10-14",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.20608.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.20608",
+    "primary_category": "cs.CV",
+    "score": 62,
+    "summary": {
+      "title_zh": "面向生成的表示条件化",
+      "core_contribution": "论文提出表示条件化（RECON）方法，解决了表示对齐方法（如REPA）只能通过反向传播影响浅层、深层难以获得视觉编码器语义的问题，在不增加任何参数的前提下显著加速扩散Transformer的训练收敛。",
+      "method": "REPA类方法用预训练视觉编码器通过MLP投影头监督扩散主干网络的中间层，但训练后MLP头被丢弃，且仅有速度预测损失监督的深层无法保证获得这些语义。RECON在训练时直接把预训练视觉编码器的token输入到较深层作为条件信号；推理时由于不再有干净图像，改为复用原本要丢弃的MLP头作为视觉编码器的代理，将其输出token投影后送入深层。该方法不引入额外参数，也不改变推理时的网络结构。",
+      "findings": "实验表明RECON能显著加快收敛：相比SiT快63倍，相比REPA快25倍，同时保持或提升生成质量，且实现简单、无额外参数开销。代码已开源。"
+    }
+  },
+  {
+    "id": "2610.21327",
+    "title": "DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding",
+    "abstract": "Multimodal long-document question answering requires models to seek sparse evidence across pages and modalities, understand heterogeneous document content, and reason over the collected evidence. Even advanced vision-language models (VLMs) can overlook sparse evidence and struggle with cross-modal reasoning in a single pass. Existing document agents further introduce multi-step interaction, but some still rely on predefined workflows or coarse-grained actions, limiting the flexibility and granularity of document reasoning. We introduce DocPilot, an agentic document framework that supports expressive orchestration and makes complex document solving learnable by small language models (SLMs). DocPilot orchestrates evidence seeking through page-level navigation and fine-grained evidence localization, and integrates local visual inspection, code-based numerical reasoning, and cross-modal reasoning for multimodal understanding. To transfer these capabilities to small models, we propose curriculum-based agentic training that progresses from single-ability learning to adaptive orchestration through supervision from data-grounded reasoning traces and executable interaction trajectories. Across MMLongBench-Doc, DocBench, FinRAGBench-V, and MADQA, DocPilot achieves strong gains with frontier VLM backbones, while DocPilot-4B delivers competitive performance against substantially larger models, demonstrating strong effectiveness and generalization across diverse long-document reasoning settings. The code is available at https://github.com/HKUSTDial/DocPilot.",
+    "authors": [
+      "Zhuowen Liang",
+      "Xiaotian Lin",
+      "Yuyu Luo",
+      "Haixun Wang",
+      "Nan Tang"
+    ],
+    "published": "2026-10-15",
+    "updated": "2026-10-15",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.21327.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.21327",
+    "primary_category": "cs.AI",
+    "score": 58,
+    "summary": {
+      "title_zh": "DocPilot：面向长视觉文档理解的交互式智能体编排与训练",
+      "core_contribution": "论文提出 DocPilot 这一智能体式文档理解框架，通过表达力强的多步编排（页面级导航、细粒度证据定位及多模态推理工具）解决长文档中证据稀疏与跨模态推理难题，并提出基于课程学习的智能体训练方法，使小语言模型（SLM）也能学会复杂的文档求解流程。",
+      "method": "DocPilot 将长文档问答拆解为可编排的交互流程：先用页面级导航定位相关页面，再做细粒度证据定位，并集成局部视觉检查、基于代码的数值计算和跨模态推理等工具来理解异构文档内容。为把这种能力迁移到小模型，作者设计了课程式智能体训练，从单一能力学习逐步过渡到自适应编排，训练监督信号来自有数据支撑的推理轨迹和可执行的交互轨迹。最终得到 DocPilot-4B 这一小模型智能体，可与前沿 VLM 骨干配合使用。",
+      "findings": "在 MMLongBench-Doc、DocBench、FinRAGBench-V 和 MADQA 四个长文档基准上，DocPilot 搭配前沿 VLM 骨干取得显著性能提升；DocPilot-4B 以 40 亿参数规模达到与远大于自身的模型相当的性能，表明该方法在多样长文档推理场景下具有良好的有效性与泛化能力。"
+    }
+  },
+  {
+    "id": "2610.21283",
+    "title": "Mallea: Building, Steering, and Memorizing Worlds with Coding Agent",
+    "abstract": "Code world models represent world dynamics through explicit state and executable rules. We investigate how to coordinate object representations, behavioral revisions, and visual memory within this formulation. We present Mallea, a system for building, steering, and memorizing worlds from text. A coding agent infers object interaction requirements from the prompt and jointly plans object structure, properties, and rules, favoring compact representations that support those requirements. The world evolves under the planned rules; optional user actions steer it, while text requests can edit properties or extend capabilities with unaffected state preserved. Object texture memory retains reusable appearance only for whitebox-defined objects and adapts it as those objects change. The program advances world state, while a generative renderer combines current structure with remembered appearance. By organizing construction, intervention, and memory around the same objects, Mallea conditions subsequent observations on the latest state and compatible appearance. Project page: https://lxycopper.github.io/Mallea.",
+    "authors": [
+      "Xuanyi Liu",
+      "Ruiqi Li",
+      "Siwei Ma"
+    ],
+    "published": "2026-10-15",
+    "updated": "2026-10-15",
+    "categories": [
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.21283.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.21283",
+    "primary_category": "cs.AI",
+    "score": 55,
+    "summary": {
+      "title_zh": "Mallea: Building, Steering, and Memorizing Worlds with Coding Agent",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  }
+]

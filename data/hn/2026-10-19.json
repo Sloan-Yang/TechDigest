@@ -1,0 +1,100 @@
+[
+  {
+    "id": 50129045,
+    "title": "DeepSeek-v4.1-Flash-1017",
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "text": "<a href=\"https:&#x2F;&#x2F;api-docs.deepseek.com&#x2F;news&#x2F;news261017&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;api-docs.deepseek.com&#x2F;news&#x2F;news261017&#x2F;</a><p><a href=\"https:&#x2F;&#x2F;openrouter.ai&#x2F;deepseek&#x2F;deepseek-v4.1-flash-1017\" rel=\"nofollow\">https:&#x2F;&#x2F;openrouter.ai&#x2F;deepseek&#x2F;deepseek-v4.1-flash-1017</a>",
+    "score": 935,
+    "comments": 704,
+    "by": "theykk",
+    "time": 1792225285,
+    "hn_url": "https://news.ycombinator.com/item?id=50129045",
+    "relevance_score": 93
+  },
+  {
+    "id": 50122878,
+    "title": "You could have invented transformers from memory",
+    "url": "https://alexwang.ai/posts/associative-memory/",
+    "text": "<a href=\"https:&#x2F;&#x2F;twitter.com&#x2F;heyyalexwang&#x2F;status&#x2F;2111158818730397932\" rel=\"nofollow\">https:&#x2F;&#x2F;twitter.com&#x2F;heyyalexwang&#x2F;status&#x2F;2111158818730397932</a>",
+    "score": 621,
+    "comments": 141,
+    "by": "speckx",
+    "time": 1792177277,
+    "hn_url": "https://news.ycombinator.com/item?id=50122878",
+    "relevance_score": 88
+  },
+  {
+    "id": 50137257,
+    "title": "August in Servo: CSS Grid, text selection, and more",
+    "url": "https://servo.org/blog/2026/10/09/august-in-servo/",
+    "text": "",
+    "score": 28,
+    "comments": 0,
+    "by": "msub2",
+    "time": 1792290141,
+    "hn_url": "https://news.ycombinator.com/item?id=50137257",
+    "relevance_score": 88
+  },
+  {
+    "id": 50100994,
+    "title": "Furifont, a Japanese font that shows furigana",
+    "url": "https://furifont.antfu.me/",
+    "text": "",
+    "score": 392,
+    "comments": 83,
+    "by": "plaguna",
+    "time": 1792054110,
+    "hn_url": "https://news.ycombinator.com/item?id=50100994",
+    "relevance_score": 85
+  },
+  {
+    "id": 50119315,
+    "title": "Rendering pretty sky in Around The World game",
+    "url": "https://frozenfractal.com/blog/2026/10/12/around-the-world-34-a-pretty-sky/",
+    "text": "",
+    "score": 158,
+    "comments": 13,
+    "by": "ibobev",
+    "time": 1792163203,
+    "hn_url": "https://news.ycombinator.com/item?id=50119315",
+    "relevance_score": 85
+  },
+  {
+    "id": 50131189,
+    "title": "Show HN: Esp32sim – Run ESP32 firmware in the browser",
+    "url": "https://github.com/mikroverk/esp32sim",
+    "text": "Hi HN,<p>I’ve been working on esp32sim, an open-source ESP32 emulator that runs in the browser.<p>The fun part of the demo is that there is no ESP32 involved — the firmware is executing in the emulator.<p>The goal is to make ESP32 software easier to experiment with, test and simulate without always needing physical hardware connected.<p>Source:\n<a href=\"https:&#x2F;&#x2F;github.com&#x2F;mikroverk&#x2F;esp32sim\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;mikroverk&#x2F;esp32sim</a><p>I made a short video showing it in action:\n<a href=\"https:&#x2F;&#x2F;youtu.be&#x2F;waoWFilTWEc\" rel=\"nofollow\">https:&#x2F;&#x2F;youtu.be&#x2F;waoWFilTWEc</a><p>I’m particularly interested in feedback from embedded developers: what would an emulator like this need to support before you’d actually use it for development, testing or CI?",
+    "score": 191,
+    "comments": 41,
+    "by": "joakimeriksson",
+    "time": 1792245068,
+    "hn_url": "https://news.ycombinator.com/item?id=50131189",
+    "relevance_score": 68,
+    "summary": "该帖子介绍开源项目 esp32sim——一个可在浏览器中直接"
+  },
+  {
+    "id": 50133231,
+    "title": "Codex Desktop continuously generates Crashpad pending dumps",
+    "url": "https://github.com/openai/codex/issues/25921",
+    "text": "",
+    "score": 167,
+    "comments": 81,
+    "by": "AIorNot",
+    "time": 1792259108,
+    "hn_url": "https://news.ycombinator.com/item?id=50133231",
+    "relevance_score": 65
+  },
+  {
+    "id": 50126253,
+    "title": "Bleached corals thrive within days when touching healthy neighbour",
+    "url": "https://www.nature.com/articles/d41586-026-03266-x",
+    "text": "<a href=\"https:&#x2F;&#x2F;archive.ph&#x2F;zIPG4\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.ph&#x2F;zIPG4</a>",
+    "score": 540,
+    "comments": 115,
+    "by": "alkyon",
+    "time": 1792193907,
+    "hn_url": "https://news.ycombinator.com/item?id=50126253",
+    "relevance_score": 15,
+    "summary": "这篇帖子介绍了一项发现：白化的珊瑚只要接触到健康的"
+  }
+]
