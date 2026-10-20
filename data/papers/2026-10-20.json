@@ -1,0 +1,146 @@
+[
+  {
+    "id": "2610.23374",
+    "title": "MOSS-Image Technical Report",
+    "abstract": "Recent closed-source image generation systems can produce diverse visual content from simple compositions to information-dense graphics, yet open-weight text-to-image models still struggle with dense text and intricate layouts. To narrow this gap, we introduce MOSS-Image, an open generation system that combines high-fidelity visual synthesis with intent-aware composition. First, we pretrain a 5B single-stream diffusion transformer (DiT) from scratch with a carefully designed recipe, enabling bilingual long-form text rendering and precise layout control. Second, we develop an intention-aware agentic prompt enhancement (PE) module that translates diverse user requests into detailed content and layout specifications. Together, they enable MOSS-Image to generate text-rich and layout-coherent images. We further introduce LongLongTextBench (LLTB) for evaluating long-form English and Chinese text rendering, and RealLayoutArena (RLA) for end-to-end layout-rich generation. MOSS-Image achieves state-of-the-art performance among open-weight models on LLTB, with an average text coverage of 96.3%. On RLA, MOSS-Image ranks second in the end-to-end system comparison, while its backbone ranks first among generators evaluated with shared enhanced prompts. We will release the model, training recipe, and evaluation framework to support further research and promote the text-to-image community.",
+    "authors": [
+      "MOSI. AI"
+    ],
+    "published": "2026-10-16",
+    "updated": "2026-10-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.23374.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.23374",
+    "primary_category": "cs.CV",
+    "score": 95,
+    "summary": {
+      "title_zh": "MOSS-Image 技术报告",
+      "core_contribution": "MOSS-Image 是一个开源文本到图像生成系统，通过高保真视觉合成与意图感知布局相结合，显著提升了密集文本渲染和复杂布局生成能力，以缩小与闭源系统的差距。",
+      "method": "首先，从头预训练一个50亿参数的单流扩散Transformer（DiT），采用精心设计的训练方案，支持双语长文本渲染和精确布局控制。其次，开发了一个意图感知的智能提示增强（PE）模块，将多样化的用户请求转化为详细的内容和布局规范。两者结合使MOSS-Image能够生成文本丰富且布局连贯的图像。此外，还提出了LongLongTextBench（LLTB）用于评估长篇幅中英文文本渲染，以及RealLayoutArena（RLA）用于端到端布局丰富生成。",
+      "findings": "MOSS-Image在LLTB上取得了开源权重模型中的最佳性能，平均文本覆盖率达到96.3%。在RLA的端到端系统比较中排名第二，而其骨干网络在使用共享增强提示的生成器评估中排名第一。模型、训练方案和评估框架将开源发布。"
+    }
+  },
+  {
+    "id": "2610.23230",
+    "title": "RAP: A Dataset for Paper-to-Poster Generation via Declarative Markup from Human-Crafted Exemplars",
+    "abstract": "Making a conference poster is visual coding in miniature: an entire paper must be compressed onto a single page, which exercises summarization, visual design, and code implementation at once, using nothing beyond the paper itself. Yet benchmarks for this task in the context of visual coding remain scarce: existing resources are small and annotated only with layout boxes, so evaluation must fall back on VLM-as-judge or human checklists rather than objective render-and-compare, and the generation methods they support design layouts from scratch, leaving human-crafted posters unusable as either a retrievable design library or as verified supervision. We introduce RAP (Reconstruct A Poster), a dataset and benchmark for paper-to-poster generation as a visual coding task. RAP contains 25K+ verified paper-poster pairs from various machine learning conferences held between 2022 and 2026, annotated with a three-level content taxonomy, plus a held-out benchmark of 150 test papers each paired with its human poster. A fully automated derendering pipeline turns each poster into styled HTML/CSS of typed, refillable slots, so every sample is a paper-poster-markup triplet verifiable by rendering against the source poster. The corpus serves both inference and training: PosterRAG, a training-free multi-agent pipeline, retrieves an exemplar and refills its slots without touching layout or styling, while an SFT+RL recipe trains a dedicated model from the same triplets. An online demo is available at https://reconstruct-a-poster.github.io/.",
+    "authors": [
+      "Haonan Han",
+      "Yukang Lin",
+      "Minliang Lin",
+      "Haoxian Tan",
+      "Jun-Yan He",
+      "Rui Yang",
+      "Zhi-Qi Cheng",
+      "Jie Hu",
+      "Guanglu Wan",
+      "Xiu Li"
+    ],
+    "published": "2026-10-16",
+    "updated": "2026-10-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.23230.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.23230",
+    "primary_category": "cs.CV",
+    "score": 92,
+    "summary": {
+      "title_zh": "RAP：基于人类制作样本的声明式标记论文转海报生成数据集",
+      "core_contribution": "论文提出了RAP数据集与基准，将论文转海报生成任务重新定义为可视化编程任务，包含2.5万余对经过验证的论文-海报配对，并提供可渲染验证的论文-海报-标记三元组，支持无需训练的检索式生成与专门的模型训练两种范式。",
+      "method": "作者构建了一个全自动的反渲染流水线，将每张人类制作的海报转化为带有类型化、可填充槽位的HTML/CSS样式标记，使每个样本成为可通过渲染与原始海报比对验证的论文-海报-标记三元组。数据来源于2022至2026年间多个机器学习会议，并附带三级内容分类标注以及150篇测试论文的留出基准。基于该语料，作者提出PosterRAG——一种无需训练的多智能体流水线，检索样例海报并填充其槽位而不改动布局与样式；同时采用SFT+RL训练方案从相同三元组中训练专用模型。",
+      "findings": "RAP提供了大规模、可客观渲染比对验证的论文转海报基准，克服了现有资源规模小、仅标注布局框、依赖VLM评判或人工清单的局限。其检索式方法能够直接复用人类制作海报的设计库作为监督信号，而SFT+RL训练方案则证明了从三元组数据中学习专用模型的可行性，为论文转海报生成任务建立了可复现、可量化评估的新范式。"
+    }
+  },
+  {
+    "id": "2610.23751",
+    "title": "MTEdit: Packed Trajectories Beat Rollouts for Multi-Turn Image Editing",
+    "abstract": "Multi-turn image editing aims to modify an image according to a sequence of instructions, making it better aligned with human-AI collaborative creation than single-turn editing. However, constructing high-quality multi-turn training data remains challenging, as conventional sequential rollout accumulates errors and introduces visual-quality drift across editing turns. To address this challenge, we introduce MTEdit, a multi-turn image editing dataset built through a pipeline centered on packed trajectory canvas (PTC) generation. By jointly generating multiple editing states within a unified visual context, this pipeline reduces visual-quality drift across turns. Covering both step-wise and context-aware editing scenarios, MTEdit comprises 500K multi-turn image editing trajectories, with up to 8 turns and an average of 5.38 turns per trajectory, making it one of the most extensive datasets for multi-turn image editing. We further introduce MTEdit-Bench, a benchmark designed to evaluate both scenarios by assessing models' ability to follow editing instructions, maintain content consistency, resist visual-quality drift, and effectively use historical context across turns. Using MTEdit, we fine-tune Qwen-Image-Edit-Causal to obtain Qwen-Image-MTEdit. On MTEdit-Bench, we evaluate a broad range of closed-source and open-source image editing models, including Qwen-Image-MTEdit. Experimental results show that Qwen-Image-MTEdit achieves the best performance among the evaluated open-source models, demonstrating the effectiveness of MTEdit in improving models' multi-turn image editing capabilities.",
+    "authors": [
+      "Houyuan Chen",
+      "Fanzhou Wang",
+      "Xiangyu Fan",
+      "Songlin Yang",
+      "Zhitao Yang",
+      "Lvmin Zhang",
+      "Pei Yang",
+      "Hao Zhao",
+      "Lei Yang",
+      "Anyi Rao"
+    ],
+    "published": "2026-10-16",
+    "updated": "2026-10-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.23751.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.23751",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "MTEdit：打包轨迹胜过多轮采样在多次图像编辑中的应用",
+      "core_contribution": "提出MTEdit——一个通过打包轨迹画布（PTC）生成流程构建的大规模多轮图像编辑数据集（含50万条轨迹），并推出MTEdit-Bench基准，有效缓解多轮编辑中的误差累积与视觉质量漂移问题。",
+      "method": "传统顺序采样（sequential rollout）在多轮编辑中会累积错误并导致视觉质量逐轮漂移。为此，作者设计了以打包轨迹画布（PTC）生成为核心的流水线，在统一的视觉上下文中联合生成多个编辑状态，从而减少跨轮次的质量漂移。该数据集同时覆盖逐步编辑和上下文感知编辑两种场景，包含多达8轮、平均5.38轮的50万条编辑轨迹。基于MTEdit对Qwen-Image-Edit-Causal进行微调，得到Qwen-Image-MTEdit模型，并构建MTEdit-Bench从指令跟随、内容一致性、抗质量漂移和历史上下文利用四个维度进行评估。",
+      "findings": "在MTEdit-Bench上对多种闭源与开源图像编辑模型的评估显示，Qwen-Image-MTEdit在所有被评估的开源模型中取得最佳性能，证明MTEdit数据集能够有效提升模型的多轮图像编辑能力。"
+    }
+  },
+  {
+    "id": "2610.22975",
+    "title": "Sink-Sparse Hybrid Attention for Efficient Inference in T2I/T2V Diffusion Transformers",
+    "abstract": "Diffusion Transformers (DiTs) have become a common backbone for high-quality text-to-image and text-to-video generation, but repeated dense self-attention remains a major inference bottleneck as token sequences grow and the same operator is invoked across many denoising steps. Our study suggests that dense attention in pretrained DiTs contains reusable layer/head-specific high-mass structure that can be identified from a small offline calibration set and reused across future generations. This leads to Sink-Sparse Hybrid Attention, a train-free attention replacement that reuses static sink masks and supplements them with a lightweight pooled-KV branch, while leaving model weights and sampling schedules unchanged. On Wan2.1-T2V-1.3B, the method attains 1.54$\\times$ end-to-end speedup while maintaining generation quality. On Z-Image-Turbo, it attains 1.57$\\times$ end-to-end speedup with competitive GenEval2 performance. These results indicate that reusable importance-aware sparse support can provide an effective train-free acceleration path for both T2V and T2I DiTs.",
+    "authors": [
+      "Bingxin Xing",
+      "Yu Zhang",
+      "Jiatong Ding",
+      "Lei Lu",
+      "Ping Wang"
+    ],
+    "published": "2026-10-16",
+    "updated": "2026-10-16",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.22975.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.22975",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "面向T2I/T2V扩散Transformer高效推理的汇稀疏混合注意力",
+      "core_contribution": "论文提出了一种免训练的“汇稀疏混合注意力”方法，通过复用从少量离线校准集中识别出的层/头特定高权重稀疏结构来替代稠密自注意力，从而在不改变模型权重和采样计划的情况下显著加速T2I/T2V扩散Transformer的推理。",
+      "method": "该方法首先在小型离线校准集上识别预训练DiT中可复用的、层/头特定的高权重（sink）结构，生成静态汇掩码；推理时用这些静态掩码替代稠密注意力中的大部分计算，并补充一个轻量级的池化KV分支以保持信息完整性；整个替换过程无需训练，模型权重和采样调度保持不变，可直接应用于文本到图像和文本到视频生成任务。",
+      "findings": "在Wan2.1-T2V-1.3B上实现1.54倍端到端加速且保持生成质量；在Z-Image-Turbo上实现1.57倍端到端加速，GenEval2性能具有竞争力。结果表明，可复用的重要性感知稀疏支持为T2V和T2I扩散Transformer提供了一条有效的免训练加速路径。"
+    }
+  },
+  {
+    "id": "2610.22264",
+    "title": "SCOPE: Semantic Bounded Credit Optimization for Prompt Engineering in Text-to-image Generation",
+    "abstract": "Reinforcement learning (RL) enables language models to improve text-to-image (T2I) generation by rewriting prompts for a frozen image generator. Existing methods typically apply a single signal derived from the image to individual subword tokens, although objects, counts, attributes, and relations form coherent semantic spans. We propose SCOPE, an objective based on Group Relative Policy Optimization (GRPO) that aligns update weighting with this structure. The rewriter jointly generates an enhanced prompt and its semantic partition. SCOPE pools shifts in policy log probabilities within each span to derive a shared coefficient for its token losses while retaining a single advantage for each completion. It requires neither separate span rewards nor additional image renders. Across Qwen-Image, SD3, and FLUX.1-dev, SCOPE achieves average relative gains over vanilla GRPO of 9.48% on GeneVal and 7.62% on T2I-CompBench. Ablation studies show that both semantic boundaries and pooling within spans contribute to these gains, supporting semantic structure as a practical inductive bias for prompt engineering with RL.",
+    "authors": [
+      "Yufei Jiao",
+      "Jinfa Huang",
+      "Zeyue Xue",
+      "Tianyu Xie",
+      "Yuexiao Ma",
+      "Rongrong Ji",
+      "Xiawu Zheng",
+      "Jiebo Luo"
+    ],
+    "published": "2026-10-15",
+    "updated": "2026-10-15",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.22264.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.22264",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "SCOPE：面向文本到图像生成提示工程的语义有界信用优化",
+      "core_contribution": "论文提出 SCOPE，一种基于分组相对策略优化（GRPO）的目标函数，将更新权重与提示中连贯的语义片段（如物体、数量、属性、关系）对齐，从而改进用于文本到图像生成的提示重写。该方法在多个生成器上相比原始 GRPO 取得显著相对提升。",
+      "method": "SCOPE 让重写模型在生成增强提示的同时输出其语义分区。它在每个语义片段内对策略对数概率的偏移进行池化，为该片段内各 token 的损失推导出一个共享系数，同时为每个完整生成保留单一优势值。该方法既不需要单独的片段奖励，也不需要额外的图像渲染。",
+      "findings": "在 Qwen-Image、SD3 和 FLUX.1-dev 上，SCOPE 相比原始 GRPO 在 GeneVal 上平均相对提升 9.48%，在 T2I-CompBench 上平均相对提升 7.62%。消融实验表明，语义边界和片段内池化均对性能提升有贡献，支持语义结构作为强化学习提示工程中一种实用的归纳偏置。"
+    }
+  }
+]

@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-10-19</div>
+        <div class="page-date">📅 2026-10-20</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            人工智能: 2 | 计算机视觉: 2 | 机器学习: 1
+            计算机视觉: 5
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,62 +328,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.22370</span>
+          <span class="paper-id">2610.23374</span>
         </div>
-        <span class="score-badge">相关性 68/100</span>
+        <span class="score-badge">相关性 95/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.22370" target="_blank">Which Tokens to Merge? Diffusion Dynamics for Efficient Image Generation</a>
+        <a href="https://arxiv.org/abs/2610.23374" target="_blank">MOSS-Image Technical Report</a>
       </h3>
-      <p class="paper-title-zh">哪些 Token 应被合并？用于高效图像生成的扩散动力学</p>
-      <p class="paper-authors">SeungJu Cha, Ye-Chan Kim, HyunGee Kim, Sungho Koh, Dong-Jin Kim</p>
+      <p class="paper-title-zh">MOSS-Image 技术报告</p>
+      <p class="paper-authors">MOSI. AI</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 论文提出免训练的 Dynamics-aware Token Merging（DaTMe）框架，将 token 合并决策建立在扩散模型的去噪动力学之上，从而在加速生成的同时更好保持整图视觉保真度。</div>
-        <div class="summary-section"><strong>方法:</strong> DaTMe 从 Tweedie 去噪估计中构建动力学感知的重要性图，该图结合衡量相邻步预测干净图像变化的时间信号与捕捉边界和细节等局部高频内容的结构信号。基于该重要性图，方法在给定压缩率下自适应地为 token 分配合并角色：重要 token 作为锚点保留，而时间上已稳定且结构上同质的 token 被选为安全合并候选。该框架无需额外训练，可直接用于扩散模型的 token 合并加速。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在 PixArt-α 和 FLUX 上的实验表明，DaTMe 能在整个图像范围内保持视觉保真度，并改善现有仅依赖文本相关性方法对背景对象和未显式提及局部细节的忽视。结果说明扩散动力学可作为高效生成中 token 级合并决策的有效依据。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> MOSS-Image 是一个开源文本到图像生成系统，通过高保真视觉合成与意图感知布局相结合，显著提升了密集文本渲染和复杂布局生成能力，以缩小与闭源系统的差距。</div>
+        <div class="summary-section"><strong>方法:</strong> 首先，从头预训练一个50亿参数的单流扩散Transformer（DiT），采用精心设计的训练方案，支持双语长文本渲染和精确布局控制。其次，开发了一个意图感知的智能提示增强（PE）模块，将多样化的用户请求转化为详细的内容和布局规范。两者结合使MOSS-Image能够生成文本丰富且布局连贯的图像。此外，还提出了LongLongTextBench（LLTB）用于评估长篇幅中英文文本渲染，以及RealLayoutArena（RLA）用于端到端布局丰富生成。</div>
+        <div class="summary-section"><strong>关键发现:</strong> MOSS-Image在LLTB上取得了开源权重模型中的最佳性能，平均文本覆盖率达到96.3%。在RLA的端到端系统比较中排名第二，而其骨干网络在使用共享增强提示的生成器评估中排名第一。模型、训练方案和评估框架将开源发布。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Token merging has emerged as an effective training-free strategy for accelerating diffusion models by reducing redundant token computation while minimizing generation degradation. A key challenge is determining which tokens can be safely merged and which should be preserved for subsequent computation. Existing method addresses this by preserving prompt-aligned foreground regions, thereby protecting semantically relevant structures. However, this text-relevance criterion overlooks background objects, local details that are not explicitly mentioned in the prompt, leading to degraded structural coherence. In this work, we propose Dynamics-aware Token Merging (DaTMe), a training-free framework that grounds token merging in the underlying diffusion dynamics. Our key insight is that token importance should reflect whether a token remains unresolved during denoising and whether it carries structural information. To this end, DaTMe constructs a dynamics- aware importance map from the Tweedie denoised estimate. The map combines a temporal signal, measuring inter-step changes in the predicted clean image, with a structural signal, capturing local high-frequency content such as boundaries and fine details. Using this map, DaTMe adaptively assigns tokens into merging roles under a given compression ratio: important tokens are preserved as anchors, while tokens that are both temporally stabilized and structurally homogeneous are selected as safe merge candidates. Experiments on PixArt-a and FLUX demonstrate that DaTMe maintains visual fidelity across the entire image, highlighting diffusion dynamics as an effective token-level merging decision in efficient generation. Our code is available at https://github.com/SeungJuCha/DaTMe.</p>
+        <p>Recent closed-source image generation systems can produce diverse visual content from simple compositions to information-dense graphics, yet open-weight text-to-image models still struggle with dense text and intricate layouts. To narrow this gap, we introduce MOSS-Image, an open generation system that combines high-fidelity visual synthesis with intent-aware composition. First, we pretrain a 5B single-stream diffusion transformer (DiT) from scratch with a carefully designed recipe, enabling bilingual long-form text rendering and precise layout control. Second, we develop an intention-aware agentic prompt enhancement (PE) module that translates diverse user requests into detailed content and layout specifications. Together, they enable MOSS-Image to generate text-rich and layout-coherent images. We further introduce LongLongTextBench (LLTB) for evaluating long-form English and Chinese text rendering, and RealLayoutArena (RLA) for end-to-end layout-rich generation. MOSS-Image achieves state-of-the-art performance among open-weight models on LLTB, with an average text coverage of 96.3%. On RLA, MOSS-Image ranks second in the end-to-end system comparison, while its backbone ranks first among generators evaluated with shared enhanced prompts. We will release the model, training recipe, and evaluation framework to support further research and promote the text-to-image community.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.22370" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.22370.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">机器学习</span>
-          <span class="paper-id">2610.21979</span>
-        </div>
-        <span class="score-badge">相关性 68/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.21979" target="_blank">P2TPO: Structure-Aligned Page-to-Token Credit Assignment for Full-Page Document Parsing</a>
-      </h3>
-      <p class="paper-title-zh">P2TPO: Structure-Aligned Page-to-Token Credit Assignment for Full-Page Document Parsing</p>
-      <p class="paper-authors">Yong Zu, Ninghua Yang, Zezhong Tan, Xinhong Ma, Ziqiang Dong 等 (6 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>End-to-end full-page document parsing must preserve the content and structure of heterogeneous elements, yet otherwise accurate outputs can contain local errors and omissions. A single page-level advantage does not explicitly identify which elements differ in quality across sampled outputs or where their errors occur. We introduce Page-to-Token Policy Optimization (P2TPO), a structure-aligned credit-assignment framework that operates on full-page policy trajectories. Reference-element alignment first associates block-level quality contrasts with generated spans. Unified Anchor Pricing (UAP) incorporates matched and missing element outcomes and provides feedback relative to a fixed quality ceiling when sampled outputs receive identical but imperfect scores for a reference element. Within matched blocks, Span Credit Redistribution (SCR) redistributes existing block credit according to aligned correct and erroneous spans, using boundary proxies for within-block omissions while preserving the total block-derived advantage across its tokens. Under a fixed-weight additive page utility, we show that element-indexed contrasts retain local quality differences that page-level aggregation can cancel out. In the main experimental comparison, P2TPO outperforms all evaluated policy optimization baselines in seed-averaged scores on each of the six document parsing benchmarks. Additional experiments demonstrate gains across model scales and initializations.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.21979" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.21979.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.23374" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.23374.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,30 +360,30 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.20608</span>
+          <span class="paper-id">2610.23230</span>
         </div>
-        <span class="score-badge">相关性 62/100</span>
+        <span class="score-badge">相关性 92/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.20608" target="_blank">Representation Conditioning for Generation</a>
+        <a href="https://arxiv.org/abs/2610.23230" target="_blank">RAP: A Dataset for Paper-to-Poster Generation via Declarative Markup from Human-Crafted Exemplars</a>
       </h3>
-      <p class="paper-title-zh">面向生成的表示条件化</p>
-      <p class="paper-authors">Saeed Razavi, Xingjian Leng, Liang Zheng</p>
+      <p class="paper-title-zh">RAP：基于人类制作样本的声明式标记论文转海报生成数据集</p>
+      <p class="paper-authors">Haonan Han, Yukang Lin, Minliang Lin, Haoxian Tan, Jun-Yan He 等 (10 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 论文提出表示条件化（RECON）方法，解决了表示对齐方法（如REPA）只能通过反向传播影响浅层、深层难以获得视觉编码器语义的问题，在不增加任何参数的前提下显著加速扩散Transformer的训练收敛。</div>
-        <div class="summary-section"><strong>方法:</strong> REPA类方法用预训练视觉编码器通过MLP投影头监督扩散主干网络的中间层，但训练后MLP头被丢弃，且仅有速度预测损失监督的深层无法保证获得这些语义。RECON在训练时直接把预训练视觉编码器的token输入到较深层作为条件信号；推理时由于不再有干净图像，改为复用原本要丢弃的MLP头作为视觉编码器的代理，将其输出token投影后送入深层。该方法不引入额外参数，也不改变推理时的网络结构。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 实验表明RECON能显著加快收敛：相比SiT快63倍，相比REPA快25倍，同时保持或提升生成质量，且实现简单、无额外参数开销。代码已开源。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 论文提出了RAP数据集与基准，将论文转海报生成任务重新定义为可视化编程任务，包含2.5万余对经过验证的论文-海报配对，并提供可渲染验证的论文-海报-标记三元组，支持无需训练的检索式生成与专门的模型训练两种范式。</div>
+        <div class="summary-section"><strong>方法:</strong> 作者构建了一个全自动的反渲染流水线，将每张人类制作的海报转化为带有类型化、可填充槽位的HTML/CSS样式标记，使每个样本成为可通过渲染与原始海报比对验证的论文-海报-标记三元组。数据来源于2022至2026年间多个机器学习会议，并附带三级内容分类标注以及150篇测试论文的留出基准。基于该语料，作者提出PosterRAG——一种无需训练的多智能体流水线，检索样例海报并填充其槽位而不改动布局与样式；同时采用SFT+RL训练方案从相同三元组中训练专用模型。</div>
+        <div class="summary-section"><strong>关键发现:</strong> RAP提供了大规模、可客观渲染比对验证的论文转海报基准，克服了现有资源规模小、仅标注布局框、依赖VLM评判或人工清单的局限。其检索式方法能够直接复用人类制作海报的设计库作为监督信号，而SFT+RL训练方案则证明了从三元组数据中学习专用模型的可行性，为论文转海报生成任务建立了可复现、可量化评估的新范式。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Representation-alignment methods effectively accelerate the diffusion transformer training. REPA, for example, uses a pretrained vision encoder to supervise an intermediate layer through an MLP projection head which is discarded after training. It aims to import semantics from the vision encoder to the diffusion backbone. While this objective is achieved at early layers by back-propagating the alignment loss, there is no guarantee that later layers, supervised by the velocity prediction loss alone, can well access such semantics. We propose a simple solution, representation conditioning (RECON), to improve semantics in later layers. During training, we feed the pretrained vision encoder tokens into later layers; during inference, because we no longer have the clean image, we reuse the MLP head (as a proxy to the vision encoder) and project its output tokens to the later layers. Our method adds no parameters and leads to much faster convergence: RECON is $63\times$ faster than SiT and $25\times$ faster than REPA. Code is available at https://github.com/saeidrazavi/RECON</p>
+        <p>Making a conference poster is visual coding in miniature: an entire paper must be compressed onto a single page, which exercises summarization, visual design, and code implementation at once, using nothing beyond the paper itself. Yet benchmarks for this task in the context of visual coding remain scarce: existing resources are small and annotated only with layout boxes, so evaluation must fall back on VLM-as-judge or human checklists rather than objective render-and-compare, and the generation methods they support design layouts from scratch, leaving human-crafted posters unusable as either a retrievable design library or as verified supervision. We introduce RAP (Reconstruct A Poster), a dataset and benchmark for paper-to-poster generation as a visual coding task. RAP contains 25K+ verified paper-poster pairs from various machine learning conferences held between 2022 and 2026, annotated with a three-level content taxonomy, plus a held-out benchmark of 150 test papers each paired with its human poster. A fully automated derendering pipeline turns each poster into styled HTML/CSS of typed, refillable slots, so every sample is a paper-poster-markup triplet verifiable by rendering against the source poster. The corpus serves both inference and training: PosterRAG, a training-free multi-agent pipeline, retrieves an exemplar and refills its slots without touching layout or styling, while an SFT+RL recipe trains a dedicated model from the same triplets. An online demo is available at https://reconstruct-a-poster.github.io/.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.20608" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.20608.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.23230" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.23230.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -423,31 +391,31 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">人工智能</span>
-          <span class="paper-id">2610.21327</span>
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.23751</span>
         </div>
-        <span class="score-badge">相关性 58/100</span>
+        <span class="score-badge">相关性 88/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.21327" target="_blank">DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding</a>
+        <a href="https://arxiv.org/abs/2610.23751" target="_blank">MTEdit: Packed Trajectories Beat Rollouts for Multi-Turn Image Editing</a>
       </h3>
-      <p class="paper-title-zh">DocPilot：面向长视觉文档理解的交互式智能体编排与训练</p>
-      <p class="paper-authors">Zhuowen Liang, Xiaotian Lin, Yuyu Luo, Haixun Wang, Nan Tang</p>
+      <p class="paper-title-zh">MTEdit：打包轨迹胜过多轮采样在多次图像编辑中的应用</p>
+      <p class="paper-authors">Houyuan Chen, Fanzhou Wang, Xiangyu Fan, Songlin Yang, Zhitao Yang 等 (10 位作者)</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 论文提出 DocPilot 这一智能体式文档理解框架，通过表达力强的多步编排（页面级导航、细粒度证据定位及多模态推理工具）解决长文档中证据稀疏与跨模态推理难题，并提出基于课程学习的智能体训练方法，使小语言模型（SLM）也能学会复杂的文档求解流程。</div>
-        <div class="summary-section"><strong>方法:</strong> DocPilot 将长文档问答拆解为可编排的交互流程：先用页面级导航定位相关页面，再做细粒度证据定位，并集成局部视觉检查、基于代码的数值计算和跨模态推理等工具来理解异构文档内容。为把这种能力迁移到小模型，作者设计了课程式智能体训练，从单一能力学习逐步过渡到自适应编排，训练监督信号来自有数据支撑的推理轨迹和可执行的交互轨迹。最终得到 DocPilot-4B 这一小模型智能体，可与前沿 VLM 骨干配合使用。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在 MMLongBench-Doc、DocBench、FinRAGBench-V 和 MADQA 四个长文档基准上，DocPilot 搭配前沿 VLM 骨干取得显著性能提升；DocPilot-4B 以 40 亿参数规模达到与远大于自身的模型相当的性能，表明该方法在多样长文档推理场景下具有良好的有效性与泛化能力。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 提出MTEdit——一个通过打包轨迹画布（PTC）生成流程构建的大规模多轮图像编辑数据集（含50万条轨迹），并推出MTEdit-Bench基准，有效缓解多轮编辑中的误差累积与视觉质量漂移问题。</div>
+        <div class="summary-section"><strong>方法:</strong> 传统顺序采样（sequential rollout）在多轮编辑中会累积错误并导致视觉质量逐轮漂移。为此，作者设计了以打包轨迹画布（PTC）生成为核心的流水线，在统一的视觉上下文中联合生成多个编辑状态，从而减少跨轮次的质量漂移。该数据集同时覆盖逐步编辑和上下文感知编辑两种场景，包含多达8轮、平均5.38轮的50万条编辑轨迹。基于MTEdit对Qwen-Image-Edit-Causal进行微调，得到Qwen-Image-MTEdit模型，并构建MTEdit-Bench从指令跟随、内容一致性、抗质量漂移和历史上下文利用四个维度进行评估。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在MTEdit-Bench上对多种闭源与开源图像编辑模型的评估显示，Qwen-Image-MTEdit在所有被评估的开源模型中取得最佳性能，证明MTEdit数据集能够有效提升模型的多轮图像编辑能力。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Multimodal long-document question answering requires models to seek sparse evidence across pages and modalities, understand heterogeneous document content, and reason over the collected evidence. Even advanced vision-language models (VLMs) can overlook sparse evidence and struggle with cross-modal reasoning in a single pass. Existing document agents further introduce multi-step interaction, but some still rely on predefined workflows or coarse-grained actions, limiting the flexibility and granularity of document reasoning. We introduce DocPilot, an agentic document framework that supports expressive orchestration and makes complex document solving learnable by small language models (SLMs). DocPilot orchestrates evidence seeking through page-level navigation and fine-grained evidence localization, and integrates local visual inspection, code-based numerical reasoning, and cross-modal reasoning for multimodal understanding. To transfer these capabilities to small models, we propose curriculum-based agentic training that progresses from single-ability learning to adaptive orchestration through supervision from data-grounded reasoning traces and executable interaction trajectories. Across MMLongBench-Doc, DocBench, FinRAGBench-V, and MADQA, DocPilot achieves strong gains with frontier VLM backbones, while DocPilot-4B delivers competitive performance against substantially larger models, demonstrating strong effectiveness and generalization across diverse long-document reasoning settings. The code is available at https://github.com/HKUSTDial/DocPilot.</p>
+        <p>Multi-turn image editing aims to modify an image according to a sequence of instructions, making it better aligned with human-AI collaborative creation than single-turn editing. However, constructing high-quality multi-turn training data remains challenging, as conventional sequential rollout accumulates errors and introduces visual-quality drift across editing turns. To address this challenge, we introduce MTEdit, a multi-turn image editing dataset built through a pipeline centered on packed trajectory canvas (PTC) generation. By jointly generating multiple editing states within a unified visual context, this pipeline reduces visual-quality drift across turns. Covering both step-wise and context-aware editing scenarios, MTEdit comprises 500K multi-turn image editing trajectories, with up to 8 turns and an average of 5.38 turns per trajectory, making it one of the most extensive datasets for multi-turn image editing. We further introduce MTEdit-Bench, a benchmark designed to evaluate both scenarios by assessing models' ability to follow editing instructions, maintain content consistency, resist visual-quality drift, and effectively use historical context across turns. Using MTEdit, we fine-tune Qwen-Image-Edit-Causal to obtain Qwen-Image-MTEdit. On MTEdit-Bench, we evaluate a broad range of closed-source and open-source image editing models, including Qwen-Image-MTEdit. Experimental results show that Qwen-Image-MTEdit achieves the best performance among the evaluated open-source models, demonstrating the effectiveness of MTEdit in improving models' multi-turn image editing capabilities.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.21327" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.21327.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.23751" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.23751.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -455,31 +423,63 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">人工智能</span>
-          <span class="paper-id">2610.21283</span>
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.22975</span>
         </div>
-        <span class="score-badge">相关性 55/100</span>
+        <span class="score-badge">相关性 88/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.21283" target="_blank">Mallea: Building, Steering, and Memorizing Worlds with Coding Agent</a>
+        <a href="https://arxiv.org/abs/2610.22975" target="_blank">Sink-Sparse Hybrid Attention for Efficient Inference in T2I/T2V Diffusion Transformers</a>
       </h3>
-      <p class="paper-title-zh">Mallea: Building, Steering, and Memorizing Worlds with Coding Agent</p>
-      <p class="paper-authors">Xuanyi Liu, Ruiqi Li, Siwei Ma</p>
+      <p class="paper-title-zh">面向T2I/T2V扩散Transformer高效推理的汇稀疏混合注意力</p>
+      <p class="paper-authors">Bingxin Xing, Yu Zhang, Jiatong Ding, Lei Lu, Ping Wang</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
+        <div class="summary-section"><strong>核心贡献:</strong> 论文提出了一种免训练的“汇稀疏混合注意力”方法，通过复用从少量离线校准集中识别出的层/头特定高权重稀疏结构来替代稠密自注意力，从而在不改变模型权重和采样计划的情况下显著加速T2I/T2V扩散Transformer的推理。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法首先在小型离线校准集上识别预训练DiT中可复用的、层/头特定的高权重（sink）结构，生成静态汇掩码；推理时用这些静态掩码替代稠密注意力中的大部分计算，并补充一个轻量级的池化KV分支以保持信息完整性；整个替换过程无需训练，模型权重和采样调度保持不变，可直接应用于文本到图像和文本到视频生成任务。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在Wan2.1-T2V-1.3B上实现1.54倍端到端加速且保持生成质量；在Z-Image-Turbo上实现1.57倍端到端加速，GenEval2性能具有竞争力。结果表明，可复用的重要性感知稀疏支持为T2V和T2I扩散Transformer提供了一条有效的免训练加速路径。</div>
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Code world models represent world dynamics through explicit state and executable rules. We investigate how to coordinate object representations, behavioral revisions, and visual memory within this formulation. We present Mallea, a system for building, steering, and memorizing worlds from text. A coding agent infers object interaction requirements from the prompt and jointly plans object structure, properties, and rules, favoring compact representations that support those requirements. The world evolves under the planned rules; optional user actions steer it, while text requests can edit properties or extend capabilities with unaffected state preserved. Object texture memory retains reusable appearance only for whitebox-defined objects and adapts it as those objects change. The program advances world state, while a generative renderer combines current structure with remembered appearance. By organizing construction, intervention, and memory around the same objects, Mallea conditions subsequent observations on the latest state and compatible appearance. Project page: https://lxycopper.github.io/Mallea.</p>
+        <p>Diffusion Transformers (DiTs) have become a common backbone for high-quality text-to-image and text-to-video generation, but repeated dense self-attention remains a major inference bottleneck as token sequences grow and the same operator is invoked across many denoising steps. Our study suggests that dense attention in pretrained DiTs contains reusable layer/head-specific high-mass structure that can be identified from a small offline calibration set and reused across future generations. This leads to Sink-Sparse Hybrid Attention, a train-free attention replacement that reuses static sink masks and supplements them with a lightweight pooled-KV branch, while leaving model weights and sampling schedules unchanged. On Wan2.1-T2V-1.3B, the method attains 1.54$\times$ end-to-end speedup while maintaining generation quality. On Z-Image-Turbo, it attains 1.57$\times$ end-to-end speedup with competitive GenEval2 performance. These results indicate that reusable importance-aware sparse support can provide an effective train-free acceleration path for both T2V and T2I DiTs.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.21283" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.21283.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.22975" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.22975.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.22264</span>
+        </div>
+        <span class="score-badge">相关性 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.22264" target="_blank">SCOPE: Semantic Bounded Credit Optimization for Prompt Engineering in Text-to-image Generation</a>
+      </h3>
+      <p class="paper-title-zh">SCOPE：面向文本到图像生成提示工程的语义有界信用优化</p>
+      <p class="paper-authors">Yufei Jiao, Jinfa Huang, Zeyue Xue, Tianyu Xie, Yuexiao Ma 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 论文提出 SCOPE，一种基于分组相对策略优化（GRPO）的目标函数，将更新权重与提示中连贯的语义片段（如物体、数量、属性、关系）对齐，从而改进用于文本到图像生成的提示重写。该方法在多个生成器上相比原始 GRPO 取得显著相对提升。</div>
+        <div class="summary-section"><strong>方法:</strong> SCOPE 让重写模型在生成增强提示的同时输出其语义分区。它在每个语义片段内对策略对数概率的偏移进行池化，为该片段内各 token 的损失推导出一个共享系数，同时为每个完整生成保留单一优势值。该方法既不需要单独的片段奖励，也不需要额外的图像渲染。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在 Qwen-Image、SD3 和 FLUX.1-dev 上，SCOPE 相比原始 GRPO 在 GeneVal 上平均相对提升 9.48%，在 T2I-CompBench 上平均相对提升 7.62%。消融实验表明，语义边界和片段内池化均对性能提升有贡献，支持语义结构作为强化学习提示工程中一种实用的归纳偏置。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Reinforcement learning (RL) enables language models to improve text-to-image (T2I) generation by rewriting prompts for a frozen image generator. Existing methods typically apply a single signal derived from the image to individual subword tokens, although objects, counts, attributes, and relations form coherent semantic spans. We propose SCOPE, an objective based on Group Relative Policy Optimization (GRPO) that aligns update weighting with this structure. The rewriter jointly generates an enhanced prompt and its semantic partition. SCOPE pools shifts in policy log probabilities within each span to derive a shared coefficient for its token losses while retaining a single advantage for each completion. It requires neither separate span rewards nor additional image renders. Across Qwen-Image, SD3, and FLUX.1-dev, SCOPE achieves average relative gains over vanilla GRPO of 9.48% on GeneVal and 7.62% on T2I-CompBench. Ablation studies show that both semantic boundaries and pooling within spans contribute to these gains, supporting semantic structure as a practical inductive bias for prompt engineering with RL.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.22264" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.22264.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 935 &nbsp;💬 704</span>
+          <span class="paper-id">▲ 219 &nbsp;💬 85</span>
         </div>
-        <span class="score-badge">推荐度 93/100</span>
+        <span class="score-badge">推荐度 92/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50129045" target="_blank">DeepSeek-v4.1-Flash-1017</a>
+        <a href="https://news.ycombinator.com/item?id=50155245" target="_blank">Mercury 3: Diffusion at scale</a>
       </h3>
-      <p class="paper-authors">by theykk</p>
-      
+      <p class="paper-authors">by cmrdporcupine</p>
+      <div class="paper-summary"><div class="summary-section">Inception Labs 发布 Mercury 3，展示了扩散模型在大规模生成任务上的新进展与性能突破。看点在于其能否挑战主流自回归模型，并推动扩散架构在文本等领域的实用化。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50129045" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50155245" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.inceptionlabs.ai/blog/introducing-mercury-3" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,7 +507,64 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 621 &nbsp;💬 141</span>
+          <span class="paper-id">▲ 502 &nbsp;💬 236</span>
+        </div>
+        <span class="score-badge">推荐度 92/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50145337" target="_blank">Hybrid Reasoning Agents: LLM agents that think in latent space, act through text</a>
+      </h3>
+      <p class="paper-authors">by allinonai</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍了一种混合推理智能体框架，让 LLM 在隐空间中完成推理、再通过文本执行动作，看点在于 Together Computer 同步开源了代码与模型，并附有评测结果可验证效果。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50145337" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://arxiv.org/abs/2610.18861" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 374 &nbsp;💬 163</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50154540" target="_blank">MiniMax M3.1 Flash</a>
+      </h3>
+      <p class="paper-authors">by jtg</p>
+      <div class="paper-summary"><div class="summary-section">MiniMax 发布 M3.1 Flash 模型，帖子主要介绍其性能表现与适用场景，看点是它在速度与成本上的定位及与其他模型的对比。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50154540" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.minimax.io/blog/minimax-m31f" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 292 &nbsp;💬 209</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50145507" target="_blank">If you don't run your own LLM proxy, how do you know whats going on?</a>
+      </h3>
+      <p class="paper-authors">by amrrs</p>
+      <div class="paper-summary"><div class="summary-section">作者主张自建 LLM 代理层，以便透明掌握模型调用、调试和成本控制，而不是把可观测性外包给第三方网关。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50145507" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://jrdsgl.com/if-you-dont-run-your-own-llm-proxy-how-the-fuck-do-you-even-know-whats-going-on/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 649 &nbsp;💬 146</span>
         </div>
         <span class="score-badge">推荐度 88/100</span>
       </div>
@@ -515,7 +572,7 @@
         <a href="https://news.ycombinator.com/item?id=50122878" target="_blank">You could have invented transformers from memory</a>
       </h3>
       <p class="paper-authors">by speckx</p>
-      
+      <div class="paper-summary"><div class="summary-section">该帖子主张从“联想记忆”的直觉出发就能自行推导出Transformer架构，看点是用通俗易懂的方式揭示注意力机制背后的记忆原理。</div></div>
       <div class="paper-links">
         <a href="https://news.ycombinator.com/item?id=50122878" target="_blank" class="link-btn">💬 HN 讨论</a>
         <a href="https://alexwang.ai/posts/associative-memory/" target="_blank" class="link-btn">🔗 原文</a>
@@ -526,37 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 28 &nbsp;💬 0</span>
-        </div>
-        <span class="score-badge">推荐度 88/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50137257" target="_blank">August in Servo: CSS Grid, text selection, and more</a>
-      </h3>
-      <p class="paper-authors">by msub2</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50137257" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://servo.org/blog/2026/10/09/august-in-servo/" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 392 &nbsp;💬 83</span>
+          <span class="paper-id">▲ 42 &nbsp;💬 21</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50100994" target="_blank">Furifont, a Japanese font that shows furigana</a>
+        <a href="https://news.ycombinator.com/item?id=50152466" target="_blank">Maxwell: A new kind of model that sits between code and hardware</a>
       </h3>
-      <p class="paper-authors">by plaguna</p>
-      
+      <p class="paper-authors">by laginimaineb</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍了一款名为Maxwell的“代码执行模型”，它介于代码与硬件之间，无需人工介入即可在不改动代码的前提下让程序运行得更快，通过实时分析程序内部痕迹和性能数据动态适配硬件环境。看点是提出一种全新的模型类别，宣称能自动优化代码执行效率。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50100994" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://furifont.antfu.me/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50152466" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://heymaxwell.ai/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 158 &nbsp;💬 13</span>
+          <span class="paper-id">▲ 270 &nbsp;💬 210</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50119315" target="_blank">Rendering pretty sky in Around The World game</a>
+        <a href="https://news.ycombinator.com/item?id=50135762" target="_blank">I built a programming language that LLMs can't use</a>
       </h3>
-      <p class="paper-authors">by ibobev</p>
-      
+      <p class="paper-authors">by dom96</p>
+      <div class="paper-summary"><div class="summary-section">作者发明了一门故意让LLM无法生成代码的编程语言Killswitch，通过语言设计阻断AI补全，看点在于这种对抗AI辅助编程的逆向思路。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50119315" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://frozenfractal.com/blog/2026/10/12/around-the-world-34-a-pretty-sky/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50135762" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.picheta.me/post/killswitch-lang/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,56 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 191 &nbsp;💬 41</span>
+          <span class="paper-id">▲ 127 &nbsp;💬 16</span>
         </div>
-        <span class="score-badge">推荐度 68/100</span>
+        <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50131189" target="_blank">Show HN: Esp32sim – Run ESP32 firmware in the browser</a>
+        <a href="https://news.ycombinator.com/item?id=50140383" target="_blank">A new way to think about borrow checking (in reverse)</a>
       </h3>
-      <p class="paper-authors">by joakimeriksson</p>
-      <div class="paper-summary"><div class="summary-section">该帖子介绍开源项目 esp32sim——一个可在浏览器中直接</div></div>
+      <p class="paper-authors">by verdagon</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍了一种“反向借用检查”的新思路，即从变量生命周期的末端倒推其借用关系。看点在于它可能简化借用分析、为 Rust 等语言的借用检查器设计提供新视角。</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50131189" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/mikroverk/esp32sim" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 167 &nbsp;💬 81</span>
-        </div>
-        <span class="score-badge">推荐度 65/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50133231" target="_blank">Codex Desktop continuously generates Crashpad pending dumps</a>
-      </h3>
-      <p class="paper-authors">by AIorNot</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50133231" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/openai/codex/issues/25921" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 540 &nbsp;💬 115</span>
-        </div>
-        <span class="score-badge">推荐度 15/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50126253" target="_blank">Bleached corals thrive within days when touching healthy neighbour</a>
-      </h3>
-      <p class="paper-authors">by alkyon</p>
-      <div class="paper-summary"><div class="summary-section">这篇帖子介绍了一项发现：白化的珊瑚只要接触到健康的</div></div>
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50126253" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.nature.com/articles/d41586-026-03266-x" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50140383" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://verdagon.dev/blog/reverse-borrow-checking" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 138,597 &nbsp;+154 today</span>
+          <span class="paper-id">⭐ 139,729 &nbsp;+1011 today</span>
         </div>
         <span class="score-badge">推荐度 95/100</span>
       </div>
@@ -665,7 +665,7 @@
 
     
       The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.</p>
-      <div class="paper-summary"><div class="summary-section">ComfyUI 是一个基于图/节点界面的模块化扩散模型 GUI、API 与后端，号称全球最快的本地推理引擎。它值得关注，因为它把复杂的生成流程拆成可自由组合的节点，既方便可视化搭建工作流，又提供 API 供程序调用，是本地运行 Stable Diffusion 等扩散模型的主流工具之一。</div></div>
+      <div class="paper-summary"><div class="summary-section">ComfyUI 是一个基于节点/图界面的模块化扩散模型 GUI、API 和后端，号称全球最快的本地推理引擎。它值得关注，因为它让用户能灵活搭建和复用复杂的图像生成工作流，同时兼顾高性能本地部署。</div></div>
       <div class="paper-links">
         <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -674,13 +674,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 76,509 &nbsp;+513 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 76,250 &nbsp;+310 today</span>
         </div>
-        <span class="score-badge">推荐度 85/100</span>
+        <span class="score-badge">推荐度 88/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/ruvnet/ruflo" target="_blank">ruvnet/ruflo</a>
+        <a href="https://github.com/headroomlabs-ai/headroom" target="_blank">headroomlabs-ai/headroom</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -693,15 +693,15 @@
 
 
       
-        ruvnet /
+        headroomlabs-ai /
 
-      ruflo  
+      headroom  
 
     
-      🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated</p>
-      
+      Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.</p>
+      <div class="paper-summary"><div class="summary-section">Headroom 能在工具输出、日志、文件和 RAG 片段进入 LLM 前进行压缩，为编码智能体减少约 20% token、为 JSON 减少 60–95% token 且保持相同答案，并提供库、代理和 MCP 服务器三种用法。它值得关注是因为能显著降低 token 成本与上下文占用，同时不牺牲回答质量。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/ruvnet/ruflo" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/headroomlabs-ai/headroom" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -709,7 +709,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 10,467 &nbsp;+512 today</span>
+          <span class="paper-id">⭐ 11,354 &nbsp;+666 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -733,7 +733,7 @@
 
     
       Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors</p>
-      <div class="paper-summary"><div class="summary-section">ai-memory 是一个用 Rust 编写的长期记忆方案，为各类 AI 编程 CLI 代理提供持久化记忆，并支持在不同代理厂商之间无缝交接上下文。它值得关注，因为它能解决 AI 编程助手跨会话、跨工具“失</div></div>
+      <div class="paper-summary"><div class="summary-section">这是一个为 AI 编程代理 CLI 提供长期记忆的方案，帮助不同厂商的代理之间交接任务。它值得关注是因为当前编码代理普遍缺乏跨会话记忆，而它用 Rust 实现并试图解决多代理协作中的上下文延续问题。</div></div>
       <div class="paper-links">
         <a href="https://github.com/akitaonrails/ai-memory" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -742,8 +742,76 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 77,193 &nbsp;+564 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/ruvnet/ruflo" target="_blank">ruvnet/ruflo</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        ruvnet /
+
+      ruflo  
+
+    
+      🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated</p>
+      <div class="paper-summary"><div class="summary-section">Ruflo 是一个 TypeScript 编写的 AI 智能体编排框架（原 claude-flow），可部署多智能体集群、协调自主工作流并构建对话式 AI 系统，具备自适应记忆、自学习、联邦协作和向量 RAG 集成，并原生支持 Claude Code、Codex 等多种编码智能体。它值得关注是因为它将多智能体编排、记忆与工具集成打包成开箱即用的“智能体底座”，适合快速搭建复杂的自动化 AI 应用。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/ruvnet/ruflo" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 152,658 &nbsp;+167 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/anthropics/claude-code" target="_blank">anthropics/claude-code</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        anthropics /
+
+      claude-code  
+
+    
+      Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.</p>
+      <div class="paper-summary"><div class="summary-section">Claude Code 是 Anthropic 推出的终端内智能编码助手，能理解你的代码库并通过自然语言执行日常任务、解释复杂代码和管理 Git 工作流。它值得关注是因为它将强大的 AI 代理能力直接融入开发者最熟悉的终端环境，有望大幅提升编码效率。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/anthropics/claude-code" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 53,110 &nbsp;+2232 today</span>
+          <span class="paper-id">⭐ 57,297 &nbsp;+3856 today</span>
         </div>
         <span class="score-badge">推荐度 75/100</span>
       </div>
@@ -780,7 +848,7 @@
 
     
       The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.</p>
-      
+      <div class="paper-summary"><div class="summary-section">这是一个基于 Claude Code 构建的本地 AI 求职框架，可在本机完成职位评估、简历定制、求职信撰写和面试准备。所有流程在本地运行、代码可自由 fork 并完全掌控，适合注重隐私和个性化求职的开发者。</div></div>
       <div class="paper-links">
         <a href="https://github.com/sponsors/MadsLorentzen" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -790,7 +858,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 54,584 &nbsp;+589 today</span>
+          <span class="paper-id">⭐ 55,241 &nbsp;+606 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -814,7 +882,7 @@
 
     
       "CLI-Anything: Making ALL Software Agent-Native" -- CLI-Hub: https://clianything.cc/</p>
-      
+      <div class="paper-summary"><div class="summary-section">CLI-Anything 是港大数据智能实验室推出的框架，旨在将所有命令行软件转化为 AI Agent 可直接调用的原生工具，让 Agent 无需适配即可操作任意 CLI 程序。它值得关注是因为它打通了 AI Agent 与海量现有命令行工具之间的壁垒，极大扩展了 Agent 的实际执行能力。</div></div>
       <div class="paper-links">
         <a href="https://github.com/HKUDS/CLI-Anything" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -824,12 +892,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 12,736 &nbsp;+350 today</span>
+          <span class="paper-id">⭐ 98,297 &nbsp;+1590 today</span>
         </div>
-        <span class="score-badge">推荐度 40/100</span>
+        <span class="score-badge">推荐度 68/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins</a>
+        <a href="https://github.com/stablyai/orca" target="_blank">stablyai/orca</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -842,96 +910,15 @@
 
 
       
-        cursor /
+        stablyai /
 
-      plugins  
+      orca  
 
     
-      Cursor plugin specification and official plugins</p>
-      <div class="paper-summary"><div class="summary-section">这是 Cursor 官方维护的插件规范与官方插件仓库，使用 TypeScript 编写，</div></div>
+      Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.</p>
+      <div class="paper-summary"><div class="summary-section">Orca 是一个用于管理和运行多个编码智能体（如 Claude Code、Grok Bot）的调度平台，支持桌面、移动和远程运行环境，并能使用你自己的订阅账号。它值得关注是因为它解决了多智能体协作与统一调度的问题，让开发者能便捷地在不同设备上运行和编排各类编码代理。</div></div>
       <div class="paper-links">
-        <a href="https://github.com/cursor/plugins" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 42,671 &nbsp;+1175 today</span>
-        </div>
-        <span class="score-badge">推荐度 30/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/anthropics/claude-plugins-official" target="_blank">anthropics/claude-plugins-official</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        anthropics /
-
-      claude-plugins-official  
-
-    
-      Official, Anthropic-managed directory of high quality Claude Code Plugins.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/anthropics/claude-plugins-official" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 216,561 &nbsp;+1414 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/anomalyco" target="_blank">sponsors/anomalyco</a>
-      </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        anomalyco /
-
-      opencode  
-
-    
-      The open source coding agent.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/sponsors/anomalyco" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/stablyai/orca" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
