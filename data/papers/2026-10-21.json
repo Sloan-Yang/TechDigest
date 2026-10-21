@@ -1,0 +1,144 @@
+[
+  {
+    "id": "2610.24738",
+    "title": "Editing Images into Reusable Layers via Compositional Edit-Prior Distillation",
+    "abstract": "High-quality image editing requires precise modification of target regions while preserving the content of unrelated regions. Existing editing models produce flattened outputs that limit precise local manipulation and layer reuse, while decomposition methods typically optimize layer recovery separately from instruction-driven editing. To this end, we introduce LayerEditor, a unified framework that couples instruction-guided image editing with controllable generation of reusable RGBA layers. At its core, In-Context RGB-Alpha Token Modeling jointly represents the edited canvas and an ordered sequence of RGB-Alpha layers within a single token sequence, enabling semantic edits and explicit control over individual layer content. To retain the pretrained model's editing capability during adaptation to layered outputs, we propose Compositional Edit-Prior Distillation, which transfers its editing prior to both the edited canvas and the image composed from the predicted layers. To support training and evaluation, we construct LayerEditor-100K, a large-scale paired image-editing dataset with ordered RGBA layer annotations, and introduce dedicated benchmarks for layered editing. Extensive experiments demonstrate that LayerEditor maintains strong editing fidelity while generating accurate RGBA layers, supporting both flexible layer-level manipulation and multi-layer decomposition.",
+    "authors": [
+      "Wen Xue",
+      "Yong Liu",
+      "Xueheng Li",
+      "Si Wu",
+      "Yong Xu",
+      "Yipeng Sun",
+      "Yan Li",
+      "Simiu Gu"
+    ],
+    "published": "2026-10-17",
+    "updated": "2026-10-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.24738.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.24738",
+    "primary_category": "cs.CV",
+    "score": 88,
+    "summary": {
+      "title_zh": "通过组合式编辑先验蒸馏将图像编辑为可复用图层",
+      "core_contribution": "提出了LayerEditor统一框架，将指令引导的图像编辑与可控的RGBA可复用图层生成相结合，实现了高质量编辑结果的同时输出可精确操作和复用的分层表示。",
+      "method": "该方法核心是上下文RGB-Alpha Token建模（In-Context RGB-Alpha Token Modeling），在单一token序列中联合表示编辑后的画布和有序的RGB-Alpha图层序列，从而实现语义编辑和对各图层内容的显式控制。为在适配分层输出时保留预训练模型的编辑能力，提出组合式编辑先验蒸馏（Compositional Edit-Prior Distillation），将编辑先验迁移至编辑画布和由预测图层合成的图像。此外构建了LayerEditor-100K大规模配对图像编辑数据集及专用基准用于训练和评估。",
+      "findings": "大量实验表明，LayerEditor在保持强编辑保真度的同时能生成准确的RGBA图层，支持灵活的图层级操作和多图层分解。"
+    }
+  },
+  {
+    "id": "2610.25479",
+    "title": "Test-Time Scaling of Text-to-Image Flow Matching Models with Noise-Rejuvenated Sequential Monte Carlo",
+    "abstract": "Test-time scaling of diffusion models with sequential Monte Carlo (SMC) has become a promising strategy for sampling under user-specified rewards, such as human preference scores. However, the standard SMC framework typically relies on stochastic proposals and therefore does not directly transfer to flow matching models, in which inference is governed by deterministic ODEs. In this work, we introduce noise-rejuvenated SMC, an inference-time scaling method tailored for text-to-image flow matching models. Our key idea is to perturb each resampled particle by changing its source noise and constructing a new intermediate state using its current endpoint estimate. This moves the particle to another state that remains representable under the flow-matching interpolation form, enabling particle exploration without converting the sampler to an SDE. We further introduce a look-ahead mechanism to refine resampled particles before weighting. Experiments on Stable Diffusion 3, FLUX.1-dev, and Z-Image demonstrate consistent improvements in reward-guided generation, while ablation studies validate the contributions of noise rejuvenation and look-ahead refinement. Code is available at https://github.com/shermanlian/NR-SMC.",
+    "authors": [
+      "Wenyi Lian",
+      "Zheng Zhao",
+      "Thomas B. Sch{ö}n"
+    ],
+    "published": "2026-10-18",
+    "updated": "2026-10-18",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.25479.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.25479",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "面向文本到图像流匹配模型的噪声 rejuvenation 序贯蒙特卡洛测试时扩展",
+      "core_contribution": "提出了一种名为“噪声 rejuvenation 序贯蒙特卡洛（NR-SMC）”的推理时扩展方法，专门用于文本到图像流匹配模型，使其能够在用户指定奖励（如人类偏好分数）下进行有效采样。该方法在保持确定性 ODE 采样框架的同时，实现了粒子探索与奖励引导生成。",
+      "method": "标准 SMC 依赖随机提议，难以直接用于由确定性 ODE 控制的流匹配模型。为此，作者通过改变重采样粒子的源噪声，并利用其当前端点估计构建新的中间状态，使粒子移动到仍可由流匹配插值形式表示的状态，从而在不将采样器转换为 SDE 的情况下实现粒子探索。此外，还引入前瞻机制，在加权前对重采样粒子进行细化。",
+      "findings": "在 Stable Diffusion 3、FLUX.1-dev 和 Z-Image 上的实验表明，该方法在奖励引导生成方面 consistently 带来提升；消融研究进一步验证了噪声 rejuvenation 和前瞻细化两个组件的贡献。代码已开源。"
+    }
+  },
+  {
+    "id": "2610.25139",
+    "title": "Reflection-Guided Dynamics Rectification for Text-to-Image Generation",
+    "abstract": "Fine-grained rectification of existing generations under a limited additional budget remains a key problem in test-time optimization (TTO) for image generation. As for prior approaches, they could identify residual errors, but could not directly ensure that the model acts on the feedback during reasoning. Such errors stem from multiple sources, such as the initial noise or text prompt, and ultimately induce an execution gap of failing to handle potential deviations along the trajectory generating. However, classic models generally cannot remedy this gap. To narrow it, we propose Reflection-Guided Dynamics Rectification (RGDR), which turns reflections on completed outputs into corrective interventions on the process of sampling dynamics at the trajectory level. Specifically, RGDR could impact every sampling step by adapting to instantaneous intervention. Moreover, RGDR generates flexible candidates while adjudicating between them and the reference. As experiments show, rectification from RGDR starts from the existing base trajectory and reflection, and RGDR is substantially more effective than former trajectory exploration. Under matched budgets for additional image generation, RGDR's gain in the cross-model average final checklist score over the reference is $1.51\\times$ that of TIR prompt refinement and $1.81\\times$ that of Dynamic CFG.",
+    "authors": [
+      "Shuo Xu",
+      "Hanrui Ying",
+      "Debin Liu",
+      "Jianjun Li",
+      "Zhiyuan Ma"
+    ],
+    "published": "2026-10-18",
+    "updated": "2026-10-18",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.25139.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.25139",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "反思引导的动力学校正用于文本到图像生成",
+      "core_contribution": "提出了一种反思引导的动力学校正方法（RGDR），通过在轨迹层面对采样动力学进行纠正性干预，有效缩小了测试时优化中模型无法处理生成轨迹偏差的执行差距。",
+      "method": "RGDR将已完成输出的反思转化为对采样动力学过程的纠正性干预，能够通过适应瞬时干预来影响每个采样步骤。该方法在生成灵活候选的同时，在候选与参考之间进行裁决。校正过程从现有的基础轨迹和反思出发，而非从头探索。",
+      "findings": "在匹配额外图像生成预算的条件下，RGDR在跨模型平均最终检查表得分上相对于参考的提升是TIR提示精炼的1.51倍，是动态CFG的1.81倍，表明RGDR比之前的轨迹探索方法更为有效。"
+    }
+  },
+  {
+    "id": "2610.23854",
+    "title": "Rethinking the design space of Vanilla Pixel Diffusion Transformers",
+    "abstract": "Pixel-space diffusion models have recently re-emerged as a compelling alternative to latent diffusion, avoiding the lossy latent bottleneck and separately trained autoencoder. JiT shows that a vanilla diffusion transformer can generate directly in pixel space by replacing the commonly used velocity prediction ($\\boldsymbol{u}$-prediction) with clean image prediction ($\\boldsymbol{x_0}$-prediction). In this work, we revisit this choice and introduce MFlow, an adaptive parameterization that learns to interpolate between $\\boldsymbol{x_0}$- and $\\boldsymbol{u}$-prediction across principal directions of the data, learned end-to-end with diffusion training. We find that the preferred parameterization varies systematically with the data representation and model capacity -- notably, increasing model capacity shifts preference toward velocity prediction. We evaluate MFlow across ImageNet, UCF-101 video, and large-scale text-to-image generation, demonstrating competitive or improved generative performance across diverse settings. In addition, we find that vanilla pixel diffusion transformers, irrespective of parameterization, retain a persistent high-frequency deficit relative to real images. To address this, we introduce ConvRefiner, a lightweight convolutional module trained post-hoc with an adversarial loss while keeping the diffusion backbone frozen. With only a small amount of additional training, ConvRefiner restores the high-frequency statistics of generated images while preserving FID. Project webpage: https://soumik-kanad.github.io/mflow-diffusion/.",
+    "authors": [
+      "Soumik Mukhopadhyay",
+      "Long Mai",
+      "Abhinav Shrivastava",
+      "Aniruddha Mahapatra"
+    ],
+    "published": "2026-10-16",
+    "updated": "2026-10-16",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.23854.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.23854",
+    "primary_category": "cs.CV",
+    "score": 85,
+    "summary": {
+      "title_zh": "重新审视原生像素扩散Transformer的设计空间",
+      "core_contribution": "本文重新思考了像素空间扩散模型中干净图像预测（x0预测）与速度预测（u预测）的参数化选择，提出了MFlow自适应参数化方法，并引入ConvRefiner模块修复像素扩散Transformer的高频缺失问题。",
+      "method": "作者提出MFlow，一种自适应参数化方法，能够在数据的主方向上学习在x0预测和u预测之间进行插值，并与扩散训练端到端联合优化。此外，作者提出ConvRefiner，一个轻量级卷积模块，在冻结扩散主干网络的情况下，通过对抗损失进行事后训练，以修复生成图像的高频统计特性。该方法在ImageNet、UCF-101视频和大规模文本到图像生成任务上进行了评估。",
+      "findings": "实验发现，最优参数化偏好随数据表示和模型容量系统性地变化——模型容量越大，越倾向于速度预测。MFlow在多种设定下取得了有竞争力或更优的生成性能。此外，所有原生像素扩散Transformer（无论参数化方式）相对于真实图像都存在持续的高频缺失问题。ConvRefiner仅需少量额外训练即可恢复生成图像的高频统计特性，同时保持FID不下降。"
+    }
+  },
+  {
+    "id": "2610.26189",
+    "title": "Wan-Alpha++: Animating a Single RGBA Asset into Controllable Transparent Video Effects",
+    "abstract": "RGBA video generation is essential for creating compositable visual assets in filmmaking, game development, and digital content production. However, generating high-quality RGB appearance alongside temporally coherent transparency remains a significant challenge. Existing text-to-RGBA video methods often entangle RGB and alpha distributions and offer limited control over the precise appearance of a target asset. In addition, incorporating image conditioning typically suffers from the emergence-disappearance effects, which fail existing first-frame or first-and-last-frame conditions due to their fully transparent boundary frames. To address these issues, we present Wan-Alpha++, a unified framework that brings controllable RGBA video generation to both text- and image-to-video diffusion backbones through a shared RGBA latent space, extending our conference version Wan-Alpha from the text-conditioned setting to image-conditioned generation with an interior reference frame. Our method first learns shiftable RGB-alpha distributions while preserving the pretrained RGB prior. Specifically, we introduce a transparency-aware bidirectional diffusion objective to produce distinguishable RGBA latent representations, and a transparency-guided mean sampler that shifts the noise distribution to improve transparency generation and enable spatial controllability. Building upon this RGBA generation prior, we introduce temporal phase reparameterization for image-conditioned effect generation. By cyclically transforming a zero-positive-zero alpha pattern into a positive-zero-positive pattern, it relocates visible content to both temporal boundaries, facilitating effective appearance conditioning with limited RGBA data.",
+    "authors": [
+      "Haotian Dong",
+      "Xin Wang",
+      "Wenjing Wang",
+      "Chen Li",
+      "Jing Lyu",
+      "Yan Tina Luximon",
+      "Ping Li",
+      "Wanchao Su",
+      "Ke Xu",
+      "Di Lin"
+    ],
+    "published": "2026-10-19",
+    "updated": "2026-10-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.26189.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.26189",
+    "primary_category": "cs.CV",
+    "score": 82,
+    "summary": {
+      "title_zh": "Wan-Alpha++：将单个RGBA素材动画化为可控透明视频效果",
+      "core_contribution": "提出了一个统一的RGBA视频生成框架Wan-Alpha++，通过共享的RGBA潜在空间同时支持文本条件和图像条件生成，实现了高质量RGB外观与时间连贯透明度的联合生成，并具备空间可控性。",
+      "method": "该方法首先在保留预训练RGB先验的基础上学习可偏移的RGB-alpha分布，引入透明度感知的双向扩散目标以产生可区分的RGBA潜在表示，并设计透明度引导的均值采样器来偏移噪声分布以改善透明度生成和空间可控性。在此RGBA生成先验之上，进一步提出时间相位重参数化策略用于图像条件效果生成，通过将零-正-零alpha模式循环变换为正-零-正模式，将可见内容重新定位到时间边界两端，从而在有限RGBA数据下实现有效的外观条件控制。",
+      "findings": "该方法有效解决了现有文本到RGBA视频方法中RGB与alpha分布纠缠、控制能力有限的问题，以及图像条件生成中因全透明边界帧导致的出现-消失效应，成功将框架从文本条件扩展至基于内部参考帧的图像条件生成，实现了可控的透明视频效果生成。"
+    }
+  }
+]

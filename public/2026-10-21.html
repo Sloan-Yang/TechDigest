@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDigest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdf9ed;
+            --card-bg: #ffffff;
+            --card-border: #e8ecf0;
+            --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            --text: #1e2128;
+            --text-muted: #6b7385;
+            --accent: #4f6ef7;
+            --accent-light: #eef1fe;
+            --hn-color: #e8600a;
+            --hn-light: #fff4ed;
+            --gh-color: #1a7f37;
+            --gh-light: #edfbf0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .site-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .site-name span {
+            color: var(--accent);
+        }
+
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover { color: var(--accent); }
+
+        .page-hero {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .page-date {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .page-stats {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .page-stats a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-heading {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .paper-card:hover {
+            box-shadow: 0 4px 20px rgba(79,110,247,0.1);
+            border-color: #c5cef7;
+        }
+
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .hn-badge {
+            background: var(--hn-light) !important;
+            color: var(--hn-color) !important;
+        }
+
+        .gh-badge {
+            background: var(--gh-light) !important;
+            color: var(--gh-color) !important;
+        }
+
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 0.15rem 0.6rem;
+        }
+
+        .paper-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .paper-title a:hover { color: var(--accent); }
+
+        .paper-title-zh {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            font-weight: 300;
+        }
+
+        .paper-authors {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+
+        .paper-summary {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .hn-card .paper-summary {
+            background: var(--hn-light);
+            border-left-color: var(--hn-color);
+        }
+
+        .gh-card .paper-summary {
+            background: var(--gh-light);
+            border-left-color: var(--gh-color);
+        }
+
+        .summary-section { margin-bottom: 0.35rem; }
+        .summary-section:last-child { margin-bottom: 0; }
+        .summary-section strong { color: var(--accent); }
+
+        .paper-abstract {
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .paper-abstract p {
+            margin-top: 0.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--bg);
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.15s;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .site-header { padding: 1rem; }
+            .content { padding: 1rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-name" href="index.html">Tech<span>Digest</span></a>
+        <nav class="header-nav">
+            <a href="archive.html">归档</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-date">📅 2026-10-21</div>
+        <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
+        <p class="page-stats">
+            计算机视觉: 5
+            <a href="archive.html">归档 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+        <div class="section-heading">📄 arXiv 论文</div>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.24738</span>
+        </div>
+        <span class="score-badge">相关性 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.24738" target="_blank">Editing Images into Reusable Layers via Compositional Edit-Prior Distillation</a>
+      </h3>
+      <p class="paper-title-zh">通过组合式编辑先验蒸馏将图像编辑为可复用图层</p>
+      <p class="paper-authors">Wen Xue, Yong Liu, Xueheng Li, Si Wu, Yong Xu 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了LayerEditor统一框架，将指令引导的图像编辑与可控的RGBA可复用图层生成相结合，实现了高质量编辑结果的同时输出可精确操作和复用的分层表示。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法核心是上下文RGB-Alpha Token建模（In-Context RGB-Alpha Token Modeling），在单一token序列中联合表示编辑后的画布和有序的RGB-Alpha图层序列，从而实现语义编辑和对各图层内容的显式控制。为在适配分层输出时保留预训练模型的编辑能力，提出组合式编辑先验蒸馏（Compositional Edit-Prior Distillation），将编辑先验迁移至编辑画布和由预测图层合成的图像。此外构建了LayerEditor-100K大规模配对图像编辑数据集及专用基准用于训练和评估。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 大量实验表明，LayerEditor在保持强编辑保真度的同时能生成准确的RGBA图层，支持灵活的图层级操作和多图层分解。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>High-quality image editing requires precise modification of target regions while preserving the content of unrelated regions. Existing editing models produce flattened outputs that limit precise local manipulation and layer reuse, while decomposition methods typically optimize layer recovery separately from instruction-driven editing. To this end, we introduce LayerEditor, a unified framework that couples instruction-guided image editing with controllable generation of reusable RGBA layers. At its core, In-Context RGB-Alpha Token Modeling jointly represents the edited canvas and an ordered sequence of RGB-Alpha layers within a single token sequence, enabling semantic edits and explicit control over individual layer content. To retain the pretrained model's editing capability during adaptation to layered outputs, we propose Compositional Edit-Prior Distillation, which transfers its editing prior to both the edited canvas and the image composed from the predicted layers. To support training and evaluation, we construct LayerEditor-100K, a large-scale paired image-editing dataset with ordered RGBA layer annotations, and introduce dedicated benchmarks for layered editing. Extensive experiments demonstrate that LayerEditor maintains strong editing fidelity while generating accurate RGBA layers, supporting both flexible layer-level manipulation and multi-layer decomposition.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.24738" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.24738.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.25479</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.25479" target="_blank">Test-Time Scaling of Text-to-Image Flow Matching Models with Noise-Rejuvenated Sequential Monte Carlo</a>
+      </h3>
+      <p class="paper-title-zh">面向文本到图像流匹配模型的噪声 rejuvenation 序贯蒙特卡洛测试时扩展</p>
+      <p class="paper-authors">Wenyi Lian, Zheng Zhao, Thomas B. Sch{ö}n</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种名为“噪声 rejuvenation 序贯蒙特卡洛（NR-SMC）”的推理时扩展方法，专门用于文本到图像流匹配模型，使其能够在用户指定奖励（如人类偏好分数）下进行有效采样。该方法在保持确定性 ODE 采样框架的同时，实现了粒子探索与奖励引导生成。</div>
+        <div class="summary-section"><strong>方法:</strong> 标准 SMC 依赖随机提议，难以直接用于由确定性 ODE 控制的流匹配模型。为此，作者通过改变重采样粒子的源噪声，并利用其当前端点估计构建新的中间状态，使粒子移动到仍可由流匹配插值形式表示的状态，从而在不将采样器转换为 SDE 的情况下实现粒子探索。此外，还引入前瞻机制，在加权前对重采样粒子进行细化。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在 Stable Diffusion 3、FLUX.1-dev 和 Z-Image 上的实验表明，该方法在奖励引导生成方面 consistently 带来提升；消融研究进一步验证了噪声 rejuvenation 和前瞻细化两个组件的贡献。代码已开源。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Test-time scaling of diffusion models with sequential Monte Carlo (SMC) has become a promising strategy for sampling under user-specified rewards, such as human preference scores. However, the standard SMC framework typically relies on stochastic proposals and therefore does not directly transfer to flow matching models, in which inference is governed by deterministic ODEs. In this work, we introduce noise-rejuvenated SMC, an inference-time scaling method tailored for text-to-image flow matching models. Our key idea is to perturb each resampled particle by changing its source noise and constructing a new intermediate state using its current endpoint estimate. This moves the particle to another state that remains representable under the flow-matching interpolation form, enabling particle exploration without converting the sampler to an SDE. We further introduce a look-ahead mechanism to refine resampled particles before weighting. Experiments on Stable Diffusion 3, FLUX.1-dev, and Z-Image demonstrate consistent improvements in reward-guided generation, while ablation studies validate the contributions of noise rejuvenation and look-ahead refinement. Code is available at https://github.com/shermanlian/NR-SMC.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.25479" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.25479.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.25139</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.25139" target="_blank">Reflection-Guided Dynamics Rectification for Text-to-Image Generation</a>
+      </h3>
+      <p class="paper-title-zh">反思引导的动力学校正用于文本到图像生成</p>
+      <p class="paper-authors">Shuo Xu, Hanrui Ying, Debin Liu, Jianjun Li, Zhiyuan Ma</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种反思引导的动力学校正方法（RGDR），通过在轨迹层面对采样动力学进行纠正性干预，有效缩小了测试时优化中模型无法处理生成轨迹偏差的执行差距。</div>
+        <div class="summary-section"><strong>方法:</strong> RGDR将已完成输出的反思转化为对采样动力学过程的纠正性干预，能够通过适应瞬时干预来影响每个采样步骤。该方法在生成灵活候选的同时，在候选与参考之间进行裁决。校正过程从现有的基础轨迹和反思出发，而非从头探索。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在匹配额外图像生成预算的条件下，RGDR在跨模型平均最终检查表得分上相对于参考的提升是TIR提示精炼的1.51倍，是动态CFG的1.81倍，表明RGDR比之前的轨迹探索方法更为有效。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Fine-grained rectification of existing generations under a limited additional budget remains a key problem in test-time optimization (TTO) for image generation. As for prior approaches, they could identify residual errors, but could not directly ensure that the model acts on the feedback during reasoning. Such errors stem from multiple sources, such as the initial noise or text prompt, and ultimately induce an execution gap of failing to handle potential deviations along the trajectory generating. However, classic models generally cannot remedy this gap. To narrow it, we propose Reflection-Guided Dynamics Rectification (RGDR), which turns reflections on completed outputs into corrective interventions on the process of sampling dynamics at the trajectory level. Specifically, RGDR could impact every sampling step by adapting to instantaneous intervention. Moreover, RGDR generates flexible candidates while adjudicating between them and the reference. As experiments show, rectification from RGDR starts from the existing base trajectory and reflection, and RGDR is substantially more effective than former trajectory exploration. Under matched budgets for additional image generation, RGDR's gain in the cross-model average final checklist score over the reference is $1.51\times$ that of TIR prompt refinement and $1.81\times$ that of Dynamic CFG.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.25139" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.25139.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.23854</span>
+        </div>
+        <span class="score-badge">相关性 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.23854" target="_blank">Rethinking the design space of Vanilla Pixel Diffusion Transformers</a>
+      </h3>
+      <p class="paper-title-zh">重新审视原生像素扩散Transformer的设计空间</p>
+      <p class="paper-authors">Soumik Mukhopadhyay, Long Mai, Abhinav Shrivastava, Aniruddha Mahapatra</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文重新思考了像素空间扩散模型中干净图像预测（x0预测）与速度预测（u预测）的参数化选择，提出了MFlow自适应参数化方法，并引入ConvRefiner模块修复像素扩散Transformer的高频缺失问题。</div>
+        <div class="summary-section"><strong>方法:</strong> 作者提出MFlow，一种自适应参数化方法，能够在数据的主方向上学习在x0预测和u预测之间进行插值，并与扩散训练端到端联合优化。此外，作者提出ConvRefiner，一个轻量级卷积模块，在冻结扩散主干网络的情况下，通过对抗损失进行事后训练，以修复生成图像的高频统计特性。该方法在ImageNet、UCF-101视频和大规模文本到图像生成任务上进行了评估。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 实验发现，最优参数化偏好随数据表示和模型容量系统性地变化——模型容量越大，越倾向于速度预测。MFlow在多种设定下取得了有竞争力或更优的生成性能。此外，所有原生像素扩散Transformer（无论参数化方式）相对于真实图像都存在持续的高频缺失问题。ConvRefiner仅需少量额外训练即可恢复生成图像的高频统计特性，同时保持FID不下降。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Pixel-space diffusion models have recently re-emerged as a compelling alternative to latent diffusion, avoiding the lossy latent bottleneck and separately trained autoencoder. JiT shows that a vanilla diffusion transformer can generate directly in pixel space by replacing the commonly used velocity prediction ($\boldsymbol{u}$-prediction) with clean image prediction ($\boldsymbol{x_0}$-prediction). In this work, we revisit this choice and introduce MFlow, an adaptive parameterization that learns to interpolate between $\boldsymbol{x_0}$- and $\boldsymbol{u}$-prediction across principal directions of the data, learned end-to-end with diffusion training. We find that the preferred parameterization varies systematically with the data representation and model capacity -- notably, increasing model capacity shifts preference toward velocity prediction. We evaluate MFlow across ImageNet, UCF-101 video, and large-scale text-to-image generation, demonstrating competitive or improved generative performance across diverse settings. In addition, we find that vanilla pixel diffusion transformers, irrespective of parameterization, retain a persistent high-frequency deficit relative to real images. To address this, we introduce ConvRefiner, a lightweight convolutional module trained post-hoc with an adversarial loss while keeping the diffusion backbone frozen. With only a small amount of additional training, ConvRefiner restores the high-frequency statistics of generated images while preserving FID. Project webpage: https://soumik-kanad.github.io/mflow-diffusion/.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.23854" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.23854.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.26189</span>
+        </div>
+        <span class="score-badge">相关性 82/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.26189" target="_blank">Wan-Alpha++: Animating a Single RGBA Asset into Controllable Transparent Video Effects</a>
+      </h3>
+      <p class="paper-title-zh">Wan-Alpha++：将单个RGBA素材动画化为可控透明视频效果</p>
+      <p class="paper-authors">Haotian Dong, Xin Wang, Wenjing Wang, Chen Li, Jing Lyu 等 (10 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一个统一的RGBA视频生成框架Wan-Alpha++，通过共享的RGBA潜在空间同时支持文本条件和图像条件生成，实现了高质量RGB外观与时间连贯透明度的联合生成，并具备空间可控性。</div>
+        <div class="summary-section"><strong>方法:</strong> 该方法首先在保留预训练RGB先验的基础上学习可偏移的RGB-alpha分布，引入透明度感知的双向扩散目标以产生可区分的RGBA潜在表示，并设计透明度引导的均值采样器来偏移噪声分布以改善透明度生成和空间可控性。在此RGBA生成先验之上，进一步提出时间相位重参数化策略用于图像条件效果生成，通过将零-正-零alpha模式循环变换为正-零-正模式，将可见内容重新定位到时间边界两端，从而在有限RGBA数据下实现有效的外观条件控制。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 该方法有效解决了现有文本到RGBA视频方法中RGB与alpha分布纠缠、控制能力有限的问题，以及图像条件生成中因全透明边界帧导致的出现-消失效应，成功将框架从文本条件扩展至基于内部参考帧的图像条件生成，实现了可控的透明视频效果生成。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>RGBA video generation is essential for creating compositable visual assets in filmmaking, game development, and digital content production. However, generating high-quality RGB appearance alongside temporally coherent transparency remains a significant challenge. Existing text-to-RGBA video methods often entangle RGB and alpha distributions and offer limited control over the precise appearance of a target asset. In addition, incorporating image conditioning typically suffers from the emergence-disappearance effects, which fail existing first-frame or first-and-last-frame conditions due to their fully transparent boundary frames. To address these issues, we present Wan-Alpha++, a unified framework that brings controllable RGBA video generation to both text- and image-to-video diffusion backbones through a shared RGBA latent space, extending our conference version Wan-Alpha from the text-conditioned setting to image-conditioned generation with an interior reference frame. Our method first learns shiftable RGB-alpha distributions while preserving the pretrained RGB prior. Specifically, we introduce a transparency-aware bidirectional diffusion objective to produce distinguishable RGBA latent representations, and a transparency-guided mean sampler that shifts the noise distribution to improve transparency generation and enable spatial controllability. Building upon this RGBA generation prior, we introduce temporal phase reparameterization for image-conditioned effect generation. By cyclically transforming a zero-positive-zero alpha pattern into a positive-zero-positive pattern, it relocates visible content to both temporal boundaries, facilitating effective appearance conditioning with limited RGBA data.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.26189" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.26189.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🔥 Hacker News</div>
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 2142 &nbsp;💬 835</span>
+        </div>
+        <span class="score-badge">推荐度 95/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50163277" target="_blank">DeepInfer: High-performance inference framework for DeepSeek models</a>
+      </h3>
+      <p class="paper-authors">by ggcr</p>
+      <div class="paper-summary"><div class="summary-section">DeepSeek 官方开源了 DeepInfer 高性能推理框架，旨在为 DeepSeek 系列模型提供更高效的部署和推理支持，看点在于其能否显著降低推理成本并优化实际吞吐表现。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50163277" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/deepseek-ai/DeepInfer" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 266 &nbsp;💬 64</span>
+        </div>
+        <span class="score-badge">推荐度 90/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50169053" target="_blank">Google open-sources TorchTPU, a native PyTorch back end for TPUs</a>
+      </h3>
+      <p class="paper-authors">by ilreb</p>
+      <div class="paper-summary"><div class="summary-section">谷歌开源 TorchTPU，为 TPU 提供原生 PyTorch 后端，最大看点是让 PyTorch 用户无需改代码就能直接跑在 TPU 上，挑战 PyTorch 生态长期由 GPU 主导的局面。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50169053" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/google-pytorch/torch_tpu" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 532 &nbsp;💬 143</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50168396" target="_blank">Voxtral 3</a>
+      </h3>
+      <p class="paper-authors">by ilreb</p>
+      <div class="paper-summary"><div class="summary-section">Mistral 发布 Voxtral 3 语音模型，看点在于其在语音理解与转录上的能力提升及与自家模型的整合。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50168396" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://mistral.ai/news/voxtral-3/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 345 &nbsp;💬 171</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50165953" target="_blank">Tsrs: A Port of TypeScript to Rust</a>
+      </h3>
+      <p class="paper-authors">by hnisjafx40</p>
+      <div class="paper-summary"><div class="summary-section">Cloudflare 用 Rust 重写了 TypeScript 编译器（TSRs），看点在于其性能大幅提升及对 Rust 生态和前端工具链的潜在影响。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50165953" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.cloudflare.com/typescript-rust-port/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 45 &nbsp;💬 18</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50167583" target="_blank">Launch HN: Respan (YC W24) – Open-source Rust AI gateway built around plugins</a>
+      </h3>
+      <p class="paper-authors">by Andydy25</p>
+      <div class="paper-summary"><div class="summary-section">这是 Respan 团队发布的开源 Rust AI 网关，基于插件化架构，将各类模型供应商、协议和网关功能都做成可插拔组件。看点在于其“小而核心+公共接口”的设计理念，让团队能按需组装自己的 AI 基础设施，而非使用臃肿的一体化网关。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50167583" target="_blank" class="link-btn">💬 HN 讨论</a>
+        
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 510 &nbsp;💬 218</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50154540" target="_blank">MiniMax M3.1 Flash</a>
+      </h3>
+      <p class="paper-authors">by jtg</p>
+      <div class="paper-summary"><div class="summary-section">MiniMax 发布 M3.1 Flash 新模型，主打高速低成本推理；看点在其性能表现、定价以及与前代和其他厂商模型的对比。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50154540" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.minimax.io/blog/minimax-m31f" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 18 &nbsp;💬 4</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50168983" target="_blank">Gemini 4 Argon is now available for everyone</a>
+      </h3>
+      <p class="paper-authors">by ulrischa</p>
+      <div class="paper-summary"><div class="summary-section">谷歌发布面向所有人开放的 Gemini 4 Argon 模型，看点在于其性能升级与免费开放策略对 AI 竞争格局的影响。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50168983" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 575 &nbsp;💬 291</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50170593" target="_blank">SimCity, but with Permits</a>
+      </h3>
+      <p class="paper-authors">by pcai</p>
+      <div class="paper-summary"><div class="summary-section">这个帖子介绍了一个把《模拟城市》玩法与真实建筑许可流程结合的网页小游戏，看点在于用游戏化方式让人体验繁琐的审批 bureaucracy。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50170593" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://permit.petercai.com/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🐙 GitHub Trending</div>
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 140,820 &nbsp;+1206 today</span>
+        </div>
+        <span class="score-badge">推荐度 95/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">Comfy-Org/ComfyUI</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        Comfy-Org /
+
+      ComfyUI  
+
+    
+      The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.</p>
+      <div class="paper-summary"><div class="summary-section">ComfyUI 是一个基于节点式图形界面的模块化扩散模型 GUI、API 和后端，号称全球最快的本地推理引擎。它值得关注，因为它让用户能灵活搭建和复用复杂的图像生成流程，并兼顾高性能本地部署。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 94,458 &nbsp;+128 today</span>
+        </div>
+        <span class="score-badge">推荐度 95/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/vllm-project" target="_blank">sponsors/vllm-project</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        vllm-project /
+
+      vllm  
+
+    
+      A high-throughput and memory-efficient inference and serving engine for LLMs</p>
+      <div class="paper-summary"><div class="summary-section">vLLM 是一个面向大语言模型的高吞吐、高显存效率的推理与服务引擎，能大幅提升 LLM 部署时的并发处理能力和资源利用率。它值得关注是因为其创新的 PagedAttention 等技术有效缓解了显存瓶颈，已成为开源 LLM 推理加速领域的主流方案之一。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/vllm-project" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 76,790 &nbsp;+549 today</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/headroomlabs-ai/headroom" target="_blank">headroomlabs-ai/headroom</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        headroomlabs-ai /
+
+      headroom  
+
+    
+      Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.</p>
+      <div class="paper-summary"><div class="summary-section">Headroom 是一个在工具输出、日志、文件和 RAG 片段进入 LLM 前进行压缩的 Python 库，可为编码智能体减少约 20% 的 token，对 JSON 数据减少 60-95%，同时保持回答质量不变，并提供库、代理和 MCP 服务器三种使用形式。它值得关注是因为能显著降低 LLM 调用成本与上下文占用，且不牺牲输出准确性。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/headroomlabs-ai/headroom" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 77,875 &nbsp;+684 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/ruvnet/ruflo" target="_blank">ruvnet/ruflo</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        ruvnet /
+
+      ruflo  
+
+    
+      🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated</p>
+      <div class="paper-summary"><div class="summary-section">这是一个用于部署智能多智能体集群、协调自主工作流并构建对话式 AI 系统的智能体编排框架，内置自适应记忆、自学习智能、联邦协作和向量 RAG 集成，并原生支持 Claude Code、Codex 等多种 AI 编程工具。它值得关注是因为它将多智能体协作、持久记忆与主流编码助手无缝整合，为构建复杂自主 AI 应用提供了开箱即用的基础设施。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/ruvnet/ruflo" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 130,322 &nbsp;+802 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify-Labs/graphify</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        Graphify-Labs /
+
+      graphify  
+
+    
+      Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.</p>
+      <div class="paper-summary"><div class="summary-section">Graphify 能把任意代码库连同其文档、SQL 模式、配置和 PDF 转成可查询的知识图谱，并提供本地确定性 AST 解析、边关系可解释且无需向量库的 /graphify 技能，适用于 Claude Code、Cursor、Codex 和 Gemini CLI。它值得关注是因为让 AI 编程助手以可追溯、低依赖的方式理解整个项目结构与上下文。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Shell</span>
+          <span class="paper-id">⭐ 162,396 &nbsp;+562 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/msitarzewski" target="_blank">sponsors/msitarzewski</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        msitarzewski /
+
+      agency-agents  
+
+    
+      A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.</p>
+      <div class="paper-summary"><div class="summary-section">该项目提供了一套完整的AI代理集合，涵盖前端开发、社区运营等多种专业角色，每个代理都有独特个性和工作流程。值得关注的是它把AI代理做成了可直接使用的"虚拟员工"团队，让个人也能快速组建自己的AI机构。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/msitarzewski" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 60,755 &nbsp;+3861 today</span>
+        </div>
+        <span class="score-badge">推荐度 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/MadsLorentzen" target="_blank">sponsors/MadsLorentzen</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        MadsLorentzen /
+
+      ai-job-search  
+
+    
+      The job search that runs on your machine. AI job application framework built on Claude Code: evaluate postings, tailor CVs, write cover letters, prep interviews. Fork it and own it.</p>
+      <div class="paper-summary"><div class="summary-section">这是一个基于 Claude Code 的 AI 求职框架，可在本地运行，帮助评估职位、定制简历、撰写求职信和准备面试。它值得关注是因为把求职流程交给本地 AI 自动化，隐私可控且可自行 fork 定制。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/MadsLorentzen" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 41,273 &nbsp;+93 today</span>
+        </div>
+        <span class="score-badge">推荐度 72/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/wshobson" target="_blank">sponsors/wshobson</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        wshobson /
+
+      agents  
+
+    
+      Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi</p>
+      <div class="paper-summary"><div class="summary-section">这是 wshobson 开发的多框架 AI 代理插件市场，可同时适配 Claude Code、Codex、Cursor、GitHub Copilot 等主流编程助手。它值得关注是因为用一个插件生态打通了多家 AI 编码工具，降低了跨平台复用的成本。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/wshobson" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    </div>
+
+    <footer>
+        <p>由 <a href="https://github.com/Sloan-Yang/TechDigest">TechDigest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> · <a href="https://news.ycombinator.com">Hacker News</a> · <a href="https://github.com/trending">GitHub Trending</a></p>
+    </footer>
+</body>
+</html>
