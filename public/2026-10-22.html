@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDigest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdf9ed;
+            --card-bg: #ffffff;
+            --card-border: #e8ecf0;
+            --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            --text: #1e2128;
+            --text-muted: #6b7385;
+            --accent: #4f6ef7;
+            --accent-light: #eef1fe;
+            --hn-color: #e8600a;
+            --hn-light: #fff4ed;
+            --gh-color: #1a7f37;
+            --gh-light: #edfbf0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .site-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .site-name span {
+            color: var(--accent);
+        }
+
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover { color: var(--accent); }
+
+        .page-hero {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .page-date {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .page-stats {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .page-stats a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-heading {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .paper-card:hover {
+            box-shadow: 0 4px 20px rgba(79,110,247,0.1);
+            border-color: #c5cef7;
+        }
+
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .hn-badge {
+            background: var(--hn-light) !important;
+            color: var(--hn-color) !important;
+        }
+
+        .gh-badge {
+            background: var(--gh-light) !important;
+            color: var(--gh-color) !important;
+        }
+
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 0.15rem 0.6rem;
+        }
+
+        .paper-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .paper-title a:hover { color: var(--accent); }
+
+        .paper-title-zh {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            font-weight: 300;
+        }
+
+        .paper-authors {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+
+        .paper-summary {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .hn-card .paper-summary {
+            background: var(--hn-light);
+            border-left-color: var(--hn-color);
+        }
+
+        .gh-card .paper-summary {
+            background: var(--gh-light);
+            border-left-color: var(--gh-color);
+        }
+
+        .summary-section { margin-bottom: 0.35rem; }
+        .summary-section:last-child { margin-bottom: 0; }
+        .summary-section strong { color: var(--accent); }
+
+        .paper-abstract {
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .paper-abstract p {
+            margin-top: 0.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--bg);
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.15s;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .site-header { padding: 1rem; }
+            .content { padding: 1rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-name" href="index.html">Tech<span>Digest</span></a>
+        <nav class="header-nav">
+            <a href="archive.html">归档</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-date">📅 2026-10-22</div>
+        <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
+        <p class="page-stats">
+            自然语言处理: 1 | 计算机视觉: 3 | 机器学习: 1
+            <a href="archive.html">归档 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+        <div class="section-heading">📄 arXiv 论文</div>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.28171</span>
+        </div>
+        <span class="score-badge">相关性 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.28171" target="_blank">DocLayout-YOLO: Axis-Attentive Document Layout Detector with Mesh-Guided Synthetic Pretraining</a>
+      </h3>
+      <p class="paper-title-zh">DocLayout-YOLO：基于轴注意力与网格引导合成预训练的文档布局检测器</p>
+      <p class="paper-authors">Zhiyuan Zhao, Hengrui Kang, Guang Liang, Bin Wang, Conghui He</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了DocLayout-YOLO，一种文档专用的实时布局检测器，通过大规模合成文档预训练和页面轴上下文建模，有效提升了对异构文档的适应能力。</div>
+        <div class="summary-section"><strong>方法:</strong> 从数据角度，提出了Mesh-candidate BestFit算法生成的大规模合成预训练语料库MeshLayout-1M，用于预训练以增强对异构文档场景的适应；从模型角度，提出了Page-Axis Layout Attention (PALA)模块，在保持计算高效的同时捕获沿水平和垂直页面轴的长距离依赖；整体基于YOLO框架进行文档特化改进。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在四个异构文档基准测试上取得了最先进的性能，在D4LA、M6Doc、HJDataset和PRIMA-LAD上分别获得72.4%/75.5%/96.0%/73.1%的mAP50:95；与现有实时检测器相比，DocLayout-YOLO在文档布局分析中建立了更优的精度-效率权衡。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Accurate and efficient document layout analysis is critical for modern document parsing systems. However, although the YOLO framework represents a leading paradigm for the real-time detector, its adaptation to heterogeneous documents remains underexplored. To address this gap, we propose DocLayout-YOLO, a document-specialized real-time detector that integrates diverse synthetic document pretraining and page-axis context modeling. From the data perspective, we introduce MeshLayout-1M, a synthetic pretraining corpus generated by the proposed Mesh-candidate BestFit algorithm, which provides large-scale and diverse document layouts for pretraining and improves adaptation to heterogeneous document scenarios. From the model perspective, we propose Page-Axis Layout Attention (PALA), which captures long-range dependencies along the horizontal and vertical page axes while remaining computationally efficient. Extensive experiments demonstrate that DocLayout-YOLO achieves state-of-the-art performance on four heterogeneous document benchmarks, obtaining 72.4%/75.5%/96.0%/73.1% mAP50:95 on D4LA, M6Doc, HJDataset, and PRIMA-LAD, respectively. Compared with existing real-time detectors, DocLayout-YOLO establishes a superior accuracy-efficiency trade-off in document layout analysis. Code, model, and data are available at https://github.com/opendatalab/DocLayout-YOLO/tree/release-v2.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.28171" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.28171.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器学习</span>
+          <span class="paper-id">2610.26863</span>
+        </div>
+        <span class="score-badge">相关性 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.26863" target="_blank">Text-to-Image Generative Modeling Without Language Pretraining</a>
+      </h3>
+      <p class="paper-title-zh">无需语言预训练的文本到图像生成建模</p>
+      <p class="paper-authors">Keshigeyan Chandrasegaran, Yue Zhao, Armin W. Thomas, Ehsan Adeli, Jiajun Wu 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出Halcyon系列早期融合多模态自回归模型，完全从零开始训练，证明了强大的文本到图像生成系统无需互联网规模的语言预训练即可实现。</div>
+        <div class="summary-section"><strong>方法:</strong> 在包含1亿图文对的GPIC数据集上从头训练早期融合多模态自回归模型，通过受控实验比较有无文本预训练的效果，并用I2T监督替代caption dropout来学习图像描述。</div>
+        <div class="summary-section"><strong>关键发现:</strong> Halcyon-0.52B以少18.2倍的预训练计算量超越LlamaGen-XL/8（48.0 vs. 63.3 gFD），Halcyon-1.6B以少275倍计算量超越JiT-T2I-XXL/8++（35.3 vs. 41.0 gFD）；受控实验表明纯文本预训练不能提升T2I生成质量；模型还能在相同预训练预算下学习图像描述并保持有竞争力的生成质量。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Modern text-to-image (T2I) systems use internet-scale language pretraining for text-conditioned image generation. We ask whether language pretraining is necessary for strong T2I generation. We introduce Halcyon, a family of early-fusion multimodal autoregressive models pretrained entirely from scratch on GPIC, a dataset of 100M image-text pairs. Halcyon-0.52B outperforms LlamaGen-XL/8 (48.0 vs. 63.3 gFD) with 18.2$\times$ less pretraining compute. Further, Halcyon-1.6B outperforms JiT-T2I-XXL/8++ (35.3 vs. 41.0 gFD) with 275$\times$ less pretraining compute. Controlled experiments show that text-only pretraining does not improve T2I generation. Halcyon also learns image captioning by replacing caption dropout with I2T supervision, maintaining competitive T2I generation quality under the same pretraining budget. We show that strong T2I systems can be trained from scratch without internet-scale language pretraining. Code and models are available at https://cs.stanford.edu/~keshik/halcyon</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.26863" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.26863.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.26850</span>
+        </div>
+        <span class="score-badge">相关性 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.26850" target="_blank">GenOlympiad: Benchmarking Frontier Image Models at Their Capability Boundaries</a>
+      </h3>
+      <p class="paper-title-zh">GenOlympiad：在前沿图像模型能力边界上的基准测试</p>
+      <p class="paper-authors">Xi Hu, Martin Bell, Liang Zheng</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 该论文提出了 GenOlympiad 基准测试，从九个能力维度设计最具挑战性的文本提示，用于压力测试前沿文生图模型的能力边界，并提供自动化的评估框架。</div>
+        <div class="summary-section"><strong>方法:</strong> 论文从九个能力轴（如大批量生成、深度推理、硬物理一致性、复杂规则遵循等）设计具有挑战性的文本提示，且提示的对齐性可通过视觉验证（如计数）而非主观判断（如风格）来评估。基于此，作者开发了一个自动化评估框架，将提示分解为简单和困难问题，并对大多数困难问题引入辅助线索（help lines）以提供证据支撑，从而实现准确评分。研究评估了 20 多个强文生图模型，包括 Nano Banana Pro、GPT-Image-2.5、Seedream-5.0 等。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 即使表现最好的文生图模型（Nano Banana Pro）也仅获得 23.9 分的严格得分（满分 100）；编程类模型如 GPT-6 Astra 在提示对齐得分上更高（但视觉美观度较差）。论文还总结了模型演进、与 Elo 分数的对齐关系以及基于 grounding 的评估协议的有效性等方面的发现。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Text-to-image models have made tremendous progress and can produce high-quality images. However, a question which would be asked in any other discipline is where the frontier models fall short. We introduce GenOlympiad, a benchmark which provides the most challenging text prompts from nine capability axes for stress-testing frontier text-to-image models. The assessed capabilities include generating large quantities, performing deep reasoning, ensuring hard physical consistency, following complex rules and so on. The prompts are designed such that prompt alignment is visually verifiable (e.g., counting) instead of relying on subjectiveness (e.g., style). Based on this, we develop an automated evaluation framework which decomposes the prompt into easy and hard questions, and for most hard questions, draws help lines to ground evidence for accurate grading. We evaluate 20+ strong text-to-image models, including Nano Banana Pro, GPT-Image-2.5, Seedream-5.0 and so on. We report that even the best-performing T2I model (Nano Banana Pro) only achieves a strict score of 23.9 out of 100 and that coding models such as GPT-6 Astra have higher prompt alignment scores (but not as visually pleasing). We also derive insights in model evolution, alignment with Elo scores, and effectiveness of our grounding-based evaluation protocol. Code is available at https://github.com/GenOlympiad/GenOlympiad and the project page is at https://genolympiad.github.io/</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.26850" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.26850.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">自然语言处理</span>
+          <span class="paper-id">2610.26826</span>
+        </div>
+        <span class="score-badge">相关性 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.26826" target="_blank">RefCraft: Benchmarking Visual-Reference-Conditioned Agentic Generation through Web Development</a>
+      </h3>
+      <p class="paper-title-zh">RefCraft：通过网页开发基准测试视觉参考条件驱动的智能体生成</p>
+      <p class="paper-authors">Yuchi Wang, Rongyao Fang, Weihao Yu, Xilin Wei, Tiancheng Gu 等 (10 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 该论文提出了RefCraft基准，包含300个真实的多模态网页开发任务，用于评估AI智能体在结合自然语言指令与视觉参考进行网页开发时的能力，填补了现有基准忽视视觉参考驱动工作流的空白。</div>
+        <div class="summary-section"><strong>方法:</strong> 论文构建了RefCraft基准，每个任务将自然语言指令与一至五个参考网页的截图相结合，要求智能体选择性地解读和利用这些参考，同时进行渲染、视觉检查和迭代优化。评估采用可独立验证的关键点以及程序化评判和VLM评判相结合的方式，对九个前沿（多模态）大语言模型进行了测试。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在九个前沿（多模态）大语言模型中，表现最强的系统总体得分仅为52.12分（满分100分），表明当前模型在实际网页开发场景中，视觉参考条件驱动的智能体生成仍是一项重大挑战。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Beyond basic tool use and coding skills, effectively incorporating visual references into agentic generation is equally essential for applying AI agents to real-world productivity tasks. We study this crucial capability through webpage development, a practical and readily evaluable setting in which existing benchmarks remain largely idealized: they typically focus on reconstructing visual targets or generating webpages from textual instructions alone, overlooking the more common workflow of developing from visual examples. Specifically, we introduce RefCraft, a benchmark comprising 300 realistic multimodal webpage-development tasks that combine natural-language instructions with screenshots from one to five reference webpages. Agents must selectively interpret and utilize these references while rendering, visually inspecting, and iteratively refining their outputs. We evaluate the resulting open-ended artifacts using independently verifiable keypoints and complementary programmatic and VLM judges. Across nine frontier (M)LLMs, the strongest system achieves an overall score of only 52.12 out of 100, revealing that visual-reference-conditioned agentic generation remains a substantial challenge for current models in practical webpage-development settings.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.26826" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.26826.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.26837</span>
+        </div>
+        <span class="score-badge">相关性 82/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.26837" target="_blank">SpecKCast: Spectral Kalman Forecasting for Diffusion Acceleration</a>
+      </h3>
+      <p class="paper-title-zh">SpecKCast：面向扩散加速的谱域卡尔曼预测</p>
+      <p class="paper-authors">Javad Rajabi, Hakki Can Karaimer, David B. Lindell, Babak Taati, Michael S. Brown</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 提出了一种无需训练的频率域预测方法SpecKCast，通过在各频带特定的时间坐标上使用轻量卡尔曼滤波器跟踪模型输出的DCT系数，显著提升了扩散模型推理加速与生成保真度之间的权衡。</div>
+        <div class="summary-section"><strong>方法:</strong> SpecKCast对模型输出施加二维离散余弦变换（DCT），将特征分解为频率系数。每个系数通过一个轻量卡尔曼滤波器进行跟踪，滤波器沿基于噪声调度推导出的频带特定时间坐标运行，同时估计系数的当前值及其变化率。仅当滤波器预测不确定性超过阈值时，才重新评估Transformer。该方法无需训练，额外内存开销极小。</div>
+        <div class="summary-section"><strong>关键发现:</strong> 在FLUX.1-dev、Qwen-Image、Wan2.1-14B和HunyuanVideo上的实验表明，SpecKCast在加速与保真度的权衡上优于现有的缓存和预测方法，最高可实现6倍加速，且额外内存占用低于0.05 GiB。</div>
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Diffusion Transformers (DiTs) achieve high-fidelity image and video generation, but they suffer from substantial inference costs due to repeated transformer evaluations across many denoising steps. Feature caching reduces this cost by reusing features across denoising steps. Recent forecasting methods extend this idea by extrapolating features to skipped steps instead of reusing them. However, existing forecasting methods extrapolate the features they predict uniformly, even though the spatial-frequency components of these features change most at different stages of denoising. They also overlook that denoising progresses nonuniformly, so equal step intervals can correspond to very different amounts of change. These mismatches amplify forecast errors as more steps are skipped, limiting the achievable acceleration. We propose SpecKCast, a training-free method that forecasts the model output in the frequency domain. SpecKCast applies a 2D discrete cosine transform (DCT) to the output and tracks each coefficient with a lightweight Kalman filter along a band-specific time coordinate derived from the noise schedule. The filter tracks each coefficient's value and rate of change, and the transformer is evaluated only when the filter's forecast uncertainty exceeds a threshold. Experiments on FLUX.1-dev, Qwen-Image, Wan2.1-14B, and HunyuanVideo show that SpecKCast achieves a better trade-off between acceleration and fidelity than existing caching and forecasting methods, reaching up to 6x speedup with less than 0.05 GiB of additional memory.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.26837" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.26837.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🔥 Hacker News</div>
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 2302 &nbsp;💬 882</span>
+        </div>
+        <span class="score-badge">推荐度 95/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50163277" target="_blank">DeepInfer: High-performance inference framework for DeepSeek models</a>
+      </h3>
+      <p class="paper-authors">by ggcr</p>
+      <div class="paper-summary"><div class="summary-section">DeepSeek 开源了专为自家模型打造的高性能推理框架 DeepInfer，看点在于能否以官方优化充分释放 DeepSeek 模型（如 V3/R1）的推理效率与部署成本优势。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50163277" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/deepseek-ai/DeepInfer" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 177 &nbsp;💬 107</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50186010" target="_blank">Google's Rust Style Guide</a>
+      </h3>
+      <p class="paper-authors">by kaycebasques</p>
+      <div class="paper-summary"><div class="summary-section">谷歌发布了官方的 Rust 代码风格指南，对命名、格式化、注释和惯用法等给出了明确规范，看点在于它是继 C++、Java 等之后谷歌对 Rust 的官方立场，可能影响 Rust 社区的实践标准。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50186010" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://google.github.io/styleguide/rustguide.html" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 297 &nbsp;💬 254</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50186037" target="_blank">Claude Duet</a>
+      </h3>
+      <p class="paper-authors">by kuberwastaken</p>
+      <div class="paper-summary"><div class="summary-section">Claude Duet 是 Anthropic 推出的让两个 Claude 实例协作完成任务的新产品，看点在于双 AI 搭档配合的模式能否突破单模型的能力上限。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50186037" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://claude.com/product/claude-duet" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 757 &nbsp;💬 197</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50168396" target="_blank">Voxtral 3</a>
+      </h3>
+      <p class="paper-authors">by ilreb</p>
+      <div class="paper-summary"><div class="summary-section">Mistral 发布语音模型 Voxtral 3，看点在于其语音识别与理解能力升级，以及是否延续开源路线、对标 OpenAI 同类产品。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50168396" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://mistral.ai/news/voxtral-3/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 420 &nbsp;💬 131</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50181114" target="_blank">Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor</a>
+      </h3>
+      <p class="paper-authors">by abhisek</p>
+      <div class="paper-summary"><div class="summary-section">LiteLLM 1.107.0 版本在 PyPI 上被投毒，会植入窃取凭据的后门；看点在于它是 AI 领域热门依赖库，供应链攻击影响面广且手法隐蔽。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50181114" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 906 &nbsp;💬 409</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50170593" target="_blank">Show HN: SimCity, but with Permits</a>
+      </h3>
+      <p class="paper-authors">by pcai</p>
+      <div class="paper-summary"><div class="summary-section">这是一个模拟城市建造游戏，但每次建造都需要申请许可证并等待审批，看点在于用游戏形式讽刺现实中繁琐的审批流程。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50170593" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://permit.petercai.com/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 18 &nbsp;💬 6</span>
+        </div>
+        <span class="score-badge">推荐度 82/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50183892" target="_blank">Show HN: Omnara – Open-Source Alternative to Claude Managed Agents</a>
+      </h3>
+      <p class="paper-authors">by kmansm27</p>
+      <div class="paper-summary"><div class="summary-section">Omnara 是 Claude 托管代理的开源替代方案，提供持久化代理 API，支持沙箱执行、密钥权限管理和 RBAC，代理状态存于 Postgres 可跨重启存活且空闲零成本。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50183892" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/omnara-ai/omnara" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 100 &nbsp;💬 99</span>
+        </div>
+        <span class="score-badge">推荐度 79/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50169955" target="_blank">Advanced coding in low-resource programming languages</a>
+      </h3>
+      <p class="paper-authors">by sumnole</p>
+      <div class="paper-summary"><div class="summary-section">OpenAI分享了在低资源编程语言中进行高级编码的研究，看点在于如何让AI更好地处理训练数据稀缺的小众编程语言。</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50169955" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://openai.com/index/low-resource-programming-languages/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🐙 GitHub Trending</div>
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 94,862 &nbsp;+441 today</span>
+        </div>
+        <span class="score-badge">推荐度 95/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/vllm-project" target="_blank">sponsors/vllm-project</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        vllm-project /
+
+      vllm  
+
+    
+      A high-throughput and memory-efficient inference and serving engine for LLMs</p>
+      <div class="paper-summary"><div class="summary-section">vLLM 是一个面向大语言模型的高吞吐、内存高效的推理与服务引擎，能显著提升 LLM 部署的吞吐量并降低显存占用，是当前最受关注的开源推理框架之一。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/vllm-project" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 141,507 &nbsp;+939 today</span>
+        </div>
+        <span class="score-badge">推荐度 95/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">Comfy-Org/ComfyUI</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        Comfy-Org /
+
+      ComfyUI  
+
+    
+      The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.</p>
+      <div class="paper-summary"><div class="summary-section">ComfyUI 是一个基于节点图界面的模块化扩散模型 GUI、API 和后端，号称全球最快的本地推理引擎。它值得关注是因为能让用户灵活搭建和复用复杂的图像生成工作流，并在本地高效运行。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 77,251 &nbsp;+474 today</span>
+        </div>
+        <span class="score-badge">推荐度 88/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/headroomlabs-ai/headroom" target="_blank">headroomlabs-ai/headroom</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        headroomlabs-ai /
+
+      headroom  
+
+    
+      Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.</p>
+      <div class="paper-summary"><div class="summary-section">Headroom 是一个在工具输出、日志、文件和 RAG 片段进入 LLM 之前进行压缩的 Python 库/代理/MCP 服务器，可将编码智能体的 token 消耗降低 20%、JSON 数据降低 60-95% 且答案质量不变。它值得关注是因为能显著降低 LLM 使用成本并提升上下文窗口利用率，同时保持输出一致性。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/headroomlabs-ai/headroom" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 12,323 &nbsp;+286 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/akitaonrails/ai-memory" target="_blank">akitaonrails/ai-memory</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        akitaonrails /
+
+      ai-memory  
+
+    
+      Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors</p>
+      <div class="paper-summary"><div class="summary-section">这是一个为 AI 编码 CLI 智能体提供长期记忆的 Rust 解决方案，支持在不同厂商的智能体之间交接任务上下文。它值得关注是因为能让编码智能体跨会话记住项目信息，并在切换不同 AI 工具时保持上下文连贯。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/akitaonrails/ai-memory" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 131,627 &nbsp;+1433 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify-Labs/graphify</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        Graphify-Labs /
+
+      graphify  
+
+    
+      Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.</p>
+      <div class="paper-summary"><div class="summary-section">Graphify 能把任意代码库及其文档、SQL模式、配置和PDF转换为可查询的知识图谱，并作为 Claude Code、Cursor 等 AI 编程工具的 /graphify 技能使用。它采用本地确定性 AST 解析、每条边都可解释且无需向量数据库，值得关注因为它让 AI 助手真正理解整个项目结构而非仅靠模糊检索。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 101,232 &nbsp;+1541 today</span>
+        </div>
+        <span class="score-badge">推荐度 68/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/stablyai/orca" target="_blank">stablyai/orca</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        stablyai /
+
+      orca  
+
+    
+      Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.</p>
+      <div class="paper-summary"><div class="summary-section">Orca 是一个用于管理多个编码智能体（如 Grok Bot、Claude Code）的协作平台，支持用自己的订阅运行任意智能体，并覆盖桌面、移动和远程运行环境。它值得关注是因为能让开发者在一个统一界面中调度和协同多个 AI 编码代理，提升自动化开发效率。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/stablyai/orca" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 59,157 &nbsp;+112 today</span>
+        </div>
+        <span class="score-badge">推荐度 40/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/twentyhq/twenty" target="_blank">twentyhq/twenty</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        twentyhq /
+
+      twenty  
+
+    
+      The open alternative to Salesforce, designed for AI.</p>
+      <div class="paper-summary"><div class="summary-section">Twenty 是一个开源的 Salesforce 替代品，专为 AI 设计，提供现代化的 CRM 功能。值得关注是因为它结合了开源灵活性和 AI 能力，有望降低企业 CRM 成本并提升智能化水平。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/twentyhq/twenty" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 171,614 &nbsp;+2079 today</span>
+        </div>
+        <span class="score-badge">推荐度 30/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/DietrichGebert" target="_blank">sponsors/DietrichGebert</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        DietrichGebert /
+
+      ponytail  
+
+    
+      Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</p>
+      <div class="paper-summary"><div class="summary-section">这是 DietrichGebert 的赞助项目 ponytail，倡导“最好的代码是你从未写过的代码”，让 AI 代理像最懒的资深开发者一样思考，从而精简开发、减少冗余代码。它值得关注是因为它提供了一种反直觉但高效的 AI 编程理念，可能帮助团队避免过度工程化。</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/DietrichGebert" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    </div>
+
+    <footer>
+        <p>由 <a href="https://github.com/Sloan-Yang/TechDigest">TechDigest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> · <a href="https://news.ycombinator.com">Hacker News</a> · <a href="https://github.com/trending">GitHub Trending</a></p>
+    </footer>
+</body>
+</html>
