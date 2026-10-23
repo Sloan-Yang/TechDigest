@@ -1,0 +1,100 @@
+[
+  {
+    "id": "Graphify-Labs_graphify",
+    "full_name": "Graphify-Labs/graphify",
+    "owner": "Graphify-Labs",
+    "name": "graphify",
+    "url": "https://github.com/Graphify-Labs/graphify",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Graphify-Labs /\n\n      graphify  \n\n    \n      Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+    "language": "Python",
+    "stars": 132933,
+    "stars_today": 1408,
+    "relevance_score": 85
+  },
+  {
+    "id": "anthropics_knowledge-work-plugins",
+    "full_name": "anthropics/knowledge-work-plugins",
+    "owner": "anthropics",
+    "name": "knowledge-work-plugins",
+    "url": "https://github.com/anthropics/knowledge-work-plugins",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        anthropics /\n\n      knowledge-work-plugins  \n\n    \n      Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+    "language": "Python",
+    "stars": 31587,
+    "stars_today": 303,
+    "relevance_score": 30
+  },
+  {
+    "id": "sponsors_DietrichGebert",
+    "full_name": "sponsors/DietrichGebert",
+    "owner": "sponsors",
+    "name": "DietrichGebert",
+    "url": "https://github.com/sponsors/DietrichGebert",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        DietrichGebert /\n\n      ponytail  \n\n    \n      Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+    "language": "JavaScript",
+    "stars": 173450,
+    "stars_today": 1948,
+    "relevance_score": 30,
+    "summary": "P"
+  },
+  {
+    "id": "sponsors_supabase",
+    "full_name": "sponsors/supabase",
+    "owner": "sponsors",
+    "name": "supabase",
+    "url": "https://github.com/sponsors/supabase",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        supabase /\n\n      supabase  \n\n    \n      The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.",
+    "language": "TypeScript",
+    "stars": 113480,
+    "stars_today": 693,
+    "relevance_score": 30
+  },
+  {
+    "id": "cloudflare_security-audit-skill",
+    "full_name": "cloudflare/security-audit-skill",
+    "owner": "cloudflare",
+    "name": "security-audit-skill",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cloudflare /\n\n      security-audit-skill  \n\n    \n      A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "language": "JavaScript",
+    "stars": 39549,
+    "stars_today": 2979,
+    "relevance_score": 20
+  },
+  {
+    "id": "php_php-src",
+    "full_name": "php/php-src",
+    "owner": "php",
+    "name": "php-src",
+    "url": "https://github.com/php/php-src",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        php /\n\n      php-src  \n\n    \n      The PHP Interpreter",
+    "language": "C",
+    "stars": 41148,
+    "stars_today": 287,
+    "relevance_score": 0
+  },
+  {
+    "id": "fastapi_fastapi",
+    "full_name": "fastapi/fastapi",
+    "owner": "fastapi",
+    "name": "fastapi",
+    "url": "https://github.com/fastapi/fastapi",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        fastapi /\n\n      fastapi  \n\n    \n      FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+    "language": "Python",
+    "stars": 103735,
+    "stars_today": 101,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_luongnv89",
+    "full_name": "sponsors/luongnv89",
+    "owner": "sponsors",
+    "name": "luongnv89",
+    "url": "https://github.com/sponsors/luongnv89",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        luongnv89 /\n\n      claude-howto  \n\n    \n      A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
+    "language": "Python",
+    "stars": 43190,
+    "stars_today": 177,
+    "relevance_score": 0,
+    "summary": "这是一个关于 Claude Code 的可视化、示例驱动指南，涵盖从基础概念到高级 Agent 的内容，并提供可直接复制粘贴的实用模板。值得关注是因为它能帮助开发者快速"
+  }
+]

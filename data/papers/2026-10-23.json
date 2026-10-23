@@ -1,0 +1,151 @@
+[
+  {
+    "id": "2610.28086",
+    "title": "MoDDiT: Simple Token Routing in Diffusion Transformers",
+    "abstract": "Real-time video generation, interactive world models, and on-device image synthesis are almost a reality. Diffusion Transformers (DiT) achieve excellent sample quality, shifting the bottleneck to the throughput of the models themselves. Natural images are inherently sparse, as large portions of an image are often background, contribute little to the scene content, and are easy to denoise. DiTs fail to exploit this sparsity, as they process image tokens statically and uniformly. We propose MoDDiT, a simple architecture modification that learns to route tokens through both MLP and self-attention operations. By routing tokens through both blocks independently, MoDDiT allows for dynamic compute allocation in MLPs that varies across tokens, images, and denoising timesteps. Using MoDDiT to train image generation models from scratch significantly reduces computational costs of training and inference, processing as few as 12.5% of the tokens. By increasing sparsity and model depth, MoDDiT reduces costs and improves generation performance over unrouted baselines. The learned allocation is interpretable, revealing how computation varies with visual content and noise level. We also use MoDDiT to train video generation models, where allocation correlates with motion, and to distill a dense bidirectional video model into a sparse autoregressive student.",
+    "authors": [
+      "Jarek Liesen",
+      "Matthew T. Jackson",
+      "Benjamin Ellis",
+      "Shimon Whiteson",
+      "Jakob N. Foerster"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28086.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28086",
+    "primary_category": "cs.CV",
+    "score": 72,
+    "summary": {
+      "title_zh": "MoDDiT: Simple Token Routing in Diffusion Transformers",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.28630",
+    "title": "SolarRenderer: Few-Step Generative Reference Rendering",
+    "abstract": "Game engines and coding agents can specify the layout, motion, and camera of a scene, yet turning such coarse structure into realistic video requires a renderer that follows the structure and completes the appearance it leaves open. Existing renderers are tied to the representation of one engine, need tens of denoising steps or a costly distillation of their own, and learn from conditions that are not aligned with their target videos. We present SolarRenderer, a structure-conditioned video renderer that adapts a frozen MiniMax-H3 33B backbone with two lightweight LoRAs. Structural videos enter the native reference pathway of the backbone at the positions of the frames they describe, without a type identifier and described only in plain text, so that a single control LoRA follows arbitrary structural representations. Starting from a pretrained four-step LoRA, structure-guided distribution matching renders in four steps, 12.3 times faster than 50-step sampling, while preserving the learned control. A block-causal variant extends the same design to streaming and renders 768p video in real time. To train the model, we build a frame-aligned corpus of 136K clips from game engines, simulators, and YouTube videos. Experiments on an in-distribution test set and a generalization benchmark of 16 structural representations show that SolarRenderer achieves state-of-the-art results across both, and generalizes to 11 unseen representations, including pose skeletons, drawings, and point clouds.",
+    "authors": [
+      "Guian Fang",
+      "Shengju Qian",
+      "Dongyue Lu",
+      "Junchao Huang",
+      "Lutao Jiang",
+      "Xin Wang",
+      "Yiren Song",
+      "Li Jiang",
+      "Mike Zheng Shou"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28630.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28630",
+    "primary_category": "cs.CV",
+    "score": 62,
+    "summary": {
+      "title_zh": "SolarRenderer: Few-Step Generative Reference Rendering",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.28594",
+    "title": "Learning the 4D World through Point Trajectory Forecasting",
+    "abstract": "Reliable multi-view forecasting requires videos from different cameras to describe the same evolving 3D scene. To this end, we introduce Video-Point Model (VPM), a world model that conditions on multi-view video histories and a language instruction to jointly forecast future videos from arbitrary viewpoints and the 3D trajectories of persistent scene points. We extend a pretrained world model with camera-conditioned multi-view processing that integrates complementary observations across cameras, and add a trajectory head that predicts how physical points move through time. Each trajectory tracks a single point across all views, and supervising these trajectories alongside video generation therefore anchors appearance changes in every camera to a shared description of 3D motion. To support training and evaluation, we build VPM-Data, a simulation corpus pairing synchronized multi-view videos with persistent point trajectories, and VP-WorldBench, a forecasting benchmark spanning simulated and real environments. We further extend VPM to robot control by adding robot actions as a token modality in the generator. Action tokens share the point-supervised backbone and are denoised jointly with future videos, thereby grounding the policy in the same 3D-aware representation. On VP-WorldBench and existing 4D generation benchmarks, point supervision improves both video fidelity and 3D motion accuracy over a video-only counterpart, and in simulated and real-robot experiments, it also raises the manipulation success of the action-enabled model.",
+    "authors": [
+      "Byungwoo Jeon",
+      "Sunghwan Hong",
+      "Dohyeon Kim",
+      "Jonghoon Lee",
+      "Jungwoo Park",
+      "Inhee Lee",
+      "Doosan Baek",
+      "Jinil Kim",
+      "Taehyun Lim",
+      "Hanbyul Joo",
+      "Marc Pollefeys",
+      "Saining Xie",
+      "Jinwoo Shin"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28594.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28594",
+    "primary_category": "cs.CV",
+    "score": 62,
+    "summary": {
+      "title_zh": "通过学习点轨迹预测来学习四维世界",
+      "core_contribution": "提出 Video-Point Model (VPM)——一个以多视角视频历史与语言指令为条件的4D世界模型，能够联合预测任意视角的未来视频以及场景中持续存在点的3D轨迹；同时构建了训练数据 VPM-Data、评测基准 VP-WorldBench，并将该模型扩展至机器人控制。",
+      "method": "在预训练世界模型基础上引入相机条件的多视角处理模块，以整合来自不同相机的互补观测；新增轨迹头，用于预测物理点随时间的三维运动，其中每条轨迹在所有视角中追踪同一个点。通过在生成视频的同时监督这些轨迹，使各相机中的外观变化被锚定到统一的3D运动描述上。为支持机器人控制，进一步把机器人动作作为生成器中的一种token模态，与未来视频在共享的点监督主干中联合去噪，从而将策略建立在同一套具备3D感知的表征之上。",
+      "findings": "在 VP-WorldBench 及已有的4D生成基准上，点轨迹监督相比仅使用视频的对照模型，同时提升了视频保真度与3D运动精度；在仿真与真实机器人实验中，启用动作模态的模型也提高了操作任务的成功率。"
+    }
+  },
+  {
+    "id": "2610.28567",
+    "title": "Continual Concept Personalization in Diffusion Models via Residual-Space Adaptation",
+    "abstract": "Text-to-image personalization aims to equip pretrained diffusion models with the ability to learn user-specific concepts from only a few reference images. Existing methods, however, typically train each concept independently or assume that all concepts are available simultaneously. In practical applications, concepts often arrive sequentially, requiring models to continually learn new subjects, objects, or styles while minimizing interference with previously acquired concepts. We address this continual concept personalization setting by extending residual-space adaptation to the stochastic adaptation process of pretrained diffusion models. Our work achieves the highest concept fidelity among competing continual personalization methods while maintaining near-zero forgetting. Beyond these empirical gains, the learned residual-space dynamics reveal where adaptation capacity is concentrated within the diffusion model. Restricting adaptation to the identified layers by our method preserves nearly the same performance while reducing the number of trainable parameters by up to 72\\%, demonstrating that residual-space dynamics can identify the layers that contribute most to continual concept personalization and directly guide more parameter-efficient adaptation.",
+    "authors": [
+      "Yuzhi Liu",
+      "Enis Simsar",
+      "Giulia Lanzillotta",
+      "Thomas Hofmann"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28567.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28567",
+    "primary_category": "cs.CV",
+    "score": 62,
+    "summary": {
+      "title_zh": "Continual Concept Personalization in Diffusion Models via Residual-Space Adaptation",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.28416",
+    "title": "Code2Video-Compass: A Comprehensive Benchmark for General-Purpose Code-Based Video Generation across T2V, I2V, and V2V",
+    "abstract": "Code-based video generation offers fine-grained control, targeted editing, and component reuse compared with direct video generation. This approach requires multimodal large language models (MLLMs) to translate visual and temporal requirements into executable programs that produce complete videos. However, existing code-based benchmarks primarily target specialized tasks, leaving complete video creation across diverse creative categories and input modalities insufficiently evaluated. We introduce Code2Video-Compass, a general-purpose benchmark for code-based video generation across text-to-video (T2V), image-to-video (I2V), and video-to-video (V2V) settings. Code2Video-Compass comprises 2,104 tasks spanning 10 categories, 24 subtypes, and three complexity dimensions covering construction, dynamic animation, and state dependency. It combines tasks curated from textual instructions and visual references with corresponding T2V, I2V, and V2V tasks derived from complete professional and user-created videos. We propose a dual-level evaluation framework combining 12 objective metrics and five subjective metrics. Objective evaluation covers operational performance, video quality, text-video alignment, and reference fidelity, while subjective evaluation uses an MLLM judge to evaluate instruction following and holistic video quality. Extensive evaluation of 15 recent proprietary and open-weight MLLMs from nine families reveals that even leading models face challenges in reliably generating high-quality complete videos aligned with textual and visual requirements, with performance generally declining as construction, dynamic animation, and state-dependency complexity increases. We anticipate that Code2Video-Compass will advance reliable, coherent, and controllable code-based video generation and inspire broader progress in programmatic visual creation.",
+    "authors": [
+      "Zhenghan Chen",
+      "Zekai Shao",
+      "Xin Lin",
+      "Leting Cheng",
+      "Siming Chen"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28416.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28416",
+    "primary_category": "cs.CV",
+    "score": 62,
+    "summary": {
+      "title_zh": "Code2Video-Compass: A Comprehensive Benchmark for General-Purpose Code-Based Video Generation across T2V, I2V, and V2V",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  }
+]
