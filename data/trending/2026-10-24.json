@@ -1,0 +1,98 @@
+[
+  {
+    "id": "NVIDIA_OpenShell",
+    "full_name": "NVIDIA/OpenShell",
+    "owner": "NVIDIA",
+    "name": "OpenShell",
+    "url": "https://github.com/NVIDIA/OpenShell",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NVIDIA /\n\n      OpenShell  \n\n    \n      OpenShell is the safe, private runtime for autonomous AI agents.",
+    "language": "Rust",
+    "stars": 18779,
+    "stars_today": 1119,
+    "relevance_score": 85
+  },
+  {
+    "id": "OpenBMB_VoxCPM",
+    "full_name": "OpenBMB/VoxCPM",
+    "owner": "OpenBMB",
+    "name": "VoxCPM",
+    "url": "https://github.com/OpenBMB/VoxCPM",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        OpenBMB /\n\n      VoxCPM  \n\n    \n      VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning",
+    "language": "Python",
+    "stars": 40249,
+    "stars_today": 150,
+    "relevance_score": 85
+  },
+  {
+    "id": "anthropics_knowledge-work-plugins",
+    "full_name": "anthropics/knowledge-work-plugins",
+    "owner": "anthropics",
+    "name": "knowledge-work-plugins",
+    "url": "https://github.com/anthropics/knowledge-work-plugins",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        anthropics /\n\n      knowledge-work-plugins  \n\n    \n      Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+    "language": "Python",
+    "stars": 32203,
+    "stars_today": 635,
+    "relevance_score": 30
+  },
+  {
+    "id": "cloudflare_security-audit-skill",
+    "full_name": "cloudflare/security-audit-skill",
+    "owner": "cloudflare",
+    "name": "security-audit-skill",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cloudflare /\n\n      security-audit-skill  \n\n    \n      A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "language": "JavaScript",
+    "stars": 42118,
+    "stars_today": 2716,
+    "relevance_score": 20
+  },
+  {
+    "id": "php_php-src",
+    "full_name": "php/php-src",
+    "owner": "php",
+    "name": "php-src",
+    "url": "https://github.com/php/php-src",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        php /\n\n      php-src  \n\n    \n      The PHP Interpreter",
+    "language": "C",
+    "stars": 41558,
+    "stars_today": 716,
+    "relevance_score": 0
+  },
+  {
+    "id": "Renhuai123_ziwei-doushu",
+    "full_name": "Renhuai123/ziwei-doushu",
+    "owner": "Renhuai123",
+    "name": "ziwei-doushu",
+    "url": "https://github.com/Renhuai123/ziwei-doushu",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Renhuai123 /\n\n      ziwei-doushu  \n\n    \n      紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+    "language": "TypeScript",
+    "stars": 6851,
+    "stars_today": 546,
+    "relevance_score": 0
+  },
+  {
+    "id": "SnailSploit_Claude-Red",
+    "full_name": "SnailSploit/Claude-Red",
+    "owner": "SnailSploit",
+    "name": "Claude-Red",
+    "url": "https://github.com/SnailSploit/Claude-Red",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        SnailSploit /\n\n      Claude-Red  \n\n    \n      claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+    "language": "Python",
+    "stars": 8475,
+    "stars_today": 226,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_nodejs",
+    "full_name": "sponsors/nodejs",
+    "owner": "sponsors",
+    "name": "nodejs",
+    "url": "https://github.com/sponsors/nodejs",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        nodejs /\n\n      node  \n\n    \n      Node.js JavaScript runtime ✨🐢🚀✨",
+    "language": "JavaScript",
+    "stars": 122855,
+    "stars_today": 66,
+    "relevance_score": 0
+  }
+]

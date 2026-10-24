@@ -1,0 +1,158 @@
+[
+  {
+    "id": "2610.28524",
+    "title": "Copyright Leakage Detection in AI Generated Videos",
+    "abstract": "Video generation models can create realistic-looking video footage from images and text prompts. Some of the recent advances have raised concerns about the reproduction of copyrighted visual content. However, copyright leakage detection in generated videos remains largely unexplored. In this paper, we introduce a new benchmark data set for copyright leakage detection, comprising 50 copyrighted concepts, each with 5 images. For each concept, we have 5 videos created using the image+prompt video generation model and the prompt-only video generation model. Following that, we develop an AI toolset based on a contrastive retrieval framework that formulates copyright leakage detection as a video-to-image retrieval problem by matching aggregated video frame embeddings against a database of copyrighted image embeddings. Our method uses a single similarity threshold and retrieves the most similar copyrighted reference as supporting evidence. We conducted experiments showing strong retrieval and detection performance, achieving 99.6\\% detection accuracy with only a single false negative. These results show the effectiveness of the retrieval-based method for scalable and explainable copyright leakage detection in AI-generated videos. Data can be accessed publicly from https://zenodo.org/records/21386117 and the source code for this project is publicly available at https://github.com/Shaif95/video-cp-Leakage.",
+    "authors": [
+      "Shaif Chowdhury",
+      "Moshiur Rahman Tonmoy"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28524.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28524",
+    "primary_category": "cs.CV",
+    "score": 55,
+    "summary": {
+      "title_zh": "Copyright Leakage Detection in AI Generated Videos",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.28632",
+    "title": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
+    "abstract": "Video generation models can now depict remarkably realistic motion. Yet it is unclear how to use this motion beyond pixels: to animate a specific 3D asset and replay the animation in its 3D scene. For instance, a video model can show a monkey jumping over a crossbar, but it cannot return that jump as replayable 3D motion placed in the 3D scene. Here we present a model that directly co-generates the video and 3D motion for any supplied rig, along with a camera that registers this motion to the scene. Prior video-motion models either handle only human skeletons, often adding billions of parameters, or triangulate 3D motion from generated 2D pose maps. We instead keep 3D motion in a separate model that supports arbitrary skeletons, and connect it to a pretrained video model through a small set of cross-attention layers. This separation lets the motion model first learn how skeletons move from motion-only data, which is easier to obtain and augment than paired video. Additionally, our model learns to locate each joint in the video frames, which lets us recover the camera and place the 3D motion in the scene. To train across many skeletons, we use a generative video editor to place animated 3D assets in scenes suited to their actions, curating the edits so their known motion remains valid. Together with human and robot video, this yields nearly 200K training pairs. Our evaluations demonstrate that our model animates diverse rigs from text more faithfully than video-first pipelines, and its motion responds to the surrounding scene. It also turns video into rig motion, rig motion into video, and enables keyframe-based control of the 3D motion. Videos and additional results are available on our project page: https://research.nvidia.com/labs/par/projects/jca/.",
+    "authors": [
+      "Noam Rotstein",
+      "Yoad Tewel",
+      "Chen Tessler",
+      "Haggai Maron",
+      "Gal Chechik",
+      "Or Litany",
+      "Yoni Kasten",
+      "Yuval Atzmon"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28632.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28632",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.28622",
+    "title": "MindView: Benchmarking Generative Multi-View Spatial Intelligence",
+    "abstract": "Spatial intelligence has recently been assessed through generative tasks such as spatially grounded image editing, yet language-guided generation of spatially consistent views from partial multi-view observations remains underexplored. We introduce MindView, a benchmark for generative multi-view spatial intelligence with 1,500 samples from 513 scenes across three indoor datasets. Its seven tasks form two families: geometry-dominant tasks specify changes in camera position and orientation, while semantics-dominant tasks require inferring target viewpoints by grounding referred objects and interpreting spatial relations and reference-frame cues. Evaluation of eleven generators reveals substantial room for improvement on MindView. A paired context analysis further shows that all eleven generators obtain lower overall scores under the expanded context setting. These findings motivate us to investigate whether task-specific supervision can improve target-view generation and whether models can use additional multi-view evidence effectively. We therefore fine-tune BAGEL on the MindView training dataset, improving its overall score by 24.3 points and yielding gains across all seven MindView tasks. Beyond these generation gains, the fine-tuned model also yields higher scores on three spatial-understanding benchmarks without training on their annotations, suggesting that learning to generate spatially grounded views may benefit spatial understanding. To improve evidence utilization under expanded context, we propose MindCue, a training-free spatial evidence selector guided by a target-view hypothesis. MindCue reverses the drop in overall score under expanded context and outperforms the standard-context baseline. Overall, MindView provides a concrete testbed for generative multi-view spatial intelligence.",
+    "authors": [
+      "Yanbo Wang",
+      "Siqi Luo",
+      "Siyu Zhang",
+      "Chenming Zhu",
+      "Wenzhao Zheng",
+      "Qian Yu",
+      "Juncheng Yan",
+      "Bin Fu",
+      "Tai Wang",
+      "Yu Qiao",
+      "Yihao Liu",
+      "Jiwen Lu"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28622.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28622",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "MindView: Benchmarking Generative Multi-View Spatial Intelligence",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.28386",
+    "title": "VisualEvolve: A Skill Self-Evolution Framework for Visual Reasoning",
+    "abstract": "Visual tool use enables vision-language models (VLMs) to acquire task-relevant evidence, but its effectiveness can be limited by predefined visual operations and the tool-use strategies learned during training. Representing these operations and strategies as reusable external skills allows them to be refined through self-evolution without updating model parameters. However, skill refinement can introduce performance regressions. Meanwhile, inspecting accumulated task execution trajectories together with skill evolution history may lead to evolution evidence overload. To address these challenges, we propose VisualEvolve, a self-evolving framework that evolves executable visual operations and tool-use strategies for VLMs through a Select--Execute--Evolve--Evaluate cycle. Skill-Library Snapshot Selection uses performance on a fixed validation set disjoint from execution tasks to select an effective historical snapshot for subsequent evolution, limiting the propagation of performance regressions. Progressive Evidence Access (PEA) guides capability-gap diagnosis through a coarse-to-fine hierarchy comprising the Skill-Performance Report, Evolution Log, Trajectory Summaries, and relevant raw trajectory segments. Across four VLM backbones and six evaluation sets from three benchmarks, VisualEvolve improves over the Initial Skill Library in 23 of 24 settings, with a maximum gain of 15.1 percentage points on VisualProbe Hard using Qwen3.5-Plus. Ablation studies support the contributions of Snapshot Selection and PEA, while further experiments show that skills can be improved using experience from different data settings and directly reused across backbones. Moreover, VisualEvolve enables effective skill self-evolution with over an order of magnitude fewer task-solving trajectories than estimated for representative RL-based methods.",
+    "authors": [
+      "Jiawei Wang",
+      "Yucun Li",
+      "Xueqi Li",
+      "Shenghao Wang",
+      "Xinquan Gong",
+      "Dan Zhang",
+      "Zheqi Lv",
+      "Yuquan Le",
+      "Shaozu Yuan",
+      "An Zhang",
+      "Da Cao",
+      "Tat-Seng Chua"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28386.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28386",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "VisualEvolve: A Skill Self-Evolution Framework for Visual Reasoning",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.28346",
+    "title": "Auto-Director: Leveraging Multi-Agent Collaboration for Autonomous Video Editing",
+    "abstract": "Autonomous video editing from open-world resources remains a challenging problem in multimedia content creation. Retrieval-based methods are constrained by fixed source material and lack creative flexibility, while generative models struggle with long-horizon coherence and often diverge from user intent. Both paradigms fail to replicate the structured, multi-stage reasoning that underlies professional post-production. To address these limitations, we present Auto-Director, a tool-augmented multi-agent framework that mirrors professional editorial workflows: a Planning Agent decomposes abstract topics into fact-grounded scripts via retrieval-augmented planning; a Material Agent indexes open-world footage through shot segmentation and visual tagging; an Editor Agent assembles semantically aligned clips with MLLM-driven spatial adaptation; and a Critic Agent governs an iterative Reflect-and-Revise loop that checks scene-level alignment and pacing. To rigorously evaluate this new paradigm, we introduce VEdit-Bench, a benchmark of 100 expert-curated topics with human-annotated Golden Scripts and a five-dimensional metric suite covering Narrative Logic, Factual Accuracy, Semantic Alignment, Compositional Quality, and Stylistic Cohesion. Extensive experiments demonstrate that Auto-Director significantly outperforms baseline methods in both automated metrics and human evaluation, effectively bridging the gap between amateurs and professional-grade video production.",
+    "authors": [
+      "Yuxia Chen",
+      "Wenbo Zhu",
+      "Yangguang Ji",
+      "Zhenxiang Jiang",
+      "Teng Zhong",
+      "Yu Zhang"
+    ],
+    "published": "2026-10-20",
+    "updated": "2026-10-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.28346.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.28346",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "Auto-Director: Leveraging Multi-Agent Collaboration for Autonomous Video Editing",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  }
+]

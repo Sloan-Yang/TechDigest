@@ -313,7 +313,7 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-10-23</div>
+        <div class="page-date">📅 2026-10-24</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
             计算机视觉: 5
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28086</span>
+          <span class="paper-id">2610.28524</span>
         </div>
-        <span class="score-badge">相关性 72/100</span>
+        <span class="score-badge">相关性 55/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28086" target="_blank">MoDDiT: Simple Token Routing in Diffusion Transformers</a>
+        <a href="https://arxiv.org/abs/2610.28524" target="_blank">Copyright Leakage Detection in AI Generated Videos</a>
       </h3>
-      <p class="paper-title-zh">MoDDiT: Simple Token Routing in Diffusion Transformers</p>
-      <p class="paper-authors">Jarek Liesen, Matthew T. Jackson, Benjamin Ellis, Shimon Whiteson, Jakob N. Foerster</p>
+      <p class="paper-title-zh">Copyright Leakage Detection in AI Generated Videos</p>
+      <p class="paper-authors">Shaif Chowdhury, Moshiur Rahman Tonmoy</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Real-time video generation, interactive world models, and on-device image synthesis are almost a reality. Diffusion Transformers (DiT) achieve excellent sample quality, shifting the bottleneck to the throughput of the models themselves. Natural images are inherently sparse, as large portions of an image are often background, contribute little to the scene content, and are easy to denoise. DiTs fail to exploit this sparsity, as they process image tokens statically and uniformly. We propose MoDDiT, a simple architecture modification that learns to route tokens through both MLP and self-attention operations. By routing tokens through both blocks independently, MoDDiT allows for dynamic compute allocation in MLPs that varies across tokens, images, and denoising timesteps. Using MoDDiT to train image generation models from scratch significantly reduces computational costs of training and inference, processing as few as 12.5% of the tokens. By increasing sparsity and model depth, MoDDiT reduces costs and improves generation performance over unrouted baselines. The learned allocation is interpretable, revealing how computation varies with visual content and noise level. We also use MoDDiT to train video generation models, where allocation correlates with motion, and to distill a dense bidirectional video model into a sparse autoregressive student.</p>
+        <p>Video generation models can create realistic-looking video footage from images and text prompts. Some of the recent advances have raised concerns about the reproduction of copyrighted visual content. However, copyright leakage detection in generated videos remains largely unexplored. In this paper, we introduce a new benchmark data set for copyright leakage detection, comprising 50 copyrighted concepts, each with 5 images. For each concept, we have 5 videos created using the image+prompt video generation model and the prompt-only video generation model. Following that, we develop an AI toolset based on a contrastive retrieval framework that formulates copyright leakage detection as a video-to-image retrieval problem by matching aggregated video frame embeddings against a database of copyrighted image embeddings. Our method uses a single similarity threshold and retrieves the most similar copyrighted reference as supporting evidence. We conducted experiments showing strong retrieval and detection performance, achieving 99.6\% detection accuracy with only a single false negative. These results show the effectiveness of the retrieval-based method for scalable and explainable copyright leakage detection in AI-generated videos. Data can be accessed publicly from https://zenodo.org/records/21386117 and the source code for this project is publicly available at https://github.com/Shaif95/video-cp-Leakage.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28086" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28086.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.28524" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.28524.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28630</span>
+          <span class="paper-id">2610.28632</span>
         </div>
-        <span class="score-badge">相关性 62/100</span>
+        <span class="score-badge">相关性 45/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28630" target="_blank">SolarRenderer: Few-Step Generative Reference Rendering</a>
+        <a href="https://arxiv.org/abs/2610.28632" target="_blank">Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs</a>
       </h3>
-      <p class="paper-title-zh">SolarRenderer: Few-Step Generative Reference Rendering</p>
-      <p class="paper-authors">Guian Fang, Shengju Qian, Dongyue Lu, Junchao Huang, Lutao Jiang 等 (9 位作者)</p>
+      <p class="paper-title-zh">Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs</p>
+      <p class="paper-authors">Noam Rotstein, Yoad Tewel, Chen Tessler, Haggai Maron, Gal Chechik 等 (8 位作者)</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -378,12 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Game engines and coding agents can specify the layout, motion, and camera of a scene, yet turning such coarse structure into realistic video requires a renderer that follows the structure and completes the appearance it leaves open. Existing renderers are tied to the representation of one engine, need tens of denoising steps or a costly distillation of their own, and learn from conditions that are not aligned with their target videos. We present SolarRenderer, a structure-conditioned video renderer that adapts a frozen MiniMax-H3 33B backbone with two lightweight LoRAs. Structural videos enter the native reference pathway of the backbone at the positions of the frames they describe, without a type identifier and described only in plain text, so that a single control LoRA follows arbitrary structural representations. Starting from a pretrained four-step LoRA, structure-guided distribution matching renders in four steps, 12.3 times faster than 50-step sampling, while preserving the learned control. A block-causal variant extends the same design to streaming and renders 768p video in real time. To train the model, we build a frame-aligned corpus of 136K clips from game engines, simulators, and YouTube videos. Experiments on an in-distribution test set and a generalization benchmark of 16 structural representations show that SolarRenderer achieves state-of-the-art results across both, and generalizes to 11 unseen representations, including pose skeletons, drawings, and point clouds.</p>
+        <p>Video generation models can now depict remarkably realistic motion. Yet it is unclear how to use this motion beyond pixels: to animate a specific 3D asset and replay the animation in its 3D scene. For instance, a video model can show a monkey jumping over a crossbar, but it cannot return that jump as replayable 3D motion placed in the 3D scene. Here we present a model that directly co-generates the video and 3D motion for any supplied rig, along with a camera that registers this motion to the scene. Prior video-motion models either handle only human skeletons, often adding billions of parameters, or triangulate 3D motion from generated 2D pose maps. We instead keep 3D motion in a separate model that supports arbitrary skeletons, and connect it to a pretrained video model through a small set of cross-attention layers. This separation lets the motion model first learn how skeletons move from motion-only data, which is easier to obtain and augment than paired video. Additionally, our model learns to locate each joint in the video frames, which lets us recover the camera and place the 3D motion in the scene. To train across many skeletons, we use a generative video editor to place animated 3D assets in scenes suited to their actions, curating the edits so their known motion remains valid. Together with human and robot video, this yields nearly 200K training pairs. Our evaluations demonstrate that our model animates diverse rigs from text more faithfully than video-first pipelines, and its motion responds to the surrounding scene. It also turns video into rig motion, rig motion into video, and enables keyframe-based control of the 3D motion. Videos and additional results are available on our project page: https://research.nvidia.com/labs/par/projects/jca/.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28630" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28630.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.28632" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.28632.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,47 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28594</span>
+          <span class="paper-id">2610.28622</span>
         </div>
-        <span class="score-badge">相关性 62/100</span>
+        <span class="score-badge">相关性 45/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28594" target="_blank">Learning the 4D World through Point Trajectory Forecasting</a>
+        <a href="https://arxiv.org/abs/2610.28622" target="_blank">MindView: Benchmarking Generative Multi-View Spatial Intelligence</a>
       </h3>
-      <p class="paper-title-zh">通过学习点轨迹预测来学习四维世界</p>
-      <p class="paper-authors">Byungwoo Jeon, Sunghwan Hong, Dohyeon Kim, Jonghoon Lee, Jungwoo Park 等 (13 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出 Video-Point Model (VPM)——一个以多视角视频历史与语言指令为条件的4D世界模型，能够联合预测任意视角的未来视频以及场景中持续存在点的3D轨迹；同时构建了训练数据 VPM-Data、评测基准 VP-WorldBench，并将该模型扩展至机器人控制。</div>
-        <div class="summary-section"><strong>方法:</strong> 在预训练世界模型基础上引入相机条件的多视角处理模块，以整合来自不同相机的互补观测；新增轨迹头，用于预测物理点随时间的三维运动，其中每条轨迹在所有视角中追踪同一个点。通过在生成视频的同时监督这些轨迹，使各相机中的外观变化被锚定到统一的3D运动描述上。为支持机器人控制，进一步把机器人动作作为生成器中的一种token模态，与未来视频在共享的点监督主干中联合去噪，从而将策略建立在同一套具备3D感知的表征之上。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在 VP-WorldBench 及已有的4D生成基准上，点轨迹监督相比仅使用视频的对照模型，同时提升了视频保真度与3D运动精度；在仿真与真实机器人实验中，启用动作模态的模型也提高了操作任务的成功率。</div>
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Reliable multi-view forecasting requires videos from different cameras to describe the same evolving 3D scene. To this end, we introduce Video-Point Model (VPM), a world model that conditions on multi-view video histories and a language instruction to jointly forecast future videos from arbitrary viewpoints and the 3D trajectories of persistent scene points. We extend a pretrained world model with camera-conditioned multi-view processing that integrates complementary observations across cameras, and add a trajectory head that predicts how physical points move through time. Each trajectory tracks a single point across all views, and supervising these trajectories alongside video generation therefore anchors appearance changes in every camera to a shared description of 3D motion. To support training and evaluation, we build VPM-Data, a simulation corpus pairing synchronized multi-view videos with persistent point trajectories, and VP-WorldBench, a forecasting benchmark spanning simulated and real environments. We further extend VPM to robot control by adding robot actions as a token modality in the generator. Action tokens share the point-supervised backbone and are denoised jointly with future videos, thereby grounding the policy in the same 3D-aware representation. On VP-WorldBench and existing 4D generation benchmarks, point supervision improves both video fidelity and 3D motion accuracy over a video-only counterpart, and in simulated and real-robot experiments, it also raises the manipulation success of the action-enabled model.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28594" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28594.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28567</span>
-        </div>
-        <span class="score-badge">相关性 62/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28567" target="_blank">Continual Concept Personalization in Diffusion Models via Residual-Space Adaptation</a>
-      </h3>
-      <p class="paper-title-zh">Continual Concept Personalization in Diffusion Models via Residual-Space Adaptation</p>
-      <p class="paper-authors">Yuzhi Liu, Enis Simsar, Giulia Lanzillotta, Thomas Hofmann</p>
+      <p class="paper-title-zh">MindView: Benchmarking Generative Multi-View Spatial Intelligence</p>
+      <p class="paper-authors">Yanbo Wang, Siqi Luo, Siyu Zhang, Chenming Zhu, Wenzhao Zheng 等 (12 位作者)</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -442,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Text-to-image personalization aims to equip pretrained diffusion models with the ability to learn user-specific concepts from only a few reference images. Existing methods, however, typically train each concept independently or assume that all concepts are available simultaneously. In practical applications, concepts often arrive sequentially, requiring models to continually learn new subjects, objects, or styles while minimizing interference with previously acquired concepts. We address this continual concept personalization setting by extending residual-space adaptation to the stochastic adaptation process of pretrained diffusion models. Our work achieves the highest concept fidelity among competing continual personalization methods while maintaining near-zero forgetting. Beyond these empirical gains, the learned residual-space dynamics reveal where adaptation capacity is concentrated within the diffusion model. Restricting adaptation to the identified layers by our method preserves nearly the same performance while reducing the number of trainable parameters by up to 72\%, demonstrating that residual-space dynamics can identify the layers that contribute most to continual concept personalization and directly guide more parameter-efficient adaptation.</p>
+        <p>Spatial intelligence has recently been assessed through generative tasks such as spatially grounded image editing, yet language-guided generation of spatially consistent views from partial multi-view observations remains underexplored. We introduce MindView, a benchmark for generative multi-view spatial intelligence with 1,500 samples from 513 scenes across three indoor datasets. Its seven tasks form two families: geometry-dominant tasks specify changes in camera position and orientation, while semantics-dominant tasks require inferring target viewpoints by grounding referred objects and interpreting spatial relations and reference-frame cues. Evaluation of eleven generators reveals substantial room for improvement on MindView. A paired context analysis further shows that all eleven generators obtain lower overall scores under the expanded context setting. These findings motivate us to investigate whether task-specific supervision can improve target-view generation and whether models can use additional multi-view evidence effectively. We therefore fine-tune BAGEL on the MindView training dataset, improving its overall score by 24.3 points and yielding gains across all seven MindView tasks. Beyond these generation gains, the fine-tuned model also yields higher scores on three spatial-understanding benchmarks without training on their annotations, suggesting that learning to generate spatially grounded views may benefit spatial understanding. To improve evidence utilization under expanded context, we propose MindCue, a training-free spatial evidence selector guided by a target-view hypothesis. MindCue reverses the drop in overall score under expanded context and outperforms the standard-context baseline. Overall, MindView provides a concrete testbed for generative multi-view spatial intelligence.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28567" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28567.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.28622" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.28622.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28416</span>
+          <span class="paper-id">2610.28386</span>
         </div>
-        <span class="score-badge">相关性 62/100</span>
+        <span class="score-badge">相关性 45/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28416" target="_blank">Code2Video-Compass: A Comprehensive Benchmark for General-Purpose Code-Based Video Generation across T2V, I2V, and V2V</a>
+        <a href="https://arxiv.org/abs/2610.28386" target="_blank">VisualEvolve: A Skill Self-Evolution Framework for Visual Reasoning</a>
       </h3>
-      <p class="paper-title-zh">Code2Video-Compass: A Comprehensive Benchmark for General-Purpose Code-Based Video Generation across T2V, I2V, and V2V</p>
-      <p class="paper-authors">Zhenghan Chen, Zekai Shao, Xin Lin, Leting Cheng, Siming Chen</p>
+      <p class="paper-title-zh">VisualEvolve: A Skill Self-Evolution Framework for Visual Reasoning</p>
+      <p class="paper-authors">Jiawei Wang, Yucun Li, Xueqi Li, Shenghao Wang, Xinquan Gong 等 (12 位作者)</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -474,12 +442,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Code-based video generation offers fine-grained control, targeted editing, and component reuse compared with direct video generation. This approach requires multimodal large language models (MLLMs) to translate visual and temporal requirements into executable programs that produce complete videos. However, existing code-based benchmarks primarily target specialized tasks, leaving complete video creation across diverse creative categories and input modalities insufficiently evaluated. We introduce Code2Video-Compass, a general-purpose benchmark for code-based video generation across text-to-video (T2V), image-to-video (I2V), and video-to-video (V2V) settings. Code2Video-Compass comprises 2,104 tasks spanning 10 categories, 24 subtypes, and three complexity dimensions covering construction, dynamic animation, and state dependency. It combines tasks curated from textual instructions and visual references with corresponding T2V, I2V, and V2V tasks derived from complete professional and user-created videos. We propose a dual-level evaluation framework combining 12 objective metrics and five subjective metrics. Objective evaluation covers operational performance, video quality, text-video alignment, and reference fidelity, while subjective evaluation uses an MLLM judge to evaluate instruction following and holistic video quality. Extensive evaluation of 15 recent proprietary and open-weight MLLMs from nine families reveals that even leading models face challenges in reliably generating high-quality complete videos aligned with textual and visual requirements, with performance generally declining as construction, dynamic animation, and state-dependency complexity increases. We anticipate that Code2Video-Compass will advance reliable, coherent, and controllable code-based video generation and inspire broader progress in programmatic visual creation.</p>
+        <p>Visual tool use enables vision-language models (VLMs) to acquire task-relevant evidence, but its effectiveness can be limited by predefined visual operations and the tool-use strategies learned during training. Representing these operations and strategies as reusable external skills allows them to be refined through self-evolution without updating model parameters. However, skill refinement can introduce performance regressions. Meanwhile, inspecting accumulated task execution trajectories together with skill evolution history may lead to evolution evidence overload. To address these challenges, we propose VisualEvolve, a self-evolving framework that evolves executable visual operations and tool-use strategies for VLMs through a Select--Execute--Evolve--Evaluate cycle. Skill-Library Snapshot Selection uses performance on a fixed validation set disjoint from execution tasks to select an effective historical snapshot for subsequent evolution, limiting the propagation of performance regressions. Progressive Evidence Access (PEA) guides capability-gap diagnosis through a coarse-to-fine hierarchy comprising the Skill-Performance Report, Evolution Log, Trajectory Summaries, and relevant raw trajectory segments. Across four VLM backbones and six evaluation sets from three benchmarks, VisualEvolve improves over the Initial Skill Library in 23 of 24 settings, with a maximum gain of 15.1 percentage points on VisualProbe Hard using Qwen3.5-Plus. Ablation studies support the contributions of Snapshot Selection and PEA, while further experiments show that skills can be improved using experience from different data settings and directly reused across backbones. Moreover, VisualEvolve enables effective skill self-evolution with over an order of magnitude fewer task-solving trajectories than estimated for representative RL-based methods.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28416" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28416.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.28386" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.28386.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.28346</span>
+        </div>
+        <span class="score-badge">相关性 45/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.28346" target="_blank">Auto-Director: Leveraging Multi-Agent Collaboration for Autonomous Video Editing</a>
+      </h3>
+      <p class="paper-title-zh">Auto-Director: Leveraging Multi-Agent Collaboration for Autonomous Video Editing</p>
+      <p class="paper-authors">Yuxia Chen, Wenbo Zhu, Yangguang Ji, Zhenxiang Jiang, Teng Zhong 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Autonomous video editing from open-world resources remains a challenging problem in multimedia content creation. Retrieval-based methods are constrained by fixed source material and lack creative flexibility, while generative models struggle with long-horizon coherence and often diverge from user intent. Both paradigms fail to replicate the structured, multi-stage reasoning that underlies professional post-production. To address these limitations, we present Auto-Director, a tool-augmented multi-agent framework that mirrors professional editorial workflows: a Planning Agent decomposes abstract topics into fact-grounded scripts via retrieval-augmented planning; a Material Agent indexes open-world footage through shot segmentation and visual tagging; an Editor Agent assembles semantically aligned clips with MLLM-driven spatial adaptation; and a Critic Agent governs an iterative Reflect-and-Revise loop that checks scene-level alignment and pacing. To rigorously evaluate this new paradigm, we introduce VEdit-Bench, a benchmark of 100 expert-curated topics with human-annotated Golden Scripts and a five-dimensional metric suite covering Narrative Logic, Factual Accuracy, Semantic Alignment, Compositional Quality, and Stylistic Cohesion. Extensive experiments demonstrate that Auto-Director significantly outperforms baseline methods in both automated metrics and human evaluation, effectively bridging the gap between amateurs and professional-grade video production.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.28346" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.28346.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 2331 &nbsp;💬 887</span>
+          <span class="paper-id">▲ 64 &nbsp;💬 42</span>
         </div>
-        <span class="score-badge">推荐度 95/100</span>
+        <span class="score-badge">推荐度 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50163277" target="_blank">DeepInfer: High-performance inference framework for DeepSeek models</a>
+        <a href="https://news.ycombinator.com/item?id=50213826" target="_blank">Florida officer found dead man, impersonated him for years, renovated his home</a>
       </h3>
-      <p class="paper-authors">by ggcr</p>
+      <p class="paper-authors">by Michelangelo11</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50163277" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/deepseek-ai/DeepInfer" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50213826" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.nbcnews.com/news/us-news/officer-impersonates-dead-florida-man-moved-into-home-rcna604844" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 545 &nbsp;💬 510</span>
+          <span class="paper-id">▲ 15 &nbsp;💬 2</span>
         </div>
-        <span class="score-badge">推荐度 88/100</span>
+        <span class="score-badge">推荐度 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50186037" target="_blank">Claude Duet</a>
+        <a href="https://news.ycombinator.com/item?id=50213277" target="_blank">Brokerage Firms Want to Yank Away Your Investor Protections</a>
       </h3>
-      <p class="paper-authors">by kuberwastaken</p>
+      <p class="paper-authors">by JumpCrisscross</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50186037" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://claude.com/product/claude-duet" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50213277" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.wsj.com/finance/investing/brokerage-firms-want-to-yank-away-your-investor-protections-b9fddd88" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 376 &nbsp;💬 247</span>
+          <span class="paper-id">▲ 672 &nbsp;💬 427</span>
         </div>
-        <span class="score-badge">推荐度 88/100</span>
+        <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50186010" target="_blank">Rust Style Guide</a>
+        <a href="https://news.ycombinator.com/item?id=50212065" target="_blank">Kimi K3.1 Pro and K3.1 Pro Highspeed</a>
       </h3>
-      <p class="paper-authors">by kaycebasques</p>
+      <p class="paper-authors">by Jowsey</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50186010" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://google.github.io/styleguide/rustguide.html" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50212065" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.kimi.ai/blog/kimi-k3-1-pro" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 587 &nbsp;💬 191</span>
+          <span class="paper-id">▲ 528 &nbsp;💬 180</span>
         </div>
-        <span class="score-badge">推荐度 85/100</span>
+        <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50181114" target="_blank">Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor</a>
+        <a href="https://news.ycombinator.com/item?id=50207910" target="_blank">Apple Music 404 Not Found</a>
       </h3>
-      <p class="paper-authors">by abhisek</p>
+      <p class="paper-authors">by frizlab</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50181114" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50207910" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://music.apple.com/this-url-doesnt-exist" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 108 &nbsp;💬 33</span>
+          <span class="paper-id">▲ 76 &nbsp;💬 21</span>
         </div>
-        <span class="score-badge">推荐度 82/100</span>
+        <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50183892" target="_blank">Show HN: Omnara – Open-source alternative to Claude Managed Agents</a>
+        <a href="https://news.ycombinator.com/item?id=50215530" target="_blank">CVE Tracker</a>
       </h3>
-      <p class="paper-authors">by kmansm27</p>
+      <p class="paper-authors">by Group_B</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50183892" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/omnara-ai/omnara" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50215530" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://cve.0xosprey.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 247 &nbsp;💬 171</span>
+          <span class="paper-id">▲ 718 &nbsp;💬 468</span>
         </div>
-        <span class="score-badge">推荐度 72/100</span>
+        <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50153531" target="_blank">Code is clay now</a>
+        <a href="https://news.ycombinator.com/item?id=50211474" target="_blank">Today, we hacked what we'd set out to hack: the iPhone</a>
       </h3>
-      <p class="paper-authors">by albertodenia</p>
+      <p class="paper-authors">by pavel_lishin</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50153531" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.albertodenia.com/writing/code-is-clay-now" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50211474" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.calif.io/p/iphone" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 454 &nbsp;💬 62</span>
+          <span class="paper-id">▲ 194 &nbsp;💬 85</span>
         </div>
-        <span class="score-badge">推荐度 72/100</span>
+        <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50181136" target="_blank">DuckDB 2.0.0 LTS “Cinnamon Teal”</a>
+        <a href="https://news.ycombinator.com/item?id=50213925" target="_blank">Dessa: the most authentic full-duplex speech model ever built</a>
       </h3>
-      <p class="paper-authors">by nnx</p>
+      <p class="paper-authors">by dsr12</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50181136" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://duckdb.org/2026/10/21/announcing-duckdb-200" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50213925" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://block.xyz/dessa" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 137 &nbsp;💬 69</span>
+          <span class="paper-id">▲ 16 &nbsp;💬 4</span>
         </div>
-        <span class="score-badge">推荐度 72/100</span>
+        <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50154100" target="_blank">Chain of Thought for Humans</a>
+        <a href="https://news.ycombinator.com/item?id=50216791" target="_blank">Evolving Threat: http2shell is an RCE in node, Python, and more</a>
       </h3>
-      <p class="paper-authors">by ibobev</p>
+      <p class="paper-authors">by cowlevel</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50154100" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.boristhebrave.com/2026/10/18/chain-of-thought-for-humans/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50216791" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -640,13 +640,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 132,933 &nbsp;+1408 today</span>
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 18,779 &nbsp;+1119 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify-Labs/graphify</a>
+        <a href="https://github.com/NVIDIA/OpenShell" target="_blank">NVIDIA/OpenShell</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -659,15 +659,15 @@
 
 
       
-        Graphify-Labs /
+        NVIDIA /
 
-      graphify  
+      OpenShell  
 
     
-      Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.</p>
+      OpenShell is the safe, private runtime for autonomous AI agents.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/NVIDIA/OpenShell" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -675,7 +675,41 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 31,587 &nbsp;+303 today</span>
+          <span class="paper-id">⭐ 40,249 &nbsp;+150 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/OpenBMB/VoxCPM" target="_blank">OpenBMB/VoxCPM</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        OpenBMB /
+
+      VoxCPM  
+
+    
+      VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/OpenBMB/VoxCPM" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 32,203 &nbsp;+635 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -709,101 +743,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 173,450 &nbsp;+1948 today</span>
-        </div>
-        <span class="score-badge">推荐度 30/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/DietrichGebert" target="_blank">sponsors/DietrichGebert</a>
-      </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        DietrichGebert /
-
-      ponytail  
-
-    
-      Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</p>
-      <div class="paper-summary"><div class="summary-section">P</div></div>
-      <div class="paper-links">
-        <a href="https://github.com/sponsors/DietrichGebert" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 113,480 &nbsp;+693 today</span>
-        </div>
-        <span class="score-badge">推荐度 30/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/supabase" target="_blank">sponsors/supabase</a>
-      </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        supabase /
-
-      supabase  
-
-    
-      The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/sponsors/supabase" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 39,549 &nbsp;+2979 today</span>
+          <span class="paper-id">⭐ 42,118 &nbsp;+2716 today</span>
         </div>
         <span class="score-badge">推荐度 20/100</span>
       </div>
@@ -837,7 +777,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">C</span>
-          <span class="paper-id">⭐ 41,148 &nbsp;+287 today</span>
+          <span class="paper-id">⭐ 41,558 &nbsp;+716 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -870,13 +810,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 103,735 &nbsp;+101 today</span>
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 6,851 &nbsp;+546 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/fastapi/fastapi" target="_blank">fastapi/fastapi</a>
+        <a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank">Renhuai123/ziwei-doushu</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -889,15 +829,15 @@
 
 
       
-        fastapi /
+        Renhuai123 /
 
-      fastapi  
+      ziwei-doushu  
 
     
-      FastAPI framework, high performance, easy to learn, fast to code, ready for production</p>
+      紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据</p>
       
       <div class="paper-links">
-        <a href="https://github.com/fastapi/fastapi" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -905,12 +845,46 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 43,190 &nbsp;+177 today</span>
+          <span class="paper-id">⭐ 8,475 &nbsp;+226 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/luongnv89" target="_blank">sponsors/luongnv89</a>
+        <a href="https://github.com/SnailSploit/Claude-Red" target="_blank">SnailSploit/Claude-Red</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        SnailSploit /
+
+      Claude-Red  
+
+    
+      claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/SnailSploit/Claude-Red" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 122,855 &nbsp;+66 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/nodejs" target="_blank">sponsors/nodejs</a>
       </h3>
       <p class="paper-authors">Sponsor
     
@@ -936,15 +910,15 @@
 
 
       
-        luongnv89 /
+        nodejs /
 
-      claude-howto  
+      node  
 
     
-      A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.</p>
-      <div class="paper-summary"><div class="summary-section">这是一个关于 Claude Code 的可视化、示例驱动指南，涵盖从基础概念到高级 Agent 的内容，并提供可直接复制粘贴的实用模板。值得关注是因为它能帮助开发者快速</div></div>
+      Node.js JavaScript runtime ✨🐢🚀✨</p>
+      
       <div class="paper-links">
-        <a href="https://github.com/sponsors/luongnv89" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/nodejs" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
