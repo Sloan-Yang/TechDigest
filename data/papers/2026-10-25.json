@@ -1,0 +1,152 @@
+[
+  {
+    "id": "2610.30875",
+    "title": "HimmBO: High-Dimensional Interactive Model-Merging Bayesian Optimization for Image Generation",
+    "abstract": "Fine-tuning has become a common way to customize text-to-image models, leading to community collections of over 100K lightweight adapters. Adapters sharing a base model can be merged with continuous coefficients. This turns a large collection into a high-dimensional continuous design space, which recent work explores interactively using preferential Bayesian optimization (PBO). However, existing approaches are limited to a few dozen preselected adapters and require expensive image generation in every interaction round. We introduce HimmBO, a two-stage method that scales preference-driven adapter merging to much larger collections while reducing image-generation cost. Its screening stage recovers the active adapter set through level-set estimation over pre-generated images, requiring no image generation. The refinement stage then optimizes merge coefficients in the recovered low-dimensional subspace. Both stages use a style-aware kernel, allowing preference information to transfer between visually similar adapters. In simulated-user image-matching experiments, HimmBO achieves higher final similarity than all comparisons while reaching a given similarity with under one tenth of the image generations required by prior work. Its performance remains stable as the collection grows to 1080 adapters, while competing methods degrade substantially.",
+    "authors": [
+      "Jinyuan Mao",
+      "Zhihao Shen",
+      "Chenxi Liu"
+    ],
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.30875.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30875",
+    "primary_category": "cs.CV",
+    "score": 75,
+    "summary": {
+      "title_zh": "HimmBO: High-Dimensional Interactive Model-Merging Bayesian Optimization for Image Generation",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.30827",
+    "title": "One Evaluation Is Enough: Inversion-Free Image Editing with Trajectory Correction",
+    "abstract": "Real-image editing commonly relies on inversion and iterative sampling, while efficient one-step editors often stabilize a large update by estimating and averaging editing fields at multiple noise levels. We ask a stricter question: is a single temporal field evaluation sufficient for reliable inversion-free editing? Our answer rests on a previously underused duality in a variance-preserving (VP) one-step model: one source-target query at a shared noisy state simultaneously determines a local angular semantic tangent and a clean endpoint displacement. We integrate the tangent over the analytically known remaining VP angle to obtain a nominal one-step transport, and use the endpoint displacement to correct its long-horizon extrapolation through a constrained projection. This transport-first, correction-second construction yields Endpoint-Calibrated Transport (ECT), a closed-form, training-free editor requiring only one noise level, two text conditions packed into one denoiser batch, and one latent update. ECT requires no image inversion, trajectory integration, second temporal observation, or iterative optimization, and can be directly applied to pretrained epsilon-prediction VP one-step generators. Across the reported benchmark settings, ECT delivers stable gains in editing quality within an extremely short editing time.",
+    "authors": [
+      "Lifan Jiang",
+      "Taiyang Chen",
+      "Senlin cheng",
+      "Bolei Xu",
+      "Xiaobo Li",
+      "Can Ye",
+      "Dehai Zhao",
+      "Deng Cai",
+      "Boxi Wu"
+    ],
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.30827.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30827",
+    "primary_category": "cs.CV",
+    "score": 70,
+    "summary": {
+      "title_zh": "One Evaluation Is Enough: Inversion-Free Image Editing with Trajectory Correction",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.30704",
+    "title": "ParaLin++: Accelerating Parallel Diffusion Integrator via Intrinsic Partially Linear Structure",
+    "abstract": "Training-free few-step samplers are often described as nearly quality-lossless under conventional FID/CLIP-style evaluation. It remains unclear whether that conclusion transfers to more realistic and complex generation-quality benchmarks. We first systematize the quality metrics used to evaluate training-free sampling acceleration for diffusion and flow-matching models. We find that representative training-free step-shortening methods often remain nearly lossless under FID/CLIP-class metrics, yet can suffer substantial quality degradation when evaluated with semantic-composition, dense-instruction, and long-text-rendering benchmarks such as GenEval, DPG-Bench, and LongTextBench. Parallel sampling is a notable exception: by retaining the full-step discretization and removing only the solver's temporal dependency, it can preserve near-lossless quality while accelerating sampling. Building on this observation, we propose \\textit{ParaLin++}, a step-parity parallel sampler that preserves the full-step discretization while accelerating the solver iterations. Experiments across Stable Diffusion-v2, LSUN Church, FLUX.1-dev, and Ming-Flash-Omni 2.0 show that ParaLin++ preserves the full-step Euler quality profile at $2.6\\times$--$4.8\\times$, $1.68\\times$ on FLUX, and $1.21\\times$ on Ming. Project page: https://paralinplus.github.io/.",
+    "authors": [
+      "Jianrong Lu",
+      "Zhiyu Zhu",
+      "Hui Liu",
+      "Junhui Hou"
+    ],
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.30704.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30704",
+    "primary_category": "cs.CV",
+    "score": 65,
+    "summary": {
+      "title_zh": "ParaLin++: Accelerating Parallel Diffusion Integrator via Intrinsic Partially Linear Structure",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.30740",
+    "title": "Where Did the Light Come From? Diagnosing Cast-Shadow Reasoning in VLMs and Borrowing the Missing Shadow Prior from Image Generation Models",
+    "abstract": "Shadows are observable consequences of latent physical causes, arising from the interaction between illumination, object geometry, and scene structure. A model that understands shadows should be able not only to read a shadow's direction, but also to infer where a shadow should fall when it is absent, and to judge whether a shadow is physically consistent with the scene. We introduce ShadowBench, built from real photographs, which poses these three questions to vision-language models (VLMs). From each scene, we build a correct-shadow, a shadow-removed, and a human-annotated wrong-direction state. Evaluating 19 open VLMs (2B to 78B) and frontier proprietary models, we find that VLMs read a visible shadow's direction well above chance and improve with scale, yet infer the absent direction only weakly and fall to chance at judging physical consistency even under a bias-free two-alternative test that removes the yes-bias of single-image naturalness questions. Only Gemini-3.1-pro exceeds chance on validity, and even then only modestly and far below humans. Chain-of-Thought (CoT) does not help. The missing ingredient is not reasoning but knowledge that image generation models (IGMs) already hold. Routing a VLM through an IGM lifts its inference well above its direct attempt and helps it flag the wrong-direction shadows it otherwise accepts. Cast-shadow direction is a single facet of illumination understanding, but the sharp gap it reveals between VLMs and IGMs suggests image-generation or reconstruction objectives as a route toward illumination-aware VLMs.",
+    "authors": [
+      "Ryugo Morita",
+      "Shunsuke Kitada",
+      "Stanislav Frolov",
+      "Brian Bernhard Moser",
+      "Ko Watanabe",
+      "Riku Takahashi",
+      "Jinjia Zhou",
+      "Andreas Dengel"
+    ],
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.30740.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30740",
+    "primary_category": "cs.CV",
+    "score": 62,
+    "summary": {
+      "title_zh": "Where Did the Light Come From? Diagnosing Cast-Shadow Reasoning in VLMs and Borrowing the Missing Shadow Prior from Image Generation Models",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.30866",
+    "title": "Verus-Insight: Towards Explainable Artifact Detection in AI-Generated Videos",
+    "abstract": "Recent advances in video generation have made synthetic videos increasingly realistic, placing greater demands on reliable AI-generated video detection. Existing artifact-based detectors typically identify generation artifacts as evidence for source prediction, yet they may either fail to recognize subtle artifacts or reach the correct source decision without faithfully identifying the evidence underlying it. In this work, we systematically investigate how to design and train effective artifact detectors and formulate artifact detection as a structured process comprising three complementary capabilities: Inspection Planning, which determines what should be examined; Evidence Verification, which verifies whether the inspected content exhibits genuine generation artifacts; and Evidence Aggregation, which integrates the verified evidence into the final source decision. Building on this formulation, we introduce Verus-Insight, trained with human-anchored full-process supervision and progressive capability training to strengthen both fine-grained artifact detection and video-level detection. We further introduce Verus-Bench, a benchmark with fine-grained human annotations of perceptible artifacts for evaluating artifact detection. Extensive experiments across diverse benchmarks demonstrate that Verus-Insight achieves strong performance in both fine-grained artifact analysis and AI-generated video detection, with substantial gains in recovering human-perceived artifacts. Further analyses reveal that the three capabilities are complementary yet distinct, and that Verus-Insight more reliably converts relevant inspection targets into supported artifact evidence without increasing spurious artifact claims.",
+    "authors": [
+      "Zhuoran Zhang",
+      "Yang Shi",
+      "Qixun Wang",
+      "Tengfei Liu",
+      "Yuqi Tang",
+      "Xuanyu Zhu",
+      "Yizhuo Jia",
+      "Jingyun Hua",
+      "Shixuan Liu",
+      "Xianghua Ying",
+      "Haotian Wang",
+      "Yuanxing Zhang",
+      "Pengfei Wan",
+      "Wenjing Yang"
+    ],
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.30866.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30866",
+    "primary_category": "cs.CV",
+    "score": 55,
+    "summary": {
+      "title_zh": "Verus-Insight: Towards Explainable Artifact Detection in AI-Generated Videos",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  }
+]

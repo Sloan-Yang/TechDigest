@@ -1,0 +1,100 @@
+[
+  {
+    "id": "NVIDIA_OpenShell",
+    "full_name": "NVIDIA/OpenShell",
+    "owner": "NVIDIA",
+    "name": "OpenShell",
+    "url": "https://github.com/NVIDIA/OpenShell",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NVIDIA /\n\n      OpenShell  \n\n    \n      OpenShell is the safe, private runtime for autonomous AI agents.",
+    "language": "Rust",
+    "stars": 19468,
+    "stars_today": 896,
+    "relevance_score": 85
+  },
+  {
+    "id": "Nutlope_hallmark",
+    "full_name": "Nutlope/hallmark",
+    "owner": "Nutlope",
+    "name": "hallmark",
+    "url": "https://github.com/Nutlope/hallmark",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Nutlope /\n\n      hallmark  \n\n    \n      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+    "language": "CSS",
+    "stars": 32125,
+    "stars_today": 455,
+    "relevance_score": 85,
+    "summary": "Hallmark 是一个面向 Claude Code、Cursor 和 Codex 的“反 AI"
+  },
+  {
+    "id": "pbakaus_impeccable",
+    "full_name": "pbakaus/impeccable",
+    "owner": "pbakaus",
+    "name": "impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        pbakaus /\n\n      impeccable  \n\n    \n      The design language that makes your AI harness better at design.",
+    "language": "Rust",
+    "stars": 86388,
+    "stars_today": 619,
+    "relevance_score": 65
+  },
+  {
+    "id": "aws_agent-toolkit-for-aws",
+    "full_name": "aws/agent-toolkit-for-aws",
+    "owner": "aws",
+    "name": "agent-toolkit-for-aws",
+    "url": "https://github.com/aws/agent-toolkit-for-aws",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        aws /\n\n      agent-toolkit-for-aws  \n\n    \n      Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS",
+    "language": "Python",
+    "stars": 3124,
+    "stars_today": 13,
+    "relevance_score": 60
+  },
+  {
+    "id": "cloudflare_security-audit-skill",
+    "full_name": "cloudflare/security-audit-skill",
+    "owner": "cloudflare",
+    "name": "security-audit-skill",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cloudflare /\n\n      security-audit-skill  \n\n    \n      A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "language": "JavaScript",
+    "stars": 44514,
+    "stars_today": 2264,
+    "relevance_score": 20,
+    "summary": "这是 Cloudflare 推出的"
+  },
+  {
+    "id": "sponsors_luongnv89",
+    "full_name": "sponsors/luongnv89",
+    "owner": "sponsors",
+    "name": "luongnv89",
+    "url": "https://github.com/sponsors/luongnv89",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        luongnv89 /\n\n      claude-howto  \n\n    \n      A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
+    "language": "Python",
+    "stars": 44550,
+    "stars_today": 392,
+    "relevance_score": 0
+  },
+  {
+    "id": "pollen-robotics_microduck",
+    "full_name": "pollen-robotics/microduck",
+    "owner": "pollen-robotics",
+    "name": "microduck",
+    "url": "https://github.com/pollen-robotics/microduck",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        pollen-robotics /\n\n      microduck  \n\n    \n      A Tiny biped duck robot 🦆",
+    "language": "Rust",
+    "stars": 10974,
+    "stars_today": 319,
+    "relevance_score": 0
+  },
+  {
+    "id": "google-gemini_gemini-cli",
+    "full_name": "google-gemini/gemini-cli",
+    "owner": "google-gemini",
+    "name": "gemini-cli",
+    "url": "https://github.com/google-gemini/gemini-cli",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-gemini /\n\n      gemini-cli  \n\n    \n      An open-source AI agent that brings the power of Gemini directly into your terminal.",
+    "language": "TypeScript",
+    "stars": 108043,
+    "stars_today": 44,
+    "relevance_score": 0
+  }
+]

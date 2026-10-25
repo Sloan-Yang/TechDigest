@@ -313,7 +313,7 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-10-24</div>
+        <div class="page-date">📅 2026-10-25</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
             计算机视觉: 5
@@ -328,15 +328,143 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28524</span>
+          <span class="paper-id">2610.30875</span>
+        </div>
+        <span class="score-badge">相关性 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.30875" target="_blank">HimmBO: High-Dimensional Interactive Model-Merging Bayesian Optimization for Image Generation</a>
+      </h3>
+      <p class="paper-title-zh">HimmBO: High-Dimensional Interactive Model-Merging Bayesian Optimization for Image Generation</p>
+      <p class="paper-authors">Jinyuan Mao, Zhihao Shen, Chenxi Liu</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Fine-tuning has become a common way to customize text-to-image models, leading to community collections of over 100K lightweight adapters. Adapters sharing a base model can be merged with continuous coefficients. This turns a large collection into a high-dimensional continuous design space, which recent work explores interactively using preferential Bayesian optimization (PBO). However, existing approaches are limited to a few dozen preselected adapters and require expensive image generation in every interaction round. We introduce HimmBO, a two-stage method that scales preference-driven adapter merging to much larger collections while reducing image-generation cost. Its screening stage recovers the active adapter set through level-set estimation over pre-generated images, requiring no image generation. The refinement stage then optimizes merge coefficients in the recovered low-dimensional subspace. Both stages use a style-aware kernel, allowing preference information to transfer between visually similar adapters. In simulated-user image-matching experiments, HimmBO achieves higher final similarity than all comparisons while reaching a given similarity with under one tenth of the image generations required by prior work. Its performance remains stable as the collection grows to 1080 adapters, while competing methods degrade substantially.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.30875" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.30875.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.30827</span>
+        </div>
+        <span class="score-badge">相关性 70/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.30827" target="_blank">One Evaluation Is Enough: Inversion-Free Image Editing with Trajectory Correction</a>
+      </h3>
+      <p class="paper-title-zh">One Evaluation Is Enough: Inversion-Free Image Editing with Trajectory Correction</p>
+      <p class="paper-authors">Lifan Jiang, Taiyang Chen, Senlin cheng, Bolei Xu, Xiaobo Li 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Real-image editing commonly relies on inversion and iterative sampling, while efficient one-step editors often stabilize a large update by estimating and averaging editing fields at multiple noise levels. We ask a stricter question: is a single temporal field evaluation sufficient for reliable inversion-free editing? Our answer rests on a previously underused duality in a variance-preserving (VP) one-step model: one source-target query at a shared noisy state simultaneously determines a local angular semantic tangent and a clean endpoint displacement. We integrate the tangent over the analytically known remaining VP angle to obtain a nominal one-step transport, and use the endpoint displacement to correct its long-horizon extrapolation through a constrained projection. This transport-first, correction-second construction yields Endpoint-Calibrated Transport (ECT), a closed-form, training-free editor requiring only one noise level, two text conditions packed into one denoiser batch, and one latent update. ECT requires no image inversion, trajectory integration, second temporal observation, or iterative optimization, and can be directly applied to pretrained epsilon-prediction VP one-step generators. Across the reported benchmark settings, ECT delivers stable gains in editing quality within an extremely short editing time.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.30827" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.30827.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.30704</span>
+        </div>
+        <span class="score-badge">相关性 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.30704" target="_blank">ParaLin++: Accelerating Parallel Diffusion Integrator via Intrinsic Partially Linear Structure</a>
+      </h3>
+      <p class="paper-title-zh">ParaLin++: Accelerating Parallel Diffusion Integrator via Intrinsic Partially Linear Structure</p>
+      <p class="paper-authors">Jianrong Lu, Zhiyu Zhu, Hui Liu, Junhui Hou</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Training-free few-step samplers are often described as nearly quality-lossless under conventional FID/CLIP-style evaluation. It remains unclear whether that conclusion transfers to more realistic and complex generation-quality benchmarks. We first systematize the quality metrics used to evaluate training-free sampling acceleration for diffusion and flow-matching models. We find that representative training-free step-shortening methods often remain nearly lossless under FID/CLIP-class metrics, yet can suffer substantial quality degradation when evaluated with semantic-composition, dense-instruction, and long-text-rendering benchmarks such as GenEval, DPG-Bench, and LongTextBench. Parallel sampling is a notable exception: by retaining the full-step discretization and removing only the solver's temporal dependency, it can preserve near-lossless quality while accelerating sampling. Building on this observation, we propose \textit{ParaLin++}, a step-parity parallel sampler that preserves the full-step discretization while accelerating the solver iterations. Experiments across Stable Diffusion-v2, LSUN Church, FLUX.1-dev, and Ming-Flash-Omni 2.0 show that ParaLin++ preserves the full-step Euler quality profile at $2.6\times$--$4.8\times$, $1.68\times$ on FLUX, and $1.21\times$ on Ming. Project page: https://paralinplus.github.io/.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.30704" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.30704.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.30740</span>
+        </div>
+        <span class="score-badge">相关性 62/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.30740" target="_blank">Where Did the Light Come From? Diagnosing Cast-Shadow Reasoning in VLMs and Borrowing the Missing Shadow Prior from Image Generation Models</a>
+      </h3>
+      <p class="paper-title-zh">Where Did the Light Come From? Diagnosing Cast-Shadow Reasoning in VLMs and Borrowing the Missing Shadow Prior from Image Generation Models</p>
+      <p class="paper-authors">Ryugo Morita, Shunsuke Kitada, Stanislav Frolov, Brian Bernhard Moser, Ko Watanabe 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Shadows are observable consequences of latent physical causes, arising from the interaction between illumination, object geometry, and scene structure. A model that understands shadows should be able not only to read a shadow's direction, but also to infer where a shadow should fall when it is absent, and to judge whether a shadow is physically consistent with the scene. We introduce ShadowBench, built from real photographs, which poses these three questions to vision-language models (VLMs). From each scene, we build a correct-shadow, a shadow-removed, and a human-annotated wrong-direction state. Evaluating 19 open VLMs (2B to 78B) and frontier proprietary models, we find that VLMs read a visible shadow's direction well above chance and improve with scale, yet infer the absent direction only weakly and fall to chance at judging physical consistency even under a bias-free two-alternative test that removes the yes-bias of single-image naturalness questions. Only Gemini-3.1-pro exceeds chance on validity, and even then only modestly and far below humans. Chain-of-Thought (CoT) does not help. The missing ingredient is not reasoning but knowledge that image generation models (IGMs) already hold. Routing a VLM through an IGM lifts its inference well above its direct attempt and helps it flag the wrong-direction shadows it otherwise accepts. Cast-shadow direction is a single facet of illumination understanding, but the sharp gap it reveals between VLMs and IGMs suggests image-generation or reconstruction objectives as a route toward illumination-aware VLMs.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.30740" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.30740.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.30866</span>
         </div>
         <span class="score-badge">相关性 55/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28524" target="_blank">Copyright Leakage Detection in AI Generated Videos</a>
+        <a href="https://arxiv.org/abs/2610.30866" target="_blank">Verus-Insight: Towards Explainable Artifact Detection in AI-Generated Videos</a>
       </h3>
-      <p class="paper-title-zh">Copyright Leakage Detection in AI Generated Videos</p>
-      <p class="paper-authors">Shaif Chowdhury, Moshiur Rahman Tonmoy</p>
+      <p class="paper-title-zh">Verus-Insight: Towards Explainable Artifact Detection in AI-Generated Videos</p>
+      <p class="paper-authors">Zhuoran Zhang, Yang Shi, Qixun Wang, Tengfei Liu, Yuqi Tang 等 (14 位作者)</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -346,140 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Video generation models can create realistic-looking video footage from images and text prompts. Some of the recent advances have raised concerns about the reproduction of copyrighted visual content. However, copyright leakage detection in generated videos remains largely unexplored. In this paper, we introduce a new benchmark data set for copyright leakage detection, comprising 50 copyrighted concepts, each with 5 images. For each concept, we have 5 videos created using the image+prompt video generation model and the prompt-only video generation model. Following that, we develop an AI toolset based on a contrastive retrieval framework that formulates copyright leakage detection as a video-to-image retrieval problem by matching aggregated video frame embeddings against a database of copyrighted image embeddings. Our method uses a single similarity threshold and retrieves the most similar copyrighted reference as supporting evidence. We conducted experiments showing strong retrieval and detection performance, achieving 99.6\% detection accuracy with only a single false negative. These results show the effectiveness of the retrieval-based method for scalable and explainable copyright leakage detection in AI-generated videos. Data can be accessed publicly from https://zenodo.org/records/21386117 and the source code for this project is publicly available at https://github.com/Shaif95/video-cp-Leakage.</p>
+        <p>Recent advances in video generation have made synthetic videos increasingly realistic, placing greater demands on reliable AI-generated video detection. Existing artifact-based detectors typically identify generation artifacts as evidence for source prediction, yet they may either fail to recognize subtle artifacts or reach the correct source decision without faithfully identifying the evidence underlying it. In this work, we systematically investigate how to design and train effective artifact detectors and formulate artifact detection as a structured process comprising three complementary capabilities: Inspection Planning, which determines what should be examined; Evidence Verification, which verifies whether the inspected content exhibits genuine generation artifacts; and Evidence Aggregation, which integrates the verified evidence into the final source decision. Building on this formulation, we introduce Verus-Insight, trained with human-anchored full-process supervision and progressive capability training to strengthen both fine-grained artifact detection and video-level detection. We further introduce Verus-Bench, a benchmark with fine-grained human annotations of perceptible artifacts for evaluating artifact detection. Extensive experiments across diverse benchmarks demonstrate that Verus-Insight achieves strong performance in both fine-grained artifact analysis and AI-generated video detection, with substantial gains in recovering human-perceived artifacts. Further analyses reveal that the three capabilities are complementary yet distinct, and that Verus-Insight more reliably converts relevant inspection targets into supported artifact evidence without increasing spurious artifact claims.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28524" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28524.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28632</span>
-        </div>
-        <span class="score-badge">相关性 45/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28632" target="_blank">Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs</a>
-      </h3>
-      <p class="paper-title-zh">Joints, Camera, Action! Co-Generating 3D Motion and Video for Arbitrary Rigs</p>
-      <p class="paper-authors">Noam Rotstein, Yoad Tewel, Chen Tessler, Haggai Maron, Gal Chechik 等 (8 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Video generation models can now depict remarkably realistic motion. Yet it is unclear how to use this motion beyond pixels: to animate a specific 3D asset and replay the animation in its 3D scene. For instance, a video model can show a monkey jumping over a crossbar, but it cannot return that jump as replayable 3D motion placed in the 3D scene. Here we present a model that directly co-generates the video and 3D motion for any supplied rig, along with a camera that registers this motion to the scene. Prior video-motion models either handle only human skeletons, often adding billions of parameters, or triangulate 3D motion from generated 2D pose maps. We instead keep 3D motion in a separate model that supports arbitrary skeletons, and connect it to a pretrained video model through a small set of cross-attention layers. This separation lets the motion model first learn how skeletons move from motion-only data, which is easier to obtain and augment than paired video. Additionally, our model learns to locate each joint in the video frames, which lets us recover the camera and place the 3D motion in the scene. To train across many skeletons, we use a generative video editor to place animated 3D assets in scenes suited to their actions, curating the edits so their known motion remains valid. Together with human and robot video, this yields nearly 200K training pairs. Our evaluations demonstrate that our model animates diverse rigs from text more faithfully than video-first pipelines, and its motion responds to the surrounding scene. It also turns video into rig motion, rig motion into video, and enables keyframe-based control of the 3D motion. Videos and additional results are available on our project page: https://research.nvidia.com/labs/par/projects/jca/.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28632" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28632.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28622</span>
-        </div>
-        <span class="score-badge">相关性 45/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28622" target="_blank">MindView: Benchmarking Generative Multi-View Spatial Intelligence</a>
-      </h3>
-      <p class="paper-title-zh">MindView: Benchmarking Generative Multi-View Spatial Intelligence</p>
-      <p class="paper-authors">Yanbo Wang, Siqi Luo, Siyu Zhang, Chenming Zhu, Wenzhao Zheng 等 (12 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Spatial intelligence has recently been assessed through generative tasks such as spatially grounded image editing, yet language-guided generation of spatially consistent views from partial multi-view observations remains underexplored. We introduce MindView, a benchmark for generative multi-view spatial intelligence with 1,500 samples from 513 scenes across three indoor datasets. Its seven tasks form two families: geometry-dominant tasks specify changes in camera position and orientation, while semantics-dominant tasks require inferring target viewpoints by grounding referred objects and interpreting spatial relations and reference-frame cues. Evaluation of eleven generators reveals substantial room for improvement on MindView. A paired context analysis further shows that all eleven generators obtain lower overall scores under the expanded context setting. These findings motivate us to investigate whether task-specific supervision can improve target-view generation and whether models can use additional multi-view evidence effectively. We therefore fine-tune BAGEL on the MindView training dataset, improving its overall score by 24.3 points and yielding gains across all seven MindView tasks. Beyond these generation gains, the fine-tuned model also yields higher scores on three spatial-understanding benchmarks without training on their annotations, suggesting that learning to generate spatially grounded views may benefit spatial understanding. To improve evidence utilization under expanded context, we propose MindCue, a training-free spatial evidence selector guided by a target-view hypothesis. MindCue reverses the drop in overall score under expanded context and outperforms the standard-context baseline. Overall, MindView provides a concrete testbed for generative multi-view spatial intelligence.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28622" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28622.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28386</span>
-        </div>
-        <span class="score-badge">相关性 45/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28386" target="_blank">VisualEvolve: A Skill Self-Evolution Framework for Visual Reasoning</a>
-      </h3>
-      <p class="paper-title-zh">VisualEvolve: A Skill Self-Evolution Framework for Visual Reasoning</p>
-      <p class="paper-authors">Jiawei Wang, Yucun Li, Xueqi Li, Shenghao Wang, Xinquan Gong 等 (12 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Visual tool use enables vision-language models (VLMs) to acquire task-relevant evidence, but its effectiveness can be limited by predefined visual operations and the tool-use strategies learned during training. Representing these operations and strategies as reusable external skills allows them to be refined through self-evolution without updating model parameters. However, skill refinement can introduce performance regressions. Meanwhile, inspecting accumulated task execution trajectories together with skill evolution history may lead to evolution evidence overload. To address these challenges, we propose VisualEvolve, a self-evolving framework that evolves executable visual operations and tool-use strategies for VLMs through a Select--Execute--Evolve--Evaluate cycle. Skill-Library Snapshot Selection uses performance on a fixed validation set disjoint from execution tasks to select an effective historical snapshot for subsequent evolution, limiting the propagation of performance regressions. Progressive Evidence Access (PEA) guides capability-gap diagnosis through a coarse-to-fine hierarchy comprising the Skill-Performance Report, Evolution Log, Trajectory Summaries, and relevant raw trajectory segments. Across four VLM backbones and six evaluation sets from three benchmarks, VisualEvolve improves over the Initial Skill Library in 23 of 24 settings, with a maximum gain of 15.1 percentage points on VisualProbe Hard using Qwen3.5-Plus. Ablation studies support the contributions of Snapshot Selection and PEA, while further experiments show that skills can be improved using experience from different data settings and directly reused across backbones. Moreover, VisualEvolve enables effective skill self-evolution with over an order of magnitude fewer task-solving trajectories than estimated for representative RL-based methods.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28386" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28386.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.28346</span>
-        </div>
-        <span class="score-badge">相关性 45/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.28346" target="_blank">Auto-Director: Leveraging Multi-Agent Collaboration for Autonomous Video Editing</a>
-      </h3>
-      <p class="paper-title-zh">Auto-Director: Leveraging Multi-Agent Collaboration for Autonomous Video Editing</p>
-      <p class="paper-authors">Yuxia Chen, Wenbo Zhu, Yangguang Ji, Zhenxiang Jiang, Teng Zhong 等 (6 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Autonomous video editing from open-world resources remains a challenging problem in multimedia content creation. Retrieval-based methods are constrained by fixed source material and lack creative flexibility, while generative models struggle with long-horizon coherence and often diverge from user intent. Both paradigms fail to replicate the structured, multi-stage reasoning that underlies professional post-production. To address these limitations, we present Auto-Director, a tool-augmented multi-agent framework that mirrors professional editorial workflows: a Planning Agent decomposes abstract topics into fact-grounded scripts via retrieval-augmented planning; a Material Agent indexes open-world footage through shot segmentation and visual tagging; an Editor Agent assembles semantically aligned clips with MLLM-driven spatial adaptation; and a Critic Agent governs an iterative Reflect-and-Revise loop that checks scene-level alignment and pacing. To rigorously evaluate this new paradigm, we introduce VEdit-Bench, a benchmark of 100 expert-curated topics with human-annotated Golden Scripts and a five-dimensional metric suite covering Narrative Logic, Factual Accuracy, Semantic Alignment, Compositional Quality, and Stylistic Cohesion. Extensive experiments demonstrate that Auto-Director significantly outperforms baseline methods in both automated metrics and human evaluation, effectively bridging the gap between amateurs and professional-grade video production.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.28346" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.28346.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.30866" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.30866.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,37 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 64 &nbsp;💬 42</span>
+          <span class="paper-id">▲ 42 &nbsp;💬 9</span>
+        </div>
+        <span class="score-badge">推荐度 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50168376" target="_blank">Making a VGA Driver in SystemVerilog</a>
+      </h3>
+      <p class="paper-authors">by derHackerman</p>
+      <div class="paper-summary"><div class="summary-section">该帖子介绍如何</div></div>
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50168376" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://lukaswerner.com/post/2026-10-20@bottom-up-vga" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 7 &nbsp;💬 3</span>
         </div>
         <span class="score-badge">推荐度 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50213826" target="_blank">Florida officer found dead man, impersonated him for years, renovated his home</a>
+        <a href="https://news.ycombinator.com/item?id=50225485" target="_blank">Doctors' offices are charging patients 10 times more by claiming to be hospitals</a>
       </h3>
-      <p class="paper-authors">by Michelangelo11</p>
+      <p class="paper-authors">by bookofjoe</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50213826" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.nbcnews.com/news/us-news/officer-impersonates-dead-florida-man-moved-into-home-rcna604844" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50225485" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.washingtonpost.com/business/2026/10/24/doctors-offices-are-charging-patients-10-times-more-by-claiming-be-hospitals/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,37 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 15 &nbsp;💬 2</span>
-        </div>
-        <span class="score-badge">推荐度 5/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50213277" target="_blank">Brokerage Firms Want to Yank Away Your Investor Protections</a>
-      </h3>
-      <p class="paper-authors">by JumpCrisscross</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50213277" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.wsj.com/finance/investing/brokerage-firms-want-to-yank-away-your-investor-protections-b9fddd88" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 672 &nbsp;💬 427</span>
+          <span class="paper-id">▲ 80 &nbsp;💬 47</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50212065" target="_blank">Kimi K3.1 Pro and K3.1 Pro Highspeed</a>
+        <a href="https://news.ycombinator.com/item?id=50225695" target="_blank">We should be more ambitious with the software we build</a>
       </h3>
-      <p class="paper-authors">by Jowsey</p>
+      <p class="paper-authors">by ltratt</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50212065" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.kimi.ai/blog/kimi-k3-1-pro" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50225695" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://danluu.com/ambitious/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 528 &nbsp;💬 180</span>
+          <span class="paper-id">▲ 23 &nbsp;💬 12</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50207910" target="_blank">Apple Music 404 Not Found</a>
+        <a href="https://news.ycombinator.com/item?id=50226419" target="_blank">America Has Lost 200k of Jobs in Media, Film and the Arts. How Much Is AI?</a>
       </h3>
-      <p class="paper-authors">by frizlab</p>
+      <p class="paper-authors">by gnabgib</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50207910" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://music.apple.com/this-url-doesnt-exist" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50226419" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 76 &nbsp;💬 21</span>
+          <span class="paper-id">▲ 359 &nbsp;💬 199</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50215530" target="_blank">CVE Tracker</a>
+        <a href="https://news.ycombinator.com/item?id=50224916" target="_blank">Show HN: Steal My Bitcoin</a>
       </h3>
-      <p class="paper-authors">by Group_B</p>
+      <p class="paper-authors">by cloudlandsdev</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50215530" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://cve.0xosprey.com/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50224916" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://stealmybitcoin.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 718 &nbsp;💬 468</span>
+          <span class="paper-id">▲ 185 &nbsp;💬 142</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50211474" target="_blank">Today, we hacked what we'd set out to hack: the iPhone</a>
+        <a href="https://news.ycombinator.com/item?id=50224100" target="_blank">The Goose Programming Language</a>
       </h3>
-      <p class="paper-authors">by pavel_lishin</p>
+      <p class="paper-authors">by bobbydigitales</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50211474" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.calif.io/p/iphone" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50224100" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://aardappel.github.io/goose/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 194 &nbsp;💬 85</span>
+          <span class="paper-id">▲ 242 &nbsp;💬 160</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50213925" target="_blank">Dessa: the most authentic full-duplex speech model ever built</a>
+        <a href="https://news.ycombinator.com/item?id=50222622" target="_blank">Roku developer repositories moved from GitHub to GitLab</a>
       </h3>
-      <p class="paper-authors">by dsr12</p>
-      
+      <p class="paper-authors">by cxr</p>
+      <div class="paper-summary"><div class="summary-section">Roku 官方宣布将其开发者代码仓库从 GitHub</div></div>
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50213925" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://block.xyz/dessa" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50222622" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.roku.com/developer/gitlab-move" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 16 &nbsp;💬 4</span>
+          <span class="paper-id">▲ 99 &nbsp;💬 64</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50216791" target="_blank">Evolving Threat: http2shell is an RCE in node, Python, and more</a>
+        <a href="https://news.ycombinator.com/item?id=50224422" target="_blank">Listen and read USA nuclear forces Emergency Action Messages, heard on 11175 kHz</a>
       </h3>
-      <p class="paper-authors">by cowlevel</p>
+      <p class="paper-authors">by liotier</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50216791" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://nitter.click/AikidoSecurity/status/2113759110625906950?__galadriel=lPmlGl9id4oAd5UeBwMhlYKArHyr6lR2IDGujPwB5HV2kQ1aLoPWFd5A9sGuzNcmrp8fUso8qygmHcKTDZ8MNHWqQ3bDJcycV87xp_0VypzQLYj6O_RRHlZuQqj33oASGY2YLSoAiMjeOZN40h7Stf8AG7DPrGZbAPVKUXy36HoMudRbvwF3_r2uYNmfJMhpKzywQDM6Ab8" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50224422" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://missileer.watch" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 18,779 &nbsp;+1119 today</span>
+          <span class="paper-id">⭐ 19,468 &nbsp;+896 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -674,13 +674,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 40,249 &nbsp;+150 today</span>
+          <span class="category-badge gh-badge">CSS</span>
+          <span class="paper-id">⭐ 32,125 &nbsp;+455 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/OpenBMB/VoxCPM" target="_blank">OpenBMB/VoxCPM</a>
+        <a href="https://github.com/Nutlope/hallmark" target="_blank">Nutlope/hallmark</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -693,15 +693,49 @@
 
 
       
-        OpenBMB /
+        Nutlope /
 
-      VoxCPM  
+      hallmark  
 
     
-      VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning</p>
+      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.</p>
+      <div class="paper-summary"><div class="summary-section">Hallmark 是一个面向 Claude Code、Cursor 和 Codex 的“反 AI</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/Nutlope/hallmark" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 86,388 &nbsp;+619 today</span>
+        </div>
+        <span class="score-badge">推荐度 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        pbakaus /
+
+      impeccable  
+
+    
+      The design language that makes your AI harness better at design.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/OpenBMB/VoxCPM" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/pbakaus/impeccable" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -709,12 +743,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 32,203 &nbsp;+635 today</span>
+          <span class="paper-id">⭐ 3,124 &nbsp;+13 today</span>
         </div>
-        <span class="score-badge">推荐度 30/100</span>
+        <span class="score-badge">推荐度 60/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank">anthropics/knowledge-work-plugins</a>
+        <a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank">aws/agent-toolkit-for-aws</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -727,15 +761,15 @@
 
 
       
-        anthropics /
+        aws /
 
-      knowledge-work-plugins  
+      agent-toolkit-for-aws  
 
     
-      Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork</p>
+      Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS</p>
       
       <div class="paper-links">
-        <a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -743,7 +777,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 42,118 &nbsp;+2716 today</span>
+          <span class="paper-id">⭐ 44,514 &nbsp;+2264 today</span>
         </div>
         <span class="score-badge">推荐度 20/100</span>
       </div>
@@ -767,7 +801,7 @@
 
     
       A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
-      
+      <div class="paper-summary"><div class="summary-section">这是 Cloudflare 推出的</div></div>
       <div class="paper-links">
         <a href="https://github.com/cloudflare/security-audit-skill" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -776,115 +810,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">C</span>
-          <span class="paper-id">⭐ 41,558 &nbsp;+716 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/php/php-src" target="_blank">php/php-src</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        php /
-
-      php-src  
-
-    
-      The PHP Interpreter</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/php/php-src" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 6,851 &nbsp;+546 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank">Renhuai123/ziwei-doushu</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        Renhuai123 /
-
-      ziwei-doushu  
-
-    
-      紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 8,475 &nbsp;+226 today</span>
+          <span class="paper-id">⭐ 44,550 &nbsp;+392 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/SnailSploit/Claude-Red" target="_blank">SnailSploit/Claude-Red</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        SnailSploit /
-
-      Claude-Red  
-
-    
-      claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/SnailSploit/Claude-Red" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 122,855 &nbsp;+66 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/nodejs" target="_blank">sponsors/nodejs</a>
+        <a href="https://github.com/sponsors/luongnv89" target="_blank">sponsors/luongnv89</a>
       </h3>
       <p class="paper-authors">Sponsor
     
@@ -910,15 +842,83 @@
 
 
       
-        nodejs /
+        luongnv89 /
 
-      node  
+      claude-howto  
 
     
-      Node.js JavaScript runtime ✨🐢🚀✨</p>
+      A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sponsors/nodejs" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/luongnv89" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 10,974 &nbsp;+319 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/pollen-robotics/microduck" target="_blank">pollen-robotics/microduck</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        pollen-robotics /
+
+      microduck  
+
+    
+      A Tiny biped duck robot 🦆</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/pollen-robotics/microduck" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 108,043 &nbsp;+44 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/google-gemini/gemini-cli" target="_blank">google-gemini/gemini-cli</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        google-gemini /
+
+      gemini-cli  
+
+    
+      An open-source AI agent that brings the power of Gemini directly into your terminal.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/google-gemini/gemini-cli" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
