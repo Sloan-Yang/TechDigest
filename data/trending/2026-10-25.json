@@ -1,17 +1,5 @@
 [
   {
-    "id": "NVIDIA_OpenShell",
-    "full_name": "NVIDIA/OpenShell",
-    "owner": "NVIDIA",
-    "name": "OpenShell",
-    "url": "https://github.com/NVIDIA/OpenShell",
-    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NVIDIA /\n\n      OpenShell  \n\n    \n      OpenShell is the safe, private runtime for autonomous AI agents.",
-    "language": "Rust",
-    "stars": 19468,
-    "stars_today": 896,
-    "relevance_score": 85
-  },
-  {
     "id": "Nutlope_hallmark",
     "full_name": "Nutlope/hallmark",
     "owner": "Nutlope",
@@ -19,10 +7,10 @@
     "url": "https://github.com/Nutlope/hallmark",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Nutlope /\n\n      hallmark  \n\n    \n      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
     "language": "CSS",
-    "stars": 32125,
-    "stars_today": 455,
+    "stars": 33706,
+    "stars_today": 1359,
     "relevance_score": 85,
-    "summary": "Hallmark 是一个面向 Claude Code、Cursor 和 Codex 的“反 AI"
+    "summary": "Hallmark 是一套面向 Claude"
   },
   {
     "id": "pbakaus_impeccable",
@@ -32,21 +20,21 @@
     "url": "https://github.com/pbakaus/impeccable",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        pbakaus /\n\n      impeccable  \n\n    \n      The design language that makes your AI harness better at design.",
     "language": "Rust",
-    "stars": 86388,
-    "stars_today": 619,
+    "stars": 87659,
+    "stars_today": 1113,
     "relevance_score": 65
   },
   {
-    "id": "aws_agent-toolkit-for-aws",
-    "full_name": "aws/agent-toolkit-for-aws",
-    "owner": "aws",
-    "name": "agent-toolkit-for-aws",
-    "url": "https://github.com/aws/agent-toolkit-for-aws",
-    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        aws /\n\n      agent-toolkit-for-aws  \n\n    \n      Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS",
+    "id": "TauricResearch_TradingAgents",
+    "full_name": "TauricResearch/TradingAgents",
+    "owner": "TauricResearch",
+    "name": "TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        TauricResearch /\n\n      TradingAgents  \n\n    \n      TradingAgents: Multi-Agents LLM Financial Trading Framework",
     "language": "Python",
-    "stars": 3124,
-    "stars_today": 13,
-    "relevance_score": 60
+    "stars": 114571,
+    "stars_today": 636,
+    "relevance_score": 20
   },
   {
     "id": "cloudflare_security-audit-skill",
@@ -56,21 +44,32 @@
     "url": "https://github.com/cloudflare/security-audit-skill",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cloudflare /\n\n      security-audit-skill  \n\n    \n      A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
     "language": "JavaScript",
-    "stars": 44514,
-    "stars_today": 2264,
-    "relevance_score": 20,
-    "summary": "这是 Cloudflare 推出的"
+    "stars": 46826,
+    "stars_today": 2874,
+    "relevance_score": 20
   },
   {
-    "id": "sponsors_luongnv89",
-    "full_name": "sponsors/luongnv89",
+    "id": "makecindy_cindy",
+    "full_name": "makecindy/cindy",
+    "owner": "makecindy",
+    "name": "cindy",
+    "url": "https://github.com/makecindy/cindy",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        makecindy /\n\n      cindy  \n\n    \n      Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+    "language": "TypeScript",
+    "stars": 4830,
+    "stars_today": 677,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_debpalash",
+    "full_name": "sponsors/debpalash",
     "owner": "sponsors",
-    "name": "luongnv89",
-    "url": "https://github.com/sponsors/luongnv89",
-    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        luongnv89 /\n\n      claude-howto  \n\n    \n      A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
+    "name": "debpalash",
+    "url": "https://github.com/sponsors/debpalash",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        debpalash /\n\n      VoiceStudio  \n\n    \n      VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription &amp; audiobook creation in 646 languages.",
     "language": "Python",
-    "stars": 44550,
-    "stars_today": 392,
+    "stars": 86759,
+    "stars_today": 1588,
     "relevance_score": 0
   },
   {
@@ -81,20 +80,20 @@
     "url": "https://github.com/pollen-robotics/microduck",
     "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        pollen-robotics /\n\n      microduck  \n\n    \n      A Tiny biped duck robot 🦆",
     "language": "Rust",
-    "stars": 10974,
-    "stars_today": 319,
+    "stars": 11611,
+    "stars_today": 657,
     "relevance_score": 0
   },
   {
-    "id": "google-gemini_gemini-cli",
-    "full_name": "google-gemini/gemini-cli",
-    "owner": "google-gemini",
-    "name": "gemini-cli",
-    "url": "https://github.com/google-gemini/gemini-cli",
-    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-gemini /\n\n      gemini-cli  \n\n    \n      An open-source AI agent that brings the power of Gemini directly into your terminal.",
+    "id": "Renhuai123_ziwei-doushu",
+    "full_name": "Renhuai123/ziwei-doushu",
+    "owner": "Renhuai123",
+    "name": "ziwei-doushu",
+    "url": "https://github.com/Renhuai123/ziwei-doushu",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Renhuai123 /\n\n      ziwei-doushu  \n\n    \n      紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
     "language": "TypeScript",
-    "stars": 108043,
-    "stars_today": 44,
+    "stars": 7529,
+    "stars_today": 255,
     "relevance_score": 0
   }
 ]

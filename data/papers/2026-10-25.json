@@ -1,44 +1,69 @@
 [
   {
-    "id": "2610.30875",
-    "title": "HimmBO: High-Dimensional Interactive Model-Merging Bayesian Optimization for Image Generation",
-    "abstract": "Fine-tuning has become a common way to customize text-to-image models, leading to community collections of over 100K lightweight adapters. Adapters sharing a base model can be merged with continuous coefficients. This turns a large collection into a high-dimensional continuous design space, which recent work explores interactively using preferential Bayesian optimization (PBO). However, existing approaches are limited to a few dozen preselected adapters and require expensive image generation in every interaction round. We introduce HimmBO, a two-stage method that scales preference-driven adapter merging to much larger collections while reducing image-generation cost. Its screening stage recovers the active adapter set through level-set estimation over pre-generated images, requiring no image generation. The refinement stage then optimizes merge coefficients in the recovered low-dimensional subspace. Both stages use a style-aware kernel, allowing preference information to transfer between visually similar adapters. In simulated-user image-matching experiments, HimmBO achieves higher final similarity than all comparisons while reaching a given similarity with under one tenth of the image generations required by prior work. Its performance remains stable as the collection grows to 1080 adapters, while competing methods degrade substantially.",
+    "id": "2610.30753",
+    "title": "FilmFlow: Agentic System for 3D Virtual Film Cinematography",
+    "abstract": "Complex camera motion is central to visual storytelling, yet translating cinematographic intent into controllable, executable camera trajectories remains challenging. We introduce FilmFlow, an agentic framework that converts natural-language instructions or reference videos into explicit camera trajectories for dynamic 3D environments. To generate these trajectories, a Director agent constructs executable camera plans by composing high-level motions from concurrent atomic operations that jointly control translation, rotation, and framing. The Director is supported by three specialized agents: an Interpreter that extracts scene-grounded cinematographic intent, a Scout that selects initial viewpoints, and a Critic that evaluates rendered results and provides visual feedback for iterative plan refinement. We also introduce CinemaBench, comprising 150 Blender scenes from self-created and licensed sources, with five camera instructions per scene for 750 text-directed tasks and 60 reference videos associated with a subset of scenes. CinemaBench supports evaluation of both text-directed camera generation and video reference-directed camera generation. Across a diverse set of evaluated baselines, FilmFlow achieves the strongest benchmark performance and the highest user preference, demonstrating effective spatial reasoning, temporal coordination, and visual composition for executable 3D cinematography.",
     "authors": [
-      "Jinyuan Mao",
-      "Zhihao Shen",
-      "Chenxi Liu"
+      "Yiming Zhang",
+      "Jiarui Guo",
+      "Haojia Wei",
+      "Yifei Liu",
+      "Yifan Yang",
+      "Hongjie Zhang",
+      "Xue Yang",
+      "Zhihang Zhong"
     ],
     "published": "2026-10-22",
     "updated": "2026-10-22",
     "categories": [
-      "cs.CV",
-      "cs.GR"
+      "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2610.30875.pdf",
-    "abs_url": "https://arxiv.org/abs/2610.30875",
+    "pdf_url": "https://arxiv.org/pdf/2610.30753.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30753",
     "primary_category": "cs.CV",
-    "score": 75,
+    "score": 52,
     "summary": {
-      "title_zh": "HimmBO: High-Dimensional Interactive Model-Merging Bayesian Optimization for Image Generation",
+      "title_zh": "FilmFlow: Agentic System for 3D Virtual Film Cinematography",
       "core_contribution": "摘要生成失败",
       "method": "",
       "findings": ""
     }
   },
   {
-    "id": "2610.30827",
-    "title": "One Evaluation Is Enough: Inversion-Free Image Editing with Trajectory Correction",
-    "abstract": "Real-image editing commonly relies on inversion and iterative sampling, while efficient one-step editors often stabilize a large update by estimating and averaging editing fields at multiple noise levels. We ask a stricter question: is a single temporal field evaluation sufficient for reliable inversion-free editing? Our answer rests on a previously underused duality in a variance-preserving (VP) one-step model: one source-target query at a shared noisy state simultaneously determines a local angular semantic tangent and a clean endpoint displacement. We integrate the tangent over the analytically known remaining VP angle to obtain a nominal one-step transport, and use the endpoint displacement to correct its long-horizon extrapolation through a constrained projection. This transport-first, correction-second construction yields Endpoint-Calibrated Transport (ECT), a closed-form, training-free editor requiring only one noise level, two text conditions packed into one denoiser batch, and one latent update. ECT requires no image inversion, trajectory integration, second temporal observation, or iterative optimization, and can be directly applied to pretrained epsilon-prediction VP one-step generators. Across the reported benchmark settings, ECT delivers stable gains in editing quality within an extremely short editing time.",
+    "id": "2610.30717",
+    "title": "PhyEvolve: Multi-Agent State-Evolution Planning for Physics-Aware Video Generation",
+    "abstract": "Recent advances in text-to-video generation have substantially improved visual fidelity, yet existing models still struggle to understand the physical evolution implicit in user prompts, making it difficult to generate videos with continuous physical state evolution. Here, we propose PhyEvolve, a multi-agent framework that enhances natural-language prompts through structured state-evolution planning. PhyEvolve consists of three agents: a Director, a Physical Evolver, and a Composer. Given a user prompt and an optional first frame, the Director grounds the scene and disentangles physical events from observation changes. The Physical Evolver uses scene evidence to identify physical mechanisms then constructs causally linked state transitions that unfold throughout the video, whether visible or not. The Composer utilizes these transitions to enhance the original prompts. Without retraining or model modification, PhyEvolve works directly with existing generators through prompt replacement. Extensive experiments on four major benchmarks show that PhyEvolve achieves state-of-the-art performance, outperforming the cutting-edge prior agentic baseline by 7.9 percentage points on average. These results demonstrate that explicit causal state-evolution planning improves physical consistency and state continuity in generated videos through natural-language prompt enhancement.",
     "authors": [
-      "Lifan Jiang",
-      "Taiyang Chen",
-      "Senlin cheng",
-      "Bolei Xu",
-      "Xiaobo Li",
-      "Can Ye",
-      "Dehai Zhao",
-      "Deng Cai",
-      "Boxi Wu"
+      "Yang-Hao Zhou",
+      "Lixing Tan",
+      "Zhiqi Li",
+      "Guang Yang",
+      "Xiao Yang"
+    ],
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.30717.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30717",
+    "primary_category": "cs.CV",
+    "score": 45,
+    "summary": {
+      "title_zh": "PhyEvolve：面向物理感知视频生成的多智能体状态演化规划",
+      "core_contribution": "提出 PhyEvolve，一种通过结构化状态演化规划增强自然语言提示的多智能体框架，无需重新训练或修改现有生成模型即可提升视频中的物理一致性与状态连续性。",
+      "method": "PhyEvolve 包含三个智能体：Director、Physical Evolver 和 Composer。给定用户提示和可选首帧，Director 对场景进行 grounding，并将物理事件与观测变化解耦。Physical Evolver 利用场景证据识别物理机制，并构建贯穿视频的因果关联状态转移，无论这些状态是否可见。Composer 再利用这些状态转移增强原始提示，并通过提示替换直接接入现有视频生成器。",
+      "findings": "在四个主要基准上的大量实验表明，PhyEvolve 达到当前最优性能，平均比前沿的智能体基线高出 7.9 个百分点。结果表明，显式的因果状态演化规划可通过自然语言提示增强来改善生成视频的物理一致性和状态连续性。"
+    }
+  },
+  {
+    "id": "2610.30691",
+    "title": "LoRA Superposition across Pretrained Models",
+    "abstract": "Low-rank adaptation (LoRA) is usually tied to the pretrained backbone on which it is learned. We ask whether LoRAs trained independently for the same task on different pretrained backbones can be summed and applied unchanged to all contributing backbones. We call this construction LoRA superposition. Across seven ViT-B/16 CLIP backbones and eight image-classification tasks, the exact sum improves all 56 backbone-task pairs and achieves a mean accuracy gain of 30.21 percentage points over the unadapted backbone. The exact sum achieves a mean accuracy only 0.28 percentage points below that of individually trained solo LoRAs. In contrast, a leave-one-model-out (LOMO) sum produces a mean gain of only 0.06 percentage points over the unadapted backbones. Backbone-specific solo LoRAs are nearly orthogonal in parameter space, while pairwise cross-backbone responses are strongly concentrated on the diagonal. These results support a component-wise non-interference hypothesis, under which the frozen backbone acts as an implicit selector of its own component without explicit routing or cross-model alignment.",
+    "authors": [
+      "Keigo Watanabe",
+      "Hiroshi Kera",
+      "Kazuhiko Kawamoto"
     ],
     "published": "2026-10-22",
     "updated": "2026-10-22",
@@ -46,104 +71,69 @@
       "cs.CV",
       "cs.AI"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2610.30827.pdf",
-    "abs_url": "https://arxiv.org/abs/2610.30827",
+    "pdf_url": "https://arxiv.org/pdf/2610.30691.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30691",
     "primary_category": "cs.CV",
-    "score": 70,
+    "score": 45,
     "summary": {
-      "title_zh": "One Evaluation Is Enough: Inversion-Free Image Editing with Trajectory Correction",
+      "title_zh": "LoRA Superposition across Pretrained Models",
       "core_contribution": "摘要生成失败",
       "method": "",
       "findings": ""
     }
   },
   {
-    "id": "2610.30704",
-    "title": "ParaLin++: Accelerating Parallel Diffusion Integrator via Intrinsic Partially Linear Structure",
-    "abstract": "Training-free few-step samplers are often described as nearly quality-lossless under conventional FID/CLIP-style evaluation. It remains unclear whether that conclusion transfers to more realistic and complex generation-quality benchmarks. We first systematize the quality metrics used to evaluate training-free sampling acceleration for diffusion and flow-matching models. We find that representative training-free step-shortening methods often remain nearly lossless under FID/CLIP-class metrics, yet can suffer substantial quality degradation when evaluated with semantic-composition, dense-instruction, and long-text-rendering benchmarks such as GenEval, DPG-Bench, and LongTextBench. Parallel sampling is a notable exception: by retaining the full-step discretization and removing only the solver's temporal dependency, it can preserve near-lossless quality while accelerating sampling. Building on this observation, we propose \\textit{ParaLin++}, a step-parity parallel sampler that preserves the full-step discretization while accelerating the solver iterations. Experiments across Stable Diffusion-v2, LSUN Church, FLUX.1-dev, and Ming-Flash-Omni 2.0 show that ParaLin++ preserves the full-step Euler quality profile at $2.6\\times$--$4.8\\times$, $1.68\\times$ on FLUX, and $1.21\\times$ on Ming. Project page: https://paralinplus.github.io/.",
+    "id": "2610.30861",
+    "title": "Direct Forcing: A Single-Stage Training Recipe for Few-Step Autoregressive Text-to-Video Generation",
+    "abstract": "Few-step autoregressive video generation enables low-latency streaming, yet prevailing training pipelines separate causal adaptation from distribution matching. Recent representation-based text-to-video methods retain this separation by starting from ODE-initialized checkpoints, even when the target distribution is defined directly by reference videos. We introduce Direct Forcing, a single-stage framework that uses reference videos both as paired examples of how a history continues and as a target population for self-generated rollouts. Causal Continuation Alignment learns paired spatiotemporal correspondence under reference histories, while Rollout Distribution Matching uses maximum mean discrepancy to align the representation distributions of self-generated and reference videos. Together, these complementary signals allow a pretrained video model to learn causal continuation and the target video distribution in a single training stage. Dynamic Gradient Balancing adapts the relative gradient contributions of continuation alignment and distribution matching during training. Starting from bidirectional Wan2.1-1.3B, Direct Forcing learns a four-step autoregressive generator in 250 updates without a separate initialization stage or online diffusion-score supervision, achieving 84.63 VBench Total and 86.01 Quality. Ablation studies further demonstrate the benefits of dynamic gradient balancing and reveal distinct representation preferences: deeper features benefit continuation alignment, whereas intermediate features yield better performance for rollout distribution matching.",
     "authors": [
-      "Jianrong Lu",
-      "Zhiyu Zhu",
-      "Hui Liu",
-      "Junhui Hou"
+      "Haojun Xu",
+      "Jie Huang",
+      "Xin Lu",
+      "Mingchen Zhong",
+      "Zihao Fan",
+      "Linjiang Huang",
+      "Si Liu"
     ],
     "published": "2026-10-22",
     "updated": "2026-10-22",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2610.30704.pdf",
-    "abs_url": "https://arxiv.org/abs/2610.30704",
+    "pdf_url": "https://arxiv.org/pdf/2610.30861.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30861",
     "primary_category": "cs.CV",
-    "score": 65,
+    "score": 42,
     "summary": {
-      "title_zh": "ParaLin++: Accelerating Parallel Diffusion Integrator via Intrinsic Partially Linear Structure",
+      "title_zh": "Direct Forcing: A Single-Stage Training Recipe for Few-Step Autoregressive Text-to-Video Generation",
       "core_contribution": "摘要生成失败",
       "method": "",
       "findings": ""
     }
   },
   {
-    "id": "2610.30740",
-    "title": "Where Did the Light Come From? Diagnosing Cast-Shadow Reasoning in VLMs and Borrowing the Missing Shadow Prior from Image Generation Models",
-    "abstract": "Shadows are observable consequences of latent physical causes, arising from the interaction between illumination, object geometry, and scene structure. A model that understands shadows should be able not only to read a shadow's direction, but also to infer where a shadow should fall when it is absent, and to judge whether a shadow is physically consistent with the scene. We introduce ShadowBench, built from real photographs, which poses these three questions to vision-language models (VLMs). From each scene, we build a correct-shadow, a shadow-removed, and a human-annotated wrong-direction state. Evaluating 19 open VLMs (2B to 78B) and frontier proprietary models, we find that VLMs read a visible shadow's direction well above chance and improve with scale, yet infer the absent direction only weakly and fall to chance at judging physical consistency even under a bias-free two-alternative test that removes the yes-bias of single-image naturalness questions. Only Gemini-3.1-pro exceeds chance on validity, and even then only modestly and far below humans. Chain-of-Thought (CoT) does not help. The missing ingredient is not reasoning but knowledge that image generation models (IGMs) already hold. Routing a VLM through an IGM lifts its inference well above its direct attempt and helps it flag the wrong-direction shadows it otherwise accepts. Cast-shadow direction is a single facet of illumination understanding, but the sharp gap it reveals between VLMs and IGMs suggests image-generation or reconstruction objectives as a route toward illumination-aware VLMs.",
+    "id": "2610.30824",
+    "title": "Loop to Look Better: Learning Adaptive Depth for Question-Guided Perception in Vision-Language Models",
+    "abstract": "Visual perception should be iterative and task-directed, with representations refined in response to the question and the need for further processing. While Vision-Language Models (VLMs) increasingly support extended reasoning, their visual tokens are still typically acquired in a single, task-agnostic encoder pass. This creates an evidence-acquisition bottleneck: models may reason longer without refining the visual evidence needed to answer the question. We propose LoopLook, a lightweight encoder-side recurrent perception framework that equips pretrained VLMs with adaptive visual depth. LoopLook recurrently revisits a middle-to-late window of the vision encoder, injecting question representations at each loop to guide visual refinement. A learned stopping mechanism adaptively determines the recurrent depth, while a token-wise Mixture-of-Looks (MoL) combines representations from different loops, allowing each visual token to selectively integrate information acquired across recurrent steps. Across four backbones and eight benchmarks, LoopLook consistently improves performance over the baseline, yielding gains of up to 8.6% on MMStar and 8.1% on HallusionBench. Our analysis shows that LoopLook progressively refines visual attention and adaptively allocates depth according to task difficulty. It also better preserves task-relevant visual information under reduced input resolution, while increasing time to first token (TTFT) by only 5.1-6.5%. By bringing recurrence from reasoning back into perception, LoopLook transforms visual perception from a one-shot glimpse into an adaptive process of recurrent refinement.",
     "authors": [
-      "Ryugo Morita",
-      "Shunsuke Kitada",
-      "Stanislav Frolov",
-      "Brian Bernhard Moser",
-      "Ko Watanabe",
-      "Riku Takahashi",
-      "Jinjia Zhou",
-      "Andreas Dengel"
+      "Wencheng Ye",
+      "Anning Hu",
+      "Hongye Fang",
+      "Tianyi Wang",
+      "Junchi Yan"
     ],
     "published": "2026-10-22",
     "updated": "2026-10-22",
     "categories": [
       "cs.CV"
     ],
-    "pdf_url": "https://arxiv.org/pdf/2610.30740.pdf",
-    "abs_url": "https://arxiv.org/abs/2610.30740",
+    "pdf_url": "https://arxiv.org/pdf/2610.30824.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.30824",
     "primary_category": "cs.CV",
-    "score": 62,
+    "score": 42,
     "summary": {
-      "title_zh": "Where Did the Light Come From? Diagnosing Cast-Shadow Reasoning in VLMs and Borrowing the Missing Shadow Prior from Image Generation Models",
-      "core_contribution": "摘要生成失败",
-      "method": "",
-      "findings": ""
-    }
-  },
-  {
-    "id": "2610.30866",
-    "title": "Verus-Insight: Towards Explainable Artifact Detection in AI-Generated Videos",
-    "abstract": "Recent advances in video generation have made synthetic videos increasingly realistic, placing greater demands on reliable AI-generated video detection. Existing artifact-based detectors typically identify generation artifacts as evidence for source prediction, yet they may either fail to recognize subtle artifacts or reach the correct source decision without faithfully identifying the evidence underlying it. In this work, we systematically investigate how to design and train effective artifact detectors and formulate artifact detection as a structured process comprising three complementary capabilities: Inspection Planning, which determines what should be examined; Evidence Verification, which verifies whether the inspected content exhibits genuine generation artifacts; and Evidence Aggregation, which integrates the verified evidence into the final source decision. Building on this formulation, we introduce Verus-Insight, trained with human-anchored full-process supervision and progressive capability training to strengthen both fine-grained artifact detection and video-level detection. We further introduce Verus-Bench, a benchmark with fine-grained human annotations of perceptible artifacts for evaluating artifact detection. Extensive experiments across diverse benchmarks demonstrate that Verus-Insight achieves strong performance in both fine-grained artifact analysis and AI-generated video detection, with substantial gains in recovering human-perceived artifacts. Further analyses reveal that the three capabilities are complementary yet distinct, and that Verus-Insight more reliably converts relevant inspection targets into supported artifact evidence without increasing spurious artifact claims.",
-    "authors": [
-      "Zhuoran Zhang",
-      "Yang Shi",
-      "Qixun Wang",
-      "Tengfei Liu",
-      "Yuqi Tang",
-      "Xuanyu Zhu",
-      "Yizhuo Jia",
-      "Jingyun Hua",
-      "Shixuan Liu",
-      "Xianghua Ying",
-      "Haotian Wang",
-      "Yuanxing Zhang",
-      "Pengfei Wan",
-      "Wenjing Yang"
-    ],
-    "published": "2026-10-22",
-    "updated": "2026-10-22",
-    "categories": [
-      "cs.CV"
-    ],
-    "pdf_url": "https://arxiv.org/pdf/2610.30866.pdf",
-    "abs_url": "https://arxiv.org/abs/2610.30866",
-    "primary_category": "cs.CV",
-    "score": 55,
-    "summary": {
-      "title_zh": "Verus-Insight: Towards Explainable Artifact Detection in AI-Generated Videos",
+      "title_zh": "Loop to Look Better: Learning Adaptive Depth for Question-Guided Perception in Vision-Language Models",
       "core_contribution": "摘要生成失败",
       "method": "",
       "findings": ""
