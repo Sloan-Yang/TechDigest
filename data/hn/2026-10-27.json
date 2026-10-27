@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50234232,
+    "title": "Oregon Police Are Charging a Local News Outlet $2.5M for Records About One Cop",
+    "url": "https://theintercept.com/2026/10/01/oregon-police-misconduct-public-records-cost-fee/",
+    "text": "",
+    "score": 511,
+    "comments": 148,
+    "by": "tdeck",
+    "time": 1792951451,
+    "hn_url": "https://news.ycombinator.com/item?id=50234232",
+    "relevance_score": 8
+  },
+  {
+    "id": 50251344,
+    "title": "Announcing three new discoveries in mathematics, computer science, and physics",
+    "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+    "text": "Related:<p><i>The Exponential Time Hypothesis Is False [pdf]</i> - <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50251661\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50251661</a>",
+    "score": 390,
+    "comments": 149,
+    "by": "jonluca",
+    "time": 1793050528,
+    "hn_url": "https://news.ycombinator.com/item?id=50251344",
+    "relevance_score": 0
+  },
+  {
+    "id": 50251661,
+    "title": "The Exponential Time Hypothesis Is False [pdf]",
+    "url": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+    "text": "See also: <i>Announcing three new discoveries in mathematics, computer science, and physics</i> - <a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50251344\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50251344</a>",
+    "score": 245,
+    "comments": 100,
+    "by": "vok",
+    "time": 1793051955,
+    "hn_url": "https://news.ycombinator.com/item?id=50251661",
+    "relevance_score": 0
+  },
+  {
+    "id": 50245138,
+    "title": "Sebastian Raschka's from-scratch video course on building reasoning models",
+    "url": "https://magazine.sebastianraschka.com/p/building-reasoning-models",
+    "text": "",
+    "score": 545,
+    "comments": 81,
+    "by": "sgiannopoulos",
+    "time": 1793027519,
+    "hn_url": "https://news.ycombinator.com/item?id=50245138",
+    "relevance_score": 0
+  },
+  {
+    "id": 50252159,
+    "title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)",
+    "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+    "text": "",
+    "score": 59,
+    "comments": 11,
+    "by": "wondersky",
+    "time": 1793054508,
+    "hn_url": "https://news.ycombinator.com/item?id=50252159",
+    "relevance_score": 0
+  },
+  {
+    "id": 50248371,
+    "title": "Type Server Protocol",
+    "url": "https://github.com/microsoft/pylance-release/blob/main/docs/tsp/type-server-protocol.md",
+    "text": "",
+    "score": 188,
+    "comments": 136,
+    "by": "adamnemecek",
+    "time": 1793038489,
+    "hn_url": "https://news.ycombinator.com/item?id=50248371",
+    "relevance_score": 0
+  },
+  {
+    "id": 50248055,
+    "title": "Oldest GUI application that still runs on Windows 11",
+    "url": "https://blog.enlyth.com/posts/oldest-windows-gui-app-win-11/",
+    "text": "",
+    "score": 276,
+    "comments": 177,
+    "by": "enlyth",
+    "time": 1793037415,
+    "hn_url": "https://news.ycombinator.com/item?id=50248055",
+    "relevance_score": 0
+  },
+  {
+    "id": 50204697,
+    "title": "A Printer Printing onto Paper",
+    "url": "https://twitter.com/macrofying/status/2112904628509528219",
+    "text": "",
+    "score": 49,
+    "comments": 11,
+    "by": "MrBuddyCasino",
+    "time": 1792731690,
+    "hn_url": "https://news.ycombinator.com/item?id=50204697",
+    "relevance_score": 0
+  }
+]

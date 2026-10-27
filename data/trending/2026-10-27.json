@@ -1,0 +1,99 @@
+[
+  {
+    "id": "Nutlope_hallmark",
+    "full_name": "Nutlope/hallmark",
+    "owner": "Nutlope",
+    "name": "hallmark",
+    "url": "https://github.com/Nutlope/hallmark",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Nutlope /\n\n      hallmark  \n\n    \n      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+    "language": "CSS",
+    "stars": 36380,
+    "stars_today": 2244,
+    "relevance_score": 85
+  },
+  {
+    "id": "Panniantong_Agent-Reach",
+    "full_name": "Panniantong/Agent-Reach",
+    "owner": "Panniantong",
+    "name": "Agent-Reach",
+    "url": "https://github.com/Panniantong/Agent-Reach",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Panniantong /\n\n      Agent-Reach  \n\n    \n      Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+    "language": "Python",
+    "stars": 103623,
+    "stars_today": 746,
+    "relevance_score": 75
+  },
+  {
+    "id": "pbakaus_impeccable",
+    "full_name": "pbakaus/impeccable",
+    "owner": "pbakaus",
+    "name": "impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        pbakaus /\n\n      impeccable  \n\n    \n      The design language that makes your AI harness better at design.",
+    "language": "Rust",
+    "stars": 89234,
+    "stars_today": 1506,
+    "relevance_score": 65
+  },
+  {
+    "id": "NVIDIA_SkillSpector",
+    "full_name": "NVIDIA/SkillSpector",
+    "owner": "NVIDIA",
+    "name": "SkillSpector",
+    "url": "https://github.com/NVIDIA/SkillSpector",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NVIDIA /\n\n      SkillSpector  \n\n    \n      Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
+    "language": "Python",
+    "stars": 22211,
+    "stars_today": 214,
+    "relevance_score": 65,
+    "summary": "NVIDIA/SkillSpector 是一款 AI 智能体技能安全扫描器，可在安装前检测 Claude Code、Codex 和 MCP 技能中的漏洞、恶意模式、提示注入、数据外泄及"
+  },
+  {
+    "id": "sponsors_affaan-m",
+    "full_name": "sponsors/affaan-m",
+    "owner": "sponsors",
+    "name": "affaan-m",
+    "url": "https://github.com/sponsors/affaan-m",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        affaan-m /\n\n      ECC  \n\n    \n      The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "language": "JavaScript",
+    "stars": 289862,
+    "stars_today": 896,
+    "relevance_score": 30
+  },
+  {
+    "id": "multica-ai_andrej-karpathy-skills",
+    "full_name": "multica-ai/andrej-karpathy-skills",
+    "owner": "multica-ai",
+    "name": "andrej-karpathy-skills",
+    "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        multica-ai /\n\n      andrej-karpathy-skills  \n\n    \n      A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+    "language": "",
+    "stars": 224666,
+    "stars_today": 638,
+    "relevance_score": 30
+  },
+  {
+    "id": "TauricResearch_TradingAgents",
+    "full_name": "TauricResearch/TradingAgents",
+    "owner": "TauricResearch",
+    "name": "TradingAgents",
+    "url": "https://github.com/TauricResearch/TradingAgents",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        TauricResearch /\n\n      TradingAgents  \n\n    \n      TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "language": "Python",
+    "stars": 116119,
+    "stars_today": 1395,
+    "relevance_score": 20
+  },
+  {
+    "id": "JetBrains_thinkrail",
+    "full_name": "JetBrains/thinkrail",
+    "owner": "JetBrains",
+    "name": "thinkrail",
+    "url": "https://github.com/JetBrains/thinkrail",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        JetBrains /\n\n      thinkrail  \n\n    \n      Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+    "language": "TypeScript",
+    "stars": 2925,
+    "stars_today": 1173,
+    "relevance_score": 0
+  }
+]

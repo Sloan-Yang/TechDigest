@@ -313,7 +313,7 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-10-25</div>
+        <div class="page-date">📅 2026-10-27</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
             计算机视觉: 5
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.30753</span>
+          <span class="paper-id">2610.30928</span>
         </div>
-        <span class="score-badge">相关性 52/100</span>
+        <span class="score-badge">相关性 8/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.30753" target="_blank">FilmFlow: Agentic System for 3D Virtual Film Cinematography</a>
+        <a href="https://arxiv.org/abs/2610.30928" target="_blank">ICGF-CXRMate: Image-Conditioned Clinical Context Compression and Gated Fusion for Chest X-ray Report Generation</a>
       </h3>
-      <p class="paper-title-zh">FilmFlow: Agentic System for 3D Virtual Film Cinematography</p>
-      <p class="paper-authors">Yiming Zhang, Jiarui Guo, Haojia Wei, Yifei Liu, Yifan Yang 等 (8 位作者)</p>
+      <p class="paper-title-zh">ICGF-CXRMate: Image-Conditioned Clinical Context Compression and Gated Fusion for Chest X-ray Report Generation</p>
+      <p class="paper-authors">Vu Minh Tran, Thuc Huynh, Son Thanh Luu, Doanh C. Bui</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Complex camera motion is central to visual storytelling, yet translating cinematographic intent into controllable, executable camera trajectories remains challenging. We introduce FilmFlow, an agentic framework that converts natural-language instructions or reference videos into explicit camera trajectories for dynamic 3D environments. To generate these trajectories, a Director agent constructs executable camera plans by composing high-level motions from concurrent atomic operations that jointly control translation, rotation, and framing. The Director is supported by three specialized agents: an Interpreter that extracts scene-grounded cinematographic intent, a Scout that selects initial viewpoints, and a Critic that evaluates rendered results and provides visual feedback for iterative plan refinement. We also introduce CinemaBench, comprising 150 Blender scenes from self-created and licensed sources, with five camera instructions per scene for 750 text-directed tasks and 60 reference videos associated with a subset of scenes. CinemaBench supports evaluation of both text-directed camera generation and video reference-directed camera generation. Across a diverse set of evaluated baselines, FilmFlow achieves the strongest benchmark performance and the highest user preference, demonstrating effective spatial reasoning, temporal coordination, and visual composition for executable 3D cinematography.</p>
+        <p>Auxiliary patient data can improve chest X-ray report generation, but directly concatenating heterogeneous clinical information with visual tokens produces long, variable-length decoder prompts and may expose the model to redundant or image-irrelevant context. We propose ICGF-CXRMate, an image-conditioned clinical context compression and gated fusion framework. Learnable queries are first conditioned on the current chest X-ray representations and then attend to the patient-data sequence, compressing it into a fixed number of clinical context tokens. Gated cross-attention selectively integrates these tokens into the visual stream, while the compressed tokens are retained in the decoder prompt as a direct clinical pathway. Experiments on linked MIMIC-CXR and MIMIC-IV-ED examinations show that ICGF-CXRMate improves report quality while reducing the average prompt length. In Stage~2, it improves RadGraph-F1 from 24.00 to 28.86, CXR-BERT similarity from 56.86 to 62.80, and BLEU-4 from 5.14 to 7.96 compared with CXRMate-ED, while reducing the average prompt length from 373.89 to 288.37 tokens, corresponding to a 22.9\% reduction. After self-critical sequence training, ICGF-CXRMate outperforms CXRMate-ED on six of eight report-quality metrics in Stage~3. Ablation studies confirm the complementary contributions of image-conditioned compression, gated fusion, and direct retention of the compressed clinical tokens.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.30753" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.30753.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.30928" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.30928.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,47 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.30717</span>
+          <span class="paper-id">2610.30901</span>
         </div>
-        <span class="score-badge">相关性 45/100</span>
+        <span class="score-badge">相关性 8/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.30717" target="_blank">PhyEvolve: Multi-Agent State-Evolution Planning for Physics-Aware Video Generation</a>
+        <a href="https://arxiv.org/abs/2610.30901" target="_blank">When Annotation Patterns Are Learned: Skin-Tone Dependence in Dermatology Concepts</a>
       </h3>
-      <p class="paper-title-zh">PhyEvolve：面向物理感知视频生成的多智能体状态演化规划</p>
-      <p class="paper-authors">Yang-Hao Zhou, Lixing Tan, Zhiqi Li, Guang Yang, Xiao Yang</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 提出 PhyEvolve，一种通过结构化状态演化规划增强自然语言提示的多智能体框架，无需重新训练或修改现有生成模型即可提升视频中的物理一致性与状态连续性。</div>
-        <div class="summary-section"><strong>方法:</strong> PhyEvolve 包含三个智能体：Director、Physical Evolver 和 Composer。给定用户提示和可选首帧，Director 对场景进行 grounding，并将物理事件与观测变化解耦。Physical Evolver 利用场景证据识别物理机制，并构建贯穿视频的因果关联状态转移，无论这些状态是否可见。Composer 再利用这些状态转移增强原始提示，并通过提示替换直接接入现有视频生成器。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 在四个主要基准上的大量实验表明，PhyEvolve 达到当前最优性能，平均比前沿的智能体基线高出 7.9 个百分点。结果表明，显式的因果状态演化规划可通过自然语言提示增强来改善生成视频的物理一致性和状态连续性。</div>
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Recent advances in text-to-video generation have substantially improved visual fidelity, yet existing models still struggle to understand the physical evolution implicit in user prompts, making it difficult to generate videos with continuous physical state evolution. Here, we propose PhyEvolve, a multi-agent framework that enhances natural-language prompts through structured state-evolution planning. PhyEvolve consists of three agents: a Director, a Physical Evolver, and a Composer. Given a user prompt and an optional first frame, the Director grounds the scene and disentangles physical events from observation changes. The Physical Evolver uses scene evidence to identify physical mechanisms then constructs causally linked state transitions that unfold throughout the video, whether visible or not. The Composer utilizes these transitions to enhance the original prompts. Without retraining or model modification, PhyEvolve works directly with existing generators through prompt replacement. Extensive experiments on four major benchmarks show that PhyEvolve achieves state-of-the-art performance, outperforming the cutting-edge prior agentic baseline by 7.9 percentage points on average. These results demonstrate that explicit causal state-evolution planning improves physical consistency and state continuity in generated videos through natural-language prompt enhancement.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.30717" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.30717.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.30691</span>
-        </div>
-        <span class="score-badge">相关性 45/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.30691" target="_blank">LoRA Superposition across Pretrained Models</a>
-      </h3>
-      <p class="paper-title-zh">LoRA Superposition across Pretrained Models</p>
-      <p class="paper-authors">Keigo Watanabe, Hiroshi Kera, Kazuhiko Kawamoto</p>
+      <p class="paper-title-zh">When Annotation Patterns Are Learned: Skin-Tone Dependence in Dermatology Concepts</p>
+      <p class="paper-authors">Y. Li, M. Bigliardi-Qi, S. Bedros, P. Bigliardi, N. Papanikolopoulos</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -410,12 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Low-rank adaptation (LoRA) is usually tied to the pretrained backbone on which it is learned. We ask whether LoRAs trained independently for the same task on different pretrained backbones can be summed and applied unchanged to all contributing backbones. We call this construction LoRA superposition. Across seven ViT-B/16 CLIP backbones and eight image-classification tasks, the exact sum improves all 56 backbone-task pairs and achieves a mean accuracy gain of 30.21 percentage points over the unadapted backbone. The exact sum achieves a mean accuracy only 0.28 percentage points below that of individually trained solo LoRAs. In contrast, a leave-one-model-out (LOMO) sum produces a mean gain of only 0.06 percentage points over the unadapted backbones. Backbone-specific solo LoRAs are nearly orthogonal in parameter space, while pairwise cross-backbone responses are strongly concentrated on the diagonal. These results support a component-wise non-interference hypothesis, under which the frozen backbone acts as an implicit selector of its own component without explicit routing or cross-model alignment.</p>
+        <p>Concept bottleneck models (CBMs) let clinicians inspect and correct skin disease diagnoses through clinical concepts, but only if the concept annotations are reliable. We therefore audit the reliability of SkinCon, a widely used dermatology concept dataset, across skin tones. Within the same disease and with near duplicates removed, erythema is annotated far less often on dark than on light skin, with an odds ratio of 0.17. In contrast, hyperpigmentation and hypopigmentation are annotated more often, with odds ratios of 6.2 and 4.5, respectively. We refer to this pattern as tone-dependent concept annotation. An evidential concept model trained on these annotations learns the same pattern and reproduces it on unseen images. Such a model may agree with potential erythema omissions rather than contradict them. Consistent with this, three label error detectors underperform a disease-only baseline at finding erythema that dermatologist captions mention but SkinCon labels as absent. The three detectors are based on confident learning, training dynamics, and the model's own evidential uncertainty. Concept annotations should thus be audited within each subgroup before explanations built on them can be trusted.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.30691" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.30691.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.30901" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.30901.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.30861</span>
+          <span class="paper-id">2610.33479</span>
         </div>
-        <span class="score-badge">相关性 42/100</span>
+        <span class="score-badge">相关性 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.30861" target="_blank">Direct Forcing: A Single-Stage Training Recipe for Few-Step Autoregressive Text-to-Video Generation</a>
+        <a href="https://arxiv.org/abs/2610.33479" target="_blank">Energy Efficient Lung Tumor Segmentation with a modified CBAM ENet Skip Model</a>
       </h3>
-      <p class="paper-title-zh">Direct Forcing: A Single-Stage Training Recipe for Few-Step Autoregressive Text-to-Video Generation</p>
-      <p class="paper-authors">Haojun Xu, Jie Huang, Xin Lu, Mingchen Zhong, Zihao Fan 等 (7 位作者)</p>
+      <p class="paper-title-zh">Energy Efficient Lung Tumor Segmentation with a modified CBAM ENet Skip Model</p>
+      <p class="paper-authors">Sharan Thummagunti, Aayushi Padia, Abhiram Koppuravuri, Prabhu Prasad B M, G N Girish</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -442,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Few-step autoregressive video generation enables low-latency streaming, yet prevailing training pipelines separate causal adaptation from distribution matching. Recent representation-based text-to-video methods retain this separation by starting from ODE-initialized checkpoints, even when the target distribution is defined directly by reference videos. We introduce Direct Forcing, a single-stage framework that uses reference videos both as paired examples of how a history continues and as a target population for self-generated rollouts. Causal Continuation Alignment learns paired spatiotemporal correspondence under reference histories, while Rollout Distribution Matching uses maximum mean discrepancy to align the representation distributions of self-generated and reference videos. Together, these complementary signals allow a pretrained video model to learn causal continuation and the target video distribution in a single training stage. Dynamic Gradient Balancing adapts the relative gradient contributions of continuation alignment and distribution matching during training. Starting from bidirectional Wan2.1-1.3B, Direct Forcing learns a four-step autoregressive generator in 250 updates without a separate initialization stage or online diffusion-score supervision, achieving 84.63 VBench Total and 86.01 Quality. Ablation studies further demonstrate the benefits of dynamic gradient balancing and reveal distinct representation preferences: deeper features benefit continuation alignment, whereas intermediate features yield better performance for rollout distribution matching.</p>
+        <p>Lung tumor segmentation plays a vital role in early detection and treatment planning of lung cancer. Although state-of-the-art deep learning models achieve high dice score coefficients (DSC), each forward pass requires computing large amounts of floating point operations, making them computationally expensive, requiring GPU acceleration, and having slow inference speed, limiting real-world clinical deployment. We propose a lightweight, energy-efficient model that leverages the ENet architecture for its real-time inference capability and low computational cost, enhanced with UNet-style skip connections between encoder and decoder stages for feature reuse and the lightweight Convolutional Block Attention Module (CBAM) for improved feature representation. The model is trained on publicly available data from The Cancer Imaging Archive (TCIA) via the Medical Segmentation Decathlon Challenge (MSD) and evaluated on the Lung Image Database Consortium and Image Database Resource Initiative (LIDC-IDRI) dataset. Our model achieves a DSC of 0.90812 (threshold of 0.5) with its compact architecture of 430,052 parameters and 0.549 Giga Multiply-Accumulate operations (GMAC), making it up to 10 times faster, requires 79 times less GMAC than UNet, and has 22 times fewer parameters than SegNet. These characteristics make it well-suited for deployment in clinical settings where computational resources are limited and decrease the cost of utilizing such a system. Additionally, the explainable AI technique of Grad-CAM is used to provide visual interpretability of the model's predictions and to identify regions where segmentation performance requires improvement.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.30861" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.30861.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.33479" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.33479.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.30824</span>
+          <span class="paper-id">2610.32478</span>
         </div>
-        <span class="score-badge">相关性 42/100</span>
+        <span class="score-badge">相关性 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.30824" target="_blank">Loop to Look Better: Learning Adaptive Depth for Question-Guided Perception in Vision-Language Models</a>
+        <a href="https://arxiv.org/abs/2610.32478" target="_blank">PathJev: Decision-Native Vision-Language Modelling for Histopathology</a>
       </h3>
-      <p class="paper-title-zh">Loop to Look Better: Learning Adaptive Depth for Question-Guided Perception in Vision-Language Models</p>
-      <p class="paper-authors">Wencheng Ye, Anning Hu, Hongye Fang, Tianyi Wang, Junchi Yan</p>
+      <p class="paper-title-zh">PathJev: Decision-Native Vision-Language Modelling for Histopathology</p>
+      <p class="paper-authors">Cristian Tommasino, Antonio M. Rinaldi</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -474,12 +442,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Visual perception should be iterative and task-directed, with representations refined in response to the question and the need for further processing. While Vision-Language Models (VLMs) increasingly support extended reasoning, their visual tokens are still typically acquired in a single, task-agnostic encoder pass. This creates an evidence-acquisition bottleneck: models may reason longer without refining the visual evidence needed to answer the question. We propose LoopLook, a lightweight encoder-side recurrent perception framework that equips pretrained VLMs with adaptive visual depth. LoopLook recurrently revisits a middle-to-late window of the vision encoder, injecting question representations at each loop to guide visual refinement. A learned stopping mechanism adaptively determines the recurrent depth, while a token-wise Mixture-of-Looks (MoL) combines representations from different loops, allowing each visual token to selectively integrate information acquired across recurrent steps. Across four backbones and eight benchmarks, LoopLook consistently improves performance over the baseline, yielding gains of up to 8.6% on MMStar and 8.1% on HallusionBench. Our analysis shows that LoopLook progressively refines visual attention and adaptively allocates depth according to task difficulty. It also better preserves task-relevant visual information under reduced input resolution, while increasing time to first token (TTFT) by only 5.1-6.5%. By bringing recurrence from reasoning back into perception, LoopLook transforms visual perception from a one-shot glimpse into an adaptive process of recurrent refinement.</p>
+        <p>Vision-language models used for decisions in histopathology rarely return calibrated probabilities over the candidates a user cares about. Decision-native models write a question and a candidate set chosen at run time into the input and return a normalised distribution from a small decision head in one forward pass. We build PathJev-P, a decision-native model for histopathology: MedGemma-1.5-4B with LoRA adapters and a decision head, trained on 40,000 patch states from three public collections whose expert labels are turned into typed questions with organ-specific candidate sets and a "none of these" option. In a comparison over 3 seeds with an analysis plan fixed before testing, on test sets without documented overlap with the training data of the backbone, PathJev-P is more accurate than a generative model trained with the same backbone, data and selection rule, the zero-shot pathology model CONCH and a general medical decision model (balanced accuracy 0.541 against 0.492, 0.345 and 0.213); its advantage over the generative model comes from two organs absent from training. The calibration advantage depends on how the generative model's probabilities are read out. With the summed candidate log-likelihood used in previous work, PathJev-P has the lower calibration error (ECE 0.204 against 0.279); with a length-normalised read-out of the same generative model, examined post hoc, the two have similar mean calibration error (0.201) and the generative model is better calibrated on the unseen organs, where PathJev-P remains over-confident. A supervised linear probe on a pathology foundation model is better calibrated in every setting. In a qualitative whole-slide demonstration, PathJev-P labels unsupervised tissue clusters with abstention and separates carcinoma from other tissue while running the model on a fraction of the tiles.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.30824" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.30824.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.32478" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.32478.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.31505</span>
+        </div>
+        <span class="score-badge">相关性 5/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.31505" target="_blank">Evaluation of Uncertainty-Aware Multi-Software Ensembles for Hippocampal Segmentation</a>
+      </h3>
+      <p class="paper-title-zh">Evaluation of Uncertainty-Aware Multi-Software Ensembles for Hippocampal Segmentation</p>
+      <p class="paper-authors">Gabriel Oliveira-Stahl, Anna Schroder, James Moggridge, Hamza A. Salhab, Caroline Micallef 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Accurate hippocampal segmentation can be a useful tool for diagnosing and monitoring neurological conditions such as Alzheimer's disease and epilepsy. While numerous automated segmentation methods exist, their clinical adoption remains limited. Reliable uncertainty assessment can enhance trust and facilitate clinical translation. This study evaluates ensembles of five heterogeneous hippocampal segmentation methods - InnerEye, ASHS, FastSurfer, HippoSeg, and FreeSurfer - across two dementia datasets and one epilepsy dataset. The sub-ensemble containing InnerEye, FastSurfer, and HippoSeg emerged as both accurate and efficient, highlighting the feasibility of balancing computational cost and performance. Additionally, ensemble-derived uncertainty quantification with sample variance, mutual information, and predictive entropy is shown to reduce inaccurate segmentations by flagging low-confidence cases, potentially providing a mechanism for automatically escalating ambiguous cases for expert assessment. Lastly, this study explores the downstream clinical utility of ensemble-derived uncertainty, finding a significant correlation with motion artefact severity and a modest contribution to Alzheimer's disease classification.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.31505" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.31505.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,26 +488,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 63 &nbsp;💬 16</span>
-        </div>
-        <span class="score-badge">推荐度 75/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50168376" target="_blank">Making a VGA Driver in SystemVerilog</a>
-      </h3>
-      <p class="paper-authors">by derHackerman</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50168376" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://lukaswerner.com/post/2026-10-20@bottom-up-vga" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 345 &nbsp;💬 84</span>
+          <span class="paper-id">▲ 511 &nbsp;💬 148</span>
         </div>
         <span class="score-badge">推荐度 8/100</span>
       </div>
@@ -526,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 176 &nbsp;💬 74</span>
+          <span class="paper-id">▲ 390 &nbsp;💬 149</span>
         </div>
-        <span class="score-badge">推荐度 5/100</span>
+        <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50236081" target="_blank">Serbia's Vucic concedes election defeat in historic win for student movement</a>
+        <a href="https://news.ycombinator.com/item?id=50251344" target="_blank">Announcing three new discoveries in mathematics, computer science, and physics</a>
       </h3>
-      <p class="paper-authors">by consumer451</p>
+      <p class="paper-authors">by jonluca</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50236081" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.reuters.com/world/europe/serbia-votes-students-seek-unseat-vucic-snap-election-2026-10-25/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50251344" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://openai.com/index/building-scientific-understanding-with-academic-communities/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 323 &nbsp;💬 55</span>
+          <span class="paper-id">▲ 245 &nbsp;💬 100</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50234474" target="_blank">Dolly Parton's Imagination Library</a>
+        <a href="https://news.ycombinator.com/item?id=50251661" target="_blank">The Exponential Time Hypothesis Is False [pdf]</a>
       </h3>
-      <p class="paper-authors">by jumploops</p>
+      <p class="paper-authors">by vok</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50234474" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://imaginationlibrary.com/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50251661" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 99 &nbsp;💬 25</span>
+          <span class="paper-id">▲ 545 &nbsp;💬 81</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50197108" target="_blank">Overgrown, when plants invade your abandoned tabs</a>
+        <a href="https://news.ycombinator.com/item?id=50245138" target="_blank">Sebastian Raschka's from-scratch video course on building reasoning models</a>
       </h3>
-      <p class="paper-authors">by speckx</p>
+      <p class="paper-authors">by sgiannopoulos</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50197108" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://charliegerard.dev/blog/overgrown-extension/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50245138" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://magazine.sebastianraschka.com/p/building-reasoning-models" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 66 &nbsp;💬 30</span>
+          <span class="paper-id">▲ 59 &nbsp;💬 11</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50235738" target="_blank">What goes into making an animated film?</a>
+        <a href="https://news.ycombinator.com/item?id=50252159" target="_blank">Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)</a>
       </h3>
-      <p class="paper-authors">by embedding-shape</p>
+      <p class="paper-authors">by wondersky</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50235738" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.disneyanimation.com/process/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50252159" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.cloudflare.com/kv-cache-exposure-remediation/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 57 &nbsp;💬 11</span>
+          <span class="paper-id">▲ 188 &nbsp;💬 136</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50235780" target="_blank">The State of Context Engineering</a>
+        <a href="https://news.ycombinator.com/item?id=50248371" target="_blank">Type Server Protocol</a>
       </h3>
-      <p class="paper-authors">by pchristensen</p>
+      <p class="paper-authors">by adamnemecek</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50235780" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50248371" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/microsoft/pylance-release/blob/main/docs/tsp/type-server-protocol.md" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +602,37 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 98 &nbsp;💬 28</span>
+          <span class="paper-id">▲ 276 &nbsp;💬 177</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50235017" target="_blank">Why I Am a Programmer</a>
+        <a href="https://news.ycombinator.com/item?id=50248055" target="_blank">Oldest GUI application that still runs on Windows 11</a>
       </h3>
-      <p class="paper-authors">by jruohonen</p>
+      <p class="paper-authors">by enlyth</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50235017" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.alfie.wtf/programming/why-i-am-a-programmer.html" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50248055" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.enlyth.com/posts/oldest-windows-gui-app-win-11/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 49 &nbsp;💬 11</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50204697" target="_blank">A Printer Printing onto Paper</a>
+      </h3>
+      <p class="paper-authors">by MrBuddyCasino</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50204697" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://twitter.com/macrofying/status/2112904628509528219" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">CSS</span>
-          <span class="paper-id">⭐ 33,706 &nbsp;+1359 today</span>
+          <span class="paper-id">⭐ 36,380 &nbsp;+2244 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -665,7 +665,7 @@
 
     
       Anti-AI-slop design skill for Claude Code, Cursor, and Codex.</p>
-      <div class="paper-summary"><div class="summary-section">Hallmark 是一套面向 Claude</div></div>
+      
       <div class="paper-links">
         <a href="https://github.com/Nutlope/hallmark" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -674,8 +674,42 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 103,623 &nbsp;+746 today</span>
+        </div>
+        <span class="score-badge">推荐度 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        Panniantong /
+
+      Agent-Reach  
+
+    
+      Give your AI agent eyes to see the entire internet. Read &amp; search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/Panniantong/Agent-Reach" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
           <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 87,659 &nbsp;+1113 today</span>
+          <span class="paper-id">⭐ 89,234 &nbsp;+1506 today</span>
         </div>
         <span class="score-badge">推荐度 65/100</span>
       </div>
@@ -709,7 +743,122 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 114,571 &nbsp;+636 today</span>
+          <span class="paper-id">⭐ 22,211 &nbsp;+214 today</span>
+        </div>
+        <span class="score-badge">推荐度 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/NVIDIA/SkillSpector" target="_blank">NVIDIA/SkillSpector</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        NVIDIA /
+
+      SkillSpector  
+
+    
+      Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.</p>
+      <div class="paper-summary"><div class="summary-section">NVIDIA/SkillSpector 是一款 AI 智能体技能安全扫描器，可在安装前检测 Claude Code、Codex 和 MCP 技能中的漏洞、恶意模式、提示注入、数据外泄及</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/NVIDIA/SkillSpector" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 289,862 &nbsp;+896 today</span>
+        </div>
+        <span class="score-badge">推荐度 30/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        affaan-m /
+
+      ECC  
+
+    
+      The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/affaan-m" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          
+          <span class="paper-id">⭐ 224,666 &nbsp;+638 today</span>
+        </div>
+        <span class="score-badge">推荐度 30/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank">multica-ai/andrej-karpathy-skills</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        multica-ai /
+
+      andrej-karpathy-skills  
+
+    
+      A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 116,119 &nbsp;+1395 today</span>
         </div>
         <span class="score-badge">推荐度 20/100</span>
       </div>
@@ -742,47 +891,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 46,826 &nbsp;+2874 today</span>
-        </div>
-        <span class="score-badge">推荐度 20/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/cloudflare/security-audit-skill" target="_blank">cloudflare/security-audit-skill</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        cloudflare /
-
-      security-audit-skill  
-
-    
-      A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/cloudflare/security-audit-skill" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 4,830 &nbsp;+677 today</span>
+          <span class="paper-id">⭐ 2,925 &nbsp;+1173 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/makecindy/cindy" target="_blank">makecindy/cindy</a>
+        <a href="https://github.com/JetBrains/thinkrail" target="_blank">JetBrains/thinkrail</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -795,130 +910,15 @@
 
 
       
-        makecindy /
+        JetBrains /
 
-      cindy  
+      thinkrail  
 
     
-      Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。</p>
+      Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need</p>
       
       <div class="paper-links">
-        <a href="https://github.com/makecindy/cindy" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 86,759 &nbsp;+1588 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/debpalash" target="_blank">sponsors/debpalash</a>
-      </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        debpalash /
-
-      VoiceStudio  
-
-    
-      VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription &amp; audiobook creation in 646 languages.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/sponsors/debpalash" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 11,611 &nbsp;+657 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/pollen-robotics/microduck" target="_blank">pollen-robotics/microduck</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        pollen-robotics /
-
-      microduck  
-
-    
-      A Tiny biped duck robot 🦆</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/pollen-robotics/microduck" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 7,529 &nbsp;+255 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank">Renhuai123/ziwei-doushu</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        Renhuai123 /
-
-      ziwei-doushu  
-
-    
-      紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/JetBrains/thinkrail" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
