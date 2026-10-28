@@ -1,0 +1,99 @@
+[
+  {
+    "id": 50235449,
+    "title": "Kauldron: Modular, scalable library to train ML models",
+    "url": "https://github.com/google-research/kauldron",
+    "text": "",
+    "score": 25,
+    "comments": 2,
+    "by": "nateb2022",
+    "time": 1792958013,
+    "hn_url": "https://news.ycombinator.com/item?id=50235449",
+    "relevance_score": 88
+  },
+  {
+    "id": 50263854,
+    "title": "Discord will soon let anyone find public server messages through Google",
+    "url": "https://discord.com/blog/making-content-from-discoverable-servers-easier-to-discover",
+    "text": "",
+    "score": 233,
+    "comments": 131,
+    "by": "DeepLogin",
+    "time": 1793126657,
+    "hn_url": "https://news.ycombinator.com/item?id=50263854",
+    "relevance_score": 42
+  },
+  {
+    "id": 50212625,
+    "title": "Txoko: Basques' traditional feast a gastronomic peek into a culture (2024)",
+    "url": "https://johnhendersontravel.com/txoko/",
+    "text": "",
+    "score": 45,
+    "comments": 14,
+    "by": "jxub",
+    "time": 1792777025,
+    "hn_url": "https://news.ycombinator.com/item?id=50212625",
+    "relevance_score": 5,
+    "summary": "这篇"
+  },
+  {
+    "id": 50261319,
+    "title": "Genie 4",
+    "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "text": "",
+    "score": 713,
+    "comments": 427,
+    "by": "acossta",
+    "time": 1793117161,
+    "hn_url": "https://news.ycombinator.com/item?id=50261319",
+    "relevance_score": 0
+  },
+  {
+    "id": 50261998,
+    "title": "Ghostty 1.4",
+    "url": "https://ghostty.org/docs/install/release-notes/1-4-0",
+    "text": "",
+    "score": 733,
+    "comments": 223,
+    "by": "deaux",
+    "time": 1793119882,
+    "hn_url": "https://news.ycombinator.com/item?id=50261998",
+    "relevance_score": 0
+  },
+  {
+    "id": 50264857,
+    "title": "Tailscale SSH: Investigation and remediation update",
+    "url": "https://tailscale.com/ssh-investigation-update",
+    "text": "",
+    "score": 179,
+    "comments": 101,
+    "by": "figmert",
+    "time": 1793130921,
+    "hn_url": "https://news.ycombinator.com/item?id=50264857",
+    "relevance_score": 0
+  },
+  {
+    "id": 50265609,
+    "title": "Early progress on accelerating drug development with Claude",
+    "url": "https://www.anthropic.com/research/early-progress-drug-development",
+    "text": "",
+    "score": 112,
+    "comments": 97,
+    "by": "dataking",
+    "time": 1793134242,
+    "hn_url": "https://news.ycombinator.com/item?id=50265609",
+    "relevance_score": 0
+  },
+  {
+    "id": 50264853,
+    "title": "Survival LLM: AI assistant and emergency library that runs on your own computer",
+    "url": "https://www.brangus.io/survival-llm",
+    "text": "",
+    "score": 168,
+    "comments": 96,
+    "by": "Luc",
+    "time": 1793130906,
+    "hn_url": "https://news.ycombinator.com/item?id=50264853",
+    "relevance_score": 0
+  }
+]

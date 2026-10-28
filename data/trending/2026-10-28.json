@@ -1,0 +1,99 @@
+[
+  {
+    "id": "Nutlope_hallmark",
+    "full_name": "Nutlope/hallmark",
+    "owner": "Nutlope",
+    "name": "hallmark",
+    "url": "https://github.com/Nutlope/hallmark",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Nutlope /\n\n      hallmark  \n\n    \n      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+    "language": "CSS",
+    "stars": 39019,
+    "stars_today": 2830,
+    "relevance_score": 85,
+    "summary": "Hallmark 是一个面向 Claude"
+  },
+  {
+    "id": "HKUDS_DeepTutor",
+    "full_name": "HKUDS/DeepTutor",
+    "owner": "HKUDS",
+    "name": "DeepTutor",
+    "url": "https://github.com/HKUDS/DeepTutor",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        HKUDS /\n\n      DeepTutor  \n\n    \n      DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+    "language": "Python",
+    "stars": 45918,
+    "stars_today": 1598,
+    "relevance_score": 70
+  },
+  {
+    "id": "pbakaus_impeccable",
+    "full_name": "pbakaus/impeccable",
+    "owner": "pbakaus",
+    "name": "impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        pbakaus /\n\n      impeccable  \n\n    \n      The design language that makes your AI harness better at design.",
+    "language": "Rust",
+    "stars": 90546,
+    "stars_today": 1449,
+    "relevance_score": 65
+  },
+  {
+    "id": "sponsors_affaan-m",
+    "full_name": "sponsors/affaan-m",
+    "owner": "sponsors",
+    "name": "affaan-m",
+    "url": "https://github.com/sponsors/affaan-m",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        affaan-m /\n\n      ECC  \n\n    \n      The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "language": "JavaScript",
+    "stars": 290903,
+    "stars_today": 1165,
+    "relevance_score": 30
+  },
+  {
+    "id": "sponsors_obra",
+    "full_name": "sponsors/obra",
+    "owner": "sponsors",
+    "name": "obra",
+    "url": "https://github.com/sponsors/obra",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        obra /\n\n      superpowers  \n\n    \n      An agentic skills framework &amp; software development methodology that works.",
+    "language": "Shell",
+    "stars": 306448,
+    "stars_today": 617,
+    "relevance_score": 20
+  },
+  {
+    "id": "sponsors_elayadesign",
+    "full_name": "sponsors/elayadesign",
+    "owner": "sponsors",
+    "name": "elayadesign",
+    "url": "https://github.com/sponsors/elayadesign",
+    "description": "",
+    "language": "",
+    "stars": 9366,
+    "stars_today": 1395,
+    "relevance_score": 0
+  },
+  {
+    "id": "nightly-labs_openbot",
+    "full_name": "nightly-labs/openbot",
+    "owner": "nightly-labs",
+    "name": "openbot",
+    "url": "https://github.com/nightly-labs/openbot",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        nightly-labs /\n\n      openbot  \n\n    \n      A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+    "language": "TypeScript",
+    "stars": 2448,
+    "stars_today": 777,
+    "relevance_score": 0
+  },
+  {
+    "id": "makecindy_cindy",
+    "full_name": "makecindy/cindy",
+    "owner": "makecindy",
+    "name": "cindy",
+    "url": "https://github.com/makecindy/cindy",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        makecindy /\n\n      cindy  \n\n    \n      Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+    "language": "TypeScript",
+    "stars": 7478,
+    "stars_today": 1465,
+    "relevance_score": 0
+  }
+]
