@@ -1,0 +1,99 @@
+[
+  {
+    "id": "Nutlope_hallmark",
+    "full_name": "Nutlope/hallmark",
+    "owner": "Nutlope",
+    "name": "hallmark",
+    "url": "https://github.com/Nutlope/hallmark",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Nutlope /\n\n      hallmark  \n\n    \n      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+    "language": "CSS",
+    "stars": 40773,
+    "stars_today": 2110,
+    "relevance_score": 85
+  },
+  {
+    "id": "ruvnet_RuView",
+    "full_name": "ruvnet/RuView",
+    "owner": "ruvnet",
+    "name": "RuView",
+    "url": "https://github.com/ruvnet/RuView",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ruvnet /\n\n      RuView  \n\n    \n      π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "language": "Rust",
+    "stars": 101078,
+    "stars_today": 557,
+    "relevance_score": 75,
+    "summary": "RuView 利用普通 WiFi 信号实现实时空间感知、生命体征监测和存在检测，无需任何视频画面"
+  },
+  {
+    "id": "HKUDS_DeepTutor",
+    "full_name": "HKUDS/DeepTutor",
+    "owner": "HKUDS",
+    "name": "DeepTutor",
+    "url": "https://github.com/HKUDS/DeepTutor",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        HKUDS /\n\n      DeepTutor  \n\n    \n      DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+    "language": "Python",
+    "stars": 48067,
+    "stars_today": 2371,
+    "relevance_score": 70
+  },
+  {
+    "id": "pbakaus_impeccable",
+    "full_name": "pbakaus/impeccable",
+    "owner": "pbakaus",
+    "name": "impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        pbakaus /\n\n      impeccable  \n\n    \n      The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+    "language": "Rust",
+    "stars": 92770,
+    "stars_today": 1472,
+    "relevance_score": 65
+  },
+  {
+    "id": "macro-inc_macro",
+    "full_name": "macro-inc/macro",
+    "owner": "macro-inc",
+    "name": "macro",
+    "url": "https://github.com/macro-inc/macro",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        macro-inc /\n\n      macro  \n\n    \n      Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+    "language": "Rust",
+    "stars": 5439,
+    "stars_today": 117,
+    "relevance_score": 45
+  },
+  {
+    "id": "sponsors_obra",
+    "full_name": "sponsors/obra",
+    "owner": "sponsors",
+    "name": "obra",
+    "url": "https://github.com/sponsors/obra",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        obra /\n\n      superpowers  \n\n    \n      An agentic skills framework &amp; software development methodology that works.",
+    "language": "Shell",
+    "stars": 307481,
+    "stars_today": 1095,
+    "relevance_score": 20
+  },
+  {
+    "id": "JetBrains_thinkrail",
+    "full_name": "JetBrains/thinkrail",
+    "owner": "JetBrains",
+    "name": "thinkrail",
+    "url": "https://github.com/JetBrains/thinkrail",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        JetBrains /\n\n      thinkrail  \n\n    \n      Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+    "language": "TypeScript",
+    "stars": 5107,
+    "stars_today": 1068,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_elayadesign",
+    "full_name": "sponsors/elayadesign",
+    "owner": "sponsors",
+    "name": "elayadesign",
+    "url": "https://github.com/sponsors/elayadesign",
+    "description": "",
+    "language": "",
+    "stars": 11171,
+    "stars_today": 2139,
+    "relevance_score": 0
+  }
+]

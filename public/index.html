@@ -313,7 +313,7 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-10-28</div>
+        <div class="page-date">📅 2026-10-29</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
             计算机视觉: 5
@@ -328,47 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.34283</span>
-        </div>
-        <span class="score-badge">相关性 42/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.34283" target="_blank">ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence</a>
-      </h3>
-      <p class="paper-title-zh">ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence</p>
-      <p class="paper-authors">Yihao Hu, Yitong Lin, Pan Wang, Zhihao Wen, Hang Wang 等 (11 位作者)</p>
-      
-      <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Training a spatial VLM to answer which side an object lies on does not require it to preserve the metric displacement that determines that answer, while supervision for a distance estimate may leave categorical relations largely unconstrained. When post-training emphasizes one readout, improvements can therefore concentrate on that interface while transfer to others remains weak or even degrades; we call this observed specialization interface lock-in. ChronoReplay addresses it by replaying heterogeneous spatial supervision as chronologically ordered episodes, retaining source-native targets, and balancing supervision across families. Under the same observation access, a single ChronoReplay checkpoint improves OVO-S-Bench, OST-Bench, and UCS-Bench together, including a 13.41-point gain on OST-Bench, and achieves the highest three-benchmark mean among the supervision settings compared here. Same-data controls further separate the ingredients of this transfer: answer serialization redistributes gains across OST and UCS, family-balanced learning improves over ordinary joint SFT and natural turn weighting, and chronological replay exceeds a shifted-order control by about 2.41 OST points across two paired seeds. Adaptive frame selection then changes evidence access while keeping the trained model fixed, providing an additional inference-time gain at lower visual cost. Streaming spatial performance depends on what distinctions supervision preserves, how heterogeneous histories are organized during learning, and what causal evidence inference makes available at test time.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.34283" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.34283.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.32884</span>
+          <span class="paper-id">2610.35339</span>
         </div>
         <span class="score-badge">相关性 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.32884" target="_blank">VTRL-Med: Progressive Visual Refinement with Topology-Guided Regularization for Medical Image Clustering</a>
+        <a href="https://arxiv.org/abs/2610.35339" target="_blank">Targeted Deep Regression - Initial Applications in Whole-Body Water-Fat MRI in UK Biobank</a>
       </h3>
-      <p class="paper-title-zh">VTRL-Med: Progressive Visual Refinement with Topology-Guided Regularization for Medical Image Clustering</p>
-      <p class="paper-authors">Guangyu Meng, Pengfei Gu, Peixian Liang, John P. Lalor, Erin Wolf Chambers 等 (6 位作者)</p>
+      <p class="paper-title-zh">Targeted Deep Regression - Initial Applications in Whole-Body Water-Fat MRI in UK Biobank</p>
+      <p class="paper-authors">Filip Marttala, Taro Langner, Johan Öfverstedt, Nouman Ahmad, Håkan Ahlström 等 (7 位作者)</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -378,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Deep clustering offers a promising approach for analyzing large unlabeled medical image datasets, yet prevailing methods still face two limitations: they may neglect class-agnostic structural priors that capture object boundaries and regions, and they do not explicitly encode topological patterns (e.g., connectivity and holes). These sources of information play distinct and complementary roles: visual-structural features provide the primary discriminative representation for clustering, while topological features provide additional global geometric cues for residual visual ambiguities. We introduce VTRL-Med, a progressive visual-structural learning framework with topology-guided regularization for medical image clustering. VTRL-Med first adapts the Segment Anything Model (SAM) to extract image features that retain structural cues inherited from mask-supervised pretraining. It then generates reliable pseudo-labels through a two-step filtering process that combines prototype-based selection with k-nearest neighbor consistency validation. Finally, it progressively refines the visual branch while an auxiliary topology branch, constructed from persistent homology (PH) descriptors, provides additional geometric regularization during training. Across 13 medical image benchmarks, VTRL-Med achieves state-of-the-art clustering performance, improving average accuracy by 4.48% over existing methods. On three representative datasets, topology-guided regularization further improves accuracy by 1.3--4.3% over visual refinement alone.</p>
+        <p>UK Biobank is a British clinical study which, in addition to large amounts of medical data collected, plans to include detailed Magnetic Resonance Imaging (MRI) examina- tions from 100,000 participants. The image data can be analyzed for example by auto- mated analysis with neural networks for image segmentation or classification to expand the collection of image-derived phenotypes for medical research. In this work, we pro- pose, present and evaluate a methodology that uses image-based regression to estimate numerical properties from the collected neck-to-knee water-fat MRI scans. It applies a ResNet50-style network to 2D multi-channel collages that represent targeted and study- specific anatomical sub-regions from the MRI scan. The targeted sub-region sampling is achieved by propagating manually defined subregions from a reference scan to the other >30,000 analyzed scans using image registration. The resulting collages can be compact while retaining high-resolution, for example by providing multiple slices of kidney tissue for a kidney volume regression network. This approach also enables group-wise saliency analysis that highlight image and anatomical regions used by the network for the pre- dictions. The method was applied for the regression endpoints of kidney volume, heart volume, and age. Predictive performance was found between R2 = 0.731-0.984 and the group-wise saliency maps were found to highlight medically relevant regions. We con- clude that the method can be used to standardize and restrict the information presented to a deep regression analysis pipeline, increasing information density and opening up a wide range of future medical inference studies.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.32884" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.32884.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.35339" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.35339.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.35864</span>
+          <span class="paper-id">2610.34645</span>
         </div>
-        
+        <span class="score-badge">相关性 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.35864" target="_blank">VibeVideoBench:Evaluating Multimodal Agents on Code-Driven Video Generation</a>
+        <a href="https://arxiv.org/abs/2610.34645" target="_blank">Regional prediction of hematoma expansion from non-contrast computed tomography in spontaneous intracerebral hemorrhage patients</a>
       </h3>
-      <p class="paper-title-zh">VibeVideoBench:Evaluating Multimodal Agents on Code-Driven Video Generation</p>
-      <p class="paper-authors">Muxi Diao, Wenbin Xu, Lele Yang, Xuyang Ma, Yuzhe Chen 等 (24 位作者)</p>
+      <p class="paper-title-zh">Regional prediction of hematoma expansion from non-contrast computed tomography in spontaneous intracerebral hemorrhage patients</p>
+      <p class="paper-authors">Natasha Ironside, Hongyu Kan, Kristofor Pas, Mohammad Shifat-E-Rabbi, Benjamin Newman 等 (20 位作者)</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -410,12 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Diffusion video models produce striking clips, but they cannot reliably render an exact formula, a correct chart, a ruleconsistent game or narration synchronized to on-screen events. A different route is emerging: multimodal agents that write code to render every frame and synthesize every sound. We introduce VibeVideoBench, a benchmark for evaluating agents on code-driven video generation. Its 239 self-contained tasks in English and Chinese span 12 categories, from data stories and music-driven pieces to classroom lessons and paper explainers; each asks an agent, running in its native harness inside a sandbox, to deliver a finished MP4 with sound within one hour. Evaluation is hierarchical and evidence-based: program checks of the delivery spec, about 13k task-specific rubric checks traced to the requirements they enforce, and five quality dimensions anchored per task, judged by three VLM judge panels and validated with blind human preferences. Across nine frontier agent systems and 2,151 scored rollouts, the benchmark is far from solved: GPT-6 Astra and Claude Opus 5.5 lead clearly, yet even the best system fails a core requirement on about a quarter of tasks. Whether a video arrives at all matters as much as its quality, and three quarters of the lost videos are final renders started too late, run too slowly or never started. The judges agree with each other and with human preferences on system rankings, but only moderately on individual videos.</p>
+        <p>Background The combination of hematoma location, expansion and final volume influence neurological outcome. The aim of this study was to derive and validate a quantitative and interpretable region-based NCCT image feature model for predicting hematoma expansion. Methods The Ethnic/Racial Variations of Intracerebral Hemorrhage(ERICH) study was used for derivation and the Virtual International Trials in Stroke Archive(VISTA) was used for validation. NCCT images at presentation and 24+/-6hours were pre-processed, segmented and categorized into lobar, basal ganglia or thalamic regions. Hematoma expansion was defined by region and according to its effect on clinical outcome. Transport-based morphometry (TBM) produced a unique transport-based representation from each NCCT hematoma image. Linear classifiers applied to transport representations were used to derive a predictive model. The regional TBM model's performance was compared to alternate methods using AUROC analyses. Results The derivation dataset included 574 patients, comprising 162 lobar, 257 basal ganglia and 155 thalamic hematomas. The validation dataset included 196 patients, comprising 31 lobar, 119 basal ganglia and 46 thalamic hematomas. A combined regional model predicted hematoma expansion in the validation dataset with an AUROC of 0.787. The principal image features which varied by location were size, heterogeneity, eccentricity and density distribution towards the hematoma periphery. The regional TBM model outperformed alternative clinician based and machine-learning methods. Conclusions TBM discriminated and visualized regional features of hematoma expansion from presentation NCCT scans. This provides preliminary evidence for regional radiographic features of hematoma expansion. It has the potential to improve hematoma expansion prediction and understanding of hematoma expansion pathophysiology.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.35864" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.35864.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.34645" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.34645.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.35857</span>
+          <span class="paper-id">2610.34352</span>
         </div>
-        
+        <span class="score-badge">相关性 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.35857" target="_blank">Do vision models know that three is three?</a>
+        <a href="https://arxiv.org/abs/2610.34352" target="_blank">A Computationally Efficient Non-Interpolation Virtual Trellis Approach for Mammogram Gradient-based Patterns Analysis</a>
       </h3>
-      <p class="paper-title-zh">Do vision models know that three is three?</p>
-      <p class="paper-authors">Ankit Sonthalia, Arnas Uselis, Seong Joon Oh</p>
+      <p class="paper-title-zh">A Computationally Efficient Non-Interpolation Virtual Trellis Approach for Mammogram Gradient-based Patterns Analysis</p>
+      <p class="paper-authors">Shahid Rasheed, Muhammad Rashid, Seifedine Kadry, Salman A. AlQahtani</p>
       
       <div class="paper-summary">
         <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
@@ -442,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Do vision models encode the transition $2{\to}3$ the same way whether it appears in handwritten digits or in hand gestures, and do they "understand" that clean${\to}$dirty is the same transformation regardless of whether it is applied to a kitchen or a carpet? The linear representation hypothesis (LRH) answers this for language models: concept changes correspond to directions in (language) embedding space. In vision, the same concept can manifest in visually unrelated "regimes" that rarely co-occur: images of digits and hands do not share much in common in pixel space. To understand whether vision models still encode the underlying abstract concepts, we study 46 vision encoders across architectures, training objectives, and scales, on 10 concept families including numerosity, age, object identity, and MIT-States attributes. Within each regime, we find statistically significant concept directions near-universally across our tested models. However, two distinct regimes do not always share the same concept direction. Several models learn multiple linear structures for the same concept transition, split across regimes. We call this phenomenon "fragmented linearity": strong local linearity coexisting with near-absent global linearity. Fragmentation is, however, not fixed: models with stronger local linearity progressively escape it (local-global linearity correlated with $τ\in [0.38, 0.89]$ across all concepts), and where global linearity does emerge, concept directions can transfer as linear probes across regimes.</p>
+        <p>Feature analysis is a crucial step in medical image analysis, particularly in breast cancer classification. Traditional image analysis methods often struggle with optimal patterns along the diagonal axis, computational efficiency and feature buffer storage. Different classical operators require high-efficiency hardware for the complex operations, such as image convolution and gradient analysis, which are used for processing complex machine learning models for training and test operations. Here, in this research, we introduce a non-interpolation virtual trellis-based (NVHT) operator that utilizes a filter kernel over the same square image without transformation to a hexagonal trellis. This proposed method is very efficient in reducing computational and storage costs. The proposed operator is used for improved feature extraction efficiency and accuracy in disease classification. This method outperforms conventional approaches by leveraging a hexagonal pixel representation while maintaining high sensitivity in different directions with less storage.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.35857" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.35857.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.34352" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.34352.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,30 +424,62 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.35854</span>
+          <span class="paper-id">2610.36428</span>
         </div>
-        
+        <span class="score-badge">相关性 3/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.35854" target="_blank">FL4N: Feed-forward Latent Model for 4D Novel View Synthesis</a>
+        <a href="https://arxiv.org/abs/2610.36428" target="_blank">FORESEE-MS: Toward Prospective Spatial Forecasting of Future Multiple Sclerosis Lesions from Baseline FLAIR MRI</a>
       </h3>
-      <p class="paper-title-zh">FL4N：用于4D新视角合成的前馈潜在模型</p>
-      <p class="paper-authors">Eunbeen Hong, Hyeonseo Yu, Honggyu An, Jooho Son, Hyunah Ko 等 (11 位作者)</p>
+      <p class="paper-title-zh">FORESEE-MS: Toward Prospective Spatial Forecasting of Future Multiple Sclerosis Lesions from Baseline FLAIR MRI</p>
+      <p class="paper-authors">Maryam Akhavan Aghdam, Sudip Mittal, Noorbakhsh Amiri Golilarz, Shahram Rahimi</p>
       
       <div class="paper-summary">
-        <div class="summary-section"><strong>核心贡献:</strong> 本文提出了首个前馈式潜在4D新视角合成模型FL4N，它摒弃显式4D基元，将4D场景先验编码为跨空间与时间的统一潜在表示，在仅使用图像合成目标训练的情况下实现了实时渲染与当前最优的4D新视角合成质量。</div>
-        <div class="summary-section"><strong>方法:</strong> FL4N的核心思路是将时间动态建模为预训练静态潜在先验之上的残差，从而在动态训练数据有限的情况下仍能有效完成4D建模。为此，作者设计了一个轻量级动态编码器，利用静态场景特征将物体运动与相机视差解耦。整个模型仅以图像合成目标进行训练，不依赖显式4D高斯等基元表示。</div>
-        <div class="summary-section"><strong>关键发现:</strong> 实验表明，FL4N在4D新视角合成质量上达到当前最优水平，同时能够实时渲染，并克服了显式4D高斯方法中常见的时间不一致与严重渲染伪影问题。其学习到的潜在表示可泛化到真实世界视频，并有效解耦视角与时间信息。</div>
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
       </div>
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>4D novel view synthesis (NVS) aims to render dynamic scenes across viewpoints and timestamps, which requires jointly inferring 3D structure and temporal dynamics. Existing monocular feed-forward methods often rely on explicit 4D Gaussian representations, which are prone to temporal inconsistency and severe rendering artifacts. We present FL4N, the first feed-forward latent 4D NVS model. Instead of relying on explicit 4D primitives, FL4N encodes a 4D scene prior into a unified latent representation across space and time. Our core insight is that learning temporal dynamics as residuals on top of a pretrained static latent prior enables effective 4D modeling with limited dynamic training data. To this end, we introduce a lightweight dynamic encoder that leverages static scene features to disentangle object motion from camera-induced parallax. Trained solely with an image synthesis objective, FL4N achieves state-of-the-art 4D NVS quality while rendering in real time. Its learned latent representation generalizes to real-world videos and disentangles viewpoint from time.</p>
+        <p>Traditional multiple sclerosis (MS) image analysis has primarily focused on retrospectively detecting and segmenting lesions. This study investigates whether baseline FLAIR MRI can identify regions at risk for future lesion formation beyond population-level spatial patterns. We introduce FORESEE-MS, an evaluation protocol that uses a fold-specific population-prior atlas as a baseline and assesses predictions using pooled voxel-level discrimination (AUROC and AUPRC) and within-patient lesion localization (Recall@Top-K%), with patient-level bootstrap confidence intervals. We evaluated five deep learning models (3D U-Net, Attn+ResBlock+VAE, ViT, and two SwinUNETR variants) using 5-fold cross-validation on 39 subjects from the MSSEG-2 dataset. The atlas achieved the highest pooled voxel-level AUROC and AUPRC, with no deep learning model reliably outperforming it on either metric. However, the 3D U-Net and Attn+ResBlock+VAE achieved higher mean voxel-level within-patient Recall@Top-K% than the atlas at all evaluated thresholds, although most paired confidence intervals for the differences included zero. These findings suggest that baseline FLAIR may contain patient-specific predictive information, but in this small cohort, it remains uncertain whether this information improves lesion forecasting beyond a population-prior atlas.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.35854" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.35854.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.36428" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.36428.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.37668</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.37668" target="_blank">Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction</a>
+      </h3>
+      <p class="paper-title-zh">Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction</p>
+      <p class="paper-authors">Prakhar Kaushik, Soumava Paul, Alan Yuille</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Novel view synthesis and 3D reconstruction have advanced rapidly with radiance fields and splatting, yet their memory and computational demands limit their use in resource-constrained settings. We introduce Hexels: novel planar hexagonal surface elements with a first-order spatial color field for efficient 3D scene and 2D image representation. Hexels exploit locally planar regions with smoothly varying appearance using fewer, larger primitives. Their hexagonal support provides an area- and boundary-efficient domain, while the local color field captures appearance variation within each primitive. Across 34 scenes, Hexels improve PSNR over memory-matched 2DGS by 4.53-7.38 dB across datasets while requiring lower training VRAM. We further ablate Hexels by showing that per primitive, Hexels outperform 2DGS by upto 4.74 dB while using lower training VRAM and having 2.31 times faster FPS. Even in unconstrained settings, Hexels offers complementary quality-memory trade-offs. For efficient 3D surface reconstruction, Hexels reduce error by 28.9% compared with memory-matched 2DGS across 15 DTU scans. On 6 Tanks and Temples surface scenes, Hexels achieves the highest mean F1 among compared methods (34.38%, versus 31.72% for 2DGS). We further also show that Hexels, as a general primitive, improves 2D image representation over Image-GS. Hexels push the Pareto frontier on the quality-efficiency trade-off of surface-aligned primitives.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.37668" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.37668.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,56 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 25 &nbsp;💬 2</span>
-        </div>
-        <span class="score-badge">推荐度 88/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50235449" target="_blank">Kauldron: Modular, scalable library to train ML models</a>
-      </h3>
-      <p class="paper-authors">by nateb2022</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50235449" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/google-research/kauldron" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 233 &nbsp;💬 131</span>
-        </div>
-        <span class="score-badge">推荐度 42/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50263854" target="_blank">Discord will soon let anyone find public server messages through Google</a>
-      </h3>
-      <p class="paper-authors">by DeepLogin</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50263854" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://discord.com/blog/making-content-from-discoverable-servers-easier-to-discover" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 45 &nbsp;💬 14</span>
+          <span class="paper-id">▲ 184 &nbsp;💬 211</span>
         </div>
         <span class="score-badge">推荐度 5/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50212625" target="_blank">Txoko: Basques' traditional feast a gastronomic peek into a culture (2024)</a>
+        <a href="https://news.ycombinator.com/item?id=50272596" target="_blank">Two high-speed trains collide near Toledo, Spain</a>
       </h3>
-      <p class="paper-authors">by jxub</p>
-      <div class="paper-summary"><div class="summary-section">这篇</div></div>
+      <p class="paper-authors">by evilmonkey19</p>
+      
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50212625" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://johnhendersontravel.com/txoko/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50272596" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.euronews.com/video/2026/10/28/spain-first-footage-reveals-wreckage-of-deadly-high-speed-train-crash" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 713 &nbsp;💬 427</span>
+          <span class="paper-id">▲ 47 &nbsp;💬 9</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50261319" target="_blank">Genie 4</a>
+        <a href="https://news.ycombinator.com/item?id=50282838" target="_blank">Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5</a>
       </h3>
-      <p class="paper-authors">by acossta</p>
+      <p class="paper-authors">by csmantle</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50261319" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50282838" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://divagr.com/blog/qwenputer" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 733 &nbsp;💬 223</span>
+          <span class="paper-id">▲ 846 &nbsp;💬 185</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50261998" target="_blank">Ghostty 1.4</a>
+        <a href="https://news.ycombinator.com/item?id=50276998" target="_blank">Why is this fingerprinting script creating bioweapons?</a>
       </h3>
-      <p class="paper-authors">by deaux</p>
+      <p class="paper-authors">by hazebooth</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50261998" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://ghostty.org/docs/install/release-notes/1-4-0" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50276998" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://nullpt.rs/fingerprinting-bioweapons" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 179 &nbsp;💬 101</span>
+          <span class="paper-id">▲ 33 &nbsp;💬 34</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50264857" target="_blank">Tailscale SSH: Investigation and remediation update</a>
+        <a href="https://news.ycombinator.com/item?id=50282766" target="_blank">New York Times adds more AI features to its Cooking app. Users aren't thrilled</a>
       </h3>
-      <p class="paper-authors">by figmert</p>
+      <p class="paper-authors">by ilamont</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50264857" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://tailscale.com/ssh-investigation-update" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50282766" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.niemanlab.org/2026/10/the-new-york-times-is-adding-more-ai-features-to-its-cooking-app-and-users-arent-thrilled/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 112 &nbsp;💬 97</span>
+          <span class="paper-id">▲ 69 &nbsp;💬 20</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50265609" target="_blank">Early progress on accelerating drug development with Claude</a>
+        <a href="https://news.ycombinator.com/item?id=50282544" target="_blank">GitLab Security Incident: Attempted Exploitation of CVE-2026-97229</a>
       </h3>
-      <p class="paper-authors">by dataking</p>
+      <p class="paper-authors">by sashk</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50265609" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.anthropic.com/research/early-progress-drug-development" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50282544" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +583,56 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 168 &nbsp;💬 96</span>
+          <span class="paper-id">▲ 22 &nbsp;💬 15</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50264853" target="_blank">Survival LLM: AI assistant and emergency library that runs on your own computer</a>
+        <a href="https://news.ycombinator.com/item?id=50282865" target="_blank">MicroZig to Adopt Strict No LLM / No AI Policy</a>
       </h3>
-      <p class="paper-authors">by Luc</p>
+      <p class="paper-authors">by paaloeye</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50264853" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.brangus.io/survival-llm" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50282865" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/ZigEmbeddedGroup/microzig/blob/main/CODE_OF_CONDUCT.md" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 20 &nbsp;💬 15</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50282538" target="_blank">The first wired XR glasses powered by Android XR</a>
+      </h3>
+      <p class="paper-authors">by yincrash</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50282538" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.google/products-and-platforms/platforms/android/xreal-aura/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 92 &nbsp;💬 8</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50280974" target="_blank">A Health Update</a>
+      </h3>
+      <p class="paper-authors">by frizlab</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50280974" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://furbo.org/2026/10/28/a-health-update/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">CSS</span>
-          <span class="paper-id">⭐ 39,019 &nbsp;+2830 today</span>
+          <span class="paper-id">⭐ 40,773 &nbsp;+2110 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -665,7 +665,7 @@
 
     
       Anti-AI-slop design skill for Claude Code, Cursor, and Codex.</p>
-      <div class="paper-summary"><div class="summary-section">Hallmark 是一个面向 Claude</div></div>
+      
       <div class="paper-links">
         <a href="https://github.com/Nutlope/hallmark" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
@@ -674,8 +674,42 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 101,078 &nbsp;+557 today</span>
+        </div>
+        <span class="score-badge">推荐度 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        ruvnet /
+
+      RuView  
+
+    
+      π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.</p>
+      <div class="paper-summary"><div class="summary-section">RuView 利用普通 WiFi 信号实现实时空间感知、生命体征监测和存在检测，无需任何视频画面</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/ruvnet/RuView" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 45,918 &nbsp;+1598 today</span>
+          <span class="paper-id">⭐ 48,067 &nbsp;+2371 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -709,7 +743,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 90,546 &nbsp;+1449 today</span>
+          <span class="paper-id">⭐ 92,770 &nbsp;+1472 today</span>
         </div>
         <span class="score-badge">推荐度 65/100</span>
       </div>
@@ -732,7 +766,7 @@
       impeccable  
 
     
-      The design language that makes your AI harness better at design.</p>
+      The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.</p>
       
       <div class="paper-links">
         <a href="https://github.com/pbakaus/impeccable" target="_blank" class="link-btn">⭐ GitHub</a>
@@ -742,28 +776,15 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 290,903 &nbsp;+1165 today</span>
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 5,439 &nbsp;+117 today</span>
         </div>
-        <span class="score-badge">推荐度 30/100</span>
+        <span class="score-badge">推荐度 45/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/affaan-m" target="_blank">sponsors/affaan-m</a>
+        <a href="https://github.com/macro-inc/macro" target="_blank">macro-inc/macro</a>
       </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
+      <p class="paper-authors">Star
 
 
   
@@ -774,15 +795,15 @@
 
 
       
-        affaan-m /
+        macro-inc /
 
-      ECC  
+      macro  
 
     
-      The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.</p>
+      Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sponsors/affaan-m" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/macro-inc/macro" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -790,7 +811,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Shell</span>
-          <span class="paper-id">⭐ 306,448 &nbsp;+617 today</span>
+          <span class="paper-id">⭐ 307,481 &nbsp;+1095 today</span>
         </div>
         <span class="score-badge">推荐度 20/100</span>
       </div>
@@ -836,8 +857,42 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 5,107 &nbsp;+1068 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/JetBrains/thinkrail" target="_blank">JetBrains/thinkrail</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        JetBrains /
+
+      thinkrail  
+
+    
+      Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/JetBrains/thinkrail" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
           
-          <span class="paper-id">⭐ 9,366 &nbsp;+1395 today</span>
+          <span class="paper-id">⭐ 11,171 &nbsp;+2139 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -848,74 +903,6 @@
       
       <div class="paper-links">
         <a href="https://github.com/sponsors/elayadesign" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 2,448 &nbsp;+777 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/nightly-labs/openbot" target="_blank">nightly-labs/openbot</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        nightly-labs /
-
-      openbot  
-
-    
-      A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/nightly-labs/openbot" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 7,478 &nbsp;+1465 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/makecindy/cindy" target="_blank">makecindy/cindy</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        makecindy /
-
-      cindy  
-
-    
-      Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/makecindy/cindy" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     

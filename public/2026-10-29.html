@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDigest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdf9ed;
+            --card-bg: #ffffff;
+            --card-border: #e8ecf0;
+            --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            --text: #1e2128;
+            --text-muted: #6b7385;
+            --accent: #4f6ef7;
+            --accent-light: #eef1fe;
+            --hn-color: #e8600a;
+            --hn-light: #fff4ed;
+            --gh-color: #1a7f37;
+            --gh-light: #edfbf0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .site-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .site-name span {
+            color: var(--accent);
+        }
+
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover { color: var(--accent); }
+
+        .page-hero {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .page-date {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .page-stats {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .page-stats a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-heading {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .paper-card:hover {
+            box-shadow: 0 4px 20px rgba(79,110,247,0.1);
+            border-color: #c5cef7;
+        }
+
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .hn-badge {
+            background: var(--hn-light) !important;
+            color: var(--hn-color) !important;
+        }
+
+        .gh-badge {
+            background: var(--gh-light) !important;
+            color: var(--gh-color) !important;
+        }
+
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 0.15rem 0.6rem;
+        }
+
+        .paper-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .paper-title a:hover { color: var(--accent); }
+
+        .paper-title-zh {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            font-weight: 300;
+        }
+
+        .paper-authors {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+
+        .paper-summary {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .hn-card .paper-summary {
+            background: var(--hn-light);
+            border-left-color: var(--hn-color);
+        }
+
+        .gh-card .paper-summary {
+            background: var(--gh-light);
+            border-left-color: var(--gh-color);
+        }
+
+        .summary-section { margin-bottom: 0.35rem; }
+        .summary-section:last-child { margin-bottom: 0; }
+        .summary-section strong { color: var(--accent); }
+
+        .paper-abstract {
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .paper-abstract p {
+            margin-top: 0.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--bg);
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.15s;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .site-header { padding: 1rem; }
+            .content { padding: 1rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-name" href="index.html">Tech<span>Digest</span></a>
+        <nav class="header-nav">
+            <a href="archive.html">归档</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-date">📅 2026-10-29</div>
+        <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
+        <p class="page-stats">
+            计算机视觉: 5
+            <a href="archive.html">归档 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+        <div class="section-heading">📄 arXiv 论文</div>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.35339</span>
+        </div>
+        <span class="score-badge">相关性 5/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.35339" target="_blank">Targeted Deep Regression - Initial Applications in Whole-Body Water-Fat MRI in UK Biobank</a>
+      </h3>
+      <p class="paper-title-zh">Targeted Deep Regression - Initial Applications in Whole-Body Water-Fat MRI in UK Biobank</p>
+      <p class="paper-authors">Filip Marttala, Taro Langner, Johan Öfverstedt, Nouman Ahmad, Håkan Ahlström 等 (7 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>UK Biobank is a British clinical study which, in addition to large amounts of medical data collected, plans to include detailed Magnetic Resonance Imaging (MRI) examina- tions from 100,000 participants. The image data can be analyzed for example by auto- mated analysis with neural networks for image segmentation or classification to expand the collection of image-derived phenotypes for medical research. In this work, we pro- pose, present and evaluate a methodology that uses image-based regression to estimate numerical properties from the collected neck-to-knee water-fat MRI scans. It applies a ResNet50-style network to 2D multi-channel collages that represent targeted and study- specific anatomical sub-regions from the MRI scan. The targeted sub-region sampling is achieved by propagating manually defined subregions from a reference scan to the other >30,000 analyzed scans using image registration. The resulting collages can be compact while retaining high-resolution, for example by providing multiple slices of kidney tissue for a kidney volume regression network. This approach also enables group-wise saliency analysis that highlight image and anatomical regions used by the network for the pre- dictions. The method was applied for the regression endpoints of kidney volume, heart volume, and age. Predictive performance was found between R2 = 0.731-0.984 and the group-wise saliency maps were found to highlight medically relevant regions. We con- clude that the method can be used to standardize and restrict the information presented to a deep regression analysis pipeline, increasing information density and opening up a wide range of future medical inference studies.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.35339" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.35339.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.34645</span>
+        </div>
+        <span class="score-badge">相关性 5/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.34645" target="_blank">Regional prediction of hematoma expansion from non-contrast computed tomography in spontaneous intracerebral hemorrhage patients</a>
+      </h3>
+      <p class="paper-title-zh">Regional prediction of hematoma expansion from non-contrast computed tomography in spontaneous intracerebral hemorrhage patients</p>
+      <p class="paper-authors">Natasha Ironside, Hongyu Kan, Kristofor Pas, Mohammad Shifat-E-Rabbi, Benjamin Newman 等 (20 位作者)</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Background The combination of hematoma location, expansion and final volume influence neurological outcome. The aim of this study was to derive and validate a quantitative and interpretable region-based NCCT image feature model for predicting hematoma expansion. Methods The Ethnic/Racial Variations of Intracerebral Hemorrhage(ERICH) study was used for derivation and the Virtual International Trials in Stroke Archive(VISTA) was used for validation. NCCT images at presentation and 24+/-6hours were pre-processed, segmented and categorized into lobar, basal ganglia or thalamic regions. Hematoma expansion was defined by region and according to its effect on clinical outcome. Transport-based morphometry (TBM) produced a unique transport-based representation from each NCCT hematoma image. Linear classifiers applied to transport representations were used to derive a predictive model. The regional TBM model's performance was compared to alternate methods using AUROC analyses. Results The derivation dataset included 574 patients, comprising 162 lobar, 257 basal ganglia and 155 thalamic hematomas. The validation dataset included 196 patients, comprising 31 lobar, 119 basal ganglia and 46 thalamic hematomas. A combined regional model predicted hematoma expansion in the validation dataset with an AUROC of 0.787. The principal image features which varied by location were size, heterogeneity, eccentricity and density distribution towards the hematoma periphery. The regional TBM model outperformed alternative clinician based and machine-learning methods. Conclusions TBM discriminated and visualized regional features of hematoma expansion from presentation NCCT scans. This provides preliminary evidence for regional radiographic features of hematoma expansion. It has the potential to improve hematoma expansion prediction and understanding of hematoma expansion pathophysiology.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.34645" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.34645.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.34352</span>
+        </div>
+        <span class="score-badge">相关性 5/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.34352" target="_blank">A Computationally Efficient Non-Interpolation Virtual Trellis Approach for Mammogram Gradient-based Patterns Analysis</a>
+      </h3>
+      <p class="paper-title-zh">A Computationally Efficient Non-Interpolation Virtual Trellis Approach for Mammogram Gradient-based Patterns Analysis</p>
+      <p class="paper-authors">Shahid Rasheed, Muhammad Rashid, Seifedine Kadry, Salman A. AlQahtani</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Feature analysis is a crucial step in medical image analysis, particularly in breast cancer classification. Traditional image analysis methods often struggle with optimal patterns along the diagonal axis, computational efficiency and feature buffer storage. Different classical operators require high-efficiency hardware for the complex operations, such as image convolution and gradient analysis, which are used for processing complex machine learning models for training and test operations. Here, in this research, we introduce a non-interpolation virtual trellis-based (NVHT) operator that utilizes a filter kernel over the same square image without transformation to a hexagonal trellis. This proposed method is very efficient in reducing computational and storage costs. The proposed operator is used for improved feature extraction efficiency and accuracy in disease classification. This method outperforms conventional approaches by leveraging a hexagonal pixel representation while maintaining high sensitivity in different directions with less storage.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.34352" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.34352.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.36428</span>
+        </div>
+        <span class="score-badge">相关性 3/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.36428" target="_blank">FORESEE-MS: Toward Prospective Spatial Forecasting of Future Multiple Sclerosis Lesions from Baseline FLAIR MRI</a>
+      </h3>
+      <p class="paper-title-zh">FORESEE-MS: Toward Prospective Spatial Forecasting of Future Multiple Sclerosis Lesions from Baseline FLAIR MRI</p>
+      <p class="paper-authors">Maryam Akhavan Aghdam, Sudip Mittal, Noorbakhsh Amiri Golilarz, Shahram Rahimi</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Traditional multiple sclerosis (MS) image analysis has primarily focused on retrospectively detecting and segmenting lesions. This study investigates whether baseline FLAIR MRI can identify regions at risk for future lesion formation beyond population-level spatial patterns. We introduce FORESEE-MS, an evaluation protocol that uses a fold-specific population-prior atlas as a baseline and assesses predictions using pooled voxel-level discrimination (AUROC and AUPRC) and within-patient lesion localization (Recall@Top-K%), with patient-level bootstrap confidence intervals. We evaluated five deep learning models (3D U-Net, Attn+ResBlock+VAE, ViT, and two SwinUNETR variants) using 5-fold cross-validation on 39 subjects from the MSSEG-2 dataset. The atlas achieved the highest pooled voxel-level AUROC and AUPRC, with no deep learning model reliably outperforming it on either metric. However, the 3D U-Net and Attn+ResBlock+VAE achieved higher mean voxel-level within-patient Recall@Top-K% than the atlas at all evaluated thresholds, although most paired confidence intervals for the differences included zero. These findings suggest that baseline FLAIR may contain patient-specific predictive information, but in this small cohort, it remains uncertain whether this information improves lesion forecasting beyond a population-prior atlas.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.36428" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.36428.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2610.37668</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.37668" target="_blank">Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction</a>
+      </h3>
+      <p class="paper-title-zh">Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction</p>
+      <p class="paper-authors">Prakhar Kaushik, Soumava Paul, Alan Yuille</p>
+      
+      <div class="paper-summary">
+        <div class="summary-section"><strong>核心贡献:</strong> 摘要生成失败</div>
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Novel view synthesis and 3D reconstruction have advanced rapidly with radiance fields and splatting, yet their memory and computational demands limit their use in resource-constrained settings. We introduce Hexels: novel planar hexagonal surface elements with a first-order spatial color field for efficient 3D scene and 2D image representation. Hexels exploit locally planar regions with smoothly varying appearance using fewer, larger primitives. Their hexagonal support provides an area- and boundary-efficient domain, while the local color field captures appearance variation within each primitive. Across 34 scenes, Hexels improve PSNR over memory-matched 2DGS by 4.53-7.38 dB across datasets while requiring lower training VRAM. We further ablate Hexels by showing that per primitive, Hexels outperform 2DGS by upto 4.74 dB while using lower training VRAM and having 2.31 times faster FPS. Even in unconstrained settings, Hexels offers complementary quality-memory trade-offs. For efficient 3D surface reconstruction, Hexels reduce error by 28.9% compared with memory-matched 2DGS across 15 DTU scans. On 6 Tanks and Temples surface scenes, Hexels achieves the highest mean F1 among compared methods (34.38%, versus 31.72% for 2DGS). We further also show that Hexels, as a general primitive, improves 2D image representation over Image-GS. Hexels push the Pareto frontier on the quality-efficiency trade-off of surface-aligned primitives.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.37668" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.37668.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🔥 Hacker News</div>
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 184 &nbsp;💬 211</span>
+        </div>
+        <span class="score-badge">推荐度 5/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50272596" target="_blank">Two high-speed trains collide near Toledo, Spain</a>
+      </h3>
+      <p class="paper-authors">by evilmonkey19</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50272596" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.euronews.com/video/2026/10/28/spain-first-footage-reveals-wreckage-of-deadly-high-speed-train-crash" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 47 &nbsp;💬 9</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50282838" target="_blank">Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5</a>
+      </h3>
+      <p class="paper-authors">by csmantle</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50282838" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://divagr.com/blog/qwenputer" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 846 &nbsp;💬 185</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50276998" target="_blank">Why is this fingerprinting script creating bioweapons?</a>
+      </h3>
+      <p class="paper-authors">by hazebooth</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50276998" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://nullpt.rs/fingerprinting-bioweapons" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 33 &nbsp;💬 34</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50282766" target="_blank">New York Times adds more AI features to its Cooking app. Users aren't thrilled</a>
+      </h3>
+      <p class="paper-authors">by ilamont</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50282766" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.niemanlab.org/2026/10/the-new-york-times-is-adding-more-ai-features-to-its-cooking-app-and-users-arent-thrilled/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 69 &nbsp;💬 20</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50282544" target="_blank">GitLab Security Incident: Attempted Exploitation of CVE-2026-97229</a>
+      </h3>
+      <p class="paper-authors">by sashk</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50282544" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 22 &nbsp;💬 15</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50282865" target="_blank">MicroZig to Adopt Strict No LLM / No AI Policy</a>
+      </h3>
+      <p class="paper-authors">by paaloeye</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50282865" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/ZigEmbeddedGroup/microzig/blob/main/CODE_OF_CONDUCT.md" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 20 &nbsp;💬 15</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50282538" target="_blank">The first wired XR glasses powered by Android XR</a>
+      </h3>
+      <p class="paper-authors">by yincrash</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50282538" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.google/products-and-platforms/platforms/android/xreal-aura/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 92 &nbsp;💬 8</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50280974" target="_blank">A Health Update</a>
+      </h3>
+      <p class="paper-authors">by frizlab</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50280974" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://furbo.org/2026/10/28/a-health-update/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🐙 GitHub Trending</div>
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">CSS</span>
+          <span class="paper-id">⭐ 40,773 &nbsp;+2110 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/Nutlope/hallmark" target="_blank">Nutlope/hallmark</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        Nutlope /
+
+      hallmark  
+
+    
+      Anti-AI-slop design skill for Claude Code, Cursor, and Codex.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/Nutlope/hallmark" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 101,078 &nbsp;+557 today</span>
+        </div>
+        <span class="score-badge">推荐度 75/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        ruvnet /
+
+      RuView  
+
+    
+      π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.</p>
+      <div class="paper-summary"><div class="summary-section">RuView 利用普通 WiFi 信号实现实时空间感知、生命体征监测和存在检测，无需任何视频画面</div></div>
+      <div class="paper-links">
+        <a href="https://github.com/ruvnet/RuView" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 48,067 &nbsp;+2371 today</span>
+        </div>
+        <span class="score-badge">推荐度 70/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/HKUDS/DeepTutor" target="_blank">HKUDS/DeepTutor</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        HKUDS /
+
+      DeepTutor  
+
+    
+      DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/HKUDS/DeepTutor" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 92,770 &nbsp;+1472 today</span>
+        </div>
+        <span class="score-badge">推荐度 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        pbakaus /
+
+      impeccable  
+
+    
+      The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/pbakaus/impeccable" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 5,439 &nbsp;+117 today</span>
+        </div>
+        <span class="score-badge">推荐度 45/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/macro-inc/macro" target="_blank">macro-inc/macro</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        macro-inc /
+
+      macro  
+
+    
+      Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/macro-inc/macro" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Shell</span>
+          <span class="paper-id">⭐ 307,481 &nbsp;+1095 today</span>
+        </div>
+        <span class="score-badge">推荐度 20/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/obra" target="_blank">sponsors/obra</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        obra /
+
+      superpowers  
+
+    
+      An agentic skills framework &amp; software development methodology that works.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/obra" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 5,107 &nbsp;+1068 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/JetBrains/thinkrail" target="_blank">JetBrains/thinkrail</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        JetBrains /
+
+      thinkrail  
+
+    
+      Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/JetBrains/thinkrail" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          
+          <span class="paper-id">⭐ 11,171 &nbsp;+2139 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/elayadesign" target="_blank">sponsors/elayadesign</a>
+      </h3>
+      
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/elayadesign" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    </div>
+
+    <footer>
+        <p>由 <a href="https://github.com/Sloan-Yang/TechDigest">TechDigest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> · <a href="https://news.ycombinator.com">Hacker News</a> · <a href="https://github.com/trending">GitHub Trending</a></p>
+    </footer>
+</body>
+</html>

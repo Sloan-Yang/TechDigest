@@ -1,0 +1,155 @@
+[
+  {
+    "id": "2610.35339",
+    "title": "Targeted Deep Regression - Initial Applications in Whole-Body Water-Fat MRI in UK Biobank",
+    "abstract": "UK Biobank is a British clinical study which, in addition to large amounts of medical data collected, plans to include detailed Magnetic Resonance Imaging (MRI) examina- tions from 100,000 participants. The image data can be analyzed for example by auto- mated analysis with neural networks for image segmentation or classification to expand the collection of image-derived phenotypes for medical research. In this work, we pro- pose, present and evaluate a methodology that uses image-based regression to estimate numerical properties from the collected neck-to-knee water-fat MRI scans. It applies a ResNet50-style network to 2D multi-channel collages that represent targeted and study- specific anatomical sub-regions from the MRI scan. The targeted sub-region sampling is achieved by propagating manually defined subregions from a reference scan to the other >30,000 analyzed scans using image registration. The resulting collages can be compact while retaining high-resolution, for example by providing multiple slices of kidney tissue for a kidney volume regression network. This approach also enables group-wise saliency analysis that highlight image and anatomical regions used by the network for the pre- dictions. The method was applied for the regression endpoints of kidney volume, heart volume, and age. Predictive performance was found between R2 = 0.731-0.984 and the group-wise saliency maps were found to highlight medically relevant regions. We con- clude that the method can be used to standardize and restrict the information presented to a deep regression analysis pipeline, increasing information density and opening up a wide range of future medical inference studies.",
+    "authors": [
+      "Filip Marttala",
+      "Taro Langner",
+      "Johan Öfverstedt",
+      "Nouman Ahmad",
+      "Håkan Ahlström",
+      "Robin Strand",
+      "Joel Kullberg"
+    ],
+    "published": "2026-10-26",
+    "updated": "2026-10-26",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.35339.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.35339",
+    "primary_category": "cs.CV",
+    "score": 5,
+    "summary": {
+      "title_zh": "Targeted Deep Regression - Initial Applications in Whole-Body Water-Fat MRI in UK Biobank",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.34645",
+    "title": "Regional prediction of hematoma expansion from non-contrast computed tomography in spontaneous intracerebral hemorrhage patients",
+    "abstract": "Background The combination of hematoma location, expansion and final volume influence neurological outcome. The aim of this study was to derive and validate a quantitative and interpretable region-based NCCT image feature model for predicting hematoma expansion. Methods The Ethnic/Racial Variations of Intracerebral Hemorrhage(ERICH) study was used for derivation and the Virtual International Trials in Stroke Archive(VISTA) was used for validation. NCCT images at presentation and 24+/-6hours were pre-processed, segmented and categorized into lobar, basal ganglia or thalamic regions. Hematoma expansion was defined by region and according to its effect on clinical outcome. Transport-based morphometry (TBM) produced a unique transport-based representation from each NCCT hematoma image. Linear classifiers applied to transport representations were used to derive a predictive model. The regional TBM model's performance was compared to alternate methods using AUROC analyses. Results The derivation dataset included 574 patients, comprising 162 lobar, 257 basal ganglia and 155 thalamic hematomas. The validation dataset included 196 patients, comprising 31 lobar, 119 basal ganglia and 46 thalamic hematomas. A combined regional model predicted hematoma expansion in the validation dataset with an AUROC of 0.787. The principal image features which varied by location were size, heterogeneity, eccentricity and density distribution towards the hematoma periphery. The regional TBM model outperformed alternative clinician based and machine-learning methods. Conclusions TBM discriminated and visualized regional features of hematoma expansion from presentation NCCT scans. This provides preliminary evidence for regional radiographic features of hematoma expansion. It has the potential to improve hematoma expansion prediction and understanding of hematoma expansion pathophysiology.",
+    "authors": [
+      "Natasha Ironside",
+      "Hongyu Kan",
+      "Kristofor Pas",
+      "Mohammad Shifat-E-Rabbi",
+      "Benjamin Newman",
+      "Shinjini Kundu",
+      "Kareem El Naamani",
+      "Tanvir Rizvi",
+      "Andrea Becerril-Gaitan",
+      "Harrison Snyder",
+      "Aarathi Manchikalapudi",
+      "Sarah Ratcliffe",
+      "Stacie L. Demel",
+      "Carl D. Langefeld",
+      "Daniel Woo",
+      "Stephan Mayer",
+      "E. Sander Connolly",
+      "Gustavo Rohde",
+      "for the ERICH Investigators",
+      "the VISTA-ICH collaboration"
+    ],
+    "published": "2026-10-26",
+    "updated": "2026-10-26",
+    "categories": [
+      "cs.CV",
+      "q-bio.TO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.34645.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.34645",
+    "primary_category": "cs.CV",
+    "score": 5,
+    "summary": {
+      "title_zh": "Regional prediction of hematoma expansion from non-contrast computed tomography in spontaneous intracerebral hemorrhage patients",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.34352",
+    "title": "A Computationally Efficient Non-Interpolation Virtual Trellis Approach for Mammogram Gradient-based Patterns Analysis",
+    "abstract": "Feature analysis is a crucial step in medical image analysis, particularly in breast cancer classification. Traditional image analysis methods often struggle with optimal patterns along the diagonal axis, computational efficiency and feature buffer storage. Different classical operators require high-efficiency hardware for the complex operations, such as image convolution and gradient analysis, which are used for processing complex machine learning models for training and test operations. Here, in this research, we introduce a non-interpolation virtual trellis-based (NVHT) operator that utilizes a filter kernel over the same square image without transformation to a hexagonal trellis. This proposed method is very efficient in reducing computational and storage costs. The proposed operator is used for improved feature extraction efficiency and accuracy in disease classification. This method outperforms conventional approaches by leveraging a hexagonal pixel representation while maintaining high sensitivity in different directions with less storage.",
+    "authors": [
+      "Shahid Rasheed",
+      "Muhammad Rashid",
+      "Seifedine Kadry",
+      "Salman A. AlQahtani"
+    ],
+    "published": "2026-10-25",
+    "updated": "2026-10-25",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.34352.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.34352",
+    "primary_category": "cs.CV",
+    "score": 5,
+    "summary": {
+      "title_zh": "A Computationally Efficient Non-Interpolation Virtual Trellis Approach for Mammogram Gradient-based Patterns Analysis",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.36428",
+    "title": "FORESEE-MS: Toward Prospective Spatial Forecasting of Future Multiple Sclerosis Lesions from Baseline FLAIR MRI",
+    "abstract": "Traditional multiple sclerosis (MS) image analysis has primarily focused on retrospectively detecting and segmenting lesions. This study investigates whether baseline FLAIR MRI can identify regions at risk for future lesion formation beyond population-level spatial patterns. We introduce FORESEE-MS, an evaluation protocol that uses a fold-specific population-prior atlas as a baseline and assesses predictions using pooled voxel-level discrimination (AUROC and AUPRC) and within-patient lesion localization (Recall@Top-K%), with patient-level bootstrap confidence intervals. We evaluated five deep learning models (3D U-Net, Attn+ResBlock+VAE, ViT, and two SwinUNETR variants) using 5-fold cross-validation on 39 subjects from the MSSEG-2 dataset. The atlas achieved the highest pooled voxel-level AUROC and AUPRC, with no deep learning model reliably outperforming it on either metric. However, the 3D U-Net and Attn+ResBlock+VAE achieved higher mean voxel-level within-patient Recall@Top-K% than the atlas at all evaluated thresholds, although most paired confidence intervals for the differences included zero. These findings suggest that baseline FLAIR may contain patient-specific predictive information, but in this small cohort, it remains uncertain whether this information improves lesion forecasting beyond a population-prior atlas.",
+    "authors": [
+      "Maryam Akhavan Aghdam",
+      "Sudip Mittal",
+      "Noorbakhsh Amiri Golilarz",
+      "Shahram Rahimi"
+    ],
+    "published": "2026-10-27",
+    "updated": "2026-10-27",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.36428.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.36428",
+    "primary_category": "cs.CV",
+    "score": 3,
+    "summary": {
+      "title_zh": "FORESEE-MS: Toward Prospective Spatial Forecasting of Future Multiple Sclerosis Lesions from Baseline FLAIR MRI",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  },
+  {
+    "id": "2610.37668",
+    "title": "Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction",
+    "abstract": "Novel view synthesis and 3D reconstruction have advanced rapidly with radiance fields and splatting, yet their memory and computational demands limit their use in resource-constrained settings. We introduce Hexels: novel planar hexagonal surface elements with a first-order spatial color field for efficient 3D scene and 2D image representation. Hexels exploit locally planar regions with smoothly varying appearance using fewer, larger primitives. Their hexagonal support provides an area- and boundary-efficient domain, while the local color field captures appearance variation within each primitive. Across 34 scenes, Hexels improve PSNR over memory-matched 2DGS by 4.53-7.38 dB across datasets while requiring lower training VRAM. We further ablate Hexels by showing that per primitive, Hexels outperform 2DGS by upto 4.74 dB while using lower training VRAM and having 2.31 times faster FPS. Even in unconstrained settings, Hexels offers complementary quality-memory trade-offs. For efficient 3D surface reconstruction, Hexels reduce error by 28.9% compared with memory-matched 2DGS across 15 DTU scans. On 6 Tanks and Temples surface scenes, Hexels achieves the highest mean F1 among compared methods (34.38%, versus 31.72% for 2DGS). We further also show that Hexels, as a general primitive, improves 2D image representation over Image-GS. Hexels push the Pareto frontier on the quality-efficiency trade-off of surface-aligned primitives.",
+    "authors": [
+      "Prakhar Kaushik",
+      "Soumava Paul",
+      "Alan Yuille"
+    ],
+    "published": "2026-10-27",
+    "updated": "2026-10-27",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.37668.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.37668",
+    "primary_category": "cs.CV",
+    "summary": {
+      "title_zh": "Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction",
+      "core_contribution": "摘要生成失败",
+      "method": "",
+      "findings": ""
+    }
+  }
+]
