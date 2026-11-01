@@ -1,0 +1,111 @@
+[
+  {
+    "id": "2610.40640",
+    "title": "SonoWorld4D: From One Video to a 4D Audio-Visual Scene via Diffusion Synchronization",
+    "abstract": "Recent progress in visual scene generation has extended beyond static 3D scenes toward the more challenging problem of generating dynamic 4D scenes from minimal input. However, sound, despite being intrinsically coupled with dynamic objects and events, remains largely unmodeled in prior work. We introduce Video-to-4DAVScene, a new task that turns a video into an explorable, time-varying 4D audio-visual scene, and present the SonoWorld4D framework for this task. Given a monocular video, our method generates a 360 static background, reconstructs explicit motion trajectories of dynamic, sound-emitting foreground objects, and synthesizes a physically-grounded sound field consistent across multiple sources through dual-space audio diffusion synchronization. The resulting 4D scene supports real-time novel-view visual and spatial audio rendering. Evaluation on real-world dynamic scenes and a user study demonstrates SonoWorld4D generates 4D audio-visual scenes with perceptually realistic, physically grounded spatial audio consistent with scene geometry and visual content.",
+    "authors": [
+      "Derong Jin",
+      "Xiyi Chen",
+      "Ming C. Lin",
+      "Ruohan Gao"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "categories": [
+      "cs.CV",
+      "cs.SD"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.40640.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.40640",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2610.40636",
+    "title": "Probing Spatial State Representations in Visual Foundation Models",
+    "abstract": "An observer sees only part of the surrounding world, yet must keep track of what lies beyond the current view. Spatial perception therefore involves more than recognizing individual images: it calls for a persistent spatial state that is updated under self-motion and used to guide action. Do visual foundation models provide representations that support such a state? We study this question through four levels of spatial capability---spatial structure, object persistence, predictive spatial update, and actionability---using frozen-feature probes on ten representations under streaming egocentric observations of static indoor environments. The resulting capability profiles vary across tasks, network layers, and prefix lengths: strong readout of the visible scene does not ensure accurate object persistence or future-feature retrieval. Matched controls separate readout accuracy from reliance on visual history and motion. Native future prediction retains recoverable spatial structure, but a spatial reader trained on real features does not transfer to predicted features unchanged. Finally, goal-dependent candidate selection does not establish reliable continuous action utility: predicted actions respond to goal changes, yet supplying the correct goal does not reliably improve progress. Across the four levels, object persistence and actionability build on camera-pose readout, whereas feature prediction builds on visible-scene readout. Together, these findings motivate evaluating spatial representations not only by what can be decoded from them, but by whether that information is maintained beyond observation, updated predictively, and used for goal-directed action.",
+    "authors": [
+      "Baiqiao Yin",
+      "Zhongang Cai",
+      "Ruisi Wang",
+      "Qiwei Liang",
+      "Lei Yang",
+      "Ziwei Liu"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.40636.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.40636",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2610.40632",
+    "title": "SymAnt: Grounding Long-Horizon Action Anticipation with Adaptable Symbolic Priors",
+    "abstract": "As robots and intelligent systems increasingly interact with humans, they must anticipate long sequences of future actions from only brief observations. While purely neural models typically require extensive observations to predict future actions and remain difficult to interpret and adjust, symbolic priors offer a structured alternative. To this end, we introduce SymAnt, a novel neuro-symbolic approach that unifies the expressiveness of neural networks with the structured reasoning of scene and knowledge graphs. Given a short video, SymAnt performs a joint-search over both graphs to construct a symbolic context, enabling unified reasoning over spatial relationships, object attributes, affordances, and associated actions. This symbolic context serves as a prior for an iterative refinement process that progressively generates and improves the sequence of future actions. By grounding predictions in symbolic context, SymAnt anticipates long-horizon actions from short observation windows in a parameter-efficient manner, while enabling users to directly edit the underlying knowledge to adjust predictions without further training. Through our experiments, we demonstrate the effectiveness of SymAnt, particularly when only short observation contexts are available, across five diverse datasets: Breakfast, 50 Salads, EPIC-KITCHENS, EGTEA Gaze+, and Assembly101.",
+    "authors": [
+      "Fnu Aryan",
+      "Yaqi Xie",
+      "Joseph Campbell",
+      "Woojun Kim",
+      "Kwonjoon Lee",
+      "Hossein Nourkhiz Mahjoub",
+      "Ehsan Moradi-Pari",
+      "Katia Sycara",
+      "Simon Stepputtis"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.40632.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.40632",
+    "primary_category": "cs.RO"
+  },
+  {
+    "id": "2610.40616",
+    "title": "Difficulty Calibration Across Time for Membership Inference in Diffusion Models",
+    "abstract": "Modern diffusion models are trained on massive datasets that often include copyrighted or private images. Membership inference attacks (MIAs) address this by testing whether a given image was in a model's training set. The standard approach scores an image by its reconstruction loss and flags low-loss images as members. This often fails because some images are simply easier to reconstruct than others, so a simple unseen image can score a lower loss than a complex training image. Difficulty calibration separates memorization from how difficult an image is to begin with. We show how to calibrate along two axes of time: training time and diffusion time. First, across training time, we introduce Reference-Model Calibration (RMC), which compares a fine-tuned model's loss against an earlier checkpoint. This cleanly isolates newly memorized data and gives near-perfect auditing, even without text captions. Since earlier checkpoints are not always available, we next present Temporal Self-Calibration (TSC), which calibrates across diffusion time using only a single model. Our key observation is that an image's difficulty persists across noise levels, whereas memorization is localized in time. By comparing the loss at a target timestep against neighboring timesteps from the same model, TSC attenuates image difficulty using the model's own trajectory. Empirically, our methods beat the state of the art by a wide margin, and unlike most existing attacks, generalize across different model parameterizations such as $x$-, $v$-, and $ε$-prediction models. Code is available at https://github.com/MichaelJoseph777/TSC.",
+    "authors": [
+      "Michael Joseph",
+      "Yedid Hoshen"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "categories": [
+      "cs.CV",
+      "cs.CR",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.40616.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.40616",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2610.40614",
+    "title": "L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory",
+    "abstract": "Interactive world models generate visual content conditioned on user actions, yet maintaining spatial consistency over long-horizon exploration in real time remains challenging. Existing approaches rely on either temporal context or explicit 3D memory, both of which scale poorly because memory grows with the length of the generated stream. Moreover, explicit 3D memories condition latent video generators by re-encoding RGB renderings, which precludes real-time generation. In this paper, we introduce a Latent 3D Gaussian Memory (L3G) that combines the efficiency of feed-forward reconstruction with a compact, rapidly renderable scene representation. Building on this memory, we propose L3G-World, in which a memory updater and a video diffusion transformer (DiT) alternate autoregressively to generate spatially consistent worlds. The memory updater spawns Gaussians in newly observed regions and refines existing ones, so that the memory grows with scene extent rather than stream length. Each Gaussian further stores a VAE latent feature, allowing the memory to be rendered directly into the DiT's latent space without VAE re-encoding. Experiments show that L3G-World achieves state-of-the-art generation quality and long-horizon spatial consistency, with up to $38.6\\times$ fewer 3D primitives, $3.2\\times$ faster memory updates, and $359\\times$ faster memory rendering relative to the most efficient prior 3D-memory baseline for each metric, enabling real-time world generation at 9 FPS.",
+    "authors": [
+      "Jinhyeok Choi",
+      "JoungBin Lee",
+      "Jongmin Lee",
+      "Minkyeong Jeon",
+      "Jiyoung Kim",
+      "Kaeun Han",
+      "Yoonjin Yoon",
+      "Seungryong Kim"
+    ],
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2610.40614.pdf",
+    "abs_url": "https://arxiv.org/abs/2610.40614",
+    "primary_category": "cs.CV"
+  }
+]

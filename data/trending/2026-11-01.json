@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lightpanda-io_browser",
+    "full_name": "lightpanda-io/browser",
+    "owner": "lightpanda-io",
+    "name": "browser",
+    "url": "https://github.com/lightpanda-io/browser",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        lightpanda-io /\n\n      browser  \n\n    \n      Lightpanda: the headless browser designed for AI and automation",
+    "language": "Zig",
+    "stars": 39248,
+    "stars_today": 929,
+    "relevance_score": 85
+  },
+  {
+    "id": "THU-MAIC_OpenMAIC",
+    "full_name": "THU-MAIC/OpenMAIC",
+    "owner": "THU-MAIC",
+    "name": "OpenMAIC",
+    "url": "https://github.com/THU-MAIC/OpenMAIC",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        THU-MAIC /\n\n      OpenMAIC  \n\n    \n      Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+    "language": "TypeScript",
+    "stars": 42184,
+    "stars_today": 116,
+    "relevance_score": 85
+  },
+  {
+    "id": "HKUDS_DeepTutor",
+    "full_name": "HKUDS/DeepTutor",
+    "owner": "HKUDS",
+    "name": "DeepTutor",
+    "url": "https://github.com/HKUDS/DeepTutor",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        HKUDS /\n\n      DeepTutor  \n\n    \n      DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+    "language": "Python",
+    "stars": 52811,
+    "stars_today": 1034,
+    "relevance_score": 70
+  },
+  {
+    "id": "pbakaus_impeccable",
+    "full_name": "pbakaus/impeccable",
+    "owner": "pbakaus",
+    "name": "impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        pbakaus /\n\n      impeccable  \n\n    \n      The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+    "language": "Rust",
+    "stars": 98281,
+    "stars_today": 1338,
+    "relevance_score": 65
+  },
+  {
+    "id": "pingdotgg_t3code",
+    "full_name": "pingdotgg/t3code",
+    "owner": "pingdotgg",
+    "name": "t3code",
+    "url": "https://github.com/pingdotgg/t3code",
+    "description": "",
+    "language": "TypeScript",
+    "stars": 35567,
+    "stars_today": 1148,
+    "relevance_score": 50
+  },
+  {
+    "id": "sponsors_thedotmack",
+    "full_name": "sponsors/thedotmack",
+    "owner": "sponsors",
+    "name": "thedotmack",
+    "url": "https://github.com/sponsors/thedotmack",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        thedotmack /\n\n      claude-mem  \n\n    \n      Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "language": "TypeScript",
+    "stars": 107868,
+    "stars_today": 1723,
+    "relevance_score": 30
+  },
+  {
+    "id": "sponsors_obra",
+    "full_name": "sponsors/obra",
+    "owner": "sponsors",
+    "name": "obra",
+    "url": "https://github.com/sponsors/obra",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        obra /\n\n      superpowers  \n\n    \n      An agentic skills framework &amp; software development methodology that works.",
+    "language": "Shell",
+    "stars": 310062,
+    "stars_today": 665,
+    "relevance_score": 20
+  },
+  {
+    "id": "sponsors_mattpocock",
+    "full_name": "sponsors/mattpocock",
+    "owner": "sponsors",
+    "name": "mattpocock",
+    "url": "https://github.com/sponsors/mattpocock",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        mattpocock /\n\n      skills  \n\n    \n      Skills for Real Engineers. Straight from my .agents directory.",
+    "language": "Shell",
+    "stars": 308383,
+    "stars_today": 883,
+    "relevance_score": 0
+  }
+]

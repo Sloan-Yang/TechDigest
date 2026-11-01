@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50319510,
+    "title": "HackerTube: YouTube built from videos recommended by HN",
+    "url": "https://karpathy.bearblog.dev/hacker-tube/",
+    "text": "YouTube-style UI over 6,454 videos sourced from 39,834 HN comments since 2007.<p><a href=\"https:&#x2F;&#x2F;hackertube.org&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;hackertube.org&#x2F;</a>",
+    "score": 617,
+    "comments": 218,
+    "by": "karpathy",
+    "time": 1793476613,
+    "hn_url": "https://news.ycombinator.com/item?id=50319510",
+    "relevance_score": 0
+  },
+  {
+    "id": 50320963,
+    "title": "An Italian farmer found some unknown seeds in his attic and planted them",
+    "url": "https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/",
+    "text": "",
+    "score": 80,
+    "comments": 32,
+    "by": "ecares",
+    "time": 1793486466,
+    "hn_url": "https://news.ycombinator.com/item?id=50320963",
+    "relevance_score": 0
+  },
+  {
+    "id": 50319143,
+    "title": "TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8",
+    "url": "https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf",
+    "text": "",
+    "score": 303,
+    "comments": 145,
+    "by": "oger",
+    "time": 1793474190,
+    "hn_url": "https://news.ycombinator.com/item?id=50319143",
+    "relevance_score": 0
+  },
+  {
+    "id": 50320995,
+    "title": "Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard",
+    "url": "https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve",
+    "text": "",
+    "score": 44,
+    "comments": 14,
+    "by": "guregodevo",
+    "time": 1793486772,
+    "hn_url": "https://news.ycombinator.com/item?id=50320995",
+    "relevance_score": 0
+  },
+  {
+    "id": 50321130,
+    "title": "When electric cars were for women",
+    "url": "https://spectrum.ieee.org/early-electric-vehicles",
+    "text": "",
+    "score": 21,
+    "comments": 2,
+    "by": "dverlaeckt80",
+    "time": 1793488092,
+    "hn_url": "https://news.ycombinator.com/item?id=50321130",
+    "relevance_score": 0
+  },
+  {
+    "id": 50321048,
+    "title": "Altoids Project",
+    "url": "https://uvdn7.github.io/altoids-project/",
+    "text": "",
+    "score": 12,
+    "comments": 0,
+    "by": "uvdn7",
+    "time": 1793487295,
+    "hn_url": "https://news.ycombinator.com/item?id=50321048",
+    "relevance_score": 0
+  },
+  {
+    "id": 50313051,
+    "title": "First response from the Project Suncatcher prototype satellite",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/",
+    "text": "",
+    "score": 21,
+    "comments": 15,
+    "by": "praccu",
+    "time": 1793418840,
+    "hn_url": "https://news.ycombinator.com/item?id=50313051",
+    "relevance_score": 0
+  },
+  {
+    "id": 50318720,
+    "title": "It's the memory latency, stupid",
+    "url": "https://pivotlake.io/blog/its-the-memory-latency-stupid/",
+    "text": "",
+    "score": 112,
+    "comments": 34,
+    "by": "ntur1337",
+    "time": 1793471896,
+    "hn_url": "https://news.ycombinator.com/item?id=50318720",
+    "relevance_score": 0
+  }
+]
