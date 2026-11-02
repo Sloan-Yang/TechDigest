@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-01</div>
+        <div class="page-date">📅 2026-11-02</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 4 | 机器人: 1
+            人工智能: 1 | 计算机视觉: 4
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.40640</span>
+          <span class="paper-id">2610.40607</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40640" target="_blank">SonoWorld4D: From One Video to a 4D Audio-Visual Scene via Diffusion Synchronization</a>
+        <a href="https://arxiv.org/abs/2610.40607" target="_blank">Fight World Model: Customizable Combat through Visual Interaction Proxies</a>
       </h3>
       
-      <p class="paper-authors">Derong Jin, Xiyi Chen, Ming C. Lin, Ruohan Gao</p>
+      <p class="paper-authors">Jiahua Li, Zixu John, Tom Zhong, Fuping Wu, Tianhao Xu 等 (8 位作者)</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Recent progress in visual scene generation has extended beyond static 3D scenes toward the more challenging problem of generating dynamic 4D scenes from minimal input. However, sound, despite being intrinsically coupled with dynamic objects and events, remains largely unmodeled in prior work. We introduce Video-to-4DAVScene, a new task that turns a video into an explorable, time-varying 4D audio-visual scene, and present the SonoWorld4D framework for this task. Given a monocular video, our method generates a 360 static background, reconstructs explicit motion trajectories of dynamic, sound-emitting foreground objects, and synthesizes a physically-grounded sound field consistent across multiple sources through dual-space audio diffusion synchronization. The resulting 4D scene supports real-time novel-view visual and spatial audio rendering. Evaluation on real-world dynamic scenes and a user study demonstrates SonoWorld4D generates 4D audio-visual scenes with perceptually realistic, physically grounded spatial audio consistent with scene geometry and visual content.</p>
+        <p>A playable, programmable game world must maintain persistent state, enforce executable rules, and support extensible gameplay mechanics. Existing video world models can generate plausible combat, yet struggle to keep hit reactions and health updates consistent with game rules. We introduce Fight World Model (FWM), which separates rule-governed combat execution from video rendering. An executable engine maintains state and resolves interactions. A deterministic compiler encodes these outcomes and attempted actions in a spatially and temporally aligned interaction proxy. The proxy aligns action and skill windows, brief hit reactions, and persistent health by fighter identity and timing. These cues can be controlled separately to render interactions under modified rules. Identity-bound references preserve character appearance across side switches. We train FWM on FightWorld Corpus, spanning 52 skill effects, 187 character-appearance variants, and 15 arenas. Without retraining the renderer, FWM supports damage scaling, limited-hit immunity, lifesteal, and multi-stage skill mechanisms beyond the native game. It also allows character and arena customization. Experiments demonstrate the effectiveness of FWM, which outperforms existing game world models in action fidelity, hit reactions, health-state consistency, and character appearance preservation. Our project is available at https://fight-world-model.github.io.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40640" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40640.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.40607" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.40607.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.40636</span>
+          <span class="paper-id">2610.40599</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40636" target="_blank">Probing Spatial State Representations in Visual Foundation Models</a>
+        <a href="https://arxiv.org/abs/2610.40599" target="_blank">HairDeck: Animation-Ready Stylized Hair Cards from a Single Image</a>
       </h3>
       
-      <p class="paper-authors">Baiqiao Yin, Zhongang Cai, Ruisi Wang, Qiwei Liang, Lei Yang 等 (6 位作者)</p>
+      <p class="paper-authors">Yuze He, Yixiang Wei, Wang Zhao, Chuhao Chen, Yanning Zhou 等 (6 位作者)</p>
       
       <div class="paper-summary">
         
@@ -378,44 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>An observer sees only part of the surrounding world, yet must keep track of what lies beyond the current view. Spatial perception therefore involves more than recognizing individual images: it calls for a persistent spatial state that is updated under self-motion and used to guide action. Do visual foundation models provide representations that support such a state? We study this question through four levels of spatial capability---spatial structure, object persistence, predictive spatial update, and actionability---using frozen-feature probes on ten representations under streaming egocentric observations of static indoor environments. The resulting capability profiles vary across tasks, network layers, and prefix lengths: strong readout of the visible scene does not ensure accurate object persistence or future-feature retrieval. Matched controls separate readout accuracy from reliance on visual history and motion. Native future prediction retains recoverable spatial structure, but a spatial reader trained on real features does not transfer to predicted features unchanged. Finally, goal-dependent candidate selection does not establish reliable continuous action utility: predicted actions respond to goal changes, yet supplying the correct goal does not reliably improve progress. Across the four levels, object persistence and actionability build on camera-pose readout, whereas feature prediction builds on visible-scene readout. Together, these findings motivate evaluating spatial representations not only by what can be decoded from them, but by whether that information is maintained beyond observation, updated predictively, and used for goal-directed action.</p>
+        <p>The hair of stylized characters in games and avatars is built from hair cards: artist-placed ribbons whose geometry is the visible hair, animated by spring bones. Existing image-based methods produce realistic hair or a single fused mesh, while CHARM, the only generator of stylized hair cards, decodes a hairstyle autoregressively as a long sequence of control points. Observing that a card hairstyle is an unordered set of artist-defined primitives, we propose HairDeck, which generates it as one: each card is a single token, and a set diffusion transformer denoises all cards together. From a single image, HairDeck generates the cards and the spring-bone chains that drive them, yielding an animatable asset that exports to ready-to-use downstream formats. On CHARM's own test set, it lowers Chamfer distance by 44% and card-orientation error by more than half while running 33 times faster, and from single images it outperforms CHARM, image-to-3D pipelines and strand-based methods. Project page: https://hyzcluster.github.io/HairDeck</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40636" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40636.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">机器人</span>
-          <span class="paper-id">2610.40632</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40632" target="_blank">SymAnt: Grounding Long-Horizon Action Anticipation with Adaptable Symbolic Priors</a>
-      </h3>
-      
-      <p class="paper-authors">Fnu Aryan, Yaqi Xie, Joseph Campbell, Woojun Kim, Kwonjoon Lee 等 (9 位作者)</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>As robots and intelligent systems increasingly interact with humans, they must anticipate long sequences of future actions from only brief observations. While purely neural models typically require extensive observations to predict future actions and remain difficult to interpret and adjust, symbolic priors offer a structured alternative. To this end, we introduce SymAnt, a novel neuro-symbolic approach that unifies the expressiveness of neural networks with the structured reasoning of scene and knowledge graphs. Given a short video, SymAnt performs a joint-search over both graphs to construct a symbolic context, enabling unified reasoning over spatial relationships, object attributes, affordances, and associated actions. This symbolic context serves as a prior for an iterative refinement process that progressively generates and improves the sequence of future actions. By grounding predictions in symbolic context, SymAnt anticipates long-horizon actions from short observation windows in a parameter-efficient manner, while enabling users to directly edit the underlying knowledge to adjust predictions without further training. Through our experiments, we demonstrate the effectiveness of SymAnt, particularly when only short observation contexts are available, across five diverse datasets: Breakfast, 50 Salads, EPIC-KITCHENS, EGTEA Gaze+, and Assembly101.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40632" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40632.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.40599" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.40599.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.40616</span>
+          <span class="paper-id">2610.40587</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40616" target="_blank">Difficulty Calibration Across Time for Membership Inference in Diffusion Models</a>
+        <a href="https://arxiv.org/abs/2610.40587" target="_blank">Beyond Ground Truth: A Heuristic Unsupervised Quality Assurance Engine for Diagnosing Calibrational Blindness in Dental Segmentation</a>
       </h3>
       
-      <p class="paper-authors">Michael Joseph, Yedid Hoshen</p>
+      <p class="paper-authors">Fatematuj Johura Mim</p>
       
       <div class="paper-summary">
         
@@ -442,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Modern diffusion models are trained on massive datasets that often include copyrighted or private images. Membership inference attacks (MIAs) address this by testing whether a given image was in a model's training set. The standard approach scores an image by its reconstruction loss and flags low-loss images as members. This often fails because some images are simply easier to reconstruct than others, so a simple unseen image can score a lower loss than a complex training image. Difficulty calibration separates memorization from how difficult an image is to begin with. We show how to calibrate along two axes of time: training time and diffusion time. First, across training time, we introduce Reference-Model Calibration (RMC), which compares a fine-tuned model's loss against an earlier checkpoint. This cleanly isolates newly memorized data and gives near-perfect auditing, even without text captions. Since earlier checkpoints are not always available, we next present Temporal Self-Calibration (TSC), which calibrates across diffusion time using only a single model. Our key observation is that an image's difficulty persists across noise levels, whereas memorization is localized in time. By comparing the loss at a target timestep against neighboring timesteps from the same model, TSC attenuates image difficulty using the model's own trajectory. Empirically, our methods beat the state of the art by a wide margin, and unlike most existing attacks, generalize across different model parameterizations such as $x$-, $v$-, and $ε$-prediction models. Code is available at https://github.com/MichaelJoseph777/TSC.</p>
+        <p>In real-world clinical settings, dental X-ray segmentation using deep learning methods suffers from reliability issues. Even when the segmentation quality is bad, deep learning models show high confidence in their predictions (calibrational blindness). Moreover, in real use, doctors do not have ground-truth masks to check their accuracy. To address this problem, we introduce a simple quality-checking engine called HUS-QA with three stages. We train it on the PRAD (Periapical Dental X-ray) dataset to build our SimCLR self-supervised ResNet-18 U-Net model, which generates the segmentation mask and then evaluates its quality. Our HUS-QA checks the segmentation mask quality without a ground-truth mask. Prediction confidence, edge sharpness, shape connectivity, and area-size penalty are the simple indicators considered in this research. Results show that standard confidence methods fail (r = -0.1394, p = 1.7864e-3, ROC AUC = 0.4275). By contrast, our HUS-QA shows a positive correlation with actual Dice scores (r = 0.4647, p = 3.7510e-28) and achieves a strong ROC-AUC of 0.8405. Therefore, HUS-QA serves as a practical tool for clinical quality control.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40616" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40616.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.40587" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.40587.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.40614</span>
+          <span class="paper-id">2610.40580</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40614" target="_blank">L3G-World: Real-Time Infinite World Generation with Latent 3D Gaussian Memory</a>
+        <a href="https://arxiv.org/abs/2610.40580" target="_blank">RADIOlogy: A Single-Pass Approach to Training-Free Zero-Shot Anomaly Detection</a>
       </h3>
       
-      <p class="paper-authors">Jinhyeok Choi, JoungBin Lee, Jongmin Lee, Minkyeong Jeon, Jiyoung Kim 等 (8 位作者)</p>
+      <p class="paper-authors">Joaquín Figueira, Giacomo D'Amicantonio, Egor Bondarau</p>
       
       <div class="paper-summary">
         
@@ -474,12 +442,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Interactive world models generate visual content conditioned on user actions, yet maintaining spatial consistency over long-horizon exploration in real time remains challenging. Existing approaches rely on either temporal context or explicit 3D memory, both of which scale poorly because memory grows with the length of the generated stream. Moreover, explicit 3D memories condition latent video generators by re-encoding RGB renderings, which precludes real-time generation. In this paper, we introduce a Latent 3D Gaussian Memory (L3G) that combines the efficiency of feed-forward reconstruction with a compact, rapidly renderable scene representation. Building on this memory, we propose L3G-World, in which a memory updater and a video diffusion transformer (DiT) alternate autoregressively to generate spatially consistent worlds. The memory updater spawns Gaussians in newly observed regions and refines existing ones, so that the memory grows with scene extent rather than stream length. Each Gaussian further stores a VAE latent feature, allowing the memory to be rendered directly into the DiT's latent space without VAE re-encoding. Experiments show that L3G-World achieves state-of-the-art generation quality and long-horizon spatial consistency, with up to $38.6\times$ fewer 3D primitives, $3.2\times$ faster memory updates, and $359\times$ faster memory rendering relative to the most efficient prior 3D-memory baseline for each metric, enabling real-time world generation at 9 FPS.</p>
+        <p>Current zero-shot anomaly detection methods often rely on complex prompt-learning techniques or computationally expensive sliding-window strategies to achieve fine-grained visual alignment to detect small-scale anomalies. This reliance stems from the fundamental limitation of standard CLIP architectures, where [CLS] token attention and spatial patch pooling struggle to capture subtle, localized anomaly features. While prompt-learning approaches aim to bridge this gap, they typically require a large number of ground-truth segmentation masks from auxiliary datasets, which are often unavailable in specialized domains. In this work, we show an emerging property of multi-head attention pooling in vision-language models: remarkable zero-shot anomaly localization and detection right out of the box. We translate this property into a single-pass anomaly detection technique, RADIOlogy, that does not require dense, windowed execution and significantly outperforms other training-free baselines. Instead, the method relies on a simple contrastive scoring approach that compares the average similarity between vision features and a suite of normal and abnormal prompts. Furthermore, we leverage the agglomerative features of RADIO models to enhance pixel-level anomaly segmentation using a dense anomaly refinement pipeline. Finally, we show how the vision-language family of training-free zero-shot anomaly detection techniques can be applied successfully to the medical domain with minimal modifications. Code is available at https://github.com/jacomof/RADIOlogy.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40614" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40614.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2610.40580" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.40580.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">人工智能</span>
+          <span class="paper-id">2610.40578</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2610.40578" target="_blank">VeriCUA: Verification as Agentic Exploration for Computer-Using Agents</a>
+      </h3>
+      
+      <p class="paper-authors">Qiushi Sun, Da Yu, Alexander Knop, Amer Sinha, Lingpeng Kong 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Building and scaling computer-using agents (CUAs) across desktop, mobile, and web environments requires reliable task-completion verification for data curation, evaluation, and reinforcement learning. Typical automated approaches prompt vision-language models (VLMs) to judge trajectories or generate programs to inspect application state. However, both rely on partial views of complex digital environments. VLM judges are restricted to supplied observations, while generated programs depend on accessible state. These views can omit decisive evidence or leave completion judgments unsupported. Tailoring separate verifiers to different platforms and access settings adds further engineering cost. We present VeriCUA, a platform-agnostic framework for verification through agentic exploration. It treats verification as dynamic evidence gathering and assessment within a shared procedure for online and offline settings across platforms and observation modalities. After inspecting the available context to construct a task rubric, the verifier selects GUI or code checks for unresolved requirements and combines their findings under explicit evidence rules. Experiments show improved agreement with reference labels over the compared baselines across these settings, with the largest offline gains on hard cases and stronger rejection of false completion claims online. Further analyses connect these gains to complementary evidence and test-time exploration.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2610.40578" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2610.40578.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,7 +488,26 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 617 &nbsp;💬 218</span>
+          <span class="paper-id">▲ 899 &nbsp;💬 177</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50326821" target="_blank">Show HN: HackerBooks – HackerTube, but for books mentioned on HN</a>
+      </h3>
+      <p class="paper-authors">by roansh</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50326821" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://hackerbooks.org" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 2276 &nbsp;💬 538</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -507,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 80 &nbsp;💬 32</span>
+          <span class="paper-id">▲ 39 &nbsp;💬 17</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50320963" target="_blank">An Italian farmer found some unknown seeds in his attic and planted them</a>
+        <a href="https://news.ycombinator.com/item?id=50312408" target="_blank">Postgres 19 is late, and it's AI's fault</a>
       </h3>
-      <p class="paper-authors">by ecares</p>
+      <p class="paper-authors">by soheilpro</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50320963" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50312408" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 303 &nbsp;💬 145</span>
+          <span class="paper-id">▲ 90 &nbsp;💬 12</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50319143" target="_blank">TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8</a>
+        <a href="https://news.ycombinator.com/item?id=50299811" target="_blank">Nibnib: Image compression with extreme decompression speed</a>
       </h3>
-      <p class="paper-authors">by oger</p>
+      <p class="paper-authors">by raphlinus</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50319143" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50299811" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/raphlinus/nibnib" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 44 &nbsp;💬 14</span>
+          <span class="paper-id">▲ 8 &nbsp;💬 2</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50320995" target="_blank">Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard</a>
+        <a href="https://news.ycombinator.com/item?id=50331404" target="_blank">America on Data Centers: 10k city council comments</a>
       </h3>
-      <p class="paper-authors">by guregodevo</p>
+      <p class="paper-authors">by afandrew</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50320995" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50331404" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.americansentiment.com/datacenters" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 21 &nbsp;💬 2</span>
+          <span class="paper-id">▲ 128 &nbsp;💬 231</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50321130" target="_blank">When electric cars were for women</a>
+        <a href="https://news.ycombinator.com/item?id=50328896" target="_blank">Ask HN: Which TV do you recommend for privacy?</a>
       </h3>
-      <p class="paper-authors">by dverlaeckt80</p>
+      <p class="paper-authors">by LecroJS</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50321130" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://spectrum.ieee.org/early-electric-vehicles" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50328896" target="_blank" class="link-btn">💬 HN 讨论</a>
+        
       </div>
     </article>
     
@@ -583,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 12 &nbsp;💬 0</span>
+          <span class="paper-id">▲ 73 &nbsp;💬 13</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50321048" target="_blank">Altoids Project</a>
+        <a href="https://news.ycombinator.com/item?id=50271106" target="_blank">Tips for more effective fuzz testing with AFL++</a>
       </h3>
-      <p class="paper-authors">by uvdn7</p>
+      <p class="paper-authors">by luu</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50321048" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://uvdn7.github.io/altoids-project/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50271106" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://nullprogram.com/blog/2025/02/05/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,37 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 21 &nbsp;💬 15</span>
+          <span class="paper-id">▲ 18 &nbsp;💬 2</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50313051" target="_blank">First response from the Project Suncatcher prototype satellite</a>
+        <a href="https://news.ycombinator.com/item?id=50303088" target="_blank">Keeping Up Appearances – The women taking over the funeral industry</a>
       </h3>
-      <p class="paper-authors">by praccu</p>
+      <p class="paper-authors">by TMWNN</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50313051" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 112 &nbsp;💬 34</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50318720" target="_blank">It's the memory latency, stupid</a>
-      </h3>
-      <p class="paper-authors">by ntur1337</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50318720" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://pivotlake.io/blog/its-the-memory-latency-stupid/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50303088" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://lareviewofbooks.org/article/death-industry-mortuary-programs-women-andie-eisen-quarterly/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Zig</span>
-          <span class="paper-id">⭐ 39,248 &nbsp;+929 today</span>
+          <span class="paper-id">⭐ 40,150 &nbsp;+825 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -674,47 +674,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 42,184 &nbsp;+116 today</span>
-        </div>
-        <span class="score-badge">推荐度 85/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/THU-MAIC/OpenMAIC" target="_blank">THU-MAIC/OpenMAIC</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        THU-MAIC /
-
-      OpenMAIC  
-
-    
-      Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/THU-MAIC/OpenMAIC" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 52,811 &nbsp;+1034 today</span>
+          <span class="paper-id">⭐ 494,631 &nbsp;+324 today</span>
         </div>
-        <span class="score-badge">推荐度 70/100</span>
+        <span class="score-badge">推荐度 60/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/HKUDS/DeepTutor" target="_blank">HKUDS/DeepTutor</a>
+        <a href="https://github.com/public-apis/public-apis" target="_blank">public-apis/public-apis</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -727,28 +693,28 @@
 
 
       
-        HKUDS /
+        public-apis /
 
-      DeepTutor  
+      public-apis  
 
     
-      DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.</p>
+      A collective list of free APIs</p>
       
       <div class="paper-links">
-        <a href="https://github.com/HKUDS/DeepTutor" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/public-apis/public-apis" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 98,281 &nbsp;+1338 today</span>
+          <span class="category-badge gh-badge">C++</span>
+          <span class="paper-id">⭐ 39,384 &nbsp;+38 today</span>
         </div>
-        <span class="score-badge">推荐度 65/100</span>
+        <span class="score-badge">推荐度 60/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a>
+        <a href="https://github.com/hyprwm/Hyprland" target="_blank">hyprwm/Hyprland</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -761,15 +727,15 @@
 
 
       
-        pbakaus /
+        hyprwm /
 
-      impeccable  
+      Hyprland  
 
     
-      The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.</p>
+      Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/pbakaus/impeccable" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/hyprwm/Hyprland" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -777,7 +743,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 35,567 &nbsp;+1148 today</span>
+          <span class="paper-id">⭐ 38,048 &nbsp;+3094 today</span>
         </div>
         <span class="score-badge">推荐度 50/100</span>
       </div>
@@ -795,7 +761,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 107,868 &nbsp;+1723 today</span>
+          <span class="paper-id">⭐ 109,315 &nbsp;+1526 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -841,28 +807,15 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Shell</span>
-          <span class="paper-id">⭐ 310,062 &nbsp;+665 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 45,400 &nbsp;+630 today</span>
         </div>
-        <span class="score-badge">推荐度 20/100</span>
+        <span class="score-badge">推荐度 30/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/obra" target="_blank">sponsors/obra</a>
+        <a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a>
       </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
+      <p class="paper-authors">Star
 
 
   
@@ -873,28 +826,28 @@
 
 
       
-        obra /
+        shiyu-coder /
 
-      superpowers  
+      Kronos  
 
     
-      An agentic skills framework &amp; software development methodology that works.</p>
+      Kronos: A Foundation Model for the Language of Financial Markets</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sponsors/obra" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/shiyu-coder/Kronos" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Shell</span>
-          <span class="paper-id">⭐ 308,383 &nbsp;+883 today</span>
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 10,546 &nbsp;+922 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/mattpocock" target="_blank">sponsors/mattpocock</a>
+        <a href="https://github.com/sponsors/milind-soni" target="_blank">sponsors/milind-soni</a>
       </h3>
       <p class="paper-authors">Sponsor
     
@@ -920,15 +873,62 @@
 
 
       
-        mattpocock /
+        milind-soni /
 
-      skills  
+      OpenMausBot  
 
     
-      Skills for Real Engineers. Straight from my .agents directory.</p>
+      Open-source Grok Bot alternative with a virtual machine that bots can use</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sponsors/mattpocock" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/milind-soni" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 36,572 &nbsp;+339 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/cjpais" target="_blank">sponsors/cjpais</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        cjpais /
+
+      Handy  
+
+    
+      A free, open source, and extensible speech-to-text application that works completely offline.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/cjpais" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     

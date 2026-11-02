@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50326821,
+    "title": "Show HN: HackerBooks – HackerTube, but for books mentioned on HN",
+    "url": "https://hackerbooks.org",
+    "text": "Saw Karpathy&#x27;s HackerTube and wanted the same thing for books. So I had Claude build one (Opus 5.5).<p>It&#x27;s ~16.5k books that at least two different HN commenters brought up, from 2007 till now. Each book links back to the comments that mentioned it. Data is downloadable from the about page.<p>To be clear: Claude wrote almost all of it, including the data pipeline and the site. I mostly steered and made calls, bought the domain name, etc.<p>It counts mentions, so it&#x27;s not perfect (praising a book and trashing it both count). If your favourite book is missing or matched to the wrong thing, tell me.",
+    "score": 899,
+    "comments": 177,
+    "by": "roansh",
+    "time": 1793548708,
+    "hn_url": "https://news.ycombinator.com/item?id=50326821",
+    "relevance_score": 0
+  },
+  {
+    "id": 50319510,
+    "title": "HackerTube: YouTube built from videos recommended by HN",
+    "url": "https://karpathy.bearblog.dev/hacker-tube/",
+    "text": "YouTube-style UI over 6,454 videos sourced from 39,834 HN comments since 2007.<p><a href=\"https:&#x2F;&#x2F;hackertube.org&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;hackertube.org&#x2F;</a>",
+    "score": 2276,
+    "comments": 538,
+    "by": "karpathy",
+    "time": 1793476613,
+    "hn_url": "https://news.ycombinator.com/item?id=50319510",
+    "relevance_score": 0
+  },
+  {
+    "id": 50312408,
+    "title": "Postgres 19 is late, and it's AI's fault",
+    "url": "http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+    "text": "",
+    "score": 39,
+    "comments": 17,
+    "by": "soheilpro",
+    "time": 1793410736,
+    "hn_url": "https://news.ycombinator.com/item?id=50312408",
+    "relevance_score": 0
+  },
+  {
+    "id": 50299811,
+    "title": "Nibnib: Image compression with extreme decompression speed",
+    "url": "https://github.com/raphlinus/nibnib",
+    "text": "",
+    "score": 90,
+    "comments": 12,
+    "by": "raphlinus",
+    "time": 1793333826,
+    "hn_url": "https://news.ycombinator.com/item?id=50299811",
+    "relevance_score": 0
+  },
+  {
+    "id": 50331404,
+    "title": "America on Data Centers: 10k city council comments",
+    "url": "https://www.americansentiment.com/datacenters",
+    "text": "",
+    "score": 8,
+    "comments": 2,
+    "by": "afandrew",
+    "time": 1793578653,
+    "hn_url": "https://news.ycombinator.com/item?id=50331404",
+    "relevance_score": 0
+  },
+  {
+    "id": 50328896,
+    "title": "Ask HN: Which TV do you recommend for privacy?",
+    "url": "",
+    "text": "I haven’t owned a TV in years and would like one that respects my privacy. Are there any TV’s which do this well? I am looking for something in the 60”to 80”range and would like a 4k display with at least 60hz display. I don’t mind paying a premium.<p>I have heard good things about Apple TV as a better alternative to most smart TV native apps. Would some TV’s pair better with this than others for privacy? I don’t want the TV doing anything other than being the display for Apple TV.<p>I am curious what success others have had.",
+    "score": 128,
+    "comments": 231,
+    "by": "LecroJS",
+    "time": 1793561727,
+    "hn_url": "https://news.ycombinator.com/item?id=50328896",
+    "relevance_score": 0
+  },
+  {
+    "id": 50271106,
+    "title": "Tips for more effective fuzz testing with AFL++",
+    "url": "https://nullprogram.com/blog/2025/02/05/",
+    "text": "",
+    "score": 73,
+    "comments": 13,
+    "by": "luu",
+    "time": 1793180772,
+    "hn_url": "https://news.ycombinator.com/item?id=50271106",
+    "relevance_score": 0
+  },
+  {
+    "id": 50303088,
+    "title": "Keeping Up Appearances – The women taking over the funeral industry",
+    "url": "https://lareviewofbooks.org/article/death-industry-mortuary-programs-women-andie-eisen-quarterly/",
+    "text": "",
+    "score": 18,
+    "comments": 2,
+    "by": "TMWNN",
+    "time": 1793364008,
+    "hn_url": "https://news.ycombinator.com/item?id=50303088",
+    "relevance_score": 0
+  }
+]
