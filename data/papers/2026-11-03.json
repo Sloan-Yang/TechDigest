@@ -1,0 +1,100 @@
+[
+  {
+    "id": "2611.01295",
+    "title": "[Re] Pure Noise to the Rescue of Insufficient Data",
+    "abstract": "We examine the main claims of Zada, Benou, and Irani (2021), which states that in an image classification task with imbalanced training data, (i) using pure noise to augment minority-class images encourages generalization by improving minority-class accuracy. This method is paired with (ii) a new batch normalization layer that normalizes noise images using affine parameters learned from natural images, which improves the model's performance. Moreover, (iii) this improvement is robust to varying levels of data augmentation. Finally, the authors propose that (iv) adding pure noise images can improve classification even on balanced training data. We implemented the training pipeline from the description of the paper using PyTorch and integrated authors' code snippets for sampling pure noise images and batch normalizing noise and natural images separately. We reproduced the main claims that (i) oversampling with pure noise improves generalization by improving the minority-class accuracy, (ii) the proposed batch normalization (BN) method outperforms baselines, (iii) and this improvement is robust across data augmentations. Our results also support that (iv) adding pure noise images can improve classification on balanced training data. However, additional experiments suggest that the performance improvement from OPeN may be more orthogonal to the improvement caused by a bigger network or more complex data augmentation.",
+    "authors": [
+      "Seungjae Ryan Lee",
+      "Seungmin Brian Lee"
+    ],
+    "published": "2026-10-31",
+    "updated": "2026-10-31",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.01295.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.01295",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.01283",
+    "title": "DriftingPlanner: Drifting Generative Models for One-Step Trajectory Planning in End-to-End Autonomous Driving",
+    "abstract": "End-to-end planners decode the ego trajectory either by coordinate regression, which is fast but blends plausible maneuvers into one trajectory that may follow none of them, or by diffusion and flow matching, which model the trajectory distribution but need several inference steps. Drifting models move this iteration into training: a one-step generator learns to follow an attraction--repulsion field between generated and ground-truth samples. Drifting was developed for class-conditional image generation, where every class supplies many positive samples. In planning, every scene is its own condition. Pooling scenes would attract the generated trajectories of one scene to the ground truth of unrelated scenes, whereas computing the field per scene leaves a single positive, the expert trajectory. Mutual repulsion then holds the generated trajectories on a shell around it, so any single generated trajectory deviates from the ground truth. We present DriftingPlanner, a trajectory planner trained with the drifting loss alone, without any coordinate regression term. It computes the field per scene and removes the shell at inference: it decodes every noise vector together with its negation in one batched pass, and averaging each antithetic pair cancels the linear part of the displacement from the shell center. On NAVSIM navtest, DriftingPlanner reaches a state-of-the-art 93.75 PDMS, and with single-step inference its drifting decoder comes within 0.13 PDMS of the best diffusion or flow matching setting, which needs ten inference steps.",
+    "authors": [
+      "Ziming Liu",
+      "Yizhan Qu",
+      "Leichen Wang",
+      "Hao Sun"
+    ],
+    "published": "2026-10-31",
+    "updated": "2026-10-31",
+    "categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.01283.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.01283",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.01263",
+    "title": "StreamClarify: Proactive Clarification for Grounded Streaming Video Question Answering",
+    "abstract": "Streaming video question answering (QA) requires real-time reasoning over continuous video streams under strict latency and active-context budgets. Current streaming vision-language models (VLMs) often give confident yet ungrounded answers when queries are ambiguous or have false premises, or when relevant visual evidence is no longer in the active context. Proactive clarification can help, but must satisfy the same latency and memory constraints. We present StreamClarify, a training-free framework for grounded streaming QA that combines a pre-answer uncertainty check with hierarchical memory. The check uses the entropy of a binary pre-answer judgment as a lightweight uncertainty score to decide whether to answer directly or request clarification. To support re-answering, a temporal-pyramid KV cache maintains a bounded active visual context, while a CPU-side semantic retrieval archive provides access to historical frames. We further construct StreamClarify-QA, a diagnostic benchmark of 1,837 QA pairs from StreamBench and OVO-Bench, spanning standard, referential ambiguity, and unanswerable scenarios. Across three VLM backbones, StreamClarify improves Macro accuracy by up to 8.2 points over backbone-matched baselines. At comparable trigger rates, entropy-based selection achieves more than 18 points higher precision than random selection in identifying initially incorrect answers. Under oracle user guidance, clarification improves Macro accuracy by up to 3.5 points. We also report a controlled, oracle-assisted Qwen3-VL simulation on Ambiguous QA with generated questions and referent-only user replies, where the entropy-gated condition improves accuracy by 8.3 points.",
+    "authors": [
+      "Zhuchen Shao",
+      "Bo Chen",
+      "Klara Nahrstedt"
+    ],
+    "published": "2026-10-31",
+    "updated": "2026-10-31",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.01263.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.01263",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.01252",
+    "title": "Context-Shielded Backdoor Attack against Large Vision-Language Models",
+    "abstract": "Large vision-language models (LVLMs) routinely use inference-time visual-token compression to prune hundreds of patch tokens down to a compact budget. Existing LVLM backdoors fire whenever a triggered image appears, whereas prior deployment-triggered attacks activate only when model weights are quantized or pruned. However, conventional LVLM backdoors exhibit nearly 100% attack success rate (ASR) under full-token inference, immediately exposing compromised checkpoints during pre-deployment auditing. We reveal context stripping: surrounding clean visual tokens suppress an embedded trigger at full length, whereas token pruning strips this context away and activates the backdoor. Motivated by this finding, we propose StripWake, a projector-only backdoor that remains dormant under full-token auditing yet activates across unseen compressors. Specifically, StripWake pairs clean-supervised full-token views with target-supervised randomized compressed views, and aligns early visual attention with a frozen benign teacher to preserve clean utility. On LLaVA-1.5-7B across nine unseen compressors, StripWake stays dormant at 0.4% full-token ASR yet achieves 94.0%-99.7% compressed ASR across five primary compressors without CIDEr loss.",
+    "authors": [
+      "Zhifang Zhang",
+      "Qiang Huang",
+      "Chenpeng Wang",
+      "Weitong Chen",
+      "Olaf Maennel",
+      "Wei Emma Zhang",
+      "Lei Feng",
+      "Lei Zhang",
+      "Miao Xu"
+    ],
+    "published": "2026-10-31",
+    "updated": "2026-10-31",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.01252.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.01252",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.01230",
+    "title": "Reproducing INP-Former: Reconstructing Intrinsic Normal Prototypes for Industrial Anomaly Detection",
+    "abstract": "We reproduce the central claims of INP-Former, a reconstruction-based method for multi-class industrial anomaly detection. INP-Former extracts Intrinsic Normal Prototypes (INPs) from each test image and uses them to guide a decoder that reconstructs normal features, without a stored memory bank. Using the authors' released code, we reproduce the reported performance on MVTec AD and VisA and extend the evaluation to MVTec AD 2, where image AUROC with the default settings is 63.4, compared with 99.7 on MVTec AD. On MVTec AD, a five-seed ablation shows that most of the performance comes from the INP mechanism, while the two auxiliary losses add small changes whose direction depends on the metric. A paired comparison with both losses disabled confirms the benefit of INP on MVTec AD 2. The default of six prototypes transfers less well: the plateau beyond four prototypes reproduces on MVTec AD and VisA, but on MVTec AD 2 a single prototype outperforms six in AU-PRO on the public split and on both hidden test splits. We also measure practical trade-offs in resolution, backbone size, training length, and LoRA adaptation, and examine performance by defect size, lighting condition, and a stricter AU-PRO limit. Several conclusions from the original benchmarks, including the default prototype count, do not carry over to harder data. Code: https://github.com/garasnote/Repro-INPFormer",
+    "authors": [
+      "Yunfei Liang",
+      "Juan Pablo Osorio Rivera"
+    ],
+    "published": "2026-10-31",
+    "updated": "2026-10-31",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.01230.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.01230",
+    "primary_category": "cs.CV"
+  }
+]

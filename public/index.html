@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-02</div>
+        <div class="page-date">📅 2026-11-03</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            人工智能: 1 | 计算机视觉: 4
+            计算机视觉: 5
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.40607</span>
+          <span class="paper-id">2611.01295</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40607" target="_blank">Fight World Model: Customizable Combat through Visual Interaction Proxies</a>
+        <a href="https://arxiv.org/abs/2611.01295" target="_blank">[Re] Pure Noise to the Rescue of Insufficient Data</a>
       </h3>
       
-      <p class="paper-authors">Jiahua Li, Zixu John, Tom Zhong, Fuping Wu, Tianhao Xu 等 (8 位作者)</p>
+      <p class="paper-authors">Seungjae Ryan Lee, Seungmin Brian Lee</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>A playable, programmable game world must maintain persistent state, enforce executable rules, and support extensible gameplay mechanics. Existing video world models can generate plausible combat, yet struggle to keep hit reactions and health updates consistent with game rules. We introduce Fight World Model (FWM), which separates rule-governed combat execution from video rendering. An executable engine maintains state and resolves interactions. A deterministic compiler encodes these outcomes and attempted actions in a spatially and temporally aligned interaction proxy. The proxy aligns action and skill windows, brief hit reactions, and persistent health by fighter identity and timing. These cues can be controlled separately to render interactions under modified rules. Identity-bound references preserve character appearance across side switches. We train FWM on FightWorld Corpus, spanning 52 skill effects, 187 character-appearance variants, and 15 arenas. Without retraining the renderer, FWM supports damage scaling, limited-hit immunity, lifesteal, and multi-stage skill mechanisms beyond the native game. It also allows character and arena customization. Experiments demonstrate the effectiveness of FWM, which outperforms existing game world models in action fidelity, hit reactions, health-state consistency, and character appearance preservation. Our project is available at https://fight-world-model.github.io.</p>
+        <p>We examine the main claims of Zada, Benou, and Irani (2021), which states that in an image classification task with imbalanced training data, (i) using pure noise to augment minority-class images encourages generalization by improving minority-class accuracy. This method is paired with (ii) a new batch normalization layer that normalizes noise images using affine parameters learned from natural images, which improves the model's performance. Moreover, (iii) this improvement is robust to varying levels of data augmentation. Finally, the authors propose that (iv) adding pure noise images can improve classification even on balanced training data. We implemented the training pipeline from the description of the paper using PyTorch and integrated authors' code snippets for sampling pure noise images and batch normalizing noise and natural images separately. We reproduced the main claims that (i) oversampling with pure noise improves generalization by improving the minority-class accuracy, (ii) the proposed batch normalization (BN) method outperforms baselines, (iii) and this improvement is robust across data augmentations. Our results also support that (iv) adding pure noise images can improve classification on balanced training data. However, additional experiments suggest that the performance improvement from OPeN may be more orthogonal to the improvement caused by a bigger network or more complex data augmentation.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40607" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40607.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.01295" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.01295.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.40599</span>
+          <span class="paper-id">2611.01283</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40599" target="_blank">HairDeck: Animation-Ready Stylized Hair Cards from a Single Image</a>
+        <a href="https://arxiv.org/abs/2611.01283" target="_blank">DriftingPlanner: Drifting Generative Models for One-Step Trajectory Planning in End-to-End Autonomous Driving</a>
       </h3>
       
-      <p class="paper-authors">Yuze He, Yixiang Wei, Wang Zhao, Chuhao Chen, Yanning Zhou 等 (6 位作者)</p>
+      <p class="paper-authors">Ziming Liu, Yizhan Qu, Leichen Wang, Hao Sun</p>
       
       <div class="paper-summary">
         
@@ -378,12 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>The hair of stylized characters in games and avatars is built from hair cards: artist-placed ribbons whose geometry is the visible hair, animated by spring bones. Existing image-based methods produce realistic hair or a single fused mesh, while CHARM, the only generator of stylized hair cards, decodes a hairstyle autoregressively as a long sequence of control points. Observing that a card hairstyle is an unordered set of artist-defined primitives, we propose HairDeck, which generates it as one: each card is a single token, and a set diffusion transformer denoises all cards together. From a single image, HairDeck generates the cards and the spring-bone chains that drive them, yielding an animatable asset that exports to ready-to-use downstream formats. On CHARM's own test set, it lowers Chamfer distance by 44% and card-orientation error by more than half while running 33 times faster, and from single images it outperforms CHARM, image-to-3D pipelines and strand-based methods. Project page: https://hyzcluster.github.io/HairDeck</p>
+        <p>End-to-end planners decode the ego trajectory either by coordinate regression, which is fast but blends plausible maneuvers into one trajectory that may follow none of them, or by diffusion and flow matching, which model the trajectory distribution but need several inference steps. Drifting models move this iteration into training: a one-step generator learns to follow an attraction--repulsion field between generated and ground-truth samples. Drifting was developed for class-conditional image generation, where every class supplies many positive samples. In planning, every scene is its own condition. Pooling scenes would attract the generated trajectories of one scene to the ground truth of unrelated scenes, whereas computing the field per scene leaves a single positive, the expert trajectory. Mutual repulsion then holds the generated trajectories on a shell around it, so any single generated trajectory deviates from the ground truth. We present DriftingPlanner, a trajectory planner trained with the drifting loss alone, without any coordinate regression term. It computes the field per scene and removes the shell at inference: it decodes every noise vector together with its negation in one batched pass, and averaging each antithetic pair cancels the linear part of the displacement from the shell center. On NAVSIM navtest, DriftingPlanner reaches a state-of-the-art 93.75 PDMS, and with single-step inference its drifting decoder comes within 0.13 PDMS of the best diffusion or flow matching setting, which needs ten inference steps.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40599" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40599.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.01283" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.01283.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.40587</span>
+          <span class="paper-id">2611.01263</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40587" target="_blank">Beyond Ground Truth: A Heuristic Unsupervised Quality Assurance Engine for Diagnosing Calibrational Blindness in Dental Segmentation</a>
+        <a href="https://arxiv.org/abs/2611.01263" target="_blank">StreamClarify: Proactive Clarification for Grounded Streaming Video Question Answering</a>
       </h3>
       
-      <p class="paper-authors">Fatematuj Johura Mim</p>
+      <p class="paper-authors">Zhuchen Shao, Bo Chen, Klara Nahrstedt</p>
       
       <div class="paper-summary">
         
@@ -410,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>In real-world clinical settings, dental X-ray segmentation using deep learning methods suffers from reliability issues. Even when the segmentation quality is bad, deep learning models show high confidence in their predictions (calibrational blindness). Moreover, in real use, doctors do not have ground-truth masks to check their accuracy. To address this problem, we introduce a simple quality-checking engine called HUS-QA with three stages. We train it on the PRAD (Periapical Dental X-ray) dataset to build our SimCLR self-supervised ResNet-18 U-Net model, which generates the segmentation mask and then evaluates its quality. Our HUS-QA checks the segmentation mask quality without a ground-truth mask. Prediction confidence, edge sharpness, shape connectivity, and area-size penalty are the simple indicators considered in this research. Results show that standard confidence methods fail (r = -0.1394, p = 1.7864e-3, ROC AUC = 0.4275). By contrast, our HUS-QA shows a positive correlation with actual Dice scores (r = 0.4647, p = 3.7510e-28) and achieves a strong ROC-AUC of 0.8405. Therefore, HUS-QA serves as a practical tool for clinical quality control.</p>
+        <p>Streaming video question answering (QA) requires real-time reasoning over continuous video streams under strict latency and active-context budgets. Current streaming vision-language models (VLMs) often give confident yet ungrounded answers when queries are ambiguous or have false premises, or when relevant visual evidence is no longer in the active context. Proactive clarification can help, but must satisfy the same latency and memory constraints. We present StreamClarify, a training-free framework for grounded streaming QA that combines a pre-answer uncertainty check with hierarchical memory. The check uses the entropy of a binary pre-answer judgment as a lightweight uncertainty score to decide whether to answer directly or request clarification. To support re-answering, a temporal-pyramid KV cache maintains a bounded active visual context, while a CPU-side semantic retrieval archive provides access to historical frames. We further construct StreamClarify-QA, a diagnostic benchmark of 1,837 QA pairs from StreamBench and OVO-Bench, spanning standard, referential ambiguity, and unanswerable scenarios. Across three VLM backbones, StreamClarify improves Macro accuracy by up to 8.2 points over backbone-matched baselines. At comparable trigger rates, entropy-based selection achieves more than 18 points higher precision than random selection in identifying initially incorrect answers. Under oracle user guidance, clarification improves Macro accuracy by up to 3.5 points. We also report a controlled, oracle-assisted Qwen3-VL simulation on Ambiguous QA with generated questions and referent-only user replies, where the entropy-gated condition improves accuracy by 8.3 points.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40587" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40587.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.01263" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.01263.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2610.40580</span>
+          <span class="paper-id">2611.01252</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40580" target="_blank">RADIOlogy: A Single-Pass Approach to Training-Free Zero-Shot Anomaly Detection</a>
+        <a href="https://arxiv.org/abs/2611.01252" target="_blank">Context-Shielded Backdoor Attack against Large Vision-Language Models</a>
       </h3>
       
-      <p class="paper-authors">Joaquín Figueira, Giacomo D'Amicantonio, Egor Bondarau</p>
+      <p class="paper-authors">Zhifang Zhang, Qiang Huang, Chenpeng Wang, Weitong Chen, Olaf Maennel 等 (9 位作者)</p>
       
       <div class="paper-summary">
         
@@ -442,12 +442,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Current zero-shot anomaly detection methods often rely on complex prompt-learning techniques or computationally expensive sliding-window strategies to achieve fine-grained visual alignment to detect small-scale anomalies. This reliance stems from the fundamental limitation of standard CLIP architectures, where [CLS] token attention and spatial patch pooling struggle to capture subtle, localized anomaly features. While prompt-learning approaches aim to bridge this gap, they typically require a large number of ground-truth segmentation masks from auxiliary datasets, which are often unavailable in specialized domains. In this work, we show an emerging property of multi-head attention pooling in vision-language models: remarkable zero-shot anomaly localization and detection right out of the box. We translate this property into a single-pass anomaly detection technique, RADIOlogy, that does not require dense, windowed execution and significantly outperforms other training-free baselines. Instead, the method relies on a simple contrastive scoring approach that compares the average similarity between vision features and a suite of normal and abnormal prompts. Furthermore, we leverage the agglomerative features of RADIO models to enhance pixel-level anomaly segmentation using a dense anomaly refinement pipeline. Finally, we show how the vision-language family of training-free zero-shot anomaly detection techniques can be applied successfully to the medical domain with minimal modifications. Code is available at https://github.com/jacomof/RADIOlogy.</p>
+        <p>Large vision-language models (LVLMs) routinely use inference-time visual-token compression to prune hundreds of patch tokens down to a compact budget. Existing LVLM backdoors fire whenever a triggered image appears, whereas prior deployment-triggered attacks activate only when model weights are quantized or pruned. However, conventional LVLM backdoors exhibit nearly 100% attack success rate (ASR) under full-token inference, immediately exposing compromised checkpoints during pre-deployment auditing. We reveal context stripping: surrounding clean visual tokens suppress an embedded trigger at full length, whereas token pruning strips this context away and activates the backdoor. Motivated by this finding, we propose StripWake, a projector-only backdoor that remains dormant under full-token auditing yet activates across unseen compressors. Specifically, StripWake pairs clean-supervised full-token views with target-supervised randomized compressed views, and aligns early visual attention with a frozen benign teacher to preserve clean utility. On LLaVA-1.5-7B across nine unseen compressors, StripWake stays dormant at 0.4% full-token ASR yet achieves 94.0%-99.7% compressed ASR across five primary compressors without CIDEr loss.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40580" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40580.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.01252" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.01252.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -455,16 +455,16 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">人工智能</span>
-          <span class="paper-id">2610.40578</span>
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.01230</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2610.40578" target="_blank">VeriCUA: Verification as Agentic Exploration for Computer-Using Agents</a>
+        <a href="https://arxiv.org/abs/2611.01230" target="_blank">Reproducing INP-Former: Reconstructing Intrinsic Normal Prototypes for Industrial Anomaly Detection</a>
       </h3>
       
-      <p class="paper-authors">Qiushi Sun, Da Yu, Alexander Knop, Amer Sinha, Lingpeng Kong 等 (8 位作者)</p>
+      <p class="paper-authors">Yunfei Liang, Juan Pablo Osorio Rivera</p>
       
       <div class="paper-summary">
         
@@ -474,12 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Building and scaling computer-using agents (CUAs) across desktop, mobile, and web environments requires reliable task-completion verification for data curation, evaluation, and reinforcement learning. Typical automated approaches prompt vision-language models (VLMs) to judge trajectories or generate programs to inspect application state. However, both rely on partial views of complex digital environments. VLM judges are restricted to supplied observations, while generated programs depend on accessible state. These views can omit decisive evidence or leave completion judgments unsupported. Tailoring separate verifiers to different platforms and access settings adds further engineering cost. We present VeriCUA, a platform-agnostic framework for verification through agentic exploration. It treats verification as dynamic evidence gathering and assessment within a shared procedure for online and offline settings across platforms and observation modalities. After inspecting the available context to construct a task rubric, the verifier selects GUI or code checks for unresolved requirements and combines their findings under explicit evidence rules. Experiments show improved agreement with reference labels over the compared baselines across these settings, with the largest offline gains on hard cases and stronger rejection of false completion claims online. Further analyses connect these gains to complementary evidence and test-time exploration.</p>
+        <p>We reproduce the central claims of INP-Former, a reconstruction-based method for multi-class industrial anomaly detection. INP-Former extracts Intrinsic Normal Prototypes (INPs) from each test image and uses them to guide a decoder that reconstructs normal features, without a stored memory bank. Using the authors' released code, we reproduce the reported performance on MVTec AD and VisA and extend the evaluation to MVTec AD 2, where image AUROC with the default settings is 63.4, compared with 99.7 on MVTec AD. On MVTec AD, a five-seed ablation shows that most of the performance comes from the INP mechanism, while the two auxiliary losses add small changes whose direction depends on the metric. A paired comparison with both losses disabled confirms the benefit of INP on MVTec AD 2. The default of six prototypes transfers less well: the plateau beyond four prototypes reproduces on MVTec AD and VisA, but on MVTec AD 2 a single prototype outperforms six in AU-PRO on the public split and on both hidden test splits. We also measure practical trade-offs in resolution, backbone size, training length, and LoRA adaptation, and examine performance by defect size, lighting condition, and a stricter AU-PRO limit. Several conclusions from the original benchmarks, including the default prototype count, do not carry over to harder data. Code: https://github.com/garasnote/Repro-INPFormer</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2610.40578" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.40578.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.01230" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.01230.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 899 &nbsp;💬 177</span>
+          <span class="paper-id">▲ 2077 &nbsp;💬 676</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50326821" target="_blank">Show HN: HackerBooks – HackerTube, but for books mentioned on HN</a>
+        <a href="https://news.ycombinator.com/item?id=50341174" target="_blank">Astra can read and write weights to improve Qwen</a>
       </h3>
-      <p class="paper-authors">by roansh</p>
+      <p class="paper-authors">by dbreunig</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50326821" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://hackerbooks.org" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50341174" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://rikiyat.github.io/blog/weight-space-programming/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 2276 &nbsp;💬 538</span>
+          <span class="paper-id">▲ 53 &nbsp;💬 16</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50319510" target="_blank">HackerTube: YouTube built from videos recommended by HN</a>
+        <a href="https://news.ycombinator.com/item?id=50346981" target="_blank">Show HN: Hacker Times, a New York Times-Inspired Version Hacker News</a>
       </h3>
-      <p class="paper-authors">by karpathy</p>
+      <p class="paper-authors">by polpenn</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50319510" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://karpathy.bearblog.dev/hacker-tube/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50346981" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://hackertimes.ca/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 39 &nbsp;💬 17</span>
+          <span class="paper-id">▲ 55 &nbsp;💬 14</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50312408" target="_blank">Postgres 19 is late, and it's AI's fault</a>
+        <a href="https://news.ycombinator.com/item?id=50346849" target="_blank">DiscImageStudio: burn visible artwork onto CDs, DVDs and Blu-ray discs</a>
       </h3>
-      <p class="paper-authors">by soheilpro</p>
+      <p class="paper-authors">by bpierre</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50312408" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50346849" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,55 +545,17 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 90 &nbsp;💬 12</span>
+          <span class="paper-id">▲ 581 &nbsp;💬 312</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50299811" target="_blank">Nibnib: Image compression with extreme decompression speed</a>
+        <a href="https://news.ycombinator.com/item?id=50340088" target="_blank">Show HN: Subvocal – Talk to your computer without making noise</a>
       </h3>
-      <p class="paper-authors">by raphlinus</p>
+      <p class="paper-authors">by aarushyadav</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50299811" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/raphlinus/nibnib" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 8 &nbsp;💬 2</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50331404" target="_blank">America on Data Centers: 10k city council comments</a>
-      </h3>
-      <p class="paper-authors">by afandrew</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50331404" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.americansentiment.com/datacenters" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 128 &nbsp;💬 231</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50328896" target="_blank">Ask HN: Which TV do you recommend for privacy?</a>
-      </h3>
-      <p class="paper-authors">by LecroJS</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50328896" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://news.ycombinator.com/item?id=50340088" target="_blank" class="link-btn">💬 HN 讨论</a>
         
       </div>
     </article>
@@ -602,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 73 &nbsp;💬 13</span>
+          <span class="paper-id">▲ 309 &nbsp;💬 322</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50271106" target="_blank">Tips for more effective fuzz testing with AFL++</a>
+        <a href="https://news.ycombinator.com/item?id=50339397" target="_blank">US boy names that became girl names and vice versa</a>
       </h3>
-      <p class="paper-authors">by luu</p>
+      <p class="paper-authors">by xoobdev</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50271106" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://nullprogram.com/blog/2025/02/05/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50339397" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://namedaisy.com/blog/boy-names-that-became-girl-names" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +583,56 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 18 &nbsp;💬 2</span>
+          <span class="paper-id">▲ 430 &nbsp;💬 99</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50303088" target="_blank">Keeping Up Appearances – The women taking over the funeral industry</a>
+        <a href="https://news.ycombinator.com/item?id=50336518" target="_blank">If you love a website, back it up</a>
       </h3>
-      <p class="paper-authors">by TMWNN</p>
+      <p class="paper-authors">by ingve</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50303088" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://lareviewofbooks.org/article/death-industry-mortuary-programs-women-andie-eisen-quarterly/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50336518" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.mistys-internet.website/post/2026/10/29/if-you-love-a-website-back-it-up/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 53 &nbsp;💬 5</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50345924" target="_blank">Scaling Git at OpenAI</a>
+      </h3>
+      <p class="paper-authors">by makeramen</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50345924" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://openai.com/index/scaling-git-at-openai/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 131 &nbsp;💬 85</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50339913" target="_blank">Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app</a>
+      </h3>
+      <p class="paper-authors">by wuweiweiwu</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50339913" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://momentic.ai/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -640,13 +640,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Zig</span>
-          <span class="paper-id">⭐ 40,150 &nbsp;+825 today</span>
+          <span class="category-badge gh-badge">C</span>
+          <span class="paper-id">⭐ 46,652 &nbsp;+675 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/lightpanda-io/browser" target="_blank">lightpanda-io/browser</a>
+        <a href="https://github.com/JustVugg/colibri" target="_blank">JustVugg/colibri</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -659,15 +659,49 @@
 
 
       
-        lightpanda-io /
+        JustVugg /
 
-      browser  
+      colibri  
 
     
-      Lightpanda: the headless browser designed for AI and automation</p>
+      Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦</p>
       
       <div class="paper-links">
-        <a href="https://github.com/lightpanda-io/browser" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/JustVugg/colibri" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 110,467 &nbsp;+412 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        paperclipai /
+
+      paperclip  
+
+    
+      The open-source app everyone uses to manage agents at work</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/paperclipai/paperclip" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -675,14 +709,27 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 494,631 &nbsp;+324 today</span>
+          <span class="paper-id">⭐ 93,093 &nbsp;+706 today</span>
         </div>
         <span class="score-badge">推荐度 60/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/public-apis/public-apis" target="_blank">public-apis/public-apis</a>
+        <a href="https://github.com/sponsors/D4Vinci" target="_blank">sponsors/D4Vinci</a>
       </h3>
-      <p class="paper-authors">Star
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
 
 
   
@@ -693,15 +740,15 @@
 
 
       
-        public-apis /
+        D4Vinci /
 
-      public-apis  
+      Scrapling  
 
     
-      A collective list of free APIs</p>
+      🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev</p>
       
       <div class="paper-links">
-        <a href="https://github.com/public-apis/public-apis" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/D4Vinci" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -709,7 +756,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 39,384 &nbsp;+38 today</span>
+          <span class="paper-id">⭐ 39,993 &nbsp;+509 today</span>
         </div>
         <span class="score-badge">推荐度 60/100</span>
       </div>
@@ -742,8 +789,42 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 38,169 &nbsp;+420 today</span>
+        </div>
+        <span class="score-badge">推荐度 60/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/p-e-w/heretic" target="_blank">p-e-w/heretic</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        p-e-w /
+
+      heretic  
+
+    
+      Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/p-e-w/heretic" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 38,048 &nbsp;+3094 today</span>
+          <span class="paper-id">⭐ 42,218 &nbsp;+3229 today</span>
         </div>
         <span class="score-badge">推荐度 50/100</span>
       </div>
@@ -761,7 +842,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 109,315 &nbsp;+1526 today</span>
+          <span class="paper-id">⭐ 110,862 &nbsp;+1803 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -808,7 +889,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 45,400 &nbsp;+630 today</span>
+          <span class="paper-id">⭐ 46,050 &nbsp;+857 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -835,100 +916,6 @@
       
       <div class="paper-links">
         <a href="https://github.com/shiyu-coder/Kronos" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 10,546 &nbsp;+922 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/milind-soni" target="_blank">sponsors/milind-soni</a>
-      </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        milind-soni /
-
-      OpenMausBot  
-
-    
-      Open-source Grok Bot alternative with a virtual machine that bots can use</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/sponsors/milind-soni" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 36,572 &nbsp;+339 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/cjpais" target="_blank">sponsors/cjpais</a>
-      </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        cjpais /
-
-      Handy  
-
-    
-      A free, open source, and extensible speech-to-text application that works completely offline.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/sponsors/cjpais" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
