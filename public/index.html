@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-03</div>
+        <div class="page-date">📅 2026-11-04</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 5
+            计算机视觉: 3 | 机器人: 2
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -327,16 +327,16 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.01295</span>
+          <span class="category-badge">机器人</span>
+          <span class="paper-id">2611.03647</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.01295" target="_blank">[Re] Pure Noise to the Rescue of Insufficient Data</a>
+        <a href="https://arxiv.org/abs/2611.03647" target="_blank">Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations</a>
       </h3>
       
-      <p class="paper-authors">Seungjae Ryan Lee, Seungmin Brian Lee</p>
+      <p class="paper-authors">Jason Jingzhou Liu, Tony Tao, Deepak Pathak, Ruslan Salakhutdinov</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>We examine the main claims of Zada, Benou, and Irani (2021), which states that in an image classification task with imbalanced training data, (i) using pure noise to augment minority-class images encourages generalization by improving minority-class accuracy. This method is paired with (ii) a new batch normalization layer that normalizes noise images using affine parameters learned from natural images, which improves the model's performance. Moreover, (iii) this improvement is robust to varying levels of data augmentation. Finally, the authors propose that (iv) adding pure noise images can improve classification even on balanced training data. We implemented the training pipeline from the description of the paper using PyTorch and integrated authors' code snippets for sampling pure noise images and batch normalizing noise and natural images separately. We reproduced the main claims that (i) oversampling with pure noise improves generalization by improving the minority-class accuracy, (ii) the proposed batch normalization (BN) method outperforms baselines, (iii) and this improvement is robust across data augmentations. Our results also support that (iv) adding pure noise images can improve classification on balanced training data. However, additional experiments suggest that the performance improvement from OPeN may be more orthogonal to the improvement caused by a bigger network or more complex data augmentation.</p>
+        <p>Sensorized human demonstrations offer scalable data for mobile manipulation, but embodiment differences complicate policy learning. We present Pixel-UMI, a pipeline for learning environment-aware whole-body policies from human data. We first introduce Environment-Aware Retargeting (EAR), which combines reconstructed scene geometry with demonstrated head and gripper trajectories to determine robot posture and generate collision-aware joint and base targets. Delay-calibrated action assignment converts these trajectories into actions. However, kinematic differences can leave residual pose errors, creating viewpoint mismatches between human demonstrations and robot observations. We therefore introduce Retargeting-Error-Aware Masking (REAM), which uses these errors during training to reduce reliance on mismatched views at deployment. Finally, because estimated actions cannot fully capture contact-rich interactions, we collect on-policy human corrections through DAgger to improve performance. We evaluate Pixel-UMI on five challenging tasks spanning articulated-object manipulation, deformable-object handling, constrained-space reaching, whole-body collision avoidance, and contact-rich bimanual coordination, achieving 87.0% average task progress. Video results are available at https://pixel-robot.com/pixel-umi</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.01295" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.01295.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.03647" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.03647.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器人</span>
+          <span class="paper-id">2611.03648</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.03648" target="_blank">Pixel: A Co-Designed Full-Stack Robot System for Learning General-Purpose Mobile Manipulation</a>
+      </h3>
+      
+      <p class="paper-authors">Tony Tao, Jason Jingzhou Liu, Ruslan Salakhutdinov, Deepak Pathak</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>General-purpose mobile manipulation requires a combination of capable robot hardware, scalable demonstration collection, expressive whole-body control, and effective policy learning. Yet these components are often developed independently, creating mismatches that limit the capabilities of the complete system. We present Pixel, a co-designed full-stack system for learning general-purpose mobile manipulation. Pixel combines a low-cost wheeled humanoid with human-aligned kinematics and compliant grippers, multiple teleoperation and robot-free human data-collection interfaces, a unified whole-body controller, and a common policy learning pipeline across human and robot demonstrations. A hierarchical learning stack further enables language-conditioned visuomotor control and long-horizon task execution. We evaluate the system across hardware, data collection, and policy learning, and demonstrate mobile-manipulation behaviors requiring dexterity, active perception, navigation, and whole-body coordination. We hope that Pixel provides an integrated and extensible foundation for studying how robot hardware, data, control, and learning can be designed together for robot learning. More results at https://pixel-robot.com/pixel</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.03648" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.03648.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.01283</span>
+          <span class="paper-id">2611.03646</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.01283" target="_blank">DriftingPlanner: Drifting Generative Models for One-Step Trajectory Planning in End-to-End Autonomous Driving</a>
+        <a href="https://arxiv.org/abs/2611.03646" target="_blank">EgoActionBench: Benchmarking Dense Action Captioning for Egocentric Human Videos</a>
       </h3>
       
-      <p class="paper-authors">Ziming Liu, Yizhan Qu, Leichen Wang, Hao Sun</p>
+      <p class="paper-authors">Yujiao Shen, Jiahe Song, Haitian Li, Jingkang Yang, Ziwei Liu</p>
       
       <div class="paper-summary">
         
@@ -378,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>End-to-end planners decode the ego trajectory either by coordinate regression, which is fast but blends plausible maneuvers into one trajectory that may follow none of them, or by diffusion and flow matching, which model the trajectory distribution but need several inference steps. Drifting models move this iteration into training: a one-step generator learns to follow an attraction--repulsion field between generated and ground-truth samples. Drifting was developed for class-conditional image generation, where every class supplies many positive samples. In planning, every scene is its own condition. Pooling scenes would attract the generated trajectories of one scene to the ground truth of unrelated scenes, whereas computing the field per scene leaves a single positive, the expert trajectory. Mutual repulsion then holds the generated trajectories on a shell around it, so any single generated trajectory deviates from the ground truth. We present DriftingPlanner, a trajectory planner trained with the drifting loss alone, without any coordinate regression term. It computes the field per scene and removes the shell at inference: it decodes every noise vector together with its negation in one batched pass, and averaging each antithetic pair cancels the linear part of the displacement from the shell center. On NAVSIM navtest, DriftingPlanner reaches a state-of-the-art 93.75 PDMS, and with single-step inference its drifting decoder comes within 0.13 PDMS of the best diffusion or flow matching setting, which needs ten inference steps.</p>
+        <p>Learning from human data offers a scalable path toward embodied intelligence, yet it requires models to accurately understand fine-grained human actions from egocentric observations. However, existing benchmarks remain limited in action atomicity, temporal precision, and hand-action association. We introduce EgoActionBench, a benchmark that represents continuous human manipulation as temporally localized atomic actions associated with the left hand, right hand, or both hands. EgoActionBench contains 1,407 episodes with 41,132 human-refined action annotations. To evaluate such dense predictions, we propose an evaluation protocol that retrieves temporally eligible candidates, selects a prediction by content agreement, and scores semantic fidelity and temporal overlap alongside action precision and recall, jointly capturing what happens, when it happens, and which hand performs it. We benchmark 20 baseline models and systems on EgoActionBench and further adapt two backbones, Qwen3-VL-4B and LLaVA-OneVision-2-8B, through supervised fine-tuning followed by reinforcement learning on automatically annotated training episodes. EgoAction improves EgoActionScore by 15.9 and 23.2 points on the two backbones, and both adapted models outperform all open-source baselines. Our experiments reveal substantial limitations of current models in action atomicity, temporal precision, and hand-action association, highlighting the gap between general video understanding and the action understanding required for embodied intelligence.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.01283" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.01283.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.03646" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.03646.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.01263</span>
+          <span class="paper-id">2611.03626</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.01263" target="_blank">StreamClarify: Proactive Clarification for Grounded Streaming Video Question Answering</a>
+        <a href="https://arxiv.org/abs/2611.03626" target="_blank">Isekai3D SDG: A Platform for Diverse Synthetic Gameplay Visual Data</a>
       </h3>
       
-      <p class="paper-authors">Zhuchen Shao, Bo Chen, Klara Nahrstedt</p>
+      <p class="paper-authors">Rafal Karp, Gene Liu, Shih-Hsin Li, Eric Courtemanche, Shengze Wang 等 (13 位作者)</p>
       
       <div class="paper-summary">
         
@@ -410,12 +442,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Streaming video question answering (QA) requires real-time reasoning over continuous video streams under strict latency and active-context budgets. Current streaming vision-language models (VLMs) often give confident yet ungrounded answers when queries are ambiguous or have false premises, or when relevant visual evidence is no longer in the active context. Proactive clarification can help, but must satisfy the same latency and memory constraints. We present StreamClarify, a training-free framework for grounded streaming QA that combines a pre-answer uncertainty check with hierarchical memory. The check uses the entropy of a binary pre-answer judgment as a lightweight uncertainty score to decide whether to answer directly or request clarification. To support re-answering, a temporal-pyramid KV cache maintains a bounded active visual context, while a CPU-side semantic retrieval archive provides access to historical frames. We further construct StreamClarify-QA, a diagnostic benchmark of 1,837 QA pairs from StreamBench and OVO-Bench, spanning standard, referential ambiguity, and unanswerable scenarios. Across three VLM backbones, StreamClarify improves Macro accuracy by up to 8.2 points over backbone-matched baselines. At comparable trigger rates, entropy-based selection achieves more than 18 points higher precision than random selection in identifying initially incorrect answers. Under oracle user guidance, clarification improves Macro accuracy by up to 3.5 points. We also report a controlled, oracle-assisted Qwen3-VL simulation on Ambiguous QA with generated questions and referent-only user replies, where the entropy-gated condition improves accuracy by 8.3 points.</p>
+        <p>We present Isekai3D Synthetic Data Generation (SDG), a platform for simulating and capturing synthetic 3D gameplay for research in vision and world models, neural graphics, gameplay agents, and other applications. The platform combines reusable environment and character assets with Unreal Engine plugins in a two-stage workflow. First, world simulation generates gameplay while recording the world state, character movements, actions, and camera tracks needed for replay. Second, the recorded simulation is replayed to capture selected outputs, such as rendered video, images, and depth maps, at a specified resolution and frame rate under selected rendering and camera configurations. Separating simulation from capture allows the same recorded gameplay to produce multiple output variants without repeating the original simulation. Visual outputs are accompanied by frame-aligned camera, character, and action metadata. The platform uploads generated data directly in a training-friendly format, reducing intermediate storage, preparation time, and manual processing. This report describes the design of our overall system, including the platform's assets, plugins, and their functionality, explaining how they work together to generate diverse synthetic gameplay data.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.01263" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.01263.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.03626" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.03626.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +456,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.01252</span>
+          <span class="paper-id">2611.03602</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.01252" target="_blank">Context-Shielded Backdoor Attack against Large Vision-Language Models</a>
+        <a href="https://arxiv.org/abs/2611.03602" target="_blank">Reviso: Not All Visual Evidence Deserves Equal Attention in Video Captioning</a>
       </h3>
       
-      <p class="paper-authors">Zhifang Zhang, Qiang Huang, Chenpeng Wang, Weitong Chen, Olaf Maennel 等 (9 位作者)</p>
+      <p class="paper-authors">Tengfei Liu, Yang Shi, Yuran Wang, Yuqi Tang, Yizhuo Jia 等 (15 位作者)</p>
       
       <div class="paper-summary">
         
@@ -442,44 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Large vision-language models (LVLMs) routinely use inference-time visual-token compression to prune hundreds of patch tokens down to a compact budget. Existing LVLM backdoors fire whenever a triggered image appears, whereas prior deployment-triggered attacks activate only when model weights are quantized or pruned. However, conventional LVLM backdoors exhibit nearly 100% attack success rate (ASR) under full-token inference, immediately exposing compromised checkpoints during pre-deployment auditing. We reveal context stripping: surrounding clean visual tokens suppress an embedded trigger at full length, whereas token pruning strips this context away and activates the backdoor. Motivated by this finding, we propose StripWake, a projector-only backdoor that remains dormant under full-token auditing yet activates across unseen compressors. Specifically, StripWake pairs clean-supervised full-token views with target-supervised randomized compressed views, and aligns early visual attention with a frozen benign teacher to preserve clean utility. On LLaVA-1.5-7B across nine unseen compressors, StripWake stays dormant at 0.4% full-token ASR yet achieves 94.0%-99.7% compressed ASR across five primary compressors without CIDEr loss.</p>
+        <p>Multimodal large language models (MLLMs) can generate detailed video captions, yet they may overemphasize minor details while overlooking essential context and key events. We argue that not all visual evidence deserves equal attention, as the importance of visual information depends on the content of each video. Motivated by this observation, we propose Reviso, an agentic video captioning framework that learns what to observe and how to gather relevant visual evidence. From a low-frame-rate global preview, Reviso constructs a hierarchical Context--Focus--Points (CFP) observation plan that identifies the video context, prioritizes key aspects, and defines concrete observation targets and corresponding tools. Guided by this plan, Reviso performs goal-directed active perception by selectively revisiting temporal segments and combining tools for fine-grained inspection. It interprets the acquired evidence, updates its plan as needed, and integrates global and local information to generate the final caption. To learn this observation strategy, we develop a verification-guided pipeline that constructs high-quality training trajectories through factual verification and teacher-guided refinement. We further train Reviso using Group Relative Policy Optimization (GRPO), incorporating a key-fact reward for caption quality, a Plan Alignment Reward (PAR) for identifying important observation targets, and an Unproductive Tool-Call Penalty (UTCP) that adjusts observation-cost penalties based on caption quality. Experiments across four video captioning benchmarks show that Reviso outperforms the evaluated open-source baselines, while its generated captions better support downstream video question answering. These findings highlight the effectiveness and potential of priority-guided active observation for video captioning.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.01252" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.01252.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.01230</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.01230" target="_blank">Reproducing INP-Former: Reconstructing Intrinsic Normal Prototypes for Industrial Anomaly Detection</a>
-      </h3>
-      
-      <p class="paper-authors">Yunfei Liang, Juan Pablo Osorio Rivera</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>We reproduce the central claims of INP-Former, a reconstruction-based method for multi-class industrial anomaly detection. INP-Former extracts Intrinsic Normal Prototypes (INPs) from each test image and uses them to guide a decoder that reconstructs normal features, without a stored memory bank. Using the authors' released code, we reproduce the reported performance on MVTec AD and VisA and extend the evaluation to MVTec AD 2, where image AUROC with the default settings is 63.4, compared with 99.7 on MVTec AD. On MVTec AD, a five-seed ablation shows that most of the performance comes from the INP mechanism, while the two auxiliary losses add small changes whose direction depends on the metric. A paired comparison with both losses disabled confirms the benefit of INP on MVTec AD 2. The default of six prototypes transfers less well: the plateau beyond four prototypes reproduces on MVTec AD and VisA, but on MVTec AD 2 a single prototype outperforms six in AU-PRO on the public split and on both hidden test splits. We also measure practical trade-offs in resolution, backbone size, training length, and LoRA adaptation, and examine performance by defect size, lighting condition, and a stricter AU-PRO limit. Several conclusions from the original benchmarks, including the default prototype count, do not carry over to harder data. Code: https://github.com/garasnote/Repro-INPFormer</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.01230" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.01230.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.03602" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.03602.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 2077 &nbsp;💬 676</span>
+          <span class="paper-id">▲ 110 &nbsp;💬 2</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50341174" target="_blank">Astra can read and write weights to improve Qwen</a>
+        <a href="https://news.ycombinator.com/item?id=50358702" target="_blank">The Internals of PostgreSQL</a>
       </h3>
-      <p class="paper-authors">by dbreunig</p>
+      <p class="paper-authors">by ibobev</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50341174" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://rikiyat.github.io/blog/weight-space-programming/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50358702" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.interdb.jp/pg/index.html" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 53 &nbsp;💬 16</span>
+          <span class="paper-id">▲ 385 &nbsp;💬 144</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50346981" target="_blank">Show HN: Hacker Times, a New York Times-Inspired Version Hacker News</a>
+        <a href="https://news.ycombinator.com/item?id=50354358" target="_blank">Stringman, an $800 open-source room scale gripper robot</a>
       </h3>
-      <p class="paper-authors">by polpenn</p>
+      <p class="paper-authors">by nharada</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50346981" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://hackertimes.ca/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50354358" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://neufangled.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 55 &nbsp;💬 14</span>
+          <span class="paper-id">▲ 616 &nbsp;💬 250</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50346849" target="_blank">DiscImageStudio: burn visible artwork onto CDs, DVDs and Blu-ray discs</a>
+        <a href="https://news.ycombinator.com/item?id=50339288" target="_blank">Jailbreaking my car's navigation system just so I can change the time</a>
       </h3>
-      <p class="paper-authors">by bpierre</p>
+      <p class="paper-authors">by xx_ns</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50346849" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50339288" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.nns.ee/2026/11/02/renault-hack/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 581 &nbsp;💬 312</span>
+          <span class="paper-id">▲ 289 &nbsp;💬 186</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50340088" target="_blank">Show HN: Subvocal – Talk to your computer without making noise</a>
+        <a href="https://news.ycombinator.com/item?id=50358562" target="_blank">Safari introduces Adaptive Dark Mode in 27.3</a>
       </h3>
-      <p class="paper-authors">by aarushyadav</p>
+      <p class="paper-authors">by paddingtone</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50340088" target="_blank" class="link-btn">💬 HN 讨论</a>
-        
+        <a href="https://news.ycombinator.com/item?id=50358562" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://webkit.org/blog/18541/introducing-adaptive-dark-mode/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 309 &nbsp;💬 322</span>
+          <span class="paper-id">▲ 172 &nbsp;💬 36</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50339397" target="_blank">US boy names that became girl names and vice versa</a>
+        <a href="https://news.ycombinator.com/item?id=50346755" target="_blank">Show HN: HackerTV – HN's most-recommended Youtube videos as 24/7 TV channels</a>
       </h3>
-      <p class="paper-authors">by xoobdev</p>
+      <p class="paper-authors">by dsalzman</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50339397" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://namedaisy.com/blog/boy-names-that-became-girl-names" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50346755" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://hackertv.org" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 430 &nbsp;💬 99</span>
+          <span class="paper-id">▲ 107 &nbsp;💬 19</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50336518" target="_blank">If you love a website, back it up</a>
+        <a href="https://news.ycombinator.com/item?id=50333131" target="_blank">Japan's Jimi 'Mundane' Halloween Costumes of 2026</a>
       </h3>
-      <p class="paper-authors">by ingve</p>
+      <p class="paper-authors">by zdw</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50336518" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.mistys-internet.website/post/2026/10/29/if-you-love-a-website-back-it-up/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50333131" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://spoon-tamago.com/japan-jimi-mundane-halloween-costumes-2026/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 53 &nbsp;💬 5</span>
+          <span class="paper-id">▲ 492 &nbsp;💬 152</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50345924" target="_blank">Scaling Git at OpenAI</a>
+        <a href="https://news.ycombinator.com/item?id=50355251" target="_blank">Qwen 3.8 27B on my laptop can interpret model weights, too</a>
       </h3>
-      <p class="paper-authors">by makeramen</p>
+      <p class="paper-authors">by theanonymousone</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50345924" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://openai.com/index/scaling-git-at-openai/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50355251" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 131 &nbsp;💬 85</span>
+          <span class="paper-id">▲ 230 &nbsp;💬 36</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50339913" target="_blank">Launch HN: Momentic (YC W24) – Agents that catch bugs by using your app</a>
+        <a href="https://news.ycombinator.com/item?id=50358582" target="_blank">The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer</a>
       </h3>
-      <p class="paper-authors">by wuweiweiwu</p>
+      <p class="paper-authors">by ibobev</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50339913" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://momentic.ai/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50358582" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://arxiv.org/abs/2605.29713" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">C</span>
-          <span class="paper-id">⭐ 46,652 &nbsp;+675 today</span>
+          <span class="paper-id">⭐ 47,267 &nbsp;+802 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -664,7 +664,7 @@
       colibri  
 
     
-      Run frontier MoE models on hardware you already own — pure C, zero deps, experts streamed from disk. Tiny engine, immense model. 🐦</p>
+      A hierarchical inference engine for frontier MoE models: hot experts on the GPU (CUDA, Vulkan), warm ones in RAM, cold ones streamed from NVMe. Written in C, runs on the hardware you already own.</p>
       
       <div class="paper-links">
         <a href="https://github.com/JustVugg/colibri" target="_blank" class="link-btn">⭐ GitHub</a>
@@ -674,13 +674,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 110,467 &nbsp;+412 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 38,832 &nbsp;+701 today</span>
         </div>
-        <span class="score-badge">推荐度 85/100</span>
+        <span class="score-badge">推荐度 60/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip</a>
+        <a href="https://github.com/p-e-w/heretic" target="_blank">p-e-w/heretic</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -693,15 +693,15 @@
 
 
       
-        paperclipai /
+        p-e-w /
 
-      paperclip  
+      heretic  
 
     
-      The open-source app everyone uses to manage agents at work</p>
+      Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more</p>
       
       <div class="paper-links">
-        <a href="https://github.com/paperclipai/paperclip" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/p-e-w/heretic" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -709,7 +709,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 93,093 &nbsp;+706 today</span>
+          <span class="paper-id">⭐ 94,928 &nbsp;+1658 today</span>
         </div>
         <span class="score-badge">推荐度 60/100</span>
       </div>
@@ -755,94 +755,8 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 39,993 &nbsp;+509 today</span>
-        </div>
-        <span class="score-badge">推荐度 60/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/hyprwm/Hyprland" target="_blank">hyprwm/Hyprland</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        hyprwm /
-
-      Hyprland  
-
-    
-      Hyprland is an independent, highly customizable, dynamic tiling Wayland compositor that doesn't sacrifice on its looks.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/hyprwm/Hyprland" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 38,169 &nbsp;+420 today</span>
-        </div>
-        <span class="score-badge">推荐度 60/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/p-e-w/heretic" target="_blank">p-e-w/heretic</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        p-e-w /
-
-      heretic  
-
-    
-      Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/p-e-w/heretic" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 42,218 &nbsp;+3229 today</span>
-        </div>
-        <span class="score-badge">推荐度 50/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/pingdotgg/t3code" target="_blank">pingdotgg/t3code</a>
-      </h3>
-      
-      
-      <div class="paper-links">
-        <a href="https://github.com/pingdotgg/t3code" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 110,862 &nbsp;+1803 today</span>
+          <span class="paper-id">⭐ 111,960 &nbsp;+1139 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -889,7 +803,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 46,050 &nbsp;+857 today</span>
+          <span class="paper-id">⭐ 46,539 &nbsp;+503 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -916,6 +830,121 @@
       
       <div class="paper-links">
         <a href="https://github.com/shiyu-coder/Kronos" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 12,884 &nbsp;+3791 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/vercel-labs/agent-desktop" target="_blank">vercel-labs/agent-desktop</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        vercel-labs /
+
+      agent-desktop  
+
+    
+      Computer use CLI for AI agents</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/vercel-labs/agent-desktop" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 10,528 &nbsp;+438 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/max-sixty/worktrunk" target="_blank">max-sixty/worktrunk</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        max-sixty /
+
+      worktrunk  
+
+    
+      Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/max-sixty/worktrunk" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Shell</span>
+          <span class="paper-id">⭐ 311,514 &nbsp;+1164 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/mattpocock" target="_blank">sponsors/mattpocock</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        mattpocock /
+
+      skills  
+
+    
+      Skills for Real Engineers. Straight from my .agents directory.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/mattpocock" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     

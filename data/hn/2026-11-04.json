@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50358702,
+    "title": "The Internals of PostgreSQL",
+    "url": "https://www.interdb.jp/pg/index.html",
+    "text": "",
+    "score": 110,
+    "comments": 2,
+    "by": "ibobev",
+    "time": 1793742666,
+    "hn_url": "https://news.ycombinator.com/item?id=50358702",
+    "relevance_score": 0
+  },
+  {
+    "id": 50354358,
+    "title": "Stringman, an $800 open-source room scale gripper robot",
+    "url": "https://neufangled.com/",
+    "text": "",
+    "score": 385,
+    "comments": 144,
+    "by": "nharada",
+    "time": 1793724449,
+    "hn_url": "https://news.ycombinator.com/item?id=50354358",
+    "relevance_score": 0
+  },
+  {
+    "id": 50339288,
+    "title": "Jailbreaking my car's navigation system just so I can change the time",
+    "url": "https://blog.nns.ee/2026/11/02/renault-hack/",
+    "text": "",
+    "score": 616,
+    "comments": 250,
+    "by": "xx_ns",
+    "time": 1793636959,
+    "hn_url": "https://news.ycombinator.com/item?id=50339288",
+    "relevance_score": 0
+  },
+  {
+    "id": 50358562,
+    "title": "Safari introduces Adaptive Dark Mode in 27.3",
+    "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode/",
+    "text": "",
+    "score": 289,
+    "comments": 186,
+    "by": "paddingtone",
+    "time": 1793741945,
+    "hn_url": "https://news.ycombinator.com/item?id=50358562",
+    "relevance_score": 0
+  },
+  {
+    "id": 50346755,
+    "title": "Show HN: HackerTV – HN's most-recommended Youtube videos as 24/7 TV channels",
+    "url": "https://hackertv.org",
+    "text": "I saw HackerTube (<a href=\"https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50319510\">https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=50319510</a>) a few days ago, the YouTube videos HN keeps\nrecommending, pulled from 19 years of comments. It made me want to flip\nthrough them instead of picking, so I built a TV for it. I have Algo fatigue.<p>Each topic area is a channel (DEVTV, SOLDER, RETRO, ORBIT, ...), plus HN Prime\n(the top 400), a music channel, and Late Night on ch 99, which only broadcasts\n11pm-5am your local time and shows color bars otherwise.<p>Similar to HackerTube it was built with Claude Code in a few hours.<p>All credit for the data goes to HackerTube. Happy to hear channel ideas.",
+    "score": 172,
+    "comments": 36,
+    "by": "dsalzman",
+    "time": 1793668689,
+    "hn_url": "https://news.ycombinator.com/item?id=50346755",
+    "relevance_score": 0
+  },
+  {
+    "id": 50333131,
+    "title": "Japan's Jimi 'Mundane' Halloween Costumes of 2026",
+    "url": "https://spoon-tamago.com/japan-jimi-mundane-halloween-costumes-2026/",
+    "text": "",
+    "score": 107,
+    "comments": 19,
+    "by": "zdw",
+    "time": 1793593880,
+    "hn_url": "https://news.ycombinator.com/item?id=50333131",
+    "relevance_score": 0
+  },
+  {
+    "id": 50355251,
+    "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+    "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+    "text": "",
+    "score": 492,
+    "comments": 152,
+    "by": "theanonymousone",
+    "time": 1793727600,
+    "hn_url": "https://news.ycombinator.com/item?id=50355251",
+    "relevance_score": 0
+  },
+  {
+    "id": 50358582,
+    "title": "The Little Book of Generative AI Foundations: An Intuitive Mathematical Primer",
+    "url": "https://arxiv.org/abs/2605.29713",
+    "text": "",
+    "score": 230,
+    "comments": 36,
+    "by": "ibobev",
+    "time": 1793742053,
+    "hn_url": "https://news.ycombinator.com/item?id=50358582",
+    "relevance_score": 0
+  }
+]

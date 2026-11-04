@@ -1,0 +1,98 @@
+[
+  {
+    "id": "JustVugg_colibri",
+    "full_name": "JustVugg/colibri",
+    "owner": "JustVugg",
+    "name": "colibri",
+    "url": "https://github.com/JustVugg/colibri",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        JustVugg /\n\n      colibri  \n\n    \n      A hierarchical inference engine for frontier MoE models: hot experts on the GPU (CUDA, Vulkan), warm ones in RAM, cold ones streamed from NVMe. Written in C, runs on the hardware you already own.",
+    "language": "C",
+    "stars": 47267,
+    "stars_today": 802,
+    "relevance_score": 85
+  },
+  {
+    "id": "p-e-w_heretic",
+    "full_name": "p-e-w/heretic",
+    "owner": "p-e-w",
+    "name": "heretic",
+    "url": "https://github.com/p-e-w/heretic",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        p-e-w /\n\n      heretic  \n\n    \n      Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more",
+    "language": "Python",
+    "stars": 38832,
+    "stars_today": 701,
+    "relevance_score": 60
+  },
+  {
+    "id": "sponsors_D4Vinci",
+    "full_name": "sponsors/D4Vinci",
+    "owner": "sponsors",
+    "name": "D4Vinci",
+    "url": "https://github.com/sponsors/D4Vinci",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        D4Vinci /\n\n      Scrapling  \n\n    \n      🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+    "language": "Python",
+    "stars": 94928,
+    "stars_today": 1658,
+    "relevance_score": 60
+  },
+  {
+    "id": "sponsors_thedotmack",
+    "full_name": "sponsors/thedotmack",
+    "owner": "sponsors",
+    "name": "thedotmack",
+    "url": "https://github.com/sponsors/thedotmack",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        thedotmack /\n\n      claude-mem  \n\n    \n      Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+    "language": "TypeScript",
+    "stars": 111960,
+    "stars_today": 1139,
+    "relevance_score": 30
+  },
+  {
+    "id": "shiyu-coder_Kronos",
+    "full_name": "shiyu-coder/Kronos",
+    "owner": "shiyu-coder",
+    "name": "Kronos",
+    "url": "https://github.com/shiyu-coder/Kronos",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        shiyu-coder /\n\n      Kronos  \n\n    \n      Kronos: A Foundation Model for the Language of Financial Markets",
+    "language": "Python",
+    "stars": 46539,
+    "stars_today": 503,
+    "relevance_score": 30
+  },
+  {
+    "id": "vercel-labs_agent-desktop",
+    "full_name": "vercel-labs/agent-desktop",
+    "owner": "vercel-labs",
+    "name": "agent-desktop",
+    "url": "https://github.com/vercel-labs/agent-desktop",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        vercel-labs /\n\n      agent-desktop  \n\n    \n      Computer use CLI for AI agents",
+    "language": "Rust",
+    "stars": 12884,
+    "stars_today": 3791,
+    "relevance_score": 0
+  },
+  {
+    "id": "max-sixty_worktrunk",
+    "full_name": "max-sixty/worktrunk",
+    "owner": "max-sixty",
+    "name": "worktrunk",
+    "url": "https://github.com/max-sixty/worktrunk",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        max-sixty /\n\n      worktrunk  \n\n    \n      Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+    "language": "Rust",
+    "stars": 10528,
+    "stars_today": 438,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_mattpocock",
+    "full_name": "sponsors/mattpocock",
+    "owner": "sponsors",
+    "name": "mattpocock",
+    "url": "https://github.com/sponsors/mattpocock",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        mattpocock /\n\n      skills  \n\n    \n      Skills for Real Engineers. Straight from my .agents directory.",
+    "language": "Shell",
+    "stars": 311514,
+    "stars_today": 1164,
+    "relevance_score": 0
+  }
+]
