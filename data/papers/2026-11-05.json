@@ -1,0 +1,108 @@
+[
+  {
+    "id": "2611.05377",
+    "title": "DreamX: Video Diffusion Model is a Universal Latent Action Learner",
+    "abstract": "Learning a universal action representation from video requires modeling dynamics that are consistent across different executions of the same action yet invariant to changes in embodiment and appearance. Existing latent action models infer actions from visual transitions, but their representations often entangle the underlying action with irrelevant visual variations, limiting transfer across embodiments. We introduce DreamX, which repurposes a pretrained video diffusion model as a universal latent action learner. Our approach extracts compact latent actions from the video model's rich spatiotemporal features, compressing each latent video frame by $\\boldsymbol{300\\times}$ ($\\boldsymbol{1{,}200 \\rightarrow 4}$ tokens). In addition, by leveraging the video model's generative prior, these latent actions capture action-relevant dynamics disentangled from visual appearance. The resulting latent space serves as a shared action interface across embodiments (human and robot), environments, and action parameterizations. On LARY-Bench, DreamX achieves state-of-the-art performance among latent action models. Moreover, actions encoded in one setting remain effective in another: the latent space supports any-to-any video transfer and zero-shot action transfer across diverse embodiments and environments. Furthermore, this shared interface also enables policy learning in a compact latent action space, reducing the computational cost of video-diffusion-based policies.",
+    "authors": [
+      "Jisoo Kim",
+      "Chaehyun Kim",
+      "Junsu Kim",
+      "Jiho Park",
+      "Seongchan Kim",
+      "Eunbeen Hong",
+      "Soowon Son",
+      "Fu-En Yang",
+      "Seungryong Kim"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.RO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.05377.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.05377",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.05361",
+    "title": "Visibility-Aware Reference Generation for Benchmarking Visual 3D Reconstruction in Vegetation-Rich Environments",
+    "abstract": "Reliable evaluation of visual 3D reconstruction and depth estimation in vegetation-rich outdoor environments is limited by the scarcity of geometric ground-truth data and the cost of complete scanner surveys. We present a LiDARbased reference-generation pipeline for evaluating the zero-shot performance of feed-forward visual-geometry models alongside conventional structure-from-motion (SfM) methods. The pipeline reuses camera images, LiDAR scans, and reference poses from existing multi-sensor localization datasets to generate per-view depth maps and visible reference point clouds. To address visibility errors in accumulated LiDAR scans, we introduce the LargeDepth-Gap Visibility Score (LDGVS) for point-wise visibility filtering and automatic scale selection in Hidden Point Removal(HPR). Experiments on TartanAirV2 and TartanGround show that, compared with Poisson surface reconstruction, which is an approach suited to completed scan surveys, the combined HPR and LDGVS filtering retains approximately three times the point density at comparable absolute relative error. We also apply the pipeline to the BotanicGarden dataset to systematically compare depth estimation and 3D reconstruction methods. Feedforward methods produce dense depth predictions efficiently, but their 3D reconstructions can contain duplicated structures. Conventional SfM generally produces more coherent geometry, but its reconstructions remain sparse and more prone to failure in challenging vegetated scenes. The benchmark toolkit and datasets will be released.",
+    "authors": [
+      "Zhipeng Zhong",
+      "Matthew Coombes",
+      "Cunjia Liu"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.05361.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.05361",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.05359",
+    "title": "GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs",
+    "abstract": "This paper presents GSCV++, a lightweight pipeline for 3D {G}aussian {S}platting (GS) sequences {C}ompression with standard {V}ideo codecs. To meet the requirements of low-complexity and hardware compatibility from the industry, GSCV++ jointly improves preprocessing, 3D-to-2D mapping, and practical video compression configuration of GS compression. First, for preprocessing, energy-adaptive inter-frame spherical harmonic (SH) alternative current (AC) dimensionality reduction (EA-SHDR) is proposed to produces a compact and stable temporal SH AC feature space. It can reduce the data volume of following mapping and practical compression, as well as less complexity while eliminating redundant information. Second, for 3D-to-2D mapping, prior-based Inter-MiniPLAS (P-MiniPLAS) is designed to generate smooth 2D feature maps through prior-based weighting factor inference and small scale remapping. Compared with vanilla Parallel Linear Assignment Sorting (PLAS) and Morton scan, P-MiniPLAS ensures the generated 2D maps are more suitable for the video codec while maintaining a low level of computational complexity. Third, for practical compression, content-aware generalized compression (CA-GC) is developed to use a non-uniform bit-depth split for coordinate map generation, and a coding unit size selection is introduced for efficient compression complexity control, which fully exploits the performance of video codecs without involving normative changes. Experiments demonstrate that GSCV++ reports over 20\\% in intra- and 60\\% in inter-prediction rate-distortion gains compared with state-of-the-art (SOTA) methods. GSCV++ also achieves faster 2D map generation, encoding, and decoding than other SOTA methods using the same type of video codecs. Ablation studies verify the effectiveness and robustness of the proposed modules and provide insights for subsequent research.",
+    "authors": [
+      "Qi Yang",
+      "Yingzhan Xu",
+      "Kai Zhang",
+      "Li Zhang"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.05359.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.05359",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.05348",
+    "title": "OpenBrain: An Auditable Generated-Label Release for Whole-Brain MRI Parcellation",
+    "abstract": "Automatic tools can now generate whole-brain MRI parcellations at cohort scale, but generated-label releases often provide little evidence about which cases are reliable enough to reuse. We introduce OpenBrain, a confidence-aware release of 35,838 provenance-verified OpenNeuro T1w cases from 607 source datasets. OpenBrain is organized as an auditable case-record release rather than a directory of standalone segmentation files: each record links a primary parcellation, two committee parcellations, source/license provenance, raw QC-7 measurements, percentile risks, a combined risk score R, and a confidence tier. QC-7 is a reference-free reliability panel over label geometry, image-label consistency, and committee disagreement, so users can filter, weight, audit, or re-threshold generated labels without rerunning inference. We evaluate this released evidence under a frozen protocol. Across external cohorts, lower QC-7 risk corresponds to higher generated-label quality; in fixed-budget training, lower-risk selections improve paired macro Dice over random selection by +3.2 to +3.7 percentage points. OpenBrain also exposes raw axes, committee outputs, provenance, and datasheet documentation, so confidence claims remain inspectable after download. It does not turn generated labels into manual annotations or clinical-grade segmentations. Its contribution is a large open generated-parcellation substrate, a reusable case-level risk-evidence layer, and an external validation protocol for release-time QC. Dataset: https://huggingface.co/datasets/lanqz7766/OpenBrain. Code: https://github.com/lanqz7766/openbrain.",
+    "authors": [
+      "Qizhen Lan",
+      "Yu-Chun Hsu",
+      "Yuxiang Wei",
+      "Lijing Zhu",
+      "Zenan Sun",
+      "Liang He",
+      "Lishan Yu",
+      "Xiaoqian Jiang"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.05348.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.05348",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.05294",
+    "title": "Wonder 4: A Mixture-of-Experts Recipe for Image Quality Enhancement",
+    "abstract": "A real photograph is often blurry, grainy, compressed, scratched, and low-resolution at the same time. Each defect has its own severity and its own place in the image. The corrections for these defects conflict with each other. Exist- ing models describe the whole image with one description, so they cannot say where each correction belongs. To solve this problem, we present Wonder 4, a mixture-of-experts (MoE) model for image quality enhancement. It corrects several defects of a real photograph at the same time, each in the region where it occurs. Every block of the model holds a mixture of N = 13 experts. A router, trained with the model, sends every image patch to k = 5 of them. No degradation classifier, mask, prompt, detector, or task label is used. Another issue is that standard MoE training, taken from language models, pushes every expert toward equal use. Equal use applies every correction everywhere, even where it is not needed. We replace this rule with a bias that only sets a minimum share of use. Across all patches, an expert used less than this minimum gets higher router scores until it is selected again. An expert above the minimum is not changed, so no expert is forced to be used as often as the others. The bias needs no extra loss. The method adds no extra module and no extra processing step. We evaluate Wonder 4 on DIV2K and Flickr2K, against five published methods and three open-weight pipelines. It reaches the best LPIPS, DISTS, and NIQE on all three test settings (DIV2K x4, DIV2K x8, and Flickr2K x4).",
+    "authors": [
+      "Yunan Wu",
+      "Bin Sun",
+      "Partha Acharjee",
+      "Xiaoyu Wang"
+    ],
+    "published": "2026-11-03",
+    "updated": "2026-11-03",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.05294.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.05294",
+    "primary_category": "cs.CV"
+  }
+]
