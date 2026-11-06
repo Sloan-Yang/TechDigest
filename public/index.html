@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-05</div>
+        <div class="page-date">📅 2026-11-06</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 5
+            计算机视觉: 4 | 机器人: 1
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.05377</span>
+          <span class="paper-id">2611.06918</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.05377" target="_blank">DreamX: Video Diffusion Model is a Universal Latent Action Learner</a>
+        <a href="https://arxiv.org/abs/2611.06918" target="_blank">From Pixels to Actions - Towards Native Vision-Language-Action Policies</a>
       </h3>
       
-      <p class="paper-authors">Jisoo Kim, Chaehyun Kim, Junsu Kim, Jiho Park, Seongchan Kim 等 (9 位作者)</p>
+      <p class="paper-authors">Weichen Fan, Haiwen Diao, Penghao Wu, Siyuan Hu, Ziqi Huang 等 (17 位作者)</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Learning a universal action representation from video requires modeling dynamics that are consistent across different executions of the same action yet invariant to changes in embodiment and appearance. Existing latent action models infer actions from visual transitions, but their representations often entangle the underlying action with irrelevant visual variations, limiting transfer across embodiments. We introduce DreamX, which repurposes a pretrained video diffusion model as a universal latent action learner. Our approach extracts compact latent actions from the video model's rich spatiotemporal features, compressing each latent video frame by $\boldsymbol{300\times}$ ($\boldsymbol{1{,}200 \rightarrow 4}$ tokens). In addition, by leveraging the video model's generative prior, these latent actions capture action-relevant dynamics disentangled from visual appearance. The resulting latent space serves as a shared action interface across embodiments (human and robot), environments, and action parameterizations. On LARY-Bench, DreamX achieves state-of-the-art performance among latent action models. Moreover, actions encoded in one setting remain effective in another: the latent space supports any-to-any video transfer and zero-shot action transfer across diverse embodiments and environments. Furthermore, this shared interface also enables policy learning in a compact latent action space, reducing the computational cost of video-diffusion-based policies.</p>
+        <p>Vision-language-action models are typically built on a simple premise: perception is first compressed by visual encoders, and action reasoning begins only afterwards. Yet manipulation often hinges on precisely the visual signals most vulnerable to this abstraction, e.g., local geometry, boundaries, depth, and subtle state changes. This raises a fundamental question: should action policies inherit a fixed visual endpoint, or directly access evolving visual computation? We introduce NEO-VLA, a structurally encoder-free vision-language-action framework. Images are tokenized by lightweight patch convolutional layers and evolve jointly with language throughout the backbone, allowing a flow-matching action expert to draw from instruction-conditioned visual representations at different depths. This simple change reveals a consistent pattern. Native architectures outperform encoder-based counterparts under controlled comparisons; full fine-tuning reduces but does not erase the gap, and additional scale alone cannot recover it. More strikingly, layer-wise probing shows that the action-critical signals often peak well before the final visual representation. Across diverse manipulation settings and distribution shifts, NEO-VLA consequently achieves stronger and more robust control. Together, these results suggest that embodied control benefits from access to visual representations across the computational hierarchy, rather than a fixed encoder output.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.05377" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.05377.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.06918" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06918.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器人</span>
+          <span class="paper-id">2611.06908</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.06908" target="_blank">Perceptive Humanoid Motion from Simulation</a>
+      </h3>
+      
+      <p class="paper-authors">Siyuan Hu, Abulikemu Abuduweili, Yue Meng, Shipeng Liu, Quentin Leboutet 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Humanoid robots have the potential to automate a wide range of physical tasks. Progress toward generalist humanoid autonomy, however, remains constrained by a data bottleneck: mapping pixels and free-form language to low-level joint commands requires paired supervision, and no corpus of such data exists at sufficiently large scale. Some approaches rely on human teleoperation and wearable capture devices, which require at least an hour of human time to produce an hour of data. We present HALO, a humanoid autonomy system powered by a pipeline that synthesizes vision-language-motion data across a thousand procedurally generated homes. The corpus scales with compute rather than human labor. HALO acquires a repertoire of physical skills, including sitting on chairs, navigating to named objects, stepping sideways through half-open doors, crouching and crawling beneath tables, and pushing boxes. It orchestrates these skills to solve composite, long-horizon tasks. Without ever seeing a real home during training, HALO transfers zero-shot to the physical world, achieving a 91% success rate across 360 trials in six unmapped real-world environments. See https://apple-aiml-research.github.io/ml-halo/ for code and videos.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.06908" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06908.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.05361</span>
+          <span class="paper-id">2611.06901</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.05361" target="_blank">Visibility-Aware Reference Generation for Benchmarking Visual 3D Reconstruction in Vegetation-Rich Environments</a>
+        <a href="https://arxiv.org/abs/2611.06901" target="_blank">Motion-guided Contrastive Regularization For Latent World Models</a>
       </h3>
       
-      <p class="paper-authors">Zhipeng Zhong, Matthew Coombes, Cunjia Liu</p>
+      <p class="paper-authors">Yiwen Chen, Qiqi Hou, Jisoo Jeong, Yinhao Zhu, Huaizu Jiang 等 (6 位作者)</p>
       
       <div class="paper-summary">
         
@@ -378,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Reliable evaluation of visual 3D reconstruction and depth estimation in vegetation-rich outdoor environments is limited by the scarcity of geometric ground-truth data and the cost of complete scanner surveys. We present a LiDARbased reference-generation pipeline for evaluating the zero-shot performance of feed-forward visual-geometry models alongside conventional structure-from-motion (SfM) methods. The pipeline reuses camera images, LiDAR scans, and reference poses from existing multi-sensor localization datasets to generate per-view depth maps and visible reference point clouds. To address visibility errors in accumulated LiDAR scans, we introduce the LargeDepth-Gap Visibility Score (LDGVS) for point-wise visibility filtering and automatic scale selection in Hidden Point Removal(HPR). Experiments on TartanAirV2 and TartanGround show that, compared with Poisson surface reconstruction, which is an approach suited to completed scan surveys, the combined HPR and LDGVS filtering retains approximately three times the point density at comparable absolute relative error. We also apply the pipeline to the BotanicGarden dataset to systematically compare depth estimation and 3D reconstruction methods. Feedforward methods produce dense depth predictions efficiently, but their 3D reconstructions can contain duplicated structures. Conventional SfM generally produces more coherent geometry, but its reconstructions remain sparse and more prone to failure in challenging vegetated scenes. The benchmark toolkit and datasets will be released.</p>
+        <p>JEPA-style world models learn action-conditioned latent dynamics without reconstructing observations, but distributional regularization alone does not ensure that their representations preserve information needed for control. We identify static collapse, a failure mode in which the encoder preserves episode-specific static content while suppressing manipulation-relevant state changes. Because static content is temporally predictable yet diverse across episodes, this failure can persist despite regularizers such as SIGReg. A controlled study on OGBench-Cube shows that introducing randomized backgrounds substantially degrades planning performance while leaving the underlying manipulation task unchanged. To address this problem, we propose motion-guided contrastive regularization. Our approach compares predicted latent transitions with transitions to candidate observations from the same episode, reducing the usefulness of static background identity for distinguishing action outcomes. Optical-flow similarities provide soft contrastive targets, allowing candidates with similar motion to receive similar supervision. Combined with latent prediction and SIGReg, our objective encourages representations to preserve within-episode state distinctions and similarities between related transitions. Our method improves planning success over LeWorldModel (LeWM) from 52% to 78% on OGBench-Cube with randomized backgrounds and from 14% to 54% on LIBERO-Object, while maintaining comparable performance on four other visual-control benchmarks.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.05361" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.05361.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.06901" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06901.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.05359</span>
+          <span class="paper-id">2611.06899</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.05359" target="_blank">GSCV++: Lightweight 3D Gaussian Splatting Sequence Compression via Standard Video Codecs</a>
+        <a href="https://arxiv.org/abs/2611.06899" target="_blank">Occlusion for Free: Detecting Occlusion from the Disagreement Between Two Monocular Distance Cues</a>
       </h3>
       
-      <p class="paper-authors">Qi Yang, Yingzhan Xu, Kai Zhang, Li Zhang</p>
+      <p class="paper-authors">Chibueze Praise Onyenweaku, Toyibat Adele, Sikirulahi Opeyemi Abdulkareem, Obed Honour Eje</p>
       
       <div class="paper-summary">
         
@@ -410,12 +442,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>This paper presents GSCV++, a lightweight pipeline for 3D {G}aussian {S}platting (GS) sequences {C}ompression with standard {V}ideo codecs. To meet the requirements of low-complexity and hardware compatibility from the industry, GSCV++ jointly improves preprocessing, 3D-to-2D mapping, and practical video compression configuration of GS compression. First, for preprocessing, energy-adaptive inter-frame spherical harmonic (SH) alternative current (AC) dimensionality reduction (EA-SHDR) is proposed to produces a compact and stable temporal SH AC feature space. It can reduce the data volume of following mapping and practical compression, as well as less complexity while eliminating redundant information. Second, for 3D-to-2D mapping, prior-based Inter-MiniPLAS (P-MiniPLAS) is designed to generate smooth 2D feature maps through prior-based weighting factor inference and small scale remapping. Compared with vanilla Parallel Linear Assignment Sorting (PLAS) and Morton scan, P-MiniPLAS ensures the generated 2D maps are more suitable for the video codec while maintaining a low level of computational complexity. Third, for practical compression, content-aware generalized compression (CA-GC) is developed to use a non-uniform bit-depth split for coordinate map generation, and a coding unit size selection is introduced for efficient compression complexity control, which fully exploits the performance of video codecs without involving normative changes. Experiments demonstrate that GSCV++ reports over 20\% in intra- and 60\% in inter-prediction rate-distortion gains compared with state-of-the-art (SOTA) methods. GSCV++ also achieves faster 2D map generation, encoding, and decoding than other SOTA methods using the same type of video codecs. Ablation studies verify the effectiveness and robustness of the proposed modules and provide insights for subsequent research.</p>
+        <p>Knowing that a pedestrian is occluded is useful to a robot even when the detector cannot recover the hidden pixels, but occlusion estimators are normally trained on occlusion annotations that deployment settings rarely have. We show that occlusion can be read off two distance estimates a camera-only pipeline already computes. Apparent height is largely unchanged by occlusion, because the detected box still spans the whole person; monocular metric depth is pulled toward the occluder, because the nearest surface inside the box is what a depth map reports. Only their ordering matters, so no focal length, stature, or depth scale is needed, provided the depth model's error is close to a pure gain, a condition that can be checked without labels. The score detects heavy occlusion on KITTI with AUC 0.909 (0.888 over all annotated pedestrians, including those the detector misses), requires no training and no occlusion labels, and is not a proxy for range: within fixed distance bands it holds AUC 0.894-0.925 while true distance alone sits near chance. On synthetic CARLA scenes with measured visibility it reaches 0.819, against 0.644 for distance alone. We arrived here after measuring three standard architectural responses to occlusion, depth fusion, occlusion-simulating augmentation, and attention, none of which improved detection outside its training distribution in the configurations we tested, and after finding that a detector trained on German roads loses half its accuracy on self-annotated street scenes in Lagos, Nigeria. Signals that need no local annotation are worth more in settings that benchmarks do not represent.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.05359" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.05359.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.06899" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06899.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +456,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.05348</span>
+          <span class="paper-id">2611.06890</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.05348" target="_blank">OpenBrain: An Auditable Generated-Label Release for Whole-Brain MRI Parcellation</a>
+        <a href="https://arxiv.org/abs/2611.06890" target="_blank">Procedural Adversarial Learning</a>
       </h3>
       
-      <p class="paper-authors">Qizhen Lan, Yu-Chun Hsu, Yuxiang Wei, Lijing Zhu, Zenan Sun 等 (8 位作者)</p>
+      <p class="paper-authors">Jack Nugent, Jia Deng</p>
       
       <div class="paper-summary">
         
@@ -442,44 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Automatic tools can now generate whole-brain MRI parcellations at cohort scale, but generated-label releases often provide little evidence about which cases are reliable enough to reuse. We introduce OpenBrain, a confidence-aware release of 35,838 provenance-verified OpenNeuro T1w cases from 607 source datasets. OpenBrain is organized as an auditable case-record release rather than a directory of standalone segmentation files: each record links a primary parcellation, two committee parcellations, source/license provenance, raw QC-7 measurements, percentile risks, a combined risk score R, and a confidence tier. QC-7 is a reference-free reliability panel over label geometry, image-label consistency, and committee disagreement, so users can filter, weight, audit, or re-threshold generated labels without rerunning inference. We evaluate this released evidence under a frozen protocol. Across external cohorts, lower QC-7 risk corresponds to higher generated-label quality; in fixed-budget training, lower-risk selections improve paired macro Dice over random selection by +3.2 to +3.7 percentage points. OpenBrain also exposes raw axes, committee outputs, provenance, and datasheet documentation, so confidence claims remain inspectable after download. It does not turn generated labels into manual annotations or clinical-grade segmentations. Its contribution is a large open generated-parcellation substrate, a reusable case-level risk-evidence layer, and an external validation protocol for release-time QC. Dataset: https://huggingface.co/datasets/lanqz7766/OpenBrain. Code: https://github.com/lanqz7766/openbrain.</p>
+        <p>For many computer vision tasks, neural networks can be trained to produce a low average error, yet they still fail on seemingly simple scenes. Reducing these failures requires first finding them, but they may not be in a fixed dataset. We study procedural adversarial learning (PAL), a framework of minimax training and adversarial evaluation which searches the input space of a procedural generator for difficult instances. The procedural generator is an interpretable program mapping a low-dimensional vector of control parameters (e.g. layout, lighting, pose) to a rendered image and its label. We introduce the Simple-PAT algorithm, which uses zeroth-order optimization in the procedural generator's parameter space to propose adversarial training samples that are generated on demand. We also create PAL-Dojo, a collection of efficient procedural generators for surface normal estimation, image segmentation, and human pose estimation. Against a cross-model black-box adversary with 50M aggregate queries, Simple-PAT reduces worst-case error by a geometric mean of 3.15x compared to standard training and 2.63x compared to the strongest robust training baseline. Code is available at https://github.com/princeton-vl/procedural-adversarial-learning.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.05348" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.05348.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.05294</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.05294" target="_blank">Wonder 4: A Mixture-of-Experts Recipe for Image Quality Enhancement</a>
-      </h3>
-      
-      <p class="paper-authors">Yunan Wu, Bin Sun, Partha Acharjee, Xiaoyu Wang</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>A real photograph is often blurry, grainy, compressed, scratched, and low-resolution at the same time. Each defect has its own severity and its own place in the image. The corrections for these defects conflict with each other. Exist- ing models describe the whole image with one description, so they cannot say where each correction belongs. To solve this problem, we present Wonder 4, a mixture-of-experts (MoE) model for image quality enhancement. It corrects several defects of a real photograph at the same time, each in the region where it occurs. Every block of the model holds a mixture of N = 13 experts. A router, trained with the model, sends every image patch to k = 5 of them. No degradation classifier, mask, prompt, detector, or task label is used. Another issue is that standard MoE training, taken from language models, pushes every expert toward equal use. Equal use applies every correction everywhere, even where it is not needed. We replace this rule with a bias that only sets a minimum share of use. Across all patches, an expert used less than this minimum gets higher router scores until it is selected again. An expert above the minimum is not changed, so no expert is forced to be used as often as the others. The bias needs no extra loss. The method adds no extra module and no extra processing step. We evaluate Wonder 4 on DIV2K and Flickr2K, against five published methods and three open-weight pipelines. It reaches the best LPIPS, DISTS, and NIQE on all three test settings (DIV2K x4, DIV2K x8, and Flickr2K x4).</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.05294" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.05294.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.06890" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06890.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 648 &nbsp;💬 211</span>
+          <span class="paper-id">▲ 518 &nbsp;💬 178</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50371246" target="_blank">Residential proxies detected on White House network</a>
+        <a href="https://news.ycombinator.com/item?id=50385272" target="_blank">Claude Code sends your email address to websites</a>
       </h3>
-      <p class="paper-authors">by Rasbora</p>
+      <p class="paper-authors">by motoroco</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50371246" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://layer3intel.com/blog/residential-proxies-white-house-network" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50385272" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/anthropics/claude-code/issues/107757" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 96 &nbsp;💬 82</span>
+          <span class="paper-id">▲ 521 &nbsp;💬 259</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50372945" target="_blank">Images 2.6</a>
+        <a href="https://news.ycombinator.com/item?id=50383740" target="_blank">Search for everyone</a>
       </h3>
-      <p class="paper-authors">by davidbarker</p>
+      <p class="paper-authors">by elashri</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50372945" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://openai.com/index/introducing-images-2-6/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50383740" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://kagi.com/changelog#11820" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 100 &nbsp;💬 63</span>
+          <span class="paper-id">▲ 2340 &nbsp;💬 574</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50372929" target="_blank">A thousand fewer paths to root</a>
+        <a href="https://news.ycombinator.com/item?id=50378228" target="_blank">sshole</a>
       </h3>
-      <p class="paper-authors">by dangelosaurus</p>
+      <p class="paper-authors">by josemrb</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50372929" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://openai.com/index/a-thousand-fewer-paths-to-root/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50378228" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://sshhole.com" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 64 &nbsp;💬 26</span>
+          <span class="paper-id">▲ 324 &nbsp;💬 107</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50373308" target="_blank">Starfall – Affordable, routine access to microgravity</a>
+        <a href="https://news.ycombinator.com/item?id=50384233" target="_blank">MS Paint Remote Code Execution Vulnerability</a>
       </h3>
-      <p class="paper-authors">by gmays</p>
+      <p class="paper-authors">by kuberwastaken</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50373308" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.spacex.com/starfall" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50384233" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.cve.org/CVERecord?id=CVE-2026-83844" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,37 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 1069 &nbsp;💬 637</span>
+          <span class="paper-id">▲ 58 &nbsp;💬 22</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50364336" target="_blank">AI is forcing us to pay off 40 years of technical debt</a>
-      </h3>
-      <p class="paper-authors">by pseudolus</p>
-      
-      <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50364336" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability" target="_blank" class="link-btn">🔗 原文</a>
-      </div>
-    </article>
-    
-    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 223 &nbsp;💬 79</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50369925" target="_blank">Ripple-65B Preview: U.S. Open-Weight SOTA on Agentic Coding</a>
+        <a href="https://news.ycombinator.com/item?id=50386338" target="_blank">Inkling 2 Small</a>
       </h3>
       <p class="paper-authors">by Philpax</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50369925" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.ricursive.com/ripple" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50386338" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 24 &nbsp;💬 21</span>
+          <span class="paper-id">▲ 589 &nbsp;💬 125</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50373149" target="_blank">You'll need nerves of steel to work with AI agents</a>
+        <a href="https://news.ycombinator.com/item?id=50379704" target="_blank">Alpine Linux Security Advisory: OpenSSH-server password authentication bypass</a>
       </h3>
-      <p class="paper-authors">by theorchid</p>
+      <p class="paper-authors">by pantalaimon</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50373149" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://orchidfiles.com/youll-need-nerves-of-steel-to-work-with-ai-agents/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50379704" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +602,37 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 165 &nbsp;💬 94</span>
+          <span class="paper-id">▲ 204 &nbsp;💬 95</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50370610" target="_blank">Insects don't swarm at LED lights</a>
+        <a href="https://news.ycombinator.com/item?id=50383057" target="_blank">The Hackintosh Reborn</a>
       </h3>
-      <p class="paper-authors">by speckx</p>
+      <p class="paper-authors">by rubatuga</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50370610" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.birdsoutsidemywindow.org/2026/11/03/insects-dont-swarm-at-led-lights/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50383057" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 253 &nbsp;💬 79</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50381383" target="_blank">Window Sweaters</a>
+      </h3>
+      <p class="paper-authors">by nickswalker</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50381383" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/saragordic/window-sweaters" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,12 +641,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 139,027 &nbsp;+617 today</span>
+          <span class="paper-id">⭐ 55,985 &nbsp;+223 today</span>
         </div>
-        <span class="score-badge">推荐度 80/100</span>
+        <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo</a>
+        <a href="https://github.com/microsoft/VibeVoice" target="_blank">microsoft/VibeVoice</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -659,15 +659,49 @@
 
 
       
-        harry0703 /
+        microsoft /
 
-      MoneyPrinterTurbo  
+      VibeVoice  
 
     
-      利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.</p>
+      Open-Source Frontier Voice AI</p>
       
       <div class="paper-links">
-        <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/microsoft/VibeVoice" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 14,166 &nbsp;+175 today</span>
+        </div>
+        <span class="score-badge">推荐度 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/ConardLi/garden-skills" target="_blank">ConardLi/garden-skills</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        ConardLi /
+
+      garden-skills  
+
+    
+      ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/ConardLi/garden-skills" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -675,7 +709,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 96,623 &nbsp;+2005 today</span>
+          <span class="paper-id">⭐ 98,040 &nbsp;+1655 today</span>
         </div>
         <span class="score-badge">推荐度 60/100</span>
       </div>
@@ -722,54 +756,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 112,899 &nbsp;+1172 today</span>
-        </div>
-        <span class="score-badge">推荐度 30/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/sponsors/thedotmack" target="_blank">sponsors/thedotmack</a>
-      </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        thedotmack /
-
-      claude-mem  
-
-    
-      Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/sponsors/thedotmack" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 139,371 &nbsp;+290 today</span>
+          <span class="paper-id">⭐ 139,974 &nbsp;+612 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -803,7 +790,41 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 5,161 &nbsp;+2050 today</span>
+          <span class="paper-id">⭐ 22,403 &nbsp;+211 today</span>
+        </div>
+        <span class="score-badge">推荐度 20/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/google/skills" target="_blank">google/skills</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        google /
+
+      skills  
+
+    
+      Agent Skills for Google products and technologies</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/google/skills" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 7,445 &nbsp;+2679 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -836,42 +857,8 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 11,067 &nbsp;+531 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/max-sixty/worktrunk" target="_blank">max-sixty/worktrunk</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        max-sixty /
-
-      worktrunk  
-
-    
-      Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/max-sixty/worktrunk" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
           <span class="category-badge gh-badge">Shell</span>
-          <span class="paper-id">⭐ 313,384 &nbsp;+1379 today</span>
+          <span class="paper-id">⭐ 315,314 &nbsp;+2071 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -917,28 +904,15 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Java</span>
-          <span class="paper-id">⭐ 29,662 &nbsp;+1090 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 17,611 &nbsp;+240 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/floci-io" target="_blank">sponsors/floci-io</a>
+        <a href="https://github.com/Usagi-org/ai-goofish-monitor" target="_blank">Usagi-org/ai-goofish-monitor</a>
       </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
+      <p class="paper-authors">Star
 
 
   
@@ -949,15 +923,15 @@
 
 
       
-        floci-io /
+        Usagi-org /
 
-      floci  
+      ai-goofish-monitor  
 
     
-      Light, fluffy, and always free - The AWS Local Emulator alternative</p>
+      基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sponsors/floci-io" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/Usagi-org/ai-goofish-monitor" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     

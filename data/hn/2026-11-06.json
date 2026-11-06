@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50385272,
+    "title": "Claude Code sends your email address to websites",
+    "url": "https://github.com/anthropics/claude-code/issues/107757",
+    "text": "",
+    "score": 518,
+    "comments": 178,
+    "by": "motoroco",
+    "time": 1793917035,
+    "hn_url": "https://news.ycombinator.com/item?id=50385272",
+    "relevance_score": 0
+  },
+  {
+    "id": 50383740,
+    "title": "Search for everyone",
+    "url": "https://kagi.com/changelog#11820",
+    "text": "",
+    "score": 521,
+    "comments": 259,
+    "by": "elashri",
+    "time": 1793909014,
+    "hn_url": "https://news.ycombinator.com/item?id=50383740",
+    "relevance_score": 0
+  },
+  {
+    "id": 50378228,
+    "title": "sshole",
+    "url": "https://sshhole.com",
+    "text": "",
+    "score": 2340,
+    "comments": 574,
+    "by": "josemrb",
+    "time": 1793881142,
+    "hn_url": "https://news.ycombinator.com/item?id=50378228",
+    "relevance_score": 0
+  },
+  {
+    "id": 50384233,
+    "title": "MS Paint Remote Code Execution Vulnerability",
+    "url": "https://www.cve.org/CVERecord?id=CVE-2026-83844",
+    "text": "",
+    "score": 324,
+    "comments": 107,
+    "by": "kuberwastaken",
+    "time": 1793911422,
+    "hn_url": "https://news.ycombinator.com/item?id=50384233",
+    "relevance_score": 0
+  },
+  {
+    "id": 50386338,
+    "title": "Inkling 2 Small",
+    "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+    "text": "",
+    "score": 58,
+    "comments": 22,
+    "by": "Philpax",
+    "time": 1793923224,
+    "hn_url": "https://news.ycombinator.com/item?id=50386338",
+    "relevance_score": 0
+  },
+  {
+    "id": 50379704,
+    "title": "Alpine Linux Security Advisory: OpenSSH-server password authentication bypass",
+    "url": "https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/",
+    "text": "",
+    "score": 589,
+    "comments": 125,
+    "by": "pantalaimon",
+    "time": 1793889860,
+    "hn_url": "https://news.ycombinator.com/item?id=50379704",
+    "relevance_score": 0
+  },
+  {
+    "id": 50383057,
+    "title": "The Hackintosh Reborn",
+    "url": "https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/",
+    "text": "",
+    "score": 204,
+    "comments": 95,
+    "by": "rubatuga",
+    "time": 1793905702,
+    "hn_url": "https://news.ycombinator.com/item?id=50383057",
+    "relevance_score": 0
+  },
+  {
+    "id": 50381383,
+    "title": "Window Sweaters",
+    "url": "https://github.com/saragordic/window-sweaters",
+    "text": "",
+    "score": 253,
+    "comments": 79,
+    "by": "nickswalker",
+    "time": 1793897414,
+    "hn_url": "https://news.ycombinator.com/item?id=50381383",
+    "relevance_score": 0
+  }
+]

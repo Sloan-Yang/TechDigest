@@ -1,0 +1,98 @@
+[
+  {
+    "id": "microsoft_VibeVoice",
+    "full_name": "microsoft/VibeVoice",
+    "owner": "microsoft",
+    "name": "VibeVoice",
+    "url": "https://github.com/microsoft/VibeVoice",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        microsoft /\n\n      VibeVoice  \n\n    \n      Open-Source Frontier Voice AI",
+    "language": "Python",
+    "stars": 55985,
+    "stars_today": 223,
+    "relevance_score": 85
+  },
+  {
+    "id": "ConardLi_garden-skills",
+    "full_name": "ConardLi/garden-skills",
+    "owner": "ConardLi",
+    "name": "garden-skills",
+    "url": "https://github.com/ConardLi/garden-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ConardLi /\n\n      garden-skills  \n\n    \n      ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
+    "language": "JavaScript",
+    "stars": 14166,
+    "stars_today": 175,
+    "relevance_score": 65
+  },
+  {
+    "id": "sponsors_D4Vinci",
+    "full_name": "sponsors/D4Vinci",
+    "owner": "sponsors",
+    "name": "D4Vinci",
+    "url": "https://github.com/sponsors/D4Vinci",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        D4Vinci /\n\n      Scrapling  \n\n    \n      🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+    "language": "Python",
+    "stars": 98040,
+    "stars_today": 1655,
+    "relevance_score": 60
+  },
+  {
+    "id": "garrytan_gstack",
+    "full_name": "garrytan/gstack",
+    "owner": "garrytan",
+    "name": "gstack",
+    "url": "https://github.com/garrytan/gstack",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        garrytan /\n\n      gstack  \n\n    \n      Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+    "language": "TypeScript",
+    "stars": 139974,
+    "stars_today": 612,
+    "relevance_score": 30
+  },
+  {
+    "id": "google_skills",
+    "full_name": "google/skills",
+    "owner": "google",
+    "name": "skills",
+    "url": "https://github.com/google/skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google /\n\n      skills  \n\n    \n      Agent Skills for Google products and technologies",
+    "language": "Python",
+    "stars": 22403,
+    "stars_today": 211,
+    "relevance_score": 20
+  },
+  {
+    "id": "NVIDIA_auto-ontology",
+    "full_name": "NVIDIA/auto-ontology",
+    "owner": "NVIDIA",
+    "name": "auto-ontology",
+    "url": "https://github.com/NVIDIA/auto-ontology",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NVIDIA /\n\n      auto-ontology  \n\n    \n      Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+    "language": "Python",
+    "stars": 7445,
+    "stars_today": 2679,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_mattpocock",
+    "full_name": "sponsors/mattpocock",
+    "owner": "sponsors",
+    "name": "mattpocock",
+    "url": "https://github.com/sponsors/mattpocock",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        mattpocock /\n\n      skills  \n\n    \n      Skills for Real Engineers. Straight from my .agents directory.",
+    "language": "Shell",
+    "stars": 315314,
+    "stars_today": 2071,
+    "relevance_score": 0
+  },
+  {
+    "id": "Usagi-org_ai-goofish-monitor",
+    "full_name": "Usagi-org/ai-goofish-monitor",
+    "owner": "Usagi-org",
+    "name": "ai-goofish-monitor",
+    "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Usagi-org /\n\n      ai-goofish-monitor  \n\n    \n      基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。",
+    "language": "Python",
+    "stars": 17611,
+    "stars_today": 240,
+    "relevance_score": 0
+  }
+]

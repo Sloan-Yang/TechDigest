@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDigest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdf9ed;
+            --card-bg: #ffffff;
+            --card-border: #e8ecf0;
+            --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            --text: #1e2128;
+            --text-muted: #6b7385;
+            --accent: #4f6ef7;
+            --accent-light: #eef1fe;
+            --hn-color: #e8600a;
+            --hn-light: #fff4ed;
+            --gh-color: #1a7f37;
+            --gh-light: #edfbf0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .site-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .site-name span {
+            color: var(--accent);
+        }
+
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover { color: var(--accent); }
+
+        .page-hero {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .page-date {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .page-stats {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .page-stats a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-heading {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .paper-card:hover {
+            box-shadow: 0 4px 20px rgba(79,110,247,0.1);
+            border-color: #c5cef7;
+        }
+
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .hn-badge {
+            background: var(--hn-light) !important;
+            color: var(--hn-color) !important;
+        }
+
+        .gh-badge {
+            background: var(--gh-light) !important;
+            color: var(--gh-color) !important;
+        }
+
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 0.15rem 0.6rem;
+        }
+
+        .paper-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .paper-title a:hover { color: var(--accent); }
+
+        .paper-title-zh {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            font-weight: 300;
+        }
+
+        .paper-authors {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+
+        .paper-summary {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .hn-card .paper-summary {
+            background: var(--hn-light);
+            border-left-color: var(--hn-color);
+        }
+
+        .gh-card .paper-summary {
+            background: var(--gh-light);
+            border-left-color: var(--gh-color);
+        }
+
+        .summary-section { margin-bottom: 0.35rem; }
+        .summary-section:last-child { margin-bottom: 0; }
+        .summary-section strong { color: var(--accent); }
+
+        .paper-abstract {
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .paper-abstract p {
+            margin-top: 0.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--bg);
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.15s;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .site-header { padding: 1rem; }
+            .content { padding: 1rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-name" href="index.html">Tech<span>Digest</span></a>
+        <nav class="header-nav">
+            <a href="archive.html">归档</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-date">📅 2026-11-06</div>
+        <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
+        <p class="page-stats">
+            计算机视觉: 4 | 机器人: 1
+            <a href="archive.html">归档 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+        <div class="section-heading">📄 arXiv 论文</div>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.06918</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.06918" target="_blank">From Pixels to Actions - Towards Native Vision-Language-Action Policies</a>
+      </h3>
+      
+      <p class="paper-authors">Weichen Fan, Haiwen Diao, Penghao Wu, Siyuan Hu, Ziqi Huang 等 (17 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Vision-language-action models are typically built on a simple premise: perception is first compressed by visual encoders, and action reasoning begins only afterwards. Yet manipulation often hinges on precisely the visual signals most vulnerable to this abstraction, e.g., local geometry, boundaries, depth, and subtle state changes. This raises a fundamental question: should action policies inherit a fixed visual endpoint, or directly access evolving visual computation? We introduce NEO-VLA, a structurally encoder-free vision-language-action framework. Images are tokenized by lightweight patch convolutional layers and evolve jointly with language throughout the backbone, allowing a flow-matching action expert to draw from instruction-conditioned visual representations at different depths. This simple change reveals a consistent pattern. Native architectures outperform encoder-based counterparts under controlled comparisons; full fine-tuning reduces but does not erase the gap, and additional scale alone cannot recover it. More strikingly, layer-wise probing shows that the action-critical signals often peak well before the final visual representation. Across diverse manipulation settings and distribution shifts, NEO-VLA consequently achieves stronger and more robust control. Together, these results suggest that embodied control benefits from access to visual representations across the computational hierarchy, rather than a fixed encoder output.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.06918" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06918.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器人</span>
+          <span class="paper-id">2611.06908</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.06908" target="_blank">Perceptive Humanoid Motion from Simulation</a>
+      </h3>
+      
+      <p class="paper-authors">Siyuan Hu, Abulikemu Abuduweili, Yue Meng, Shipeng Liu, Quentin Leboutet 等 (8 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Humanoid robots have the potential to automate a wide range of physical tasks. Progress toward generalist humanoid autonomy, however, remains constrained by a data bottleneck: mapping pixels and free-form language to low-level joint commands requires paired supervision, and no corpus of such data exists at sufficiently large scale. Some approaches rely on human teleoperation and wearable capture devices, which require at least an hour of human time to produce an hour of data. We present HALO, a humanoid autonomy system powered by a pipeline that synthesizes vision-language-motion data across a thousand procedurally generated homes. The corpus scales with compute rather than human labor. HALO acquires a repertoire of physical skills, including sitting on chairs, navigating to named objects, stepping sideways through half-open doors, crouching and crawling beneath tables, and pushing boxes. It orchestrates these skills to solve composite, long-horizon tasks. Without ever seeing a real home during training, HALO transfers zero-shot to the physical world, achieving a 91% success rate across 360 trials in six unmapped real-world environments. See https://apple-aiml-research.github.io/ml-halo/ for code and videos.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.06908" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06908.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.06901</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.06901" target="_blank">Motion-guided Contrastive Regularization For Latent World Models</a>
+      </h3>
+      
+      <p class="paper-authors">Yiwen Chen, Qiqi Hou, Jisoo Jeong, Yinhao Zhu, Huaizu Jiang 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>JEPA-style world models learn action-conditioned latent dynamics without reconstructing observations, but distributional regularization alone does not ensure that their representations preserve information needed for control. We identify static collapse, a failure mode in which the encoder preserves episode-specific static content while suppressing manipulation-relevant state changes. Because static content is temporally predictable yet diverse across episodes, this failure can persist despite regularizers such as SIGReg. A controlled study on OGBench-Cube shows that introducing randomized backgrounds substantially degrades planning performance while leaving the underlying manipulation task unchanged. To address this problem, we propose motion-guided contrastive regularization. Our approach compares predicted latent transitions with transitions to candidate observations from the same episode, reducing the usefulness of static background identity for distinguishing action outcomes. Optical-flow similarities provide soft contrastive targets, allowing candidates with similar motion to receive similar supervision. Combined with latent prediction and SIGReg, our objective encourages representations to preserve within-episode state distinctions and similarities between related transitions. Our method improves planning success over LeWorldModel (LeWM) from 52% to 78% on OGBench-Cube with randomized backgrounds and from 14% to 54% on LIBERO-Object, while maintaining comparable performance on four other visual-control benchmarks.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.06901" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06901.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.06899</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.06899" target="_blank">Occlusion for Free: Detecting Occlusion from the Disagreement Between Two Monocular Distance Cues</a>
+      </h3>
+      
+      <p class="paper-authors">Chibueze Praise Onyenweaku, Toyibat Adele, Sikirulahi Opeyemi Abdulkareem, Obed Honour Eje</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Knowing that a pedestrian is occluded is useful to a robot even when the detector cannot recover the hidden pixels, but occlusion estimators are normally trained on occlusion annotations that deployment settings rarely have. We show that occlusion can be read off two distance estimates a camera-only pipeline already computes. Apparent height is largely unchanged by occlusion, because the detected box still spans the whole person; monocular metric depth is pulled toward the occluder, because the nearest surface inside the box is what a depth map reports. Only their ordering matters, so no focal length, stature, or depth scale is needed, provided the depth model's error is close to a pure gain, a condition that can be checked without labels. The score detects heavy occlusion on KITTI with AUC 0.909 (0.888 over all annotated pedestrians, including those the detector misses), requires no training and no occlusion labels, and is not a proxy for range: within fixed distance bands it holds AUC 0.894-0.925 while true distance alone sits near chance. On synthetic CARLA scenes with measured visibility it reaches 0.819, against 0.644 for distance alone. We arrived here after measuring three standard architectural responses to occlusion, depth fusion, occlusion-simulating augmentation, and attention, none of which improved detection outside its training distribution in the configurations we tested, and after finding that a detector trained on German roads loses half its accuracy on self-annotated street scenes in Lagos, Nigeria. Signals that need no local annotation are worth more in settings that benchmarks do not represent.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.06899" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06899.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.06890</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.06890" target="_blank">Procedural Adversarial Learning</a>
+      </h3>
+      
+      <p class="paper-authors">Jack Nugent, Jia Deng</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>For many computer vision tasks, neural networks can be trained to produce a low average error, yet they still fail on seemingly simple scenes. Reducing these failures requires first finding them, but they may not be in a fixed dataset. We study procedural adversarial learning (PAL), a framework of minimax training and adversarial evaluation which searches the input space of a procedural generator for difficult instances. The procedural generator is an interpretable program mapping a low-dimensional vector of control parameters (e.g. layout, lighting, pose) to a rendered image and its label. We introduce the Simple-PAT algorithm, which uses zeroth-order optimization in the procedural generator's parameter space to propose adversarial training samples that are generated on demand. We also create PAL-Dojo, a collection of efficient procedural generators for surface normal estimation, image segmentation, and human pose estimation. Against a cross-model black-box adversary with 50M aggregate queries, Simple-PAT reduces worst-case error by a geometric mean of 3.15x compared to standard training and 2.63x compared to the strongest robust training baseline. Code is available at https://github.com/princeton-vl/procedural-adversarial-learning.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.06890" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.06890.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🔥 Hacker News</div>
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 518 &nbsp;💬 178</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50385272" target="_blank">Claude Code sends your email address to websites</a>
+      </h3>
+      <p class="paper-authors">by motoroco</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50385272" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/anthropics/claude-code/issues/107757" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 521 &nbsp;💬 259</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50383740" target="_blank">Search for everyone</a>
+      </h3>
+      <p class="paper-authors">by elashri</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50383740" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://kagi.com/changelog#11820" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 2340 &nbsp;💬 574</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50378228" target="_blank">sshole</a>
+      </h3>
+      <p class="paper-authors">by josemrb</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50378228" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://sshhole.com" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 324 &nbsp;💬 107</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50384233" target="_blank">MS Paint Remote Code Execution Vulnerability</a>
+      </h3>
+      <p class="paper-authors">by kuberwastaken</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50384233" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.cve.org/CVERecord?id=CVE-2026-83844" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 58 &nbsp;💬 22</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50386338" target="_blank">Inkling 2 Small</a>
+      </h3>
+      <p class="paper-authors">by Philpax</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50386338" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 589 &nbsp;💬 125</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50379704" target="_blank">Alpine Linux Security Advisory: OpenSSH-server password authentication bypass</a>
+      </h3>
+      <p class="paper-authors">by pantalaimon</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50379704" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://alpinelinux.org/posts/2026-11-05-openssh-password-authentication-bypass/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 204 &nbsp;💬 95</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50383057" target="_blank">The Hackintosh Reborn</a>
+      </h3>
+      <p class="paper-authors">by rubatuga</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50383057" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.naut.ca/blog/2026/11/05/the-hackintosh-reborn-with-ai/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 253 &nbsp;💬 79</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50381383" target="_blank">Window Sweaters</a>
+      </h3>
+      <p class="paper-authors">by nickswalker</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50381383" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/saragordic/window-sweaters" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🐙 GitHub Trending</div>
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 55,985 &nbsp;+223 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/microsoft/VibeVoice" target="_blank">microsoft/VibeVoice</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        microsoft /
+
+      VibeVoice  
+
+    
+      Open-Source Frontier Voice AI</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/microsoft/VibeVoice" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 14,166 &nbsp;+175 today</span>
+        </div>
+        <span class="score-badge">推荐度 65/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/ConardLi/garden-skills" target="_blank">ConardLi/garden-skills</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        ConardLi /
+
+      garden-skills  
+
+    
+      ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/ConardLi/garden-skills" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 98,040 &nbsp;+1655 today</span>
+        </div>
+        <span class="score-badge">推荐度 60/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/D4Vinci" target="_blank">sponsors/D4Vinci</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        D4Vinci /
+
+      Scrapling  
+
+    
+      🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/D4Vinci" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 139,974 &nbsp;+612 today</span>
+        </div>
+        <span class="score-badge">推荐度 30/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/garrytan/gstack" target="_blank">garrytan/gstack</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        garrytan /
+
+      gstack  
+
+    
+      Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/garrytan/gstack" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 22,403 &nbsp;+211 today</span>
+        </div>
+        <span class="score-badge">推荐度 20/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/google/skills" target="_blank">google/skills</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        google /
+
+      skills  
+
+    
+      Agent Skills for Google products and technologies</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/google/skills" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 7,445 &nbsp;+2679 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/NVIDIA/auto-ontology" target="_blank">NVIDIA/auto-ontology</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        NVIDIA /
+
+      auto-ontology  
+
+    
+      Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/NVIDIA/auto-ontology" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Shell</span>
+          <span class="paper-id">⭐ 315,314 &nbsp;+2071 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/mattpocock" target="_blank">sponsors/mattpocock</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        mattpocock /
+
+      skills  
+
+    
+      Skills for Real Engineers. Straight from my .agents directory.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/mattpocock" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 17,611 &nbsp;+240 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/Usagi-org/ai-goofish-monitor" target="_blank">Usagi-org/ai-goofish-monitor</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        Usagi-org /
+
+      ai-goofish-monitor  
+
+    
+      基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/Usagi-org/ai-goofish-monitor" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    </div>
+
+    <footer>
+        <p>由 <a href="https://github.com/Sloan-Yang/TechDigest">TechDigest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> · <a href="https://news.ycombinator.com">Hacker News</a> · <a href="https://github.com/trending">GitHub Trending</a></p>
+    </footer>
+</body>
+</html>
