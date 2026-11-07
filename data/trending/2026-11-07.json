@@ -1,0 +1,98 @@
+[
+  {
+    "id": "rust-lang_rust",
+    "full_name": "rust-lang/rust",
+    "owner": "rust-lang",
+    "name": "rust",
+    "url": "https://github.com/rust-lang/rust",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        rust-lang /\n\n      rust  \n\n    \n      Empowering everyone to build reliable and efficient software.",
+    "language": "Rust",
+    "stars": 121460,
+    "stars_today": 192,
+    "relevance_score": 88
+  },
+  {
+    "id": "angular_angular",
+    "full_name": "angular/angular",
+    "owner": "angular",
+    "name": "angular",
+    "url": "https://github.com/angular/angular",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        angular /\n\n      angular  \n\n    \n      Deliver web apps with confidence 🚀",
+    "language": "TypeScript",
+    "stars": 101368,
+    "stars_today": 135,
+    "relevance_score": 30
+  },
+  {
+    "id": "google_skills",
+    "full_name": "google/skills",
+    "owner": "google",
+    "name": "skills",
+    "url": "https://github.com/google/skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google /\n\n      skills  \n\n    \n      Agent Skills for Google products and technologies",
+    "language": "Python",
+    "stars": 22848,
+    "stars_today": 534,
+    "relevance_score": 20
+  },
+  {
+    "id": "cloudflare_security-audit-skill",
+    "full_name": "cloudflare/security-audit-skill",
+    "owner": "cloudflare",
+    "name": "security-audit-skill",
+    "url": "https://github.com/cloudflare/security-audit-skill",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cloudflare /\n\n      security-audit-skill  \n\n    \n      A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+    "language": "JavaScript",
+    "stars": 64072,
+    "stars_today": 2548,
+    "relevance_score": 20
+  },
+  {
+    "id": "sponsors_zed-industries",
+    "full_name": "sponsors/zed-industries",
+    "owner": "sponsors",
+    "name": "zed-industries",
+    "url": "https://github.com/sponsors/zed-industries",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        zed-industries /\n\n      zed  \n\n    \n      Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+    "language": "Rust",
+    "stars": 93652,
+    "stars_today": 306,
+    "relevance_score": 0
+  },
+  {
+    "id": "NVIDIA_auto-ontology",
+    "full_name": "NVIDIA/auto-ontology",
+    "owner": "NVIDIA",
+    "name": "auto-ontology",
+    "url": "https://github.com/NVIDIA/auto-ontology",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        NVIDIA /\n\n      auto-ontology  \n\n    \n      Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+    "language": "Python",
+    "stars": 9074,
+    "stars_today": 2015,
+    "relevance_score": 0
+  },
+  {
+    "id": "rails_rails",
+    "full_name": "rails/rails",
+    "owner": "rails",
+    "name": "rails",
+    "url": "https://github.com/rails/rails",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        rails /\n\n      rails  \n\n    \n      Ruby on Rails",
+    "language": "Ruby",
+    "stars": 59032,
+    "stars_today": 142,
+    "relevance_score": 0
+  },
+  {
+    "id": "mpv-player_mpv",
+    "full_name": "mpv-player/mpv",
+    "owner": "mpv-player",
+    "name": "mpv",
+    "url": "https://github.com/mpv-player/mpv",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        mpv-player /\n\n      mpv  \n\n    \n      🎥 Command line media player",
+    "language": "C",
+    "stars": 37884,
+    "stars_today": 37,
+    "relevance_score": 0
+  }
+]

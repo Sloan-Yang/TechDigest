@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50399933,
+    "title": "Libghostty 1.0",
+    "url": "https://mitchellh.com/writing/libghostty-1-0",
+    "text": "",
+    "score": 142,
+    "comments": 16,
+    "by": "mfiguiere",
+    "time": 1794007852,
+    "hn_url": "https://news.ycombinator.com/item?id=50399933",
+    "relevance_score": 0
+  },
+  {
+    "id": 50397429,
+    "title": "A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost",
+    "url": "https://hightouch.com/blog/llm-judges-identity-resolution",
+    "text": "",
+    "score": 324,
+    "comments": 70,
+    "by": "theanomaly",
+    "time": 1793994531,
+    "hn_url": "https://news.ycombinator.com/item?id=50397429",
+    "relevance_score": 0
+  },
+  {
+    "id": 50391456,
+    "title": "Tesla to wind down Cybertruck production",
+    "url": "https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817",
+    "text": "",
+    "score": 836,
+    "comments": 1682,
+    "by": "PLenz",
+    "time": 1793967231,
+    "hn_url": "https://news.ycombinator.com/item?id=50391456",
+    "relevance_score": 0
+  },
+  {
+    "id": 50397219,
+    "title": "Firecracker VM Escape: PwnEscape Part 2",
+    "url": "https://pwn.ai/blog/firecracker-escape",
+    "text": "",
+    "score": 169,
+    "comments": 74,
+    "by": "SerCe",
+    "time": 1793993618,
+    "hn_url": "https://news.ycombinator.com/item?id=50397219",
+    "relevance_score": 0
+  },
+  {
+    "id": 50388001,
+    "title": "US FAA says it will phase out floppy disks from air traffic control by 2028",
+    "url": "https://www.reuters.com/world/us/us-faa-says-it-will-phase-out-floppy-disks-air-traffic-control-by-2028-2026-11-05/",
+    "text": "",
+    "score": 275,
+    "comments": 219,
+    "by": "ChrisArchitect",
+    "time": 1793937628,
+    "hn_url": "https://news.ycombinator.com/item?id=50388001",
+    "relevance_score": 0
+  },
+  {
+    "id": 50397994,
+    "title": "AI is dramatically accelerating AI research",
+    "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+    "text": "",
+    "score": 194,
+    "comments": 149,
+    "by": "yurivish",
+    "time": 1793996843,
+    "hn_url": "https://news.ycombinator.com/item?id=50397994",
+    "relevance_score": 0
+  },
+  {
+    "id": 50399695,
+    "title": "Outbound SIP calling is now available to all organizations",
+    "url": "https://developers.openai.com/api/docs/guides/voice-sip",
+    "text": "",
+    "score": 26,
+    "comments": 19,
+    "by": "arbayi",
+    "time": 1794006235,
+    "hn_url": "https://news.ycombinator.com/item?id=50399695",
+    "relevance_score": 0
+  },
+  {
+    "id": 50399657,
+    "title": "Sodium-ion batteries approach cost parity with LFP",
+    "url": "https://www.pv-magazine.com/2026/11/06/sodium-ion-batteries-approach-cost-parity-with-lfp-with-70-gwh-covered-by-supply-agreements/",
+    "text": "",
+    "score": 117,
+    "comments": 51,
+    "by": "doener",
+    "time": 1794006046,
+    "hn_url": "https://news.ycombinator.com/item?id=50399657",
+    "relevance_score": 0
+  }
+]
