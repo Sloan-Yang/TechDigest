@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50418176,
+    "title": "KetchUp – Open-source SketchUp alternative built with Rust and WebGPU",
+    "url": "https://ketchup3d.github.io/app/",
+    "text": "",
+    "score": 173,
+    "comments": 36,
+    "by": "dcoulmbe",
+    "time": 1794177335,
+    "hn_url": "https://news.ycombinator.com/item?id=50418176",
+    "relevance_score": 0
+  },
+  {
+    "id": 50418818,
+    "title": "Herb Sutter: When a language's creator and its owners strongly disagree [pdf]",
+    "url": "https://isocpp.org/files/papers/P4454R0.pdf",
+    "text": "",
+    "score": 49,
+    "comments": 31,
+    "by": "acossta",
+    "time": 1794180481,
+    "hn_url": "https://news.ycombinator.com/item?id=50418818",
+    "relevance_score": 0
+  },
+  {
+    "id": 50419215,
+    "title": "Unlocking any car from X brand in most of the world",
+    "url": "https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/",
+    "text": "",
+    "score": 26,
+    "comments": 13,
+    "by": "infosecau",
+    "time": 1794183050,
+    "hn_url": "https://news.ycombinator.com/item?id=50419215",
+    "relevance_score": 0
+  },
+  {
+    "id": 50418182,
+    "title": "Chimera Vocal Synth",
+    "url": "https://chimera-vocal-synth.vercel.app/",
+    "text": "",
+    "score": 75,
+    "comments": 10,
+    "by": "nmstoker",
+    "time": 1794177363,
+    "hn_url": "https://news.ycombinator.com/item?id=50418182",
+    "relevance_score": 0
+  },
+  {
+    "id": 50417407,
+    "title": "Ask HN: What are you working on? (November 2026)",
+    "url": "",
+    "text": "What are you working on? What have you been curious about lately?",
+    "score": 115,
+    "comments": 436,
+    "by": "david927",
+    "time": 1794172820,
+    "hn_url": "https://news.ycombinator.com/item?id=50417407",
+    "relevance_score": 0
+  },
+  {
+    "id": 50416053,
+    "title": "Dux: Free, open-source Wayland desktop shell with file manager and theming",
+    "url": "https://duxlabs.dev/",
+    "text": "",
+    "score": 194,
+    "comments": 60,
+    "by": "indigodaddy",
+    "time": 1794164931,
+    "hn_url": "https://news.ycombinator.com/item?id=50416053",
+    "relevance_score": 0
+  },
+  {
+    "id": 50368481,
+    "title": "Declarative Dragging",
+    "url": "https://declarative-dragging.github.io/",
+    "text": "",
+    "score": 335,
+    "comments": 39,
+    "by": "smusamashah",
+    "time": 1793811907,
+    "hn_url": "https://news.ycombinator.com/item?id=50368481",
+    "relevance_score": 0
+  },
+  {
+    "id": 50416158,
+    "title": "Outlook.com Is Quietly Rejecting Email from Domains Without DMARC",
+    "url": "https://mailroute.net/blog/outlook-rejecting-email-without-dmarc",
+    "text": "",
+    "score": 234,
+    "comments": 181,
+    "by": "xmddmx",
+    "time": 1794165632,
+    "hn_url": "https://news.ycombinator.com/item?id=50416158",
+    "relevance_score": 0
+  }
+]

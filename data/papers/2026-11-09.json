@@ -1,0 +1,113 @@
+[
+  {
+    "id": "2611.08436",
+    "title": "SM4RT: Cascaded Feed-forward Model for 4D Reconstruction",
+    "abstract": "We introduce SM4RT, a multi-task cascade feed-forward model for dynamic scene reconstruction from RGB videos. While existing feed-forward approaches typically address geometry reconstruction and motion estimation separately--and often predict motions in a single coordinate frame that must account for camera movement--SM4RT solves these tasks sequentially by first reconstructing 3D geometry and then bootstrapping motion estimation from the predicted structure. By expressing each pixel's 3D motion in its corresponding camera frame, SM4RT reduces ambiguity arising from camera motion. To address the sparsity of real-world motion labels, SM4RT further incorporates a weakly supervised loss that regularizes unlabeled point motions using labeled point positions at the other time step. We evaluate motion estimation on three dynamic-scene datasets--Kubric, Waymo, and Point Odyssey--and SM4RT achieves the best performance on most metrics compared with prior baselines. We additionally benchmark geometry reconstruction on five dynamic scene datasets and show that SM4RT achieves competitive performance with state-of-the-art methods. Overall, our unified framework demonstrates that combining geometry reconstruction and motion estimation in a cascade not only avoids performance trade-offs but also enhances motion estimation through improved geometric reasoning.",
+    "authors": [
+      "Pang-Chi Lo",
+      "Jhao-Syun Lai",
+      "Tsung-Wei Ke"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.08436.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.08436",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.08413",
+    "title": "T3R: Training-Free Two-Stage Token Refinement Towards Efficient and Robust VLA Models",
+    "abstract": "Vision-Language-Action (VLA) models enable end-to-end robot control, but inference is increasingly expensive. Each decision processes hundreds of visual tokens, often across multiple cameras, leading to substantial computation while allowing irrelevant background content to distract action prediction under distribution shift. We argue that these issues stem from two complementary forms of redundancy: many visual tokens are spatially irrelevant, while attention over the remaining tokens is often misallocated. Based on this observation, we propose T3R, a Training-Free Two-Stage Token Refinement framework. In the first stage, segmentation-guided token pruning removes irrelevant visual patches to reduce computation and eliminate distracting context. In the second stage, saliency-guided attention biasing reallocates attention toward action-critical visual regions and language instructions within the retained tokens. Together, pruning produces a cleaner candidate set, while attention biasing further emphasizes the most decision-relevant evidence, yielding a better accuracy-efficiency frontier than either stage alone. On LIBERO-Spatial, T3R removes 85% of scene-camera visual tokens while essentially matching the unpruned success rate, and improves success by up to 7 percentage points under out-of-distribution object-placement perturbations. The timing comparison attributes 7.8 ms per inference call to pruning and attention-bias application. As input resolution increases, LLM-forward profiling shows up to a 3.3x speedup over the unpruned baseline. Evaluations across LIBERO, SIMPLER, and RoboTwin with three VLA backbones show the strongest accuracy-efficiency benefits in multi-camera settings. These results demonstrate that training-free token refinement is a practical approach to efficient and robust VLA inference.",
+    "authors": [
+      "Mohammed Hassan",
+      "Zhenyang Chen",
+      "Zheng Wang",
+      "Zhixin Zhu",
+      "Tianlong Chen",
+      " Yingyan",
+      " Lin",
+      "Chaojian Li"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.08413.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.08413",
+    "primary_category": "cs.RO"
+  },
+  {
+    "id": "2611.08407",
+    "title": "Social Humanoid: Socially Responsive Human-Humanoid Interaction",
+    "abstract": "Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy performs flexible sequence modeling of human and humanoid motion through a shared tokenized representation, generating reactive humanoid motion and anticipating the partner's motion when they are occluded, while a low-level whole-body tracking controller executes the generated motion on the robot. To train the system, we introduce a two-phase adaptive retargeting procedure that retargets one interaction partner to the robot while morphing the other partner to preserve contact dynamics, reachability, and relative body scale. We apply this procedure across five motion-capture datasets to produce a new Human-Humanoid Interaction (HHI) benchmark of 260 hours of human-humanoid interactions. Our results demonstrate that Social Humanoid produces coordinated, human-aligned behavior across diverse interaction types in simulation and the real world. Project page: https://von31.github.io/social-humanoid/",
+    "authors": [
+      "Vongani H. Maluleke",
+      "James Ni",
+      "Kie Horiuchi",
+      "Lea Wilken",
+      "Jiahui Lei",
+      "Evonne Ng",
+      "Roei Herzig",
+      "Jitendra Malik",
+      "Trevor Darrell",
+      "Angjoo Kanazawa"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "categories": [
+      "cs.RO",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.08407.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.08407",
+    "primary_category": "cs.RO"
+  },
+  {
+    "id": "2611.08393",
+    "title": "Adaptive Low-Light Enhancement for Road Anomaly Detection: A Multi-Architecture Benchmark and Edge Deployment Study",
+    "abstract": "Road anomaly detection systems on autonomous vehicles must function reliably under degraded visual conditions including darkness, rain, and Harmattan dust haze. This paper benchmarks four object detection architectures, YOLOv8n, YOLOv12n, RT-DETR, and Faster R-CNN, under physically grounded lighting and weather degradation, and shows that uniform application of the SCI low-light enhancement network is actively harmful at dusk-level lighting (-16.1% to -30.7% mAP@50). We propose a lightweight, training-free luminance-adaptive router that selects between no enhancement, moderate SCI, and denoising plus strong SCI based on per-frame Rec. 601 luminance, recovering most of the dusk penalty while preserving low-light gains, and we validate the full pipeline on NVIDIA Jetson Nano edge hardware.",
+    "authors": [
+      "Obed Honour Eje",
+      "Oluwatosin Kolade",
+      "Glory Bagai",
+      "Taliha Abiodun Folorunso"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.08393.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.08393",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.08372",
+    "title": "MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation",
+    "abstract": "Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view synthesis (NVS) to augment demonstrations with unseen viewpoints, but they assume static scenes and therefore fail to re-render the manipulated object during the post-contact interaction phase, leaving the most critical parts of the demonstration unaugmented. We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions. Our key insight is that standard MoMa data collection naturally provides the multiview observations needed to reconstruct both the static scene and the manipulated object in 3D. MOMASPLAT combines 3D Gaussian Splatting, feed-forward 3D foundation models, and kinematics-based action retargeting to separately reconstruct the scene and manipulated object, render them from novel viewpoints, and generate geometrically consistent synthetic demonstrations paired with transformed actions. We evaluate MOMASPLAT on five real-world mobile manipulation tasks involving both rigid and articulated objects across three scenes, and validate the fidelity of its synthesized demonstrations against ground truth in simulation. MOMASPLAT substantially improves robustness to unseen base poses, more than doubling the average success rate of the strongest baseline and maintaining non-trivial success at large base displacements where all baselines fail, while reducing the need for largescale real-world data collection.",
+    "authors": [
+      "Sateesh Kumar",
+      "Arnav Balaji",
+      "Arpit Bahety",
+      "Skand Peri",
+      "Georgios Pavlakos",
+      "Roberto Martín-Martín"
+    ],
+    "published": "2026-11-05",
+    "updated": "2026-11-05",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.08372.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.08372",
+    "primary_category": "cs.RO"
+  }
+]

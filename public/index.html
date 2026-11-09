@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-07</div>
+        <div class="page-date">📅 2026-11-09</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 4 | 机器人: 1
+            计算机视觉: 2 | 机器人: 3
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.08486</span>
+          <span class="paper-id">2611.08436</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.08486" target="_blank">Do You Miss the Nights We Spent Crafting Figures? Rethinking Teaser and Framework Figures in the Age of Generative AI</a>
+        <a href="https://arxiv.org/abs/2611.08436" target="_blank">SM4RT: Cascaded Feed-forward Model for 4D Reconstruction</a>
       </h3>
       
-      <p class="paper-authors">Xiaoqi Zhao, Youwei Pang, Kailai Zhou</p>
+      <p class="paper-authors">Pang-Chi Lo, Jhao-Syun Lai, Tsung-Wei Ke</p>
       
       <div class="paper-summary">
         
@@ -346,76 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Scientific figures give research ideas a visual form through choices of abstraction, composition, and emphasis. Generative AI offers new ways to realize these choices, raising questions about explanatory clarity and purposeful visual expression. We examine these questions through a visual retrospective of 371 motivation and framework figures from 200 papers. The corpus comprises a quota-based main sample of 160 papers spanning four temporal periods and a separate purposive style-contrast sample of 40 papers. A single multimodal judge evaluates six dimensions of communication and design, with three repeated judgments per figure. We attempt source-constrained revisions of all 371 figures, of which 369 pass the recorded fidelity checks. Original-figure ratings show no uniform decline across periods. Revisions increase mean clarity ratings by 0.428 points and decrease aesthetic coherence ratings by 0.111 points on a five-point scale. Gains in the six-dimension average are larger for main-sample motivation figures than for frameworks. Case analyses show that added explanation can clarify comparisons while leaving typographic hierarchy and visual economy unresolved. These model-based findings support researcher-led design, with AI assisting exploration and authors retaining responsibility for explanatory purpose, composition, and scientific relationships. The accompanying atlas and evaluation records are available at https://ntu-ai4x.github.io/Rethinking_Figures/index_en.html.</p>
+        <p>We introduce SM4RT, a multi-task cascade feed-forward model for dynamic scene reconstruction from RGB videos. While existing feed-forward approaches typically address geometry reconstruction and motion estimation separately--and often predict motions in a single coordinate frame that must account for camera movement--SM4RT solves these tasks sequentially by first reconstructing 3D geometry and then bootstrapping motion estimation from the predicted structure. By expressing each pixel's 3D motion in its corresponding camera frame, SM4RT reduces ambiguity arising from camera motion. To address the sparsity of real-world motion labels, SM4RT further incorporates a weakly supervised loss that regularizes unlabeled point motions using labeled point positions at the other time step. We evaluate motion estimation on three dynamic-scene datasets--Kubric, Waymo, and Point Odyssey--and SM4RT achieves the best performance on most metrics compared with prior baselines. We additionally benchmark geometry reconstruction on five dynamic scene datasets and show that SM4RT achieves competitive performance with state-of-the-art methods. Overall, our unified framework demonstrates that combining geometry reconstruction and motion estimation in a cascade not only avoids performance trade-offs but also enhances motion estimation through improved geometric reasoning.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.08486" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.08486.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.08485</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.08485" target="_blank">Where and Why is Grounded Reasoning Useful?</a>
-      </h3>
-      
-      <p class="paper-authors">David Yan, Le Xue, Forrest Huang, Qiuyi Zhang, Dustin Tran 等 (7 位作者)</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Grounded reasoning, where a model outputs text coordinates of relevant locations in chain-of-thought reasoning, is a common strategy for solving complex visual reasoning problems. However, the benefits and limitations of grounded reasoning are understudied. We study where and why grounded reasoning is most useful. To do so, we introduce a chain-of-thought analysis method to measure how much a model uses its outputted grounding in its thinking trace and perform a detailed ablation study of a grounded reasoning training recipe. We find that grounded reasoning improves counting but shows no significant gain over baselines without coordinate grounding across a wide range of spatial reasoning and perception benchmarks. Using several synthetic tasks, we show that grounded reasoning is most useful when a task requires undescribable references, which are visual concepts that are difficult to describe in language. However, we observe that many existing visual reasoning benchmarks are solvable with only describable text references. To close this gap, we introduce BrickVision, a new benchmark that requires undescribable visual references to solve.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.08485" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.08485.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.08477</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.08477" target="_blank">EgoGeneralist: Unifying Egocentric Action-Video Tasks through Video-Native Modeling</a>
-      </h3>
-      
-      <p class="paper-authors">Yanlin Jin, Bowen Yang, Cheng Zhang, Yifan Yang, Zhe Li 等 (7 位作者)</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Modern video models possess strong visual priors, yet do not natively represent human action in metric 3D space. We present EgoGeneralist, which adapts pretrained video generators to unify action-conditioned egocentric video generation, pose estimation, and joint action-video generation. Our role-adaptive action renderer provides video-native representations for multidirectional action-video learning, making metric motion usable as both a spatial control signal and a recoverable generation target. Cross-stream action-video coupling establishes close correspondence between metric motion and visual dynamics through lightweight adaptation while preserving the pretrained visual prior. Together, these designs establish a generalist framework spanning five action-video tasks. Despite adaptation only on controlled laboratory recordings, EgoGeneralist generalizes to diverse unseen scenes and interactions with effective action control and visual quality, bridging pretrained visual knowledge and metric 3D human motion.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.08477" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.08477.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.08436" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.08436.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">机器人</span>
-          <span class="paper-id">2611.08449</span>
+          <span class="paper-id">2611.08413</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.08449" target="_blank">VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding</a>
+        <a href="https://arxiv.org/abs/2611.08413" target="_blank">T3R: Training-Free Two-Stage Token Refinement Towards Efficient and Robust VLA Models</a>
       </h3>
       
-      <p class="paper-authors">Yu-Cheng Chou, Shihao Wang, Jin Huang, Chi-Pin Huang, Chiao-An Yang 等 (19 位作者)</p>
+      <p class="paper-authors">Mohammed Hassan, Zhenyang Chen, Zheng Wang, Zhixin Zhu, Tianlong Chen 等 (8 位作者)</p>
       
       <div class="paper-summary">
         
@@ -442,12 +378,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Models for physical AI tasks, such as robotics and autonomous driving, need not reason solely in language. They can use visual plans--points, bounding boxes, and trajectories--to represent spatial goals and anticipate motion. However, autoregressive vision-language models generate these plans one coordinate token at a time, making richer predictions increasingly costly. We introduce VFlash, a method for fast, accurate visual planning through Flash Primitive Decoding. VFlash exploits the known structure of visual primitives to predict their coordinates jointly, using a lightweight drafter that generates an entire primitive in one forward pass. The layout adapts to the primitive's type, dimensionality, and length, supporting compact boxes and long, variable-length trajectories. Crucially, spatial accuracy need not require reproducing an autoregressive model's exact token sequence. VFlash therefore trains on annotated primitives and directly accepts structurally valid predictions without target-token agreement. Across the evaluated 2D and 3D robot trajectory tasks, VFlash consistently reduces prediction errors relative to autoregressive decoding. Preliminary single-rollout measurements indicate approximately 25x faster generation for 3D point motion forecasting. A world action model conditioned on VFlash plans achieves 70.2% average success across four MolmoSpaces task suites, compared with 62.6% for the baseline.</p>
+        <p>Vision-Language-Action (VLA) models enable end-to-end robot control, but inference is increasingly expensive. Each decision processes hundreds of visual tokens, often across multiple cameras, leading to substantial computation while allowing irrelevant background content to distract action prediction under distribution shift. We argue that these issues stem from two complementary forms of redundancy: many visual tokens are spatially irrelevant, while attention over the remaining tokens is often misallocated. Based on this observation, we propose T3R, a Training-Free Two-Stage Token Refinement framework. In the first stage, segmentation-guided token pruning removes irrelevant visual patches to reduce computation and eliminate distracting context. In the second stage, saliency-guided attention biasing reallocates attention toward action-critical visual regions and language instructions within the retained tokens. Together, pruning produces a cleaner candidate set, while attention biasing further emphasizes the most decision-relevant evidence, yielding a better accuracy-efficiency frontier than either stage alone. On LIBERO-Spatial, T3R removes 85% of scene-camera visual tokens while essentially matching the unpruned success rate, and improves success by up to 7 percentage points under out-of-distribution object-placement perturbations. The timing comparison attributes 7.8 ms per inference call to pruning and attention-bias application. As input resolution increases, LLM-forward profiling shows up to a 3.3x speedup over the unpruned baseline. Evaluations across LIBERO, SIMPLER, and RoboTwin with three VLA backbones show the strongest accuracy-efficiency benefits in multi-camera settings. These results demonstrate that training-free token refinement is a practical approach to efficient and robust VLA inference.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.08449" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.08449.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.08413" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.08413.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器人</span>
+          <span class="paper-id">2611.08407</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.08407" target="_blank">Social Humanoid: Socially Responsive Human-Humanoid Interaction</a>
+      </h3>
+      
+      <p class="paper-authors">Vongani H. Maluleke, James Ni, Kie Horiuchi, Lea Wilken, Jiahui Lei 等 (10 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Humanoid robots are typically trained as solitary agents, leaving them unable to coordinate physically with human partners who naturally anticipate and adjust to one another. To bridge this gap, we present Social Humanoid, a hierarchical system that generates and executes socially responsive whole-body motion on a 29-DoF Unitree G1 conditioned on a human partner's motion. Its high-level policy performs flexible sequence modeling of human and humanoid motion through a shared tokenized representation, generating reactive humanoid motion and anticipating the partner's motion when they are occluded, while a low-level whole-body tracking controller executes the generated motion on the robot. To train the system, we introduce a two-phase adaptive retargeting procedure that retargets one interaction partner to the robot while morphing the other partner to preserve contact dynamics, reachability, and relative body scale. We apply this procedure across five motion-capture datasets to produce a new Human-Humanoid Interaction (HHI) benchmark of 260 hours of human-humanoid interactions. Our results demonstrate that Social Humanoid produces coordinated, human-aligned behavior across diverse interaction types in simulation and the real world. Project page: https://von31.github.io/social-humanoid/</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.08407" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.08407.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.08441</span>
+          <span class="paper-id">2611.08393</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.08441" target="_blank">Edge-Assisted Crowdsensing for Explainable Cyclist Safety Perception</a>
+        <a href="https://arxiv.org/abs/2611.08393" target="_blank">Adaptive Low-Light Enhancement for Road Anomaly Detection: A Multi-Architecture Benchmark and Edge Deployment Study</a>
       </h3>
       
-      <p class="paper-authors">Hongsen Cao, Chia-Yen Chiang, Mona Jaber, Meihui Wang, Yasmin Fathy</p>
+      <p class="paper-authors">Obed Honour Eje, Oluwatosin Kolade, Glory Bagai, Taliha Abiodun Folorunso</p>
       
       <div class="paper-summary">
         
@@ -474,12 +442,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Cyclist fatality rates remain high despite policy support for active travel, and autonomous vehicles add complexity to mixed traffic. Neither crash statistics nor multi-model detection pipelines scale to continuous monitoring of perceived safety along a route. We present an edge-assisted crowdsensing system: handlebar cameras supply street-level frames, a vision-language model (VLM) turns each frame into structured traffic attributes through a single prompt, and an explainable boosting machine (EBM) combines them with OpenStreetMap road infrastructure and on-bike kinematics to predict a crowdsourced 1-9 safety score. Extraction belongs at the network edge: the fastest self-hosted model needs 2.49 s per frame and scoring takes 0.4 ms on a CPU. On 1,362 annotated frames from two London routes, the EBM regressor reaches 72.2 percent binary accuracy and a mean absolute error of 1.011 under five-fold cross-validation. It is within one accuracy point of black-box ensembles. Its per-feature shape functions give exact attribution: physical lane separation is worth +0.97 rating points, a painted lane +0.70 and a construction site -0.65. Planners can therefore price an infrastructure change in rating points, and the results enter cost-benefit analysis directly. We also report inter-annotator agreement (alpha = 0.4695), an attribute audit, and a sensitivity analysis linking attribute error to accuracy. With re-encoding, a 20 s sampling interval serves 1,000 riders at 54 Mbit/s at a cost of 1.4 accuracy points, making continuous monitoring practical.</p>
+        <p>Road anomaly detection systems on autonomous vehicles must function reliably under degraded visual conditions including darkness, rain, and Harmattan dust haze. This paper benchmarks four object detection architectures, YOLOv8n, YOLOv12n, RT-DETR, and Faster R-CNN, under physically grounded lighting and weather degradation, and shows that uniform application of the SCI low-light enhancement network is actively harmful at dusk-level lighting (-16.1% to -30.7% mAP@50). We propose a lightweight, training-free luminance-adaptive router that selects between no enhancement, moderate SCI, and denoising plus strong SCI based on per-frame Rec. 601 luminance, recovering most of the dusk penalty while preserving low-light gains, and we validate the full pipeline on NVIDIA Jetson Nano edge hardware.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.08441" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.08441.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.08393" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.08393.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器人</span>
+          <span class="paper-id">2611.08372</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.08372" target="_blank">MOMASPLAT: Dynamic Novel-View Demonstration Augmentation for Mobile Manipulation</a>
+      </h3>
+      
+      <p class="paper-authors">Sateesh Kumar, Arnav Balaji, Arpit Bahety, Skand Peri, Georgios Pavlakos 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Visuomotor policies trained through imitation learning are highly sensitive to changes in camera viewpoint. This is particularly problematic for mobile manipulation (MoMa), where robots rarely execute manipulation from the exact same base pose used during demonstration collection due to navigation uncertainty, localization drift, and environmental constraints. Recent approaches use novel-view synthesis (NVS) to augment demonstrations with unseen viewpoints, but they assume static scenes and therefore fail to re-render the manipulated object during the post-contact interaction phase, leaving the most critical parts of the demonstration unaugmented. We present MOMASPLAT, a novel-view demonstration augmentation framework for mobile manipulation that synthesizes full manipulation trajectories from unseen robot base poses, including dynamic object interactions. Our key insight is that standard MoMa data collection naturally provides the multiview observations needed to reconstruct both the static scene and the manipulated object in 3D. MOMASPLAT combines 3D Gaussian Splatting, feed-forward 3D foundation models, and kinematics-based action retargeting to separately reconstruct the scene and manipulated object, render them from novel viewpoints, and generate geometrically consistent synthetic demonstrations paired with transformed actions. We evaluate MOMASPLAT on five real-world mobile manipulation tasks involving both rigid and articulated objects across three scenes, and validate the fidelity of its synthesized demonstrations against ground truth in simulation. MOMASPLAT substantially improves robustness to unseen base poses, more than doubling the average success rate of the strongest baseline and maintaining non-trivial success at large base displacements where all baselines fail, while reducing the need for largescale real-world data collection.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.08372" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.08372.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 142 &nbsp;💬 16</span>
+          <span class="paper-id">▲ 173 &nbsp;💬 36</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50399933" target="_blank">Libghostty 1.0</a>
+        <a href="https://news.ycombinator.com/item?id=50418176" target="_blank">KetchUp – Open-source SketchUp alternative built with Rust and WebGPU</a>
       </h3>
-      <p class="paper-authors">by mfiguiere</p>
+      <p class="paper-authors">by dcoulmbe</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50399933" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://mitchellh.com/writing/libghostty-1-0" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50418176" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://ketchup3d.github.io/app/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 324 &nbsp;💬 70</span>
+          <span class="paper-id">▲ 49 &nbsp;💬 31</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50397429" target="_blank">A Jev that can ask Opus for help gives Opus accuracy at 4x lower cost</a>
+        <a href="https://news.ycombinator.com/item?id=50418818" target="_blank">Herb Sutter: When a language's creator and its owners strongly disagree [pdf]</a>
       </h3>
-      <p class="paper-authors">by theanomaly</p>
+      <p class="paper-authors">by acossta</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50397429" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://hightouch.com/blog/llm-judges-identity-resolution" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50418818" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://isocpp.org/files/papers/P4454R0.pdf" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 836 &nbsp;💬 1682</span>
+          <span class="paper-id">▲ 26 &nbsp;💬 13</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50391456" target="_blank">Tesla to wind down Cybertruck production</a>
+        <a href="https://news.ycombinator.com/item?id=50419215" target="_blank">Unlocking any car from X brand in most of the world</a>
       </h3>
-      <p class="paper-authors">by PLenz</p>
+      <p class="paper-authors">by infosecau</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50391456" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.nbcnews.com/tech/tech-news/tesla-wind-cybertruck-production-years-poor-sales-markets-rcna607817" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50419215" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://shubs.io/unlocking-any-car-from-x-brand-in-most-of-the-world/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 169 &nbsp;💬 74</span>
+          <span class="paper-id">▲ 75 &nbsp;💬 10</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50397219" target="_blank">Firecracker VM Escape: PwnEscape Part 2</a>
+        <a href="https://news.ycombinator.com/item?id=50418182" target="_blank">Chimera Vocal Synth</a>
       </h3>
-      <p class="paper-authors">by SerCe</p>
+      <p class="paper-authors">by nmstoker</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50397219" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://pwn.ai/blog/firecracker-escape" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50418182" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://chimera-vocal-synth.vercel.app/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 275 &nbsp;💬 219</span>
+          <span class="paper-id">▲ 115 &nbsp;💬 436</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50388001" target="_blank">US FAA says it will phase out floppy disks from air traffic control by 2028</a>
+        <a href="https://news.ycombinator.com/item?id=50417407" target="_blank">Ask HN: What are you working on? (November 2026)</a>
       </h3>
-      <p class="paper-authors">by ChrisArchitect</p>
+      <p class="paper-authors">by david927</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50388001" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.reuters.com/world/us/us-faa-says-it-will-phase-out-floppy-disks-air-traffic-control-by-2028-2026-11-05/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50417407" target="_blank" class="link-btn">💬 HN 讨论</a>
+        
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 194 &nbsp;💬 149</span>
+          <span class="paper-id">▲ 194 &nbsp;💬 60</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50397994" target="_blank">AI is dramatically accelerating AI research</a>
+        <a href="https://news.ycombinator.com/item?id=50416053" target="_blank">Dux: Free, open-source Wayland desktop shell with file manager and theming</a>
       </h3>
-      <p class="paper-authors">by yurivish</p>
+      <p class="paper-authors">by indigodaddy</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50397994" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50416053" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://duxlabs.dev/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 26 &nbsp;💬 19</span>
+          <span class="paper-id">▲ 335 &nbsp;💬 39</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50399695" target="_blank">Outbound SIP calling is now available to all organizations</a>
+        <a href="https://news.ycombinator.com/item?id=50368481" target="_blank">Declarative Dragging</a>
       </h3>
-      <p class="paper-authors">by arbayi</p>
+      <p class="paper-authors">by smusamashah</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50399695" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://developers.openai.com/api/docs/guides/voice-sip" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50368481" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://declarative-dragging.github.io/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 117 &nbsp;💬 51</span>
+          <span class="paper-id">▲ 234 &nbsp;💬 181</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50399657" target="_blank">Sodium-ion batteries approach cost parity with LFP</a>
+        <a href="https://news.ycombinator.com/item?id=50416158" target="_blank">Outlook.com Is Quietly Rejecting Email from Domains Without DMARC</a>
       </h3>
-      <p class="paper-authors">by doener</p>
+      <p class="paper-authors">by xmddmx</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50399657" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.pv-magazine.com/2026/11/06/sodium-ion-batteries-approach-cost-parity-with-lfp-with-70-gwh-covered-by-supply-agreements/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50416158" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://mailroute.net/blog/outlook-rejecting-email-without-dmarc" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -640,13 +640,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 121,460 &nbsp;+192 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 103,620 &nbsp;+2373 today</span>
         </div>
-        <span class="score-badge">推荐度 88/100</span>
+        <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/rust-lang/rust" target="_blank">rust-lang/rust</a>
+        <a href="https://github.com/sherlock-project/sherlock" target="_blank">sherlock-project/sherlock</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -659,15 +659,49 @@
 
 
       
-        rust-lang /
+        sherlock-project /
 
-      rust  
+      sherlock  
 
     
-      Empowering everyone to build reliable and efficient software.</p>
+      Hunt down social media accounts by username across social networks</p>
       
       <div class="paper-links">
-        <a href="https://github.com/rust-lang/rust" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sherlock-project/sherlock" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Go</span>
+          <span class="paper-id">⭐ 863 &nbsp;+345 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/dsx-ai-factory/nvke" target="_blank">dsx-ai-factory/nvke</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        dsx-ai-factory /
+
+      nvke  
+
+    
+      NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/dsx-ai-factory/nvke" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -675,114 +709,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 101,368 &nbsp;+135 today</span>
-        </div>
-        <span class="score-badge">推荐度 30/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/angular/angular" target="_blank">angular/angular</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        angular /
-
-      angular  
-
-    
-      Deliver web apps with confidence 🚀</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/angular/angular" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 22,848 &nbsp;+534 today</span>
-        </div>
-        <span class="score-badge">推荐度 20/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/google/skills" target="_blank">google/skills</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        google /
-
-      skills  
-
-    
-      Agent Skills for Google products and technologies</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/google/skills" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 64,072 &nbsp;+2548 today</span>
-        </div>
-        <span class="score-badge">推荐度 20/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/cloudflare/security-audit-skill" target="_blank">cloudflare/security-audit-skill</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        cloudflare /
-
-      security-audit-skill  
-
-    
-      A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/cloudflare/security-audit-skill" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 93,652 &nbsp;+306 today</span>
+          <span class="paper-id">⭐ 18,293 &nbsp;+1439 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/zed-industries" target="_blank">sponsors/zed-industries</a>
+        <a href="https://github.com/sponsors/milind-soni" target="_blank">sponsors/milind-soni</a>
       </h3>
       <p class="paper-authors">Sponsor
     
@@ -808,15 +740,15 @@
 
 
       
-        zed-industries /
+        milind-soni /
 
-      zed  
+      OpenMausBot  
 
     
-      Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.</p>
+      Open-source Grok Bot alternative with a virtual machine that bots can use</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sponsors/zed-industries" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/milind-soni" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -824,12 +756,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 9,074 &nbsp;+2015 today</span>
+          <span class="paper-id">⭐ 19,440 &nbsp;+32 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/NVIDIA/auto-ontology" target="_blank">NVIDIA/auto-ontology</a>
+        <a href="https://github.com/anthropics/claude-quickstarts" target="_blank">anthropics/claude-quickstarts</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -842,28 +774,28 @@
 
 
       
-        NVIDIA /
+        anthropics /
 
-      auto-ontology  
+      claude-quickstarts  
 
     
-      Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.</p>
+      A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API</p>
       
       <div class="paper-links">
-        <a href="https://github.com/NVIDIA/auto-ontology" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/anthropics/claude-quickstarts" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Ruby</span>
-          <span class="paper-id">⭐ 59,032 &nbsp;+142 today</span>
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 47,628 &nbsp;+815 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/rails/rails" target="_blank">rails/rails</a>
+        <a href="https://github.com/vercel-labs/agent-browser" target="_blank">vercel-labs/agent-browser</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -876,28 +808,28 @@
 
 
       
-        rails /
+        vercel-labs /
 
-      rails  
+      agent-browser  
 
     
-      Ruby on Rails</p>
+      Browser automation CLI for AI agents</p>
       
       <div class="paper-links">
-        <a href="https://github.com/rails/rails" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/vercel-labs/agent-browser" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">C</span>
-          <span class="paper-id">⭐ 37,884 &nbsp;+37 today</span>
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 16,869 &nbsp;+875 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/mpv-player/mpv" target="_blank">mpv-player/mpv</a>
+        <a href="https://github.com/meta/astryx" target="_blank">meta/astryx</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -910,15 +842,83 @@
 
 
       
-        mpv-player /
+        meta /
 
-      mpv  
+      astryx  
 
     
-      🎥 Command line media player</p>
+      An open source design system that's fully customizable and agent ready</p>
       
       <div class="paper-links">
-        <a href="https://github.com/mpv-player/mpv" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/meta/astryx" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 189,673 &nbsp;+792 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        anthropics /
+
+      skills  
+
+    
+      Public repository for Agent Skills</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/anthropics/skills" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">C++</span>
+          <span class="paper-id">⭐ 16,434 &nbsp;+41 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/google-deepmind/mujoco" target="_blank">google-deepmind/mujoco</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        google-deepmind /
+
+      mujoco  
+
+    
+      Multi-Joint dynamics with Contact. A general purpose physics simulator.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/google-deepmind/mujoco" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     

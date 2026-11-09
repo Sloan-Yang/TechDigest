@@ -1,0 +1,98 @@
+[
+  {
+    "id": "sherlock-project_sherlock",
+    "full_name": "sherlock-project/sherlock",
+    "owner": "sherlock-project",
+    "name": "sherlock",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        sherlock-project /\n\n      sherlock  \n\n    \n      Hunt down social media accounts by username across social networks",
+    "language": "Python",
+    "stars": 103620,
+    "stars_today": 2373,
+    "relevance_score": 0
+  },
+  {
+    "id": "dsx-ai-factory_nvke",
+    "full_name": "dsx-ai-factory/nvke",
+    "owner": "dsx-ai-factory",
+    "name": "nvke",
+    "url": "https://github.com/dsx-ai-factory/nvke",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        dsx-ai-factory /\n\n      nvke  \n\n    \n      NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
+    "language": "Go",
+    "stars": 863,
+    "stars_today": 345,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_milind-soni",
+    "full_name": "sponsors/milind-soni",
+    "owner": "sponsors",
+    "name": "milind-soni",
+    "url": "https://github.com/sponsors/milind-soni",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        milind-soni /\n\n      OpenMausBot  \n\n    \n      Open-source Grok Bot alternative with a virtual machine that bots can use",
+    "language": "TypeScript",
+    "stars": 18293,
+    "stars_today": 1439,
+    "relevance_score": 0
+  },
+  {
+    "id": "anthropics_claude-quickstarts",
+    "full_name": "anthropics/claude-quickstarts",
+    "owner": "anthropics",
+    "name": "claude-quickstarts",
+    "url": "https://github.com/anthropics/claude-quickstarts",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        anthropics /\n\n      claude-quickstarts  \n\n    \n      A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+    "language": "Python",
+    "stars": 19440,
+    "stars_today": 32,
+    "relevance_score": 0
+  },
+  {
+    "id": "vercel-labs_agent-browser",
+    "full_name": "vercel-labs/agent-browser",
+    "owner": "vercel-labs",
+    "name": "agent-browser",
+    "url": "https://github.com/vercel-labs/agent-browser",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        vercel-labs /\n\n      agent-browser  \n\n    \n      Browser automation CLI for AI agents",
+    "language": "Rust",
+    "stars": 47628,
+    "stars_today": 815,
+    "relevance_score": 0
+  },
+  {
+    "id": "meta_astryx",
+    "full_name": "meta/astryx",
+    "owner": "meta",
+    "name": "astryx",
+    "url": "https://github.com/meta/astryx",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        meta /\n\n      astryx  \n\n    \n      An open source design system that's fully customizable and agent ready",
+    "language": "TypeScript",
+    "stars": 16869,
+    "stars_today": 875,
+    "relevance_score": 0
+  },
+  {
+    "id": "anthropics_skills",
+    "full_name": "anthropics/skills",
+    "owner": "anthropics",
+    "name": "skills",
+    "url": "https://github.com/anthropics/skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        anthropics /\n\n      skills  \n\n    \n      Public repository for Agent Skills",
+    "language": "Python",
+    "stars": 189673,
+    "stars_today": 792,
+    "relevance_score": 0
+  },
+  {
+    "id": "google-deepmind_mujoco",
+    "full_name": "google-deepmind/mujoco",
+    "owner": "google-deepmind",
+    "name": "mujoco",
+    "url": "https://github.com/google-deepmind/mujoco",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-deepmind /\n\n      mujoco  \n\n    \n      Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+    "language": "C++",
+    "stars": 16434,
+    "stars_today": 41,
+    "relevance_score": 0
+  }
+]
