@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ruvnet_RuView",
+    "full_name": "ruvnet/RuView",
+    "owner": "ruvnet",
+    "name": "RuView",
+    "url": "https://github.com/ruvnet/RuView",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ruvnet /\n\n      RuView  \n\n    \n      π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+    "language": "Rust",
+    "stars": 103564,
+    "stars_today": 172,
+    "relevance_score": 75
+  },
+  {
+    "id": "ZhuLinsen_daily_stock_analysis",
+    "full_name": "ZhuLinsen/daily_stock_analysis",
+    "owner": "ZhuLinsen",
+    "name": "daily_stock_analysis",
+    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ZhuLinsen /\n\n      daily_stock_analysis  \n\n    \n      LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+    "language": "Python",
+    "stars": 69076,
+    "stars_today": 506,
+    "relevance_score": 30
+  },
+  {
+    "id": "anthropics_skills",
+    "full_name": "anthropics/skills",
+    "owner": "anthropics",
+    "name": "skills",
+    "url": "https://github.com/anthropics/skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        anthropics /\n\n      skills  \n\n    \n      Public repository for Agent Skills",
+    "language": "Python",
+    "stars": 191217,
+    "stars_today": 1038,
+    "relevance_score": 0
+  },
+  {
+    "id": "meta_astryx",
+    "full_name": "meta/astryx",
+    "owner": "meta",
+    "name": "astryx",
+    "url": "https://github.com/meta/astryx",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        meta /\n\n      astryx  \n\n    \n      An open source design system that's fully customizable and agent ready",
+    "language": "TypeScript",
+    "stars": 20517,
+    "stars_today": 3278,
+    "relevance_score": 0
+  },
+  {
+    "id": "sherlock-project_sherlock",
+    "full_name": "sherlock-project/sherlock",
+    "owner": "sherlock-project",
+    "name": "sherlock",
+    "url": "https://github.com/sherlock-project/sherlock",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        sherlock-project /\n\n      sherlock  \n\n    \n      Hunt down social media accounts by username across social networks",
+    "language": "Python",
+    "stars": 107451,
+    "stars_today": 4267,
+    "relevance_score": 0
+  },
+  {
+    "id": "google-deepmind_mujoco",
+    "full_name": "google-deepmind/mujoco",
+    "owner": "google-deepmind",
+    "name": "mujoco",
+    "url": "https://github.com/google-deepmind/mujoco",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-deepmind /\n\n      mujoco  \n\n    \n      Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+    "language": "C++",
+    "stars": 16999,
+    "stars_today": 574,
+    "relevance_score": 0
+  },
+  {
+    "id": "anthropics_claude-quickstarts",
+    "full_name": "anthropics/claude-quickstarts",
+    "owner": "anthropics",
+    "name": "claude-quickstarts",
+    "url": "https://github.com/anthropics/claude-quickstarts",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        anthropics /\n\n      claude-quickstarts  \n\n    \n      A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+    "language": "Python",
+    "stars": 20102,
+    "stars_today": 551,
+    "relevance_score": 0
+  },
+  {
+    "id": "garrytan_gbrain",
+    "full_name": "garrytan/gbrain",
+    "owner": "garrytan",
+    "name": "gbrain",
+    "url": "https://github.com/garrytan/gbrain",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        garrytan /\n\n      gbrain  \n\n    \n      Garry's Opinionated OpenClaw/Hermes Agent Brain",
+    "language": "TypeScript",
+    "stars": 32244,
+    "stars_today": 216,
+    "relevance_score": 0
+  }
+]
