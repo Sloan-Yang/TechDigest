@@ -1,0 +1,106 @@
+[
+  {
+    "id": "2611.12886",
+    "title": "Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning",
+    "abstract": "Agentic reinforcement learning (RL) and multi-teacher on-policy distillation (MOPD) offer complementary routes to post-training. For visual agents, however, tool use presents two related challenges. Models may overlook useful tool-returned observations, while poorly grounded actions can limit the evidence available for subsequent distillation. We introduce Reframe, a post-training framework that treats the observation state, rather than only the output distribution, as an object of alignment. First, Ground-Drop-GRPO (GD-GRPO) trains spatial and temporal specialists with evidence-aware rewards and stochastic removal of the original visual input, encouraging them to acquire grounded evidence and use the returned observations. Second, Observation-Gated-MOPD (OG-MOPD) replaces deficient tool actions with canonical ones mid-rollout and resumes distillation from the repaired observation. The two stages complement each other, as learning to rely on tool-returned observations can help the policy benefit from observation repair. Neither stage requires a task-specific SFT cold start. Extensive experiments over 14 image and video benchmarks demonstrate that Reframe outperforms both Mix-RL and vanilla MOPD. Ablation results show that GD-GRPO increases observation dependence and tool gain compared with outcome-based GRPO.",
+    "authors": [
+      "Haozhi Yuan",
+      "Handong Li",
+      "Yifan Zhang",
+      "Qianshan Wei"
+    ],
+    "published": "2026-11-09",
+    "updated": "2026-11-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.12886.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.12886",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.12885",
+    "title": "World In-Context Learning for Agentic Robot Manipulation",
+    "abstract": "Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript",
+    "authors": [
+      "Heng Fang",
+      "Zehui Guo",
+      "Yuehan Zhang",
+      "Mingyang Du",
+      "Dingkang Liang",
+      "Xiang Bai"
+    ],
+    "published": "2026-11-09",
+    "updated": "2026-11-09",
+    "categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.12885.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.12885",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.12884",
+    "title": "Guiding Data Allocation for Robust Subpopulation Generalization",
+    "abstract": "Machine learning models often achieve high average accuracy in the training data while performing poorly on test data due to subpopulation shift. A common data-centric solution is to enforce balanced subgroup proportions, but full balance can be costly, infeasible, and not always necessary. In this work, we study whether balanced training data is the unique optimal configuration for robust subpopulation generalization. We extend a Gaussian feature-model framework to theoretically characterize the performance landscape across general training subgroup distributions. We show that multiple configurations, including substantially imbalanced ones, can perform comparably to the balanced one. We further derive gradient-based directions for adjusting subgroup proportions to improve adjusted accuracy and worst-group accuracy more efficiently. These findings suggest that strategically allocating data offers a more flexible and principled path to robust performance than simple balancing. The code is available at https://github.com/zhaoyingpan/subpop-data-allocation.",
+    "authors": [
+      "Zhaoying Pan",
+      "Yipei Wang",
+      "Shenyu Lu",
+      "Xiaoqian Wang"
+    ],
+    "published": "2026-11-09",
+    "updated": "2026-11-09",
+    "categories": [
+      "cs.LG",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.12884.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.12884",
+    "primary_category": "cs.LG"
+  },
+  {
+    "id": "2611.12883",
+    "title": "Beyond Modality Preference: Controlling Multimodal Arbitration under Modality Conflict in MLLMs",
+    "abstract": "Multimodal large language models (MLLMs) integrate information across modalities, but become unreliable when those modalities disagree. Under conflicting inputs, MLLMs may favor modalities that are not the most reliable for the task, thus motivating inference-time control of modality arbitration. We identify a small set of attention heads, termed arbitration heads, that causally influence whether predictions follow visual or textual evidence. Building on this, we introduce a lightweight, training-free intervention that biases these heads toward a designated trusted modality at inference time. The identified heads are stable across calibration set sizes and generalize across settings, and steering them enables effective bidirectional control of modality reliance across diverse benchmarks. Our findings identify an effective control mechanism to align MLLM predictions with task-specified modality priorities. The code is available at https://github.com/zhaoyingpan/modality-arbitration.",
+    "authors": [
+      "Zhaoying Pan",
+      "Shenyu Lu",
+      "Jun Hui Wong",
+      "Junyi Chai",
+      "Xiaoqian Wang"
+    ],
+    "published": "2026-11-09",
+    "updated": "2026-11-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.12883.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.12883",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.12879",
+    "title": "Grasping the Future: Joint 3D Hand-Object Forecasting From Internet Videos",
+    "abstract": "To interact with an object, we need to anticipate both how it will move and how our hands should move with it. Human videos capture these relationships across everyday activities, offering a natural source for learning to predict future interactions. Learning from them requires recovering motion from completed interactions and using it to anticipate what could happen next. We present $\\textit{Grasping-the-Future}$, a unified generative model of joint 3D hand-object motion, including wrist motion, finger articulation, and object position and orientation. Through masked spatiotemporal completion and flow matching, we train a single model for several prediction tasks: forecasting future interactions, predicting hand motion given object motion or vice versa, generating both trajectories toward a desired final object pose, and completing partially observed interactions. We explicitly model hand-object relations and incorporate contact constraints to help preserve grasp relationships during motion. To obtain 3D supervision from internet videos, we develop a scalable pipeline that combines pretrained perception models with joint geometric optimization to reconstruct completed interactions. We combine these recovered trajectories with annotated interaction datasets as training data for all tasks. We demonstrate strong performance across all tasks, outperforming released forecasters on datasets with 3D annotations. Moreover, we show geometric and physical plausibility of the predicted trajectories by retargeting them to a robotic embodiment. Videos are available at https://grasping-the-future.github.io.",
+    "authors": [
+      "Rustin Soraki",
+      "Matthew Wallingford",
+      "Ryan Aby",
+      "Brandon Chee",
+      "Jason Ren",
+      "Ali Farhadi",
+      "Homanga Bharadhwaj",
+      "Roozbeh Mottaghi"
+    ],
+    "published": "2026-11-09",
+    "updated": "2026-11-09",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.12879.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.12879",
+    "primary_category": "cs.CV"
+  }
+]

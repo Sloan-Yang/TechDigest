@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-10</div>
+        <div class="page-date">📅 2026-11-11</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 5
+            计算机视觉: 4 | 机器学习: 1
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.10940</span>
+          <span class="paper-id">2611.12886</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.10940" target="_blank">Semantic Synthesis over Brute-Force Search: LLM-Guided Transformation Design for Efficient Learning</a>
+        <a href="https://arxiv.org/abs/2611.12886" target="_blank">Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning</a>
       </h3>
       
-      <p class="paper-authors">Usha Shrestha, Radu Timofte, Dmitry Ignatov</p>
+      <p class="paper-authors">Haozhi Yuan, Handong Li, Yifan Zhang, Qianshan Wei</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Data transformation pipelines shape the training distribution in computer vision, but designing them is a computationally expensive problem. We investigate whether large language models can enable efficient discovery by synthesizing executable transformation programs outside predefined augmentation spaces. We compare nine strategies under a unified training protocol, including standard augmentation policies, brute-force search, direct code generation with two LLMs, and performance-guided generation using LLMs fine-tuned on accuracy-ordered transformation pairs. When the best candidates are retrained for 20 epochs, LLM-generated transformation programs lead on every dataset, reaching 0.8877 accuracy on CIFAR-10, 0.5825 on CIFAR-100, and 0.9588 on SVHN, surpassing brute-force search over 6,000 candidates. The best transform on CIFAR-10 and SVHN comes from a fine-tuned generator using 270 candidates, while the best on CIFAR-100 comes from an off-the-shelf generator using only 10. This needs 22x fewer candidate evaluations in the generation step and 600x fewer for off-the-shelf generations, relative to brute-force search. Beyond transformation discovery, we analyze the reliability of the reduced-budget evaluation commonly used for augmentation search. Correlating one-epoch selection scores with 20-epoch outcomes reveals strong, weak, and absent predictive relationships depending on the dataset and architecture, with correlations ranging from 0.756 to near zero. A positive control indicates that range restriction alone is unlikely to explain the low correlations. Our results indicate that semantic synthesis with code LLMs provides an efficient alternative to search-based transformation discovery and highlight the importance of validating evaluation fidelity when optimizing data transformations.</p>
+        <p>Agentic reinforcement learning (RL) and multi-teacher on-policy distillation (MOPD) offer complementary routes to post-training. For visual agents, however, tool use presents two related challenges. Models may overlook useful tool-returned observations, while poorly grounded actions can limit the evidence available for subsequent distillation. We introduce Reframe, a post-training framework that treats the observation state, rather than only the output distribution, as an object of alignment. First, Ground-Drop-GRPO (GD-GRPO) trains spatial and temporal specialists with evidence-aware rewards and stochastic removal of the original visual input, encouraging them to acquire grounded evidence and use the returned observations. Second, Observation-Gated-MOPD (OG-MOPD) replaces deficient tool actions with canonical ones mid-rollout and resumes distillation from the repaired observation. The two stages complement each other, as learning to rely on tool-returned observations can help the policy benefit from observation repair. Neither stage requires a task-specific SFT cold start. Extensive experiments over 14 image and video benchmarks demonstrate that Reframe outperforms both Mix-RL and vanilla MOPD. Ablation results show that GD-GRPO increases observation dependence and tool gain compared with outcome-based GRPO.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.10940" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.10940.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.12886" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.12886.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.10917</span>
+          <span class="paper-id">2611.12885</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.10917" target="_blank">Remembering to Reason: Structured Memory for Scene and Workflow Understanding in Robot-Assisted Surgery</a>
+        <a href="https://arxiv.org/abs/2611.12885" target="_blank">World In-Context Learning for Agentic Robot Manipulation</a>
       </h3>
       
-      <p class="paper-authors">Zhiran Zhang, Hu Wang, Yichen Wu, Yutong Xie</p>
+      <p class="paper-authors">Heng Fang, Zehui Guo, Yuehan Zhang, Mingyang Du, Dingkang Liang 等 (6 位作者)</p>
       
       <div class="paper-summary">
         
@@ -378,12 +378,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Surgical video understanding is an important foundation for intelligent assistance in robot-assisted surgery. Similar surgical views can reflect different actions or procedural stages. Interpreting these views requires access to earlier observations, yet frame-centric prompting leaves this history unavailable. We introduce MemSurg, a framework that remembers surgical observations before reasoning over them. Its structured memory graph stores timestamped entity categories, locations, motion cues, and interaction summaries. Chronological links preserve recent context, while entity-associated links connect recurring observations across the procedure. Task-adaptive retrieval then supplies evidence-grounded prompts for scene and workflow reasoning, supporting both frozen inference and memory-conditioned supervised fine-tuning. Evaluation on robot-assisted prostatectomy and two complementary surgical benchmarks shows a 10.43-percentage-point gain over SurgRAW with GPT-4o. Memory conditioning adds 6.52 points under matched Qwen3-VL-8B fine-tuning, and an inference-time plug-in adds 7.04 points to EndoChat. These results support structured memory as a reusable source of procedural evidence for surgical video understanding. Our code will be publicly released.</p>
+        <p>Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.10917" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.10917.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.12885" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.12885.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器学习</span>
+          <span class="paper-id">2611.12884</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.12884" target="_blank">Guiding Data Allocation for Robust Subpopulation Generalization</a>
+      </h3>
+      
+      <p class="paper-authors">Zhaoying Pan, Yipei Wang, Shenyu Lu, Xiaoqian Wang</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Machine learning models often achieve high average accuracy in the training data while performing poorly on test data due to subpopulation shift. A common data-centric solution is to enforce balanced subgroup proportions, but full balance can be costly, infeasible, and not always necessary. In this work, we study whether balanced training data is the unique optimal configuration for robust subpopulation generalization. We extend a Gaussian feature-model framework to theoretically characterize the performance landscape across general training subgroup distributions. We show that multiple configurations, including substantially imbalanced ones, can perform comparably to the balanced one. We further derive gradient-based directions for adjusting subgroup proportions to improve adjusted accuracy and worst-group accuracy more efficiently. These findings suggest that strategically allocating data offers a more flexible and principled path to robust performance than simple balancing. The code is available at https://github.com/zhaoyingpan/subpop-data-allocation.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.12884" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.12884.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.10908</span>
+          <span class="paper-id">2611.12883</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.10908" target="_blank">Beyond Real or Fake: A Dual-Channel Authenticity and Reasoning Protocol for Photographic Assessment</a>
+        <a href="https://arxiv.org/abs/2611.12883" target="_blank">Beyond Modality Preference: Controlling Multimodal Arbitration under Modality Conflict in MLLMs</a>
       </h3>
       
-      <p class="paper-authors">Xiaoxiao Li, Ruinan Jin, Lili Meng, Miaosen Wang, Athula Balachandran 等 (6 位作者)</p>
+      <p class="paper-authors">Zhaoying Pan, Shenyu Lu, Jun Hui Wong, Junyi Chai, Xiaoqian Wang</p>
       
       <div class="paper-summary">
         
@@ -410,12 +442,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Forensic verification has converged on a binary "real vs. fake" label that confates fully synthetic, tampered, and AI-retouched images despite their very different consequences. We argue that GenAI manipulations decompose along two complementary channels: a camera channel of sensor fingerprints (destroyed by neural processing), and a semantic channel of scene-level coherence (disrupted by content edits). Each manipulation type leaves a distinctive two-channel signature. We instantiate this taxonomy in 2CAP (2-Channel Authenticity Protocol), pairing a contrastively-trained camera encoder with a frozen semantic encoder to serve two applications on a shared backbone: (i) four-class authenticity classification via cross-attention fusion with learnable reliability weights; and (ii) evidence generation, where an authentic image serves as a reference for a query and the two encoders produce per-channel alignment scores together with a patch-level saliency map. These signals are supplied as privileged context to a frozen Vision-Language Model (VLM) through an Observe-Generate-Refine loop, yielding explanations with localization without forensic fine-tuning. On a multi-source benchmark, 2CAP attains the best classification performance, including strong retouching detection where existing methods fail, and improves explanation quality.</p>
+        <p>Multimodal large language models (MLLMs) integrate information across modalities, but become unreliable when those modalities disagree. Under conflicting inputs, MLLMs may favor modalities that are not the most reliable for the task, thus motivating inference-time control of modality arbitration. We identify a small set of attention heads, termed arbitration heads, that causally influence whether predictions follow visual or textual evidence. Building on this, we introduce a lightweight, training-free intervention that biases these heads toward a designated trusted modality at inference time. The identified heads are stable across calibration set sizes and generalize across settings, and steering them enables effective bidirectional control of modality reliance across diverse benchmarks. Our findings identify an effective control mechanism to align MLLM predictions with task-specified modality priorities. The code is available at https://github.com/zhaoyingpan/modality-arbitration.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.10908" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.10908.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.12883" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.12883.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +456,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.10875</span>
+          <span class="paper-id">2611.12879</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.10875" target="_blank">REDiff-AD: No Training and No Target Masks for Industrial Anomaly Image Generation via Diversity-Driven In-Context MMDiT</a>
+        <a href="https://arxiv.org/abs/2611.12879" target="_blank">Grasping the Future: Joint 3D Hand-Object Forecasting From Internet Videos</a>
       </h3>
       
-      <p class="paper-authors">Chih-Yu Tsai, Chih-Heng Chang, Jian-Jiun Ding</p>
+      <p class="paper-authors">Rustin Soraki, Matthew Wallingford, Ryan Aby, Brandon Chee, Jason Ren 等 (8 位作者)</p>
       
       <div class="paper-summary">
         
@@ -442,44 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Industrial anomaly detection is challenged by the scarcity and diversity of real defects, leaving insufficient anomalous data to effectively train downstream models. Existing anomaly generation methods often require product-specific fine-tuning, target mask annotation, or costly procedures to achieve realistic and diverse defects. We propose REDiff-AD, a framework that requires neither model training nor target masks and introduces Rectified Flow MMDiT into industrial anomaly generation for efficient sampling with fewer generation steps. Given a normal product image and a single masked reference anomaly, REDiff-AD employs in-context learning to transfer the defect appearance from the reference into the normal image. Internal attention signals generated during this process are further reused to localize the synthesized anomaly, while edge and color cues refine the localization into pixel-level pseudo-masks. Two lightweight modules further improve generation quality: adaptive reference conditioning enhances defect fidelity, while diversity guidance promotes varied defect patterns without additional training. Experiments demonstrate that REDiff-AD can well address the tradeoff between realism and diversity for anomaly pattern generation and achieve competitive downstream anomaly classification, detection, and localization performance. These results show that REDiff-AD is a simple, efficient, and effective solution for large-scale anomaly data augmentation and pixel-level data construction. Github code: https://github.com/efdefe4-droid/REDiff-AD</p>
+        <p>To interact with an object, we need to anticipate both how it will move and how our hands should move with it. Human videos capture these relationships across everyday activities, offering a natural source for learning to predict future interactions. Learning from them requires recovering motion from completed interactions and using it to anticipate what could happen next. We present $\textit{Grasping-the-Future}$, a unified generative model of joint 3D hand-object motion, including wrist motion, finger articulation, and object position and orientation. Through masked spatiotemporal completion and flow matching, we train a single model for several prediction tasks: forecasting future interactions, predicting hand motion given object motion or vice versa, generating both trajectories toward a desired final object pose, and completing partially observed interactions. We explicitly model hand-object relations and incorporate contact constraints to help preserve grasp relationships during motion. To obtain 3D supervision from internet videos, we develop a scalable pipeline that combines pretrained perception models with joint geometric optimization to reconstruct completed interactions. We combine these recovered trajectories with annotated interaction datasets as training data for all tasks. We demonstrate strong performance across all tasks, outperforming released forecasters on datasets with 3D annotations. Moreover, we show geometric and physical plausibility of the predicted trajectories by retargeting them to a robotic embodiment. Videos are available at https://grasping-the-future.github.io.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.10875" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.10875.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.10869</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.10869" target="_blank">Interactive Person Retrieval with On-the-Fly Visual Feedback</a>
-      </h3>
-      
-      <p class="paper-authors">Lyucheng Qian, John Yuehan Zhang, Pingyu Wang</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Traditional text-based person retrieval (TPR) assumes that a witness provides a complete description at once, whereas interactive person retrieval (Inter-PR) refines a partial description through question-answer exchanges. In this setting, the questioner inspects retrieved candidates to decide what evidence to request next, while the answerer sees only the witness-side memory and cannot report candidate-specific visual differences. Existing methods mainly learn offline question orderings, leaving this visual-feedback loop underexplored. To address this limitation, we introduce visual-feedback interactive person retrieval (VFI-PR), a new interactive retrieval paradigm in which retrieved candidates produce visual feedback that becomes evidence for subsequent questioning and re-ranking. To support training and evaluation in this setting, we construct VFI-PEDES, a dataset and evaluation protocol for visual-feedback interaction, and propose VFI-ReID, a framework that learns to use visual feedback during interactive person retrieval. Through the Dynamic Accumulated-evidence Retriever (DAR) and retrieval-aware question optimization, VFI-ReID adapts retrieval and question generation to evolving evidence states, turning visual feedback into complementary evidence for subsequent retrieval. Experiments show that VFI-ReID consistently improves retrieval across VFI-PR interaction stages, demonstrating the utility of visual feedback for interactive person retrieval and outperforming existing Inter-PR baselines.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.10869" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.10869.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.12879" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.12879.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 285 &nbsp;💬 648</span>
+          <span class="paper-id">▲ 207 &nbsp;💬 81</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50429068" target="_blank">Claude Fable 5.2 and Mythos 5.2</a>
+        <a href="https://news.ycombinator.com/item?id=50447074" target="_blank">After 7 months, Glasswing overwelms maintainers with underwhelming findings</a>
       </h3>
-      <p class="paper-authors">by lairv</p>
+      <p class="paper-authors">by panic</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50429068" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50447074" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.vulncheck.com/blog/anthropic-glasswing-november-update" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 527 &nbsp;💬 271</span>
+          <span class="paper-id">▲ 322 &nbsp;💬 240</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50431058" target="_blank">USPS now offers official ZIP Code boundary polygons</a>
+        <a href="https://news.ycombinator.com/item?id=50445401" target="_blank">Scion is back and is going to sell a kei truck in America</a>
       </h3>
-      <p class="paper-authors">by munro</p>
+      <p class="paper-authors">by NaOH</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50431058" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://postalpro.usps.com/zcb" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50445401" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 487 &nbsp;💬 269</span>
+          <span class="paper-id">▲ 679 &nbsp;💬 156</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50427362" target="_blank">Payments Canada announces launch of Canada's Real-Time Rail (RTR) payment system</a>
+        <a href="https://news.ycombinator.com/item?id=50442736" target="_blank">.name Grandfathered</a>
       </h3>
-      <p class="paper-authors">by ocd</p>
+      <p class="paper-authors">by p4bl0</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50427362" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50442736" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://neil.fraser.name/news/2026/11/10/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 302 &nbsp;💬 26</span>
+          <span class="paper-id">▲ 705 &nbsp;💬 252</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50429734" target="_blank">E-means: Outperforming k-means in one-tenth the epochs</a>
+        <a href="https://news.ycombinator.com/item?id=50441707" target="_blank">Smart home devices should work without the internet</a>
       </h3>
-      <p class="paper-authors">by porridgeraisin</p>
+      <p class="paper-authors">by skittleson</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50429734" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://e-means.github.io/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50441707" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://docodethatmatters.com/home-automation-overnight-success/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 885 &nbsp;💬 141</span>
+          <span class="paper-id">▲ 121 &nbsp;💬 25</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50424581" target="_blank">Foldable Flight: The Best Paper Airplanes</a>
+        <a href="https://news.ycombinator.com/item?id=50446246" target="_blank">Six Math Essentials by Terence Tao</a>
       </h3>
-      <p class="paper-authors">by vismit2000</p>
+      <p class="paper-authors">by digital55</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50424581" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.foldableflight.com" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50446246" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://teorth.github.io/tao-web/six-math-essentials.html" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 55 &nbsp;💬 23</span>
+          <span class="paper-id">▲ 292 &nbsp;💬 163</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50434264" target="_blank">Horible public key tricks</a>
+        <a href="https://news.ycombinator.com/item?id=50443824" target="_blank">Synaptics patent claims stop work on DisplayLink drivers</a>
       </h3>
-      <p class="paper-authors">by Curiositry</p>
+      <p class="paper-authors">by speckx</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50434264" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://maurycyz.com/projects/badcert/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50443824" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://lwn.net/SubscriberLink/1102549/acbc92e00cee3a3f/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 41 &nbsp;💬 21</span>
+          <span class="paper-id">▲ 229 &nbsp;💬 240</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50434310" target="_blank">Locating the source of a mysterious beep</a>
+        <a href="https://news.ycombinator.com/item?id=50444129" target="_blank">Starlink Mini 2</a>
       </h3>
-      <p class="paper-authors">by bigwheels</p>
+      <p class="paper-authors">by robertjfclarke</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50434310" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://simonwillison.net/2026/Nov/9/mysterious-beeps/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50444129" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://starlink.com/mini-2" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 16 &nbsp;💬 1</span>
+          <span class="paper-id">▲ 305 &nbsp;💬 81</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50425847" target="_blank">The Race to Build a "Find My" for AI Chips</a>
+        <a href="https://news.ycombinator.com/item?id=50443427" target="_blank">Val Town is winding down</a>
       </h3>
-      <p class="paper-authors">by oldnetguy</p>
+      <p class="paper-authors">by tosh</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50425847" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://spectrum.ieee.org/find-my-ai-chip" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50443427" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.val.town/winding-down" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -640,15 +640,62 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 115,197 &nbsp;+465 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        addyosmani /
+
+      agent-skills  
+
+    
+      Production-grade engineering skills for AI coding agents.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/addyosmani/agent-skills" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
           <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 103,564 &nbsp;+172 today</span>
+          <span class="paper-id">⭐ 6,844 &nbsp;+192 today</span>
         </div>
-        <span class="score-badge">推荐度 75/100</span>
+        <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a>
+        <a href="https://github.com/sponsors/tokio-rs" target="_blank">sponsors/tokio-rs</a>
       </h3>
-      <p class="paper-authors">Star
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
 
 
   
@@ -659,83 +706,15 @@
 
 
       
-        ruvnet /
+        tokio-rs /
 
-      RuView  
+      topcoat  
 
     
-      π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.</p>
+      A batteries-included framework for building web apps</p>
       
       <div class="paper-links">
-        <a href="https://github.com/ruvnet/RuView" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 69,076 &nbsp;+506 today</span>
-        </div>
-        <span class="score-badge">推荐度 30/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank">ZhuLinsen/daily_stock_analysis</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        ZhuLinsen /
-
-      daily_stock_analysis  
-
-    
-      LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 191,217 &nbsp;+1038 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        anthropics /
-
-      skills  
-
-    
-      Public repository for Agent Skills</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/anthropics/skills" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/tokio-rs" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -743,7 +722,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 20,517 &nbsp;+3278 today</span>
+          <span class="paper-id">⭐ 22,953 &nbsp;+3108 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -777,12 +756,12 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 107,451 &nbsp;+4267 today</span>
+          <span class="paper-id">⭐ 192,371 &nbsp;+1679 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sherlock-project/sherlock" target="_blank">sherlock-project/sherlock</a>
+        <a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -795,49 +774,15 @@
 
 
       
-        sherlock-project /
+        anthropics /
 
-      sherlock  
+      skills  
 
     
-      Hunt down social media accounts by username across social networks</p>
+      Public repository for Agent Skills</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sherlock-project/sherlock" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 16,999 &nbsp;+574 today</span>
-        </div>
-        <span class="score-badge">推荐度 0/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/google-deepmind/mujoco" target="_blank">google-deepmind/mujoco</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        google-deepmind /
-
-      mujoco  
-
-    
-      Multi-Joint dynamics with Contact. A general purpose physics simulator.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/google-deepmind/mujoco" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/anthropics/skills" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -845,7 +790,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 20,102 &nbsp;+551 today</span>
+          <span class="paper-id">⭐ 20,519 &nbsp;+531 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -878,13 +823,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 32,244 &nbsp;+216 today</span>
+          <span class="category-badge gh-badge">C++</span>
+          <span class="paper-id">⭐ 17,380 &nbsp;+456 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/garrytan/gbrain" target="_blank">garrytan/gbrain</a>
+        <a href="https://github.com/google-deepmind/mujoco" target="_blank">google-deepmind/mujoco</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -897,15 +842,83 @@
 
 
       
-        garrytan /
+        google-deepmind /
 
-      gbrain  
+      mujoco  
 
     
-      Garry's Opinionated OpenClaw/Hermes Agent Brain</p>
+      Multi-Joint dynamics with Contact. A general purpose physics simulator.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/garrytan/gbrain" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/google-deepmind/mujoco" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Ruby</span>
+          <span class="paper-id">⭐ 11,990 &nbsp;+159 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/we-promise/sure" target="_blank">we-promise/sure</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        we-promise /
+
+      sure  
+
+    
+      The personal finance app for everyone (by everyone)</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/we-promise/sure" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 6,692 &nbsp;+790 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/homeassistant-ai/ha-mcp" target="_blank">homeassistant-ai/ha-mcp</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        homeassistant-ai /
+
+      ha-mcp  
+
+    
+      Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/homeassistant-ai/ha-mcp" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
