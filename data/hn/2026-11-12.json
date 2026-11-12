@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50459745,
+    "title": "93% of paint splatters are valid Perl programs (2019)",
+    "url": "https://www.mcmillen.dev/sigbovik/",
+    "text": "",
+    "score": 184,
+    "comments": 26,
+    "by": "zenincognito",
+    "time": 1794436463,
+    "hn_url": "https://news.ycombinator.com/item?id=50459745",
+    "relevance_score": 0
+  },
+  {
+    "id": 50456631,
+    "title": "AWS emulator",
+    "url": "https://github.com/aws/aws-emulator",
+    "text": "<a href=\"https:&#x2F;&#x2F;www.aboutamazon.com&#x2F;news&#x2F;aws&#x2F;how-autonomous-ai-agents-built-aws-emulator\" rel=\"nofollow\">https:&#x2F;&#x2F;www.aboutamazon.com&#x2F;news&#x2F;aws&#x2F;how-autonomous-ai-agent...</a><p><a href=\"https:&#x2F;&#x2F;www.allthingsdistributed.com&#x2F;2026&#x2F;11&#x2F;aws-emulator-and-the-engineers-job-when-agents-write-the-code.html\" rel=\"nofollow\">https:&#x2F;&#x2F;www.allthingsdistributed.com&#x2F;2026&#x2F;11&#x2F;aws-emulator-an...</a>",
+    "score": 699,
+    "comments": 220,
+    "by": "super_linear",
+    "time": 1794421298,
+    "hn_url": "https://news.ycombinator.com/item?id=50456631",
+    "relevance_score": 0
+  },
+  {
+    "id": 50450488,
+    "title": "Tim Peters has died",
+    "url": "https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028",
+    "text": "<a href=\"https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;Python&#x2F;s&#x2F;2Cm5dBcvQw\" rel=\"nofollow\">https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;Python&#x2F;s&#x2F;2Cm5dBcvQw</a>",
+    "score": 896,
+    "comments": 94,
+    "by": "ayhanfuat",
+    "time": 1794380597,
+    "hn_url": "https://news.ycombinator.com/item?id=50450488",
+    "relevance_score": 0
+  },
+  {
+    "id": 50459485,
+    "title": "Lock Your GitHub Actions",
+    "url": "https://hugovk.dev/blog/2026/lock-github-actions/",
+    "text": "",
+    "score": 147,
+    "comments": 25,
+    "by": "gslin",
+    "time": 1794435401,
+    "hn_url": "https://news.ycombinator.com/item?id=50459485",
+    "relevance_score": 0
+  },
+  {
+    "id": 50458900,
+    "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
+    "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
+    "text": "",
+    "score": 410,
+    "comments": 395,
+    "by": "herpderperator",
+    "time": 1794432275,
+    "hn_url": "https://news.ycombinator.com/item?id=50458900",
+    "relevance_score": 0
+  },
+  {
+    "id": 50455394,
+    "title": "A false smoke alarm almost drowned Jane Street's only NYC datacenter",
+    "url": "https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/",
+    "text": "",
+    "score": 425,
+    "comments": 215,
+    "by": "mbac32768",
+    "time": 1794415124,
+    "hn_url": "https://news.ycombinator.com/item?id=50455394",
+    "relevance_score": 0
+  },
+  {
+    "id": 50456791,
+    "title": "Gemini Decisions API",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+    "text": "",
+    "score": 288,
+    "comments": 90,
+    "by": "iamdelirium",
+    "time": 1794421962,
+    "hn_url": "https://news.ycombinator.com/item?id=50456791",
+    "relevance_score": 0
+  },
+  {
+    "id": 50460154,
+    "title": "A general purpose Apple Silicon layer for x86-64 PCs",
+    "url": "https://github.com/tylertms/Stela",
+    "text": "",
+    "score": 63,
+    "comments": 19,
+    "by": "iceboundrock",
+    "time": 1794438158,
+    "hn_url": "https://news.ycombinator.com/item?id=50460154",
+    "relevance_score": 0
+  }
+]

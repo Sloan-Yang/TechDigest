@@ -1,0 +1,98 @@
+[
+  {
+    "id": "addyosmani_agent-skills",
+    "full_name": "addyosmani/agent-skills",
+    "owner": "addyosmani",
+    "name": "agent-skills",
+    "url": "https://github.com/addyosmani/agent-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        addyosmani /\n\n      agent-skills  \n\n    \n      Production-grade engineering skills for AI coding agents.",
+    "language": "JavaScript",
+    "stars": 116010,
+    "stars_today": 787,
+    "relevance_score": 85
+  },
+  {
+    "id": "ZhuLinsen_daily_stock_analysis",
+    "full_name": "ZhuLinsen/daily_stock_analysis",
+    "owner": "ZhuLinsen",
+    "name": "daily_stock_analysis",
+    "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ZhuLinsen /\n\n      daily_stock_analysis  \n\n    \n      LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+    "language": "Python",
+    "stars": 70375,
+    "stars_today": 278,
+    "relevance_score": 30
+  },
+  {
+    "id": "meta_astryx",
+    "full_name": "meta/astryx",
+    "owner": "meta",
+    "name": "astryx",
+    "url": "https://github.com/meta/astryx",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        meta /\n\n      astryx  \n\n    \n      An open source design system that's fully customizable and agent ready",
+    "language": "TypeScript",
+    "stars": 25161,
+    "stars_today": 2776,
+    "relevance_score": 0
+  },
+  {
+    "id": "GoogleChrome_modern-web-guidance-src",
+    "full_name": "GoogleChrome/modern-web-guidance-src",
+    "owner": "GoogleChrome",
+    "name": "modern-web-guidance-src",
+    "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+    "description": "",
+    "language": "TypeScript",
+    "stars": 1840,
+    "stars_today": 159,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_shadcn",
+    "full_name": "sponsors/shadcn",
+    "owner": "sponsors",
+    "name": "shadcn",
+    "url": "https://github.com/sponsors/shadcn",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        shadcn /\n\n      improve  \n\n    \n      Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+    "language": "",
+    "stars": 10983,
+    "stars_today": 361,
+    "relevance_score": 0
+  },
+  {
+    "id": "vercel-labs_agent-browser",
+    "full_name": "vercel-labs/agent-browser",
+    "owner": "vercel-labs",
+    "name": "agent-browser",
+    "url": "https://github.com/vercel-labs/agent-browser",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        vercel-labs /\n\n      agent-browser  \n\n    \n      Browser automation CLI for AI agents",
+    "language": "Rust",
+    "stars": 49934,
+    "stars_today": 708,
+    "relevance_score": 0
+  },
+  {
+    "id": "we-promise_sure",
+    "full_name": "we-promise/sure",
+    "owner": "we-promise",
+    "name": "sure",
+    "url": "https://github.com/we-promise/sure",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        we-promise /\n\n      sure  \n\n    \n      The personal finance app for everyone (by everyone)",
+    "language": "Ruby",
+    "stars": 13034,
+    "stars_today": 1078,
+    "relevance_score": 0
+  },
+  {
+    "id": "homeassistant-ai_ha-mcp",
+    "full_name": "homeassistant-ai/ha-mcp",
+    "owner": "homeassistant-ai",
+    "name": "ha-mcp",
+    "url": "https://github.com/homeassistant-ai/ha-mcp",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        homeassistant-ai /\n\n      ha-mcp  \n\n    \n      Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+    "language": "Python",
+    "stars": 7422,
+    "stars_today": 645,
+    "relevance_score": 0
+  }
+]

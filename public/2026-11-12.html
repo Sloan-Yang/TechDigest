@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDigest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdf9ed;
+            --card-bg: #ffffff;
+            --card-border: #e8ecf0;
+            --card-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            --text: #1e2128;
+            --text-muted: #6b7385;
+            --accent: #4f6ef7;
+            --accent-light: #eef1fe;
+            --hn-color: #e8600a;
+            --hn-light: #fff4ed;
+            --gh-color: #1a7f37;
+            --gh-light: #edfbf0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Lato', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .site-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .site-name span {
+            color: var(--accent);
+        }
+
+        .header-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover { color: var(--accent); }
+
+        .page-hero {
+            background: #fff;
+            border-bottom: 1px solid var(--card-border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .page-date {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .page-hero h2 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .page-stats {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .page-stats a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section-heading {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 2.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--card-shadow);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .paper-card:hover {
+            box-shadow: 0 4px 20px rgba(79,110,247,0.1);
+            border-color: #c5cef7;
+        }
+
+        .paper-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .left-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .hn-badge {
+            background: var(--hn-light) !important;
+            color: var(--hn-color) !important;
+        }
+
+        .gh-badge {
+            background: var(--gh-light) !important;
+            color: var(--gh-color) !important;
+        }
+
+        .paper-id {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-family: monospace;
+        }
+
+        .score-badge {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 0.15rem 0.6rem;
+        }
+
+        .paper-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-title a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .paper-title a:hover { color: var(--accent); }
+
+        .paper-title-zh {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            font-weight: 300;
+        }
+
+        .paper-authors {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 0.9rem;
+        }
+
+        .paper-summary {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .hn-card .paper-summary {
+            background: var(--hn-light);
+            border-left-color: var(--hn-color);
+        }
+
+        .gh-card .paper-summary {
+            background: var(--gh-light);
+            border-left-color: var(--gh-color);
+        }
+
+        .summary-section { margin-bottom: 0.35rem; }
+        .summary-section:last-child { margin-bottom: 0; }
+        .summary-section strong { color: var(--accent); }
+
+        .paper-abstract {
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        .paper-abstract summary {
+            cursor: pointer;
+            color: var(--text-muted);
+            user-select: none;
+        }
+
+        .paper-abstract p {
+            margin-top: 0.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.35rem 0.85rem;
+            background: var(--bg);
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.15s;
+        }
+
+        .link-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 2rem;
+        }
+
+        footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .site-header { padding: 1rem; }
+            .content { padding: 1rem; }
+            .paper-card { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-name" href="index.html">Tech<span>Digest</span></a>
+        <nav class="header-nav">
+            <a href="archive.html">归档</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-date">📅 2026-11-12</div>
+        <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
+        <p class="page-stats">
+            自然语言处理: 1 | 计算机视觉: 4
+            <a href="archive.html">归档 →</a>
+        </p>
+    </div>
+
+    <div class="content">
+        <div class="section-heading">📄 arXiv 论文</div>
+        
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.14519</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.14519" target="_blank">Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training</a>
+      </h3>
+      
+      <p class="paper-authors">Emre Kutlusan, Yongmin Li</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Foundation models pretrained on large natural-image collections are increasingly adapted for medical image segmentation, in the expectation that they will replace models trained for each task. Most comparisons, however, use data from the training distribution and a single task-specific baseline whose configuration is rarely justified, and therefore provide limited evidence of performance at new clinical sites. It also remains unclear how much of a foundation model must be adapted, and what determines this. We adapted a foundation model, DINOv2, with strategies ranging from tuning only its bias terms to full fine-tuning, and compared it with U-Nets and ResU-Nets trained from scratch. Experiments covered colonoscopy, breast ultrasound and dermoscopy, with testing on held-out data from the training source and on independent datasets from other institutions. The adapted foundation model generalised better on every external dataset. Within the training distribution, the task-specific models remained competitive when training data were abundant, and delineated boundaries more precisely, while the foundation model more often missed small lesions. Only a small fraction of the foundation model required adaptation, and the capacity needed was determined by the imaging domain rather than by the adaptation method. A widely used polyp test set was also found to duplicate images from another benchmark. Foundation-model adaptation is therefore warranted where models must work across sites, with capacity selected on the target domain.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.14519" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14519.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.14518</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.14518" target="_blank">Toward Foundation Detection Models via Example-Based Grounding in EM-DETR</a>
+      </h3>
+      
+      <p class="paper-authors">Sheethal Bhat, Bogdan Georgescu, Awais Mansoor, Florin C. Ghesu, Sasa Grbic 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>DeepLearning (DL)-based Computer-Aided Diagnostic (CAD) systems have shown great promise in supporting clinicians, but their performance heavily depends on the availability of large, well-annotated datasets. In medical lesion detection, the scarcity of comprehensive, stan dardized annotations and the heterogeneity of existing datasets limit the development of robust foundation models. In this work, we introduce a novel approach to building a multi-domain foundation model for le sion detection by integrating diverse medical image datasets annotated for both anatomical structures and abnormalities. We first propose a student-teacher training strategy to effectively combine datasets with heterogeneous label spaces, mitigating catastrophic forgetting, and im proving feature learning. In addition, building on our previously pro posed example-based EM-DETR framework, we adapt it to jointly learn from multiple domain-specific datasets, enabling fine-grained, example driven detection across modalities. Our model achieves state-of-the-art (SOTA) results, with image-level AUC scores exceeding previous SOTA by 1% point on four key findings in CXRs. We achieve a leading mAP50 in CXRs and mammography, surpassing EM-DETR trained on a single dataset by 2-3% points. This approach paves the way for scalable foundation models in medical imaging that leverage heterogeneous data while maintaining robust and generalizable performance.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.14518" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14518.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.14498</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.14498" target="_blank">Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion</a>
+      </h3>
+      
+      <p class="paper-authors">Alexandre Garcia-Duran, Alejandro Rodriguez-Garcia, Manuel Molano-Mazón, Alexandre Hyafil, Srikanth Ramaswamy 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with brain-like wiring are more robust at lower computational cost is unclear. We address this by benchmarking a task-optimized, continuous-time recurrent neural network of the fly visual system constrained by its synaptic connectome (FlyNet) against artificial neural networks. We compare it against CNNs, RAFT, and continuous-time recurrent neural networks without detailed connectome constraints (sCTRNN, CTRNN) on a collision-detection task within a differentiable 3D rendering pipeline. FlyNet is adversarially vulnerable but, relative to its compute, more robust to common video corruptions than RAFT, while using up to five orders of magnitude fewer FLOPs. The CTRNNs remain more robust than FlyNet across almost all tested perturbations, suggesting that connectome constraints benefit efficiency, through their low edge count, over robustness. Recurrence improves robustness to white-box attacks in RAFT and temporal context improves robustness to common corruptions. FlyNet's position and velocity representations degrade under adversarial textures but recover under counterfactual textures that restore correct classification while staying equally far from training, ruling out unfamiliar textures as the cause of failure. The reverse-phi illusion similarly disrupts these representations and inverts the same low-level motion statistic as the adversarial textures. Optimizing this input statistic alone, without access to the network, suffices to induce classification failure, attributing both perturbations to the same circuit vulnerability. Connectome-constrained models can thus surface adversarial failure mechanisms as testable hypotheses about biological perceptual vulnerabilities.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.14498" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14498.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.14496</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.14496" target="_blank">RS-JEPA: Remote Sensing Joint-Embedding Predictive Architecture with Scan-Path Views for Cross-Sensor Image Retrieval</a>
+      </h3>
+      
+      <p class="paper-authors">Tanishq Rachamalla, Srishti Kaushik, Muhammad Attique Khan, Gustau Camps-Valls, Swalpa Kumar Roy</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Cross-sensor remote sensing image retrieval aims to find scenes with the same content across heterogeneous sensors, such as SAR and optical or panchromatic (PAN) and multispectral (MS) imagery, without manual labels. Existing self-supervised methods either reconstruct sensor-specific pixel detail, align each image only with its co-registered twin, or rely on large transformers with 118-173M parameters (and up to 398M). We introduce RS-JEPA, a compact joint-embedding predictive framework built on a Vision Mamba encoder shared by both sensors. Since a state-space encoder reads an image as an ordered sequence of patches, we propose scan-path views, which treat two reading orders of the same image as two views with identical pixels and predict the hidden patches in one order from the visible patches in the other.To keep this prediction challenging, we propose Adversarial View Coupling (AVC), which learns the hardest split of the visible patches, and a neighbourhood consensus loss that aligns the scene similarities of both sensors. Extensive experiments on SAR-optical (BEN-14K, CBRSIR-VS) and PAN-MS (DSRSID) benchmarks demonstrate that RS-JEPA achieves the highest F1@5 among twelve re-implemented methods (72.92, 80.35 and 94.43) with a retrieval network of only 3.88M parameters (14.57M in training, 8-16times fewer than prior JEPA retrievers). Like prior methods, RS-JEPA trains on co-registered pairs. Our results highlight reading order as a source of self-supervised views. code: https://github.com/Tanishq251/RSJEPA.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.14496" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14496.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">自然语言处理</span>
+          <span class="paper-id">2611.14483</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.14483" target="_blank">Mechanistic Interpretability Needs a Logic of Inference</a>
+      </h3>
+      
+      <p class="paper-authors">Zhimin Hu, Chen Jiang, Hanbo Xie, N. Apurva Ratan Murty, Sashank Varma</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Neural networks are increasingly studied not merely as predictive systems, but as complex systems whose internal computations are themselves objects of scientific inquiry. Recent progress in mechanistic interpretability (MI) has made it possible to identify neurons, features, circuits, population structures, and dynamical patterns associated with model behavior. As these tools improve, attention is shifting from what can be observed inside a model to how those observations support mechanistic explanations. We examine the parallel efforts of neuroscience and MI to address this question and identify recurring inferential bottlenecks when inferring mechanisms from complex neural systems. We propose five principles and organize them into a recursive logic for a more rigorous procedure of mechanistic inference. These principles provide a framework that supports scientific discovery in two senses: it helps turn local interpretability findings into cumulative knowledge of mechanisms within models, and it makes those mechanisms sufficiently precise to generate testable hypotheses about domains beyond the models. Evidence beyond MI is ultimately required to establish what model mechanisms reveal about the world.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.14483" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14483.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🔥 Hacker News</div>
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 184 &nbsp;💬 26</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50459745" target="_blank">93% of paint splatters are valid Perl programs (2019)</a>
+      </h3>
+      <p class="paper-authors">by zenincognito</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50459745" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.mcmillen.dev/sigbovik/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 699 &nbsp;💬 220</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50456631" target="_blank">AWS emulator</a>
+      </h3>
+      <p class="paper-authors">by super_linear</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50456631" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/aws/aws-emulator" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 896 &nbsp;💬 94</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50450488" target="_blank">Tim Peters has died</a>
+      </h3>
+      <p class="paper-authors">by ayhanfuat</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50450488" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 147 &nbsp;💬 25</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50459485" target="_blank">Lock Your GitHub Actions</a>
+      </h3>
+      <p class="paper-authors">by gslin</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50459485" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://hugovk.dev/blog/2026/lock-github-actions/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 410 &nbsp;💬 395</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50458900" target="_blank">United Airlines bans AI agents from booking flights on behalf of travelers</a>
+      </h3>
+      <p class="paper-authors">by herpderperator</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50458900" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 425 &nbsp;💬 215</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50455394" target="_blank">A false smoke alarm almost drowned Jane Street's only NYC datacenter</a>
+      </h3>
+      <p class="paper-authors">by mbac32768</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50455394" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 288 &nbsp;💬 90</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50456791" target="_blank">Gemini Decisions API</a>
+      </h3>
+      <p class="paper-authors">by iamdelirium</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50456791" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+    <article class="paper-card hn-card" style="border-left: 3px solid var(--hn-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge hn-badge">HN</span>
+          <span class="paper-id">▲ 63 &nbsp;💬 19</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://news.ycombinator.com/item?id=50460154" target="_blank">A general purpose Apple Silicon layer for x86-64 PCs</a>
+      </h3>
+      <p class="paper-authors">by iceboundrock</p>
+      
+      <div class="paper-links">
+        <a href="https://news.ycombinator.com/item?id=50460154" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/tylertms/Stela" target="_blank" class="link-btn">🔗 原文</a>
+      </div>
+    </article>
+    
+        <div class="section-heading">🐙 GitHub Trending</div>
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">JavaScript</span>
+          <span class="paper-id">⭐ 116,010 &nbsp;+787 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        addyosmani /
+
+      agent-skills  
+
+    
+      Production-grade engineering skills for AI coding agents.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/addyosmani/agent-skills" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 70,375 &nbsp;+278 today</span>
+        </div>
+        <span class="score-badge">推荐度 30/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank">ZhuLinsen/daily_stock_analysis</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        ZhuLinsen /
+
+      daily_stock_analysis  
+
+    
+      LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 25,161 &nbsp;+2776 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/meta/astryx" target="_blank">meta/astryx</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        meta /
+
+      astryx  
+
+    
+      An open source design system that's fully customizable and agent ready</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/meta/astryx" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 1,840 &nbsp;+159 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank">GoogleChrome/modern-web-guidance-src</a>
+      </h3>
+      
+      
+      <div class="paper-links">
+        <a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          
+          <span class="paper-id">⭐ 10,983 &nbsp;+361 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/shadcn" target="_blank">sponsors/shadcn</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        shadcn /
+
+      improve  
+
+    
+      Use your most capable model to audit your codebase and write plans for cheaper models to execute.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/shadcn" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 49,934 &nbsp;+708 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/vercel-labs/agent-browser" target="_blank">vercel-labs/agent-browser</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        vercel-labs /
+
+      agent-browser  
+
+    
+      Browser automation CLI for AI agents</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/vercel-labs/agent-browser" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Ruby</span>
+          <span class="paper-id">⭐ 13,034 &nbsp;+1078 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/we-promise/sure" target="_blank">we-promise/sure</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        we-promise /
+
+      sure  
+
+    
+      The personal finance app for everyone (by everyone)</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/we-promise/sure" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 7,422 &nbsp;+645 today</span>
+        </div>
+        <span class="score-badge">推荐度 0/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/homeassistant-ai/ha-mcp" target="_blank">homeassistant-ai/ha-mcp</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        homeassistant-ai /
+
+      ha-mcp  
+
+    
+      Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/homeassistant-ai/ha-mcp" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    </div>
+
+    <footer>
+        <p>由 <a href="https://github.com/Sloan-Yang/TechDigest">TechDigest</a> 自动生成</p>
+        <p>数据来源: <a href="https://arxiv.org">arXiv.org</a> · <a href="https://news.ycombinator.com">Hacker News</a> · <a href="https://github.com/trending">GitHub Trending</a></p>
+    </footer>
+</body>
+</html>

@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-11</div>
+        <div class="page-date">📅 2026-11-12</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 4 | 机器学习: 1
+            自然语言处理: 1 | 计算机视觉: 4
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.12886</span>
+          <span class="paper-id">2611.14519</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.12886" target="_blank">Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning</a>
+        <a href="https://arxiv.org/abs/2611.14519" target="_blank">Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training</a>
       </h3>
       
-      <p class="paper-authors">Haozhi Yuan, Handong Li, Yifan Zhang, Qianshan Wei</p>
+      <p class="paper-authors">Emre Kutlusan, Yongmin Li</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Agentic reinforcement learning (RL) and multi-teacher on-policy distillation (MOPD) offer complementary routes to post-training. For visual agents, however, tool use presents two related challenges. Models may overlook useful tool-returned observations, while poorly grounded actions can limit the evidence available for subsequent distillation. We introduce Reframe, a post-training framework that treats the observation state, rather than only the output distribution, as an object of alignment. First, Ground-Drop-GRPO (GD-GRPO) trains spatial and temporal specialists with evidence-aware rewards and stochastic removal of the original visual input, encouraging them to acquire grounded evidence and use the returned observations. Second, Observation-Gated-MOPD (OG-MOPD) replaces deficient tool actions with canonical ones mid-rollout and resumes distillation from the repaired observation. The two stages complement each other, as learning to rely on tool-returned observations can help the policy benefit from observation repair. Neither stage requires a task-specific SFT cold start. Extensive experiments over 14 image and video benchmarks demonstrate that Reframe outperforms both Mix-RL and vanilla MOPD. Ablation results show that GD-GRPO increases observation dependence and tool gain compared with outcome-based GRPO.</p>
+        <p>Foundation models pretrained on large natural-image collections are increasingly adapted for medical image segmentation, in the expectation that they will replace models trained for each task. Most comparisons, however, use data from the training distribution and a single task-specific baseline whose configuration is rarely justified, and therefore provide limited evidence of performance at new clinical sites. It also remains unclear how much of a foundation model must be adapted, and what determines this. We adapted a foundation model, DINOv2, with strategies ranging from tuning only its bias terms to full fine-tuning, and compared it with U-Nets and ResU-Nets trained from scratch. Experiments covered colonoscopy, breast ultrasound and dermoscopy, with testing on held-out data from the training source and on independent datasets from other institutions. The adapted foundation model generalised better on every external dataset. Within the training distribution, the task-specific models remained competitive when training data were abundant, and delineated boundaries more precisely, while the foundation model more often missed small lesions. Only a small fraction of the foundation model required adaptation, and the capacity needed was determined by the imaging domain rather than by the adaptation method. A widely used polyp test set was also found to duplicate images from another benchmark. Foundation-model adaptation is therefore warranted where models must work across sites, with capacity selected on the target domain.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.12886" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.12886.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.14519" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14519.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.12885</span>
+          <span class="paper-id">2611.14518</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.12885" target="_blank">World In-Context Learning for Agentic Robot Manipulation</a>
+        <a href="https://arxiv.org/abs/2611.14518" target="_blank">Toward Foundation Detection Models via Example-Based Grounding in EM-DETR</a>
       </h3>
       
-      <p class="paper-authors">Heng Fang, Zehui Guo, Yuehan Zhang, Mingyang Du, Dingkang Liang 等 (6 位作者)</p>
+      <p class="paper-authors">Sheethal Bhat, Bogdan Georgescu, Awais Mansoor, Florin C. Ghesu, Sasa Grbic 等 (6 位作者)</p>
       
       <div class="paper-summary">
         
@@ -378,44 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Trained action policies write manipulation skill into network weights, tying what is learned to the distribution it is learned from. In-context learning (ICL) avoids this coupling but has not matched trained policies, because a demonstration recorded in another scene carries no feedback from the world the robot currently faces. We observe that what an agent learns in context is semantic, recording task steps and object roles rather than visual appearance, so experience gathered in one world transfers to another. Based on this insight, we propose World In-Context Learning (WICL), a paradigm in which a frozen model starts from a demonstration, rehearses the task in a world such as a simulator, and writes the feedback into its context rather than its weights. We build RoboScript, a modular infrastructure that implements WICL for agentic manipulation. From a single demonstration, RoboScript learns each task through rehearsal in simulation, freezes the learned knowledge as a Task Memory, and deploys the frozen memory on new scenes with data isolation that ensures every deployment input is available on a real robot. On all 50 tasks of RoboTwin 2.0, RoboScript reaches 83.4% mean success across clean and randomized settings with one demonstration per task and no gradient updates, exceeding the strongest trained action policy by over 20 points. The method generalizes across visual distributions, improves through reflection, scales with the foundation model, and transfers to a physical dual-arm robot through cross-embodiment memory adaptation. With a world in the loop, a robot can learn a manipulation task in its context as well as it learns one in its weights. All code is available at https://github.com/ArcheOne-AI/RoboScript</p>
+        <p>DeepLearning (DL)-based Computer-Aided Diagnostic (CAD) systems have shown great promise in supporting clinicians, but their performance heavily depends on the availability of large, well-annotated datasets. In medical lesion detection, the scarcity of comprehensive, stan dardized annotations and the heterogeneity of existing datasets limit the development of robust foundation models. In this work, we introduce a novel approach to building a multi-domain foundation model for le sion detection by integrating diverse medical image datasets annotated for both anatomical structures and abnormalities. We first propose a student-teacher training strategy to effectively combine datasets with heterogeneous label spaces, mitigating catastrophic forgetting, and im proving feature learning. In addition, building on our previously pro posed example-based EM-DETR framework, we adapt it to jointly learn from multiple domain-specific datasets, enabling fine-grained, example driven detection across modalities. Our model achieves state-of-the-art (SOTA) results, with image-level AUC scores exceeding previous SOTA by 1% point on four key findings in CXRs. We achieve a leading mAP50 in CXRs and mammography, surpassing EM-DETR trained on a single dataset by 2-3% points. This approach paves the way for scalable foundation models in medical imaging that leverage heterogeneous data while maintaining robust and generalizable performance.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.12885" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.12885.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">机器学习</span>
-          <span class="paper-id">2611.12884</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.12884" target="_blank">Guiding Data Allocation for Robust Subpopulation Generalization</a>
-      </h3>
-      
-      <p class="paper-authors">Zhaoying Pan, Yipei Wang, Shenyu Lu, Xiaoqian Wang</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Machine learning models often achieve high average accuracy in the training data while performing poorly on test data due to subpopulation shift. A common data-centric solution is to enforce balanced subgroup proportions, but full balance can be costly, infeasible, and not always necessary. In this work, we study whether balanced training data is the unique optimal configuration for robust subpopulation generalization. We extend a Gaussian feature-model framework to theoretically characterize the performance landscape across general training subgroup distributions. We show that multiple configurations, including substantially imbalanced ones, can perform comparably to the balanced one. We further derive gradient-based directions for adjusting subgroup proportions to improve adjusted accuracy and worst-group accuracy more efficiently. These findings suggest that strategically allocating data offers a more flexible and principled path to robust performance than simple balancing. The code is available at https://github.com/zhaoyingpan/subpop-data-allocation.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.12884" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.12884.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.14518" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14518.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.12883</span>
+          <span class="paper-id">2611.14498</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.12883" target="_blank">Beyond Modality Preference: Controlling Multimodal Arbitration under Modality Conflict in MLLMs</a>
+        <a href="https://arxiv.org/abs/2611.14498" target="_blank">Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion</a>
       </h3>
       
-      <p class="paper-authors">Zhaoying Pan, Shenyu Lu, Jun Hui Wong, Junyi Chai, Xiaoqian Wang</p>
+      <p class="paper-authors">Alexandre Garcia-Duran, Alejandro Rodriguez-Garcia, Manuel Molano-Mazón, Alexandre Hyafil, Srikanth Ramaswamy 等 (6 位作者)</p>
       
       <div class="paper-summary">
         
@@ -442,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Multimodal large language models (MLLMs) integrate information across modalities, but become unreliable when those modalities disagree. Under conflicting inputs, MLLMs may favor modalities that are not the most reliable for the task, thus motivating inference-time control of modality arbitration. We identify a small set of attention heads, termed arbitration heads, that causally influence whether predictions follow visual or textual evidence. Building on this, we introduce a lightweight, training-free intervention that biases these heads toward a designated trusted modality at inference time. The identified heads are stable across calibration set sizes and generalize across settings, and steering them enables effective bidirectional control of modality reliance across diverse benchmarks. Our findings identify an effective control mechanism to align MLLM predictions with task-specified modality priorities. The code is available at https://github.com/zhaoyingpan/modality-arbitration.</p>
+        <p>Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with brain-like wiring are more robust at lower computational cost is unclear. We address this by benchmarking a task-optimized, continuous-time recurrent neural network of the fly visual system constrained by its synaptic connectome (FlyNet) against artificial neural networks. We compare it against CNNs, RAFT, and continuous-time recurrent neural networks without detailed connectome constraints (sCTRNN, CTRNN) on a collision-detection task within a differentiable 3D rendering pipeline. FlyNet is adversarially vulnerable but, relative to its compute, more robust to common video corruptions than RAFT, while using up to five orders of magnitude fewer FLOPs. The CTRNNs remain more robust than FlyNet across almost all tested perturbations, suggesting that connectome constraints benefit efficiency, through their low edge count, over robustness. Recurrence improves robustness to white-box attacks in RAFT and temporal context improves robustness to common corruptions. FlyNet's position and velocity representations degrade under adversarial textures but recover under counterfactual textures that restore correct classification while staying equally far from training, ruling out unfamiliar textures as the cause of failure. The reverse-phi illusion similarly disrupts these representations and inverts the same low-level motion statistic as the adversarial textures. Optimizing this input statistic alone, without access to the network, suffices to induce classification failure, attributing both perturbations to the same circuit vulnerability. Connectome-constrained models can thus surface adversarial failure mechanisms as testable hypotheses about biological perceptual vulnerabilities.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.12883" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.12883.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.14498" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14498.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.12879</span>
+          <span class="paper-id">2611.14496</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.12879" target="_blank">Grasping the Future: Joint 3D Hand-Object Forecasting From Internet Videos</a>
+        <a href="https://arxiv.org/abs/2611.14496" target="_blank">RS-JEPA: Remote Sensing Joint-Embedding Predictive Architecture with Scan-Path Views for Cross-Sensor Image Retrieval</a>
       </h3>
       
-      <p class="paper-authors">Rustin Soraki, Matthew Wallingford, Ryan Aby, Brandon Chee, Jason Ren 等 (8 位作者)</p>
+      <p class="paper-authors">Tanishq Rachamalla, Srishti Kaushik, Muhammad Attique Khan, Gustau Camps-Valls, Swalpa Kumar Roy</p>
       
       <div class="paper-summary">
         
@@ -474,12 +442,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>To interact with an object, we need to anticipate both how it will move and how our hands should move with it. Human videos capture these relationships across everyday activities, offering a natural source for learning to predict future interactions. Learning from them requires recovering motion from completed interactions and using it to anticipate what could happen next. We present $\textit{Grasping-the-Future}$, a unified generative model of joint 3D hand-object motion, including wrist motion, finger articulation, and object position and orientation. Through masked spatiotemporal completion and flow matching, we train a single model for several prediction tasks: forecasting future interactions, predicting hand motion given object motion or vice versa, generating both trajectories toward a desired final object pose, and completing partially observed interactions. We explicitly model hand-object relations and incorporate contact constraints to help preserve grasp relationships during motion. To obtain 3D supervision from internet videos, we develop a scalable pipeline that combines pretrained perception models with joint geometric optimization to reconstruct completed interactions. We combine these recovered trajectories with annotated interaction datasets as training data for all tasks. We demonstrate strong performance across all tasks, outperforming released forecasters on datasets with 3D annotations. Moreover, we show geometric and physical plausibility of the predicted trajectories by retargeting them to a robotic embodiment. Videos are available at https://grasping-the-future.github.io.</p>
+        <p>Cross-sensor remote sensing image retrieval aims to find scenes with the same content across heterogeneous sensors, such as SAR and optical or panchromatic (PAN) and multispectral (MS) imagery, without manual labels. Existing self-supervised methods either reconstruct sensor-specific pixel detail, align each image only with its co-registered twin, or rely on large transformers with 118-173M parameters (and up to 398M). We introduce RS-JEPA, a compact joint-embedding predictive framework built on a Vision Mamba encoder shared by both sensors. Since a state-space encoder reads an image as an ordered sequence of patches, we propose scan-path views, which treat two reading orders of the same image as two views with identical pixels and predict the hidden patches in one order from the visible patches in the other.To keep this prediction challenging, we propose Adversarial View Coupling (AVC), which learns the hardest split of the visible patches, and a neighbourhood consensus loss that aligns the scene similarities of both sensors. Extensive experiments on SAR-optical (BEN-14K, CBRSIR-VS) and PAN-MS (DSRSID) benchmarks demonstrate that RS-JEPA achieves the highest F1@5 among twelve re-implemented methods (72.92, 80.35 and 94.43) with a retrieval network of only 3.88M parameters (14.57M in training, 8-16times fewer than prior JEPA retrievers). Like prior methods, RS-JEPA trains on co-registered pairs. Our results highlight reading order as a source of self-supervised views. code: https://github.com/Tanishq251/RSJEPA.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.12879" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.12879.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.14496" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14496.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">自然语言处理</span>
+          <span class="paper-id">2611.14483</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.14483" target="_blank">Mechanistic Interpretability Needs a Logic of Inference</a>
+      </h3>
+      
+      <p class="paper-authors">Zhimin Hu, Chen Jiang, Hanbo Xie, N. Apurva Ratan Murty, Sashank Varma</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Neural networks are increasingly studied not merely as predictive systems, but as complex systems whose internal computations are themselves objects of scientific inquiry. Recent progress in mechanistic interpretability (MI) has made it possible to identify neurons, features, circuits, population structures, and dynamical patterns associated with model behavior. As these tools improve, attention is shifting from what can be observed inside a model to how those observations support mechanistic explanations. We examine the parallel efforts of neuroscience and MI to address this question and identify recurring inferential bottlenecks when inferring mechanisms from complex neural systems. We propose five principles and organize them into a recursive logic for a more rigorous procedure of mechanistic inference. These principles provide a framework that supports scientific discovery in two senses: it helps turn local interpretability findings into cumulative knowledge of mechanisms within models, and it makes those mechanisms sufficiently precise to generate testable hypotheses about domains beyond the models. Evidence beyond MI is ultimately required to establish what model mechanisms reveal about the world.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.14483" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.14483.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 207 &nbsp;💬 81</span>
+          <span class="paper-id">▲ 184 &nbsp;💬 26</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50447074" target="_blank">After 7 months, Glasswing overwelms maintainers with underwhelming findings</a>
+        <a href="https://news.ycombinator.com/item?id=50459745" target="_blank">93% of paint splatters are valid Perl programs (2019)</a>
       </h3>
-      <p class="paper-authors">by panic</p>
+      <p class="paper-authors">by zenincognito</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50447074" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.vulncheck.com/blog/anthropic-glasswing-november-update" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50459745" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.mcmillen.dev/sigbovik/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 322 &nbsp;💬 240</span>
+          <span class="paper-id">▲ 699 &nbsp;💬 220</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50445401" target="_blank">Scion is back and is going to sell a kei truck in America</a>
+        <a href="https://news.ycombinator.com/item?id=50456631" target="_blank">AWS emulator</a>
       </h3>
-      <p class="paper-authors">by NaOH</p>
+      <p class="paper-authors">by super_linear</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50445401" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50456631" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/aws/aws-emulator" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 679 &nbsp;💬 156</span>
+          <span class="paper-id">▲ 896 &nbsp;💬 94</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50442736" target="_blank">.name Grandfathered</a>
+        <a href="https://news.ycombinator.com/item?id=50450488" target="_blank">Tim Peters has died</a>
       </h3>
-      <p class="paper-authors">by p4bl0</p>
+      <p class="paper-authors">by ayhanfuat</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50442736" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://neil.fraser.name/news/2026/11/10/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50450488" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 705 &nbsp;💬 252</span>
+          <span class="paper-id">▲ 147 &nbsp;💬 25</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50441707" target="_blank">Smart home devices should work without the internet</a>
+        <a href="https://news.ycombinator.com/item?id=50459485" target="_blank">Lock Your GitHub Actions</a>
       </h3>
-      <p class="paper-authors">by skittleson</p>
+      <p class="paper-authors">by gslin</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50441707" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://docodethatmatters.com/home-automation-overnight-success/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50459485" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://hugovk.dev/blog/2026/lock-github-actions/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 121 &nbsp;💬 25</span>
+          <span class="paper-id">▲ 410 &nbsp;💬 395</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50446246" target="_blank">Six Math Essentials by Terence Tao</a>
+        <a href="https://news.ycombinator.com/item?id=50458900" target="_blank">United Airlines bans AI agents from booking flights on behalf of travelers</a>
       </h3>
-      <p class="paper-authors">by digital55</p>
+      <p class="paper-authors">by herpderperator</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50446246" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://teorth.github.io/tao-web/six-math-essentials.html" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50458900" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 292 &nbsp;💬 163</span>
+          <span class="paper-id">▲ 425 &nbsp;💬 215</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50443824" target="_blank">Synaptics patent claims stop work on DisplayLink drivers</a>
+        <a href="https://news.ycombinator.com/item?id=50455394" target="_blank">A false smoke alarm almost drowned Jane Street's only NYC datacenter</a>
       </h3>
-      <p class="paper-authors">by speckx</p>
+      <p class="paper-authors">by mbac32768</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50443824" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://lwn.net/SubscriberLink/1102549/acbc92e00cee3a3f/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50455394" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 229 &nbsp;💬 240</span>
+          <span class="paper-id">▲ 288 &nbsp;💬 90</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50444129" target="_blank">Starlink Mini 2</a>
+        <a href="https://news.ycombinator.com/item?id=50456791" target="_blank">Gemini Decisions API</a>
       </h3>
-      <p class="paper-authors">by robertjfclarke</p>
+      <p class="paper-authors">by iamdelirium</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50444129" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://starlink.com/mini-2" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50456791" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 305 &nbsp;💬 81</span>
+          <span class="paper-id">▲ 63 &nbsp;💬 19</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50443427" target="_blank">Val Town is winding down</a>
+        <a href="https://news.ycombinator.com/item?id=50460154" target="_blank">A general purpose Apple Silicon layer for x86-64 PCs</a>
       </h3>
-      <p class="paper-authors">by tosh</p>
+      <p class="paper-authors">by iceboundrock</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50443427" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.val.town/winding-down" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50460154" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/tylertms/Stela" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 115,197 &nbsp;+465 today</span>
+          <span class="paper-id">⭐ 116,010 &nbsp;+787 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -674,28 +674,15 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Rust</span>
-          <span class="paper-id">⭐ 6,844 &nbsp;+192 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 70,375 &nbsp;+278 today</span>
         </div>
-        <span class="score-badge">推荐度 85/100</span>
+        <span class="score-badge">推荐度 30/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/tokio-rs" target="_blank">sponsors/tokio-rs</a>
+        <a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank">ZhuLinsen/daily_stock_analysis</a>
       </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
+      <p class="paper-authors">Star
 
 
   
@@ -706,15 +693,15 @@
 
 
       
-        tokio-rs /
+        ZhuLinsen /
 
-      topcoat  
+      daily_stock_analysis  
 
     
-      A batteries-included framework for building web apps</p>
+      LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sponsors/tokio-rs" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/ZhuLinsen/daily_stock_analysis" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -722,7 +709,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 22,953 &nbsp;+3108 today</span>
+          <span class="paper-id">⭐ 25,161 &nbsp;+2776 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -755,49 +742,46 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 192,371 &nbsp;+1679 today</span>
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 1,840 &nbsp;+159 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills</a>
+        <a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank">GoogleChrome/modern-web-guidance-src</a>
       </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
       
-        anthropics /
-
-      skills  
-
-    
-      Public repository for Agent Skills</p>
       
       <div class="paper-links">
-        <a href="https://github.com/anthropics/skills" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 20,519 &nbsp;+531 today</span>
+          
+          <span class="paper-id">⭐ 10,983 &nbsp;+361 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/anthropics/claude-quickstarts" target="_blank">anthropics/claude-quickstarts</a>
+        <a href="https://github.com/sponsors/shadcn" target="_blank">sponsors/shadcn</a>
       </h3>
-      <p class="paper-authors">Star
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
 
 
   
@@ -808,28 +792,28 @@
 
 
       
-        anthropics /
+        shadcn /
 
-      claude-quickstarts  
+      improve  
 
     
-      A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API</p>
+      Use your most capable model to audit your codebase and write plans for cheaper models to execute.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/anthropics/claude-quickstarts" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/shadcn" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 17,380 &nbsp;+456 today</span>
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 49,934 &nbsp;+708 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/google-deepmind/mujoco" target="_blank">google-deepmind/mujoco</a>
+        <a href="https://github.com/vercel-labs/agent-browser" target="_blank">vercel-labs/agent-browser</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -842,15 +826,15 @@
 
 
       
-        google-deepmind /
+        vercel-labs /
 
-      mujoco  
+      agent-browser  
 
     
-      Multi-Joint dynamics with Contact. A general purpose physics simulator.</p>
+      Browser automation CLI for AI agents</p>
       
       <div class="paper-links">
-        <a href="https://github.com/google-deepmind/mujoco" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/vercel-labs/agent-browser" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -858,7 +842,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Ruby</span>
-          <span class="paper-id">⭐ 11,990 &nbsp;+159 today</span>
+          <span class="paper-id">⭐ 13,034 &nbsp;+1078 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -892,7 +876,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 6,692 &nbsp;+790 today</span>
+          <span class="paper-id">⭐ 7,422 &nbsp;+645 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>

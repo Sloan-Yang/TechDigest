@@ -1,0 +1,105 @@
+[
+  {
+    "id": "2611.14519",
+    "title": "Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training",
+    "abstract": "Foundation models pretrained on large natural-image collections are increasingly adapted for medical image segmentation, in the expectation that they will replace models trained for each task. Most comparisons, however, use data from the training distribution and a single task-specific baseline whose configuration is rarely justified, and therefore provide limited evidence of performance at new clinical sites. It also remains unclear how much of a foundation model must be adapted, and what determines this. We adapted a foundation model, DINOv2, with strategies ranging from tuning only its bias terms to full fine-tuning, and compared it with U-Nets and ResU-Nets trained from scratch. Experiments covered colonoscopy, breast ultrasound and dermoscopy, with testing on held-out data from the training source and on independent datasets from other institutions. The adapted foundation model generalised better on every external dataset. Within the training distribution, the task-specific models remained competitive when training data were abundant, and delineated boundaries more precisely, while the foundation model more often missed small lesions. Only a small fraction of the foundation model required adaptation, and the capacity needed was determined by the imaging domain rather than by the adaptation method. A widely used polyp test set was also found to duplicate images from another benchmark. Foundation-model adaptation is therefore warranted where models must work across sites, with capacity selected on the target domain.",
+    "authors": [
+      "Emre Kutlusan",
+      "Yongmin Li"
+    ],
+    "published": "2026-11-10",
+    "updated": "2026-11-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.14519.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.14519",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.14518",
+    "title": "Toward Foundation Detection Models via Example-Based Grounding in EM-DETR",
+    "abstract": "DeepLearning (DL)-based Computer-Aided Diagnostic (CAD) systems have shown great promise in supporting clinicians, but their performance heavily depends on the availability of large, well-annotated datasets. In medical lesion detection, the scarcity of comprehensive, stan dardized annotations and the heterogeneity of existing datasets limit the development of robust foundation models. In this work, we introduce a novel approach to building a multi-domain foundation model for le sion detection by integrating diverse medical image datasets annotated for both anatomical structures and abnormalities. We first propose a student-teacher training strategy to effectively combine datasets with heterogeneous label spaces, mitigating catastrophic forgetting, and im proving feature learning. In addition, building on our previously pro posed example-based EM-DETR framework, we adapt it to jointly learn from multiple domain-specific datasets, enabling fine-grained, example driven detection across modalities. Our model achieves state-of-the-art (SOTA) results, with image-level AUC scores exceeding previous SOTA by 1% point on four key findings in CXRs. We achieve a leading mAP50 in CXRs and mammography, surpassing EM-DETR trained on a single dataset by 2-3% points. This approach paves the way for scalable foundation models in medical imaging that leverage heterogeneous data while maintaining robust and generalizable performance.",
+    "authors": [
+      "Sheethal Bhat",
+      "Bogdan Georgescu",
+      "Awais Mansoor",
+      "Florin C. Ghesu",
+      "Sasa Grbic",
+      "Andreas Maier"
+    ],
+    "published": "2026-11-10",
+    "updated": "2026-11-10",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.14518.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.14518",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.14498",
+    "title": "Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion",
+    "abstract": "Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with brain-like wiring are more robust at lower computational cost is unclear. We address this by benchmarking a task-optimized, continuous-time recurrent neural network of the fly visual system constrained by its synaptic connectome (FlyNet) against artificial neural networks. We compare it against CNNs, RAFT, and continuous-time recurrent neural networks without detailed connectome constraints (sCTRNN, CTRNN) on a collision-detection task within a differentiable 3D rendering pipeline. FlyNet is adversarially vulnerable but, relative to its compute, more robust to common video corruptions than RAFT, while using up to five orders of magnitude fewer FLOPs. The CTRNNs remain more robust than FlyNet across almost all tested perturbations, suggesting that connectome constraints benefit efficiency, through their low edge count, over robustness. Recurrence improves robustness to white-box attacks in RAFT and temporal context improves robustness to common corruptions. FlyNet's position and velocity representations degrade under adversarial textures but recover under counterfactual textures that restore correct classification while staying equally far from training, ruling out unfamiliar textures as the cause of failure. The reverse-phi illusion similarly disrupts these representations and inverts the same low-level motion statistic as the adversarial textures. Optimizing this input statistic alone, without access to the network, suffices to induce classification failure, attributing both perturbations to the same circuit vulnerability. Connectome-constrained models can thus surface adversarial failure mechanisms as testable hypotheses about biological perceptual vulnerabilities.",
+    "authors": [
+      "Alexandre Garcia-Duran",
+      "Alejandro Rodriguez-Garcia",
+      "Manuel Molano-Mazón",
+      "Alexandre Hyafil",
+      "Srikanth Ramaswamy",
+      "Janne K. Lappalainen"
+    ],
+    "published": "2026-11-10",
+    "updated": "2026-11-10",
+    "categories": [
+      "cs.CV",
+      "q-bio.NC"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.14498.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.14498",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.14496",
+    "title": "RS-JEPA: Remote Sensing Joint-Embedding Predictive Architecture with Scan-Path Views for Cross-Sensor Image Retrieval",
+    "abstract": "Cross-sensor remote sensing image retrieval aims to find scenes with the same content across heterogeneous sensors, such as SAR and optical or panchromatic (PAN) and multispectral (MS) imagery, without manual labels. Existing self-supervised methods either reconstruct sensor-specific pixel detail, align each image only with its co-registered twin, or rely on large transformers with 118-173M parameters (and up to 398M). We introduce RS-JEPA, a compact joint-embedding predictive framework built on a Vision Mamba encoder shared by both sensors. Since a state-space encoder reads an image as an ordered sequence of patches, we propose scan-path views, which treat two reading orders of the same image as two views with identical pixels and predict the hidden patches in one order from the visible patches in the other.To keep this prediction challenging, we propose Adversarial View Coupling (AVC), which learns the hardest split of the visible patches, and a neighbourhood consensus loss that aligns the scene similarities of both sensors. Extensive experiments on SAR-optical (BEN-14K, CBRSIR-VS) and PAN-MS (DSRSID) benchmarks demonstrate that RS-JEPA achieves the highest F1@5 among twelve re-implemented methods (72.92, 80.35 and 94.43) with a retrieval network of only 3.88M parameters (14.57M in training, 8-16times fewer than prior JEPA retrievers). Like prior methods, RS-JEPA trains on co-registered pairs. Our results highlight reading order as a source of self-supervised views. code: https://github.com/Tanishq251/RSJEPA.",
+    "authors": [
+      "Tanishq Rachamalla",
+      "Srishti Kaushik",
+      "Muhammad Attique Khan",
+      "Gustau Camps-Valls",
+      "Swalpa Kumar Roy"
+    ],
+    "published": "2026-11-10",
+    "updated": "2026-11-10",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.14496.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.14496",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.14483",
+    "title": "Mechanistic Interpretability Needs a Logic of Inference",
+    "abstract": "Neural networks are increasingly studied not merely as predictive systems, but as complex systems whose internal computations are themselves objects of scientific inquiry. Recent progress in mechanistic interpretability (MI) has made it possible to identify neurons, features, circuits, population structures, and dynamical patterns associated with model behavior. As these tools improve, attention is shifting from what can be observed inside a model to how those observations support mechanistic explanations. We examine the parallel efforts of neuroscience and MI to address this question and identify recurring inferential bottlenecks when inferring mechanisms from complex neural systems. We propose five principles and organize them into a recursive logic for a more rigorous procedure of mechanistic inference. These principles provide a framework that supports scientific discovery in two senses: it helps turn local interpretability findings into cumulative knowledge of mechanisms within models, and it makes those mechanisms sufficiently precise to generate testable hypotheses about domains beyond the models. Evidence beyond MI is ultimately required to establish what model mechanisms reveal about the world.",
+    "authors": [
+      "Zhimin Hu",
+      "Chen Jiang",
+      "Hanbo Xie",
+      "N. Apurva Ratan Murty",
+      "Sashank Varma"
+    ],
+    "published": "2026-11-10",
+    "updated": "2026-11-10",
+    "categories": [
+      "cs.CL",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.14483.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.14483",
+    "primary_category": "cs.CL"
+  }
+]
