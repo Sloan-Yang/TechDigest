@@ -1,0 +1,98 @@
+[
+  {
+    "id": "alibaba_open-code-review",
+    "full_name": "alibaba/open-code-review",
+    "owner": "alibaba",
+    "name": "open-code-review",
+    "url": "https://github.com/alibaba/open-code-review",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        alibaba /\n\n      open-code-review  \n\n    \n      Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.",
+    "language": "Go",
+    "stars": 50662,
+    "stars_today": 215,
+    "relevance_score": 85
+  },
+  {
+    "id": "tailscale_tailcat",
+    "full_name": "tailscale/tailcat",
+    "owner": "tailscale",
+    "name": "tailcat",
+    "url": "https://github.com/tailscale/tailcat",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        tailscale /\n\n      tailcat  \n\n    \n      like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+    "language": "Go",
+    "stars": 9477,
+    "stars_today": 256,
+    "relevance_score": 75
+  },
+  {
+    "id": "ChromeDevTools_chrome-devtools-mcp",
+    "full_name": "ChromeDevTools/chrome-devtools-mcp",
+    "owner": "ChromeDevTools",
+    "name": "chrome-devtools-mcp",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ChromeDevTools /\n\n      chrome-devtools-mcp  \n\n    \n      Chrome DevTools for coding agents",
+    "language": "TypeScript",
+    "stars": 55479,
+    "stars_today": 67,
+    "relevance_score": 50
+  },
+  {
+    "id": "block_buzz",
+    "full_name": "block/buzz",
+    "owner": "block",
+    "name": "buzz",
+    "url": "https://github.com/block/buzz",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        block /\n\n      buzz  \n\n    \n      A hive mind communication platform",
+    "language": "Rust",
+    "stars": 37308,
+    "stars_today": 97,
+    "relevance_score": 30
+  },
+  {
+    "id": "GoogleChrome_modern-web-guidance-src",
+    "full_name": "GoogleChrome/modern-web-guidance-src",
+    "owner": "GoogleChrome",
+    "name": "modern-web-guidance-src",
+    "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        GoogleChrome /\n\n      modern-web-guidance-src  \n\n    \n      Keep your coding agent up to date with the latest web best practices",
+    "language": "TypeScript",
+    "stars": 4903,
+    "stars_today": 1925,
+    "relevance_score": 0
+  },
+  {
+    "id": "openai_codex-security",
+    "full_name": "openai/codex-security",
+    "owner": "openai",
+    "name": "codex-security",
+    "url": "https://github.com/openai/codex-security",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        openai /\n\n      codex-security  \n\n    \n      OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+    "language": "TypeScript",
+    "stars": 13157,
+    "stars_today": 751,
+    "relevance_score": 0
+  },
+  {
+    "id": "sponsors_ZhuLinsen",
+    "full_name": "sponsors/ZhuLinsen",
+    "owner": "sponsors",
+    "name": "ZhuLinsen",
+    "url": "https://github.com/sponsors/ZhuLinsen",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ZhuLinsen /\n\n      daily_stock_analysis  \n\n    \n      LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+    "language": "Python",
+    "stars": 71651,
+    "stars_today": 256,
+    "relevance_score": 0
+  },
+  {
+    "id": "we-promise_sure",
+    "full_name": "we-promise/sure",
+    "owner": "we-promise",
+    "name": "sure",
+    "url": "https://github.com/we-promise/sure",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        we-promise /\n\n      sure  \n\n    \n      The personal finance app for everyone (by everyone)",
+    "language": "Ruby",
+    "stars": 14777,
+    "stars_today": 925,
+    "relevance_score": 0
+  }
+]

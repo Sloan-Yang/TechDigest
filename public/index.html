@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-13</div>
+        <div class="page-date">📅 2026-11-14</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 4 | 机器学习: 1
+            计算机视觉: 4 | 机器人: 1
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.15044</span>
+          <span class="paper-id">2611.17336</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.15044" target="_blank">Estimating Image Creativity</a>
+        <a href="https://arxiv.org/abs/2611.17336" target="_blank">Back to Pixels: Lifting Latent Video Diffusion into Pixel Space</a>
       </h3>
       
-      <p class="paper-authors">Nisan Chhetri, Christopher G. Healey, Sina Baghbanijam</p>
+      <p class="paper-authors">Yanke Song, Shuo Chen, Chris Rockwell, Guande He, Nan Liu 等 (12 位作者)</p>
       
       <div class="paper-summary">
         
@@ -346,44 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>What makes an image creative? Although this may seem like a highly subjective decision, research in psychology suggests that creativity may be based on a set of fundamental creativity dimensions such as novelty, surprise, and arousal. A deeper understanding of image creativity can benefit both research and practical applications. Exploring how human viewers use creativity dimensions to evaluate image creativity may allow us to predict a target image's human-rated creativity automatically. We present a novel framework to estimate the perceived creativity of an image by: (1) predicting the strengths of an image's novelty, surprise, and arousal creativity dimensions, and (2) combining the creativity dimension strengths to estimate an image creativity score. Controlled human-subject experiments were conducted on Amazon Mechanical Turk to collect data to train supervised machine learning models to estimate an image's strengths on the three creativity dimensions. A final machine learning model takes the predicted dimension strengths as input to produce an estimated image creativity score. Results showed that our estimated creativity scores are statistically equivalent to human ratings of creativity for the images we tested. The novel contributions of our research are: (1) identification and validation of three psychological creativity dimensions used to estimate image creativity; (2) supervised machine learning models to automatically estimate novelty, surprise, and arousal strengths for an input image; (3) a supervised machine learning model to predict a creativity score from novelty, surprise, and arousal strengths for an input image, and (4) experimental methods to confirm the accuracy, advantages, and limitations of our approach.</p>
+        <p>Frontier video generation models work in a VAE latent space that compresses video in both space and time. This compression made training tractable, but now limits high-resolution, controllable, and interactive generation -- doubling resolution quadruples token count, conditions apply to groups of frames rather than individual ones, and each response must wait for the rest of its multi-frame block. We present PixVid, a simple yet effective method that lifts a pretrained latent video model to directly generate every frame in pixel space. PixVid keeps the diffusion transformer and replaces the VAE decoder with a convolutional head that renders its outputs into pixels. We find that predicting clean video rather than velocity, together with a larger noise shift, is key to quality. Finetuned from Wan2.1-14B, PixVid is competitive with the latent baseline within $\sim 1.3$M training clips. Working framewise in pixels, it generates at $2\times$ higher resolution with the same per-frame token count, keeps depth-conditioned video editing aligned under fast motion, and responds to each action at the next frame. Project page: https://chenshuo20.github.io/PixVid/</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.15044" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.15044.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">机器学习</span>
-          <span class="paper-id">2611.15041</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.15041" target="_blank">AROMA: Adaptive Representation-Oriented Multimodal Actuation for Vision-Language Model Control</a>
-      </h3>
-      
-      <p class="paper-authors">Zhaoning Zhang</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Mechanistic localization does not by itself yield usable control: causal sensitivity may occupy little activation energy, an accurate local direction may fail at finite scale, and a reachable numeral target may be wrong. We introduce AROMA (Adaptive Representation-Oriented Multimodal Actuation), a frozen-VLM control framework separating where to intervene, which geometry and gain to use, how to reach a target, which target to pursue, and when to act. In Llama-3.2-11B-Vision-Instruct, four dimensions of a causally validated cross-attention head explain 89.82% of cardinality sensitivity but only 9.52% of median activation energy; magnitude-normalized causal subspace actuation converts this mismatch into finite control, improving exact-count accuracy on untouched procedural data by +8.00 pp. Iterative Minimal-Effort Actuation (MEA) reaches 81.25% of oracle targets versus 15.18% for a frozen direction under matched step budgets. With target and gate frozen before evaluation, targeted MEA improves the previous frozen policy from 34.444% to 38.730% on a new natural Stage-2 cohort (N=630; paired p=4.63e-7) and yields 65.741% versus 65.153% over all 7,992 examples while editing only 63 inputs. Prospective routing, replication across heads and models, and comparisons with attribution-steering baselines further characterize each stage, separating localization, actuation, reachability, target quality, and selective deployment as distinct control problems.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.15041" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.15041.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.17336" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.17336.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.15039</span>
+          <span class="paper-id">2611.17334</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.15039" target="_blank">Back to the Question: Tracing Visual Distraction Through Text Tokens</a>
+        <a href="https://arxiv.org/abs/2611.17334" target="_blank">Unbundling Multimodal Vision Encoding</a>
       </h3>
       
-      <p class="paper-authors">Marie Amale Huynh, Regev Cohen, Serena Yeung-Levy, Sivan Doveh</p>
+      <p class="paper-authors">Ellis Brown, Chris Hoang, Shengyi Qian, Shang-Wen Li, Mike Lewis 等 (12 位作者)</p>
       
       <div class="paper-summary">
         
@@ -410,12 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>The visual world is cluttered: robust vision-language reasoning requires ignoring irrelevant information. Yet vision-language models (VLMs) can suffer substantial accuracy losses when answering questions about a target image with distractors present. Existing mitigations focus on selecting relevant images or limiting information exchange between images. Through a systematic analysis of three open 7-8B VLMs on five perception benchmarks adapted to include distractor images, we show that distractors reduce accuracy even when models correctly identify the relevant image, suggesting that selection alone is not enough. To understand the mechanism behind this interference, we combine attention analysis with targeted knockouts in Qwen2.5-VL and identify middle-layer distractor-to-text connections as a pathway through which irrelevant visual information affects reasoning. We introduce answer consistency regularization, which encourages consistent answer distributions with and without distractors. Without directly constraining attention, this objective reduces middle-layer attention from question tokens to distractor images, consistent with the pathway our analysis implicates. With five distractors, our approach improves circular accuracy by an average of 16 percentage points over the Qwen2.5-VL baseline across the five benchmarks while preserving single-image performance.</p>
+        <p>How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e., before the multimodal backbone). Because published models also differ in data, architecture, and compute, comparing them cannot isolate the effect of each choice. We disentangle these choices via a controlled framework where we pretrain all models from scratch on common data and compare them on visual question answering and language benchmarks at matched lifetime compute. We find that the visual prior is not necessary; an encoder trained jointly from scratch is on par with a pretrained one, without a separate training stage. What matters instead is dedicated vision capacity: an encoder-free model trails on visual understanding even when its backbone is enlarged by the encoder's parameter count. Yet that capacity need not precede multimodal fusion, as vision-only modules added in-fusion to early backbone layers perform comparably to a pre-fusion encoder and can lower time to first token. These results also hold across backbone sizes, when encoder pretraining is treated as free, and when starting from a pretrained language model. Overall, our findings favor dedicated vision capacity trained jointly with the backbone and placed early within it.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.15039" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.15039.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.17334" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.17334.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.15025</span>
+          <span class="paper-id">2611.17331</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.15025" target="_blank">Federated Class Incremental Learning: A Pseudo Feature Based Approach Without Exemplars</a>
+        <a href="https://arxiv.org/abs/2611.17331" target="_blank">TTB: Test-time Baking for Efficient Rendering of Decoder-only View Synthesis Models</a>
       </h3>
       
-      <p class="paper-authors">Min Kyoon Yoo, Yu Rang Park</p>
+      <p class="paper-authors">Chin-Yang Lin, Ryo Hachiuma, Jaesung Choe, Min-Hung Chen, Yu-Chiang Frank Wang 等 (9 位作者)</p>
       
       <div class="paper-summary">
         
@@ -442,12 +410,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Federated learning often assumes that data is fixed in advance, which is unrealistic in many real-world scenarios where new data continuously arrives, causing catastrophic forgetting. To address this challenge, we propose FCLPF (Federated Class Incremental Learning with Pseudo Features), a method that uses pseudo features generated from prototypes to mitigate catastrophic forgetting. Our approach reduces communication costs and improves efficiency by eliminating the need for past data and avoiding computationally heavy models like GANs. Experimental results on CIFAR-100 show that FCLPF achieves an average accuracy of 51.87% and an average forgetting of 9.62%, significantly outperforming existing baselines with an average accuracy of 47.72% and forgetting of 20.46%. On TinyImageNet, FCLPF achieves 37.56% accuracy and 3.14% forgetting, compared to the baselines' 27.69% accuracy and 24.46% forgetting, demonstrating the superior performance of FCLPF.</p>
+        <p>Decoder-only Large View Synthesis Models (LVSMs) with KV-cache have recently achieved state-of-the-art quality by regressing novel views from neural networks without reconstructing 3D geometry, while Test-Time Training (TTT) layers save computation but sacrifice quality. We propose Test-Time Baking (TTB), a strategy that learns to bake global scene information from cross-view attention into a lightweight MLP, enabling fast and high-fidelity novel-view decoding. The first key is to repurpose the fast-weight MLP of TTT to learn the cross-view attention mapping explicitly from its input-output pairs, rather than replacing attention entirely, achieving the same rendering efficiency as TTT while delivering substantially higher quality. The second key addresses a modality misalignment between context prefilling and novel-view rendering: we disentangle context tokens into camera-only context rendering tokens to serve as TTB input, and context ground-truth tokens with image content to serve as the TTB mapping target, ensuring the baked MLPs are relieved of the modality generalization challenge between context and novel-view processing. Our method achieves up to **23x** rendering speedup with quality on par with the state-of-the-art across several benchmarks. Project page: https://test-time-baking.github.io</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.15025" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.15025.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.17331" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.17331.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器人</span>
+          <span class="paper-id">2611.17330</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.17330" target="_blank">ProtoVis-Nav: Prototypical Visual Imagination for Visual-Spatial Aligned UAV Navigation</a>
+      </h3>
+      
+      <p class="paper-authors">Guangyuan Sui, Yunzhong Hou, Chi Harold Liu</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Vision language navigation (VLN) is very challenging for Unmanned Aerial Vehicles (UAVs) since small errors in 3D motion prediction can lead to navigation errors and collisions. Unable to fathom execution outcomes in 3D environments, existing methods often struggle to predict accurate navigation waypoints from language instructions. To solve this, we introduce the Prototypical Visual Imagination framework, shortened as ProtoVis-Nav, which forces the model to imagine an outcome-associated local visual representation for the intended next UAV movement. Specifically, we predict feature prototypes and use their linear combination to estimate the visual feature of the target region. In this manner, the VLN model first imagines the local visual representation of the next intended location, and then uses predicted prototypes as context for generating the final action, promoting alignment between visual context and waypoint outputs. Extensive experiments demonstrate the effectiveness of the ProtoVis-Nav framework and show substantial improvements over existing baselines.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.17330" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.17330.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,15 +456,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.14993</span>
+          <span class="paper-id">2611.17324</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.14993" target="_blank">Validation of a Facial-Video Digital Hydration Biomarker Score for Tracking Hydration State Transitions in a Real-World Fasting Model</a>
+        <a href="https://arxiv.org/abs/2611.17324" target="_blank">K2V: Generative Keyframing For Physically Plausible Video Generation</a>
       </h3>
       
-      <p class="paper-authors">Yudara Kularathne, D. M. J. Prathapa, Thanveer Ahamed, Janindu Athukorala, Thisara Perera</p>
+      <p class="paper-authors">Felix O'Mahony, Daniel Olmeda Reino, Roberto Cipolla, Ayush Tewari</p>
       
       <div class="paper-summary">
         
@@ -474,12 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Hydration influences physiology and daily function, yet repeated practical measurement in everyday settings remains limited. We present initial real-world evidence that a facial-video lifestyle digital biomarker score can track the direction of hydration state transitions. Using Ramadan fasting as a model of prolonged fluid abstinence, we assessed whether the score tracks the transition between the fasting (pre-drink) state and the rehydrated (post-drink) state across three validation layers. In the primary cohort (104 participants, 208 videos), the score increased from a mean of 36.6 in the fasting (pre-drink) state to 70.6 in the rehydrated (post-drink) state (change = +33.9, 95% CI [+30.7, +37.1], p < 0.001, Cohen's d = 2.03), with 102 of 104 participants (98.1%) showing an upward shift. In a nested body-weight subgroup (20 participants), body weight increased by +0.74 kg after fluid intake (p < 0.001), confirming fluid uptake and providing supportive physical anchoring. In a nested serum osmolality subgroup (10 participants), osmolality decreased by -5.1 mOsm/kg (p < 0.001), with all post-drink values within the normal clinical range, providing exploratory biological support. An exploratory secondary comparison of water versus electrolyte rehydration showed no statistically significant difference in short-term score change (p = 0.247). This study does not establish a clinical diagnostic test for dehydration. Rather, these findings support the score as a lifestyle digital biomarker for tracking the direction of hydration state change in real-world settings.</p>
+        <p>Video diffusion models are able to generate samples with high-quality appearance and textural qualities. However, content produced by these methods is known to exhibit significant physical errors. This is because, in a classical video generation setting, all physical reasoning must take place simultaneously and exclusively within the diffusion process.We propose to resolve these issues by redistributing the task of physical reasoning onto a language model-backed keyframe generation module, which allows for explicit reasoning in language, and fine-grained control over the appearance of the video at important moments in the video. We then condition a video generation model with these keyframes, reducing the role of the diffusion model to the simpler task of interpolating between physically-correct intermediate states, rather than inferring an entire sequence with diffusion. Results demonstrate that our approach significantly outperforms existing approaches, achieving state-of-the-art performance on the Physics-IQ Verified benchmark and PhyGenBench.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.14993" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.14993.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.17324" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.17324.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 3010 &nbsp;💬 2822</span>
+          <span class="paper-id">▲ 59 &nbsp;💬 15</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50467087" target="_blank">Jensen Huang resigns</a>
+        <a href="https://news.ycombinator.com/item?id=50492601" target="_blank">FAA lifted National Ground Stop at 0119Z</a>
       </h3>
-      <p class="paper-authors">by lldb</p>
+      <p class="paper-authors">by d3nit</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50467087" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50492601" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.fly.faa.gov/adv/adv_otherdis?adv_date=11142026&advn=5" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 444 &nbsp;💬 184</span>
+          <span class="paper-id">▲ 1330 &nbsp;💬 818</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50472038" target="_blank">Rust 1.100</a>
+        <a href="https://news.ycombinator.com/item?id=50489641" target="_blank">FAA issues national ground stop</a>
       </h3>
-      <p class="paper-authors">by mbStavola</p>
+      <p class="paper-authors">by zulln</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50472038" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50489641" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 313 &nbsp;💬 76</span>
+          <span class="paper-id">▲ 42 &nbsp;💬 16</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50472260" target="_blank">Gemini 4 Hydrogen and Orchestrator</a>
+        <a href="https://news.ycombinator.com/item?id=50491830" target="_blank">What Happened to 3Com?</a>
       </h3>
-      <p class="paper-authors">by jonbaer</p>
+      <p class="paper-authors">by gvieri</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50472260" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://antigravity.google/blog/gemini-4-hydrogen-in-google-antigravity/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50491830" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://dfarq.homeip.net/what-happened-to-3com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 351 &nbsp;💬 143</span>
+          <span class="paper-id">▲ 99 &nbsp;💬 30</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50470488" target="_blank">Show HN: My $300 embroidery machine needed a subscription, so I built my own app</a>
+        <a href="https://news.ycombinator.com/item?id=50492315" target="_blank">Amtrak booking system experiencing major issues amid nationwide FAA ground stop</a>
       </h3>
-      <p class="paper-authors">by simpsoka</p>
+      <p class="paper-authors">by snow_mac</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50470488" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/simpsoka/zigzag" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50492315" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.fox5dc.com/news/amtrak-outage-ticket-booking-faa-ground-stop-november-13-2026" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 205 &nbsp;💬 94</span>
+          <span class="paper-id">▲ 200 &nbsp;💬 46</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50472490" target="_blank">Dwarf planet candidate appears which takes roughly 280 years to orbit our sun</a>
+        <a href="https://news.ycombinator.com/item?id=50490593" target="_blank">Live airband on all frequencies from KORS. Victoria, CA also ground stopped</a>
       </h3>
-      <p class="paper-authors">by cybermango</p>
+      <p class="paper-authors">by mmaunder</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50472490" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.smithsonianmag.com/smart-news/astronomers-found-a-mysterious-object-orbiting-far-beyond-pluto-it-could-be-a-new-dwarf-planet-hidden-in-our-solar-system-180989857/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50490593" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://orcasairband.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 132 &nbsp;💬 17</span>
+          <span class="paper-id">▲ 19 &nbsp;💬 3</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50474361" target="_blank">Foundation Models framework</a>
+        <a href="https://news.ycombinator.com/item?id=50492141" target="_blank">Anthropic Upgrades Claude Code Projects to Run Parallel AI Workers Hands-Free</a>
       </h3>
-      <p class="paper-authors">by kermatt</p>
+      <p class="paper-authors">by toppa33</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50474361" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://developer.apple.com/foundation-models-framework/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50492141" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://alphasignal.ai/news/anthropic-upgrades-claude-code-projects-to-run-parallel-ai-workers-hands-free" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 58 &nbsp;💬 17</span>
+          <span class="paper-id">▲ 68 &nbsp;💬 39</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50475713" target="_blank">Edge0-145B: Frontier AI Capabilities on Your Own Computer</a>
+        <a href="https://news.ycombinator.com/item?id=50491423" target="_blank">Terminal borders that don't cost a cell</a>
       </h3>
-      <p class="paper-authors">by sroussey</p>
+      <p class="paper-authors">by vinhnx</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50475713" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50491423" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.joshka.net/cell-borders/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 530 &nbsp;💬 482</span>
+          <span class="paper-id">▲ 181 &nbsp;💬 108</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50471731" target="_blank">Service degradation on Microsoft 365</a>
+        <a href="https://news.ycombinator.com/item?id=50488325" target="_blank">FM-1 Workbench</a>
       </h3>
-      <p class="paper-authors">by dkpk</p>
+      <p class="paper-authors">by simonebrunozzi</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50471731" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://status.cloud.microsoft/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50488325" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://open.m-vave.com/fm1-workbench" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -640,47 +640,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">C++</span>
-          <span class="paper-id">⭐ 134,596 &nbsp;+176 today</span>
-        </div>
-        <span class="score-badge">推荐度 90/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/ggml-org/llama.cpp" target="_blank">ggml-org/llama.cpp</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        ggml-org /
-
-      llama.cpp  
-
-    
-      LLM inference in C/C++</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/ggml-org/llama.cpp" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 116,721 &nbsp;+816 today</span>
+          <span class="category-badge gh-badge">Go</span>
+          <span class="paper-id">⭐ 50,662 &nbsp;+215 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a>
+        <a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -693,28 +659,28 @@
 
 
       
-        addyosmani /
+        alibaba /
 
-      agent-skills  
+      open-code-review  
 
     
-      Production-grade engineering skills for AI coding agents.</p>
+      Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/addyosmani/agent-skills" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/alibaba/open-code-review" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Shell</span>
-          <span class="paper-id">⭐ 96,024 &nbsp;+63 today</span>
+          <span class="category-badge gh-badge">Go</span>
+          <span class="paper-id">⭐ 9,477 &nbsp;+256 today</span>
         </div>
-        <span class="score-badge">推荐度 65/100</span>
+        <span class="score-badge">推荐度 75/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/nvm-sh/nvm" target="_blank">nvm-sh/nvm</a>
+        <a href="https://github.com/tailscale/tailcat" target="_blank">tailscale/tailcat</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -727,49 +693,15 @@
 
 
       
-        nvm-sh /
+        tailscale /
 
-      nvm  
+      tailcat  
 
     
-      Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.</p>
+      like netcat, but over Tailscale's data plane, without Tailscale's control plane</p>
       
       <div class="paper-links">
-        <a href="https://github.com/nvm-sh/nvm" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 69,355 &nbsp;+415 today</span>
-        </div>
-        <span class="score-badge">推荐度 40/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        Alishahryar1 /
-
-      free-claude-code  
-
-    
-      Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/Alishahryar1/free-claude-code" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/tailscale/tailcat" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -777,7 +709,75 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 3,154 &nbsp;+739 today</span>
+          <span class="paper-id">⭐ 55,479 &nbsp;+67 today</span>
+        </div>
+        <span class="score-badge">推荐度 50/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank">ChromeDevTools/chrome-devtools-mcp</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        ChromeDevTools /
+
+      chrome-devtools-mcp  
+
+    
+      Chrome DevTools for coding agents</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">Rust</span>
+          <span class="paper-id">⭐ 37,308 &nbsp;+97 today</span>
+        </div>
+        <span class="score-badge">推荐度 30/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/block/buzz" target="_blank">block/buzz</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        block /
+
+      buzz  
+
+    
+      A hive mind communication platform</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/block/buzz" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 4,903 &nbsp;+1925 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -811,7 +811,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 12,486 &nbsp;+643 today</span>
+          <span class="paper-id">⭐ 13,157 &nbsp;+751 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
@@ -844,15 +844,28 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Objective-C</span>
-          <span class="paper-id">⭐ 1,561 &nbsp;+218 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 71,651 &nbsp;+256 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/pookjw/HermesEnabler" target="_blank">pookjw/HermesEnabler</a>
+        <a href="https://github.com/sponsors/ZhuLinsen" target="_blank">sponsors/ZhuLinsen</a>
       </h3>
-      <p class="paper-authors">Star
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
 
 
   
@@ -863,15 +876,15 @@
 
 
       
-        pookjw /
+        ZhuLinsen /
 
-      HermesEnabler  
+      daily_stock_analysis  
 
     
-      Enable Hermès Watch Faces on any Apple Watch devices</p>
+      LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/pookjw/HermesEnabler" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/sponsors/ZhuLinsen" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -879,7 +892,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Ruby</span>
-          <span class="paper-id">⭐ 13,980 &nbsp;+967 today</span>
+          <span class="paper-id">⭐ 14,777 &nbsp;+925 today</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
