@@ -1,0 +1,100 @@
+[
+  {
+    "id": "2611.17321",
+    "title": "BrickFlow: Connectivity-Guided Brick Reconstruction",
+    "abstract": "Given a set of LEGO parts and an image of an assembled object, our task is to infer the pose of each part to assemble the object. In contrast with traditional 3D reconstruction, doing so requires satisfying discrete physical constraints, which provide structure but render the problem combinatorial and highly sensitive to small pose errors. To learn a prior over how parts fit together, we train a set-conditioned SE(3) flow model on procedurally generated assemblies. We then finetune this model to inject image conditioning, using 1% as much data. However, while the learned flow captures global structure, it does not enforce connectivity. To address this, we introduce an analytic connectivity-field guidance to pull predictions toward connected assemblies at test time. Through this, we demonstrate improved build quality with model size, pretraining, and guidance. We make our models and data available for research purposes at https://kulits.github.io/BrickFlow/",
+    "authors": [
+      "Peter Kulits",
+      "Cordelia Schmid"
+    ],
+    "published": "2026-11-12",
+    "updated": "2026-11-12",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.17321.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.17321",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.17318",
+    "title": "Spatial Foundry: A Multimodal Dataset for Spatial Intelligence",
+    "abstract": "Spatial intelligence requires connecting visual observations to the geometry, objects, and persistent state of an environment. Images alone leave these relationships implicit, while disconnected annotations make it difficult to study appearance, camera motion, and scene changes under a common reference. We introduce Spatial Foundry, a collection of 5,280 furnished residential 3D scene configurations with editable assets and aligned visual, geometric, and temporal data. Its modalities include floor plans, perspective and panoramic RGB, metric depth, point clouds, meshes, instance-level 3D bounding boxes, and camera trajectories paired with video. Shared scene coordinates link observations across views and time; editable source scenes enable additional camera paths and controlled object changes. We describe the data representation and construction workflow, and discuss applications in floor-plan-conditioned 3D generation, geometric reconstruction, instance-level perception, camera-conditioned video generation, shared world modeling, and scene editing. Controlled camera and scene variations support spatial perception and world-model research. The public project page provides videos and an interactive colored point-cloud preview.",
+    "authors": [
+      "Ethan Lin",
+      "Yang Song"
+    ],
+    "published": "2026-11-12",
+    "updated": "2026-11-12",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.17318.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.17318",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.17302",
+    "title": "FLEX-LBP: Learning Local Binary Patterns with Exact Binary Inference for Texture Classification",
+    "abstract": "Local Binary Patterns (LBP) remain among the most widely used texture descriptors, from industrial inspection to medical imaging. Yet their radius, sampling angles, color transform and thresholds are fixed by hand for each dataset. We present FLEX-LBP, which learns these parameters by backpropagation while every forward pass computes exact binary codes and hard histogram counts. A straight-through estimator acts only in the backward pass, so the deployed descriptor is an interpretable hard-binary LBP with 90 learnable parameters and unchanged inference cost. In a controlled ablation on six color texture benchmarks, the component worth learning is dataset-dependent. One configuration, applied unchanged everywhere, learns the geometry and thresholds with the color transform frozen. It improves the nearest-neighbor accuracy of the identical fixed descriptor by 3.55 points on average over five seeds, significantly on five of six benchmarks and never significantly worse. With a linear discriminant readout, it gains 0.9 points; the fully learned descriptor gains 2.7 and has the highest mean. FLEX-LBP is more accurate than five classical LBP-family descriptors, PCANet and a neural LBP on five of six benchmarks. Its mean nearest-neighbor accuracy exceeds that of frozen ImageNet ResNet-50 features (23.5 million parameters). On the Kather colorectal cancer histology benchmark, the fully learned descriptor reaches 93.8%, significantly above the best classical descriptor (Completed LBP, 92.8%). The learned radii adapt in directions that recur across seeds. Noise drowns single-pixel comparisons and illuminant change flips inter-channel ones; median sampling or gray-world normalization restores 96-97%. The code is available as a drop-in PyTorch layer at https://github.com/medalimoussa/FLEX-LBP.",
+    "authors": [
+      "Mohamed Alimoussa",
+      "Amal El Kaid"
+    ],
+    "published": "2026-11-12",
+    "updated": "2026-11-12",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.17302.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.17302",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.17298",
+    "title": "Consistent Video-to-Video Translation via Explicit Correspondences",
+    "abstract": "Interactive video-to-video applications require real-time generation while maintaining long-range temporal consistency. However, recent methods achieve speed by restricting attention to a fixed-length causal window. This limits long-range consistency whenever relevant history falls outside the context window. To address this limitation, we introduce vid2vid-long, a correspondence-based approach grounded in a simple observation. Video-to-video translation provides an explicit cross-frame reference: the regions that match in the input video should match in the output video too. Concretely, we compute patch-level correspondences in the input, guiding retrieval of previously generated outputs in the corresponding regions, and condition the model on these patches through correspondence cross-attention. Our experiments demonstrate that vid2vid-long consistently improves long-range temporal consistency across recent video models while preserving generation quality and real-time performance.",
+    "authors": [
+      "Gaurav Parmar",
+      "Zhengqi Li",
+      "Richard Zhang",
+      "Jun-Yan Zhu",
+      "Srinivasa Narasimhan",
+      "Eli Shechtman",
+      "Yotam Nitzan"
+    ],
+    "published": "2026-11-12",
+    "updated": "2026-11-12",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.17298.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.17298",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.17284",
+    "title": "Augmented Hybrid TV Services. Habits, Preferences, Opinions and Expectations of Spanish Consumers",
+    "abstract": "The convergence of hybrid broadcast and broadband delivery, companion devices, and immersive technologies enables new forms of interactive, personalized, and accessible TV services. This paper introduces the concept of Augmented Hybrid TV services and presents an exploratory user requirements and preliminary acceptance assessment for 5 representative use cases. They were selected through an exploratory stakeholder consultation and 3 co-design workshops with audiovisual professionals and participants from organizations supporting people with visual or hearing impairments. They combine conventional TV with complementary content delivered to connected devices, including AR/VR HMD. They were subsequently evaluated through a cross-sectional CAWI survey of 626 Internet and connected TV users in Spain. Each participant viewed standardized video demonstrations of 2 randomly assigned cases and assessed their perceived usefulness, anticipated benefits/limitations, and interest in them. The results show substantial interest across all five use cases, ranging from 64.7% to 76.9%. Adaptive and personalized augmented subtitles received the highest level of interest and were particularly valued for their accessibility, language-learning, and personalization benefits. Immersive services involving complementary AR content, virtual screens, 3D objects, and 360 video were also evaluated positively, although participants identified device cost, ergonomics, connectivity, usability, and synchronization as anticipated limitations. The findings provide user-centered evidence that can inform the prioritization, design, and subsequent prototype-based evaluation of standards-compliant Augmented Hybrid TV services. Because the study assessed video-based scenarios rather than functional systems, the results represent perceived usefulness and stated interest rather than observed adoption or technically validated QoE.",
+    "authors": [
+      "Fernando Boronat",
+      "Bernat Roig",
+      "Enric Sigalat",
+      "Santiago J. Flores"
+    ],
+    "published": "2026-11-12",
+    "updated": "2026-11-12",
+    "categories": [
+      "cs.MM",
+      "cs.ET"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.17284.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.17284",
+    "primary_category": "cs.MM"
+  }
+]

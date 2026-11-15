@@ -1,0 +1,98 @@
+[
+  {
+    "id": "alibaba_open-code-review",
+    "full_name": "alibaba/open-code-review",
+    "owner": "alibaba",
+    "name": "open-code-review",
+    "url": "https://github.com/alibaba/open-code-review",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        alibaba /\n\n      open-code-review  \n\n    \n      Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.",
+    "language": "Go",
+    "stars": 51456,
+    "stars_today": 893,
+    "relevance_score": 85
+  },
+  {
+    "id": "sponsors_JuliusBrussee",
+    "full_name": "sponsors/JuliusBrussee",
+    "owner": "sponsors",
+    "name": "JuliusBrussee",
+    "url": "https://github.com/sponsors/JuliusBrussee",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        JuliusBrussee /\n\n      caveman  \n\n    \n      🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+    "language": "Go",
+    "stars": 120090,
+    "stars_today": 227,
+    "relevance_score": 65
+  },
+  {
+    "id": "dream-num_univer",
+    "full_name": "dream-num/univer",
+    "owner": "dream-num",
+    "name": "univer",
+    "url": "https://github.com/dream-num/univer",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        dream-num /\n\n      univer  \n\n    \n      Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+    "language": "TypeScript",
+    "stars": 24514,
+    "stars_today": 495,
+    "relevance_score": 60
+  },
+  {
+    "id": "ChromeDevTools_chrome-devtools-mcp",
+    "full_name": "ChromeDevTools/chrome-devtools-mcp",
+    "owner": "ChromeDevTools",
+    "name": "chrome-devtools-mcp",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ChromeDevTools /\n\n      chrome-devtools-mcp  \n\n    \n      Chrome DevTools for coding agents",
+    "language": "TypeScript",
+    "stars": 56324,
+    "stars_today": 664,
+    "relevance_score": 50
+  },
+  {
+    "id": "backnotprop_plannotator",
+    "full_name": "backnotprop/plannotator",
+    "owner": "backnotprop",
+    "name": "plannotator",
+    "url": "https://github.com/backnotprop/plannotator",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        backnotprop /\n\n      plannotator  \n\n    \n      The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+    "language": "TypeScript",
+    "stars": 11151,
+    "stars_today": 408,
+    "relevance_score": 0
+  },
+  {
+    "id": "GoogleChrome_modern-web-guidance-src",
+    "full_name": "GoogleChrome/modern-web-guidance-src",
+    "owner": "GoogleChrome",
+    "name": "modern-web-guidance-src",
+    "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        GoogleChrome /\n\n      modern-web-guidance-src  \n\n    \n      Keep your coding agent up to date with the latest web best practices",
+    "language": "TypeScript",
+    "stars": 6081,
+    "stars_today": 1231,
+    "relevance_score": 0
+  },
+  {
+    "id": "tradermonty_claude-trading-skills",
+    "full_name": "tradermonty/claude-trading-skills",
+    "owner": "tradermonty",
+    "name": "claude-trading-skills",
+    "url": "https://github.com/tradermonty/claude-trading-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        tradermonty /\n\n      claude-trading-skills  \n\n    \n      Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+    "language": "Python",
+    "stars": 4838,
+    "stars_today": 553,
+    "relevance_score": 0
+  },
+  {
+    "id": "QwenLM_qwen-code",
+    "full_name": "QwenLM/qwen-code",
+    "owner": "QwenLM",
+    "name": "qwen-code",
+    "url": "https://github.com/QwenLM/qwen-code",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        QwenLM /\n\n      qwen-code  \n\n    \n      An open-source AI coding agent that lives in your terminal.",
+    "language": "TypeScript",
+    "stars": 30358,
+    "stars_today": 64,
+    "relevance_score": 0
+  }
+]
