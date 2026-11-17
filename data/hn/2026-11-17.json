@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50522980,
+    "title": "Carnegie Mellon is putting computer science courses on YouTube for free",
+    "url": "https://www.cs.cmu.edu/learn/",
+    "text": "",
+    "score": 943,
+    "comments": 147,
+    "by": "pcompeau",
+    "time": 1794861816,
+    "hn_url": "https://news.ycombinator.com/item?id=50522980",
+    "relevance_score": 0
+  },
+  {
+    "id": 50524736,
+    "title": "Windows 11 Is Collecting Data on Which Coding Agents and Developer Tools You Use",
+    "url": "https://xusheng.dev/posts/windows-coding-agent-telemetry/",
+    "text": "",
+    "score": 356,
+    "comments": 217,
+    "by": "cwaffles",
+    "time": 1794869900,
+    "hn_url": "https://news.ycombinator.com/item?id=50524736",
+    "relevance_score": 0
+  },
+  {
+    "id": 50523601,
+    "title": "BugMeNot has closed",
+    "url": "https://www.bugmenot.com/",
+    "text": "",
+    "score": 393,
+    "comments": 197,
+    "by": "lode",
+    "time": 1794864737,
+    "hn_url": "https://news.ycombinator.com/item?id=50523601",
+    "relevance_score": 0
+  },
+  {
+    "id": 50524767,
+    "title": "Optimizely compromised, served malware on Zoom, GitLab",
+    "url": "https://blog.report-uri.com/worlds-largest-brands-infected-with-malware-via-optimizely/",
+    "text": "",
+    "score": 174,
+    "comments": 87,
+    "by": "kristjansson",
+    "time": 1794870034,
+    "hn_url": "https://news.ycombinator.com/item?id=50524767",
+    "relevance_score": 0
+  },
+  {
+    "id": 50526152,
+    "title": "Running coding agents without handing them my credentials",
+    "url": "https://blog.antonio.cx/running-agents-with-lend",
+    "text": "",
+    "score": 55,
+    "comments": 23,
+    "by": "antoniomika",
+    "time": 1794878336,
+    "hn_url": "https://news.ycombinator.com/item?id=50526152",
+    "relevance_score": 0
+  },
+  {
+    "id": 50526560,
+    "title": "If an App Asks for Full Disk Access or System and App Protection Override",
+    "url": "https://support.apple.com/en-us/149699",
+    "text": "",
+    "score": 36,
+    "comments": 17,
+    "by": "jshier",
+    "time": 1794881824,
+    "hn_url": "https://news.ycombinator.com/item?id=50526560",
+    "relevance_score": 0
+  },
+  {
+    "id": 50523459,
+    "title": "OpenCode Browse",
+    "url": "https://opencode.ai/product/browse",
+    "text": "",
+    "score": 164,
+    "comments": 72,
+    "by": "mfiguiere",
+    "time": 1794864037,
+    "hn_url": "https://news.ycombinator.com/item?id=50523459",
+    "relevance_score": 0
+  },
+  {
+    "id": 50526537,
+    "title": "Mem Is Shutting Down",
+    "url": "https://get.mem.ai/blog/mem-is-shutting-down",
+    "text": "",
+    "score": 27,
+    "comments": 28,
+    "by": "qainsights",
+    "time": 1794881621,
+    "hn_url": "https://news.ycombinator.com/item?id=50526537",
+    "relevance_score": 0
+  }
+]

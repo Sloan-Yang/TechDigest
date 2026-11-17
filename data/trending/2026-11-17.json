@@ -1,0 +1,98 @@
+[
+  {
+    "id": "google-labs-code_stitch-skills",
+    "full_name": "google-labs-code/stitch-skills",
+    "owner": "google-labs-code",
+    "name": "stitch-skills",
+    "url": "https://github.com/google-labs-code/stitch-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-labs-code /\n\n      stitch-skills  \n\n    \n      A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+    "language": "TypeScript",
+    "stars": 9792,
+    "stars_today": 529,
+    "relevance_score": 85
+  },
+  {
+    "id": "alibaba_open-code-review",
+    "full_name": "alibaba/open-code-review",
+    "owner": "alibaba",
+    "name": "open-code-review",
+    "url": "https://github.com/alibaba/open-code-review",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        alibaba /\n\n      open-code-review  \n\n    \n      Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.",
+    "language": "Go",
+    "stars": 53080,
+    "stars_today": 951,
+    "relevance_score": 85
+  },
+  {
+    "id": "mvanhorn_last30days-skill",
+    "full_name": "mvanhorn/last30days-skill",
+    "owner": "mvanhorn",
+    "name": "last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        mvanhorn /\n\n      last30days-skill  \n\n    \n      AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+    "language": "Python",
+    "stars": 68270,
+    "stars_today": 135,
+    "relevance_score": 75
+  },
+  {
+    "id": "dream-num_univer",
+    "full_name": "dream-num/univer",
+    "owner": "dream-num",
+    "name": "univer",
+    "url": "https://github.com/dream-num/univer",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        dream-num /\n\n      univer  \n\n    \n      Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+    "language": "TypeScript",
+    "stars": 27928,
+    "stars_today": 1828,
+    "relevance_score": 60
+  },
+  {
+    "id": "ChromeDevTools_chrome-devtools-mcp",
+    "full_name": "ChromeDevTools/chrome-devtools-mcp",
+    "owner": "ChromeDevTools",
+    "name": "chrome-devtools-mcp",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ChromeDevTools /\n\n      chrome-devtools-mcp  \n\n    \n      Chrome DevTools for coding agents",
+    "language": "TypeScript",
+    "stars": 57776,
+    "stars_today": 841,
+    "relevance_score": 50
+  },
+  {
+    "id": "sponsors_sveltejs",
+    "full_name": "sponsors/sveltejs",
+    "owner": "sponsors",
+    "name": "sveltejs",
+    "url": "https://github.com/sponsors/sveltejs",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        sveltejs /\n\n      svelte  \n\n    \n      web development for the rest of us",
+    "language": "JavaScript",
+    "stars": 89056,
+    "stars_today": 115,
+    "relevance_score": 30
+  },
+  {
+    "id": "ag-ui-protocol_ag-ui",
+    "full_name": "ag-ui-protocol/ag-ui",
+    "owner": "ag-ui-protocol",
+    "name": "ag-ui",
+    "url": "https://github.com/ag-ui-protocol/ag-ui",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        ag-ui-protocol /\n\n      ag-ui  \n\n    \n      AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+    "language": "TypeScript",
+    "stars": 19267,
+    "stars_today": 791,
+    "relevance_score": 0
+  },
+  {
+    "id": "backnotprop_plannotator",
+    "full_name": "backnotprop/plannotator",
+    "owner": "backnotprop",
+    "name": "plannotator",
+    "url": "https://github.com/backnotprop/plannotator",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        backnotprop /\n\n      plannotator  \n\n    \n      The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+    "language": "TypeScript",
+    "stars": 12692,
+    "stars_today": 696,
+    "relevance_score": 0
+  }
+]
