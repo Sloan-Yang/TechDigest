@@ -1,0 +1,113 @@
+[
+  {
+    "id": "2611.22709",
+    "title": "Know When to Zoom: How Small Is Too Small for Vision-Language Models?",
+    "abstract": "Online vision-language models often miss small details in large images, because the service shrinks the image, or rejects it, before the model ever sees it. A car 20 pixels wide in an 8000 by 6000 drone photo reaches Claude about 6 pixels wide, and OpenAI's default rejects the photo outright. We measure how much detail survives for seven models from four vendors, using an eye exam of printed codes and 601 questions about small objects in real photos. The smallest text a model reads half the time grows from 6 pixels or less on a small image to a predicted 10 to 13 pixels on a 7680 by 4320 photo at default settings. Zooming wins much of the detail back. Splitting each photo into up to nine tiles raises accuracy by 11.1 to 14.5 percentage points for Claude and Gemini, and by avoiding rejections it lifts GPT-6.1 Sol from 50.7% to 83.7%. A two-step zoom, in which the model first names the region it needs, matches or beats tiles on Gemini and comes within 2.5 points of them on Claude, with about 40% of their image tokens. When a detail is lost, Claude and Gemini both say they cannot tell about half the time, but they fail differently in the rest: Gemini gives a confident wrong answer in 43% to 48% of these cases, Claude in only 5% to 9%. A check based on detail size, run before the call, misses most of the gain from tiles on Claude and Gemini, but Claude's own reply is a reliable trigger: tiling only after an unsure reply comes within 1.4 points of always tiling with 62% to 70% of the image tokens. We turn these findings into five rules for when an agent should zoom, and release the eye exam, every model answer and code at https://siddvoh.com/know-when-to-zoom.",
+    "authors": [
+      "Siddharth Vohra",
+      "Min Xu"
+    ],
+    "published": "2026-11-17",
+    "updated": "2026-11-17",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.22709.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.22709",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.22704",
+    "title": "Social Signal Bench: Evidence-Weighted Evaluation of Co-occurring Social Signals in Video and Audio",
+    "abstract": "Recognizing social signals such as interest and hesitation requires interpreting context-dependent behaviors that may co-occur in conversation. Existing affective computing benchmarks rarely evaluate such co-occurring signals, and conventional multi-label F1 overlooks semantic relationships and annotator disagreement. We introduce Social Signal Bench, a 47-hour densely annotated benchmark for the evaluation of social signal recognition and engagement, comprising two datasets: Social Signal Bench Video (25 hours), covering ten social signals in audiovisual recordings, and Social Signal Bench Audio (22 hours), covering six signals in audio-only recordings. Each dataset pairs a public training set of online conversational video, of which 10 hours are expert-annotated and the remainder pseudo-labeled, with a private expert-labeled test set spanning four conversational domains. We also propose Evidence-Weighted F1 (EW-F1), which weights reference labels by annotator evidence and assigns graded credit to semantically related predictions through optimal per-clip matching. Controlled perturbations demonstrate that EW-F1 distinguishes semantically related errors from unrelated ones, unlike conventional F1. Under a shared evaluation protocol, 7B open models post-trained on Social Signal Bench outperform general-purpose frontier models on video and match them on audio.",
+    "authors": [
+      "Siddharth Ravi",
+      "Anders R. Bargum",
+      "Hugo Anselme",
+      "Patrizio Cugia di Sant'Orsola",
+      "Alberto Cardaci",
+      "Flora Kincso Parragi",
+      "Vincent Borowiec",
+      "Line H. Clemmensen"
+    ],
+    "published": "2026-11-17",
+    "updated": "2026-11-17",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.22704.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.22704",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.22699",
+    "title": "TANGO: Real-World Unregistered RGB-Guided Hyperspectral Super-Resolution with Two-Camera Acquisitions",
+    "abstract": "Unregistered hyperspectral image super-resolution aims to recover a high-resolution HSI from a low-resolution hyperspectral observation and an unregistered high-resolution RGB reference. Although recent methods have begun to address the geometric misalignment between the two modalities, their evaluation is still constrained by the lack of a large-scale public benchmark based on real two-camera RGB--HSI acquisitions with a high-resolution HSI reference. To address this gap, we introduce DUET, the first large-scale public dataset for unregistered RGB-guided hyperspectral super-resolution, comprising 403 indoor and outdoor scenes captured with two separate RGB and hyperspectral cameras. We further propose TANGO (Two-camera AligNment with Gated Occlusions), which first compensates for the dominant cross-camera displacement through end-to-end global alignment and then refines the remaining inconsistencies with a coarse-to-fine local feature alignment. A learned gating mechanism further attenuates the RGB guidance where the two views cannot be consistently matched. Experimental results show that TANGO achieves state-of-the-art performance on both DUET and REAL across all evaluated scale factors, outperforming the strongest competitor on DUET by up to 2.29 dB in PSNR while requiring 2.5$\\times$ fewer FLOPs. The code and dataset will be available at https://github.com/FagiolottoConSombrero/TANGO-DUET",
+    "authors": [
+      "Matteo Kolyszko",
+      "Marco Buzzelli",
+      "Simone Bianco",
+      "Raimondo Schettini"
+    ],
+    "published": "2026-11-17",
+    "updated": "2026-11-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.22699.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.22699",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.22686",
+    "title": "CascadeJEPA: Enhancing 3D Geometric Representations via Spatially Coupled Cascaded Prediction",
+    "abstract": "Joint-Embedding Predictive Architectures (JEPAs) have emerged as a promising paradigm for predictive visual representation learning. However, our analysis of I-JEPA reveals a growing discrepancy between semantic and geometric learning: improved semantic recognition during pretraining is accompanied by degraded 3D geometric representations. We hypothesize that this partly stems from predicting highly abstract latent representations with incomplete spatial context, favoring semantic regularities over fine-grained geometric information. To address this issue, we introduce CascadeJEPA, a spatially coupled cascaded prediction framework that promotes richer patch-level interactions through full-grid context encoding and cross-attention between prediction stages, while largely preserving the original I-JEPA architecture. Extensive experiments demonstrate substantial improvements over I-JEPA across multiple 3D geometric tasks while maintaining strong semantic recognition performance. Furthermore, its advantages extend to future feature forecasting and world model planning, highlighting the potential of enhanced geometric representations to support predictive world modeling.",
+    "authors": [
+      "Kailai Zhou",
+      "Ziqi Chen",
+      "Xiaoning Xu",
+      "Yuefeng Wu",
+      "Zixuan Fu",
+      "Zijun Lin",
+      "Zhihao Li",
+      "Youwei Pang",
+      "Xiaoqi Zhao",
+      "Xun Cao",
+      "Bihan Wen"
+    ],
+    "published": "2026-11-17",
+    "updated": "2026-11-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.22686.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.22686",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.22680",
+    "title": "Classification of Tissues on MALDI-MSI Image Modality for Pancreatic Cancer Studies",
+    "abstract": "Mass Spectrometry Imaging (MSI) spatially maps molecular distributions in tissue sections. Despite the availability of preprocessing tools for MSI data, building end-to-end workflows suitable for deep learning remains challenging. We have developed a fully automated pipeline for transformation of raw Matrix-Assisted Laser Desorption/Ionization Mass Spectrometry imaging (MALDI-MSI) data into deep-learning-ready image patches for binary pancreatic tissue classification (tumoral vs non-tumoral) and built individual models for recognition of tumoral regions in spectral images. Images resulting from the proposed pipeline and from reference interactive workflow are very close in terms of image quality metric mean squared error (MSE). The proposed pipeline computational time is of 20 min in average compared to a full working day of the reference interactive workflow. The models achieved 0.94 accuracy on high-resolution spectra and a mean accuracy of 0.59 on lower-resolution spectra.",
+    "authors": [
+      "Abubakar Qahir",
+      "Jenny Benois-Pineau",
+      "Victoria Bourgeais",
+      "Fabien Baldacci",
+      "Sandrine Dabernat",
+      "Nicolas Desbenoit",
+      "Mélanie Moreau",
+      "Mehdi Boubaddi",
+      "Marion Marty"
+    ],
+    "published": "2026-11-17",
+    "updated": "2026-11-17",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.22680.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.22680",
+    "primary_category": "cs.CV"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "alibaba_open-code-review",
+    "full_name": "alibaba/open-code-review",
+    "owner": "alibaba",
+    "name": "open-code-review",
+    "url": "https://github.com/alibaba/open-code-review",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        alibaba /\n\n      open-code-review  \n\n    \n      Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.",
+    "language": "Go",
+    "stars": 53827,
+    "stars_today": 763,
+    "relevance_score": 85
+  },
+  {
+    "id": "google-labs-code_stitch-skills",
+    "full_name": "google-labs-code/stitch-skills",
+    "owner": "google-labs-code",
+    "name": "stitch-skills",
+    "url": "https://github.com/google-labs-code/stitch-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-labs-code /\n\n      stitch-skills  \n\n    \n      A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+    "language": "TypeScript",
+    "stars": 10147,
+    "stars_today": 350,
+    "relevance_score": 85
+  },
+  {
+    "id": "jingyaogong_minimind",
+    "full_name": "jingyaogong/minimind",
+    "owner": "jingyaogong",
+    "name": "minimind",
+    "url": "https://github.com/jingyaogong/minimind",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        jingyaogong /\n\n      minimind  \n\n    \n      🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+    "language": "Python",
+    "stars": 66097,
+    "stars_today": 192,
+    "relevance_score": 85
+  },
+  {
+    "id": "mvanhorn_last30days-skill",
+    "full_name": "mvanhorn/last30days-skill",
+    "owner": "mvanhorn",
+    "name": "last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        mvanhorn /\n\n      last30days-skill  \n\n    \n      AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+    "language": "Python",
+    "stars": 69193,
+    "stars_today": 696,
+    "relevance_score": 75
+  },
+  {
+    "id": "dream-num_univer",
+    "full_name": "dream-num/univer",
+    "owner": "dream-num",
+    "name": "univer",
+    "url": "https://github.com/dream-num/univer",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        dream-num /\n\n      univer  \n\n    \n      Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+    "language": "TypeScript",
+    "stars": 28969,
+    "stars_today": 1774,
+    "relevance_score": 60
+  },
+  {
+    "id": "cursor_plugins",
+    "full_name": "cursor/plugins",
+    "owner": "cursor",
+    "name": "plugins",
+    "url": "https://github.com/cursor/plugins",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cursor /\n\n      plugins  \n\n    \n      Cursor plugin specification and official plugins",
+    "language": "TypeScript",
+    "stars": 16934,
+    "stars_today": 201,
+    "relevance_score": 40
+  },
+  {
+    "id": "sponsors_sveltejs",
+    "full_name": "sponsors/sveltejs",
+    "owner": "sponsors",
+    "name": "sveltejs",
+    "url": "https://github.com/sponsors/sveltejs",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        sveltejs /\n\n      svelte  \n\n    \n      web development for the rest of us",
+    "language": "JavaScript",
+    "stars": 89627,
+    "stars_today": 477,
+    "relevance_score": 30
+  },
+  {
+    "id": "sponsors_affaan-m",
+    "full_name": "sponsors/affaan-m",
+    "owner": "sponsors",
+    "name": "affaan-m",
+    "url": "https://github.com/sponsors/affaan-m",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        affaan-m /\n\n      ECC  \n\n    \n      The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "language": "JavaScript",
+    "stars": 305618,
+    "stars_today": 883,
+    "relevance_score": 30
+  }
+]

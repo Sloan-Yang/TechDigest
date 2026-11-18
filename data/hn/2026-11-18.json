@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50538240,
+    "title": "Java4Shell: RCE in OpenJDK when processing Base64",
+    "url": "https://calif.io/java4shell/",
+    "text": "",
+    "score": 600,
+    "comments": 159,
+    "by": "werrett",
+    "time": 1794949888,
+    "hn_url": "https://news.ycombinator.com/item?id=50538240",
+    "relevance_score": 0
+  },
+  {
+    "id": 50540437,
+    "title": "ID.me terms required for IRS sign-in",
+    "url": "https://consumerrights.wiki/w/ID.me_terms_required_for_IRS_sign-in",
+    "text": "",
+    "score": 148,
+    "comments": 51,
+    "by": "DeepLogin",
+    "time": 1794963105,
+    "hn_url": "https://news.ycombinator.com/item?id=50540437",
+    "relevance_score": 0
+  },
+  {
+    "id": 50540178,
+    "title": "Google's AI answers reducing search traffic by 40%",
+    "url": "https://revscope.co/blog/search-seo-geo-2026/",
+    "text": "",
+    "score": 139,
+    "comments": 89,
+    "by": "slashdev",
+    "time": 1794961078,
+    "hn_url": "https://news.ycombinator.com/item?id=50540178",
+    "relevance_score": 0
+  },
+  {
+    "id": 50535230,
+    "title": "GPT‑6.2 Astra and Sol",
+    "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+    "text": "",
+    "score": 1130,
+    "comments": 712,
+    "by": "jasondavies",
+    "time": 1794937603,
+    "hn_url": "https://news.ycombinator.com/item?id=50535230",
+    "relevance_score": 0
+  },
+  {
+    "id": 50538994,
+    "title": "Quad9's withdrawal from France: A canary in the coal mine",
+    "url": "https://blog.cloudflare.com/quad9-withdrawal-from-france/",
+    "text": "",
+    "score": 342,
+    "comments": 101,
+    "by": "subset",
+    "time": 1794953614,
+    "hn_url": "https://news.ycombinator.com/item?id=50538994",
+    "relevance_score": 0
+  },
+  {
+    "id": 50539747,
+    "title": "Archive Team is archiving the Apple Support Community (closes November 20, 2026)",
+    "url": "https://wiki.archiveteam.org/index.php/Apple_Discussions",
+    "text": "",
+    "score": 104,
+    "comments": 41,
+    "by": "digitaldragon",
+    "time": 1794958378,
+    "hn_url": "https://news.ycombinator.com/item?id=50539747",
+    "relevance_score": 0
+  },
+  {
+    "id": 50539610,
+    "title": "Microsoft's ONNX Runtime has disappeared from GitHub",
+    "url": "https://github.com/microsoft/onnxruntime",
+    "text": "",
+    "score": 160,
+    "comments": 37,
+    "by": "nvader",
+    "time": 1794957529,
+    "hn_url": "https://news.ycombinator.com/item?id=50539610",
+    "relevance_score": 0
+  },
+  {
+    "id": 50534631,
+    "title": "Nvidia stopped disclosing Singapore sales as revenues hit $104B",
+    "url": "https://www.ft.com/content/dbde7a30-548c-4f9d-a4be-7898a0c24dcf",
+    "text": "",
+    "score": 420,
+    "comments": 203,
+    "by": "louiereederson",
+    "time": 1794935526,
+    "hn_url": "https://news.ycombinator.com/item?id=50534631",
+    "relevance_score": 0
+  }
+]
