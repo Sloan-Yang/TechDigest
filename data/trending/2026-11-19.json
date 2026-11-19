@@ -1,0 +1,98 @@
+[
+  {
+    "id": "google-labs-code_stitch-skills",
+    "full_name": "google-labs-code/stitch-skills",
+    "owner": "google-labs-code",
+    "name": "stitch-skills",
+    "url": "https://github.com/google-labs-code/stitch-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-labs-code /\n\n      stitch-skills  \n\n    \n      A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+    "language": "TypeScript",
+    "stars": 10433,
+    "stars_today": 365,
+    "relevance_score": 85
+  },
+  {
+    "id": "mvanhorn_last30days-skill",
+    "full_name": "mvanhorn/last30days-skill",
+    "owner": "mvanhorn",
+    "name": "last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        mvanhorn /\n\n      last30days-skill  \n\n    \n      AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+    "language": "Python",
+    "stars": 70101,
+    "stars_today": 1059,
+    "relevance_score": 75
+  },
+  {
+    "id": "n8n-io_n8n",
+    "full_name": "n8n-io/n8n",
+    "owner": "n8n-io",
+    "name": "n8n",
+    "url": "https://github.com/n8n-io/n8n",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        n8n-io /\n\n      n8n  \n\n    \n      Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+    "language": "TypeScript",
+    "stars": 211141,
+    "stars_today": 325,
+    "relevance_score": 75
+  },
+  {
+    "id": "punkpeye_awesome-mcp-servers",
+    "full_name": "punkpeye/awesome-mcp-servers",
+    "owner": "punkpeye",
+    "name": "awesome-mcp-servers",
+    "url": "https://github.com/punkpeye/awesome-mcp-servers",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        punkpeye /\n\n      awesome-mcp-servers  \n\n    \n      A collection of MCP servers.",
+    "language": "",
+    "stars": 98072,
+    "stars_today": 53,
+    "relevance_score": 75
+  },
+  {
+    "id": "HKUDS_CLI-Anything",
+    "full_name": "HKUDS/CLI-Anything",
+    "owner": "HKUDS",
+    "name": "CLI-Anything",
+    "url": "https://github.com/HKUDS/CLI-Anything",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        HKUDS /\n\n      CLI-Anything  \n\n    \n      \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+    "language": "Python",
+    "stars": 59847,
+    "stars_today": 389,
+    "relevance_score": 70
+  },
+  {
+    "id": "nvm-sh_nvm",
+    "full_name": "nvm-sh/nvm",
+    "owner": "nvm-sh",
+    "name": "nvm",
+    "url": "https://github.com/nvm-sh/nvm",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        nvm-sh /\n\n      nvm  \n\n    \n      Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+    "language": "Shell",
+    "stars": 96164,
+    "stars_today": 237,
+    "relevance_score": 65
+  },
+  {
+    "id": "cursor_plugins",
+    "full_name": "cursor/plugins",
+    "owner": "cursor",
+    "name": "plugins",
+    "url": "https://github.com/cursor/plugins",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cursor /\n\n      plugins  \n\n    \n      Cursor plugin specification and official plugins",
+    "language": "TypeScript",
+    "stars": 17257,
+    "stars_today": 314,
+    "relevance_score": 40
+  },
+  {
+    "id": "sponsors_sveltejs",
+    "full_name": "sponsors/sveltejs",
+    "owner": "sponsors",
+    "name": "sveltejs",
+    "url": "https://github.com/sponsors/sveltejs",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        sveltejs /\n\n      svelte  \n\n    \n      web development for the rest of us",
+    "language": "JavaScript",
+    "stars": 89648,
+    "stars_today": 692,
+    "relevance_score": 30
+  }
+]
