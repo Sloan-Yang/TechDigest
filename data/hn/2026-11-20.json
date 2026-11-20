@@ -1,0 +1,98 @@
+[
+  {
+    "id": 50562754,
+    "title": "Anthropic’s Nasdaq debut",
+    "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
+    "text": "",
+    "score": 946,
+    "comments": 1861,
+    "by": "wslh",
+    "time": 1795107760,
+    "hn_url": "https://news.ycombinator.com/item?id=50562754",
+    "relevance_score": 0
+  },
+  {
+    "id": 50568130,
+    "title": "Gemini 4 Neon is the new #1 on the Models Engineering Index",
+    "url": "https://git-aarvin.github.io/mei/",
+    "text": "",
+    "score": 162,
+    "comments": 100,
+    "by": "hn-aarvin",
+    "time": 1795131335,
+    "hn_url": "https://news.ycombinator.com/item?id=50568130",
+    "relevance_score": 0
+  },
+  {
+    "id": 50563066,
+    "title": "Pancreatic cancer halted by virus injection in three patients",
+    "url": "https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/",
+    "text": "<a href=\"https:&#x2F;&#x2F;archive.ph&#x2F;2Et0x\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.ph&#x2F;2Et0x</a>",
+    "score": 610,
+    "comments": 95,
+    "by": "cybermango",
+    "time": 1795109133,
+    "hn_url": "https://news.ycombinator.com/item?id=50563066",
+    "relevance_score": 0
+  },
+  {
+    "id": 50569226,
+    "title": "OpenSSL: Buffer overflow in EVP_EncodeBlock() (CVE-2026-121481, CVSS 9.8)",
+    "url": "https://github.com/openssl/openssl/pull/33652",
+    "text": "",
+    "score": 22,
+    "comments": 1,
+    "by": "JacobHenner",
+    "time": 1795140069,
+    "hn_url": "https://news.ycombinator.com/item?id=50569226",
+    "relevance_score": 0
+  },
+  {
+    "id": 50563148,
+    "title": "Claude solves two open problems in the physics of black holes",
+    "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+    "text": "",
+    "score": 407,
+    "comments": 185,
+    "by": "cybermango",
+    "time": 1795109444,
+    "hn_url": "https://news.ycombinator.com/item?id=50563148",
+    "relevance_score": 0
+  },
+  {
+    "id": 50528119,
+    "title": "How to CAD Almost Anything",
+    "url": "https://ocw.mit.edu/courses/res-16-002-how-to-cad-almost-anything-january-iap-2024/",
+    "text": "",
+    "score": 148,
+    "comments": 37,
+    "by": "o4c",
+    "time": 1794896997,
+    "hn_url": "https://news.ycombinator.com/item?id=50528119",
+    "relevance_score": 0
+  },
+  {
+    "id": 50519231,
+    "title": "Garage Door Spam",
+    "url": "https://blog.harrison.page/garage-door-spam/",
+    "text": "",
+    "score": 771,
+    "comments": 320,
+    "by": "harrisonpage",
+    "time": 1794845616,
+    "hn_url": "https://news.ycombinator.com/item?id=50519231",
+    "relevance_score": 0
+  },
+  {
+    "id": 50567374,
+    "title": "RegExr: Temporarily Offline",
+    "url": "https://regexr.com/",
+    "text": "",
+    "score": 56,
+    "comments": 28,
+    "by": "somebudyelse",
+    "time": 1795127227,
+    "hn_url": "https://news.ycombinator.com/item?id=50567374",
+    "relevance_score": 0
+  }
+]

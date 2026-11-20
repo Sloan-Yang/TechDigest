@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-19</div>
+        <div class="page-date">📅 2026-11-20</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            人工智能: 1 | 计算机视觉: 3 | 人机交互: 1
+            计算机视觉: 5
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -327,16 +327,16 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">人工智能</span>
-          <span class="paper-id">2611.23855</span>
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.25478</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.23855" target="_blank">RoboBuilder: Agentic Robot Co-Design with Real-world Video Feedback in the Loop</a>
+        <a href="https://arxiv.org/abs/2611.25478" target="_blank">TAP: Tapping the Discriminative Potential of Frozen Representations for Class-Incremental Learning</a>
       </h3>
       
-      <p class="paper-authors">Ghadi Nehme, Dahyun Nam, Akshay Govind Srinivasan, Faez Ahmed</p>
+      <p class="paper-authors">Zihao Wang, Yu-Wei Zhan, Xiao-Qian Liu, Zhen-Duo Chen, Weitong Liu 等 (7 位作者)</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Can AI agents design robots that work in the real world? We introduce RoboBuilder, a benchmark in which coding agents co-design a robot's hardware and program from standard parts, motors and a custom 3D-printed part, and every design that passes in simulation is built and tested on a physical course. Simulation alone is not enough: under public part data, none of 15 initial passing designs crossed the real course, so an agent learns the simulator from measurements it requests and videos of real runs. Across four frontier coding agents, ten obstacles at three difficulty levels, 16,427 simulations of 12,774 distinct robots and 135 physical robots built in an estimated 240 hours, agents solve nearly all easy obstacles and invent mechanisms our search baselines do not reach, but falter at harder levels, when one robot must cross every obstacle, and in the real world, where 66% of simulated passes hold across all levels. Closing the loop helps: shown a video of its real failure, an agent redesigns the robot, sometimes correcting its simulator, and removes 72% of level-1 and level-2 failures. RoboBuilder measures progress toward agents that engineer real machines. Project Page: https://ghadinehme.com/robobuilder.github.io/</p>
+        <p>Pre-trained models provide transferable representations for class-incremental learning (CIL). However, sequentially adapting these representations introduces optimization costs and may disrupt old-class feature structure. This motivates us to explore whether the discriminative potential of these representations can be further exploited by continually accumulating class information while keeping the encoders frozen. To this end, we propose TAP, a new and novel framework for tapping the discriminative potential of frozen representations in class-incremental learning. It accumulates visual and semantic class information in the frozen CLIP embedding space with only lightweight optimization. TAP comprises three modules: class-conditional visual distribution modeling, class-adaptive semantic calibration, and visual-semantic posterior fusion. The first module retains class means and within-class scatters, combining class-specific and shared covariances to stabilize distribution estimation. The second module learns class-specific weights over text templates from current-task images, adapting text representations to downstream classes. The third module combines the visual and semantic posteriors through a weighted product of experts for prediction over all seen classes without retaining images from previous tasks. Across nine datasets under two incremental protocols, TAP achieves state-of-the-art performance, attaining the highest average incremental and final-stage accuracies among the compared methods. The code is provided as an ancillary file.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.23855" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.23855.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.25478" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.25478.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.23845</span>
+          <span class="paper-id">2611.25475</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.23845" target="_blank">ReflectScene:MLLM-Guided Closed-Loop Diffusion for 3D Indoor Scene Generation</a>
+        <a href="https://arxiv.org/abs/2611.25475" target="_blank">SegAnyFruit: Learning Generalizable and Edge Deployable Fruit Instance Segmentation at Scale</a>
       </h3>
       
-      <p class="paper-authors">Jiawei Shen, Jie Feng, Junpeng Zhang, Guanbin Li, Wanyi Chen 等 (7 位作者)</p>
+      <p class="paper-authors">Yanan Wang, Yuzheng wang, Yibin Ying, Zhenghao Fei</p>
       
       <div class="paper-summary">
         
@@ -378,12 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Text-conditioned 3D indoor scene generation requires layouts satisfying geometric, functional, and semantic constraints. However, existing diffusion methods rely primarily on static textual conditions, limiting their ability to assess evolving scenes and translate semantic discrepancies into executable object-level corrections. MLLM-based post-hoc refinement provides semantic feedback but remains decoupled from denoising, potentially disrupting scene coherence.We propose ReflectScene, an MLLM-guided closed-loop diffusion framework. First, we introduce Hierarchical Prior-Grounded Scene Understanding that aligns structured layouts with multi-view visual evidence, to interpret object-specific context and scene global semantics via a frozen multi-modal large language model (MLLM). Second, we propose MLLM-Guided Semantic Reward Evaluation to distill MLLM's diagnoses and assessments on possible candidate corrections into a lightweight Reward Predictor, enabling correction decision making with reduced computation burden. Finally, Decision-Conditioned Trajectory-Consistent Diffusion is proposed to integrate selected corrections through transient conditioning and persistent clean-estimate projection, correcting object layout in the generated scene while preserving non-target arrangements throughout denoising.Experiments on 3D-FRONT demonstrate improved functional consistency and semantic alignment while maintaining competitive generation quality and diversity.</p>
+        <p>Deploying fruit instance segmentation in real agricultural settings requires generalizing across unseen species, orchards, and imaging conditions under strict onboard compute and annotation budgets. We introduce SegAnyFruit (SAF), a data construction and progressive training framework that distills foundation-model priors into lightweight, prompt-free segmenters. SAF combines generic mask pre-training, broad mid-training on automatically annotated web imagery from our curated WebFruits dataset, and human-verified agricultural refinement post-training on PaperFruits, together spanning 733K images and 9.66M whole-fruit masks across 165 fruit types. Across seven benchmarks, zero-shot SAF-RF-DETR-XL reaches 69.06 average mask AP50:95 (+4.76 over SAM 3) while remaining deployable on edge devices. SAF initialization also boosts few-shot to full-shot adaptation across five agricultural domains while mitigating catastrophic forgetting. Finally, we systematically analyze training stages, data scale, model capacity, and generative augmentation, and validate our pipeline's transferability to underwater, cell, and human segmentation. We will release our datasets, code, and SAF models.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.23845" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.23845.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.25475" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.25475.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.23840</span>
+          <span class="paper-id">2611.25474</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.23840" target="_blank">TOGBench: Benchmarking and Improving Tiny-Object Generation Fidelity in Aerial Imagery</a>
+        <a href="https://arxiv.org/abs/2611.25474" target="_blank">TuringPAI: A Foundation for On-Device Physical AI</a>
       </h3>
       
-      <p class="paper-authors">Chanhwi Jeong, Dongmin You, Seungwook Kim</p>
+      <p class="paper-authors">Qiman Wu, Hanlin Chen, Yuhua Wei, Mingyuan Wang, Shaman Tang 等 (28 位作者)</p>
       
       <div class="paper-summary">
         
@@ -410,44 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Advances in deep generative models now enable the synthesis of realistic imagery. However, aerial imagery is dominated by tiny objects, such as vehicles, ships, and aircraft, which occupy only a few pixels owing to the overhead, wide-area nature of aerial imaging. Existing generative models struggle substantially more with tiny objects than with larger ones. This limitation has been overlooked, as prior work on generative evaluation emphasizes prompt following or human preference rather than whether small objects are rendered faithfully. To address this gap, we introduce TOGBench, a quantitative, object-level benchmark for evaluating tiny-object generation fidelity in aerial imagery. We further propose two simple train-/inference-time techniques that improve the ability of layout-to-image generators to render small objects, raising their performance on TOGBench.</p>
+        <p>Physical AI requires models that understand spatial relationships and dynamic environments and translate observations into actions under limited onboard compute. We present TuringPAI, a family of models for on-device Physical AI comprising TuringPAI-VL for shared vision-language understanding, TuringPAI-Drive for autonomous driving, and TuringPAI-Embodied for robotic manipulation. TuringPAI-VL is a 0.65B model built on HybridViT-MLQ, which combines convolutional local aggregation with Transformer-based global modeling. Multi-scale Latent Queries integrate spatial features and observation history within the same visual Transformer, providing a compact, structured interface to the language model. Training combines general vision-language data with geometric, cross-view, and temporal supervision. TuringPAI-VL supports general multimodal understanding and improves quantitative geometric perception over Qwen2-VL-2B, while providing a shared initialization for the two downstream VLA models. For autonomous driving, TuringPAI-Drive maintains all evaluated ADE/FDE metrics within 1.2\% of a full-token HybridViT baseline using the MLQ interface and achieves comparable aggregate scores in an in-house simulation evaluation. Using XPeng Native Runtime (XNRT) on a single NVIDIA Orin-X SoC, TuringPAI-Drive generates trajectories at 12\,Hz in on-vehicle operation. For robotic manipulation, TuringPAI-Embodied achieves a 96.8\% average success rate across the four LIBERO suites. These results demonstrate a shared vision-language foundation for driving and robotic manipulation under practical on-device constraints.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.23840" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.23840.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">人机交互</span>
-          <span class="paper-id">2611.23825</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.23825" target="_blank">Learning Martial Arts Motion Skills for Animating Opponents in VR Sparring Games</a>
-      </h3>
-      
-      <p class="paper-authors">Jiqing Wen, Qixuan Shi, Robert LiKamWa, Pavan Turaga</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Animating virtual opponents is an important yet challenging task in game development. In martial arts games, opponent motions must not only be physically plausible but also exhibit appropriate technique, timing, transitions, and target-directed intent. Traditional game animations often rely on handcrafted clips, state machine transitions, and procedural adjustments, which can be labor-intensive and may limit the behavioral diversity of non-player characters. This paper presents a martial arts motion skills learning framework for character animation in virtual sparring games. Inspired by Tang Soo Do, we collected a martial arts motion capture dataset containing isolated attacking and defending techniques, technique combinations and transitions, and contextual sparring variations. We first pretrained a reusable repertoire of martial arts motion skills from the captured data using reinforcement learning (RL) with adversarial style rewards, and then adapted these skills with task-specific rewards for target-directed striking and threat-aware evasion. We evaluated the motions generated by the learned policy through a user study, in which participants assessed their physical plausibility, smoothness, and martial arts form. To demonstrate their applicability to interactive gameplay, we developed a VR sparring prototype for Meta Quest headsets. The prototype combines policy-generated motion clips with lightweight state-based control to support interactive opponent behavior. Together, these findings support the feasibility of using a learned martial arts skill repertoire as a motion foundation for animating opponents in VR sparring games.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.23825" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.23825.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.25474" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.25474.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.23822</span>
+          <span class="paper-id">2611.25469</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.23822" target="_blank">Mapping the Design Space of Feature Sampling for Optical Flow</a>
+        <a href="https://arxiv.org/abs/2611.25469" target="_blank">A Wolf in Sheep's Pixels: Visual Camouflage Attacks via HDR Gain Maps</a>
       </h3>
       
-      <p class="paper-authors">Liping Zhang</p>
+      <p class="paper-authors">Qi Shen, Yujia Gong, Yue Zhao, Tong Liu</p>
       
       <div class="paper-summary">
         
@@ -474,12 +442,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>The computation of correlation features is crucial for optical flow estimation. Existing methods (e.g., RAFT) perform fixed-radius lookups on a cost volume, yielding a set of correlation features for each position; alternatively, WAFT performs single-point feature indexing, yielding one correlation feature vector per position. None of them designs a suitable correlation feature sampling scheme for each position according to regional characteristics. Our insight is that not every position requires the same sampling scheme. Applying an identical sampling scheme to every position is either redundant or insufficient and ignores the specific characteristics of the corresponding region. This paper rethinks the design of feature sampling and investigates the following question: should the support of feature sampling---i.e., the extent and directions over which evidence is aggregated---be learned separately for each query position? To study this question, we propose SAGE (Sampling with Anisotropic Gaussian Expectation). This method replaces single-point sampling with a per-pixel anisotropic Gaussian expectation on a fixed candidate grid centered on the current optical flow estimate. A positive-definite precision matrix controls the scale, anisotropy, and orientation of the sampling support, with single-point sampling included as its limiting case. Consequently, the sampling support becomes an explicit and analyzable design variable and provides a principled way to analyze how directional feature aggregation affects correspondence learning. Extensive experiments show that SAGE, while adding only 1.5% multiply-accumulate operations (MACs), effectively improves zero-shot cross-dataset generalization. When trained only on FlyingChairs and FlyingThings, SAGE reduces the end-point error (EPE) by 24.2% and 16.4% on Sintel clean and final, and reduces KITTI F1-epe and F1-all by 7.2% and 11.6%.</p>
+        <p>An image can pass automated safety checks while showing harmful content to its human viewer. We introduce DRJanus, a visual camouflage attack that exploits the gap between standard dynamic range (SDR) processing and high dynamic range (HDR) display. Automated systems often read only an image's SDR base, whereas HDR viewers reconstruct its appearance using an auxiliary gain map. DRJanus inverts this reconstruction to embed two independently chosen color images in a single JPEG, without querying or optimizing against the target model. It preserves the chosen SDR base exactly and reconstructs HDR targets at an average PSNR of 43.03 dB across 400 images. On a benchmark of 100 sexual-content images, DRJanus evades detection by all six tested commercial moderation services and nine vision-language models. Across five agents, each evaluated on 120 task cases per threat setting, attack success ranges from 31.67% to 100% for moderation evasion and from 95% to 100% for task manipulation. We also explore cross-view consistency checks as a mitigation. These findings expose a gap in visual trust: securing what a machine reads does not secure what a user sees. A demo is available at https://qshen0629.github.io/DRJanus/</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.23822" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.23822.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.25469" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.25469.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.25461</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.25461" target="_blank">ActMem: From Latent Memory Reasoning to Grounded Robotic Action</a>
+      </h3>
+      
+      <p class="paper-authors">Linfeng Dong, Jianwei Niu, Jiuyi Zhao, Ruibing Feng, Xinghao Wu 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Vision-Language-Action (VLA) models have shown promising results in real-world long-horizon manipulation, where memory plays a crucial role. However, existing memory-augmented VLAs either retrieve past observations without reasoning about what they imply, or reason over the full history in a shared context where it crowds out current perception. Cognitive science treats them as distinct systems: memory reconstructs past experience to decide what to do, while perception guides how to act. We therefore propose ActMem, an in-context memory framework that decouples memory reasoning from perceptual grounding within a single vision-language backbone. Built on a vision-language model with native video understanding, ActMem infers the current subtask from a timestamped interaction history and keeps the hidden states formed during this inference as a Latent Memory Chain-of-Thought (Memory CoT), which conditions a flow-matching action expert. Perception Attention further lets the expert attend directly to the current view. To keep inference fast under long histories, Efficient Memory CoT Inference reuses computation across consecutive decisions without changing the output. ActMem achieves 71.1% task success and 80.8% completion success on RoboMemArena, surpassing the strongest baseline by 7.5 and 8.7 percentage points, and 73.8% average success on MIKASA-Robo, the best among all compared methods. In the real world, it reaches 68.8% average success on exogenous, endogenous, and traceless memory tasks, 10.0 percentage points above the strongest memory-augmented VLA. Code and checkpoints will be released at https://github.com/LigphiDonk/ActMem and https://huggingface.co/donk111/ActMem.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.25461" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.25461.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 511 &nbsp;💬 468</span>
+          <span class="paper-id">▲ 946 &nbsp;💬 1861</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50552424" target="_blank">Gemini 4 Neon</a>
+        <a href="https://news.ycombinator.com/item?id=50562754" target="_blank">Anthropic’s Nasdaq debut</a>
       </h3>
-      <p class="paper-authors">by yigitdemirag</p>
+      <p class="paper-authors">by wslh</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50552424" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50562754" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 49 &nbsp;💬 30</span>
+          <span class="paper-id">▲ 162 &nbsp;💬 100</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50555093" target="_blank">AI Will Not Make You Rich (2025)</a>
+        <a href="https://news.ycombinator.com/item?id=50568130" target="_blank">Gemini 4 Neon is the new #1 on the Models Engineering Index</a>
       </h3>
-      <p class="paper-authors">by madars</p>
+      <p class="paper-authors">by hn-aarvin</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50555093" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://colossus.com/article/ai-will-not-make-you-rich/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50568130" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://git-aarvin.github.io/mei/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 1174 &nbsp;💬 524</span>
+          <span class="paper-id">▲ 610 &nbsp;💬 95</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50547374" target="_blank">Unauthenticated remote code execution in Nginx</a>
+        <a href="https://news.ycombinator.com/item?id=50563066" target="_blank">Pancreatic cancer halted by virus injection in three patients</a>
       </h3>
-      <p class="paper-authors">by speedping</p>
+      <p class="paper-authors">by cybermango</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50547374" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.wiz.io/blog/nginx-http2-rce-vulnerabilities" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50563066" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 102 &nbsp;💬 34</span>
+          <span class="paper-id">▲ 22 &nbsp;💬 1</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50554374" target="_blank">Gemini 4 Neon looks like an Opus 5.5 competitor</a>
+        <a href="https://news.ycombinator.com/item?id=50569226" target="_blank">OpenSSL: Buffer overflow in EVP_EncodeBlock() (CVE-2026-121481, CVSS 9.8)</a>
       </h3>
-      <p class="paper-authors">by seizethecheese</p>
+      <p class="paper-authors">by JacobHenner</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50554374" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://micjm.com/blog/gemini-4-neon-looks-like-a-top-model/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50569226" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/openssl/openssl/pull/33652" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 97 &nbsp;💬 21</span>
+          <span class="paper-id">▲ 407 &nbsp;💬 185</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50554038" target="_blank">Multiple vulnerabilities in Regexp and String case conversion</a>
+        <a href="https://news.ycombinator.com/item?id=50563148" target="_blank">Claude solves two open problems in the physics of black holes</a>
       </h3>
-      <p class="paper-authors">by runesoerensen</p>
+      <p class="paper-authors">by cybermango</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50554038" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.ruby-lang.org/en/news/2026/11/18/multiple-vulnerabilities-in-regexp-and-string/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50563148" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.anthropic.com/research/claude-black-hole-physics" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 100 &nbsp;💬 48</span>
+          <span class="paper-id">▲ 148 &nbsp;💬 37</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50553843" target="_blank">Anthropic prices initial public offering</a>
+        <a href="https://news.ycombinator.com/item?id=50528119" target="_blank">How to CAD Almost Anything</a>
       </h3>
-      <p class="paper-authors">by surprisetalk</p>
+      <p class="paper-authors">by o4c</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50553843" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.anthropic.com/news/anthropic-prices-initial-public-offering" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50528119" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://ocw.mit.edu/courses/res-16-002-how-to-cad-almost-anything-january-iap-2024/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 465 &nbsp;💬 323</span>
+          <span class="paper-id">▲ 771 &nbsp;💬 320</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50548021" target="_blank">Seven new models at scalable price-performance</a>
+        <a href="https://news.ycombinator.com/item?id=50519231" target="_blank">Garage Door Spam</a>
       </h3>
-      <p class="paper-authors">by gmays</p>
+      <p class="paper-authors">by harrisonpage</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50548021" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://microsoft.ai/news/microsoft-ignite-2026/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50519231" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.harrison.page/garage-door-spam/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 376 &nbsp;💬 165</span>
+          <span class="paper-id">▲ 56 &nbsp;💬 28</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50547777" target="_blank">AI agents ask better questions than KPMG accountants in audit trial</a>
+        <a href="https://news.ycombinator.com/item?id=50567374" target="_blank">RegExr: Temporarily Offline</a>
       </h3>
-      <p class="paper-authors">by Betelbuddy</p>
+      <p class="paper-authors">by somebudyelse</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50547777" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://europeanbusinessmagazine.com/ai-agents-better-questions-kpmg/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50567374" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://regexr.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -640,8 +640,89 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 66,981 &nbsp;+238 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/jingyaogong/minimind" target="_blank">jingyaogong/minimind</a>
+      </h3>
+      <p class="paper-authors">Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        jingyaogong /
+
+      minimind  
+
+    
+      🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/jingyaogong/minimind" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge gh-badge">HTML</span>
+          <span class="paper-id">⭐ 68,704 &nbsp;+271 today</span>
+        </div>
+        <span class="score-badge">推荐度 85/100</span>
+      </div>
+      <h3 class="paper-title">
+        <a href="https://github.com/sponsors/cathrynlavery" target="_blank">sponsors/cathrynlavery</a>
+      </h3>
+      <p class="paper-authors">Sponsor
+    
+  
+
+
+
+      
+            
+    
+
+    
+
+        
+          Star
+
+
+  
+
+  
+    
+    
+
+
+      
+        cathrynlavery /
+
+      diagram-design  
+
+    
+      Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.</p>
+      
+      <div class="paper-links">
+        <a href="https://github.com/sponsors/cathrynlavery" target="_blank" class="link-btn">⭐ GitHub</a>
+      </div>
+    </article>
+    
+    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
+      <div class="paper-header">
+        <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 10,433 &nbsp;+365 today</span>
+          <span class="paper-id">⭐ 10,755 &nbsp;+302 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -675,7 +756,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 70,101 &nbsp;+1059 today</span>
+          <span class="paper-id">⭐ 70,870 &nbsp;+954 today</span>
         </div>
         <span class="score-badge">推荐度 75/100</span>
       </div>
@@ -708,76 +789,8 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 211,141 &nbsp;+325 today</span>
-        </div>
-        <span class="score-badge">推荐度 75/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/n8n-io/n8n" target="_blank">n8n-io/n8n</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        n8n-io /
-
-      n8n  
-
-    
-      Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/n8n-io/n8n" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
-          
-          <span class="paper-id">⭐ 98,072 &nbsp;+53 today</span>
-        </div>
-        <span class="score-badge">推荐度 75/100</span>
-      </div>
-      <h3 class="paper-title">
-        <a href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank">punkpeye/awesome-mcp-servers</a>
-      </h3>
-      <p class="paper-authors">Star
-
-
-  
-
-  
-    
-    
-
-
-      
-        punkpeye /
-
-      awesome-mcp-servers  
-
-    
-      A collection of MCP servers.</p>
-      
-      <div class="paper-links">
-        <a href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank" class="link-btn">⭐ GitHub</a>
-      </div>
-    </article>
-    
-    <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
-      <div class="paper-header">
-        <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 59,847 &nbsp;+389 today</span>
+          <span class="paper-id">⭐ 60,638 &nbsp;+898 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -810,13 +823,13 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">Shell</span>
-          <span class="paper-id">⭐ 96,164 &nbsp;+237 today</span>
+          <span class="category-badge gh-badge">Python</span>
+          <span class="paper-id">⭐ 13,182 &nbsp;+38 today</span>
         </div>
-        <span class="score-badge">推荐度 65/100</span>
+        <span class="score-badge">推荐度 60/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/nvm-sh/nvm" target="_blank">nvm-sh/nvm</a>
+        <a href="https://github.com/Tracer-Cloud/opensre" target="_blank">Tracer-Cloud/opensre</a>
       </h3>
       <p class="paper-authors">Star
 
@@ -829,15 +842,15 @@
 
 
       
-        nvm-sh /
+        Tracer-Cloud /
 
-      nvm  
+      opensre  
 
     
-      Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.</p>
+      The open-source agent for CI/CD reliability.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/nvm-sh/nvm" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/Tracer-Cloud/opensre" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     
@@ -845,7 +858,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 17,257 &nbsp;+314 today</span>
+          <span class="paper-id">⭐ 17,591 &nbsp;+384 today</span>
         </div>
         <span class="score-badge">推荐度 40/100</span>
       </div>
@@ -878,28 +891,15 @@
     <article class="paper-card gh-card" style="border-left: 3px solid var(--gh-color);">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge gh-badge">JavaScript</span>
-          <span class="paper-id">⭐ 89,648 &nbsp;+692 today</span>
+          <span class="category-badge gh-badge">TypeScript</span>
+          <span class="paper-id">⭐ 204,340 &nbsp;+825 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://github.com/sponsors/sveltejs" target="_blank">sponsors/sveltejs</a>
+        <a href="https://github.com/firecrawl/firecrawl" target="_blank">firecrawl/firecrawl</a>
       </h3>
-      <p class="paper-authors">Sponsor
-    
-  
-
-
-
-      
-            
-    
-
-    
-
-        
-          Star
+      <p class="paper-authors">Star
 
 
   
@@ -910,15 +910,15 @@
 
 
       
-        sveltejs /
+        firecrawl /
 
-      svelte  
+      firecrawl  
 
     
-      web development for the rest of us</p>
+      Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.</p>
       
       <div class="paper-links">
-        <a href="https://github.com/sponsors/sveltejs" target="_blank" class="link-btn">⭐ GitHub</a>
+        <a href="https://github.com/firecrawl/firecrawl" target="_blank" class="link-btn">⭐ GitHub</a>
       </div>
     </article>
     

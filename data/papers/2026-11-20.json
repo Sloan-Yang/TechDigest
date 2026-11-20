@@ -1,0 +1,132 @@
+[
+  {
+    "id": "2611.25478",
+    "title": "TAP: Tapping the Discriminative Potential of Frozen Representations for Class-Incremental Learning",
+    "abstract": "Pre-trained models provide transferable representations for class-incremental learning (CIL). However, sequentially adapting these representations introduces optimization costs and may disrupt old-class feature structure. This motivates us to explore whether the discriminative potential of these representations can be further exploited by continually accumulating class information while keeping the encoders frozen. To this end, we propose TAP, a new and novel framework for tapping the discriminative potential of frozen representations in class-incremental learning. It accumulates visual and semantic class information in the frozen CLIP embedding space with only lightweight optimization. TAP comprises three modules: class-conditional visual distribution modeling, class-adaptive semantic calibration, and visual-semantic posterior fusion. The first module retains class means and within-class scatters, combining class-specific and shared covariances to stabilize distribution estimation. The second module learns class-specific weights over text templates from current-task images, adapting text representations to downstream classes. The third module combines the visual and semantic posteriors through a weighted product of experts for prediction over all seen classes without retaining images from previous tasks. Across nine datasets under two incremental protocols, TAP achieves state-of-the-art performance, attaining the highest average incremental and final-stage accuracies among the compared methods. The code is provided as an ancillary file.",
+    "authors": [
+      "Zihao Wang",
+      "Yu-Wei Zhan",
+      "Xiao-Qian Liu",
+      "Zhen-Duo Chen",
+      "Weitong Liu",
+      "Xin Luo",
+      "Xin-Shun Xu"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.25478.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.25478",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.25475",
+    "title": "SegAnyFruit: Learning Generalizable and Edge Deployable Fruit Instance Segmentation at Scale",
+    "abstract": "Deploying fruit instance segmentation in real agricultural settings requires generalizing across unseen species, orchards, and imaging conditions under strict onboard compute and annotation budgets. We introduce SegAnyFruit (SAF), a data construction and progressive training framework that distills foundation-model priors into lightweight, prompt-free segmenters. SAF combines generic mask pre-training, broad mid-training on automatically annotated web imagery from our curated WebFruits dataset, and human-verified agricultural refinement post-training on PaperFruits, together spanning 733K images and 9.66M whole-fruit masks across 165 fruit types. Across seven benchmarks, zero-shot SAF-RF-DETR-XL reaches 69.06 average mask AP50:95 (+4.76 over SAM 3) while remaining deployable on edge devices. SAF initialization also boosts few-shot to full-shot adaptation across five agricultural domains while mitigating catastrophic forgetting. Finally, we systematically analyze training stages, data scale, model capacity, and generative augmentation, and validate our pipeline's transferability to underwater, cell, and human segmentation. We will release our datasets, code, and SAF models.",
+    "authors": [
+      "Yanan Wang",
+      "Yuzheng wang",
+      "Yibin Ying",
+      "Zhenghao Fei"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.25475.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.25475",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.25474",
+    "title": "TuringPAI: A Foundation for On-Device Physical AI",
+    "abstract": "Physical AI requires models that understand spatial relationships and dynamic environments and translate observations into actions under limited onboard compute. We present TuringPAI, a family of models for on-device Physical AI comprising TuringPAI-VL for shared vision-language understanding, TuringPAI-Drive for autonomous driving, and TuringPAI-Embodied for robotic manipulation. TuringPAI-VL is a 0.65B model built on HybridViT-MLQ, which combines convolutional local aggregation with Transformer-based global modeling. Multi-scale Latent Queries integrate spatial features and observation history within the same visual Transformer, providing a compact, structured interface to the language model. Training combines general vision-language data with geometric, cross-view, and temporal supervision. TuringPAI-VL supports general multimodal understanding and improves quantitative geometric perception over Qwen2-VL-2B, while providing a shared initialization for the two downstream VLA models. For autonomous driving, TuringPAI-Drive maintains all evaluated ADE/FDE metrics within 1.2\\% of a full-token HybridViT baseline using the MLQ interface and achieves comparable aggregate scores in an in-house simulation evaluation. Using XPeng Native Runtime (XNRT) on a single NVIDIA Orin-X SoC, TuringPAI-Drive generates trajectories at 12\\,Hz in on-vehicle operation. For robotic manipulation, TuringPAI-Embodied achieves a 96.8\\% average success rate across the four LIBERO suites. These results demonstrate a shared vision-language foundation for driving and robotic manipulation under practical on-device constraints.",
+    "authors": [
+      "Qiman Wu",
+      "Hanlin Chen",
+      "Yuhua Wei",
+      "Mingyuan Wang",
+      "Shaman Tang",
+      "Minghao Li",
+      "Rui Xin",
+      "Xingye Liu",
+      "Zhichao Yang",
+      "Yiqi Yu",
+      "Hongyan Pei",
+      "Xiaowen Tian",
+      "YingYing Liu",
+      "Shiwen Liu",
+      "Jiahui Hu",
+      "Yizhao Wang",
+      "Yuheng Zhang",
+      "Anhua Liu",
+      "Yue He",
+      "Shuang Su",
+      "Da Zhu",
+      "Hua Zhou",
+      "Pengfei Diao",
+      "Haojie Yang",
+      "Weichao Huang",
+      "Hang Zhang",
+      "Honggou Yang",
+      "Xianming Liu"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.25474.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.25474",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.25469",
+    "title": "A Wolf in Sheep's Pixels: Visual Camouflage Attacks via HDR Gain Maps",
+    "abstract": "An image can pass automated safety checks while showing harmful content to its human viewer. We introduce DRJanus, a visual camouflage attack that exploits the gap between standard dynamic range (SDR) processing and high dynamic range (HDR) display. Automated systems often read only an image's SDR base, whereas HDR viewers reconstruct its appearance using an auxiliary gain map. DRJanus inverts this reconstruction to embed two independently chosen color images in a single JPEG, without querying or optimizing against the target model. It preserves the chosen SDR base exactly and reconstructs HDR targets at an average PSNR of 43.03 dB across 400 images. On a benchmark of 100 sexual-content images, DRJanus evades detection by all six tested commercial moderation services and nine vision-language models. Across five agents, each evaluated on 120 task cases per threat setting, attack success ranges from 31.67% to 100% for moderation evasion and from 95% to 100% for task manipulation. We also explore cross-view consistency checks as a mitigation. These findings expose a gap in visual trust: securing what a machine reads does not secure what a user sees. A demo is available at https://qshen0629.github.io/DRJanus/",
+    "authors": [
+      "Qi Shen",
+      "Yujia Gong",
+      "Yue Zhao",
+      "Tong Liu"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.25469.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.25469",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.25461",
+    "title": "ActMem: From Latent Memory Reasoning to Grounded Robotic Action",
+    "abstract": "Vision-Language-Action (VLA) models have shown promising results in real-world long-horizon manipulation, where memory plays a crucial role. However, existing memory-augmented VLAs either retrieve past observations without reasoning about what they imply, or reason over the full history in a shared context where it crowds out current perception. Cognitive science treats them as distinct systems: memory reconstructs past experience to decide what to do, while perception guides how to act. We therefore propose ActMem, an in-context memory framework that decouples memory reasoning from perceptual grounding within a single vision-language backbone. Built on a vision-language model with native video understanding, ActMem infers the current subtask from a timestamped interaction history and keeps the hidden states formed during this inference as a Latent Memory Chain-of-Thought (Memory CoT), which conditions a flow-matching action expert. Perception Attention further lets the expert attend directly to the current view. To keep inference fast under long histories, Efficient Memory CoT Inference reuses computation across consecutive decisions without changing the output. ActMem achieves 71.1% task success and 80.8% completion success on RoboMemArena, surpassing the strongest baseline by 7.5 and 8.7 percentage points, and 73.8% average success on MIKASA-Robo, the best among all compared methods. In the real world, it reaches 68.8% average success on exogenous, endogenous, and traceless memory tasks, 10.0 percentage points above the strongest memory-augmented VLA. Code and checkpoints will be released at https://github.com/LigphiDonk/ActMem and https://huggingface.co/donk111/ActMem.",
+    "authors": [
+      "Linfeng Dong",
+      "Jianwei Niu",
+      "Jiuyi Zhao",
+      "Ruibing Feng",
+      "Xinghao Wu",
+      "Wu Yang",
+      "Shuai Tao",
+      "Wulong Liu",
+      "Mu Li"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.25461.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.25461",
+    "primary_category": "cs.CV"
+  }
+]
