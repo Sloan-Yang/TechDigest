@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-20</div>
+        <div class="page-date">📅 2026-11-21</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 5
+            人工智能: 1 | 计算机视觉: 4
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.25478</span>
+          <span class="paper-id">2611.26629</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.25478" target="_blank">TAP: Tapping the Discriminative Potential of Frozen Representations for Class-Incremental Learning</a>
+        <a href="https://arxiv.org/abs/2611.26629" target="_blank">Posterior Matching Distillation</a>
       </h3>
       
-      <p class="paper-authors">Zihao Wang, Yu-Wei Zhan, Xiao-Qian Liu, Zhen-Duo Chen, Weitong Liu 等 (7 位作者)</p>
+      <p class="paper-authors">Hidir Yesiltepe, Julius Berner, Arash Vahdat, Pinar Yanardag</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Pre-trained models provide transferable representations for class-incremental learning (CIL). However, sequentially adapting these representations introduces optimization costs and may disrupt old-class feature structure. This motivates us to explore whether the discriminative potential of these representations can be further exploited by continually accumulating class information while keeping the encoders frozen. To this end, we propose TAP, a new and novel framework for tapping the discriminative potential of frozen representations in class-incremental learning. It accumulates visual and semantic class information in the frozen CLIP embedding space with only lightweight optimization. TAP comprises three modules: class-conditional visual distribution modeling, class-adaptive semantic calibration, and visual-semantic posterior fusion. The first module retains class means and within-class scatters, combining class-specific and shared covariances to stabilize distribution estimation. The second module learns class-specific weights over text templates from current-task images, adapting text representations to downstream classes. The third module combines the visual and semantic posteriors through a weighted product of experts for prediction over all seen classes without retaining images from previous tasks. Across nine datasets under two incremental protocols, TAP achieves state-of-the-art performance, attaining the highest average incremental and final-stage accuracies among the compared methods. The code is provided as an ancillary file.</p>
+        <p>Diffusion distillation accelerates image and video generation by compressing a pretrained teacher's iterative sampling process into a few network evaluations. Distribution-based methods achieve this by matching the student's output distribution to the teacher's. This matching is often driven by reverse-KL objectives, whose mode-seeking bias favors dominant teacher modes at the expense of diversity across samples. We introduce Posterior Matching Distillation (PMD), a new member of the distribution-based distillation family that combines mode-covering posterior sampling with any-step generation. At zero population loss, PMD recovers the teacher's full posterior of clean images at each trained noise level. Its stochastic student supports any-step sampling budgets within the trained timestep grid without further training. To learn these posteriors, PMD matches exponentially reweighted averages of student samples conditioned on a fixed noisy state to corresponding teacher posterior means. Under Gaussian corruption, exponentially tilted posterior mean is a single teacher evaluation at a shifted input. We prove that, matching tilted means over an open neighborhood uniquely identifies the full posterior. PMD thus supervises the entire conditional distribution through a family of mean constraints, without any auxiliary student-score network. Experiments on SDXL and FLUX.2 [klein] 4B demonstrate that PMD achieves the best FID among 4-step methods on both models, while maintaining competitive or leading performance across prompt-alignment and perceptual-quality metrics.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.25478" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.25478.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.26629" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.26629.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.25475</span>
+          <span class="paper-id">2611.26627</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.25475" target="_blank">SegAnyFruit: Learning Generalizable and Edge Deployable Fruit Instance Segmentation at Scale</a>
+        <a href="https://arxiv.org/abs/2611.26627" target="_blank">RL Post-Training in Diffusion Transformers Is Activation Steering</a>
       </h3>
       
-      <p class="paper-authors">Yanan Wang, Yuzheng wang, Yibin Ying, Zhenghao Fei</p>
+      <p class="paper-authors">Tuna Han Salih Meral, Kaan Oktay, Alec Helbling, Atakan Kara, Duen Horng Chau 等 (6 位作者)</p>
       
       <div class="paper-summary">
         
@@ -378,12 +378,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Deploying fruit instance segmentation in real agricultural settings requires generalizing across unseen species, orchards, and imaging conditions under strict onboard compute and annotation budgets. We introduce SegAnyFruit (SAF), a data construction and progressive training framework that distills foundation-model priors into lightweight, prompt-free segmenters. SAF combines generic mask pre-training, broad mid-training on automatically annotated web imagery from our curated WebFruits dataset, and human-verified agricultural refinement post-training on PaperFruits, together spanning 733K images and 9.66M whole-fruit masks across 165 fruit types. Across seven benchmarks, zero-shot SAF-RF-DETR-XL reaches 69.06 average mask AP50:95 (+4.76 over SAM 3) while remaining deployable on edge devices. SAF initialization also boosts few-shot to full-shot adaptation across five agricultural domains while mitigating catastrophic forgetting. Finally, we systematically analyze training stages, data scale, model capacity, and generative augmentation, and validate our pipeline's transferability to underwater, cell, and human segmentation. We will release our datasets, code, and SAF models.</p>
+        <p>Reinforcement learning (RL) post-training substantially improves the visual quality, text rendering, and compositional accuracy of diffusion transformers. Because capabilities such as rendering requested text or composing multiple objects are inherently prompt-dependent, a natural hypothesis is that improving them requires learning complex, input-dependent transformations. To isolate how much of these gains an input-independent shift explains, we probe each RL-tuned model with a deliberately simple parameterization: a fixed set of steering vectors added to the block outputs of the frozen base model. On SD3.5-M, these vectors hold 65x fewer parameters than the RL-tuned LoRA (0.29M against 18.8M). We fit them to match the velocity predictions of public RL-tuned checkpoints, with no reward in the objective. Although the vectors are identical for every prompt, token, and sampling seed, they recover 90.0-96.3% of the reward gains of six RL-tuned image models, and 89.8% and 111.9% on two RL-tuned video models. Initialized at zero and trained with online RL, the vectors alone exceed the reward gains of weight-based RL on text rendering (OCR) and human preference (PickScore) on SD3.5-M. A constant shift thus suffices for most of the gain of policy-gradient RL post-training: without new input-dependent transformations, it steers the pretrained generator toward what it can already compute.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.25475" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.25475.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.26627" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.26627.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">人工智能</span>
+          <span class="paper-id">2611.26624</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.26624" target="_blank">PlayCraft: Designing Engaging Games from Agent Play Experience</a>
+      </h3>
+      
+      <p class="paper-authors">Weihao Cheng</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Recent AI agents can generate playable games, but these games are not necessarily engaging. Mastery is a key source of engagement, yet designing for it requires extensive human play and tuning. We propose PlayCraft, an automated framework that uses a vision-based agent to play games and draws on its detailed play experience to revise them for mastery. Starting from an initial game, PlayCraft alternates between playing and crafting. In the playing stage, a player agent watches the game screen, uses the controls, and pursues the game objective over repeated episodes while retaining memory. After each episode, it reports its progress, outcomes, decisions, and reflections. In the crafting stage, a crafter agent uses these reports to revise the game. It estimates player abilities, predicts performance at different proficiency levels, and compares those predictions with a target learning progression. It diagnoses the game and addresses the gaps by giving players meaningful opportunities to improve through better decisions and execution. We evaluate games in fresh runs with player agents across three intelligence settings, measuring learning gain and learning slope. Compared with the initial games, PlayCraft yields larger learning gains and steeper learning slopes in most games. It also outperforms the baselines on the macro-average of each metric at every intelligence setting.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.26624" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.26624.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.25474</span>
+          <span class="paper-id">2611.26617</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.25474" target="_blank">TuringPAI: A Foundation for On-Device Physical AI</a>
+        <a href="https://arxiv.org/abs/2611.26617" target="_blank">One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised Latent Action Learning</a>
       </h3>
       
-      <p class="paper-authors">Qiman Wu, Hanlin Chen, Yuhua Wei, Mingyuan Wang, Shaman Tang 等 (28 位作者)</p>
+      <p class="paper-authors">Yuxin Jiang, Wenqiang Sun, Jiaqi Li, Yuchao Gu, Lvmin Zhang 等 (7 位作者)</p>
       
       <div class="paper-summary">
         
@@ -410,12 +442,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Physical AI requires models that understand spatial relationships and dynamic environments and translate observations into actions under limited onboard compute. We present TuringPAI, a family of models for on-device Physical AI comprising TuringPAI-VL for shared vision-language understanding, TuringPAI-Drive for autonomous driving, and TuringPAI-Embodied for robotic manipulation. TuringPAI-VL is a 0.65B model built on HybridViT-MLQ, which combines convolutional local aggregation with Transformer-based global modeling. Multi-scale Latent Queries integrate spatial features and observation history within the same visual Transformer, providing a compact, structured interface to the language model. Training combines general vision-language data with geometric, cross-view, and temporal supervision. TuringPAI-VL supports general multimodal understanding and improves quantitative geometric perception over Qwen2-VL-2B, while providing a shared initialization for the two downstream VLA models. For autonomous driving, TuringPAI-Drive maintains all evaluated ADE/FDE metrics within 1.2\% of a full-token HybridViT baseline using the MLQ interface and achieves comparable aggregate scores in an in-house simulation evaluation. Using XPeng Native Runtime (XNRT) on a single NVIDIA Orin-X SoC, TuringPAI-Drive generates trajectories at 12\,Hz in on-vehicle operation. For robotic manipulation, TuringPAI-Embodied achieves a 96.8\% average success rate across the four LIBERO suites. These results demonstrate a shared vision-language foundation for driving and robotic manipulation under practical on-device constraints.</p>
+        <p>Videos reveal how the world changes, but rarely the actions that cause those changes. Latent action learning recovers such supervision from visual transitions, yet often learns the underlying dynamics largely from scratch. We ask whether a pretrained video generator can instead provide the prior for both inverse and forward dynamics. We introduce O$^{2}$LaF, built on a simple principle: one prior, two dynamics. We initialize both models from the same pretrained video DiT and adapt them to their distinct roles: a feed-forward transition encoder with learnable action queries for inverse dynamics, and a causal, action-conditioned video generator for forward dynamics. By controlling information access and optimizing both dynamics end-to-end through a compact bottleneck, O$^{2}$LaF learns transferable actions from unlabeled videos. Across navigation and robotic manipulation, O$^{2}$LaF sets a new state of the art in few-shot action probing and enables stronger zero-shot action transfer across visual contexts and embodiments. Beyond generative video priors, we further extend our framework to predictive representation priors such as V-JEPA2, achieving competitive performance. Our findings suggest a broader paradigm for latent-action learning: repurposing pretrained video models to discover transferable actions and predict their consequences.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.25474" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.25474.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.26617" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.26617.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +456,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.25469</span>
+          <span class="paper-id">2611.26615</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.25469" target="_blank">A Wolf in Sheep's Pixels: Visual Camouflage Attacks via HDR Gain Maps</a>
+        <a href="https://arxiv.org/abs/2611.26615" target="_blank">ScaleWorld: High-Resolution World Generation through Shared Prediction and Refinement</a>
       </h3>
       
-      <p class="paper-authors">Qi Shen, Yujia Gong, Yue Zhao, Tong Liu</p>
+      <p class="paper-authors">Yansong Qu, Wesker Zheng, Quanjian Song, Zhiyuan Zhang, Xiao Cao 等 (7 位作者)</p>
       
       <div class="paper-summary">
         
@@ -442,44 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>An image can pass automated safety checks while showing harmful content to its human viewer. We introduce DRJanus, a visual camouflage attack that exploits the gap between standard dynamic range (SDR) processing and high dynamic range (HDR) display. Automated systems often read only an image's SDR base, whereas HDR viewers reconstruct its appearance using an auxiliary gain map. DRJanus inverts this reconstruction to embed two independently chosen color images in a single JPEG, without querying or optimizing against the target model. It preserves the chosen SDR base exactly and reconstructs HDR targets at an average PSNR of 43.03 dB across 400 images. On a benchmark of 100 sexual-content images, DRJanus evades detection by all six tested commercial moderation services and nine vision-language models. Across five agents, each evaluated on 120 task cases per threat setting, attack success ranges from 31.67% to 100% for moderation evasion and from 95% to 100% for task manipulation. We also explore cross-view consistency checks as a mitigation. These findings expose a gap in visual trust: securing what a machine reads does not secure what a user sees. A demo is available at https://qshen0629.github.io/DRJanus/</p>
+        <p>High-resolution generation enables video world models to render fine-grained scene structures and textures, but directly generating high-resolution video incurs substantial computational and memory costs. We present ScaleWorld, a causal video model that unifies low-resolution world prediction and high-resolution refinement within a single shared backbone. By refining its own predictions, ScaleWorld produces high-resolution world videos without requiring a separate refinement model. For each video chunk, the shared backbone first completes a low-resolution prediction and then performs one-step high-resolution refinement conditioned on that prediction. To support efficient streaming generation, we maintain separate causal states with a long low-resolution history for prediction and a short high-resolution history for refinement. To address task interference during distillation, we separate specialist optimization from capability consolidation and introduce task-asymmetric on-policy distillation (TA-OPD). This procedure transfers prediction and refinement behaviors from specialized teachers into a shared student through local velocity matching under their respective sampling and history policies. {Extensive experiments demonstrate that ScaleWorld achieves high-quality world generation with improved computational and memory efficiency.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.25469" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.25469.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.25461</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.25461" target="_blank">ActMem: From Latent Memory Reasoning to Grounded Robotic Action</a>
-      </h3>
-      
-      <p class="paper-authors">Linfeng Dong, Jianwei Niu, Jiuyi Zhao, Ruibing Feng, Xinghao Wu 等 (9 位作者)</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Vision-Language-Action (VLA) models have shown promising results in real-world long-horizon manipulation, where memory plays a crucial role. However, existing memory-augmented VLAs either retrieve past observations without reasoning about what they imply, or reason over the full history in a shared context where it crowds out current perception. Cognitive science treats them as distinct systems: memory reconstructs past experience to decide what to do, while perception guides how to act. We therefore propose ActMem, an in-context memory framework that decouples memory reasoning from perceptual grounding within a single vision-language backbone. Built on a vision-language model with native video understanding, ActMem infers the current subtask from a timestamped interaction history and keeps the hidden states formed during this inference as a Latent Memory Chain-of-Thought (Memory CoT), which conditions a flow-matching action expert. Perception Attention further lets the expert attend directly to the current view. To keep inference fast under long histories, Efficient Memory CoT Inference reuses computation across consecutive decisions without changing the output. ActMem achieves 71.1% task success and 80.8% completion success on RoboMemArena, surpassing the strongest baseline by 7.5 and 8.7 percentage points, and 73.8% average success on MIKASA-Robo, the best among all compared methods. In the real world, it reaches 68.8% average success on exogenous, endogenous, and traceless memory tasks, 10.0 percentage points above the strongest memory-augmented VLA. Code and checkpoints will be released at https://github.com/LigphiDonk/ActMem and https://huggingface.co/donk111/ActMem.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.25461" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.25461.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.26615" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.26615.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 946 &nbsp;💬 1861</span>
+          <span class="paper-id">▲ 1659 &nbsp;💬 741</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50562754" target="_blank">Anthropic’s Nasdaq debut</a>
+        <a href="https://news.ycombinator.com/item?id=50579568" target="_blank">Hurried Announcement: Alessandro Masullo GRH</a>
       </h3>
-      <p class="paper-authors">by wslh</p>
+      <p class="paper-authors">by jasondavies</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50562754" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50579568" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 162 &nbsp;💬 100</span>
+          <span class="paper-id">▲ 732 &nbsp;💬 124</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50568130" target="_blank">Gemini 4 Neon is the new #1 on the Models Engineering Index</a>
+        <a href="https://news.ycombinator.com/item?id=50581260" target="_blank">Inkling 2 Mini</a>
       </h3>
-      <p class="paper-authors">by hn-aarvin</p>
+      <p class="paper-authors">by jasondavies</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50568130" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://git-aarvin.github.io/mei/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50581260" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 610 &nbsp;💬 95</span>
+          <span class="paper-id">▲ 2408 &nbsp;💬 1627</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50563066" target="_blank">Pancreatic cancer halted by virus injection in three patients</a>
+        <a href="https://news.ycombinator.com/item?id=50574968" target="_blank">Levent Alpöge claims proof of the Generalized Riemann Hypothesis [pdf]</a>
       </h3>
-      <p class="paper-authors">by cybermango</p>
+      <p class="paper-authors">by iamronaldo</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50563066" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.newscientist.com/article/2528235-pancreatic-cancer-halted-by-virus-injection-in-three-patients/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50574968" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://alpo.ge/remark.pdf" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 22 &nbsp;💬 1</span>
+          <span class="paper-id">▲ 148 &nbsp;💬 32</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50569226" target="_blank">OpenSSL: Buffer overflow in EVP_EncodeBlock() (CVE-2026-121481, CVSS 9.8)</a>
+        <a href="https://news.ycombinator.com/item?id=50583274" target="_blank">NINLIVE: The Nine Inch Nails live archive</a>
       </h3>
-      <p class="paper-authors">by JacobHenner</p>
+      <p class="paper-authors">by CharlesW</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50569226" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/openssl/openssl/pull/33652" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50583274" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://ninlive.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 407 &nbsp;💬 185</span>
+          <span class="paper-id">▲ 323 &nbsp;💬 189</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50563148" target="_blank">Claude solves two open problems in the physics of black holes</a>
+        <a href="https://news.ycombinator.com/item?id=50579331" target="_blank">We promoted developers into architects without informing them</a>
       </h3>
-      <p class="paper-authors">by cybermango</p>
+      <p class="paper-authors">by QueensGambit</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50563148" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.anthropic.com/research/claude-black-hole-physics" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50579331" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://manidoraisamy.com/developer-to-architect.html" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 148 &nbsp;💬 37</span>
+          <span class="paper-id">▲ 357 &nbsp;💬 146</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50528119" target="_blank">How to CAD Almost Anything</a>
+        <a href="https://news.ycombinator.com/item?id=50578358" target="_blank">Unforced Navier-Stokes Singularity and the Generalized Riemann Hypothesis</a>
       </h3>
-      <p class="paper-authors">by o4c</p>
+      <p class="paper-authors">by archon1410</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50528119" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://ocw.mit.edu/courses/res-16-002-how-to-cad-almost-anything-january-iap-2024/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50578358" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 771 &nbsp;💬 320</span>
+          <span class="paper-id">▲ 54 &nbsp;💬 25</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50519231" target="_blank">Garage Door Spam</a>
+        <a href="https://news.ycombinator.com/item?id=50534387" target="_blank">Valkey kills the skiplist, cuts sorted set overhead by up to 43%</a>
       </h3>
-      <p class="paper-authors">by harrisonpage</p>
+      <p class="paper-authors">by reconditerose</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50519231" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.harrison.page/garage-door-spam/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50534387" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://valkey.io/blog/from-skiplist-to-b+tree/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 56 &nbsp;💬 28</span>
+          <span class="paper-id">▲ 348 &nbsp;💬 113</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50567374" target="_blank">RegExr: Temporarily Offline</a>
+        <a href="https://news.ycombinator.com/item?id=50577265" target="_blank">Language Models Can Rewrite Their Own Weights</a>
       </h3>
-      <p class="paper-authors">by somebudyelse</p>
+      <p class="paper-authors">by lwhsiao</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50567374" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://regexr.com/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50577265" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://arxiv.org/abs/2611.21885" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 66,981 &nbsp;+238 today</span>
+          <span class="paper-id">⭐ 67,730 &nbsp;+847 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -675,7 +675,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">HTML</span>
-          <span class="paper-id">⭐ 68,704 &nbsp;+271 today</span>
+          <span class="paper-id">⭐ 69,329 &nbsp;+636 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -722,7 +722,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 10,755 &nbsp;+302 today</span>
+          <span class="paper-id">⭐ 11,078 &nbsp;+315 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -756,7 +756,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 70,870 &nbsp;+954 today</span>
+          <span class="paper-id">⭐ 71,490 &nbsp;+681 today</span>
         </div>
         <span class="score-badge">推荐度 75/100</span>
       </div>
@@ -790,7 +790,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 60,638 &nbsp;+898 today</span>
+          <span class="paper-id">⭐ 61,453 &nbsp;+773 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -824,7 +824,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 13,182 &nbsp;+38 today</span>
+          <span class="paper-id">⭐ 13,662 &nbsp;+466 today</span>
         </div>
         <span class="score-badge">推荐度 60/100</span>
       </div>
@@ -858,7 +858,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 17,591 &nbsp;+384 today</span>
+          <span class="paper-id">⭐ 17,874 &nbsp;+299 today</span>
         </div>
         <span class="score-badge">推荐度 40/100</span>
       </div>
@@ -892,7 +892,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 204,340 &nbsp;+825 today</span>
+          <span class="paper-id">⭐ 205,366 &nbsp;+1241 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
@@ -915,7 +915,7 @@
       firecrawl  
 
     
-      Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.</p>
+      Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.</p>
       
       <div class="paper-links">
         <a href="https://github.com/firecrawl/firecrawl" target="_blank" class="link-btn">⭐ GitHub</a>

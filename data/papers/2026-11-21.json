@@ -1,0 +1,107 @@
+[
+  {
+    "id": "2611.26629",
+    "title": "Posterior Matching Distillation",
+    "abstract": "Diffusion distillation accelerates image and video generation by compressing a pretrained teacher's iterative sampling process into a few network evaluations. Distribution-based methods achieve this by matching the student's output distribution to the teacher's. This matching is often driven by reverse-KL objectives, whose mode-seeking bias favors dominant teacher modes at the expense of diversity across samples. We introduce Posterior Matching Distillation (PMD), a new member of the distribution-based distillation family that combines mode-covering posterior sampling with any-step generation. At zero population loss, PMD recovers the teacher's full posterior of clean images at each trained noise level. Its stochastic student supports any-step sampling budgets within the trained timestep grid without further training. To learn these posteriors, PMD matches exponentially reweighted averages of student samples conditioned on a fixed noisy state to corresponding teacher posterior means. Under Gaussian corruption, exponentially tilted posterior mean is a single teacher evaluation at a shifted input. We prove that, matching tilted means over an open neighborhood uniquely identifies the full posterior. PMD thus supervises the entire conditional distribution through a family of mean constraints, without any auxiliary student-score network. Experiments on SDXL and FLUX.2 [klein] 4B demonstrate that PMD achieves the best FID among 4-step methods on both models, while maintaining competitive or leading performance across prompt-alignment and perceptual-quality metrics.",
+    "authors": [
+      "Hidir Yesiltepe",
+      "Julius Berner",
+      "Arash Vahdat",
+      "Pinar Yanardag"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.26629.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.26629",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.26627",
+    "title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
+    "abstract": "Reinforcement learning (RL) post-training substantially improves the visual quality, text rendering, and compositional accuracy of diffusion transformers. Because capabilities such as rendering requested text or composing multiple objects are inherently prompt-dependent, a natural hypothesis is that improving them requires learning complex, input-dependent transformations. To isolate how much of these gains an input-independent shift explains, we probe each RL-tuned model with a deliberately simple parameterization: a fixed set of steering vectors added to the block outputs of the frozen base model. On SD3.5-M, these vectors hold 65x fewer parameters than the RL-tuned LoRA (0.29M against 18.8M). We fit them to match the velocity predictions of public RL-tuned checkpoints, with no reward in the objective. Although the vectors are identical for every prompt, token, and sampling seed, they recover 90.0-96.3% of the reward gains of six RL-tuned image models, and 89.8% and 111.9% on two RL-tuned video models. Initialized at zero and trained with online RL, the vectors alone exceed the reward gains of weight-based RL on text rendering (OCR) and human preference (PickScore) on SD3.5-M. A constant shift thus suffices for most of the gain of policy-gradient RL post-training: without new input-dependent transformations, it steers the pretrained generator toward what it can already compute.",
+    "authors": [
+      "Tuna Han Salih Meral",
+      "Kaan Oktay",
+      "Alec Helbling",
+      "Atakan Kara",
+      "Duen Horng Chau",
+      "Pinar Yanardag"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.26627.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.26627",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.26624",
+    "title": "PlayCraft: Designing Engaging Games from Agent Play Experience",
+    "abstract": "Recent AI agents can generate playable games, but these games are not necessarily engaging. Mastery is a key source of engagement, yet designing for it requires extensive human play and tuning. We propose PlayCraft, an automated framework that uses a vision-based agent to play games and draws on its detailed play experience to revise them for mastery. Starting from an initial game, PlayCraft alternates between playing and crafting. In the playing stage, a player agent watches the game screen, uses the controls, and pursues the game objective over repeated episodes while retaining memory. After each episode, it reports its progress, outcomes, decisions, and reflections. In the crafting stage, a crafter agent uses these reports to revise the game. It estimates player abilities, predicts performance at different proficiency levels, and compares those predictions with a target learning progression. It diagnoses the game and addresses the gaps by giving players meaningful opportunities to improve through better decisions and execution. We evaluate games in fresh runs with player agents across three intelligence settings, measuring learning gain and learning slope. Compared with the initial games, PlayCraft yields larger learning gains and steeper learning slopes in most games. It also outperforms the baselines on the macro-average of each metric at every intelligence setting.",
+    "authors": [
+      "Weihao Cheng"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.AI",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.26624.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.26624",
+    "primary_category": "cs.AI"
+  },
+  {
+    "id": "2611.26617",
+    "title": "One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised Latent Action Learning",
+    "abstract": "Videos reveal how the world changes, but rarely the actions that cause those changes. Latent action learning recovers such supervision from visual transitions, yet often learns the underlying dynamics largely from scratch. We ask whether a pretrained video generator can instead provide the prior for both inverse and forward dynamics. We introduce O$^{2}$LaF, built on a simple principle: one prior, two dynamics. We initialize both models from the same pretrained video DiT and adapt them to their distinct roles: a feed-forward transition encoder with learnable action queries for inverse dynamics, and a causal, action-conditioned video generator for forward dynamics. By controlling information access and optimizing both dynamics end-to-end through a compact bottleneck, O$^{2}$LaF learns transferable actions from unlabeled videos. Across navigation and robotic manipulation, O$^{2}$LaF sets a new state of the art in few-shot action probing and enables stronger zero-shot action transfer across visual contexts and embodiments. Beyond generative video priors, we further extend our framework to predictive representation priors such as V-JEPA2, achieving competitive performance. Our findings suggest a broader paradigm for latent-action learning: repurposing pretrained video models to discover transferable actions and predict their consequences.",
+    "authors": [
+      "Yuxin Jiang",
+      "Wenqiang Sun",
+      "Jiaqi Li",
+      "Yuchao Gu",
+      "Lvmin Zhang",
+      "Ivor Tsang",
+      "Mike Zheng Shou"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "cs.RO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.26617.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.26617",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.26615",
+    "title": "ScaleWorld: High-Resolution World Generation through Shared Prediction and Refinement",
+    "abstract": "High-resolution generation enables video world models to render fine-grained scene structures and textures, but directly generating high-resolution video incurs substantial computational and memory costs. We present ScaleWorld, a causal video model that unifies low-resolution world prediction and high-resolution refinement within a single shared backbone. By refining its own predictions, ScaleWorld produces high-resolution world videos without requiring a separate refinement model. For each video chunk, the shared backbone first completes a low-resolution prediction and then performs one-step high-resolution refinement conditioned on that prediction. To support efficient streaming generation, we maintain separate causal states with a long low-resolution history for prediction and a short high-resolution history for refinement. To address task interference during distillation, we separate specialist optimization from capability consolidation and introduce task-asymmetric on-policy distillation (TA-OPD). This procedure transfers prediction and refinement behaviors from specialized teachers into a shared student through local velocity matching under their respective sampling and history policies. {Extensive experiments demonstrate that ScaleWorld achieves high-quality world generation with improved computational and memory efficiency.",
+    "authors": [
+      "Yansong Qu",
+      "Wesker Zheng",
+      "Quanjian Song",
+      "Zhiyuan Zhang",
+      "Xiao Cao",
+      "Shengchuan Zhang",
+      "Liujuan Cao"
+    ],
+    "published": "2026-11-19",
+    "updated": "2026-11-19",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.26615.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.26615",
+    "primary_category": "cs.CV"
+  }
+]
