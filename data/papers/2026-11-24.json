@@ -1,0 +1,98 @@
+[
+  {
+    "id": "2611.30354",
+    "title": "STAR: Structure-Aware Temporal Action Recovery for Point Supervised Temporal Action Localization",
+    "abstract": "Point supervised temporal action localization is becoming the need of time in this era of ever growing and non-stop video data. Existing method mainly rely on snippet level action response to generate pseudo labels. However, these labels often suffer from boundary ambiguity, over extended proposals, and weak temporal structure. To address these issues, we propose STAR, a structure-aware Temporal Action Recovery framework for point supervised temporal action localization. STAR works by enhancing the base S model with temporal difference interaction with attention module to capture forward and backward snippet changes, and introduces the learning of start, core, and end roles to model the internal temporal structure of actions. In addition, STAR further improves the pseudo label generation through All point proposal ranking and Rolebank based structural re-ranking, which suppress neighbor crossing and structurally inconsistent proposals. Finally, temporal action detector to STAR feedback supervision transfers high quality detector prediction back to the STAR model through soft start, core, end, action, and background targets. This helps to further refine the pseudo labels. Extensive experiments on four standard benchmarks shows the effectiveness of STAR. By using I3D features, STAR achieves 67.2% at AVG@0.1:0.7 on THUMOS'14, 58.1% on GTEA, 74.6% on BEOID, and 31.7% at AVG@0.5:0.95 on ActivityNet-1.3, outperforming previous point supervised methods across multiple benchmarks.",
+    "authors": [
+      "Yawar Rehman",
+      "Min Young Kim"
+    ],
+    "published": "2026-11-23",
+    "updated": "2026-11-23",
+    "categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.30354.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.30354",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.30351",
+    "title": "NNS-GS: Non-Local Neural Scattering for Relightable Gaussian Splatting",
+    "abstract": "Creating relightable 3D assets of translucent objects is challenging because changing the illumination at one surface location can affect the appearance elsewhere through subsurface scattering. Existing Gaussian-based scattering models typically predict scattering from local features, making this dependence difficult to capture. We present Non-Local Neural Scattering for Gaussian Splatting (NNS-GS), which learns non-local scattering together with geometry-guided local reflection. The scattering module learns how illumination from light-visible surface regions in light space contributes to the shading point in view space, conditioned on regional diffuse responses and spatial relationships. The reflection module supplies these diffuse responses and uses additional geometric guidance to better capture specular highlights and sharp shadow boundaries. To reduce component mixing and support controllable scattering appearance, anchor-based progressive training establishes the diffuse-scattering base before introducing specular reflection and supervises the components separately. Under calibrated point lighting, NNS-GS improves mean PSNR over existing methods by 2.47 dB and 0.81 dB on the synthetic and real translucent scenes, respectively. Additional synthetic comparisons further show that NNS-GS better matches the reference when adjusting scattering attenuation.",
+    "authors": [
+      "Shiyu Liang",
+      "Yang Gao",
+      "Lili Wang",
+      "Aimin Hao",
+      "Beibei Wang"
+    ],
+    "published": "2026-11-23",
+    "updated": "2026-11-23",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.30351.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.30351",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.30345",
+    "title": "SceneCast: Learning Indoor Scene Synthesis from Curated Synthetic Videos with LLM Reward",
+    "abstract": "3D indoor scene synthesis requires generating objects to form a complete and coherent scene. Existing approaches rely heavily on manually annotated datasets, leading to high costs and limited generalization. We present SceneCast, an annotation-free framework that trains on large-scale, unlabeled videos, addressing two key challenges: (1) Videos provide only partial views of a scene, requiring the model to extrapolate unseen 3D regions, which is inherently error-prone; (2) Raw videos available online are uncurated, suffering from uncontrolled conditions and variable data quality. First, we design a Transformer-based model that predicts objects sequentially and is fine-tuned with reinforcement learning (RL), where an LLM acts as a spatial common-sense evaluator. The LLM provides reward signals through chain-of-thought reasoning and code-executable geometric checks to refine object configurations. Second, we introduce \\trim, a data curation approach that generates training videos with controllable video generation models. Crucially, it retains only high-quality prefix clips via multi-criteria quality assessment with an entropy-based weighting strategy. Evaluated on curated synthetic video sets, our annotation-free approach outperforms state-of-the-art supervised methods in scene quality.",
+    "authors": [
+      "Ziyang Zong",
+      "Canming Xia",
+      "Haoran Xu",
+      "Guang Tan"
+    ],
+    "published": "2026-11-23",
+    "updated": "2026-11-23",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.30345.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.30345",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.30342",
+    "title": "Shift by Analogy for Compositional Zero-Shot Learning",
+    "abstract": "Compositional zero-shot learning recognizes attribute-object pairs absent from training. An unseen pair has a semantic description but lacks an observed visual reference. We propose Shift by Analogy (SBA) to make unseen compositions visually seen through a shift-then-match process. Its core add-subtract-add rule transfers an attribute change between two seen image-text residuals on a source object to a reference residual on the target object. This shifts the target's own text feature toward its visual center; learned refinement produces a proxy for matching query images. During training, each target is excluded from its supports, and recognition is learned using references constructed from other pairs. An analogy library and same-object attention extend this construction across candidates, while joint learning integrates proxy matching with semantic and primitive evidence. Visual-center analysis confirms substantially improved correspondence for unseen compositions. Experiments across three standard benchmarks show that SBA consistently outperforms strong CZSL baselines under both closed- and open-world evaluation.",
+    "authors": [
+      "Zanwu Liu",
+      "Bo Li",
+      "Guanglin Niu"
+    ],
+    "published": "2026-11-23",
+    "updated": "2026-11-23",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.30342.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.30342",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.30339",
+    "title": "AirVT-15k: A Query-Diverse UAV Video-Text Dataset and Query-Adaptive Evidence Alignment Network for Retrieval",
+    "abstract": "Unmanned aerial vehicle video-text retrieval (UAV-TVR) requires matching language to both scene context and subtle object changes. A harbor-layout query relies on global scene context, whereas a departing-vessel query requires local functional cues and motion states. Existing benchmarks provide diverse aerial descriptions but give limited attention to distinct evidence needs within the same video. We introduce AirVT-15k, a benchmark of 15,504 UAV videos and 155,040 captions, with ten complementary bilingual captions per video describing scenes, object states, and temporal changes. We also propose AirFocus-CST, which selects query-relevant frames and patches, encodes temporal feature differences, and combines coarse-to-fine interaction (CFI) with optimal-transport alignment (OTA). Average mean recall reaches 63.67% on AirVT-15k and 24.41% on CapERA, improving over the strongest baselines by 2.96 and 1.91 percentage points, respectively. The dataset and code are available at https://chenxi000233.github.io/AirVT-15k-site/.",
+    "authors": [
+      "Xi Chen",
+      "Xu Chen",
+      "Xiangyang Jia",
+      "Ting Gan",
+      "Xu Zhang",
+      "Shuquan Wei"
+    ],
+    "published": "2026-11-23",
+    "updated": "2026-11-23",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.30339.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.30339",
+    "primary_category": "cs.CV"
+  }
+]

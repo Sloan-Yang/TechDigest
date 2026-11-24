@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-22</div>
+        <div class="page-date">📅 2026-11-24</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            人工智能: 1 | 计算机视觉: 2 | 机器人: 2
+            计算机视觉: 5
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -327,16 +327,16 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">机器人</span>
-          <span class="paper-id">2611.26613</span>
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.30354</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.26613" target="_blank">AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control</a>
+        <a href="https://arxiv.org/abs/2611.30354" target="_blank">STAR: Structure-Aware Temporal Action Recovery for Point Supervised Temporal Action Localization</a>
       </h3>
       
-      <p class="paper-authors">Yiyang Du, Yuxuan Kuang, Qitao Zhao, Yixuan Wang, Zhanqiu Guo 等 (10 位作者)</p>
+      <p class="paper-authors">Yawar Rehman, Min Young Kim</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Frontier multimodal language agents such as GPT-6 Astra have demonstrated strong capabilities in controlling robots directly via low-level numerical actions without high-level primitives. However, existing benchmarks report only episode-level success rates, which show neither how these agents succeed nor where they fail. In this paper, we present a systematic action-level analysis of frontier agents on direct robot control across 12 manipulation benchmarks. We introduce AgentRoboCritic, an intent-grounded critique framework in which the policy agent states a local intent alongside each action, and a critic evaluates the action's outcome and failure mode against this intent. Our action-level analysis demonstrates the promising capabilities of frontier agents on direct robot control, including closed-loop recovery from local execution failures, reliable semantic grounding across diverse scenes, and strong zero-shot manipulation without task-specific adaptation. It also identifies their current limitations, including task-relevant physical execution bottlenecks such as grasping and alignment, and uneven recovery across failure modes. Finally, we validate our critic on a 400-action human-annotated benchmark and release a dataset of 12,844 annotated actions alongside a fine-tuned open-source critic, Muse-Glimmer-30B, whose failure-mode accuracy rises from 32.58% to 74.24%, enabling low-cost action-level analysis.</p>
+        <p>Point supervised temporal action localization is becoming the need of time in this era of ever growing and non-stop video data. Existing method mainly rely on snippet level action response to generate pseudo labels. However, these labels often suffer from boundary ambiguity, over extended proposals, and weak temporal structure. To address these issues, we propose STAR, a structure-aware Temporal Action Recovery framework for point supervised temporal action localization. STAR works by enhancing the base S model with temporal difference interaction with attention module to capture forward and backward snippet changes, and introduces the learning of start, core, and end roles to model the internal temporal structure of actions. In addition, STAR further improves the pseudo label generation through All point proposal ranking and Rolebank based structural re-ranking, which suppress neighbor crossing and structurally inconsistent proposals. Finally, temporal action detector to STAR feedback supervision transfers high quality detector prediction back to the STAR model through soft start, core, end, action, and background targets. This helps to further refine the pseudo labels. Extensive experiments on four standard benchmarks shows the effectiveness of STAR. By using I3D features, STAR achieves 67.2% at AVG@0.1:0.7 on THUMOS'14, 58.1% on GTEA, 74.6% on BEOID, and 31.7% at AVG@0.5:0.95 on ActivityNet-1.3, outperforming previous point supervised methods across multiple benchmarks.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.26613" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.26613.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.30354" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.30354.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.26603</span>
+          <span class="paper-id">2611.30351</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.26603" target="_blank">Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth</a>
+        <a href="https://arxiv.org/abs/2611.30351" target="_blank">NNS-GS: Non-Local Neural Scattering for Relightable Gaussian Splatting</a>
       </h3>
       
-      <p class="paper-authors">Peiyun Hu, Marko Mihajlovic, Lyndon Duong, Lahav Lipson, Wei Dong 等 (8 位作者)</p>
+      <p class="paper-authors">Shiyu Liang, Yang Gao, Lili Wang, Aimin Hao, Beibei Wang</p>
       
       <div class="paper-summary">
         
@@ -378,44 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>We present Depth Pro 2, an approach to estimating dense metric depth for images and video at full resolution. By analyzing prior methods for monocular depth estimation, we find that they commonly trade off temporal consistency and boundary sharpness: multi-frame methods favor consistency, single-frame methods favor sharpness. To overcome this trade-off, we train a single, scalable network that processes both images and video and predicts depth maps at native resolution. Depth Pro 2 produces depth maps that are metrically accurate, sharp, and temporally consistent all at once, outperforming prior work in all of these dimensions. We release a family of models that define a new Pareto frontier in terms of metric accuracy, sharpness, temporal consistency, and runtime. We release code and weights at https://apple-aiml-research.github.io/ml-depth-pro-2/</p>
+        <p>Creating relightable 3D assets of translucent objects is challenging because changing the illumination at one surface location can affect the appearance elsewhere through subsurface scattering. Existing Gaussian-based scattering models typically predict scattering from local features, making this dependence difficult to capture. We present Non-Local Neural Scattering for Gaussian Splatting (NNS-GS), which learns non-local scattering together with geometry-guided local reflection. The scattering module learns how illumination from light-visible surface regions in light space contributes to the shading point in view space, conditioned on regional diffuse responses and spatial relationships. The reflection module supplies these diffuse responses and uses additional geometric guidance to better capture specular highlights and sharp shadow boundaries. To reduce component mixing and support controllable scattering appearance, anchor-based progressive training establishes the diffuse-scattering base before introducing specular reflection and supervises the components separately. Under calibrated point lighting, NNS-GS improves mean PSNR over existing methods by 2.47 dB and 0.81 dB on the synthetic and real translucent scenes, respectively. Additional synthetic comparisons further show that NNS-GS better matches the reference when adjusting scattering attenuation.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.26603" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.26603.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">机器人</span>
-          <span class="paper-id">2611.26600</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.26600" target="_blank">A Tutorial on Complementarity-Based Contact Models for Robotics</a>
-      </h3>
-      
-      <p class="paper-authors">Onur Beker, A. René Geist, Michael Posa, Marc Toussaint, Justin Carpentier 等 (6 位作者)</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Simulating rigid-body dynamics with contact is fundamental to robotics, from motion synthesis and control to mechanism design. Many widely used simulators rely on cone complementarity formulations, whose physical assumptions and numerical solution require substantial background. While excellent surveys, monographs, and course notes exist, they mostly address computational mechanics or computer graphics or document a single simulator. To the best of our knowledge, a self-contained pedagogical treatment for robotics, bringing these formulations and their solvers together with complete derivations and a unified notation, does not yet exist. This tutorial addresses this gap by connecting rigid-body dynamics, conic optimization, and frictional contact. In particular, we explain how complementarity conditions encode non-penetration and frictional dissipation, determining separation, sticking, and sliding without prescribed contact modes. We distinguish equivalent transcriptions from convex relaxations, showing how the latter can introduce artifacts such as lift-off and creep. We examine the existence and uniqueness of motion and contact forces, including the solver's role in selecting among multiple solutions. We then compare first-order and Newton-based methods, explain regularization and proximal strategies, and discuss trade-offs between computational cost, robustness, and physical fidelity. Connections to widely used simulators, optimal control, and differentiable simulation help readers interpret simulation results, choose suitable formulations and solvers, and develop their own contact dynamics routines.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.26600" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.26600.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.30351" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.30351.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.26595</span>
+          <span class="paper-id">2611.30345</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.26595" target="_blank">Coda-DaVinci: Reimagining Video Generation with Code2Video</a>
+        <a href="https://arxiv.org/abs/2611.30345" target="_blank">SceneCast: Learning Indoor Scene Synthesis from Curated Synthetic Videos with LLM Reward</a>
       </h3>
       
-      <p class="paper-authors">Yiyan Ji, Qixun Wang, Yang Shi, Zhuoran Zhang, Yifan Xu 等 (23 位作者)</p>
+      <p class="paper-authors">Ziyang Zong, Canming Xia, Haoran Xu, Guang Tan</p>
       
       <div class="paper-summary">
         
@@ -442,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Code2Video uses agent-authored 3D proxies to guide video generation, enabling explicit control over structure and dynamics. However, how to construct proxies and prompts for optimal downstream quality remains underexplored, as do the capabilities and limitations of this paradigm. Through controlled experiments and blinded human evaluation, we study proxy granularity, physics simulation, and prompting. The results reveal task-dependent trade-offs: coarse proxies favor natural motion, while medium-grained proxies favor consistency. Physics simulation and proxy-aligned prompting further improve average quality. Guided by these findings, we introduce Coda-DaVinci, a task-adaptive agentic framework for Code2Video generation that selects between proxy-guided and direct generation, adapts modeling granularity to each entity, and coordinates simulation with proxy-grounded prompting. Its multi-agent harness preserves scene assets and guides repairs through visual inspection and independent review. Experiments demonstrate leading instruction following on VTR and scene consistency on R2M, improved physical plausibility over direct generation, and higher visual realism than the compared Code2Video baselines. Long-video evaluations further show gains in event structure and consistency across successive interactions, while revealing limitations in transition stability and adherence to scene settings.</p>
+        <p>3D indoor scene synthesis requires generating objects to form a complete and coherent scene. Existing approaches rely heavily on manually annotated datasets, leading to high costs and limited generalization. We present SceneCast, an annotation-free framework that trains on large-scale, unlabeled videos, addressing two key challenges: (1) Videos provide only partial views of a scene, requiring the model to extrapolate unseen 3D regions, which is inherently error-prone; (2) Raw videos available online are uncurated, suffering from uncontrolled conditions and variable data quality. First, we design a Transformer-based model that predicts objects sequentially and is fine-tuned with reinforcement learning (RL), where an LLM acts as a spatial common-sense evaluator. The LLM provides reward signals through chain-of-thought reasoning and code-executable geometric checks to refine object configurations. Second, we introduce \trim, a data curation approach that generates training videos with controllable video generation models. Crucially, it retains only high-quality prefix clips via multi-criteria quality assessment with an entropy-based weighting strategy. Evaluated on curated synthetic video sets, our annotation-free approach outperforms state-of-the-art supervised methods in scene quality.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.26595" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.26595.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.30345" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.30345.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -455,16 +423,16 @@
     <article class="paper-card">
       <div class="paper-header">
         <div class="left-header">
-          <span class="category-badge">人工智能</span>
-          <span class="paper-id">2611.26590</span>
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.30342</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.26590" target="_blank">Probing the "Conscious" Mind: Selective Access and Global Workspace in Vision-Language Models</a>
+        <a href="https://arxiv.org/abs/2611.30342" target="_blank">Shift by Analogy for Compositional Zero-Shot Learning</a>
       </h3>
       
-      <p class="paper-authors">Jiahao Huang, Jun Wang</p>
+      <p class="paper-authors">Zanwu Liu, Bo Li, Guanglin Niu</p>
       
       <div class="paper-summary">
         
@@ -474,12 +442,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Vision-language models (VLMs) integrate visual and textual information, but their outputs do not reveal internal concept representations. Global workspace theory (GWT) proposes that information is selected from parallel brain processes, integrated in a shared workspace, and made available to specialised processes. We introduce the Multimodal Concept Lens (MC-Lens), a multimodal Jacobian lens, to study these functions in VLM concept processing. Its vision encoder and language decoder lenses map intermediate states to a shared semantic space defined by the decoder's output vocabulary to compare concept accessibility across modalities. MC-Lens supports internal concept interventions to examine the role of accessed concepts in downstream computation. (i) Accessibility and selective access. Multimodal concept information is readable in intermediate states and selectively accessible as tasks require. We extend "readout carriers" from one name token to a token set to better capture and express concept information and support counterfactual experiments. (ii) Concepts in downstream computation. Counterfactual experiments show that accessed concept information participates in downstream computation and reasoning. (iii) Development of cross-modal alignment and selective access. We develop two J-space metrics tracking the development of cross-modal concept alignment more clearly than hidden state cosine in controlled VLM training. The experiment also shows that reliable selective access develops later than concept accessibility. (iv) Shared functions across models. Across VLM families and sizes, we find shared patterns of concept accessibility, query-dependent selectivity and cross-task intervention effects despite differences in internal organisation. These findings offer an experimental basis to study GWT in multimodal artificial systems and how it can guide cross-modal alignment improvements.</p>
+        <p>Compositional zero-shot learning recognizes attribute-object pairs absent from training. An unseen pair has a semantic description but lacks an observed visual reference. We propose Shift by Analogy (SBA) to make unseen compositions visually seen through a shift-then-match process. Its core add-subtract-add rule transfers an attribute change between two seen image-text residuals on a source object to a reference residual on the target object. This shifts the target's own text feature toward its visual center; learned refinement produces a proxy for matching query images. During training, each target is excluded from its supports, and recognition is learned using references constructed from other pairs. An analogy library and same-object attention extend this construction across candidates, while joint learning integrates proxy matching with semantic and primitive evidence. Visual-center analysis confirms substantially improved correspondence for unseen compositions. Experiments across three standard benchmarks show that SBA consistently outperforms strong CZSL baselines under both closed- and open-world evaluation.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.26590" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.26590.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.30342" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.30342.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.30339</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.30339" target="_blank">AirVT-15k: A Query-Diverse UAV Video-Text Dataset and Query-Adaptive Evidence Alignment Network for Retrieval</a>
+      </h3>
+      
+      <p class="paper-authors">Xi Chen, Xu Chen, Xiangyang Jia, Ting Gan, Xu Zhang 等 (6 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Unmanned aerial vehicle video-text retrieval (UAV-TVR) requires matching language to both scene context and subtle object changes. A harbor-layout query relies on global scene context, whereas a departing-vessel query requires local functional cues and motion states. Existing benchmarks provide diverse aerial descriptions but give limited attention to distinct evidence needs within the same video. We introduce AirVT-15k, a benchmark of 15,504 UAV videos and 155,040 captions, with ten complementary bilingual captions per video describing scenes, object states, and temporal changes. We also propose AirFocus-CST, which selects query-relevant frames and patches, encodes temporal feature differences, and combines coarse-to-fine interaction (CFI) with optimal-transport alignment (OTA). Average mean recall reaches 63.67% on AirVT-15k and 24.41% on CapERA, improving over the strongest baselines by 2.96 and 1.91 percentage points, respectively. The dataset and code are available at https://chenxi000233.github.io/AirVT-15k-site/.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.30339" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.30339.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 623 &nbsp;💬 149</span>
+          <span class="paper-id">▲ 2370 &nbsp;💬 3342</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50582069" target="_blank">Pill to treat pancreatic cancer hailed as 'biggest breakthrough in decades'</a>
+        <a href="https://news.ycombinator.com/item?id=50611576" target="_blank">Nvidia Reinstates Jensen Huang as CEO</a>
       </h3>
-      <p class="paper-authors">by rafaelc</p>
+      <p class="paper-authors">by jaz</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50582069" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.theguardian.com/society/2026/nov/20/pill-pancreatic-cancer-breakthrough-daraxonrasib" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50611576" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 836 &nbsp;💬 691</span>
+          <span class="paper-id">▲ 336 &nbsp;💬 164</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50589618" target="_blank">Lean verification of the Riemann Hypothesis</a>
+        <a href="https://news.ycombinator.com/item?id=50620349" target="_blank">Stalwart is now a drop-in replacement for Microsoft Exchange</a>
       </h3>
-      <p class="paper-authors">by g-b-r</p>
+      <p class="paper-authors">by shaunpud</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50589618" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50620349" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://stalw.art/blog/microsoft-exchange-replacement/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 361 &nbsp;💬 93</span>
+          <span class="paper-id">▲ 1642 &nbsp;💬 382</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50591853" target="_blank">Inkling-2-Mini in 5.4 GB Memory</a>
+        <a href="https://news.ycombinator.com/item?id=50614249" target="_blank">Ladybird is now in alpha</a>
       </h3>
-      <p class="paper-authors">by k__</p>
+      <p class="paper-authors">by janvdberg</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50591853" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/ShinMegamiBoson/lookatmyquant" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50614249" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://ladybird.org/posts/alpha/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 755 &nbsp;💬 242</span>
+          <span class="paper-id">▲ 28 &nbsp;💬 11</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50532613" target="_blank">Brazil's tax authority open-sources its tax calculator on GitHub under MIT</a>
+        <a href="https://news.ycombinator.com/item?id=50623515" target="_blank">Drone Maps of Salvage Yards</a>
       </h3>
-      <p class="paper-authors">by dvaplima</p>
+      <p class="paper-authors">by uptrails</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50532613" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-publica-primeiro-codigo-fonte-aberto-no-github-e-amplia-transparencia-da-reforma-tributaria" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50623515" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://salvageyarddrone.wordpress.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 524 &nbsp;💬 347</span>
+          <span class="paper-id">▲ 42 &nbsp;💬 1</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50588982" target="_blank">Detonating a pile of lead azide</a>
+        <a href="https://news.ycombinator.com/item?id=50604710" target="_blank">Modernizing iperf/iperf3 and introducing fireperf</a>
       </h3>
-      <p class="paper-authors">by beginning_end</p>
+      <p class="paper-authors">by edward</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50588982" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.science.org/content/blog-post/detonating-huge-pile-lead-azide-really" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50604710" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.daniel-baumann.ch/posts/20261122-1.html" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 56 &nbsp;💬 5</span>
+          <span class="paper-id">▲ 184 &nbsp;💬 42</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50594132" target="_blank">PcapAnalyzer – self-hosted pcap analyzer with 27 problem detectors</a>
+        <a href="https://news.ycombinator.com/item?id=50619207" target="_blank">Bored.com: Fun, interesting and cool websites to explore when bored</a>
       </h3>
-      <p class="paper-authors">by sebaandrada</p>
+      <p class="paper-authors">by susam</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50594132" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/sebaandrada-cell/PcapAnalyzer" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50619207" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.bored.com/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 157 &nbsp;💬 54</span>
+          <span class="paper-id">▲ 30 &nbsp;💬 13</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50583028" target="_blank">Getting the mind to steer the body to steer you</a>
+        <a href="https://news.ycombinator.com/item?id=50622934" target="_blank">Making a dumb TV just smart enough</a>
       </h3>
-      <p class="paper-authors">by jger15</p>
+      <p class="paper-authors">by andai</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50583028" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://notnottalmud.substack.com/p/getting-the-mind-to-steer-the-body" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50622934" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://qsantos.fr/2026/11/19/making-a-dumb-tv-just-smart-enough/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 493 &nbsp;💬 232</span>
+          <span class="paper-id">▲ 203 &nbsp;💬 71</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50587875" target="_blank">My monitor was cutting my download speed by 75%</a>
+        <a href="https://news.ycombinator.com/item?id=50619103" target="_blank">GPUI is getting its own repository</a>
       </h3>
-      <p class="paper-authors">by soheilpro</p>
+      <p class="paper-authors">by EvilGoose</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50587875" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://blog.tymscar.com/posts/studiodisplayethernet/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50619103" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/zed-industries/gpui" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 68,169 &nbsp;+488 today</span>
+          <span class="paper-id">⭐ 69,661 &nbsp;+828 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -675,7 +675,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">HTML</span>
-          <span class="paper-id">⭐ 69,821 &nbsp;+583 today</span>
+          <span class="paper-id">⭐ 71,152 &nbsp;+620 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -711,7 +711,7 @@
       diagram-design  
 
     
-      Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.</p>
+      Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.</p>
       
       <div class="paper-links">
         <a href="https://github.com/sponsors/cathrynlavery" target="_blank" class="link-btn">⭐ GitHub</a>
@@ -722,7 +722,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 11,463 &nbsp;+326 today</span>
+          <span class="paper-id">⭐ 12,393 &nbsp;+422 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -756,7 +756,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 72,029 &nbsp;+560 today</span>
+          <span class="paper-id">⭐ 73,590 &nbsp;+797 today</span>
         </div>
         <span class="score-badge">推荐度 75/100</span>
       </div>
@@ -790,7 +790,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 62,100 &nbsp;+769 today</span>
+          <span class="paper-id">⭐ 63,920 &nbsp;+790 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -824,7 +824,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 14,000 &nbsp;+450 today</span>
+          <span class="paper-id">⭐ 14,900 &nbsp;+436 today</span>
         </div>
         <span class="score-badge">推荐度 60/100</span>
       </div>
@@ -858,7 +858,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 18,121 &nbsp;+260 today</span>
+          <span class="paper-id">⭐ 18,890 &nbsp;+397 today</span>
         </div>
         <span class="score-badge">推荐度 40/100</span>
       </div>
@@ -892,7 +892,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 206,242 &nbsp;+1006 today</span>
+          <span class="paper-id">⭐ 208,118 &nbsp;+924 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
