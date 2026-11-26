@@ -1,0 +1,124 @@
+[
+  {
+    "id": "2611.34292",
+    "title": "WebVibe: Multimodal Interactive Website Generation via Reverse Synthesis and Visual Self-Distillation",
+    "abstract": "Although multimodal large language models translate single screenshots into static HTML, generating interactive functional websites from design specifications still struggles with multi-page routing and stateful widget transitions. Examining existing training pipelines reveals two bottlenecks: (1) in forward data synthesis (X -> Y), writing the specification X before code execution leaves unimplemented or altered requirements in X as supervision noise; and (2) in reinforcement learning, scalar rewards discard the rich state transitions observed during replay. Based on these findings, we introduce WebVibe and Interactive-SDPO to train InteractiveCoder. WebVibe reverses synthesis into Y -> X by verifying cross-page and in-page interactions in the browser before deriving multimodal inputs from replay-confirmed states to build the 31,542-site WebVibe-32K corpus with reusable execution contracts. Interactive-SDPO then conditions a weight-sharing self-teacher on the replay trace and a 2x2 state-transition montage to provide token-level supervision at zero inference-time overhead. On the public Vision2Web L2, one-shot InteractiveCoder-9B nearly 3x its base model's functional score (20.2 to 55.2 FS) and matches a 1T-parameter coding agent in a single pass with 111x fewer total parameters and 78x fewer tokens. On our WebVibeBench, InteractiveCoder-4B and 9B further outperform all evaluated baselines by over 23 points.",
+    "authors": [
+      "Tianxiang Jiang",
+      "Sheng Xia",
+      "Yilin Long",
+      "Kanghui Tian",
+      "Linquan Wu",
+      "Yongheng Zhang",
+      "Daixian Liu",
+      "Di Yin",
+      "Yi Wang",
+      "Yu Qiao",
+      "Qinglong Zhang"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34292.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34292",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.34290",
+    "title": "StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation",
+    "abstract": "Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context, while reference updates remain limited. We introduce StateWeaver, which combines Active States and Hierarchical Collaboration to connect review-driven visual reference updates with cross-shot state inheritance. Active States translate state discrepancies identified during review into concrete visual asset requirements that guide reference construction, validation, and regeneration, preserving identity and already-correct content while repairing target attributes. Confirmed generation results are linked to the corresponding asset states, story time, and reference versions for verification and reuse by subsequent shots. Hierarchical Collaboration isolates execution contexts by task, clip, and repair round, and uses hierarchical memory to organize this process across multiple sets. Across multiple benchmarks, StateWeaver outperforms existing methods and produces long videos with sustained cross-shot consistency under predefined and autonomously planned storyboards.",
+    "authors": [
+      "Modi Jin",
+      "Xuying Zhang",
+      "Yijing Guo",
+      "Haoran Li",
+      "Yanwen Ma",
+      "Jing Wang",
+      "Chenyu Ge",
+      "Ming-Ming Cheng",
+      "Haoyang Huang"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34290.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34290",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.34288",
+    "title": "Rehearse in 3D, Render in 2D: Physically Consistent and Editable Robot World Models",
+    "abstract": "Embodied world models aim to predict future interactions that are both visually realistic and physically consistent. Yet explicit 3D motion prediction alone does not guarantee that object structure and contact relationships are preserved. Beyond motion prediction, 3D representations provide an explicit state space for imposing structural and physical constraints. Building on this insight, we introduce RehearsalWorld, an editable robot world model driven by 3D Interaction Rehearsal (3DIR). Given an initial RGB-D observation and robot actions, Interaction-Consistent Rehearsal (ICR) uses a pretrained 3D point-flow model as a motion prior. It refines the predicted trajectories through response-aware object grouping, persistent grasp memory, and contact structure refiner, preserving scene stability, object structure, and grasp attachments. Rehearsal-Aligned Video Generation (RAVG) then uses geometric projections of the rehearsal as temporal conditioning. We fine-tune a video generator on projection-video pairs to synthesize realistic interaction videos. Thanks to the decoupling of physical response from visual synthesis, RehearsalWorld also supports independent editing of material properties and camera viewpoints. Compared with PointWorld on real DROID grasping sequences, RehearsalWorld reduces gripper-relative offset by approximately 79% to 84% across deformable, articulated, and rigid objects and lowers reference motion error. For video prediction, it achieves a PSNR of 23.92 dB and an FVD of 149.",
+    "authors": [
+      "Guangyu Liu",
+      "Hanzhang Wang",
+      "Huijia Zhang",
+      "Hanbei Zhan",
+      "Linjie Hu",
+      "Bin Xiao",
+      "Xuan Zhou",
+      "Dong Zhang",
+      "Hanwei Liu"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34288.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34288",
+    "primary_category": "cs.RO"
+  },
+  {
+    "id": "2611.34284",
+    "title": "ReMeDi: Single-Image PBR Material Estimation via Reparameterization between Metal and Dielectric Hypotheses",
+    "abstract": "Physically based rendering (PBR) material estimation facilitates relighting, material editing, and 3D content creation. As the reflectance of a surface heavily depends on whether it is a metal or a dielectric, producing any map that determines albedo involves a decision on metalness, which we call the \"intended metalness\" of the map. Rendering maps with mismatched intended metalness yields physically implausible or misinterpreted materials. The metallic--roughness workflow makes metalness explicit and thus encourages base color to match it, but does not enforce this match, especially for automated methods directly predicting each map. Therefore, we propose ReMeDi, which enforces the match through two components. First, we reparameterize base color as a metalness-weighted blend of its two variants, estimated under the all-metal and all-dielectric hypothesis, respectively. Second, as available supervision cannot teach a single network both hypotheses at every pixel, we restrict each of two separate networks to one hypothesis, so that each variant is ensured to follow its hypothesis. Besides enforcing the match, this also improves each estimated material map. Experiments show that ReMeDi outperforms state-of-the-art methods in both material accuracy and relighting fidelity.",
+    "authors": [
+      "Fan Fei",
+      "Xin Huang",
+      "Yixin Zhu",
+      "Jiawei Lu",
+      "Xin Yang",
+      "Jinglin Liang",
+      "Ruining Tang",
+      "Yifei Feng",
+      "Boxin Shi",
+      "Chunchao Guo"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34284.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34284",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.34279",
+    "title": "Semantic State Reading for Joint Image-Semantic Diffusion Transformers",
+    "abstract": "Pretrained visual representations improve diffusion-transformer training, yet exploiting both global context and local spatial structure requires deciding which semantic states to model and how to access them. We introduce Semantic State Reading (SSR), which jointly denoises image latents, a global CLS token encoding image-level context, and a compact patch state preserving spatial correspondence. SSR couples this global-local modeling with distinct reading paths: local states are fused with corresponding image tokens at the input, while independent projections inject the current global state into every transformer block. Both semantic scopes thus remain accessible throughout denoising. Ablations show complementary benefits from local-state modeling and repeated global reading, and semantic-trajectory interventions alter image layout under a fixed class label. On ImageNet $256 \\times 256$, SiT-XL/2 with SSR reaches or surpasses the reference FIDs of SiT, REPA, and Representation Entanglement for Generation (REG) with $100\\times$, $40\\times$, and $2\\times$ fewer training iterations, respectively. SSR achieves unguided FID 1.78 at 2M iterations and FID 1.34 with classifier-free guidance alone. Combining classifier-free guidance with autoguidance yields FID 1.31 at 1M iterations, achieving the best FID in our main comparison table.",
+    "authors": [
+      "Guanxi Lai",
+      "Zixuan Li",
+      "Zhiwei Li",
+      "Qi Li"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34279.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34279",
+    "primary_category": "cs.CV"
+  }
+]

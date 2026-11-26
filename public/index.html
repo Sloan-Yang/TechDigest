@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-25</div>
+        <div class="page-date">📅 2026-11-26</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 5
+            计算机视觉: 4 | 机器人: 1
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.32971</span>
+          <span class="paper-id">2611.34292</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.32971" target="_blank">Teaching Time Without Losing General Retrieval: Adapting Multimodal Embeddings for Time-Sensitive Video Retrieval</a>
+        <a href="https://arxiv.org/abs/2611.34292" target="_blank">WebVibe: Multimodal Interactive Website Generation via Reverse Synthesis and Visual Self-Distillation</a>
       </h3>
       
-      <p class="paper-authors">Toya Oyama, Rainer Lienhart, Shin'ichi Satoh</p>
+      <p class="paper-authors">Tianxiang Jiang, Sheng Xia, Yilin Long, Kanghui Tian, Linquan Wu 等 (11 位作者)</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>In text-to-video retrieval, MLLM-based embedding models do well when the text describes the scene (general retrieval), but poorly when it describes actions and their direction (time-sensitive retrieval). TARA, a pioneering work, fine-tunes such a model on text triplets with temporal hard negatives; it improves time-sensitive retrieval but lowers general retrieval (mean R@1 over six benchmarks in our rerun on Qwen3-VL-Embedding-8B: 58.4->44.8), and its released model keeps general retrieval only when ensembled with Qwen3-VL-Embedding. Our goal is strong general and time-sensitive retrieval with one model and one vector per clip. Three findings lead to three simple components. Keep loss: general retrieval follows how far the output embeddings drift from the base model, not how far the weights move; we therefore keep them near the base model, which keeps most general retrieval even without general-domain data. Pair loss: the text embeddings of an action description and its reversed-direction version are well separated, but the video embeddings of a clip and its reversed copy are close; we therefore widen the gap between the video embeddings of each clip and its reversed copy, in the direction of the difference between their two text embeddings. Middle-layer LoRA: frames are combined in the middle layers, and temporal information peaks in or just after them; we therefore train LoRA only on these layers, which nearly matches training all weights on most time-sensitive benchmarks with 0.15% of the parameters and keeps general retrieval better. General R@1 stays at 58.4, while R@1 with each clip's reversed copy in the gallery rises from 55.5 to 63.2; the gains carry over to unseen benchmarks and InternVL2-8B-RA. The keep loss is also a remedy for the TARA recipe (general R@1: 44.8->57.8), and ensembling TARA with Ours gives the highest scores on RTime and unseen CiA among the compared models.</p>
+        <p>Although multimodal large language models translate single screenshots into static HTML, generating interactive functional websites from design specifications still struggles with multi-page routing and stateful widget transitions. Examining existing training pipelines reveals two bottlenecks: (1) in forward data synthesis (X -> Y), writing the specification X before code execution leaves unimplemented or altered requirements in X as supervision noise; and (2) in reinforcement learning, scalar rewards discard the rich state transitions observed during replay. Based on these findings, we introduce WebVibe and Interactive-SDPO to train InteractiveCoder. WebVibe reverses synthesis into Y -> X by verifying cross-page and in-page interactions in the browser before deriving multimodal inputs from replay-confirmed states to build the 31,542-site WebVibe-32K corpus with reusable execution contracts. Interactive-SDPO then conditions a weight-sharing self-teacher on the replay trace and a 2x2 state-transition montage to provide token-level supervision at zero inference-time overhead. On the public Vision2Web L2, one-shot InteractiveCoder-9B nearly 3x its base model's functional score (20.2 to 55.2 FS) and matches a 1T-parameter coding agent in a single pass with 111x fewer total parameters and 78x fewer tokens. On our WebVibeBench, InteractiveCoder-4B and 9B further outperform all evaluated baselines by over 23 points.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.32971" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.32971.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.34292" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34292.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.32970</span>
+          <span class="paper-id">2611.34290</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.32970" target="_blank">FocusAnchor: Zero-Shot Metric Depth by Anchoring a Depth Foundation Prior to Focus Cues</a>
+        <a href="https://arxiv.org/abs/2611.34290" target="_blank">StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation</a>
       </h3>
       
-      <p class="paper-authors">Ashkan Ganj, Hang Su, Tian Guo</p>
+      <p class="paper-authors">Modi Jin, Xuying Zhang, Yijing Guo, Haoran Li, Yanwen Ma 等 (9 位作者)</p>
       
       <div class="paper-summary">
         
@@ -378,12 +378,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Existing depth-from-focus methods can struggle with weak focus cues, new cameras, or fewer focal slices. We present FocusAnchor, a recurrent model that uses focus-volume lookups to refine metric depth and repeatedly aligns a relative depth prior from a frozen foundation model to the current depth estimate. The aligned prior guides subsequent refinement in a feedback loop, carrying metric scale recovered from textured regions into regions where focus cues are weak while preserving scene structure. To support transfer across cameras, we synthesize training stacks with randomized camera parameters and focus distances. However, stack synthesis blurs existing image noise differently across slices, creating artificial depth cues even on textureless surfaces. We add independent per-slice noise to suppress these cues. We also introduce variable-stack training to improve robustness with fewer focal slices and support more practical mobile capture. Compared with FOSSA ViT-B, FocusAnchor reduces AbsRel by 36% on NYU Depth V2 and by 9% on DDFF-12 after fine-tuning. In zero-shot evaluation, FocusAnchor and its variable-stack variant, FocusAnchor-flex, achieve the two lowest AbsRel values on all five benchmarks. On ZEDD test, FocusAnchor achieves 9% lower AbsRel than the best competing method, FOSSA ViT-B, while FocusAnchor-flex achieves lower AbsRel with 40% fewer focal slices on ZEDD validation.</p>
+        <p>Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context, while reference updates remain limited. We introduce StateWeaver, which combines Active States and Hierarchical Collaboration to connect review-driven visual reference updates with cross-shot state inheritance. Active States translate state discrepancies identified during review into concrete visual asset requirements that guide reference construction, validation, and regeneration, preserving identity and already-correct content while repairing target attributes. Confirmed generation results are linked to the corresponding asset states, story time, and reference versions for verification and reuse by subsequent shots. Hierarchical Collaboration isolates execution contexts by task, clip, and repair round, and uses hierarchical memory to organize this process across multiple sets. Across multiple benchmarks, StateWeaver outperforms existing methods and produces long videos with sustained cross-shot consistency under predefined and autonomously planned storyboards.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.32970" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.32970.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.34290" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34290.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">机器人</span>
+          <span class="paper-id">2611.34288</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.34288" target="_blank">Rehearse in 3D, Render in 2D: Physically Consistent and Editable Robot World Models</a>
+      </h3>
+      
+      <p class="paper-authors">Guangyu Liu, Hanzhang Wang, Huijia Zhang, Hanbei Zhan, Linjie Hu 等 (9 位作者)</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>Embodied world models aim to predict future interactions that are both visually realistic and physically consistent. Yet explicit 3D motion prediction alone does not guarantee that object structure and contact relationships are preserved. Beyond motion prediction, 3D representations provide an explicit state space for imposing structural and physical constraints. Building on this insight, we introduce RehearsalWorld, an editable robot world model driven by 3D Interaction Rehearsal (3DIR). Given an initial RGB-D observation and robot actions, Interaction-Consistent Rehearsal (ICR) uses a pretrained 3D point-flow model as a motion prior. It refines the predicted trajectories through response-aware object grouping, persistent grasp memory, and contact structure refiner, preserving scene stability, object structure, and grasp attachments. Rehearsal-Aligned Video Generation (RAVG) then uses geometric projections of the rehearsal as temporal conditioning. We fine-tune a video generator on projection-video pairs to synthesize realistic interaction videos. Thanks to the decoupling of physical response from visual synthesis, RehearsalWorld also supports independent editing of material properties and camera viewpoints. Compared with PointWorld on real DROID grasping sequences, RehearsalWorld reduces gripper-relative offset by approximately 79% to 84% across deformable, articulated, and rigid objects and lowers reference motion error. For video prediction, it achieves a PSNR of 23.92 dB and an FVD of 149.</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.34288" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34288.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -392,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.32967</span>
+          <span class="paper-id">2611.34284</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.32967" target="_blank">VidForce: Predicting Force-Aware Articulation by Observing Humans</a>
+        <a href="https://arxiv.org/abs/2611.34284" target="_blank">ReMeDi: Single-Image PBR Material Estimation via Reparameterization between Metal and Dielectric Hypotheses</a>
       </h3>
       
-      <p class="paper-authors">Rafay Mohiuddin, Jiaqi Chen, Marc Pollefeys, Hermann Blum</p>
+      <p class="paper-authors">Fan Fei, Xin Huang, Yixin Zhu, Jiawei Lu, Xin Yang 等 (10 位作者)</p>
       
       <div class="paper-summary">
         
@@ -410,12 +442,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>People can anticipate how an object moves and the effort an interaction may require by watching others. How can embodied agents acquire this understanding from video? Force measurements provide direct sensory supervision, but require specialized equipment and remain limited in quantity. We introduce VidForce, which estimates an interaction trajectory together with a force profile from a third-person RGB video; 2D contact clicks and textual object-action prompts are optional. Our approach makes limited instrumented measurements useful for interpreting human interactions through learned physical prototypes as a prior. The prototypes share learned force levels and temporal profiles across interactions of comparable effort, with visual and semantic cues determining their contribution to each observation. Geometric and vision-language features adapt this prior to the observed interaction, while a joint conditional flow refines an initial tracked trajectory together with the force profile. Paired human and instrumented-gripper recordings provide measured force references for supervising human video, and a separately trained torque model demonstrates that the formulation extends to other sensory quantities. We evaluate trajectory recovery and force estimation through baseline comparisons and controlled ablations on held-out interactions from the Hoi! dataset. On this evaluation subset, VidForce achieves 6.6 cm ATE, peak-force MAE and RMSE of 4.81 N and 5.92 N, respectively, and force-profile RMSE of 5.52 N. On real-world videos, VidForce infers motion and force reliably and consistently despite the variability in human execution. We further deploy VidForce on a Spot robot, where trajectories and force profiles estimated from human demonstrations drive real-world articulated-object manipulation, and report success rates across repeated trials. Project page: https://rafaymhddn.github.io/vidforce</p>
+        <p>Physically based rendering (PBR) material estimation facilitates relighting, material editing, and 3D content creation. As the reflectance of a surface heavily depends on whether it is a metal or a dielectric, producing any map that determines albedo involves a decision on metalness, which we call the "intended metalness" of the map. Rendering maps with mismatched intended metalness yields physically implausible or misinterpreted materials. The metallic--roughness workflow makes metalness explicit and thus encourages base color to match it, but does not enforce this match, especially for automated methods directly predicting each map. Therefore, we propose ReMeDi, which enforces the match through two components. First, we reparameterize base color as a metalness-weighted blend of its two variants, estimated under the all-metal and all-dielectric hypothesis, respectively. Second, as available supervision cannot teach a single network both hypotheses at every pixel, we restrict each of two separate networks to one hypothesis, so that each variant is ensured to follow its hypothesis. Besides enforcing the match, this also improves each estimated material map. Experiments show that ReMeDi outperforms state-of-the-art methods in both material accuracy and relighting fidelity.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.32967" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.32967.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.34284" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34284.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +456,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.32964</span>
+          <span class="paper-id">2611.34279</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.32964" target="_blank">Benchmarking Evidence Sufficiency in Vision-Language Models for Autonomous Driving</a>
+        <a href="https://arxiv.org/abs/2611.34279" target="_blank">Semantic State Reading for Joint Image-Semantic Diffusion Transformers</a>
       </h3>
       
-      <p class="paper-authors">Nhat Ha Nguyen, Sudipta Chowdhury, Lokesh Das</p>
+      <p class="paper-authors">Guanxi Lai, Zixuan Li, Zhiwei Li, Qi Li</p>
       
       <div class="paper-summary">
         
@@ -442,44 +474,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Reliable driving VLMs must do more than answer correctly or localize relevant scene actors: they must determine whether the available visual evidence is sufficient to support an answer. Existing evaluations largely treat grounding and answerability as separate measurements, making it difficult to distinguish well-supported predictions from those localized to relevant but insufficient evidence. We introduce DriveAnswer, a benchmark of 20,151 questions across seven reasoning families, that operationalizes this distinction using matched strong- and weak-evidence configurations. Each pair preserves the underlying scene fact and semantic answer while changing whether the observations support answering, making abstention the appropriate response under weak evidence. On the six-family evaluation, the strongest zero-shot baseline reaches 67.31% strong-evidence accuracy, yet only 21.55% of matched questions satisfy both answer-abstain behavior and complete grounding. With controlled adaptation, Gemma-4-12B reaches 63.29% on this joint capability, nearly tripling its zero-shot performance. Qwen3-VL-8B exhibits the same broad improvement in evidence-sensitive answering and grounding. These results show that semantic correctness, evidence sufficiency, and grounding are distinct capabilities that should be evaluated jointly.</p>
+        <p>Pretrained visual representations improve diffusion-transformer training, yet exploiting both global context and local spatial structure requires deciding which semantic states to model and how to access them. We introduce Semantic State Reading (SSR), which jointly denoises image latents, a global CLS token encoding image-level context, and a compact patch state preserving spatial correspondence. SSR couples this global-local modeling with distinct reading paths: local states are fused with corresponding image tokens at the input, while independent projections inject the current global state into every transformer block. Both semantic scopes thus remain accessible throughout denoising. Ablations show complementary benefits from local-state modeling and repeated global reading, and semantic-trajectory interventions alter image layout under a fixed class label. On ImageNet $256 \times 256$, SiT-XL/2 with SSR reaches or surpasses the reference FIDs of SiT, REPA, and Representation Entanglement for Generation (REG) with $100\times$, $40\times$, and $2\times$ fewer training iterations, respectively. SSR achieves unguided FID 1.78 at 2M iterations and FID 1.34 with classifier-free guidance alone. Combining classifier-free guidance with autoguidance yields FID 1.31 at 1M iterations, achieving the best FID in our main comparison table.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.32964" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.32964.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.32952</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.32952" target="_blank">FedTumor-IoMT: Federated Learning-Aided Brain Tumor Diagnosis on Resource-Constrained Edge IoMT Devices</a>
-      </h3>
-      
-      <p class="paper-authors">Pranshu Jena, Prajnyajit Mohanty, Umesh C. Pati</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Joint brain tumor segmentation and classification models are computationally intensive, limiting their training on resource-constrained edge platforms and restricting privacy-preserving Federated Learning FL in the Internet of Medical Things IoMT. Existing approaches either perform both tasks on GPU-equipped workstations or support only classification on edge devices. To address this gap, this work proposes a lightweight multitask FL framework for joint segmentation and classification through local edge training. A shared pretrained LiteMedSAM encoder with TinyViT extracts features for a coordinate-attention-based segmentation decoder and a segmentation-guided classification head, eliminating a separate feature extractor. Selective encoder freezing retains 95\% trainable parameters while reducing on-device training costs. The proposed framework is experimentally validated on a laboratory testbed of five resource-constrained edge clients using 1,200 T1-weighted MRI samples. It achieves 94.20\% classification accuracy, 88.53\% DSC, 83.68\% IoU, and 99.87\% ROC-AUC. Its classification accuracy remains within 0.6\% of the GPU-trained baseline of 95.21\% across five FL rounds. The attention and feature refinement modules improve DSC and IoU by 3.82\% and 4.60\%, respectively, with 0.74 GFLOPs of additional computation. On edge hardware, the framework achieves 46.54 s inference latency, 52.8\% CPU utilization, and a peak temperature of 65$^\circ$C without thermal throttling. Its inference latency is observed to be 6.4--10.5 times lower than that of existing frameworks. These results demonstrate the feasibility of privacy-preserving joint brain tumor segmentation and classification on resource-constrained edge platforms.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.32952" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.32952.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.34279" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34279.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 308 &nbsp;💬 136</span>
+          <span class="paper-id">▲ 1047 &nbsp;💬 887</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50637220" target="_blank">Matrix Multiplication is Θ(n^2.25) [pdf]</a>
+        <a href="https://news.ycombinator.com/item?id=50646108" target="_blank">Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening</a>
       </h3>
-      <p class="paper-authors">by E-Reverance</p>
+      <p class="paper-authors">by Kotlopou</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50637220" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50646108" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://scottaaronson.blog/?p=10379" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 67 &nbsp;💬 4</span>
+          <span class="paper-id">▲ 1251 &nbsp;💬 527</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50638032" target="_blank">Button Sounds – collection of professionally-recorded button clicks and presses</a>
+        <a href="https://news.ycombinator.com/item?id=50644817" target="_blank">1Password Security Incident</a>
       </h3>
-      <p class="paper-authors">by gaurang_tandon</p>
+      <p class="paper-authors">by lxhrstn</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50638032" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://buttons.joshwcomeau.com/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50644817" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://1password.com/blog/update-on-nov-2026-security-incident" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 66 &nbsp;💬 26</span>
+          <span class="paper-id">▲ 328 &nbsp;💬 161</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50637686" target="_blank">Models Can Communicate via Inference Servers Despite Being Sandboxed</a>
+        <a href="https://news.ycombinator.com/item?id=50648050" target="_blank">Much shorter version of GRH Lean verification from Anthropic</a>
       </h3>
-      <p class="paper-authors">by gmays</p>
+      <p class="paper-authors">by nb-t</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50637686" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50648050" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/lsernau/grh-lean" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 56 &nbsp;💬 24</span>
+          <span class="paper-id">▲ 134 &nbsp;💬 60</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50637874" target="_blank">I've been drinking wine in my kitchen</a>
+        <a href="https://news.ycombinator.com/item?id=50649864" target="_blank">Tell HN: Lots of Ask HNs again</a>
       </h3>
-      <p class="paper-authors">by nill0</p>
+      <p class="paper-authors">by dang</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50637874" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://scottaaronson.blog/?p=10362" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50649864" target="_blank" class="link-btn">💬 HN 讨论</a>
+        
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 134 &nbsp;💬 20</span>
+          <span class="paper-id">▲ 281 &nbsp;💬 80</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50637056" target="_blank">PenGPT: A Generative Transformer for Handwriting and Sketches</a>
+        <a href="https://news.ycombinator.com/item?id=50601280" target="_blank">GPT-6.2 Astra is the first model to beat Googlers' code golf records</a>
       </h3>
-      <p class="paper-authors">by smusamashah</p>
+      <p class="paper-authors">by bjin</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50637056" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://greydanus.github.io/2026/11/12/pengpt/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50601280" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://bjin.github.io/go-codegolf-benchmark/#leaderboard" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 379 &nbsp;💬 129</span>
+          <span class="paper-id">▲ 176 &nbsp;💬 87</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50633922" target="_blank">Ternary Bonsai 2.5 27B</a>
+        <a href="https://news.ycombinator.com/item?id=50647181" target="_blank">Slow Ubuntu security response times</a>
       </h3>
-      <p class="paper-authors">by b0m</p>
+      <p class="paper-authors">by gslin</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50633922" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://prismml.com/news/bonsai-2-5-27b" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50647181" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.openwall.com/lists/oss-security/2026/11/25/9" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 25 &nbsp;💬 3</span>
+          <span class="paper-id">▲ 452 &nbsp;💬 111</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50638220" target="_blank">Marginalia Search, Money, C++, Rust, AI, Stuff</a>
+        <a href="https://news.ycombinator.com/item?id=50643129" target="_blank">A few questions for the guy who went snorkeling in a Home Depot retention pond</a>
       </h3>
-      <p class="paper-authors">by Curiositry</p>
+      <p class="paper-authors">by gumby</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50638220" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.marginalia.nu/log/a_141_marginalia_update/" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50643129" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 16 &nbsp;💬 5</span>
+          <span class="paper-id">▲ 250 &nbsp;💬 201</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50638070" target="_blank">Serving Qwen via AWS Lambdas for fun and 80x negative profit</a>
+        <a href="https://news.ycombinator.com/item?id=50647673" target="_blank">The New York Times warns photographers not to update Photoshop over AI features</a>
       </h3>
-      <p class="paper-authors">by octember</p>
+      <p class="paper-authors">by rmason</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50638070" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://noahbuilt.it/writing/qwen-on-5600-lambdas" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50647673" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 70,418 &nbsp;+727 today</span>
+          <span class="paper-id">⭐ 71,118 &nbsp;+826 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -675,7 +675,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">HTML</span>
-          <span class="paper-id">⭐ 72,236 &nbsp;+802 today</span>
+          <span class="paper-id">⭐ 73,179 &nbsp;+1141 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -722,7 +722,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 12,731 &nbsp;+403 today</span>
+          <span class="paper-id">⭐ 13,025 &nbsp;+355 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -756,7 +756,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 74,394 &nbsp;+703 today</span>
+          <span class="paper-id">⭐ 75,210 &nbsp;+945 today</span>
         </div>
         <span class="score-badge">推荐度 75/100</span>
       </div>
@@ -790,7 +790,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 64,994 &nbsp;+1074 today</span>
+          <span class="paper-id">⭐ 65,784 &nbsp;+1106 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -824,7 +824,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 15,249 &nbsp;+398 today</span>
+          <span class="paper-id">⭐ 15,565 &nbsp;+348 today</span>
         </div>
         <span class="score-badge">推荐度 60/100</span>
       </div>
@@ -858,7 +858,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 19,295 &nbsp;+360 today</span>
+          <span class="paper-id">⭐ 19,577 &nbsp;+416 today</span>
         </div>
         <span class="score-badge">推荐度 40/100</span>
       </div>
@@ -892,7 +892,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 209,106 &nbsp;+991 today</span>
+          <span class="paper-id">⭐ 210,178 &nbsp;+1135 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>
