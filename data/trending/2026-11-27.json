@@ -1,0 +1,98 @@
+[
+  {
+    "id": "jingyaogong_minimind",
+    "full_name": "jingyaogong/minimind",
+    "owner": "jingyaogong",
+    "name": "minimind",
+    "url": "https://github.com/jingyaogong/minimind",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        jingyaogong /\n\n      minimind  \n\n    \n      🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+    "language": "Python",
+    "stars": 71787,
+    "stars_today": 702,
+    "relevance_score": 85
+  },
+  {
+    "id": "sponsors_cathrynlavery",
+    "full_name": "sponsors/cathrynlavery",
+    "owner": "sponsors",
+    "name": "cathrynlavery",
+    "url": "https://github.com/sponsors/cathrynlavery",
+    "description": "Sponsor\n    \n  \n\n\n\n      \n            \n    \n\n    \n\n        \n          Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cathrynlavery /\n\n      diagram-design  \n\n    \n      Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+    "language": "HTML",
+    "stars": 73971,
+    "stars_today": 955,
+    "relevance_score": 85
+  },
+  {
+    "id": "google-labs-code_stitch-skills",
+    "full_name": "google-labs-code/stitch-skills",
+    "owner": "google-labs-code",
+    "name": "stitch-skills",
+    "url": "https://github.com/google-labs-code/stitch-skills",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        google-labs-code /\n\n      stitch-skills  \n\n    \n      A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+    "language": "TypeScript",
+    "stars": 13335,
+    "stars_today": 309,
+    "relevance_score": 85
+  },
+  {
+    "id": "mvanhorn_last30days-skill",
+    "full_name": "mvanhorn/last30days-skill",
+    "owner": "mvanhorn",
+    "name": "last30days-skill",
+    "url": "https://github.com/mvanhorn/last30days-skill",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        mvanhorn /\n\n      last30days-skill  \n\n    \n      AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+    "language": "Python",
+    "stars": 75874,
+    "stars_today": 759,
+    "relevance_score": 75
+  },
+  {
+    "id": "HKUDS_CLI-Anything",
+    "full_name": "HKUDS/CLI-Anything",
+    "owner": "HKUDS",
+    "name": "CLI-Anything",
+    "url": "https://github.com/HKUDS/CLI-Anything",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        HKUDS /\n\n      CLI-Anything  \n\n    \n      \"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+    "language": "Python",
+    "stars": 66478,
+    "stars_today": 746,
+    "relevance_score": 70
+  },
+  {
+    "id": "Tracer-Cloud_opensre",
+    "full_name": "Tracer-Cloud/opensre",
+    "owner": "Tracer-Cloud",
+    "name": "opensre",
+    "url": "https://github.com/Tracer-Cloud/opensre",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        Tracer-Cloud /\n\n      opensre  \n\n    \n      The open-source agent for CI/CD reliability.",
+    "language": "Python",
+    "stars": 15872,
+    "stars_today": 327,
+    "relevance_score": 60
+  },
+  {
+    "id": "cursor_plugins",
+    "full_name": "cursor/plugins",
+    "owner": "cursor",
+    "name": "plugins",
+    "url": "https://github.com/cursor/plugins",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        cursor /\n\n      plugins  \n\n    \n      Cursor plugin specification and official plugins",
+    "language": "TypeScript",
+    "stars": 19821,
+    "stars_today": 270,
+    "relevance_score": 40
+  },
+  {
+    "id": "firecrawl_firecrawl",
+    "full_name": "firecrawl/firecrawl",
+    "owner": "firecrawl",
+    "name": "firecrawl",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "description": "Star\n\n\n  \n\n  \n    \n    \n\n\n      \n        firecrawl /\n\n      firecrawl  \n\n    \n      Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+    "language": "TypeScript",
+    "stars": 211062,
+    "stars_today": 1046,
+    "relevance_score": 30
+  }
+]

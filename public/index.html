@@ -313,10 +313,10 @@
     </header>
 
     <div class="page-hero">
-        <div class="page-date">📅 2026-11-26</div>
+        <div class="page-date">📅 2026-11-27</div>
         <h2>每日精选 · arXiv · Hacker News · GitHub Trending</h2>
         <p class="page-stats">
-            计算机视觉: 4 | 机器人: 1
+            计算机视觉: 5
             <a href="archive.html">归档 →</a>
         </p>
     </div>
@@ -328,15 +328,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.34292</span>
+          <span class="paper-id">2611.34944</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.34292" target="_blank">WebVibe: Multimodal Interactive Website Generation via Reverse Synthesis and Visual Self-Distillation</a>
+        <a href="https://arxiv.org/abs/2611.34944" target="_blank">AnyCam: Anything Can Represent Camera for Video Generation</a>
       </h3>
       
-      <p class="paper-authors">Tianxiang Jiang, Sheng Xia, Yilin Long, Kanghui Tian, Linquan Wu 等 (11 位作者)</p>
+      <p class="paper-authors">Weijie Lyu, Zhixin Shu, Yuntian Ke, Ming-Hsuan Yang</p>
       
       <div class="paper-summary">
         
@@ -346,12 +346,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Although multimodal large language models translate single screenshots into static HTML, generating interactive functional websites from design specifications still struggles with multi-page routing and stateful widget transitions. Examining existing training pipelines reveals two bottlenecks: (1) in forward data synthesis (X -> Y), writing the specification X before code execution leaves unimplemented or altered requirements in X as supervision noise; and (2) in reinforcement learning, scalar rewards discard the rich state transitions observed during replay. Based on these findings, we introduce WebVibe and Interactive-SDPO to train InteractiveCoder. WebVibe reverses synthesis into Y -> X by verifying cross-page and in-page interactions in the browser before deriving multimodal inputs from replay-confirmed states to build the 31,542-site WebVibe-32K corpus with reusable execution contracts. Interactive-SDPO then conditions a weight-sharing self-teacher on the replay trace and a 2x2 state-transition montage to provide token-level supervision at zero inference-time overhead. On the public Vision2Web L2, one-shot InteractiveCoder-9B nearly 3x its base model's functional score (20.2 to 55.2 FS) and matches a 1T-parameter coding agent in a single pass with 111x fewer total parameters and 78x fewer tokens. On our WebVibeBench, InteractiveCoder-4B and 9B further outperform all evaluated baselines by over 23 points.</p>
+        <p>Camera-controlled video generation re-renders a video along a target camera trajectory, yet moving the camera around an object, the most natural way to change the viewpoint of an object-centric scene, remains difficult. Existing methods condition either on camera parameters, which are scale-ambiguous in monocular video, or on explicit geometry such as warped point clouds or depth, which breaks down under large viewpoint changes. We present AnyCam, a method that represents the camera with an anchor object in the scene: we reconstruct it in 3D and render it along the target trajectory, a camera signal that is scale-aware, view-complete and easy to specify relative to the object. A video diffusion model transfers the content and dynamics of the source video to the new viewpoint. Its H-Concat layout aligns source and target frames in time, so the model can be distilled into AnyCam-AR, a streaming few-step generator for on-the-fly camera control. Both models are trained on paired videos with pixel-aligned anchor renderings from multi-camera videos and static-scene captures. Experiments on diverse datasets and trajectories show that AnyCam performs favorably against camera-controlled video generation and 3D reconstruction methods in camera control and visual quality.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.34292" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.34292.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.34944" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34944.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -360,15 +360,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.34290</span>
+          <span class="paper-id">2611.34943</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.34290" target="_blank">StateWeaver: Multi-Agent Coordination of Story-State Transitions for Long-Horizon Video Generation</a>
+        <a href="https://arxiv.org/abs/2611.34943" target="_blank">Tracking Any Point with Agentic Visual Reasoning</a>
       </h3>
       
-      <p class="paper-authors">Modi Jin, Xuying Zhang, Yijing Guo, Haoran Li, Yanwen Ma 等 (9 位作者)</p>
+      <p class="paper-authors">Xuweiyi Chen, Jin Yao, Linzhan Mou, Lei Gong, Di Liu 等 (11 位作者)</p>
       
       <div class="paper-summary">
         
@@ -378,44 +378,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Modern video foundation models generate high-quality short clips, but preserving long-video consistency and correctly depicting event-driven state changes remain challenging. Existing agentic workflows face these challenges because continual planning and repair accumulate context, while reference updates remain limited. We introduce StateWeaver, which combines Active States and Hierarchical Collaboration to connect review-driven visual reference updates with cross-shot state inheritance. Active States translate state discrepancies identified during review into concrete visual asset requirements that guide reference construction, validation, and regeneration, preserving identity and already-correct content while repairing target attributes. Confirmed generation results are linked to the corresponding asset states, story time, and reference versions for verification and reuse by subsequent shots. Hierarchical Collaboration isolates execution contexts by task, clip, and repair round, and uses hierarchical memory to organize this process across multiple sets. Across multiple benchmarks, StateWeaver outperforms existing methods and produces long videos with sustained cross-shot consistency under predefined and autonomously planned storyboards.</p>
+        <p>A general-purpose Vision-Language Model (VLM) has surpassed expert vision models in many domains such as object detection and video recognition. However, point correspondence is known to be challenging for VLMs since it goes beyond object-level recognition: it requires pixel-level localization of the same physical surface point across observations, even when appearance changes or the point disappears and later reappears. In this paper, we introduce AgenTAP, a VLM-based agent that directly predicts point coordinates and visibility and actively reasons over videos. Starting from its own estimate, the agent autonomously chooses what to inspect and uses the resulting evidence to verify point identity and refine its predictions. With GPT-6 Astra, it surpasses expert vision models in both point localization and visibility prediction, without correspondence-specific fine-tuning. We further use AgenTAP to re-identify physical points after disappearance and reconnect fragmented tracks, constructing EgoTAP-4D, a dataset of 3D point trajectories in long real-world egocentric videos. On sampled reappearing points, its predictions approach human agreement, and adding EgoTAP-4D to D4RT training improves average 3D tracking performance.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.34290" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.34290.pdf" target="_blank" class="link-btn">📥 PDF</a>
-      </div>
-    </article>
-    
-
-    <article class="paper-card">
-      <div class="paper-header">
-        <div class="left-header">
-          <span class="category-badge">机器人</span>
-          <span class="paper-id">2611.34288</span>
-        </div>
-        
-      </div>
-      <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.34288" target="_blank">Rehearse in 3D, Render in 2D: Physically Consistent and Editable Robot World Models</a>
-      </h3>
-      
-      <p class="paper-authors">Guangyu Liu, Hanzhang Wang, Huijia Zhang, Hanbei Zhan, Linjie Hu 等 (9 位作者)</p>
-      
-      <div class="paper-summary">
-        
-        
-        
-      </div>
-      
-      <details class="paper-abstract">
-        <summary>查看原文摘要</summary>
-        <p>Embodied world models aim to predict future interactions that are both visually realistic and physically consistent. Yet explicit 3D motion prediction alone does not guarantee that object structure and contact relationships are preserved. Beyond motion prediction, 3D representations provide an explicit state space for imposing structural and physical constraints. Building on this insight, we introduce RehearsalWorld, an editable robot world model driven by 3D Interaction Rehearsal (3DIR). Given an initial RGB-D observation and robot actions, Interaction-Consistent Rehearsal (ICR) uses a pretrained 3D point-flow model as a motion prior. It refines the predicted trajectories through response-aware object grouping, persistent grasp memory, and contact structure refiner, preserving scene stability, object structure, and grasp attachments. Rehearsal-Aligned Video Generation (RAVG) then uses geometric projections of the rehearsal as temporal conditioning. We fine-tune a video generator on projection-video pairs to synthesize realistic interaction videos. Thanks to the decoupling of physical response from visual synthesis, RehearsalWorld also supports independent editing of material properties and camera viewpoints. Compared with PointWorld on real DROID grasping sequences, RehearsalWorld reduces gripper-relative offset by approximately 79% to 84% across deformable, articulated, and rigid objects and lowers reference motion error. For video prediction, it achieves a PSNR of 23.92 dB and an FVD of 149.</p>
-      </details>
-      
-      <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.34288" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.34288.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.34943" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34943.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -424,15 +392,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.34284</span>
+          <span class="paper-id">2611.34941</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.34284" target="_blank">ReMeDi: Single-Image PBR Material Estimation via Reparameterization between Metal and Dielectric Hypotheses</a>
+        <a href="https://arxiv.org/abs/2611.34941" target="_blank">Improving and Expanding Video Editing Capabilities Without Videos</a>
       </h3>
       
-      <p class="paper-authors">Fan Fei, Xin Huang, Yixin Zhu, Jiawei Lu, Xin Yang 等 (10 位作者)</p>
+      <p class="paper-authors">Ji Xie, Yanhao Jia, Xiangpeng Yang, Martin Q. Ma, Sihan Xu 等 (7 位作者)</p>
       
       <div class="paper-summary">
         
@@ -442,12 +410,12 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Physically based rendering (PBR) material estimation facilitates relighting, material editing, and 3D content creation. As the reflectance of a surface heavily depends on whether it is a metal or a dielectric, producing any map that determines albedo involves a decision on metalness, which we call the "intended metalness" of the map. Rendering maps with mismatched intended metalness yields physically implausible or misinterpreted materials. The metallic--roughness workflow makes metalness explicit and thus encourages base color to match it, but does not enforce this match, especially for automated methods directly predicting each map. Therefore, we propose ReMeDi, which enforces the match through two components. First, we reparameterize base color as a metalness-weighted blend of its two variants, estimated under the all-metal and all-dielectric hypothesis, respectively. Second, as available supervision cannot teach a single network both hypotheses at every pixel, we restrict each of two separate networks to one hypothesis, so that each variant is ensured to follow its hypothesis. Besides enforcing the match, this also improves each estimated material map. Experiments show that ReMeDi outperforms state-of-the-art methods in both material accuracy and relighting fidelity.</p>
+        <p>Image editing models can follow a wide range of instructions, but video editing models still lag behind, limited in part by the difficulty of collecting paired source and edited videos. Is it possible to transfer advanced image editing capabilities to video editors without new paired videos? We introduce Image-to-Video Transfer (I2VT), which improves pretrained video editors and expands them to new editing tasks using an image editor. It enables efficient post-training with no architectural changes and no new videos, using only individual images. Our key idea is to let the video editor role-play as an image editor: it edits an image as a one-frame video, with the image editor guiding the video editor's predictions at each denoising step. Although the video editor sees only single images during training, at test time it applies the improved and expanded capabilities to whole video clips while preserving temporal consistency. To push the boundaries of video editing, we introduce OpenVE++, an extension of OpenVE-Bench that adds four new editing tasks useful for video production, including action changes, expression changes, body movements, and scene relighting. Our experiments across three different video editors show that I2VT improves existing editing capabilities and expands them to new tasks, and our models achieve state-of-the-art (SOTA) performance on both OpenVE-Bench and OpenVE++.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.34284" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.34284.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.34941" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34941.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -456,15 +424,15 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge">计算机视觉</span>
-          <span class="paper-id">2611.34279</span>
+          <span class="paper-id">2611.34940</span>
         </div>
         
       </div>
       <h3 class="paper-title">
-        <a href="https://arxiv.org/abs/2611.34279" target="_blank">Semantic State Reading for Joint Image-Semantic Diffusion Transformers</a>
+        <a href="https://arxiv.org/abs/2611.34940" target="_blank">LuxAvatar: Real-Time Relightable Head Avatars via Causal Neural Shading of 3D Intrinsic Proxies</a>
       </h3>
       
-      <p class="paper-authors">Guanxi Lai, Zixuan Li, Zhiwei Li, Qi Li</p>
+      <p class="paper-authors">Yipengjing Sun, Chenyang Wang, Boyao Zhou, Jiapeng Zhu, Ka Leong Cheng 等 (6 位作者)</p>
       
       <div class="paper-summary">
         
@@ -474,12 +442,44 @@
       
       <details class="paper-abstract">
         <summary>查看原文摘要</summary>
-        <p>Pretrained visual representations improve diffusion-transformer training, yet exploiting both global context and local spatial structure requires deciding which semantic states to model and how to access them. We introduce Semantic State Reading (SSR), which jointly denoises image latents, a global CLS token encoding image-level context, and a compact patch state preserving spatial correspondence. SSR couples this global-local modeling with distinct reading paths: local states are fused with corresponding image tokens at the input, while independent projections inject the current global state into every transformer block. Both semantic scopes thus remain accessible throughout denoising. Ablations show complementary benefits from local-state modeling and repeated global reading, and semantic-trajectory interventions alter image layout under a fixed class label. On ImageNet $256 \times 256$, SiT-XL/2 with SSR reaches or surpasses the reference FIDs of SiT, REPA, and Representation Entanglement for Generation (REG) with $100\times$, $40\times$, and $2\times$ fewer training iterations, respectively. SSR achieves unguided FID 1.78 at 2M iterations and FID 1.34 with classifier-free guidance alone. Combining classifier-free guidance with autoguidance yields FID 1.31 at 1M iterations, achieving the best FID in our main comparison table.</p>
+        <p>We present LuxAvatar, a feed-forward framework for real-time head avatar animation and relighting from a single portrait. To achieve both 3D controllability and complex facial light transport, we factorize avatar synthesis into an animatable 3D intrinsic Gaussian proxy and a causal autoregressive neural shader. This proxy disentangles canonical geometry and reflectance attributes, rapidly rasterizing deformed Gaussians into view- and motion-consistent PBR buffers. Conditioned on these buffers, our neural shader formulates forward rendering as a conditional video diffusion process, bypassing explicit PBR computation to synthesize realistic shading effects under target illumination. We achieve real-time streaming through heterogeneous distillation from a pretrained multi-step bidirectional relighting teacher to a two-step causal autoregressive neural shader, inheriting broad synthetic lighting priors while minimizing conditioning and decoding latency. To further specialize these priors to human heads, we construct a hybrid relighting dataset for domain-specific fine-tuning, capturing authentic facial dynamics and physically grounded light transport. Extensive experiments show that our framework enables 3D-controllable, real-time portrait animation and relighting, outperforming state-of-the-art methods in visual fidelity, motion control, and lighting accuracy.</p>
       </details>
       
       <div class="paper-links">
-        <a href="https://arxiv.org/abs/2611.34279" target="_blank" class="link-btn">📄 arXiv</a>
-        <a href="https://arxiv.org/pdf/2611.34279.pdf" target="_blank" class="link-btn">📥 PDF</a>
+        <a href="https://arxiv.org/abs/2611.34940" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34940.pdf" target="_blank" class="link-btn">📥 PDF</a>
+      </div>
+    </article>
+    
+
+    <article class="paper-card">
+      <div class="paper-header">
+        <div class="left-header">
+          <span class="category-badge">计算机视觉</span>
+          <span class="paper-id">2611.34939</span>
+        </div>
+        
+      </div>
+      <h3 class="paper-title">
+        <a href="https://arxiv.org/abs/2611.34939" target="_blank">A Mesh for Every Moment</a>
+      </h3>
+      
+      <p class="paper-authors">Roy Or-El, Jeong Joon Park, Ira Kemelmacher-Shlizerman</p>
+      
+      <div class="paper-summary">
+        
+        
+        
+      </div>
+      
+      <details class="paper-abstract">
+        <summary>查看原文摘要</summary>
+        <p>We present MEMO (a Mesh for Every MOment), a method that reconstructs the geometry of complete dynamic scenes, captured by multiple synchronized cameras, and extracts a mesh at every frame. Existing dynamic Gaussian splatting methods either model appearance alone or target isolated objects segmented by foreground masks, and all of them recover meshes by TSDF fusion or Poisson reconstruction, whose fixed grids limit the detail they can capture. At the core of MEMO is a per-Gaussian motion model inspired by Gaussian processes, which represents each Gaussian's position and rotation over time as a combination of temporal Gaussian kernels. The model keeps every Gaussian a valid surface element throughout the sequence and carries an implicit representation of the dynamic geometry, so a mesh can be derived at any time from a field defined by the Gaussians. Although common in real captures, large and fast motion poses a challenge that dynamic Gaussian splatting methods usually overlook. To account for it, we design a track-based initialization scheme that fits each Gaussian's initial trajectory to point tracks in closed form. We evaluate MEMO on Blender-Moments, a new benchmark of nine animated scenes with ground-truth meshes at every frame, and on two real-world datasets. MEMO reconstructs the most accurate geometry among state-of-the-art methods, and remains competitive in novel-view synthesis and training time. Project page: https://memo-4d.github.io</p>
+      </details>
+      
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2611.34939" target="_blank" class="link-btn">📄 arXiv</a>
+        <a href="https://arxiv.org/pdf/2611.34939.pdf" target="_blank" class="link-btn">📥 PDF</a>
       </div>
     </article>
     
@@ -488,18 +488,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 1047 &nbsp;💬 887</span>
+          <span class="paper-id">▲ 119 &nbsp;💬 62</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50646108" target="_blank">Holy shit holy shit holy shit holy shit: The magnitude of what’s now happening</a>
+        <a href="https://news.ycombinator.com/item?id=50661646" target="_blank">Hard Drive pricing has gotten bad</a>
       </h3>
-      <p class="paper-authors">by Kotlopou</p>
+      <p class="paper-authors">by zdw</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50646108" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://scottaaronson.blog/?p=10379" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50661646" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -507,18 +507,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 1251 &nbsp;💬 527</span>
+          <span class="paper-id">▲ 407 &nbsp;💬 222</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50644817" target="_blank">1Password Security Incident</a>
+        <a href="https://news.ycombinator.com/item?id=50660180" target="_blank">AI made self-hosting fun again</a>
       </h3>
-      <p class="paper-authors">by lxhrstn</p>
+      <p class="paper-authors">by jlelse</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50644817" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://1password.com/blog/update-on-nov-2026-security-incident" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50660180" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://janlukas.blog/posts/ai-self-hosting" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -526,18 +526,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 328 &nbsp;💬 161</span>
+          <span class="paper-id">▲ 281 &nbsp;💬 60</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50648050" target="_blank">Much shorter version of GRH Lean verification from Anthropic</a>
+        <a href="https://news.ycombinator.com/item?id=50659841" target="_blank">Kamil Khan Mumtaz: Pakistani architect, admired at home, almost invisible abroad</a>
       </h3>
-      <p class="paper-authors">by nb-t</p>
+      <p class="paper-authors">by dverlaeckt80</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50648050" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://github.com/lsernau/grh-lean" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50659841" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://worksinprogress.co/issue/the-greatest-architect-youve-never-heard-of-is-in-pakistan/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -545,18 +545,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 134 &nbsp;💬 60</span>
+          <span class="paper-id">▲ 301 &nbsp;💬 379</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50649864" target="_blank">Tell HN: Lots of Ask HNs again</a>
+        <a href="https://news.ycombinator.com/item?id=50657530" target="_blank">YouTube Ad Punisher – Auto-reloads YouTube pages when an ad plays</a>
       </h3>
-      <p class="paper-authors">by dang</p>
+      <p class="paper-authors">by iantongeorge</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50649864" target="_blank" class="link-btn">💬 HN 讨论</a>
-        
+        <a href="https://news.ycombinator.com/item?id=50657530" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/antonpictures/youtube-punisher" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -564,18 +564,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 281 &nbsp;💬 80</span>
+          <span class="paper-id">▲ 303 &nbsp;💬 74</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50601280" target="_blank">GPT-6.2 Astra is the first model to beat Googlers' code golf records</a>
+        <a href="https://news.ycombinator.com/item?id=50657265" target="_blank">AMD-specific fork of llama.cpp</a>
       </h3>
-      <p class="paper-authors">by bjin</p>
+      <p class="paper-authors">by julianlam</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50601280" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://bjin.github.io/go-codegolf-benchmark/#leaderboard" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50657265" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://devnull.land/amd-specific-llama-cpp" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -583,18 +583,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 176 &nbsp;💬 87</span>
+          <span class="paper-id">▲ 235 &nbsp;💬 100</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50647181" target="_blank">Slow Ubuntu security response times</a>
+        <a href="https://news.ycombinator.com/item?id=50657645" target="_blank">CTO of 'RansomwareHelp' indicted for wire fraud</a>
       </h3>
-      <p class="paper-authors">by gslin</p>
+      <p class="paper-authors">by Bender</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50647181" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.openwall.com/lists/oss-security/2026/11/25/9" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50657645" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://krebsonsecurity.com/2026/11/cto-of-ransomwarehelp-indicted-for-wire-fraud/" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -602,18 +602,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 452 &nbsp;💬 111</span>
+          <span class="paper-id">▲ 33 &nbsp;💬 7</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50643129" target="_blank">A few questions for the guy who went snorkeling in a Home Depot retention pond</a>
+        <a href="https://news.ycombinator.com/item?id=50662322" target="_blank">Google will show solo Android developers' phone numbers and addresses</a>
       </h3>
-      <p class="paper-authors">by gumby</p>
+      <p class="paper-authors">by nreece</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50643129" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.vox.com/down-to-earth/511999/home-depot-retention-pond-snorkel-joseph-ricketts" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50662322" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://support.google.com/googleplay/android-developer/answer/17594752?hl=en" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -621,18 +621,18 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge hn-badge">HN</span>
-          <span class="paper-id">▲ 250 &nbsp;💬 201</span>
+          <span class="paper-id">▲ 484 &nbsp;💬 244</span>
         </div>
         <span class="score-badge">推荐度 0/100</span>
       </div>
       <h3 class="paper-title">
-        <a href="https://news.ycombinator.com/item?id=50647673" target="_blank">The New York Times warns photographers not to update Photoshop over AI features</a>
+        <a href="https://news.ycombinator.com/item?id=50653667" target="_blank">Intel One Mono font (2023)</a>
       </h3>
-      <p class="paper-authors">by rmason</p>
+      <p class="paper-authors">by saikatsg</p>
       
       <div class="paper-links">
-        <a href="https://news.ycombinator.com/item?id=50647673" target="_blank" class="link-btn">💬 HN 讨论</a>
-        <a href="https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features" target="_blank" class="link-btn">🔗 原文</a>
+        <a href="https://news.ycombinator.com/item?id=50653667" target="_blank" class="link-btn">💬 HN 讨论</a>
+        <a href="https://github.com/intel/intel-one-mono" target="_blank" class="link-btn">🔗 原文</a>
       </div>
     </article>
     
@@ -641,7 +641,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 71,118 &nbsp;+826 today</span>
+          <span class="paper-id">⭐ 71,787 &nbsp;+702 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -675,7 +675,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">HTML</span>
-          <span class="paper-id">⭐ 73,179 &nbsp;+1141 today</span>
+          <span class="paper-id">⭐ 73,971 &nbsp;+955 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -722,7 +722,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 13,025 &nbsp;+355 today</span>
+          <span class="paper-id">⭐ 13,335 &nbsp;+309 today</span>
         </div>
         <span class="score-badge">推荐度 85/100</span>
       </div>
@@ -756,7 +756,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 75,210 &nbsp;+945 today</span>
+          <span class="paper-id">⭐ 75,874 &nbsp;+759 today</span>
         </div>
         <span class="score-badge">推荐度 75/100</span>
       </div>
@@ -790,7 +790,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 65,784 &nbsp;+1106 today</span>
+          <span class="paper-id">⭐ 66,478 &nbsp;+746 today</span>
         </div>
         <span class="score-badge">推荐度 70/100</span>
       </div>
@@ -824,7 +824,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">Python</span>
-          <span class="paper-id">⭐ 15,565 &nbsp;+348 today</span>
+          <span class="paper-id">⭐ 15,872 &nbsp;+327 today</span>
         </div>
         <span class="score-badge">推荐度 60/100</span>
       </div>
@@ -858,7 +858,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 19,577 &nbsp;+416 today</span>
+          <span class="paper-id">⭐ 19,821 &nbsp;+270 today</span>
         </div>
         <span class="score-badge">推荐度 40/100</span>
       </div>
@@ -892,7 +892,7 @@
       <div class="paper-header">
         <div class="left-header">
           <span class="category-badge gh-badge">TypeScript</span>
-          <span class="paper-id">⭐ 210,178 &nbsp;+1135 today</span>
+          <span class="paper-id">⭐ 211,062 &nbsp;+1046 today</span>
         </div>
         <span class="score-badge">推荐度 30/100</span>
       </div>

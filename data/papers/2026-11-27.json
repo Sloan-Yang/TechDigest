@@ -1,0 +1,109 @@
+[
+  {
+    "id": "2611.34944",
+    "title": "AnyCam: Anything Can Represent Camera for Video Generation",
+    "abstract": "Camera-controlled video generation re-renders a video along a target camera trajectory, yet moving the camera around an object, the most natural way to change the viewpoint of an object-centric scene, remains difficult. Existing methods condition either on camera parameters, which are scale-ambiguous in monocular video, or on explicit geometry such as warped point clouds or depth, which breaks down under large viewpoint changes. We present AnyCam, a method that represents the camera with an anchor object in the scene: we reconstruct it in 3D and render it along the target trajectory, a camera signal that is scale-aware, view-complete and easy to specify relative to the object. A video diffusion model transfers the content and dynamics of the source video to the new viewpoint. Its H-Concat layout aligns source and target frames in time, so the model can be distilled into AnyCam-AR, a streaming few-step generator for on-the-fly camera control. Both models are trained on paired videos with pixel-aligned anchor renderings from multi-camera videos and static-scene captures. Experiments on diverse datasets and trajectories show that AnyCam performs favorably against camera-controlled video generation and 3D reconstruction methods in camera control and visual quality.",
+    "authors": [
+      "Weijie Lyu",
+      "Zhixin Shu",
+      "Yuntian Ke",
+      "Ming-Hsuan Yang"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34944.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34944",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.34943",
+    "title": "Tracking Any Point with Agentic Visual Reasoning",
+    "abstract": "A general-purpose Vision-Language Model (VLM) has surpassed expert vision models in many domains such as object detection and video recognition. However, point correspondence is known to be challenging for VLMs since it goes beyond object-level recognition: it requires pixel-level localization of the same physical surface point across observations, even when appearance changes or the point disappears and later reappears. In this paper, we introduce AgenTAP, a VLM-based agent that directly predicts point coordinates and visibility and actively reasons over videos. Starting from its own estimate, the agent autonomously chooses what to inspect and uses the resulting evidence to verify point identity and refine its predictions. With GPT-6 Astra, it surpasses expert vision models in both point localization and visibility prediction, without correspondence-specific fine-tuning. We further use AgenTAP to re-identify physical points after disappearance and reconnect fragmented tracks, constructing EgoTAP-4D, a dataset of 3D point trajectories in long real-world egocentric videos. On sampled reappearing points, its predictions approach human agreement, and adding EgoTAP-4D to D4RT training improves average 3D tracking performance.",
+    "authors": [
+      "Xuweiyi Chen",
+      "Jin Yao",
+      "Linzhan Mou",
+      "Lei Gong",
+      "Di Liu",
+      "Cheng Zhang",
+      "Ziqiao Ma",
+      "Sihan Xu",
+      "Adam W. Harley",
+      "Shengyi Qian",
+      "Zezhou Cheng"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34943.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34943",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.34941",
+    "title": "Improving and Expanding Video Editing Capabilities Without Videos",
+    "abstract": "Image editing models can follow a wide range of instructions, but video editing models still lag behind, limited in part by the difficulty of collecting paired source and edited videos. Is it possible to transfer advanced image editing capabilities to video editors without new paired videos? We introduce Image-to-Video Transfer (I2VT), which improves pretrained video editors and expands them to new editing tasks using an image editor. It enables efficient post-training with no architectural changes and no new videos, using only individual images. Our key idea is to let the video editor role-play as an image editor: it edits an image as a one-frame video, with the image editor guiding the video editor's predictions at each denoising step. Although the video editor sees only single images during training, at test time it applies the improved and expanded capabilities to whole video clips while preserving temporal consistency. To push the boundaries of video editing, we introduce OpenVE++, an extension of OpenVE-Bench that adds four new editing tasks useful for video production, including action changes, expression changes, body movements, and scene relighting. Our experiments across three different video editors show that I2VT improves existing editing capabilities and expands them to new tasks, and our models achieve state-of-the-art (SOTA) performance on both OpenVE-Bench and OpenVE++.",
+    "authors": [
+      "Ji Xie",
+      "Yanhao Jia",
+      "Xiangpeng Yang",
+      "Martin Q. Ma",
+      "Sihan Xu",
+      "Erik Cambria",
+      "Louis-Philippe Morency"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34941.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34941",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.34940",
+    "title": "LuxAvatar: Real-Time Relightable Head Avatars via Causal Neural Shading of 3D Intrinsic Proxies",
+    "abstract": "We present LuxAvatar, a feed-forward framework for real-time head avatar animation and relighting from a single portrait. To achieve both 3D controllability and complex facial light transport, we factorize avatar synthesis into an animatable 3D intrinsic Gaussian proxy and a causal autoregressive neural shader. This proxy disentangles canonical geometry and reflectance attributes, rapidly rasterizing deformed Gaussians into view- and motion-consistent PBR buffers. Conditioned on these buffers, our neural shader formulates forward rendering as a conditional video diffusion process, bypassing explicit PBR computation to synthesize realistic shading effects under target illumination. We achieve real-time streaming through heterogeneous distillation from a pretrained multi-step bidirectional relighting teacher to a two-step causal autoregressive neural shader, inheriting broad synthetic lighting priors while minimizing conditioning and decoding latency. To further specialize these priors to human heads, we construct a hybrid relighting dataset for domain-specific fine-tuning, capturing authentic facial dynamics and physically grounded light transport. Extensive experiments show that our framework enables 3D-controllable, real-time portrait animation and relighting, outperforming state-of-the-art methods in visual fidelity, motion control, and lighting accuracy.",
+    "authors": [
+      "Yipengjing Sun",
+      "Chenyang Wang",
+      "Boyao Zhou",
+      "Jiapeng Zhu",
+      "Ka Leong Cheng",
+      "Shengping Zhang"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34940.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34940",
+    "primary_category": "cs.CV"
+  },
+  {
+    "id": "2611.34939",
+    "title": "A Mesh for Every Moment",
+    "abstract": "We present MEMO (a Mesh for Every MOment), a method that reconstructs the geometry of complete dynamic scenes, captured by multiple synchronized cameras, and extracts a mesh at every frame. Existing dynamic Gaussian splatting methods either model appearance alone or target isolated objects segmented by foreground masks, and all of them recover meshes by TSDF fusion or Poisson reconstruction, whose fixed grids limit the detail they can capture. At the core of MEMO is a per-Gaussian motion model inspired by Gaussian processes, which represents each Gaussian's position and rotation over time as a combination of temporal Gaussian kernels. The model keeps every Gaussian a valid surface element throughout the sequence and carries an implicit representation of the dynamic geometry, so a mesh can be derived at any time from a field defined by the Gaussians. Although common in real captures, large and fast motion poses a challenge that dynamic Gaussian splatting methods usually overlook. To account for it, we design a track-based initialization scheme that fits each Gaussian's initial trajectory to point tracks in closed form. We evaluate MEMO on Blender-Moments, a new benchmark of nine animated scenes with ground-truth meshes at every frame, and on two real-world datasets. MEMO reconstructs the most accurate geometry among state-of-the-art methods, and remains competitive in novel-view synthesis and training time. Project page: https://memo-4d.github.io",
+    "authors": [
+      "Roy Or-El",
+      "Jeong Joon Park",
+      "Ira Kemelmacher-Shlizerman"
+    ],
+    "published": "2026-11-25",
+    "updated": "2026-11-25",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "pdf_url": "https://arxiv.org/pdf/2611.34939.pdf",
+    "abs_url": "https://arxiv.org/abs/2611.34939",
+    "primary_category": "cs.CV"
+  }
+]
